@@ -21,7 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configChildViewController];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
