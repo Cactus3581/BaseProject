@@ -7,6 +7,8 @@
 //
 
 #import "BPAppDelegate.h"
+#import "BPRootTabBarController.h"
+
 @interface BPAppDelegate ()
 
 @end
@@ -15,20 +17,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    /**
-     系统原生方法
-     */
-    //调用窗口
-    //    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    //    //    self.window.backgroundColor = [UIColor whiteColor];
-    //    MainViewController *RootVC = [[MainViewController alloc]init];
-    //    UINavigationController *Navc = [[UINavigationController alloc]initWithRootViewController:RootVC];
-    //    //    Navc.navigationBar.barTintColor = [UIColor redColor];
-    //    //    Navc.navigationBar.barStyle = UIBarStyleBlackOpaque;
-    //    //    Navc.navigationBar.tintColor = [UIColor whiteColor];
-    //
-    //    self.window.rootViewController = Navc;
-    //    [self.window makeKeyAndVisible];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    BPRootTabBarController *RootVC = [[BPRootTabBarController alloc]init];
+    self.window.rootViewController = RootVC;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

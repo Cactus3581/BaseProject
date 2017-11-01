@@ -1,0 +1,10 @@
+platform :ios, "8.0"
+target "BaseProject" do
+    pod "AFNetworking"
+    pod "SDWebImage"
+    pod "Masonry" 
+    pod "MJRefresh" 
+    pod "FMDB" 
+    pod "YYKit" 
+    pod "YTKNetwork" 
+end
