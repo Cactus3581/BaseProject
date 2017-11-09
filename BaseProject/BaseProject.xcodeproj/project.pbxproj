@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01232D1D1FB2DFEA00F431EC /* NSNumber+BPDecimalNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 01232D1C1FB2DFEA00F431EC /* NSNumber+BPDecimalNumber.m */; };
+		01232D241FB3ED0B00F431EC /* UIView+BPScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 01232D231FB3ED0B00F431EC /* UIView+BPScreenshot.m */; };
 		01733FD81FA974FB006192F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01733FD61FA974FB006192F0 /* Main.storyboard */; };
 		01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01733FD91FA974FB006192F0 /* Assets.xcassets */; };
 		01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01733FDB1FA974FB006192F0 /* LaunchScreen.storyboard */; };
@@ -52,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01232D1B1FB2DFEA00F431EC /* NSNumber+BPDecimalNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNumber+BPDecimalNumber.h"; sourceTree = "<group>"; };
+		01232D1C1FB2DFEA00F431EC /* NSNumber+BPDecimalNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+BPDecimalNumber.m"; sourceTree = "<group>"; };
+		01232D221FB3ED0B00F431EC /* UIView+BPScreenshot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+BPScreenshot.h"; sourceTree = "<group>"; };
+		01232D231FB3ED0B00F431EC /* UIView+BPScreenshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+BPScreenshot.m"; sourceTree = "<group>"; };
 		01733FCD1FA974FB006192F0 /* BaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01733FD71FA974FB006192F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01733FD91FA974FB006192F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +131,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01232D171FB2077600F431EC /* NSNumber */ = {
+			isa = PBXGroup;
+			children = (
+				01232D1B1FB2DFEA00F431EC /* NSNumber+BPDecimalNumber.h */,
+				01232D1C1FB2DFEA00F431EC /* NSNumber+BPDecimalNumber.m */,
+			);
+			path = NSNumber;
+			sourceTree = "<group>";
+		};
+		01232D211FB3ECF100F431EC /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				01232D221FB3ED0B00F431EC /* UIView+BPScreenshot.h */,
+				01232D231FB3ED0B00F431EC /* UIView+BPScreenshot.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		01733FC41FA974FB006192F0 = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +327,8 @@
 		017340171FA9753F006192F0 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				01232D211FB3ECF100F431EC /* UIView */,
+				01232D171FB2077600F431EC /* NSNumber */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -342,6 +368,31 @@
 		017340291FA979E3006192F0 /* XRZ */ = {
 			isa = PBXGroup;
 			children = (
+				01BF067B1FB43AAB00AE49E7 /* WebBridge */,
+				01BF067A1FB4399600AE49E7 /* MultiLevelCatalogue */,
+				01BF06781FB438F800AE49E7 /* CG_Draw */,
+				01BF06771FB438D500AE49E7 /* GCD */,
+				01BF06761FB4389F00AE49E7 /* DataBase */,
+				01BF06751FB4381800AE49E7 /* Chart */,
+				01BF06741FB4377B00AE49E7 /* SwiftCode */,
+				01BF06731FB4372100AE49E7 /* TagView */,
+				01BF066F1FB4365D00AE49E7 /* EnlargeImage */,
+				01BF06501FB4358100AE49E7 /* CodeScanner */,
+				01BF064F1FB4355A00AE49E7 /* SlideImageShow */,
+				01BF064E1FB4351700AE49E7 /* ReadBook */,
+				01BF064D1FB4350600AE49E7 /* GaussianBlur */,
+				01BF064C1FB434B000AE49E7 /* DrawerView */,
+				01BF064B1FB4349700AE49E7 /* SecondaryMenu */,
+				01BF06461FB432D100AE49E7 /* Animation */,
+				01BF06451FB4320800AE49E7 /* CATransition_ Gesture */,
+				01BF06441FB4319E00AE49E7 /* PopView */,
+				01BF06431FB4318D00AE49E7 /* Alert */,
+				01BF06421FB4317F00AE49E7 /* TopSliderCategory */,
+				01BF06411FB4313100AE49E7 /* PhotoBrowser */,
+				01BF06401FB4311000AE49E7 /* CollectionViewLayout */,
+				01BF063F1FB4309D00AE49E7 /* Navi */,
+				01BF063E1FB4308A00AE49E7 /* Player */,
+				01BF063D1FB4307200AE49E7 /* WeChat */,
 				0173402C1FA97A40006192F0 /* XRZMainPage */,
 			);
 			path = XRZ;
@@ -366,9 +417,9 @@
 		0173402C1FA97A40006192F0 /* XRZMainPage */ = {
 			isa = PBXGroup;
 			children = (
+				01BF06711FB436CE00AE49E7 /* Model */,
+				01BF06721FB436CF00AE49E7 /* View */,
 				0173402D1FA97A58006192F0 /* Controller */,
-				0173402F1FA97A58006192F0 /* Model */,
-				0173402E1FA97A58006192F0 /* View */,
 			);
 			path = XRZMainPage;
 			sourceTree = "<group>";
@@ -381,20 +432,6 @@
 				0173403A1FA97B14006192F0 /* BPXRZViewController.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		0173402E1FA97A58006192F0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		0173402F1FA97A58006192F0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		017340301FA97AC5006192F0 /* ZTMainPage */ = {
@@ -463,6 +500,227 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		01BF063D1FB4307200AE49E7 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WeChat;
+			sourceTree = "<group>";
+		};
+		01BF063E1FB4308A00AE49E7 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		01BF063F1FB4309D00AE49E7 /* Navi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navi;
+			sourceTree = "<group>";
+		};
+		01BF06401FB4311000AE49E7 /* CollectionViewLayout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionViewLayout;
+			sourceTree = "<group>";
+		};
+		01BF06411FB4313100AE49E7 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PhotoBrowser;
+			sourceTree = "<group>";
+		};
+		01BF06421FB4317F00AE49E7 /* TopSliderCategory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TopSliderCategory;
+			sourceTree = "<group>";
+		};
+		01BF06431FB4318D00AE49E7 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		01BF06441FB4319E00AE49E7 /* PopView */ = {
+			isa = PBXGroup;
+			children = (
+				01BF064A1FB4334600AE49E7 /* AnchorPopView */,
+				01BF06491FB4332800AE49E7 /* ArrowPopView */,
+			);
+			path = PopView;
+			sourceTree = "<group>";
+		};
+		01BF06451FB4320800AE49E7 /* CATransition_ Gesture */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "CATransition_ Gesture";
+			sourceTree = "<group>";
+		};
+		01BF06461FB432D100AE49E7 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				01BF06481FB4330500AE49E7 /* CardPop */,
+				01BF06471FB432E500AE49E7 /* TaoBaoCart */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		01BF06471FB432E500AE49E7 /* TaoBaoCart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TaoBaoCart;
+			sourceTree = "<group>";
+		};
+		01BF06481FB4330500AE49E7 /* CardPop */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CardPop;
+			sourceTree = "<group>";
+		};
+		01BF06491FB4332800AE49E7 /* ArrowPopView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ArrowPopView;
+			sourceTree = "<group>";
+		};
+		01BF064A1FB4334600AE49E7 /* AnchorPopView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AnchorPopView;
+			sourceTree = "<group>";
+		};
+		01BF064B1FB4349700AE49E7 /* SecondaryMenu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SecondaryMenu;
+			sourceTree = "<group>";
+		};
+		01BF064C1FB434B000AE49E7 /* DrawerView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DrawerView;
+			sourceTree = "<group>";
+		};
+		01BF064D1FB4350600AE49E7 /* GaussianBlur */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GaussianBlur;
+			sourceTree = "<group>";
+		};
+		01BF064E1FB4351700AE49E7 /* ReadBook */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ReadBook;
+			sourceTree = "<group>";
+		};
+		01BF064F1FB4355A00AE49E7 /* SlideImageShow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SlideImageShow;
+			sourceTree = "<group>";
+		};
+		01BF06501FB4358100AE49E7 /* CodeScanner */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CodeScanner;
+			sourceTree = "<group>";
+		};
+		01BF066F1FB4365D00AE49E7 /* EnlargeImage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EnlargeImage;
+			sourceTree = "<group>";
+		};
+		01BF06711FB436CE00AE49E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		01BF06721FB436CF00AE49E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		01BF06731FB4372100AE49E7 /* TagView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TagView;
+			sourceTree = "<group>";
+		};
+		01BF06741FB4377B00AE49E7 /* SwiftCode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SwiftCode;
+			sourceTree = "<group>";
+		};
+		01BF06751FB4381800AE49E7 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		01BF06761FB4389F00AE49E7 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		01BF06771FB438D500AE49E7 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		01BF06781FB438F800AE49E7 /* CG_Draw */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CG_Draw;
+			sourceTree = "<group>";
+		};
+		01BF067A1FB4399600AE49E7 /* MultiLevelCatalogue */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MultiLevelCatalogue;
+			sourceTree = "<group>";
+		};
+		01BF067B1FB43AAB00AE49E7 /* WebBridge */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebBridge;
 			sourceTree = "<group>";
 		};
 		01EC5F121FA9A58200838BE2 /* LaunchImage */ = {
@@ -706,6 +964,7 @@
 				0173401D1FA9753F006192F0 /* BPBaseNavigationController.m in Sources */,
 				017340281FA97865006192F0 /* BPMainNavigationController.m in Sources */,
 				01733FE01FA974FB006192F0 /* main.m in Sources */,
+				01232D1D1FB2DFEA00F431EC /* NSNumber+BPDecimalNumber.m in Sources */,
 				0173401F1FA9753F006192F0 /* BPBaseTabBarController.m in Sources */,
 				017340401FA97B2B006192F0 /* BPZTViewController.m in Sources */,
 				0173401C1FA9753F006192F0 /* BPAppDelegate.m in Sources */,
@@ -713,6 +972,7 @@
 				0173403B1FA97B14006192F0 /* BPXRZViewController.m in Sources */,
 				0173401E1FA9753F006192F0 /* BPBaseViewController.m in Sources */,
 				017340251FA9782E006192F0 /* BPRootTabBarController.m in Sources */,
+				01232D241FB3ED0B00F431EC /* UIView+BPScreenshot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

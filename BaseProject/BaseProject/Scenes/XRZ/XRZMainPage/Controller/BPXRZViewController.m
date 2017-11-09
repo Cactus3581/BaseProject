@@ -7,6 +7,8 @@
 //
 
 #import "BPXRZViewController.h"
+#import "NSDictionary+YYAdd.h"
+#import "UIView+BPScreenshot.h"
 
 @interface BPXRZViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UITableView *tableView;
@@ -22,6 +24,7 @@
 }
 
 - (void)configViews {
+    
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     
@@ -59,13 +62,29 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+//    [self.tableView beginImageContext:self.tableView.frame View:self.tableView.bounds];
+//    NSDictionary *dic = @{@"vc":@"KSPlayCachesViewController"};
+//    NSString *url = [self toJSON:dic];
+//    url= [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
+- (NSString *)toJSON:(id)theData {
+    if (!theData) {
+        return @"";
+    }
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:theData options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *jsonStr=[[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    if ([jsonStr length]&&error== nil){
+        return jsonStr;
+    }else{
+        return nil;
+    }
+}
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
-        _dataArray = @[@"朋友圈(cell高度计算几种方式)",@"导航栏基本属性及scroll影响",@"下拉菜单",@"抽屉效果",@"MJ刷新原理",@"collectionview自定义布局",@"顶部标签滑动",@"不规则标签：热词推荐||搜索历史记录|圆形",@"淘宝购物车折叠动画",@"CG画图",@"数组&缓冲播放器",@"alert+window",@"KVO封装",@"转场动画",@"锚点popview & 高斯模糊 & arrow",@"小说阅读详情页面:CoreText"];
+        _dataArray = @[@"YYKit数据类型转换",@"缓存设计",@"AFN详细使用",@"朋友圈(cell高度计算几种方式)",@"导航栏基本属性及scroll影响",@"数字增长动画",@"下拉菜单",@"抽屉效果",@"MJ刷新原理",@"collectionview自定义布局",@"顶部标签滑动",@"不规则标签：热词推荐||搜索历史记录|圆形",@"淘宝购物车折叠动画",@"CG画图",@"数组&缓冲播放器",@"alert+window",@"KVO封装",@"转场动画",@"锚点popview & 高斯模糊 & arrow",@"小说阅读详情页面:CoreText"];
     }
     return _dataArray;
 }

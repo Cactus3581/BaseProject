@@ -7,4 +7,5 @@ target "BaseProject" do
     pod "FMDB" 
     pod "YYKit" 
     pod "YTKNetwork" 
+    pod "MJExtension" 
 end
