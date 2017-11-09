@@ -48,7 +48,7 @@
     BPRootNavigationController *navC = [[BPRootNavigationController alloc]initWithRootViewController:viewController];
     navC.title = title;
     navC.tabBarItem.image = image;
-    //    [navC.navigationBar setBackgroundImage:[UIImage imageNamed:@"commentary_num_bg"] forBarMetrics:UIBarMetricsDefault];
+    //[navC.navigationBar setBackgroundImage:[UIImage imageNamed:@"commentary_num_bg"] forBarMetrics:UIBarMetricsDefault];
     viewController.navigationItem.title = title;
     [self addChildViewController:navC];
 }
