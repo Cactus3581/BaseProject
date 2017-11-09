@@ -374,10 +374,10 @@
 		014995891FB4A5F200077866 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				014995C51FB4A9D800077866 /* CardPop */,
 				0149958A1FB4A5F200077866 /* TaoBaoCart */,
 				0149958B1FB4A5F200077866 /* NumberGrowth */,
 				0149958C1FB4A5F200077866 /* Wave */,
-				0149958D1FB4A5F200077866 /* CardPop */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -401,13 +401,6 @@
 			children = (
 			);
 			path = Wave;
-			sourceTree = "<group>";
-		};
-		0149958D1FB4A5F200077866 /* CardPop */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CardPop;
 			sourceTree = "<group>";
 		};
 		0149958E1FB4A5F300077866 /* PhotoBrowser */ = {
@@ -729,6 +722,13 @@
 			children = (
 			);
 			path = CardPopView;
+			sourceTree = "<group>";
+		};
+		014995C51FB4A9D800077866 /* CardPop */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CardPop;
 			sourceTree = "<group>";
 		};
 		01733FC41FA974FB006192F0 = {
@@ -1121,6 +1121,7 @@
 		01733FC51FA974FB006192F0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BP;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = cactus;
 				TargetAttributes = {
