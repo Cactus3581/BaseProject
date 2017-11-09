@@ -1,22 +1,22 @@
 //
-//  BPBaseViewController.m
+//  BPNaviAnimaViewController.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/11/1.
+//  Created by xiaruzhen on 2017/11/9.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "BPBaseViewController.h"
+#import "BPNaviAnimaViewController.h"
 
-@interface BPBaseViewController ()
+@interface BPNaviAnimaViewController ()
 
 @end
 
-@implementation BPBaseViewController
+@implementation BPNaviAnimaViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,18 +1,18 @@
 //
-//  BPMainNavigationController.m
+//  BPRootNavigationController.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/11/1.
+//  Created by xiaruzhen on 2017/11/9.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "BPMainNavigationController.h"
+#import "BPRootNavigationController.h"
 
-@interface BPMainNavigationController ()
+@interface BPRootNavigationController ()
 
 @end
 
-@implementation BPMainNavigationController
+@implementation BPRootNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
