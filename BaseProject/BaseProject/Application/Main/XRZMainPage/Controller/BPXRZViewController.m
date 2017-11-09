@@ -7,24 +7,26 @@
 //
 
 #import "BPXRZViewController.h"
-#import "NSDictionary+YYAdd.h"
-#import "UIView+BPScreenshot.h"
+#import "BPMasterCatalogueModel.h"
 
 @interface BPXRZViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSArray *dataArray;
-
 @end
 
 @implementation BPXRZViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self handleData];
     [self configViews];
 }
 
+- (void)handleData {
+    self.dataArray = [[[BPMasterCatalogueModel alloc] init] getArrayData];
+}
+
 - (void)configViews {
-    
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     
@@ -57,34 +59,25 @@
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    cell.textLabel.text = self.dataArray[indexPath.row];
+    BPMasterCatalogueModel *model = self.dataArray[indexPath.row];
+    cell.textLabel.text = model.title;
+    cell.detailTextLabel.text = model.briefIntro;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [self.tableView beginImageContext:self.tableView.frame View:self.tableView.bounds];
-//    NSDictionary *dic = @{@"vc":@"KSPlayCachesViewController"};
-//    NSString *url = [self toJSON:dic];
-//    url= [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-}
-
-- (NSString *)toJSON:(id)theData {
-    if (!theData) {
-        return @"";
-    }
-    NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:theData options:NSJSONWritingPrettyPrinted error:nil];
-    NSString *jsonStr=[[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
-    if ([jsonStr length]&&error== nil){
-        return jsonStr;
-    }else{
-        return nil;
+    BPMasterCatalogueModel *model = self.dataArray[indexPath.row];
+    NSString *className = model.fileName;
+    Class ClassVc = NSClassFromString(className);
+    if (ClassVc) {
+        UIViewController *vc = [[ClassVc alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
-        _dataArray = @[@"YYKit数据类型转换",@"缓存设计",@"AFN详细使用",@"朋友圈(cell高度计算几种方式)",@"导航栏基本属性及scroll影响",@"数字增长动画",@"下拉菜单",@"抽屉效果",@"MJ刷新原理",@"collectionview自定义布局",@"顶部标签滑动",@"不规则标签：热词推荐||搜索历史记录|圆形",@"淘宝购物车折叠动画",@"CG画图",@"数组&缓冲播放器",@"alert+window",@"KVO封装",@"转场动画",@"锚点popview & 高斯模糊 & arrow",@"小说阅读详情页面:CoreText"];
+        _dataArray = @[];
     }
     return _dataArray;
 }
