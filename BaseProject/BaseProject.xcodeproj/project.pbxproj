@@ -11,6 +11,8 @@
 		01232D241FB3ED0B00F431EC /* UIView+BPScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 01232D231FB3ED0B00F431EC /* UIView+BPScreenshot.m */; };
 		0126B5361FB4ACBB00E522CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0126B5351FB4ACBB00E522CF /* MapKit.framework */; };
 		0126E0221FBDB0DA00EE2610 /* BPPopViewMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0126E0211FBDB0DA00EE2610 /* BPPopViewMainController.m */; };
+		0139A4DB1FBF3DC30011795E /* launchImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0139A4D91FBF3DC30011795E /* launchImage@3x.png */; };
+		0139A4DC1FBF3DC30011795E /* launchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0139A4DA1FBF3DC30011795E /* launchImage@2x.png */; };
 		014995331FB494D800077866 /* BPBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014995321FB494D800077866 /* BPBaseTableView.m */; };
 		0149953A1FB4A3D600077866 /* BPRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014995381FB4A3D500077866 /* BPRootTabBarController.m */; };
 		0149953D1FB4A3F900077866 /* BPRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0149953C1FB4A3F900077866 /* BPRootNavigationController.m */; };
@@ -34,8 +36,6 @@
 		019BFD871FB591D800750548 /* BPXRZViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 019BFD861FB591D800750548 /* BPXRZViewModel.m */; };
 		019BFD8B1FB5921E00750548 /* BPXRZTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 019BFD891FB5921E00750548 /* BPXRZTableViewCell.m */; };
 		019BFD8C1FB5921E00750548 /* BPXRZTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 019BFD8A1FB5921E00750548 /* BPXRZTableViewCell.xib */; };
-		01A6F01C1FBF326000A0D90F /* launchImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01A6F01A1FBF326000A0D90F /* launchImage@3x.png */; };
-		01A6F01D1FBF326000A0D90F /* launchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01A6F01B1FBF326000A0D90F /* launchImage@2x.png */; };
 		01ADC1F61FB492C1009150F0 /* BPBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC1F51FB492C1009150F0 /* BPBaseTableViewCell.m */; };
 		01ADC1F91FB492D8009150F0 /* BPBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC1F81FB492D8009150F0 /* BPBaseTableViewController.m */; };
 		01BCB3301FB54A99009EF64E /* BPBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCB32F1FB54A99009EF64E /* BPBaseModel.m */; };
@@ -70,6 +70,8 @@
 		0126B5351FB4ACBB00E522CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0126E0201FBDB0DA00EE2610 /* BPPopViewMainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPopViewMainController.h; sourceTree = "<group>"; };
 		0126E0211FBDB0DA00EE2610 /* BPPopViewMainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPopViewMainController.m; sourceTree = "<group>"; };
+		0139A4D91FBF3DC30011795E /* launchImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@3x.png"; sourceTree = "<group>"; };
+		0139A4DA1FBF3DC30011795E /* launchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@2x.png"; sourceTree = "<group>"; };
 		014995311FB494D800077866 /* BPBaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseTableView.h; sourceTree = "<group>"; };
 		014995321FB494D800077866 /* BPBaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseTableView.m; sourceTree = "<group>"; };
 		014995381FB4A3D500077866 /* BPRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPRootTabBarController.m; sourceTree = "<group>"; };
@@ -116,8 +118,6 @@
 		019BFD881FB5921E00750548 /* BPXRZTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPXRZTableViewCell.h; sourceTree = "<group>"; };
 		019BFD891FB5921E00750548 /* BPXRZTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPXRZTableViewCell.m; sourceTree = "<group>"; };
 		019BFD8A1FB5921E00750548 /* BPXRZTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPXRZTableViewCell.xib; sourceTree = "<group>"; };
-		01A6F01A1FBF326000A0D90F /* launchImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@3x.png"; sourceTree = "<group>"; };
-		01A6F01B1FBF326000A0D90F /* launchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@2x.png"; sourceTree = "<group>"; };
 		01ADC1F41FB492C1009150F0 /* BPBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseTableViewCell.h; sourceTree = "<group>"; };
 		01ADC1F51FB492C1009150F0 /* BPBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseTableViewCell.m; sourceTree = "<group>"; };
 		01ADC1F71FB492D8009150F0 /* BPBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseTableViewController.h; sourceTree = "<group>"; };
@@ -1008,8 +1008,6 @@
 		017340191FA9753F006192F0 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				01A6F01B1FBF326000A0D90F /* launchImage@2x.png */,
-				01A6F01A1FBF326000A0D90F /* launchImage@3x.png */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -1106,6 +1104,8 @@
 		01EC5F121FA9A58200838BE2 /* LaunchImage */ = {
 			isa = PBXGroup;
 			children = (
+				0139A4DA1FBF3DC30011795E /* launchImage@2x.png */,
+				0139A4D91FBF3DC30011795E /* launchImage@3x.png */,
 			);
 			path = LaunchImage;
 			sourceTree = "<group>";
@@ -1257,11 +1257,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				019BFD8C1FB5921E00750548 /* BPXRZTableViewCell.xib in Resources */,
-				01A6F01C1FBF326000A0D90F /* launchImage@3x.png in Resources */,
+				0139A4DB1FBF3DC30011795E /* launchImage@3x.png in Resources */,
 				014995751FB4A52B00077866 /* BPZTViewController.xib in Resources */,
 				0149957A1FB4A53300077866 /* BPSYViewController.xib in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
-				01A6F01D1FBF326000A0D90F /* launchImage@2x.png in Resources */,
+				0139A4DC1FBF3DC30011795E /* launchImage@2x.png in Resources */,
 				01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */,
 				01733FD81FA974FB006192F0 /* Main.storyboard in Resources */,
 			);

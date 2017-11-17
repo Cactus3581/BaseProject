@@ -23,7 +23,7 @@
     BPRootTabBarController *RootVC = [[BPRootTabBarController alloc]init];
     self.window.rootViewController = RootVC;
     [self.window makeKeyAndVisible];
-//    [self configLaunchImage];
+    [self configLaunchImage];
     [self configSDKS];
     return YES;
 }
