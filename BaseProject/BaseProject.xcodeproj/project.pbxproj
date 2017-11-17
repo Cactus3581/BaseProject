@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		01232D1D1FB2DFEA00F431EC /* NSNumber+BPDecimalNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 01232D1C1FB2DFEA00F431EC /* NSNumber+BPDecimalNumber.m */; };
 		01232D241FB3ED0B00F431EC /* UIView+BPScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 01232D231FB3ED0B00F431EC /* UIView+BPScreenshot.m */; };
-		014995301FB4945700077866 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0149952F1FB4945700077866 /* BaseModel.m */; };
+		0126B5361FB4ACBB00E522CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0126B5351FB4ACBB00E522CF /* MapKit.framework */; };
+		0126E0221FBDB0DA00EE2610 /* BPPopViewMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0126E0211FBDB0DA00EE2610 /* BPPopViewMainController.m */; };
 		014995331FB494D800077866 /* BPBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014995321FB494D800077866 /* BPBaseTableView.m */; };
 		0149953A1FB4A3D600077866 /* BPRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014995381FB4A3D500077866 /* BPRootTabBarController.m */; };
 		0149953D1FB4A3F900077866 /* BPRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0149953C1FB4A3F900077866 /* BPRootNavigationController.m */; };
-		0149955B1FB4A48C00077866 /* BPXRZViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014995581FB4A48B00077866 /* BPXRZViewController.xib */; };
 		0149955C1FB4A48C00077866 /* BPXRZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0149955A1FB4A48C00077866 /* BPXRZViewController.m */; };
 		0149955F1FB4A49500077866 /* BPMasterCatalogueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0149955E1FB4A49500077866 /* BPMasterCatalogueModel.m */; };
 		014995741FB4A52B00077866 /* BPZTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014995711FB4A52A00077866 /* BPZTViewController.m */; };
@@ -31,13 +31,16 @@
 		0173401D1FA9753F006192F0 /* BPBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0173400B1FA9753F006192F0 /* BPBaseNavigationController.m */; };
 		0173401E1FA9753F006192F0 /* BPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0173400E1FA9753F006192F0 /* BPBaseViewController.m */; };
 		0173401F1FA9753F006192F0 /* BPBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017340121FA9753F006192F0 /* BPBaseTabBarController.m */; };
+		019BFD871FB591D800750548 /* BPXRZViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 019BFD861FB591D800750548 /* BPXRZViewModel.m */; };
+		019BFD8B1FB5921E00750548 /* BPXRZTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 019BFD891FB5921E00750548 /* BPXRZTableViewCell.m */; };
+		019BFD8C1FB5921E00750548 /* BPXRZTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 019BFD8A1FB5921E00750548 /* BPXRZTableViewCell.xib */; };
+		01A6F01C1FBF326000A0D90F /* launchImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01A6F01A1FBF326000A0D90F /* launchImage@3x.png */; };
+		01A6F01D1FBF326000A0D90F /* launchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01A6F01B1FBF326000A0D90F /* launchImage@2x.png */; };
 		01ADC1F61FB492C1009150F0 /* BPBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC1F51FB492C1009150F0 /* BPBaseTableViewCell.m */; };
 		01ADC1F91FB492D8009150F0 /* BPBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC1F81FB492D8009150F0 /* BPBaseTableViewController.m */; };
-		01EC5F181FA9A5C400838BE2 /* launch_6p.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01EC5F131FA9A5C300838BE2 /* launch_6p.jpg */; };
-		01EC5F191FA9A5C400838BE2 /* launch_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01EC5F141FA9A5C300838BE2 /* launch_5.jpg */; };
-		01EC5F1A1FA9A5C400838BE2 /* launch_desktop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01EC5F151FA9A5C300838BE2 /* launch_desktop.jpg */; };
-		01EC5F1B1FA9A5C400838BE2 /* launch_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01EC5F161FA9A5C300838BE2 /* launch_4.jpg */; };
-		01EC5F1C1FA9A5C400838BE2 /* launch_6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01EC5F171FA9A5C400838BE2 /* launch_6.jpg */; };
+		01BCB3301FB54A99009EF64E /* BPBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCB32F1FB54A99009EF64E /* BPBaseModel.m */; };
+		01BCB33E1FB55921009EF64E /* BPBaseServerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCB33C1FB55920009EF64E /* BPBaseServerAPI.m */; };
+		01BCB3441FB5598B009EF64E /* BPBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCB3431FB5598B009EF64E /* BPBaseViewModel.m */; };
 		01EC5F251FA9AAB100838BE2 /* KSCGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EC5F221FA9AAB100838BE2 /* KSCGUtilities.m */; };
 		D3B433555DA690915B9FE756 /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAAF3753BBCECF75300EBB5 /* libPods-BaseProject.a */; };
 /* End PBXBuildFile section */
@@ -64,15 +67,15 @@
 		01232D1C1FB2DFEA00F431EC /* NSNumber+BPDecimalNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+BPDecimalNumber.m"; sourceTree = "<group>"; };
 		01232D221FB3ED0B00F431EC /* UIView+BPScreenshot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+BPScreenshot.h"; sourceTree = "<group>"; };
 		01232D231FB3ED0B00F431EC /* UIView+BPScreenshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+BPScreenshot.m"; sourceTree = "<group>"; };
-		0149952E1FB4945700077866 /* BaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
-		0149952F1FB4945700077866 /* BaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		0126B5351FB4ACBB00E522CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0126E0201FBDB0DA00EE2610 /* BPPopViewMainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPopViewMainController.h; sourceTree = "<group>"; };
+		0126E0211FBDB0DA00EE2610 /* BPPopViewMainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPopViewMainController.m; sourceTree = "<group>"; };
 		014995311FB494D800077866 /* BPBaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseTableView.h; sourceTree = "<group>"; };
 		014995321FB494D800077866 /* BPBaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseTableView.m; sourceTree = "<group>"; };
 		014995381FB4A3D500077866 /* BPRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPRootTabBarController.m; sourceTree = "<group>"; };
 		014995391FB4A3D500077866 /* BPRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPRootTabBarController.h; sourceTree = "<group>"; };
 		0149953B1FB4A3F900077866 /* BPRootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPRootNavigationController.h; sourceTree = "<group>"; };
 		0149953C1FB4A3F900077866 /* BPRootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPRootNavigationController.m; sourceTree = "<group>"; };
-		014995581FB4A48B00077866 /* BPXRZViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPXRZViewController.xib; sourceTree = "<group>"; };
 		014995591FB4A48B00077866 /* BPXRZViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPXRZViewController.h; sourceTree = "<group>"; };
 		0149955A1FB4A48C00077866 /* BPXRZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPXRZViewController.m; sourceTree = "<group>"; };
 		0149955D1FB4A49400077866 /* BPMasterCatalogueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMasterCatalogueModel.h; sourceTree = "<group>"; };
@@ -85,6 +88,9 @@
 		014995781FB4A53300077866 /* BPSYViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPSYViewController.xib; sourceTree = "<group>"; };
 		0149959C1FB4A5F400077866 /* BPNaviAnimaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPNaviAnimaViewController.h; sourceTree = "<group>"; };
 		0149959D1FB4A5F400077866 /* BPNaviAnimaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPNaviAnimaViewController.m; sourceTree = "<group>"; };
+		015A46141FB5946E00D6C485 /* BPAppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppMacro.h; sourceTree = "<group>"; };
+		015A46171FB5986C00D6C485 /* BPCatergory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCatergory.h; sourceTree = "<group>"; };
+		015A46181FB598AA00D6C485 /* BPSingletonMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPSingletonMacro.h; sourceTree = "<group>"; };
 		01733FCD1FA974FB006192F0 /* BaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01733FD71FA974FB006192F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01733FD91FA974FB006192F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,15 +111,23 @@
 		0173400F1FA9753F006192F0 /* BPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBaseViewController.h; sourceTree = "<group>"; };
 		017340111FA9753F006192F0 /* BPBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBaseTabBarController.h; sourceTree = "<group>"; };
 		017340121FA9753F006192F0 /* BPBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBaseTabBarController.m; sourceTree = "<group>"; };
+		019BFD851FB591D800750548 /* BPXRZViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPXRZViewModel.h; sourceTree = "<group>"; };
+		019BFD861FB591D800750548 /* BPXRZViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPXRZViewModel.m; sourceTree = "<group>"; };
+		019BFD881FB5921E00750548 /* BPXRZTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPXRZTableViewCell.h; sourceTree = "<group>"; };
+		019BFD891FB5921E00750548 /* BPXRZTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPXRZTableViewCell.m; sourceTree = "<group>"; };
+		019BFD8A1FB5921E00750548 /* BPXRZTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPXRZTableViewCell.xib; sourceTree = "<group>"; };
+		01A6F01A1FBF326000A0D90F /* launchImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@3x.png"; sourceTree = "<group>"; };
+		01A6F01B1FBF326000A0D90F /* launchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@2x.png"; sourceTree = "<group>"; };
 		01ADC1F41FB492C1009150F0 /* BPBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseTableViewCell.h; sourceTree = "<group>"; };
 		01ADC1F51FB492C1009150F0 /* BPBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseTableViewCell.m; sourceTree = "<group>"; };
 		01ADC1F71FB492D8009150F0 /* BPBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseTableViewController.h; sourceTree = "<group>"; };
 		01ADC1F81FB492D8009150F0 /* BPBaseTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseTableViewController.m; sourceTree = "<group>"; };
-		01EC5F131FA9A5C300838BE2 /* launch_6p.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch_6p.jpg; sourceTree = "<group>"; };
-		01EC5F141FA9A5C300838BE2 /* launch_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch_5.jpg; sourceTree = "<group>"; };
-		01EC5F151FA9A5C300838BE2 /* launch_desktop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch_desktop.jpg; sourceTree = "<group>"; };
-		01EC5F161FA9A5C300838BE2 /* launch_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch_4.jpg; sourceTree = "<group>"; };
-		01EC5F171FA9A5C400838BE2 /* launch_6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch_6.jpg; sourceTree = "<group>"; };
+		01BCB32E1FB54A99009EF64E /* BPBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseModel.h; sourceTree = "<group>"; };
+		01BCB32F1FB54A99009EF64E /* BPBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseModel.m; sourceTree = "<group>"; };
+		01BCB33C1FB55920009EF64E /* BPBaseServerAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBaseServerAPI.m; sourceTree = "<group>"; };
+		01BCB33D1FB55920009EF64E /* BPBaseServerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBaseServerAPI.h; sourceTree = "<group>"; };
+		01BCB3421FB5598B009EF64E /* BPBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBaseViewModel.h; sourceTree = "<group>"; };
+		01BCB3431FB5598B009EF64E /* BPBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBaseViewModel.m; sourceTree = "<group>"; };
 		01EC5F201FA9A78200838BE2 /* BaseProject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseProject-Prefix.pch"; sourceTree = "<group>"; };
 		01EC5F221FA9AAB100838BE2 /* KSCGUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCGUtilities.m; sourceTree = "<group>"; };
 		01EC5F231FA9AAB100838BE2 /* KSDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSDataTool.h; sourceTree = "<group>"; };
@@ -128,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0126B5361FB4ACBB00E522CF /* MapKit.framework in Frameworks */,
 				D3B433555DA690915B9FE756 /* libPods-BaseProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,11 +182,51 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		0126B5371FB4AF5D00E522CF /* Barrage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Barrage;
+			sourceTree = "<group>";
+		};
+		0126E0181FBDB08200EE2610 /* MainCatalogue */ = {
+			isa = PBXGroup;
+			children = (
+				0126E0191FBDB08200EE2610 /* Controller */,
+				0126E01A1FBDB08200EE2610 /* Model */,
+				0126E01B1FBDB08200EE2610 /* View */,
+			);
+			path = MainCatalogue;
+			sourceTree = "<group>";
+		};
+		0126E0191FBDB08200EE2610 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0126E0201FBDB0DA00EE2610 /* BPPopViewMainController.h */,
+				0126E0211FBDB0DA00EE2610 /* BPPopViewMainController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0126E01A1FBDB08200EE2610 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0126E01B1FBDB08200EE2610 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0149952D1FB4944A00077866 /* BaseModel */ = {
 			isa = PBXGroup;
 			children = (
-				0149952E1FB4945700077866 /* BaseModel.h */,
-				0149952F1FB4945700077866 /* BaseModel.m */,
+				01BCB32E1FB54A99009EF64E /* BPBaseModel.h */,
+				01BCB32F1FB54A99009EF64E /* BPBaseModel.m */,
 			);
 			path = BaseModel;
 			sourceTree = "<group>";
@@ -190,6 +245,8 @@
 		014995551FB4A47600077866 /* XRZMainPage */ = {
 			isa = PBXGroup;
 			children = (
+				01BCB32D1FB54A50009EF64E /* Views */,
+				01BCB32C1FB54A45009EF64E /* ViewModels */,
 				014995561FB4A47600077866 /* Controller */,
 				014995571FB4A47600077866 /* Model */,
 			);
@@ -201,7 +258,6 @@
 			children = (
 				014995591FB4A48B00077866 /* BPXRZViewController.h */,
 				0149955A1FB4A48C00077866 /* BPXRZViewController.m */,
-				014995581FB4A48B00077866 /* BPXRZViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -448,6 +504,7 @@
 		014995941FB4A5F300077866 /* PopView */ = {
 			isa = PBXGroup;
 			children = (
+				0126E0181FBDB08200EE2610 /* MainCatalogue */,
 				014995C41FB4A7CA00077866 /* CardPopView */,
 				014995951FB4A5F300077866 /* AnchorPopView */,
 				014995961FB4A5F300077866 /* ArrowPopView */,
@@ -731,6 +788,16 @@
 			path = CardPopView;
 			sourceTree = "<group>";
 		};
+		015A46131FB5944E00D6C485 /* AppMacro */ = {
+			isa = PBXGroup;
+			children = (
+				015A46141FB5946E00D6C485 /* BPAppMacro.h */,
+				015A46171FB5986C00D6C485 /* BPCatergory.h */,
+				015A46181FB598AA00D6C485 /* BPSingletonMacro.h */,
+			);
+			path = AppMacro;
+			sourceTree = "<group>";
+		};
 		01733FC41FA974FB006192F0 = {
 			isa = PBXGroup;
 			children = (
@@ -824,6 +891,8 @@
 		017340071FA9753F006192F0 /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				01BCB3381FB558F8009EF64E /* BaseViewModel */,
+				01BCB3371FB558E4009EF64E /* BaseServerAPI */,
 				0149952D1FB4944A00077866 /* BaseModel */,
 				01ADC1E71FB490FC009150F0 /* BaseScroll */,
 				017340081FA9753F006192F0 /* BaseView */,
@@ -879,6 +948,7 @@
 		017340151FA9753F006192F0 /* Macro */ = {
 			isa = PBXGroup;
 			children = (
+				015A46131FB5944E00D6C485 /* AppMacro */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -904,6 +974,7 @@
 		017340181FA9753F006192F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0126B5371FB4AF5D00E522CF /* Barrage */,
 				014995C21FB4A75F00077866 /* DrawView */,
 				014995881FB4A5F200077866 /* Alert */,
 				014995921FB4A5F300077866 /* Algorithm */,
@@ -937,6 +1008,8 @@
 		017340191FA9753F006192F0 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				01A6F01B1FBF326000A0D90F /* launchImage@2x.png */,
+				01A6F01A1FBF326000A0D90F /* launchImage@3x.png */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -959,7 +1032,6 @@
 		01ADC1E71FB490FC009150F0 /* BaseScroll */ = {
 			isa = PBXGroup;
 			children = (
-				01ADC1E91FB4911D009150F0 /* BaseCollectionView */,
 				01ADC1E81FB4910D009150F0 /* BaseTableView */,
 			);
 			path = BaseScroll;
@@ -969,18 +1041,9 @@
 			isa = PBXGroup;
 			children = (
 				01ADC1EB1FB49129009150F0 /* Controllers */,
-				01ADC1EC1FB49129009150F0 /* Models */,
-				01ADC1ED1FB49129009150F0 /* ViewModels */,
 				01ADC1EA1FB49129009150F0 /* Views */,
 			);
 			path = BaseTableView;
-			sourceTree = "<group>";
-		};
-		01ADC1E91FB4911D009150F0 /* BaseCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BaseCollectionView;
 			sourceTree = "<group>";
 		};
 		01ADC1EA1FB49129009150F0 /* Views */ = {
@@ -1003,28 +1066,46 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		01ADC1EC1FB49129009150F0 /* Models */ = {
+		01BCB32C1FB54A45009EF64E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		01ADC1ED1FB49129009150F0 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
+				019BFD851FB591D800750548 /* BPXRZViewModel.h */,
+				019BFD861FB591D800750548 /* BPXRZViewModel.m */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		01BCB32D1FB54A50009EF64E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				019BFD881FB5921E00750548 /* BPXRZTableViewCell.h */,
+				019BFD891FB5921E00750548 /* BPXRZTableViewCell.m */,
+				019BFD8A1FB5921E00750548 /* BPXRZTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01BCB3371FB558E4009EF64E /* BaseServerAPI */ = {
+			isa = PBXGroup;
+			children = (
+				01BCB33D1FB55920009EF64E /* BPBaseServerAPI.h */,
+				01BCB33C1FB55920009EF64E /* BPBaseServerAPI.m */,
+			);
+			path = BaseServerAPI;
+			sourceTree = "<group>";
+		};
+		01BCB3381FB558F8009EF64E /* BaseViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				01BCB3421FB5598B009EF64E /* BPBaseViewModel.h */,
+				01BCB3431FB5598B009EF64E /* BPBaseViewModel.m */,
+			);
+			path = BaseViewModel;
 			sourceTree = "<group>";
 		};
 		01EC5F121FA9A58200838BE2 /* LaunchImage */ = {
 			isa = PBXGroup;
 			children = (
-				01EC5F161FA9A5C300838BE2 /* launch_4.jpg */,
-				01EC5F141FA9A5C300838BE2 /* launch_5.jpg */,
-				01EC5F171FA9A5C400838BE2 /* launch_6.jpg */,
-				01EC5F131FA9A5C300838BE2 /* launch_6p.jpg */,
-				01EC5F151FA9A5C300838BE2 /* launch_desktop.jpg */,
 			);
 			path = LaunchImage;
 			sourceTree = "<group>";
@@ -1042,6 +1123,7 @@
 		4A3DA6562E1A89656B539CD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0126B5351FB4ACBB00E522CF /* MapKit.framework */,
 				7BAAF3753BBCECF75300EBB5 /* libPods-BaseProject.a */,
 			);
 			name = Frameworks;
@@ -1069,6 +1151,7 @@
 				01733FCB1FA974FB006192F0 /* Resources */,
 				72C69931371E50AE78C943BE /* [CP] Embed Pods Frameworks */,
 				6F8B5FC571A634C2D0714D22 /* [CP] Copy Pods Resources */,
+				01A236C51FBB0178006EF76F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1127,6 +1210,14 @@
 					01733FCC1FA974FB006192F0 = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					01733FE41FA974FC006192F0 = {
 						CreatedOnToolsVersion = 9.0.1;
@@ -1165,16 +1256,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				019BFD8C1FB5921E00750548 /* BPXRZTableViewCell.xib in Resources */,
+				01A6F01C1FBF326000A0D90F /* launchImage@3x.png in Resources */,
 				014995751FB4A52B00077866 /* BPZTViewController.xib in Resources */,
-				01EC5F181FA9A5C400838BE2 /* launch_6p.jpg in Resources */,
-				01EC5F191FA9A5C400838BE2 /* launch_5.jpg in Resources */,
-				01EC5F1B1FA9A5C400838BE2 /* launch_4.jpg in Resources */,
 				0149957A1FB4A53300077866 /* BPSYViewController.xib in Resources */,
-				0149955B1FB4A48C00077866 /* BPXRZViewController.xib in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
-				01EC5F1A1FA9A5C400838BE2 /* launch_desktop.jpg in Resources */,
+				01A6F01D1FBF326000A0D90F /* launchImage@2x.png in Resources */,
 				01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */,
-				01EC5F1C1FA9A5C400838BE2 /* launch_6.jpg in Resources */,
 				01733FD81FA974FB006192F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1196,6 +1284,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		01A236C51FBB0178006EF76F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n#\n# Copyright 2016 Bugly, Tencent. All rights reserved.\n#\n# V1.4.0\n#\n# 2016.08.03\n#\n#\n#\n######################################################\n# 1. 脚本集成到Xcode工程的Target\n######################################################\n#\n# --- Copy the SCRIPT to the Run Script of Build Phases in the Xcode project ---\n#\n# #\nBUGLY_APP_ID=\"dc9e61f4db\"\n# #\nBUGLY_APP_KEY=\"b3084da5-f612-487e-b2e0-3e6ee60b2c42\"\n# #\nBUNDLE_IDENTIFIER=\"com.cactus.BaseProject\"\n# #\nUPLOAD_DSYM_ONLY=1\n#\n# # 脚本默认配置的版本格式为CFBundleShortVersionString(CFBundleVersion),  如果你修改默认的版本格式, 请设置此变量, 如果不想修改, 请忽略此设置\n# CUSTOMIZED_APP_VERSION=\"\"\n#\n# # Debug模式编译是否上传，1＝上传 0＝不上传，默认不上传\n    UPLOAD_DEBUG_SYMBOLS=0\n#\n# # 模拟器编译是否上传，1=上传 0=不上传，默认不上传\n UPLOAD_SIMULATOR_SYMBOLS=0\n#\n# #只有Archive操作时上传, 1=支持Archive上传 0=所有Release模式编译都上传\n# UPLOAD_ARCHIVE_ONLY=0\n#\n# #\n# source dSYMUpload.sh\n#\n# --- END OF SCRIPT ---\n#\n#\n#\n#\n#######################################################\n# 2. 脚本根据输入参数处理\n#######################################################\n#\n# #命令行下输入应用基本信息, .dSYM文件的父目录路径, 输出文件目录即可\n#\n# sh dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir>\n#\n# #\n#\n# #注意:\n# # 1. dSYMUpload.sh会调用buglySymboliOS.jar进行.dSYM解析，所以依赖Java运行时环境\n# # 2. dSYMUpload.sh和buglySymboliOS.jar的文件路径需一致\n#\n#\n\n#\n# --- CONTENT OF SCRIPT ---\n#\n\n# Bugly服务域名\nBUGLY_DSYM_UPLOAD_DOMAIN=\"api.bugly.qq.com\"\n\n# 注意jar工具的路径跟dSYMUpload.sh脚本路径一致, 请务必保证jar路径的正确性\nBUGLY_SYMBOL_JAR_PATH=\"dsymtool/buglySymboliOS.jar\"\n# 查找添加到系统目录的jar工具\nif [ ! -f \"${BUGLY_SYMBOL_JAR_PATH}\" ]; then\nBUGLY_SYMBOL_JAR_PATH=\"$HOME/bin/buglySymboliOS.jar\"\nfi\n\n# 打印错误信息\nfunction exitWithMessage(){\n    echo \"--------------------------------\"\n    echo \"${1}\"\n    echo \"--------------------------------\"\n    exit ${2}\n}\n\n# 上传bSYMBOL文件\nfunction dSYMUpload() {\n    P_APP_ID=\"$1\"\n    P_APP_KEY=\"$2\"\n    P_APP_BUNDLE_ID=\"$3\"\n    P_APP_VERSION=\"$4\"\n    P_BSYMBOL_ZIP_FILE=\"$5\"\n    \n    #\n    P_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE##*/}\n        P_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE_NAME//&/_}\n            P_BSYMBOL_ZIP_FILE_NAME=\"${P_BSYMBOL_ZIP_FILE_NAME// /_}\"\n            \n            DSYM_UPLOAD_URL=\"https://${BUGLY_DSYM_UPLOAD_DOMAIN}/openapi/file/upload/symbol?app_id=${P_APP_ID}&app_key=${P_APP_KEY}\"\n            echo \"dSYM upload url: ${DSYM_UPLOAD_URL}\"\n            \n            echo \"-----------------------------\"\n            STATUS=$(/usr/bin/curl -k \"${DSYM_UPLOAD_URL}\" --form \"api_version=1\" --form \"app_id=${P_APP_ID}\" --form \"app_key=${P_APP_KEY}\" --form \"symbolType=2\"  --form \"bundleId=${BUNDLE_IDENTIFIER}\" --form \"productVersion=${BUGLY_APP_VERSION}\" --form \"fileName=${P_BSYMBOL_ZIP_FILE_NAME}\" --form \"file=@${P_BSYMBOL_ZIP_FILE}\" --verbose)\n            echo \"-----------------------------\"\n            \n            UPLOAD_RESULT=\"FAILTURE\"\n            echo \"Bugly server response: ${STATUS}\"\n            if [ ! \"${STATUS}\" ]; then\n            echo \"Error: Failed to upload the zip archive file.\"\n            elif [[ \"${STATUS}\" == *\"{\\\"reponseCode\\\":\\\"0\\\"}\"* ]]; then\n            echo \"Success to upload the dSYM for the app [${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION}]\"\n            UPLOAD_RESULT=\"SUCCESS\"\n            else\n            echo \"Error: Failed to upload the zip archive file to Bugly.\"\n            fi\n            \n            #Remove temp dSYM archive\n            #echo \"Remove temporary zip archive: ${DSYM_ZIP_FPATH}\"\n            #/bin/rm -f \"${DSYM_ZIP_FPATH}\"\n            \n            if [ \"$?\" -ne 0 ]; then\n            exitWithMessage \"Error: Failed to remove temporary zip archive.\" 0\n            fi\n            \n            echo \"--------------------------------\"\n            echo \"${UPLOAD_RESULT} - dSYM upload complete.\"\n            \n            if [[ \"${UPLOAD_RESULT}\" == \"FAILTURE\" ]]; then\n            echo \"--------------------------------\"\n            echo \"Failed to upload the dSYM\"\n            echo \"Please check the script and try it again.\"\n            fi\n        }\n        \n        # .dSYM解析为bSYMBOL文件\n        function dSYMParse() {\n            DSYM_FILE=\"$1\"\n            DSYM_SYMBOL_FILE=\"$2\"\n            \n            echo \"--------------------------------\"\n            echo \"Extract symbol info from .dSYM file. to ${DSYM_SYMBOL_FILE}\"\n            (/usr/bin/java -Xms512m -Xmx1024m -Dfile.encoding=UTF8 -jar \"${BUGLY_SYMBOL_JAR_PATH}\" -i \"${DSYM_FILE}\" -o \"${DSYM_SYMBOL_FILE}\" ) || exitWithMessage \"Error: Failed to extract symbols.\" 1\n            echo \"--------------------------------\"\n            \n        }\n        \n        # 执行\n        function run() {\n            \n            CONFIG_BUGLY_APP_ID=\"$1\"\n            CONFIG_BUGLY_APP_KEY=\"$2\"\n            \n            CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER=\"$3\"\n            CONFIG_BUGLY_APP_VERSION=\"$4\"\n            CONFIG_DSYM_SOURCE_DIR=\"$5\"\n            CONFIG_DSYM_DEST_DIR=\"$6\"\n            CONFIG_UPLOAD_DSYM_ONLY=\"$7\"\n            \n            # 检查必须参数是否设置\n            if [ ! \"${CONFIG_BUGLY_APP_ID}\" ]; then\n            exitWithMessage \"Error: Bugly App ID not defined. Please set 'BUGLY_APP_ID' \" 0\n            fi\n            \n            if [[ \"${CONFIG_BUGLY_APP_ID}\" == *\"App ID\"* ]]; then\n            exitWithMessage \"Error: Bugly App ID not defined.\" 0\n            fi\n            \n            if [ ! \"${CONFIG_BUGLY_APP_KEY}\" ]; then\n            exitWithMessage \"Error: Bugly App Key not defined.\" 0\n            fi\n            \n            if [ ! \"${CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER}\" ]; then\n            exitWithMessage \"Error: Bundle Identifier not defined.\" 0\n            fi\n            \n            if [ ! \"${CONFIG_BUGLY_APP_VERSION}\" ]; then\n            exitWithMessage \"Error: App Version not defined.\" 0\n            fi\n            \n            if [ ! -e \"${CONFIG_DSYM_SOURCE_DIR}\" ]; then\n            exitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_SOURCE_DIR}\" 0\n            fi\n            \n            if [ ! \"${CONFIG_DSYM_DEST_DIR}\" ]; then\n            exitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_DEST_DIR}\" 0\n            fi\n            \n            if [ ! -e \"${CONFIG_DSYM_DEST_DIR}\" ]; then\n            mkdir ${CONFIG_DSYM_DEST_DIR}\n            fi\n            \n            DSYM_FOLDER=\"${CONFIG_DSYM_SOURCE_DIR}\"\n            IFS=$'\\n'\n            \n            echo \"Scaning dSYM FOLDER: ${DSYM_FOLDER} ...\"\n            RET=\"F\"\n            \n            #\n            for dsymFile in $(find \"$DSYM_FOLDER\" -name '*.dSYM'); do\n            RET=\"T\"\n            echo \"Found dSYM file: $dsymFile\"\n            \n            DSYM_FILE_NAME=${dsymFile##*/}\n                DSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_FILE_NAME}.zip\"\n                DSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_SYMBOL_ZIP_FILE_NAME// /_}\"\n                DSYM_SYMBOL_ZIP_FILE=${CONFIG_DSYM_DEST_DIR}/${DSYM_SYMBOL_ZIP_FILE_NAME}\n                \n                if [ $CONFIG_UPLOAD_DSYM_ONLY -eq 1 ]; then\n                if [ -e $DSYM_SYMBOL_ZIP_FILE ]; then\n                rm -f $DSYM_SYMBOL_ZIP_FILE\n                fi\n                # 如果只上传dSYM，直接压缩dSYM目录\n                zip -r -j $DSYM_SYMBOL_ZIP_FILE $dsymFile -x *.plist\n                else\n                # 使用符号表工具来生成Symbol文件\n                dSYMParse $dsymFile $DSYM_SYMBOL_ZIP_FILE\n                fi\n                \n                # 上传\n                dSYMUpload $CONFIG_BUGLY_APP_ID $CONFIG_BUGLY_APP_KEY $CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER $CONFIG_BUGLY_APP_VERSION $DSYM_SYMBOL_ZIP_FILE\n                done\n                \n                if [ $RET = \"F\" ]; then\n                exitWithMessage \"No .dSYM found in ${DSYM_FOLDER}\" 0\n                fi\n            }\n            \n            # 在Xcode工程中执行\n            function runInXcode(){\n                echo \"Uploading dSYM to Bugly in Xcode ...\"\n                \n                echo \"Info.Plist : ${INFOPLIST_FILE}\"\n                \n                BUNDLE_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' \"${INFOPLIST_FILE}\")\n                BUNDLE_SHORT_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' \"${INFOPLIST_FILE}\")\n                \n                # 组装Bugly默认识别的版本信息(格式为CFBundleShortVersionString(CFBundleVersion), 例如: 1.0(1))\n                if [ ! \"${CUSTOMIZED_APP_VERSION}\" ]; then\n                BUGLY_APP_VERSION=\"${BUNDLE_SHORT_VERSION}(${BUNDLE_VERSION})\"\n                else\n                BUGLY_APP_VERSION=\"${CUSTOMIZED_APP_VERSION}\"\n                fi\n                \n                echo \"--------------------------------\"\n                echo \"Prepare application information.\"\n                echo \"--------------------------------\"\n                \n                echo \"Product Name: ${PRODUCT_NAME}\"\n                echo \"Bundle Identifier: ${BUNDLE_IDENTIFIER}\"\n                echo \"Version: ${BUNDLE_SHORT_VERSION}\"\n                echo \"Build: ${BUNDLE_VERSION}\"\n                \n                echo \"Bugly App ID: ${BUGLY_APP_ID}\"\n                echo \"Bugly App key: ${BUGLY_APP_KEY}\"\n                echo \"Bugly App Version: ${BUGLY_APP_VERSION}\"\n                \n                echo \"--------------------------------\"\n                echo \"Check the arguments ...\"\n                \n                ##检查模拟器编译是否允许上传符号\n                if [ \"$EFFECTIVE_PLATFORM_NAME\" == \"-iphonesimulator\" ]; then\n                if [ $UPLOAD_SIMULATOR_SYMBOLS -eq 0 ]; then\n                exitWithMessage \"Warning: Build for simulator and skipping to upload. \\nYou can modify 'UPLOAD_SIMULATOR_SYMBOLS' to 1 in the script.\" 0\n                fi\n                fi\n                \n                ##检查是否是Release模式编译\n                if [ \"${CONFIGURATION=}\" == \"Debug\" ]; then\n                if [ $UPLOAD_DEBUG_SYMBOLS -eq 0 ]; then\n                exitWithMessage \"Warning: Build for debug mode and skipping to upload. \\nYou can modify 'UPLOAD_DEBUG_SYMBOLS' to 1 in the script.\" 0\n                fi\n                fi\n                \n                ##检查是否Archive操作\n                if [ $UPLOAD_ARCHIVE_ONLY -eq 1 ]; then\n                if [[ \"$TARGET_BUILD_DIR\" == *\"/Archive\"* ]]; then\n                echo \"Archive the package\"\n                else\n                exitWithMessage \"Warning: Build for NOT Archive mode and skipping to upload. \\nYou can modify 'UPLOAD_ARCHIVE_ONLY' to 0 in the script.\" 0\n                fi\n                fi\n                \n                #\n                run ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${BUILD_DIR}/BuglySymbolTemp ${UPLOAD_DSYM_ONLY}\n            }\n            \n            # 根据Xcode的环境变量判断是否处于Xcode环境\n            INFO_PLIST_FILE=\"${INFOPLIST_FILE}\"\n            \n            BuildInXcode=\"F\"\n            if [ -f \"${INFO_PLIST_FILE}\" ]; then\n            BuildInXcode=\"T\"\n            fi\n            \n            if [ $BuildInXcode = \"T\" ]; then\n            runInXcode\n            else\n            echo \"\\nUsage: dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir> [upload_dsym_only]\\n\"\n            # 你可以在此处直接设置BuglyAppID和BuglyAppKey，排除不常变参数的输入\n            BUGLY_APP_ID=\"$1\"\n            BUGLY_APP_KEY=\"$2\"\n            BUNDLE_IDENTIFIER=\"$3\"\n            BUGLY_APP_VERSION=\"$4\"\n            DWARF_DSYM_FOLDER_PATH=\"$5\"\n            SYMBOL_OUTPUT_PATH=\"$6\"\n            UPLOAD_DSYM_ONLY=$7\n            run ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${SYMBOL_OUTPUT_PATH} ${UPLOAD_DSYM_ONLY}\n            fi\n";
+		};
 		22E3344C09EA3A81CA65D34C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1221,6 +1322,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -1254,15 +1356,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				014995301FB4945700077866 /* BaseModel.m in Sources */,
 				0149953D1FB4A3F900077866 /* BPRootNavigationController.m in Sources */,
 				0149955C1FB4A48C00077866 /* BPXRZViewController.m in Sources */,
 				0149955F1FB4A49500077866 /* BPMasterCatalogueModel.m in Sources */,
 				014995741FB4A52B00077866 /* BPZTViewController.m in Sources */,
+				01BCB33E1FB55921009EF64E /* BPBaseServerAPI.m in Sources */,
 				0173401D1FA9753F006192F0 /* BPBaseNavigationController.m in Sources */,
 				0149953A1FB4A3D600077866 /* BPRootTabBarController.m in Sources */,
 				014995331FB494D800077866 /* BPBaseTableView.m in Sources */,
 				01733FE01FA974FB006192F0 /* main.m in Sources */,
+				0126E0221FBDB0DA00EE2610 /* BPPopViewMainController.m in Sources */,
 				01232D1D1FB2DFEA00F431EC /* NSNumber+BPDecimalNumber.m in Sources */,
 				014995791FB4A53300077866 /* BPSYViewController.m in Sources */,
 				0173401F1FA9753F006192F0 /* BPBaseTabBarController.m in Sources */,
@@ -1271,8 +1374,12 @@
 				01EC5F251FA9AAB100838BE2 /* KSCGUtilities.m in Sources */,
 				01ADC1F61FB492C1009150F0 /* BPBaseTableViewCell.m in Sources */,
 				01ADC1F91FB492D8009150F0 /* BPBaseTableViewController.m in Sources */,
+				019BFD871FB591D800750548 /* BPXRZViewModel.m in Sources */,
 				0173401E1FA9753F006192F0 /* BPBaseViewController.m in Sources */,
 				01232D241FB3ED0B00F431EC /* UIView+BPScreenshot.m in Sources */,
+				01BCB3441FB5598B009EF64E /* BPBaseViewModel.m in Sources */,
+				019BFD8B1FB5921E00750548 /* BPXRZTableViewCell.m in Sources */,
+				01BCB3301FB54A99009EF64E /* BPBaseModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1375,7 +1482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1424,7 +1531,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1436,8 +1543,8 @@
 			baseConfigurationReference = 193772C00264BDAF63ADB7B3 /* Pods-BaseProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 599FJK8FBV;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BaseProject/BaseProject-Prefix.pch";
@@ -1455,7 +1562,6 @@
 			baseConfigurationReference = 7D3E14031FDCFBD3612C5E10 /* Pods-BaseProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 599FJK8FBV;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;

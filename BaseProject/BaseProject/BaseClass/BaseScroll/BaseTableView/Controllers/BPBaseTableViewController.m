@@ -15,7 +15,7 @@
 
 @implementation BPBaseTableViewController
 
-- (instancetype)initWithStyle:(UITableViewStyle)tableViewStyle {
+- (instancetype)initWithTableStyle:(UITableViewStyle)tableViewStyle {
     self = [super init];
     if (self) {
         _tableViewStyle = tableViewStyle;
@@ -42,8 +42,6 @@
         _tableView = [[BPBaseTableView alloc] initWithFrame:CGRectZero style:self.tableViewStyle];
         _tableView.backgroundColor = [UIColor whiteColor];
         _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.backgroundColor = [UIColor whiteColor];
     }
     return _tableView;
 }
@@ -86,7 +84,7 @@
 
 #pragma mark - mj_refresh methods
 - (void)startOpenHeaderRefresh {
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(xw_headerRefresh)];
+//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
 }
 
 - (void)removeHeaderRefresh {
@@ -94,11 +92,22 @@
 }
 
 - (void)startOpenFooterRefresh {
-    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(xw_footerRefresh)];
+//    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
 }
 
 - (void)removeFooterRefresh {
     [self.tableView.mj_footer removeFromSuperview];
+}
+
+- (void)refreshDataSuccessed {
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+    [self.tableView reloadData];
+}
+
+- (void)refreshDataFailed {
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
 }
 
 - (NSIndexPath *)getIndexPathWithPoint:(CGPoint)point{
@@ -110,17 +119,6 @@
         }
     }];
     return indexPath;
-}
-
-- (void)refreshDataSuccessed{
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
-    [self.tableView reloadData];
-}
-
-- (void)refreshDataFailed{
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
 }
 
 #pragma mark - <UITableViewDelegate>

@@ -8,69 +8,55 @@
 
 #import "BPXRZViewController.h"
 #import "BPMasterCatalogueModel.h"
+#import "BPXRZViewModel.h"
+#import "BPXRZTableViewCell.h"
 
-@interface BPXRZViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (strong, nonatomic) UITableView *tableView;
+@interface BPXRZViewController ()
 @property (strong, nonatomic) NSArray *dataArray;
+@property (strong, nonatomic) BPXRZViewModel *viewModel;
 @end
 
 @implementation BPXRZViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self handleData];
-    [self configViews];
+}
+
+- (BPXRZViewModel *)viewModel{
+    if (!_viewModel) {
+        BPXRZViewModel *viewModel = [BPXRZViewModel viewModel];
+        weakify(viewModel);
+        [viewModel configTableviewCell:^BPXRZTableViewCell * _Nonnull(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
+            strongify(viewModel);
+            BPXRZTableViewCell *cell = [BPXRZTableViewCell cellWithTableView:tableView];
+            cell.model = viewModel.data[indexPath.row];
+            return cell;
+        }];
+        weakify(self);
+        [viewModel setDataLoadSuccessedConfig:^{
+            strongify(self);
+            [self refreshDataSuccessed];
+        } failed:^{
+            strongify(self);
+            [self refreshDataFailed];
+        }];
+        _viewModel = viewModel;
+    }
+    return _viewModel;
 }
 
 - (void)handleData {
-    self.dataArray = [[[BPMasterCatalogueModel alloc] init] getArrayData];
-}
-
-- (void)configViews {
-    self.view.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.tableView];
-    
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
-}
-
-- (UITableView *)tableView {
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.backgroundColor = [UIColor whiteColor];
-    }
-    return _tableView;
-}
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataArray.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"cellIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    BPMasterCatalogueModel *model = self.dataArray[indexPath.row];
-    cell.textLabel.text = model.title;
-    cell.detailTextLabel.text = model.briefIntro;
-    return cell;
+    self.tableView.dataSource = self.viewModel;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     BPMasterCatalogueModel *model = self.dataArray[indexPath.row];
     NSString *className = model.fileName;
-    Class ClassVc = NSClassFromString(className);
-    if (ClassVc) {
-        UIViewController *vc = [[ClassVc alloc] init];
+    Class classVc = NSClassFromString(className);
+    if (classVc) {
+        UIViewController *vc = [[classVc alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

@@ -8,6 +8,8 @@
 
 #import "BPAppDelegate.h"
 #import "BPRootTabBarController.h"
+#import <Bugly/Bugly.h>
+
 
 @interface BPAppDelegate ()
 
@@ -21,7 +23,31 @@
     BPRootTabBarController *RootVC = [[BPRootTabBarController alloc]init];
     self.window.rootViewController = RootVC;
     [self.window makeKeyAndVisible];
+//    [self configLaunchImage];
+    [self configSDKS];
     return YES;
+}
+
+- (void)configLaunchImage {
+    UIViewController *viewController = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil] instantiateViewControllerWithIdentifier:@"LaunchScreen"];
+    viewController.view.backgroundColor = [UIColor whiteColor];
+    UIView *launchView = viewController.view;
+    UIWindow *mainWindow = [UIApplication sharedApplication].keyWindow;
+    launchView.frame = [UIApplication sharedApplication].keyWindow.frame;
+    [mainWindow addSubview:launchView];
+    
+    [UIView animateWithDuration:0.6f delay:0.5f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        launchView.alpha = 0.0f;
+        launchView.layer.transform = CATransform3DScale(CATransform3DIdentity, 1.5f, 1.5f, 1.0f);
+    } completion:^(BOOL finished) {
+        [launchView removeFromSuperview];
+    }];
+}
+
+- (void)configSDKS {
+    BuglyConfig *debugMode = [[BuglyConfig alloc] init];
+    debugMode.debugMode = YES;
+    [Bugly startWithAppId:@"dc9e61f4db" developmentDevice:YES config:debugMode];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

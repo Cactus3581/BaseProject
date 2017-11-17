@@ -8,4 +8,9 @@ target "BaseProject" do
     pod "YYKit" 
     pod "YTKNetwork" 
     pod "MJExtension" 
+    pod "Bugly"
+	#pod "FreeStreamer"
+	pod "Reachability"
+	pod "IQKeyboardManager"
+	pod "SSZipArchive"
 end

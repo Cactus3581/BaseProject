@@ -19,4 +19,8 @@
 
 - (instancetype)initWithTableStyle:(UITableViewStyle)tableViewStyle;
 
+- (void)refreshDataSuccessed;
+
+- (void)refreshDataFailed;
+
 @end
