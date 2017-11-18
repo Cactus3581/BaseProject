@@ -11,7 +11,6 @@
 		01232D241FB3ED0B00F431EC /* UIView+BPScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 01232D231FB3ED0B00F431EC /* UIView+BPScreenshot.m */; };
 		0126B5361FB4ACBB00E522CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0126B5351FB4ACBB00E522CF /* MapKit.framework */; };
 		0126E0221FBDB0DA00EE2610 /* BPPopViewMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0126E0211FBDB0DA00EE2610 /* BPPopViewMainController.m */; };
-		0139A4DB1FBF3DC30011795E /* launchImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0139A4D91FBF3DC30011795E /* launchImage@3x.png */; };
 		0139A4DC1FBF3DC30011795E /* launchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0139A4DA1FBF3DC30011795E /* launchImage@2x.png */; };
 		014995331FB494D800077866 /* BPBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014995321FB494D800077866 /* BPBaseTableView.m */; };
 		0149953A1FB4A3D600077866 /* BPRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014995381FB4A3D500077866 /* BPRootTabBarController.m */; };
@@ -42,6 +41,7 @@
 		01BCB33E1FB55921009EF64E /* BPBaseServerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCB33C1FB55920009EF64E /* BPBaseServerAPI.m */; };
 		01BCB3441FB5598B009EF64E /* BPBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCB3431FB5598B009EF64E /* BPBaseViewModel.m */; };
 		01EC5F251FA9AAB100838BE2 /* KSCGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EC5F221FA9AAB100838BE2 /* KSCGUtilities.m */; };
+		01F739E91FC0940100FC7596 /* launchImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01F739E81FC0940100FC7596 /* launchImage@3x.png */; };
 		D3B433555DA690915B9FE756 /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAAF3753BBCECF75300EBB5 /* libPods-BaseProject.a */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +70,6 @@
 		0126B5351FB4ACBB00E522CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0126E0201FBDB0DA00EE2610 /* BPPopViewMainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPopViewMainController.h; sourceTree = "<group>"; };
 		0126E0211FBDB0DA00EE2610 /* BPPopViewMainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPopViewMainController.m; sourceTree = "<group>"; };
-		0139A4D91FBF3DC30011795E /* launchImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@3x.png"; sourceTree = "<group>"; };
 		0139A4DA1FBF3DC30011795E /* launchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@2x.png"; sourceTree = "<group>"; };
 		014995311FB494D800077866 /* BPBaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseTableView.h; sourceTree = "<group>"; };
 		014995321FB494D800077866 /* BPBaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseTableView.m; sourceTree = "<group>"; };
@@ -132,6 +131,7 @@
 		01EC5F221FA9AAB100838BE2 /* KSCGUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCGUtilities.m; sourceTree = "<group>"; };
 		01EC5F231FA9AAB100838BE2 /* KSDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSDataTool.h; sourceTree = "<group>"; };
 		01EC5F241FA9AAB100838BE2 /* KSCGUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCGUtilities.h; sourceTree = "<group>"; };
+		01F739E81FC0940100FC7596 /* launchImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@3x.png"; sourceTree = "<group>"; };
 		193772C00264BDAF63ADB7B3 /* Pods-BaseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.debug.xcconfig"; sourceTree = "<group>"; };
 		7BAAF3753BBCECF75300EBB5 /* libPods-BaseProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3E14031FDCFBD3612C5E10 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +220,13 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		014627FE1FC0A6BE005088F2 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendors;
 			sourceTree = "<group>";
 		};
 		0149952D1FB4944A00077866 /* BaseModel */ = {
@@ -830,7 +837,7 @@
 				0173401B1FA9753F006192F0 /* Resources */,
 				017340181FA9753F006192F0 /* Scenes */,
 				017340161FA9753F006192F0 /* Utility */,
-				017340191FA9753F006192F0 /* Vendors */,
+				014627FE1FC0A6BE005088F2 /* Vendors */,
 				01733FD61FA974FB006192F0 /* Main.storyboard */,
 				01733FD91FA974FB006192F0 /* Assets.xcassets */,
 				01733FDB1FA974FB006192F0 /* LaunchScreen.storyboard */,
@@ -1005,13 +1012,6 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		017340191FA9753F006192F0 /* Vendors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vendors;
-			sourceTree = "<group>";
-		};
 		0173401A1FA9753F006192F0 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1104,8 +1104,8 @@
 		01EC5F121FA9A58200838BE2 /* LaunchImage */ = {
 			isa = PBXGroup;
 			children = (
+				01F739E81FC0940100FC7596 /* launchImage@3x.png */,
 				0139A4DA1FBF3DC30011795E /* launchImage@2x.png */,
-				0139A4D91FBF3DC30011795E /* launchImage@3x.png */,
 			);
 			path = LaunchImage;
 			sourceTree = "<group>";
@@ -1257,8 +1257,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				019BFD8C1FB5921E00750548 /* BPXRZTableViewCell.xib in Resources */,
-				0139A4DB1FBF3DC30011795E /* launchImage@3x.png in Resources */,
 				014995751FB4A52B00077866 /* BPZTViewController.xib in Resources */,
+				01F739E91FC0940100FC7596 /* launchImage@3x.png in Resources */,
 				0149957A1FB4A53300077866 /* BPSYViewController.xib in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
 				0139A4DC1FBF3DC30011795E /* launchImage@2x.png in Resources */,
