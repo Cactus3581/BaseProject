@@ -9,31 +9,38 @@
 #import "BPBaseTableViewCell.h"
 #import <Masonry.h>
 
-static NSString *XWSearchResultCellIdentifier = @"XWSearchResultCellIdentifier";
+static NSString *cellIdentifier = @"BPBaseTableViewCell";
+
+@interface BPBaseTableViewCell()
+
+@end
 
 @implementation BPBaseTableViewCell{
     UILabel *_titleLabel;
     UILabel *_detailLabel;
 }
 
-+ (instancetype)xw_cellWithTableView:(UITableView *)tableView {
-    BPBaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:XWSearchResultCellIdentifier];
++ (instancetype)cellWithTableView:(UITableView *)tableView {
+    BPBaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[BPBaseTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:XWSearchResultCellIdentifier];
+        cell = [[BPBaseTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         [cell initailizeUI];
     }
     return cell;
 }
 
-#pragma mark - initialize methods
++ (instancetype)xib_cellWithTableView:(UITableView *)tableView {
+    BPBaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    [cell initailizeUI];
+    return cell;
+}
 
+#pragma mark - initialize methods
 - (void)initailizeUI{
     self.backgroundColor = [UIColor whiteColor];
     UILabel *songNameLabel = [UILabel new];
-    _titleLabel = songNameLabel;
-    //    songNameLabel.font = XFont(14);
+    _titleLabel = songNameLabel; 
     songNameLabel.numberOfLines = 0;
-    //    songNameLabel.textColor = XSkyBlueC;
     [self.contentView addSubview:songNameLabel];
     [songNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(widthRatio(10));
@@ -42,13 +49,14 @@ static NSString *XWSearchResultCellIdentifier = @"XWSearchResultCellIdentifier";
     
     UILabel *artistLabel = [UILabel new];
     _detailLabel = artistLabel;
-    //    artistLabel.font = XFont(12);
-    //    artistLabel.textColor = XSkyBlueC;
     [self.contentView addSubview:artistLabel];
     [artistLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(songNameLabel);
         make.top.equalTo(songNameLabel.mas_bottom).offset(widthRatio(2.5));
     }];
+    
+    _titleLabel.backgroundColor = [UIColor redColor];
+    _detailLabel.backgroundColor = [UIColor greenColor];
 }
 
 - (void)awakeFromNib {
@@ -60,4 +68,3 @@ static NSString *XWSearchResultCellIdentifier = @"XWSearchResultCellIdentifier";
 }
 
 @end
-

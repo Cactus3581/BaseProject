@@ -6,8 +6,8 @@
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "BPBaseViewController.h"
+#import "BPBaseTableViewController.h"
 
-@interface BPXRZViewController : BPBaseViewController
+@interface BPXRZViewController : BPBaseTableViewController
 
 @end

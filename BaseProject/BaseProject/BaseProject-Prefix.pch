@@ -12,5 +12,8 @@
 #import "Masonry.h"
 #import "KSDataTool.h"
 #import "KSCGUtilities.h"
+#import "BPAppMacro.h"
+#import "BPCatergory.h"
+#import "BPSingletonMacro.h"
 
 #endif /* BaseProject_Prefix_pch */

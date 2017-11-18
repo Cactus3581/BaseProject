@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BPBaseTableViewCell : UITableViewCell
-+ (instancetype)xw_cellWithTableView:(UITableView *)tableView;
+
++ (instancetype)cellWithTableView:(UITableView *)tableView;
 
 @end

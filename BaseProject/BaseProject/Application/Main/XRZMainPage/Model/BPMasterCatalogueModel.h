@@ -12,7 +12,4 @@
 @property (nonatomic,copy)  NSString *title;
 @property (nonatomic,copy)  NSString *fileName;
 @property (nonatomic,copy)  NSString *briefIntro;
-
-- (NSArray *)getArrayData;
-
 @end
