@@ -13,9 +13,9 @@
 @property (nonatomic, strong) BPBaseTableView *tableView;
 @property (nonatomic, assign)  UITableViewStyle tableViewStyle;
 
-@property (nonatomic, assign)  BOOL openRefresh;
-@property (nonatomic, assign)  BOOL openHeaderRefresh;
-@property (nonatomic, assign)  BOOL openFooterRefresh;
+@property (nonatomic, assign)  BOOL refresh;
+@property (nonatomic, assign)  BOOL headerRefresh;
+@property (nonatomic, assign)  BOOL footerRefresh;
 
 - (instancetype)initWithTableStyle:(UITableViewStyle)tableViewStyle;
 
@@ -23,4 +23,11 @@
 
 - (void)refreshDataFailed;
 
+
+- (void)endHeaderRefreshing;
+
+- (void)endFooterRefreshing;
+
+- (void)reloadData;
+    
 @end

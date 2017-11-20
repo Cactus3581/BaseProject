@@ -1,22 +1,22 @@
 //
-//  BPXRZViewController.m
+//  BPSimpleTableController.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/11/1.
+//  Created by xiaruzhen on 2017/11/21.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "BPXRZViewController.h"
-#import "BPMasterCatalogueModel.h"
-#import "BPXRZViewModel.h"
-#import "BPXRZTableViewCell.h"
+#import "BPSimpleTableController.h"
+#import "BPSimpleTableViewCell.h"
+#import "BPSimpleModel.h"
+#import "BPSimpleViewModel.h"
 
-@interface BPXRZViewController ()
+@interface BPSimpleTableController ()
 @property (strong, nonatomic) NSArray *dataArray;
-@property (strong, nonatomic) BPXRZViewModel *viewModel;
+@property (strong, nonatomic) BPSimpleViewModel *viewModel;
 @end
 
-@implementation BPXRZViewController
+@implementation BPSimpleTableController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,19 +24,20 @@
     [self handleData];
 }
 
-- (BPXRZViewModel *)viewModel{
+- (BPSimpleViewModel *)viewModel{
     if (!_viewModel) {
-        BPXRZViewModel *viewModel = [BPXRZViewModel viewModel];
+        BPSimpleViewModel *viewModel = [BPSimpleViewModel viewModel];
         weakify(viewModel);
-        [viewModel configTableviewCell:^BPXRZTableViewCell * _Nonnull(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
+        [viewModel configTableviewCell:^BPSimpleTableViewCell * _Nonnull(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
             strongify(viewModel);
-            BPXRZTableViewCell *cell = [BPXRZTableViewCell cellWithTableView:tableView];
+            BPSimpleTableViewCell *cell = [BPSimpleTableViewCell cellWithTableView:tableView];
             cell.model = viewModel.data[indexPath.row];
             return cell;
         }];
         weakify(self);
-        [viewModel setDataLoadSuccessedConfig:^{
+        [viewModel setDataLoadSuccessedConfig:^(NSArray * _Nonnull dataSource) {
             strongify(self);
+            self.dataArray = dataSource;
             [self refreshDataSuccessed];
         } failed:^{
             strongify(self);
@@ -52,7 +53,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    BPMasterCatalogueModel *model = self.dataArray[indexPath.row];
+    BPSimpleModel *model = self.dataArray[indexPath.row];
     NSString *className = model.fileName;
     Class classVc = NSClassFromString(className);
     if (classVc) {

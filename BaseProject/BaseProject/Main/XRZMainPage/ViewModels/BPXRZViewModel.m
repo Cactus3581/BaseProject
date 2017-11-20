@@ -7,18 +7,20 @@
 //
 
 #import "BPXRZViewModel.h"
-#import "BPMasterCatalogueModel.h"
+#import "BPSimpleModel.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import "NSObject+YYModel.h"
+typedef void(^successed)(NSArray *);
 
 @interface BPXRZViewModel ()
 @property (readwrite) NSArray *data;
+
 @end
 
 @implementation BPXRZViewModel{
-    dispatch_block_t _successed;
     dispatch_block_t _failed;
+    successed _successed;
 }
 
 @dynamic data;
@@ -35,7 +37,7 @@
     return self;
 }
 
-- (void)setDataLoadSuccessedConfig:(dispatch_block_t)successed failed:(dispatch_block_t)failed {
+- (void)setDataLoadSuccessedConfig:(void (^)(NSArray *dataSource))successed failed:(dispatch_block_t)failed {
     _successed = successed;
     _failed = failed;
     [self getNetData];
@@ -58,7 +60,10 @@
         doBlock(_failed);
         return;
     }
-    doBlock(_successed);
+    if (_successed) {
+        _successed(self.data);
+    }
+//    doBlock(_successed(self.data));
 }
 
 - (void)handleFailed{
@@ -68,7 +73,7 @@
 - (NSArray *)getArrayData {
     NSMutableArray *array = [NSMutableArray array];
     for (NSDictionary *dic in [self handleData]) {
-        BPMasterCatalogueModel *model = [BPMasterCatalogueModel modelWithDictionary:dic];
+        BPSimpleModel *model = [BPSimpleModel modelWithDictionary:dic];
         [array addObject:model];
     }
     return array.copy;
@@ -78,7 +83,7 @@
     //_dataArray = @[@"缓存设计",@"数字增长动画",@"KVO封装",];
     NSArray *array = @[
                        @{@"title":@"Bar",
-                         @"fileName":@"BPNaviAnimaViewController",
+                         @"fileName":@"BPSimpleTableController",
                          @"briefIntro":@"导航栏基本属性及动画/自定义Tabbar",
                          },
                        @{@"title":@"朋友圈",

@@ -53,61 +53,82 @@
     return _tableViewStyle;
 }
 
-- (void)setOpenRefresh:(BOOL)openRefresh {
-    _openRefresh = openRefresh;
-    if (openRefresh) {
-        [self startOpenHeaderRefresh];
-        [self startOpenFooterRefresh];
+- (void)setRefresh:(BOOL)refresh {
+    _refresh = refresh;
+    if (refresh) {
+        [self setUpHeaderRefresh];
+        [self setUpFooterRefresh];
     }else {
         [self removeHeaderRefresh];
         [self removeFooterRefresh];
     }
 }
 
-- (void)setOpenHeaderRefresh:(BOOL)openHeaderRefresh {
-    _openHeaderRefresh = openHeaderRefresh;
-    if (openHeaderRefresh) {
-        [self startOpenHeaderRefresh];
+- (void)setHeaderRefresh:(BOOL)headerRefresh {
+    _headerRefresh = headerRefresh;
+    if (headerRefresh) {
+        [self headerRefresh];
     }else {
         [self removeHeaderRefresh];
     }
 }
 
-- (void)setOpenFooerRefresh:(BOOL)openFooterRefresh {
-    _openFooterRefresh = openFooterRefresh;
-    if (openFooterRefresh) {
-        [self startOpenFooterRefresh];
+- (void)setFooerRefresh:(BOOL)footerRefresh {
+    _footerRefresh = footerRefresh;
+    if (footerRefresh) {
+        [self footerRefresh];
     }else {
         [self removeFooterRefresh];
     }
 }
 
 #pragma mark - mj_refresh methods
-- (void)startOpenHeaderRefresh {
-//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
+- (void)setUpHeaderRefresh {
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshAction)];
 }
 
 - (void)removeHeaderRefresh {
     [self.tableView.mj_header removeFromSuperview];
 }
 
-- (void)startOpenFooterRefresh {
-//    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
+- (void)setUpFooterRefresh {
+    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRefreshAction)];
 }
 
+- (void)footerRefreshAction {
+    
+}
+
+- (void)headerRefreshAction {
+    
+}
 - (void)removeFooterRefresh {
     [self.tableView.mj_footer removeFromSuperview];
 }
 
-- (void)refreshDataSuccessed {
+
+- (void)endHeaderRefreshing {
     [self.tableView.mj_header endRefreshing];
+
+}
+
+- (void)endFooterRefreshing {
     [self.tableView.mj_footer endRefreshing];
+
+}
+- (void)refreshDataSuccessed {
+    [self endHeaderRefreshing];
+    [self endFooterRefreshing];
+    [self reloadData];
+}
+
+- (void)reloadData {
     [self.tableView reloadData];
 }
 
 - (void)refreshDataFailed {
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
+    [self endHeaderRefreshing];
+    [self endFooterRefreshing];
 }
 
 - (NSIndexPath *)getIndexPathWithPoint:(CGPoint)point{

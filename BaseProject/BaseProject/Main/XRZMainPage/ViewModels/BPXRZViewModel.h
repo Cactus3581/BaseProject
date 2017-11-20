@@ -7,17 +7,17 @@
 //
 
 #import "BPBaseViewModel.h"
-@class BPMasterCatalogueModel;
+@class BPSimpleModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BPXRZViewModel : BPBaseViewModel
 
-@property (nullable, nonatomic, readonly) NSArray<BPMasterCatalogueModel *> *data;
+@property (nullable, nonatomic, readonly) NSArray<BPSimpleModel *> *data;
 
 + (instancetype)viewModel;
 
-- (void)setDataLoadSuccessedConfig:(dispatch_block_t)successed failed:(dispatch_block_t)failed;
+- (void)setDataLoadSuccessedConfig:(void (^)(NSArray *dataSource))successed failed:(dispatch_block_t)failed;
 
 - (void)footerRefresh;
 

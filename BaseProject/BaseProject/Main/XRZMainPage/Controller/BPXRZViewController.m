@@ -1,22 +1,22 @@
 //
-//  BPNaviAnimaViewController.m
+//  BPXRZViewController.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/11/9.
+//  Created by xiaruzhen on 2017/11/1.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "BPNaviAnimaViewController.h"
+#import "BPXRZViewController.h"
 #import "BPSimpleModel.h"
-#import "BPSimpleViewModel.h"
+#import "BPXRZViewModel.h"
 #import "BPSimpleTableViewCell.h"
 
-@interface BPNaviAnimaViewController ()
+@interface BPXRZViewController ()
 @property (strong, nonatomic) NSArray *dataArray;
-@property (strong, nonatomic) BPSimpleViewModel *viewModel;
+@property (strong, nonatomic) BPXRZViewModel *viewModel;
 @end
 
-@implementation BPNaviAnimaViewController
+@implementation BPXRZViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,9 +24,9 @@
     [self handleData];
 }
 
-- (BPSimpleViewModel *)viewModel{
+- (BPXRZViewModel *)viewModel{
     if (!_viewModel) {
-        BPSimpleViewModel *viewModel = [BPSimpleViewModel viewModel];
+        BPXRZViewModel *viewModel = [BPXRZViewModel viewModel];
         weakify(viewModel);
         [viewModel configTableviewCell:^BPSimpleTableViewCell * _Nonnull(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
             strongify(viewModel);
@@ -35,7 +35,7 @@
             return cell;
         }];
         weakify(self);
-        
+
         [viewModel setDataLoadSuccessedConfig:^(NSArray * _Nonnull dataSource) {
             strongify(self);
             self.dataArray = dataSource;
@@ -75,4 +75,3 @@
 }
 
 @end
-
