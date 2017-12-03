@@ -72,11 +72,17 @@ typedef void(^successed)(NSArray *);
 
 - (NSArray *)getArrayData {
     NSMutableArray *array = [NSMutableArray array];
-    for (NSDictionary *dic in [self handleData]) {
+    for (NSDictionary *dic in [self readInDocuments]) {
         BPSimpleModel *model = [BPSimpleModel modelWithDictionary:dic];
         [array addObject:model];
     }
     return array.copy;
+}
+
+- (NSArray *)readInDocuments{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"MainCatalog" ofType:@"plist"];
+    NSArray *array = [NSArray arrayWithContentsOfFile:path];
+    return array;
 }
 
 - (NSArray *)handleData {
@@ -85,7 +91,23 @@ typedef void(^successed)(NSArray *);
                        @{@"title":@"Bar",
                          @"fileName":@"BPSimpleTableController",
                          @"briefIntro":@"导航栏基本属性及动画/自定义Tabbar",
+                         @"subVc_array":
+                            @[
+                                 @{@"title":@"NaviBar",
+                                   @"fileName":@"BPNaviAnimaViewController",
+                                   @"briefIntro":@"导航栏基本属性及动画/自定义Tabbar",
+                                   },
+                                 @{@"title":@"Tabbar",
+                                   @"fileName":@"",
+                                   @"briefIntro":@"计算cell高度",
+                                   },
+                            ]
                          },
+                       @{@"title":@"日历Calendar",
+                         @"fileName":@"BPCalendarController",
+                         @"briefIntro":@"Calendar",
+                         },
+                       
                        @{@"title":@"朋友圈",
                          @"fileName":@"",
                          @"briefIntro":@"计算cell高度",

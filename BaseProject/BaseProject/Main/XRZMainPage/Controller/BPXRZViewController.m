@@ -10,6 +10,7 @@
 #import "BPSimpleModel.h"
 #import "BPXRZViewModel.h"
 #import "BPSimpleTableViewCell.h"
+#import "BPSimpleTableController.h"
 
 @interface BPXRZViewController ()
 @property (strong, nonatomic) NSArray *dataArray;
@@ -20,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = BPWhiteColor;
     [self handleData];
 }
 
@@ -58,8 +59,16 @@
     NSString *className = model.fileName;
     Class classVc = NSClassFromString(className);
     if (classVc) {
-        UIViewController *vc = [[classVc alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
+        if (model.subVc_array.count) {
+            BPSimpleTableController *vc = [[classVc alloc] init];
+            vc.dataArray = model.subVc_array;
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }else {
+            UIViewController * vc = [[classVc alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
     }
 }
 

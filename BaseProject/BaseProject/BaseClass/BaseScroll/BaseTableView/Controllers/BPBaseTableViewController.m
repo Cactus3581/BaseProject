@@ -40,7 +40,7 @@
 - (BPBaseTableView *)tableView {
     if (!_tableView) {
         _tableView = [[BPBaseTableView alloc] initWithFrame:CGRectZero style:self.tableViewStyle];
-        _tableView.backgroundColor = [UIColor whiteColor];
+        _tableView.backgroundColor = BPWhiteColor;
         _tableView.delegate = self;
     }
     return _tableView;

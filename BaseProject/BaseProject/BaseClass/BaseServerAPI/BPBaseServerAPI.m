@@ -40,4 +40,28 @@
     return @{};
 }
 
+#pragma mark - 验证返回来的json的合法性
+- (id)jsonValidator {
+    //    return @{
+    //             @"message": [NSArray class],
+    //             };
+    
+    return @{
+             @"message": @[@{
+                               @"imageUrl": [NSString class],
+                               @"moduleName": [NSString class],
+                               @"moduleType": [NSString class],
+                               @"position": [NSNumber class],
+                               @"subModuleName": [NSString class]
+                               }],
+             //            @"status": [NSNumber class],
+             };
+}
+
+#pragma mark - 按时间缓存内容,时间之内，不再请求
+- (NSInteger)cacheTimeInSeconds {
+    // 3 分钟 = 180 秒
+    return 60 * 3;
+}
+
 @end

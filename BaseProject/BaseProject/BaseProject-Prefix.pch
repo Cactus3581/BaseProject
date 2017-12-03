@@ -15,5 +15,7 @@
 #import "BPAppMacro.h"
 #import "BPCatergory.h"
 #import "BPSingletonMacro.h"
+#import "BPColorMacro.h"
+
 
 #endif /* BaseProject_Prefix_pch */

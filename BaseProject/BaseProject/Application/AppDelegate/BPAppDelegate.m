@@ -9,7 +9,8 @@
 #import "BPAppDelegate.h"
 #import "BPRootTabBarController.h"
 #import <Bugly/Bugly.h>
-
+#import "BPBaseViewController.h"
+#import "BPBaseNavigationController.h"
 
 @interface BPAppDelegate ()
 
@@ -19,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = BPWhiteColor;
     BPRootTabBarController *RootVC = [[BPRootTabBarController alloc]init];
     self.window.rootViewController = RootVC;
     [self.window makeKeyAndVisible];
@@ -28,9 +29,26 @@
     return YES;
 }
 
+- (void)addChildController {
+    //1.
+    BPBaseNavigationController *nav = [[BPBaseNavigationController alloc] init];
+    self.window.rootViewController = nav;
+    BPBaseViewController  *vc = [[BPBaseViewController  alloc] init];
+    [nav pushViewController:vc animated:YES];
+
+    //2.
+    [nav addChildViewController:vc];//注意该属性是只读的，因此不能像下面这样写。nav.childViewControllers = @[one];
+    
+    //3.
+    nav.viewControllers=@[vc];
+    
+    //4.最常用的方法
+    BPBaseNavigationController *nav_1 = [[BPBaseNavigationController alloc] initWithRootViewController:vc];
+}
+
 - (void)configLaunchImage {
     UIViewController *viewController = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil] instantiateViewControllerWithIdentifier:@"LaunchScreen"];
-    viewController.view.backgroundColor = [UIColor whiteColor];
+    viewController.view.backgroundColor = BPWhiteColor;
     UIView *launchView = viewController.view;
     UIWindow *mainWindow = [UIApplication sharedApplication].keyWindow;
     launchView.frame = [UIApplication sharedApplication].keyWindow.frame;

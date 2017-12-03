@@ -37,7 +37,7 @@ static NSString *cellIdentifier = @"BPBaseTableViewCell";
 
 #pragma mark - initialize methods
 - (void)initailizeUI{
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = BPWhiteColor;
     UILabel *songNameLabel = [UILabel new];
     _titleLabel = songNameLabel; 
     songNameLabel.numberOfLines = 0;
@@ -55,8 +55,8 @@ static NSString *cellIdentifier = @"BPBaseTableViewCell";
         make.top.equalTo(songNameLabel.mas_bottom).offset(widthRatio(2.5));
     }];
     
-    _titleLabel.backgroundColor = [UIColor redColor];
-    _detailLabel.backgroundColor = [UIColor greenColor];
+    _titleLabel.backgroundColor = BPRedColor;
+    _detailLabel.backgroundColor = BPGreenColor;
 }
 
 - (void)awakeFromNib {

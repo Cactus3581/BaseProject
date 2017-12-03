@@ -7,7 +7,13 @@
 //
 
 #import "BPSimpleModel.h"
+#import "NSObject+YYModel.h"
 
 @implementation BPSimpleModel
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"subVc_array" : [BPSimpleModel class],
+            };
+}
 
 @end

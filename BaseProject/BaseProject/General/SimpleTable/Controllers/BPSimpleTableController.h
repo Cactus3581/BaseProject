@@ -10,4 +10,6 @@
 
 @interface BPSimpleTableController : BPBaseTableViewController
 
+@property (strong, nonatomic) NSArray *dataArray;
+
 @end

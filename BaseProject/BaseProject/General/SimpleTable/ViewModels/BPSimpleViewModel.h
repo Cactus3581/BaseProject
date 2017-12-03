@@ -16,13 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, readonly) NSArray<BPSimpleModel *> *data;
 
-+ (instancetype)viewModel;
++ (instancetype)viewModelWithArray:(NSArray *)array;
 
-- (void)setDataLoadSuccessedConfig:(void (^)(NSArray *dataSource))successed failed:(dispatch_block_t)failed;
-
-- (void)footerRefresh;
-
-- (void)headerRefresh;
 
 @end
 

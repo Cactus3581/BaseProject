@@ -12,7 +12,6 @@
 #import "BPSimpleViewModel.h"
 
 @interface BPSimpleTableController ()
-@property (strong, nonatomic) NSArray *dataArray;
 @property (strong, nonatomic) BPSimpleViewModel *viewModel;
 @end
 
@@ -20,13 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = BPWhiteColor;
     [self handleData];
 }
 
 - (BPSimpleViewModel *)viewModel{
     if (!_viewModel) {
-        BPSimpleViewModel *viewModel = [BPSimpleViewModel viewModel];
+        BPSimpleViewModel *viewModel = [BPSimpleViewModel viewModelWithArray:self.dataArray];
         weakify(viewModel);
         [viewModel configTableviewCell:^BPSimpleTableViewCell * _Nonnull(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
             strongify(viewModel);
@@ -34,15 +33,7 @@
             cell.model = viewModel.data[indexPath.row];
             return cell;
         }];
-        weakify(self);
-        [viewModel setDataLoadSuccessedConfig:^(NSArray * _Nonnull dataSource) {
-            strongify(self);
-            self.dataArray = dataSource;
-            [self refreshDataSuccessed];
-        } failed:^{
-            strongify(self);
-            [self refreshDataFailed];
-        }];
+
         _viewModel = viewModel;
     }
     return _viewModel;
@@ -50,6 +41,7 @@
 
 - (void)handleData {
     self.tableView.dataSource = self.viewModel;
+    [self refreshDataSuccessed];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
