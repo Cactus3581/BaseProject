@@ -14,25 +14,22 @@
 // 头部图片的高度
 #define kHeardH  180.0f
 
-#ifdef DEBUG
-#define DLog(FORMAT, ...) fprintf(stderr,"%s\n\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
-#else
-#define DLog(...)
-#endif
-
 @interface BPNaviTableViewController ()<UITableViewDataSource, UITabBarDelegate, UIScrollViewDelegate>
+
 @property(nonatomic, strong) UIView *navigationView;       // 导航栏
 @property(nonatomic, strong) UIView *centerTextView;       // title文字
 @property (nonatomic, assign) CGFloat lastOffsetY;        // 记录上一次位置
 @property (nonatomic, strong) UIImageView *scaleImageView; // 顶部图片
 @property (nonatomic, strong) UITableView *tableView;
+
 @end
 
 @implementation BPNaviTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //    self.view.backgroundColor = BPGreenColor;
+    self.view.backgroundColor = kRedColor;
+    self.navigationItem.title = @"iOS 11";
     [self initTableView];
 }
 
@@ -227,14 +224,14 @@
     UILabel *titleLabel = [[UILabel alloc]init];
     titleLabel.text = title;
     titleLabel.font = [UIFont systemFontOfSize:12];
-    titleLabel.textColor = BPRedColor;
+    titleLabel.textColor = kRedColor;
     titleLabel.frame = CGRectMake(0,5, centerTextViewW, titleSize.height);
     
     UILabel *descLabel = [[UILabel alloc]init];
     descLabel.textAlignment = NSTextAlignmentCenter;
     descLabel.text = desc;
     descLabel.font = [UIFont systemFontOfSize:11];
-    descLabel.textColor = BPRedColor;
+    descLabel.textColor = kRedColor;
     descLabel.frame = CGRectMake(0, titleSize.height + 5, centerTextViewW, descSize.height);
     
     [centerTextView addSubview:titleLabel];
@@ -244,7 +241,6 @@
 
 
 #pragma mark - Lazy Load Methods
-
 - (UIImageView *)scaleImageView {
     if (!_scaleImageView) {
         _scaleImageView = [[UIImageView alloc] init];
@@ -265,36 +261,6 @@
         _tableView.backgroundColor = [UIColor clearColor];
     }
     return _tableView;
-}
-#pragma mark 导航栏位置和属性
-- (void)configureNavi {
-    self.view.backgroundColor = BPRedColor;
-    
-    //    Navc.navigationBar.barTintColor = BPRedColor;
-    //    Navc.navigationBar.barStyle = UIBarStyleBlackOpaque;
-    //    Navc.navigationBar.tintColor = BPWhiteColor;
-    //    self.edgesForExtendedLayout =  UIRectEdgeNone;
-    
-    self.navigationItem.title = @"iOS 11";
-    //    self.navigationController.navigationBar.prefersLargeTitles = YES;
-    //    self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAlways;
-    //    self.viewRespectsSystemMinimumLayoutMargins = YES;
-    
-    
-    //    self.addtionalSafeAreaInsets = UIEdgeInsetsMake(10, 10, 10, 10);
-    //    self.view.addtionalSafeAreaInsets = UIEdgeInsetsMake(10, 10, 10, 10);
-    //1. 默认 全屏
-    //self.edgesForExtendedLayout = UIRectEdgeAll;
-    //当transulent=NO的时候，不管edgesForExtendedLayout设置成UIRectEdgeAll还是UIRectEdgeNone，view都是从导航栏底部开始
-    //self.navigationController.navigationBar.translucent = YES;
-    
-    //2. 如果我们自定义了nav bar背景图片，view会从导航栏下面开始布局。
-    //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"headImage"] forBarMetrics:UIBarMetricsDefault];
-    //3.默认值NO，只有在不透明下才有用。那么为题来了，怎么让translucent=NO的时候，view也能从（0，0）开始布局呢？苹果也考虑到了这种需求，提供了 extendedLayoutIncludesOpaqueBars 这个属性。
-    //self.extendedLayoutIncludesOpaqueBars = YES;
-    
-    //4. 如果视图里面存在唯一一个UIScrollView或其子类View,那么它会自动设置相应的内边距
-    //    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)didReceiveMemoryWarning {

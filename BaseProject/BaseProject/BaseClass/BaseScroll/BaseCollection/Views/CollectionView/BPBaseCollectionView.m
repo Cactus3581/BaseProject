@@ -13,7 +13,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.backgroundColor = BPWhiteColor;;
+        self.backgroundColor = kWhiteColor;;
     }
     return self;
 }

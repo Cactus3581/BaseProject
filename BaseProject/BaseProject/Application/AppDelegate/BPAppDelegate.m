@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = BPWhiteColor;
+    self.window.backgroundColor = kWhiteColor;
     BPRootTabBarController *RootVC = [[BPRootTabBarController alloc]init];
     self.window.rootViewController = RootVC;
     [self.window makeKeyAndVisible];
@@ -48,7 +48,7 @@
 
 - (void)configLaunchImage {
     UIViewController *viewController = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil] instantiateViewControllerWithIdentifier:@"LaunchScreen"];
-    viewController.view.backgroundColor = BPWhiteColor;
+    viewController.view.backgroundColor = kWhiteColor;
     UIView *launchView = viewController.view;
     UIWindow *mainWindow = [UIApplication sharedApplication].keyWindow;
     launchView.frame = [UIApplication sharedApplication].keyWindow.frame;

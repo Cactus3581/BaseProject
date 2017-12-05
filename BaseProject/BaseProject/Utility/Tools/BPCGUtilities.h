@@ -1,14 +1,15 @@
 //
-//  KSCGUtilities.h
-//  PowerWord7
+//  BPCGUtilities.h
+//  BaseProject
 //
-//  Created by xiaruzhen on 2017/7/14.
-//  Copyright © 2017年 Kingsoft. All rights reserved.
+//  Created by xiaruzhen on 2017/12/5.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
 //方法声明
 CGSize XRZScreenSize();
 CGSize XRZScreenUniqueSize();
@@ -43,8 +44,8 @@ static inline CGFloat RadiansToDegrees(CGFloat radians) {
 #endif
 
 // main screen's scale 屏幕的像素倍数
-#ifndef KSScreenScale
-#define KSScreenScale XRZScreenScale()
+#ifndef kScreenScale
+#define kScreenScale XRZScreenScale()
 #endif
 
 // main screen's bounds
@@ -82,20 +83,60 @@ static inline CGFloat RadiansToDegrees(CGFloat radians) {
 #define kScreenUniqueHeight XRZScreenUniqueSize().height
 #endif
 
-#define K_width [UIScreen mainScreen].bounds.size.width
-#define K_height [UIScreen mainScreen].bounds.size.height
-#define k_screenW ([UIScreen mainScreen].bounds.size.width)/(375.0f)
-#define k_screenH ([UIScreen mainScreen].bounds.size.height)/(667.0f)
-
 // 判断是否是iPhone X
+#ifndef iPhoneX
 #define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
-// 状态栏高度
-#define STATUS_BAR_HEIGHT (iPhoneX ? 44.f : 20.f)
-// 导航栏高度
-#define NAVIGATION_BAR_HEIGHT (iPhoneX ? 88.f : 64.f)
-// tabBar高度
-#define TAB_BAR_HEIGHT (iPhoneX ? (49.f+34.f) : 49.f)
-// home indicator
-#define HOME_INDICATOR_HEIGHT (iPhoneX ? 34.f : 0.f)
+#endif
+
+// iOS8
+#ifndef kiOS8
+#define kiOS8 @available(iOS 8.0, *)
+#endif
+
+// iOS9
+#ifndef kiOS9
+#define kiOS9 @available(iOS 9.0, *)
+#endif
+
+// iOS10
+#ifndef kiOS10
+#define kiOS10 @available(iOS 10.0, *)
+#endif
+
+// iOS11
+#ifndef kiOS11
+#define kiOS11 @available(iOS 11.0, *)
+#endif
+
+// 状态栏增加的高度
+#ifndef kStatusBarAddHeight
+#define kStatusBarAddHeight (iPhoneX ? 24.f : 0.f)
+#endif
+
+// 适配iPhone X 状态栏高度
+#ifndef kStatusBarHeight
+#define kStatusBarHeight (iPhoneX ? 44.f : 20.f)
+#endif
+
+//适配iPhone X 导航栏高度
+#ifndef kNavHeight
+#define kNavHeight (iPhoneX ? 88.f : 64.f)
+#endif
+
+//适配iPhone X Tabbar高度
+#ifndef kTabbarHeight
+#define kTabbarHeight (iPhoneX ? (49.f + 34.f) : 49.f)
+#endif
+
+//适配iPhone X Tabbar距离底部的距离
+#ifndef kHomeIndicatorHeight
+#define kHomeIndicatorHeight (iPhoneX ? 34.f : 0.f)
+#endif
+
+//适配iPhone X Tabbar距离底部的距离
+#ifndef kTabbarSafeBottomMargin
+#define kTabbarSafeBottomMargin (iPhoneX ? 34.f : 0.f)
+#endif
 
 NS_ASSUME_NONNULL_END
+

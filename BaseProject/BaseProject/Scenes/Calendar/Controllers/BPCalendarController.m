@@ -35,7 +35,7 @@
 - (BPCalenderView *)calenderView {
     if (!_calenderView) {
         _calenderView= [[BPCalenderView alloc] init];
-        _calenderView.backgroundColor = BPRedColor;
+        _calenderView.backgroundColor = kRedColor;
     }
     return _calenderView;
 }

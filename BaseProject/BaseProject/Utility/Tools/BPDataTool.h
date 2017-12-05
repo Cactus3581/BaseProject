@@ -1,5 +1,5 @@
 //
-//  KSDataTool.h
+//  BPDataTool.h
 //  PowerWord7
 //
 //  Created by xiaruzhen on 2017/5/25.
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return 字符串
  */
-static inline NSString * KSValidateString(NSString *rawString) {
+static inline NSString * BPValidateString(NSString *rawString) {
     if (!rawString || [rawString isKindOfClass: [NSNull class]]) {
         return @"";
     }
@@ -26,7 +26,7 @@ static inline NSString * KSValidateString(NSString *rawString) {
     return rawString;
 };
 
-static inline NSString * KSJSON(id theData) {
+static inline NSString * BPJSON(id theData) {
     if (!theData) {
         return @"";
     }
@@ -34,7 +34,7 @@ static inline NSString * KSJSON(id theData) {
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:theData options:NSJSONWritingPrettyPrinted error:&error];
     if (jsonData && error == nil) {
         NSString *jsonStr = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
-        return KSValidateString(jsonStr);
+        return BPValidateString(jsonStr);
     }
     return @"";
 }
@@ -45,7 +45,7 @@ static inline NSString * KSJSON(id theData) {
  
  @return 字典
  */
-static inline NSDictionary * KSValidateDict(NSDictionary *rawDict) {
+static inline NSDictionary * BPValidateDict(NSDictionary *rawDict) {
     if (![rawDict isKindOfClass:[NSDictionary class]]) {
         return @{};
     }
@@ -57,14 +57,14 @@ static inline NSDictionary * KSValidateDict(NSDictionary *rawDict) {
  
  @return 数组
  */
-static inline NSArray * KSValidateArray(NSArray *rawArray) {
+static inline NSArray * BPValidateArray(NSArray *rawArray) {
     if (![rawArray isKindOfClass:[NSArray class]]) {
         return @[];
     }
     return rawArray;
 };
 
-static inline NSMutableArray * KSValidateMuArray(NSMutableArray *rawArray) {
+static inline NSMutableArray * BPValidateMuArray(NSMutableArray *rawArray) {
     if (![rawArray isKindOfClass:[NSMutableArray class]]) {
         return @[].mutableCopy;
     }
@@ -76,14 +76,14 @@ static inline NSMutableArray * KSValidateMuArray(NSMutableArray *rawArray) {
  
  @return id|nil
  */
-static inline id KSValidateArrayObjAtIdx(NSArray * rawArray, NSUInteger idx) {
+static inline id BPValidateArrayObjAtIdx(NSArray * rawArray, NSUInteger idx) {
     if (![rawArray isKindOfClass:[NSArray class]] || !rawArray.count) {
         return nil;
     }
     return idx > rawArray.count - 1 ? nil : rawArray[idx];
 };
 
-static inline id KSValidateMuArrayObjAtIdx(NSMutableArray * rawArray, NSUInteger idx) {
+static inline id BPValidateMuArrayObjAtIdx(NSMutableArray * rawArray, NSUInteger idx) {
     if (![rawArray isKindOfClass:[NSMutableArray class]] || !rawArray.count) {
         return nil;
     }
@@ -95,7 +95,7 @@ static inline id KSValidateMuArrayObjAtIdx(NSMutableArray * rawArray, NSUInteger
  
  @return NSNumber
  */
-static inline NSNumber * KSValidateNumber(NSNumber *rawNumber) {
+static inline NSNumber * BPValidateNumber(NSNumber *rawNumber) {
     if ([rawNumber isKindOfClass:[NSNumber class]]) {
         return rawNumber;
     }
@@ -117,14 +117,14 @@ static inline NSNumber * KSValidateNumber(NSNumber *rawNumber) {
  
  @return 数组
  */
-static inline id KSValidateID(id obj) {
+static inline id BPValidateID(id obj) {
     if (obj) {
         return obj;
     }
     return @"";
 };
 
-static inline NSString * KSTimeString(NSInteger seconds) {
+static inline NSString * BPTimeString(NSInteger seconds) {
     if (seconds >= second) {
         //传入秒 返回:xx:xx:xx
         NSInteger hour = seconds/second;
@@ -139,4 +139,5 @@ static inline NSString * KSTimeString(NSInteger seconds) {
 };
 
 NS_ASSUME_NONNULL_END
+
 

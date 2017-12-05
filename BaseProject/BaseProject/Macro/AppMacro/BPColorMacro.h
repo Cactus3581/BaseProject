@@ -9,36 +9,44 @@
 #ifndef BPColorMacro_h
 #define BPColorMacro_h
 
-#ifndef BPRedColor
-#define BPRedColor [UIColor redColor]
+#ifndef kRedColor
+#define kRedColor [UIColor redColor]
 #endif
 
-#ifndef BPGreenColor
-#define BPGreenColor [UIColor greenColor]
+#ifndef kGreenColor
+#define kGreenColor [UIColor greenColor]
 #endif
 
-#ifndef BPYellowColor
-#define BPYellowColor [UIColor yellowColor]
+#ifndef kYellowColor
+#define kYellowColor [UIColor yellowColor]
 #endif
 
-#ifndef BPBlueColor
-#define BPBlueColor [UIColor blueColor]
+#ifndef kBlueColor
+#define kBlueColor [UIColor blueColor]
 #endif
 
-#ifndef BPPurpleColor
-#define BPPurpleColor [UIColor purpleColor]
+#ifndef kPurpleColor
+#define kPurpleColor [UIColor purpleColor]
 #endif
 
-#ifndef BPOrangeColor
-#define BPOrangeColor [UIColor orangeColor]
+#ifndef kOrangeColor
+#define kOrangeColor [UIColor orangeColor]
 #endif
 
-#ifndef BPLightGrayColor
-#define BPLightGrayColor [UIColor lightGrayColor]
+#ifndef kLightGrayColor
+#define kLightGrayColor [UIColor lightGrayColor]
 #endif
 
-#ifndef BPWhiteColor
-#define BPWhiteColor [UIColor whiteColor]
+#ifndef kWhiteColor
+#define kWhiteColor [UIColor whiteColor]
+#endif
+
+#ifndef kBrownColor
+#define kBrownColor [UIColor brownColor]
+#endif
+
+#ifndef kCyanColor
+#define kCyanColor [UIColor cyanColor]
 #endif
 
 #endif /* BPColorMacro_h */

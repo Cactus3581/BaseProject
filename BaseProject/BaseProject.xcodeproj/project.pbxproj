@@ -37,6 +37,10 @@
 		0173401D1FA9753F006192F0 /* BPBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0173400B1FA9753F006192F0 /* BPBaseNavigationController.m */; };
 		0173401E1FA9753F006192F0 /* BPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0173400E1FA9753F006192F0 /* BPBaseViewController.m */; };
 		0173401F1FA9753F006192F0 /* BPBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017340121FA9753F006192F0 /* BPBaseTabBarController.m */; };
+		0184BF821FD6DB2C00CB9AAD /* BPTest_XibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0184BF801FD6DB2C00CB9AAD /* BPTest_XibViewController.m */; };
+		0184BF831FD6DB2C00CB9AAD /* BPTest_XibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0184BF811FD6DB2C00CB9AAD /* BPTest_XibViewController.xib */; };
+		0184BF861FD6E0EC00CB9AAD /* BPTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0184BF851FD6E0EC00CB9AAD /* BPTestViewController.m */; };
+		0184BF891FD6E49300CB9AAD /* BPCGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0184BF881FD6E49300CB9AAD /* BPCGUtilities.m */; };
 		018682681FC479700015A9D7 /* BPCalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018682671FC479700015A9D7 /* BPCalendarController.m */; };
 		0187FC6B1FC33CDB004E839E /* BPSimpleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0187FC6A1FC33CDB004E839E /* BPSimpleTableViewCell.m */; };
 		018972B11FC47CDD00D6DF5B /* BPCalenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018972B01FC47CDD00D6DF5B /* BPCalenderView.m */; };
@@ -62,7 +66,6 @@
 		01C935B41FC3399F00D98FD6 /* BPSimpleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C935B31FC3399F00D98FD6 /* BPSimpleTableController.m */; };
 		01C935BA1FC33A5900D98FD6 /* BPSimpleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C935B91FC33A5900D98FD6 /* BPSimpleModel.m */; };
 		01C935BD1FC33A6B00D98FD6 /* BPSimpleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C935BC1FC33A6B00D98FD6 /* BPSimpleViewModel.m */; };
-		01EC5F251FA9AAB100838BE2 /* KSCGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EC5F221FA9AAB100838BE2 /* KSCGUtilities.m */; };
 		D3B433555DA690915B9FE756 /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAAF3753BBCECF75300EBB5 /* libPods-BaseProject.a */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +143,14 @@
 		0173400F1FA9753F006192F0 /* BPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBaseViewController.h; sourceTree = "<group>"; };
 		017340111FA9753F006192F0 /* BPBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBaseTabBarController.h; sourceTree = "<group>"; };
 		017340121FA9753F006192F0 /* BPBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBaseTabBarController.m; sourceTree = "<group>"; };
+		0184BF7F1FD6DB2C00CB9AAD /* BPTest_XibViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTest_XibViewController.h; sourceTree = "<group>"; };
+		0184BF801FD6DB2C00CB9AAD /* BPTest_XibViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTest_XibViewController.m; sourceTree = "<group>"; };
+		0184BF811FD6DB2C00CB9AAD /* BPTest_XibViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTest_XibViewController.xib; sourceTree = "<group>"; };
+		0184BF841FD6E0EC00CB9AAD /* BPTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTestViewController.h; sourceTree = "<group>"; };
+		0184BF851FD6E0EC00CB9AAD /* BPTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTestViewController.m; sourceTree = "<group>"; };
+		0184BF871FD6E49300CB9AAD /* BPCGUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCGUtilities.h; sourceTree = "<group>"; };
+		0184BF881FD6E49300CB9AAD /* BPCGUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCGUtilities.m; sourceTree = "<group>"; };
+		0184BF8B1FD6F7A100CB9AAD /* BPDataTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDataTool.h; sourceTree = "<group>"; };
 		018682661FC479700015A9D7 /* BPCalendarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCalendarController.h; sourceTree = "<group>"; };
 		018682671FC479700015A9D7 /* BPCalendarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCalendarController.m; sourceTree = "<group>"; };
 		0187FC691FC33CDB004E839E /* BPSimpleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPSimpleTableViewCell.h; sourceTree = "<group>"; };
@@ -190,9 +201,6 @@
 		01C935BB1FC33A6B00D98FD6 /* BPSimpleViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPSimpleViewModel.h; sourceTree = "<group>"; };
 		01C935BC1FC33A6B00D98FD6 /* BPSimpleViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPSimpleViewModel.m; sourceTree = "<group>"; };
 		01EC5F201FA9A78200838BE2 /* BaseProject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseProject-Prefix.pch"; sourceTree = "<group>"; };
-		01EC5F221FA9AAB100838BE2 /* KSCGUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCGUtilities.m; sourceTree = "<group>"; };
-		01EC5F231FA9AAB100838BE2 /* KSDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSDataTool.h; sourceTree = "<group>"; };
-		01EC5F241FA9AAB100838BE2 /* KSCGUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCGUtilities.h; sourceTree = "<group>"; };
 		193772C00264BDAF63ADB7B3 /* Pods-BaseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.debug.xcconfig"; sourceTree = "<group>"; };
 		7BAAF3753BBCECF75300EBB5 /* libPods-BaseProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3E14031FDCFBD3612C5E10 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -973,6 +981,7 @@
 				0173401A1FA9753F006192F0 /* Helpers */,
 				014627FE1FC0A6BE005088F2 /* Vendors */,
 				0173401B1FA9753F006192F0 /* Resources */,
+				0184BF7A1FD6DA8B00CB9AAD /* TestUnit */,
 				01733FD61FA974FB006192F0 /* Main.storyboard */,
 				01733FD91FA974FB006192F0 /* Assets.xcassets */,
 				01733FDB1FA974FB006192F0 /* LaunchScreen.storyboard */,
@@ -1137,6 +1146,50 @@
 				01C9357E1FC3357900D98FD6 /* Image */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0184BF7A1FD6DA8B00CB9AAD /* TestUnit */ = {
+			isa = PBXGroup;
+			children = (
+				0184BF7B1FD6DADE00CB9AAD /* XIB */,
+			);
+			path = TestUnit;
+			sourceTree = "<group>";
+		};
+		0184BF7B1FD6DADE00CB9AAD /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				0184BF7C1FD6DAF600CB9AAD /* Controllers */,
+				0184BF7D1FD6DAF600CB9AAD /* Models */,
+				0184BF7E1FD6DAF700CB9AAD /* Views */,
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
+		0184BF7C1FD6DAF600CB9AAD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0184BF7F1FD6DB2C00CB9AAD /* BPTest_XibViewController.h */,
+				0184BF801FD6DB2C00CB9AAD /* BPTest_XibViewController.m */,
+				0184BF811FD6DB2C00CB9AAD /* BPTest_XibViewController.xib */,
+				0184BF841FD6E0EC00CB9AAD /* BPTestViewController.h */,
+				0184BF851FD6E0EC00CB9AAD /* BPTestViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0184BF7D1FD6DAF600CB9AAD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0184BF7E1FD6DAF700CB9AAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		018682431FC43A390015A9D7 /* Calendar */ = {
@@ -1502,9 +1555,9 @@
 		01EC5F211FA9AAB100838BE2 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				01EC5F231FA9AAB100838BE2 /* KSDataTool.h */,
-				01EC5F241FA9AAB100838BE2 /* KSCGUtilities.h */,
-				01EC5F221FA9AAB100838BE2 /* KSCGUtilities.m */,
+				0184BF8B1FD6F7A100CB9AAD /* BPDataTool.h */,
+				0184BF871FD6E49300CB9AAD /* BPCGUtilities.h */,
+				0184BF881FD6E49300CB9AAD /* BPCGUtilities.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1649,6 +1702,7 @@
 				01C935A51FC337E100D98FD6 /* BPSYViewController.xib in Resources */,
 				01C935831FC3358B00D98FD6 /* launchImage@2x.png in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
+				0184BF831FD6DB2C00CB9AAD /* BPTest_XibViewController.xib in Resources */,
 				01352FE31FD2DDA20011D65C /* MainCatalog.plist in Resources */,
 				01119A1D1FD3EEAD006DC02E /* BPCollectionReusableFootView.xib in Resources */,
 				01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */,
@@ -1757,6 +1811,8 @@
 				018972CE1FC4824100D6DF5B /* BPCalendarCollectionHeadView.m in Sources */,
 				014995331FB494D800077866 /* BPBaseTableView.m in Sources */,
 				018972C31FC4811400D6DF5B /* BPBaseCollectionView.m in Sources */,
+				0184BF891FD6E49300CB9AAD /* BPCGUtilities.m in Sources */,
+				0184BF821FD6DB2C00CB9AAD /* BPTest_XibViewController.m in Sources */,
 				01119A171FD3EE96006DC02E /* BPCollectionReusableHeadView.m in Sources */,
 				01733FE01FA974FB006192F0 /* main.m in Sources */,
 				01C935A41FC337E100D98FD6 /* BPSYViewController.m in Sources */,
@@ -1769,6 +1825,7 @@
 				0126E0221FBDB0DA00EE2610 /* BPPopViewMainController.m in Sources */,
 				01352FF81FD2E1D80011D65C /* BPNaviTableViewController.m in Sources */,
 				01352FFB1FD2E1E90011D65C /* BPNaviCollectionViewController.m in Sources */,
+				0184BF861FD6E0EC00CB9AAD /* BPTestViewController.m in Sources */,
 				0187FC6B1FC33CDB004E839E /* BPSimpleTableViewCell.m in Sources */,
 				01C9359F1FC337E100D98FD6 /* BPXRZViewModel.m in Sources */,
 				01232D1D1FB2DFEA00F431EC /* NSNumber+BPDecimalNumber.m in Sources */,
@@ -1776,7 +1833,6 @@
 				0173401F1FA9753F006192F0 /* BPBaseTabBarController.m in Sources */,
 				01C935BA1FC33A5900D98FD6 /* BPSimpleModel.m in Sources */,
 				0173401C1FA9753F006192F0 /* BPAppDelegate.m in Sources */,
-				01EC5F251FA9AAB100838BE2 /* KSCGUtilities.m in Sources */,
 				018972C71FC481BF00D6DF5B /* BPBaseCollectionViewCell.m in Sources */,
 				01ADC1F61FB492C1009150F0 /* BPBaseTableViewCell.m in Sources */,
 				01119A1C1FD3EEAD006DC02E /* BPCollectionReusableFootView.m in Sources */,

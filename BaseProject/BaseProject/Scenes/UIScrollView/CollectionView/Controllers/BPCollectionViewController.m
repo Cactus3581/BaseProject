@@ -54,7 +54,7 @@ static NSString *footer_nib_identifier = @"nib_footer";
         flowLayout.minimumLineSpacing = 20;
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
         flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        if (@available(iOS 9,*)) {
+        if (kiOS9) {
             flowLayout.sectionHeadersPinToVisibleBounds = YES;//悬停
             flowLayout.sectionFootersPinToVisibleBounds = YES;
         }
@@ -70,7 +70,7 @@ static NSString *footer_nib_identifier = @"nib_footer";
         _collectionView.bounces = YES;
         _collectionView.alwaysBounceVertical = YES;
         _collectionView.showsVerticalScrollIndicator = YES;
-        _collectionView.backgroundColor = BPLightGrayColor;
+        _collectionView.backgroundColor = kLightGrayColor;
 
         //_collectionView.contentInset = UIEdgeInsetsMake(headViewHeight, 0, 0, 0);
         //_collectionView.scrollIndicatorInsets = self.collectionView.contentInset;
@@ -107,11 +107,11 @@ static NSString *footer_nib_identifier = @"nib_footer";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cell_identifier forIndexPath:indexPath];
-        cell.backgroundColor = BPGreenColor;
+        cell.backgroundColor = kGreenColor;
         return cell;
     }
     BPCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:cell_nib_identifier forIndexPath:indexPath];
-    cell.backgroundColor = BPYellowColor;
+    cell.backgroundColor = kYellowColor;
     return cell;
 }
 
@@ -141,21 +141,21 @@ static NSString *footer_nib_identifier = @"nib_footer";
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         if (indexPath.section == 0) {
             UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:header_identifier forIndexPath:indexPath];
-            headerView.backgroundColor = BPPurpleColor;
+            headerView.backgroundColor = kPurpleColor;
             return headerView;
         }
         BPCollectionReusableHeadView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:header_nib_identifier forIndexPath:indexPath];
-        headerView.backgroundColor = BPBlueColor;
+        headerView.backgroundColor = kBlueColor;
         return headerView;
         
     }else if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
         if (indexPath.section == 0) {
             UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:footer_identifier forIndexPath:indexPath];
-            footerView.backgroundColor = BPRedColor;
+            footerView.backgroundColor = kRedColor;
             return footerView;
         }
         BPCollectionReusableFootView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:footer_nib_identifier forIndexPath:indexPath];
-        footerView.backgroundColor = BPOrangeColor;
+        footerView.backgroundColor = kOrangeColor;
         return footerView;
     }
     return nil;

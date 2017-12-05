@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = BPGreenColor;
+    self.view.backgroundColor = kGreenColor;
     //[self configNavigationItem];//navigationItem
     //[self configNavigationBar];//navigationBar
     //[self configSubViews];      //由导航栏引起的零点坐标问题
@@ -38,7 +38,7 @@
 
 #pragma mark iOS 11 新特性
 - (void)configNewFeature {
-    if (@available(iOS 11,*)) {
+    if (kiOS11) {
         //self.navigationController.navigationBar.prefersLargeTitles = YES;
         
         /*
@@ -102,9 +102,12 @@
     
     //shadowImage:是导航栏下面的那根细线，如果不设置则会看到一根线。
     self.navigationController.navigationBar.shadowImage = [UIImage new];
+    //方法二：
+    //self.navigationController.navigationBar.clipsToBounds = YES;
+    //此处使底部线条颜色为红色
+    //[navigationBar setShadowImage:[UIImage imageWithColor:[UIColor redColor]]];
     
-    
-    [UINavigationBar appearance].tintColor = BPOrangeColor;
+    [UINavigationBar appearance].tintColor = kOrangeColor;
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navi_backImage"] forBarMetrics:UIBarMetricsDefault];
     
     /*
@@ -117,10 +120,10 @@
     //self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
     //barTintColor:导航栏背景色
-    //self.navigationController.navigationBar.barTintColor = BPOrangeColor;
+    //self.navigationController.navigationBar.barTintColor = kOrangeColor;
     
     //tintColor:按钮颜色，包括图片跟字体
-    self.navigationController.navigationBar.tintColor = BPPurpleColor;
+    self.navigationController.navigationBar.tintColor = kPurpleColor;
     
     //translucent:半透明开关
     //当为NO时:ViewController上的View的原点坐标会以navigationBar以下的坐标为原点
@@ -139,7 +142,7 @@
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
     shadow.shadowOffset = CGSizeMake(0, 2);
     //字典中放入你想修改的键值对,原来的UITextAttributeFont、UITextAttributeTextColor、UITextAttributeTextShadowColor、UITextAttributeTextShadowOffset已弃用
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:BPRedColor,
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:kRedColor,
                                                                     NSShadowAttributeName:shadow,
                                                                     NSFontAttributeName:[UIFont systemFontOfSize:15]
                                                                     };
@@ -218,9 +221,9 @@ iOS7之后都是从屏幕原点开始布局的，但是有时，我们也会遇�
 #pragma mark - 2. translucent:半透明开关
     //默认为YES时:ViewController上的View的原点坐标会以屏幕左上角为原点
     //当为NO时:ViewController上的View的原点坐标会以navigationBar以下的坐标为原点。不管edgesForExtendedLayout设置成UIRectEdgeAll还是UIRectEdgeNone，view都是从导航栏底部开始
-//    self.navigationController.navigationBar.translucent = NO;
-
-
+    //    self.navigationController.navigationBar.translucent = NO;
+    
+    
 #pragma mark - 3. extendedLayoutIncludesOpaqueBars:默认值NO，这个属性指定了当Bar使用了不透明图片时，视图是否延伸至Bar所在区域； 但是Bar的默认属性是透明的。也就是说只有在不透明下才有用；因此，如果我们自定义了navBar背景图片，view会从导航栏下面开始布局。
     //如果我们自定义了nav bar背景图片，view会从导航栏下面开始布局。
     //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"naviBar"] forBarMetrics:UIBarMetricsDefault];
@@ -234,8 +237,8 @@ iOS7之后都是从屏幕原点开始布局的，但是有时，我们也会遇�
      如果一个控制器被导航控制器管理。并且该控制器的第一个子控件是UIScrollView,系统默认会调节UIScrollView的contentInset
      　　UIEdgeInsetsMake(64, 0, 0, 0) // 有导航栏
      　　UIEdgeInsetsMake(0, 0, 0, 0) // 没有导航栏; //UIEdgeInsetsMake(20, 0, 0, 0) // 没有导航栏,这个错误
-
-        UIEdgeInsetsMake(64, 0, 49, 0) // 导航控制器又被UITabBarController管理
+     
+     UIEdgeInsetsMake(64, 0, 49, 0) // 导航控制器又被UITabBarController管理
      
      　　以下为如何取消系统的默认这自动调节功能
      */
@@ -254,7 +257,7 @@ iOS7之后都是从屏幕原点开始布局的，但是有时，我们也会遇�
         make.edges.equalTo(self.view);
     }];
     //[self.collectionview setContentInset:UIEdgeInsetsMake(64, 0, 0, 0)];
-    _collectionview.backgroundColor = BPBlueColor;
+    _collectionview.backgroundColor = kBlueColor;
     //_collectionview.layoutMargins = UIEdgeInsetsMake(10, 10, 10, 10);
     _collectionview.dataSource = self;
     _collectionview.delegate = self;
@@ -264,7 +267,7 @@ iOS7之后都是从屏幕原点开始布局的，但是有时，我们也会遇�
     [_collectionview registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     
     //禁止系统自动对scrollview调整contentInsets的。
-    if (@available(iOS 11,*)) {
+    if (kiOS11) {
         self.collectionview.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }else {
         self.automaticallyAdjustsScrollViewInsets = NO;
@@ -272,7 +275,7 @@ iOS7之后都是从屏幕原点开始布局的，但是有时，我们也会遇�
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:view];
-    view.backgroundColor = BPRedColor;
+    view.backgroundColor = kRedColor;
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(150);
         //make.top.equalTo(self.view).mas_offset(64);
@@ -301,19 +304,19 @@ iOS7之后都是从屏幕原点开始布局的，但是有时，我们也会遇�
 
 
 #pragma mark - collectionview delegate
-//定义展示的UICollectionViewCell的个数
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 3;
-}
-
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
+}
+
+//定义展示的UICollectionViewCell的个数
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 15;
 }
 
 //每个UICollectionView展示的内容
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.backgroundColor = BPPurpleColor;
+    cell.backgroundColor = kPurpleColor;
     return cell;
 }
 

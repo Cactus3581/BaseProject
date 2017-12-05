@@ -37,7 +37,7 @@ static CGFloat cellH = 50;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Plain";
-    self.view.backgroundColor = BPGreenColor;
+    self.view.backgroundColor = kGreenColor;
     [self configTableView];
 }
 
@@ -71,7 +71,7 @@ static CGFloat cellH = 50;
     }
     cell.textLabel.text = @"我是cell";
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.backgroundColor = BPYellowColor;
+    cell.backgroundColor = kYellowColor;
     return cell;
 }
 
@@ -82,7 +82,7 @@ static CGFloat cellH = 50;
 //- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
 //    //UIView *footerView = [[[NSBundle mainBundle] loadNibNamed:placedFooterView_identifier owner:self options:nil] lastObject];
 //    UILabel *footerView = [[UILabel alloc] initWithFrame:CGRectZero];
-//    footerView.backgroundColor = BPGreenColor;
+//    footerView.backgroundColor = kGreenColor;
 //    footerView.text = @"我是footer";
 //    return footerView;
 //}
@@ -95,7 +95,7 @@ static CGFloat cellH = 50;
 //- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 //    //UIView  *headerView = [[[NSBundle mainBundle] loadNibNamed:calendarFooter_identifier owner:self options:nil] lastObject];
 //    UILabel *headerView = [[UILabel alloc] initWithFrame:CGRectZero];
-//    headerView.backgroundColor = BPRedColor;
+//    headerView.backgroundColor = kRedColor;
 //    headerView.text = @"我是header";
 //    return headerView;
 //}
@@ -131,10 +131,10 @@ static CGFloat cellH = 50;
 //        _tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
         
          UILabel *headerView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, headerH)];
-         headerView.backgroundColor = BPGreenColor;
+         headerView.backgroundColor = kGreenColor;
          headerView.text = @"我是tableHeader";
          UILabel *footerView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, footerH)];
-         footerView.backgroundColor = BPGreenColor;
+         footerView.backgroundColor = kGreenColor;
          footerView.text = @"我是tablefooter";
          _tableView.tableHeaderView = headerView;
          _tableView.tableFooterView = footerView;
@@ -143,7 +143,7 @@ static CGFloat cellH = 50;
         _tableView.estimatedRowHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;
         _tableView.estimatedSectionFooterHeight = 0;
-        _tableView.backgroundColor = BPPurpleColor;
+        _tableView.backgroundColor = kPurpleColor;
         //[self register_tableView_nib];
     }
     return _tableView;

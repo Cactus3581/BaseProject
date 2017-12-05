@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = BPWhiteColor;
+    self.view.backgroundColor = kWhiteColor;
     [self handleData];
 }
 

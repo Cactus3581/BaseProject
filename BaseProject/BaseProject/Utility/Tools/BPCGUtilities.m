@@ -1,12 +1,13 @@
 //
-//  KSCGUtilities.m
-//  PowerWord7
+//  BPCGUtilities.m
+//  BaseProject
 //
-//  Created by xiaruzhen on 2017/7/14.
-//  Copyright © 2017年 Kingsoft. All rights reserved.
+//  Created by xiaruzhen on 2017/12/5.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "KSCGUtilities.h"
+#import "BPCGUtilities.h"
+
 //方法实现
 
 /**
@@ -100,3 +101,4 @@ CGFloat XRZScreenScale() {
     });
     return scale;
 }
+

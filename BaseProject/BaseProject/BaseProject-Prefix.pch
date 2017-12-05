@@ -10,8 +10,8 @@
 #define BaseProject_Prefix_pch
 
 #import "Masonry.h"
-#import "KSDataTool.h"
-#import "KSCGUtilities.h"
+#import "BPDataTool.h"
+#import "BPCGUtilities.h"
 #import "BPAppMacro.h"
 #import "BPCatergory.h"
 #import "BPSingletonMacro.h"

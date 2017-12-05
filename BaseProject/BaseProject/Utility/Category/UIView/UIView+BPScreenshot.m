@@ -48,7 +48,7 @@
 #pragma mark -  截图功能
 - (UIImage*)captureView:(UIView *)theView {
     CGRect rect = theView.frame;
-    UIGraphicsBeginImageContextWithOptions(rect.size, NO, KSScreenScale);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, kScreenScale);
     CGContextRef context = UIGraphicsGetCurrentContext();
     [theView.layer renderInContext:context];
     UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
@@ -59,7 +59,7 @@
 #pragma mark - 拼接图片
 - (UIImage *)composeWithTopImage:(UIImage *)top bottomImage:(UIImage *)bottom {
     CGSize size = CGSizeMake(top.size.width, top.size.height+bottom.size.height);
-    UIGraphicsBeginImageContextWithOptions(size, NO, KSScreenScale);
+    UIGraphicsBeginImageContextWithOptions(size, NO, kScreenScale);
     [top drawInRect:CGRectMake(0,0,top.size.width,top.size.height)];
     [bottom drawInRect:CGRectMake(0,top.size.height,top.size.width,bottom.size.height)];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
