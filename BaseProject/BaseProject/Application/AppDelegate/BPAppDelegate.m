@@ -19,14 +19,20 @@
 @implementation BPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = kWhiteColor;
     BPRootTabBarController *RootVC = [[BPRootTabBarController alloc]init];
     self.window.rootViewController = RootVC;
-    [self.window makeKeyAndVisible];
     [self configLaunchImage];
     [self configSDKS];
     return YES;
+}
+
+- (UIWindow *)window{
+    if (!_window) {
+        _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    }
+    _window.backgroundColor = kWhiteColor;
+    [_window makeKeyAndVisible];
+    return _window;
 }
 
 - (void)addChildController {
