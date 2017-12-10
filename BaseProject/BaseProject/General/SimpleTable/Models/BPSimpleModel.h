@@ -13,8 +13,5 @@
 @property (nonatomic,copy)  NSString *title;
 @property (nonatomic,copy)  NSString *fileName;
 @property (nonatomic,copy)  NSString *briefIntro;
-<<<<<<< HEAD:BaseProject/BaseProject/Application/Main/XRZMainPage/Model/BPMasterCatalogueModel.h
-=======
 @property (nonatomic,strong)  NSArray *subVc_array;
->>>>>>> develop:BaseProject/BaseProject/General/SimpleTable/Models/BPSimpleModel.h
 @end

@@ -55,13 +55,8 @@ static NSString *cellIdentifier = @"BPBaseTableViewCell";
         make.top.equalTo(songNameLabel.mas_bottom).offset(widthRatio(2.5));
     }];
     
-<<<<<<< HEAD
-    _titleLabel.backgroundColor = [UIColor redColor];
-    _detailLabel.backgroundColor = [UIColor greenColor];
-=======
     _titleLabel.backgroundColor = kRedColor;
     _detailLabel.backgroundColor = kGreenColor;
->>>>>>> develop
 }
 
 - (void)awakeFromNib {

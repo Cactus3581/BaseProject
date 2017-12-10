@@ -16,11 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-<<<<<<< HEAD
-    self.view.backgroundColor = [UIColor whiteColor];
-=======
     self.view.backgroundColor = kWhiteColor;
->>>>>>> develop
 
     // Do any additional setup after loading the view.
 }

@@ -26,9 +26,6 @@ THE SOFTWARE.
 
 ## Bugly
 
-<<<<<<< HEAD
-Copyright 2017 tencent.com. All rights reserved.
-=======
 Copyright 2017 Bugly Tencent. All rights reserved.
 
 
@@ -108,7 +105,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
->>>>>>> develop
 
 
 ## FMDB
@@ -170,8 +166,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-<<<<<<< HEAD
-=======
 ## KTVHTTPCache
 
 MIT License
@@ -197,7 +191,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
->>>>>>> develop
 ## MJExtension
 
 Copyright (c) 2013-2015 MJExtension (https://github.com/CoderMJLee/MJExtension)
@@ -328,8 +321,6 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-<<<<<<< HEAD
-=======
 ## UITableView+FDTemplateLayoutCell
 
 The MIT License (MIT)
@@ -356,7 +347,6 @@ SOFTWARE.
 
 
 
->>>>>>> develop
 ## YTKNetwork
 
 Copyright (c) 2012-2016 YTKNetwork https://github.com/yuantiku

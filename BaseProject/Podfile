@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-platform :ios, "8.0"
-target "BaseProject" do
-    pod "AFNetworking"
-    pod "SDWebImage"
-    pod "Masonry" 
-    pod "MJRefresh" 
-    pod "FMDB" 
-    pod "YYKit" 
-    pod "YTKNetwork" 
-    pod "MJExtension" 
-    pod "Bugly"
-	#pod "FreeStreamer"
-	pod "Reachability"
-	pod "IQKeyboardManager"
-	pod "SSZipArchive"
-=======
 platform :ios, '8.0'
 target 'BaseProject' do
     pod 'AFNetworking'
@@ -34,5 +17,4 @@ target 'BaseProject' do
     pod 'hpple'
     pod 'KTVHTTPCache'
     #pod 'FreeStreamer'
->>>>>>> develop
 end

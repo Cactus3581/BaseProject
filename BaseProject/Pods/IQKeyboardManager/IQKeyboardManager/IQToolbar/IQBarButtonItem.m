@@ -23,10 +23,7 @@
 
 #import "IQBarButtonItem.h"
 #import "IQKeyboardManagerConstantsInternal.h"
-<<<<<<< HEAD
-=======
 #import <UIKit/NSAttributedString.h>
->>>>>>> develop
 
 @implementation IQBarButtonItem
 
@@ -36,33 +33,12 @@
 
     IQBarButtonItem *appearanceProxy = [self appearance];
 
-<<<<<<< HEAD
-//    if ([self respondsToSelector:@selector(appearanceWhenContainedInInstancesOfClasses:)])
-//    {
-//        appearanceProxy = [self appearanceWhenContainedInInstancesOfClasses:@[[IQToolbar class]]];
-//    }
-//    else
-//    {
-//        appearanceProxy = [self appearanceWhenContainedIn:[IQToolbar class], nil];
-//    }
-    
     NSArray <NSNumber*> *states = @[@(UIControlStateNormal),@(UIControlStateHighlighted),@(UIControlStateDisabled),@(UIControlStateSelected),@(UIControlStateApplication),@(UIControlStateReserved)];
     
-    //Tint color
-    [appearanceProxy setTintColor:nil];
-
-=======
-    NSArray <NSNumber*> *states = @[@(UIControlStateNormal),@(UIControlStateHighlighted),@(UIControlStateDisabled),@(UIControlStateSelected),@(UIControlStateApplication),@(UIControlStateReserved)];
-    
->>>>>>> develop
     for (NSNumber *state in states)
     {
         UIControlState controlState = [state unsignedIntegerValue];
 
-<<<<<<< HEAD
-        [appearanceProxy setTitleTextAttributes:nil forState:controlState];
-=======
->>>>>>> develop
         [appearanceProxy setBackgroundImage:nil forState:controlState barMetrics:UIBarMetricsDefault];
         [appearanceProxy setBackgroundImage:nil forState:controlState style:UIBarButtonItemStyleDone barMetrics:UIBarMetricsDefault];
         [appearanceProxy setBackgroundImage:nil forState:controlState style:UIBarButtonItemStylePlain barMetrics:UIBarMetricsDefault];
@@ -75,8 +51,6 @@
     [appearanceProxy setBackButtonBackgroundVerticalPositionAdjustment:0 forBarMetrics:UIBarMetricsDefault];
 }
 
-<<<<<<< HEAD
-=======
 -(void)setTintColor:(UIColor *)tintColor
 {
     [super setTintColor:tintColor];
@@ -89,7 +63,6 @@
     [self setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
 }
 
->>>>>>> develop
 - (instancetype)initWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(nullable id)target action:(nullable SEL)action
 {
     self = [super initWithBarButtonSystemItem:systemItem target:target action:action];

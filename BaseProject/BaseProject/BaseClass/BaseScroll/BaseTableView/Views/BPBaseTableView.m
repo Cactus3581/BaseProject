@@ -13,11 +13,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-<<<<<<< HEAD
-        self.backgroundColor = [UIColor whiteColor];
-=======
         self.backgroundColor = kWhiteColor;
->>>>>>> develop
     }
     return self;
 }

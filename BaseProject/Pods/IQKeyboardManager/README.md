@@ -55,26 +55,6 @@ alt="IQKeyboardManager Demo Video" width="480" height="360" border="10" /></a>
 ## Requirements
 [![Platform iOS](https://img.shields.io/badge/Platform-iOS-blue.svg?style=fla)]()
 
-<<<<<<< HEAD
-#### IQKeyboardManager:-
-[![Objective-c](https://img.shields.io/badge/Language-Objective C-blue.svg?style=flat)](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html)
-
-Minimum iOS Target: iOS 8.0
-
-Minimum Xcode Version: Xcode 8.2.1
-
-#### IQKeyboardManagerSwift:-
-[![Swift 3.1 compatible](https://img.shields.io/badge/Language-Swift3-blue.svg?style=flat)](https://developer.apple.com/swift)
-
-Minimum iOS Target: iOS 8.0
-
-Minimum Xcode Version: Xcode 8.2.1
-
-#### Demo Project:-
-
-Minimum Xcode Version: Xcode 9.0
-
-=======
 |                        | Language | Minimum iOS Target | Minimum Xcode Version |
 |------------------------|----------|--------------------|-----------------------|
 | IQKeyboardManager      | Obj-C    | iOS 8.0            | Xcode 8.2.1           |
@@ -98,7 +78,6 @@ Minimum Xcode Version: Xcode 9.0
 
 **Note**
 - `5.0.0` is backward compatible till Swift 3.
->>>>>>> develop
 
 Installation
 ==========================
@@ -107,19 +86,6 @@ Installation
 
 [![CocoaPods](https://img.shields.io/cocoapods/v/IQKeyboardManager.svg)](http://cocoadocs.org/docsets/IQKeyboardManager)
 
-<<<<<<< HEAD
-**Note:-** 
-- 3.3.7 is the last iOS 7 supported version.
-
-***IQKeyboardManager (Objective-C):-*** IQKeyboardManager is available through [CocoaPods](http://cocoapods.org), to install
-it simply add the following line to your Podfile: ([#9](https://github.com/hackiftekhar/IQKeyboardManager/issues/9))
-
-*iOS8 and later* `pod 'IQKeyboardManager'`
-
-*iOS7* `pod 'IQKeyboardManagerSwift', '3.3.7'`
-
-***IQKeyboardManager (Swift):-*** IQKeyboardManagerSwift is available through [CocoaPods](http://cocoapods.org), to install
-=======
 ***IQKeyboardManager (Objective-C):*** IQKeyboardManager is available through [CocoaPods](http://cocoapods.org), to install
 it simply add the following line to your Podfile: ([#9](https://github.com/hackiftekhar/IQKeyboardManager/issues/9))
 
@@ -130,30 +96,10 @@ it simply add the following line to your Podfile: ([#9](https://github.com/hacki
 ```
 
 ***IQKeyboardManager (Swift):*** IQKeyboardManagerSwift is available through [CocoaPods](http://cocoapods.org), to install
->>>>>>> develop
 it simply add the following line to your Podfile: ([#236](https://github.com/hackiftekhar/IQKeyboardManager/issues/236))
 
 *Swift 4.0 (Xcode 9.0)*
 
-<<<<<<< HEAD
-`pod 'IQKeyboardManagerSwift'`
-
-*Or*
-
-`pod 'IQKeyboardManagerSwift', '5.0.0'` #`It's backward compatible till Swift3`
-
-*Swift 4.0 (Xcode 9.0)* `pod 'IQKeyboardManagerSwift', '5.0.0'`
-
-*Swift 3.1 (Xcode 8.3)* `pod 'IQKeyboardManagerSwift', '4.0.10'`
-
-*Swift 3.0(3.0.2) (Xcode 8.2)* `pod 'IQKeyboardManagerSwift', '4.0.8'`
-
-*Swift 2.2 or 2.3 (Xcode 7.3)* `pod 'IQKeyboardManagerSwift', '4.0.5'`
-
-*Swift 2.1.1 (Xcode 7.2)* `pod 'IQKeyboardManagerSwift', '4.0.0'`
-
-*Swift 2.0 (Xcode 7.0)* `pod 'IQKeyboardManagerSwift', '3.3.3.1'`
-=======
 ```ruby
 pod 'IQKeyboardManagerSwift'
 ```
@@ -163,7 +109,6 @@ pod 'IQKeyboardManagerSwift'
 ```ruby
 pod 'IQKeyboardManagerSwift', '5.0.0'
 ```
->>>>>>> develop
 
 In AppDelegate.swift, just import IQKeyboardManagerSwift framework and enable IQKeyboardManager.
 
@@ -204,25 +149,15 @@ github "hackiftekhar/IQKeyboardManager"
 Run `carthage` to build the frameworks and drag the appropriate framework (`IQKeyboardManager.framework` or `IQKeyboardManagerSwift.framework`) into your Xcode project according to your need. Make sure to add only one framework and not both.
 
 
-<<<<<<< HEAD
-#### Installation with Source Code:-
-=======
 #### Installation with Source Code
->>>>>>> develop
 
 [![Github tag](https://img.shields.io/github/tag/hackiftekhar/iqkeyboardmanager.svg)]()
 
 
 
-<<<<<<< HEAD
-***IQKeyboardManager (Objective-C):-*** Just ***drag and drop*** `IQKeyboardManager` directory from demo project to your project. That's it.
-
-***IQKeyboardManager (Swift):-*** ***Drag and drop*** `IQKeyboardManagerSwift` directory from demo project to your project
-=======
 ***IQKeyboardManager (Objective-C):*** Just ***drag and drop*** `IQKeyboardManager` directory from demo project to your project. That's it.
 
 ***IQKeyboardManager (Swift):*** ***Drag and drop*** `IQKeyboardManagerSwift` directory from demo project to your project
->>>>>>> develop
 
 In AppDelegate.swift, just enable IQKeyboardManager.
 
@@ -242,19 +177,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 
 
-<<<<<<< HEAD
-## Known Issues:-
-
-You can find known issues list [here](https://github.com/hackiftekhar/IQKeyboardManager/blob/master/KNOWN%20ISSUES.md).
-
-Manual Management:-
-=======
 ## Known Issues
 
 You can find known issues list [here](https://github.com/hackiftekhar/IQKeyboardManager/blob/master/KNOWN%20ISSUES.md).
 
 Manual Management:
->>>>>>> develop
 ---
 
 You can find some manual management tweaks & examples [here](https://github.com/hackiftekhar/IQKeyboardManager/blob/master/MANUAL%20MANAGEMENT.md).
@@ -268,11 +195,7 @@ If you would like to see detailed Flow diagram then see [here](https://raw.githu
 
 
 
-<<<<<<< HEAD
-## Properties and functions usage:-
-=======
 ## Properties and functions usage
->>>>>>> develop
 
 You can find some documentation about properties, methods and their uses [here](https://github.com/hackiftekhar/IQKeyboardManager/blob/master/PROPERTIES%20%26%20FUNCTIONS.md).
 

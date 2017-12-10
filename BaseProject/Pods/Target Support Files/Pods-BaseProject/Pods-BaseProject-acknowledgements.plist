@@ -43,11 +43,7 @@ THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-<<<<<<< HEAD
-			<string>Copyright 2017 tencent.com. All rights reserved.
-=======
 			<string>Copyright 2017 Bugly Tencent. All rights reserved.
->>>>>>> develop
 </string>
 			<key>License</key>
 			<string>Copyright</string>
@@ -58,8 +54,6 @@ THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-<<<<<<< HEAD
-=======
 			<string>Public Domain License
 
 The CocoaAsyncSocket project is in the public domain.
@@ -162,7 +156,6 @@ SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
->>>>>>> develop
 			<string>If you are using FMDB in your project, I'd love to hear about it.  Let Gus know
 by sending an email to gus@flyingmeat.com.
 
@@ -234,8 +227,6 @@ SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-<<<<<<< HEAD
-=======
 			<string>MIT License
 
 Copyright (c) 2017 唱吧
@@ -267,7 +258,6 @@ SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
->>>>>>> develop
 			<string>Copyright (c) 2013-2015 MJExtension (https://github.com/CoderMJLee/MJExtension)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -434,8 +424,6 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-<<<<<<< HEAD
-=======
 			<string>The MIT License (MIT)
 
 Copyright (c) 2015 
@@ -468,7 +456,6 @@ SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
->>>>>>> develop
 			<string>Copyright (c) 2012-2016 YTKNetwork https://github.com/yuantiku
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

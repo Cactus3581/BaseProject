@@ -1,10 +1,6 @@
 //
 //  BuglyConfig.h
-<<<<<<< HEAD
-//
-=======
 //  Bugly
->>>>>>> develop
 //
 //  Copyright (c) 2016年 Tencent. All rights reserved.
 //
@@ -26,10 +22,7 @@
 #endif
 
 #import <Foundation/Foundation.h>
-<<<<<<< HEAD
-=======
 
->>>>>>> develop
 #import "BuglyLog.h"
 
 BLY_START_NONNULL
@@ -122,8 +115,6 @@ BLY_START_NONNULL
  */
 @property (nonatomic, assign) BOOL consolelogEnable;
 
-<<<<<<< HEAD
-=======
 /**
  * 崩溃退出超时，如果监听到崩溃后，App一直没有退出，则到达超时时间后会自动abort进程退出
  * 默认值 5s， 单位 秒
@@ -131,6 +122,5 @@ BLY_START_NONNULL
  */
 @property (nonatomic, assign) NSUInteger crashAbortTimeout;
 
->>>>>>> develop
 @end
 BLY_END_NONNULL

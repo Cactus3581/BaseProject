@@ -23,8 +23,6 @@
 
 - (void)refreshDataFailed;
 
-<<<<<<< HEAD
-=======
 
 - (void)endHeaderRefreshing;
 
@@ -32,5 +30,4 @@
 
 - (void)reloadData;
     
->>>>>>> develop
 @end

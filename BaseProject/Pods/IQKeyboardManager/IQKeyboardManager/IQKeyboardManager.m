@@ -36,12 +36,9 @@
 
 #import <objc/runtime.h>
 
-<<<<<<< HEAD
-=======
 #import <UIKit/UIAlertController.h>
 #import <UIKit/UISearchBar.h>
 #import <UIKit/UIScreen.h>
->>>>>>> develop
 #import <UIKit/UINavigationBar.h>
 #import <UIKit/UITapGestureRecognizer.h>
 #import <UIKit/UITextField.h>
@@ -531,11 +528,7 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
     }
     else
     {
-<<<<<<< HEAD
-        static UIWindow *_keyWindow = nil;
-=======
         static __weak UIWindow *_keyWindow = nil;
->>>>>>> develop
         
         /*  (Bug ID: #23, #25, #73)   */
         UIWindow *originalKeyWindow = [[UIApplication sharedApplication] keyWindow];
@@ -1948,11 +1941,7 @@ NSInteger const kIQPreviousNextButtonToolbarTag     =   -1005;
                     default:
                     {
                         toolbar.barStyle = UIBarStyleDefault;
-<<<<<<< HEAD
-                        toolbar.barTintColor = _toolbarBarTintColor?:nil;
-=======
                         toolbar.barTintColor = _toolbarBarTintColor;
->>>>>>> develop
 
                         //Setting toolbar tintColor //  (Enhancement ID: #30)
                         if (_shouldToolbarUsesTextFieldTintColor)

@@ -83,26 +83,16 @@
 }
 
 #pragma mark - mj_refresh methods
-<<<<<<< HEAD
-- (void)startOpenHeaderRefresh {
-//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefresh)];
-=======
 - (void)setUpHeaderRefresh {
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshAction)];
->>>>>>> develop
 }
 
 - (void)removeHeaderRefresh {
     [self.tableView.mj_header removeFromSuperview];
 }
 
-<<<<<<< HEAD
-- (void)startOpenFooterRefresh {
-//    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
-=======
 - (void)setUpFooterRefresh {
     self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRefreshAction)];
->>>>>>> develop
 }
 
 - (void)footerRefreshAction {
@@ -116,11 +106,6 @@
     [self.tableView.mj_footer removeFromSuperview];
 }
 
-<<<<<<< HEAD
-- (void)refreshDataSuccessed {
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
-=======
 
 - (void)endHeaderRefreshing {
     [self.tableView.mj_header endRefreshing];
@@ -138,18 +123,12 @@
 }
 
 - (void)reloadData {
->>>>>>> develop
     [self.tableView reloadData];
 }
 
 - (void)refreshDataFailed {
-<<<<<<< HEAD
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView.mj_footer endRefreshing];
-=======
     [self endHeaderRefreshing];
     [self endFooterRefreshing];
->>>>>>> develop
 }
 
 - (NSIndexPath *)getIndexPathWithPoint:(CGPoint)point{

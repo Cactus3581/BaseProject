@@ -1,13 +1,8 @@
 //
 //  BuglyLog.h
-<<<<<<< HEAD
-//
-//  Copyright © 2017 tencent.com. All rights reserved.
-=======
 //  Bugly
 //
 //  Copyright (c) 2017年 Tencent. All rights reserved.
->>>>>>> develop
 //
 
 #import <Foundation/Foundation.h>

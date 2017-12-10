@@ -9,12 +9,8 @@
 #import "BPAppDelegate.h"
 #import "BPRootTabBarController.h"
 #import <Bugly/Bugly.h>
-<<<<<<< HEAD
-
-=======
 #import "BPBaseViewController.h"
 #import "BPBaseNavigationController.h"
->>>>>>> develop
 
 @interface BPAppDelegate ()
 
@@ -25,20 +21,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     BPRootTabBarController *RootVC = [[BPRootTabBarController alloc]init];
     self.window.rootViewController = RootVC;
-<<<<<<< HEAD
-    [self.window makeKeyAndVisible];
-=======
->>>>>>> develop
     [self configLaunchImage];
     [self configSDKS];
     return YES;
 }
 
-<<<<<<< HEAD
-- (void)configLaunchImage {
-    UIViewController *viewController = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil] instantiateViewControllerWithIdentifier:@"LaunchScreen"];
-    viewController.view.backgroundColor = [UIColor whiteColor];
-=======
 - (UIWindow *)window{
     if (!_window) {
         _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -68,7 +55,6 @@
 - (void)configLaunchImage {
     UIViewController *viewController = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil] instantiateViewControllerWithIdentifier:@"LaunchScreen"];
     viewController.view.backgroundColor = kWhiteColor;
->>>>>>> develop
     UIView *launchView = viewController.view;
     UIWindow *mainWindow = [UIApplication sharedApplication].keyWindow;
     launchView.frame = [UIApplication sharedApplication].keyWindow.frame;

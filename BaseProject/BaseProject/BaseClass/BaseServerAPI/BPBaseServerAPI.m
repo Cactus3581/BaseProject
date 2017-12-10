@@ -40,8 +40,6 @@
     return @{};
 }
 
-<<<<<<< HEAD
-=======
 #pragma mark - 验证返回来的json的合法性
 - (id)jsonValidator {
     //    return @{
@@ -66,5 +64,4 @@
     return 60 * 3;
 }
 
->>>>>>> develop
 @end
