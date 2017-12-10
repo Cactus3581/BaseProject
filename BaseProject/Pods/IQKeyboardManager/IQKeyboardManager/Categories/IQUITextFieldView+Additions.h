@@ -21,7 +21,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+<<<<<<< HEAD
 #import <UIKit/UIKit.h>
+=======
+#import <UIKit/UIView.h>
+>>>>>>> develop
 
 /**
  UIView category for managing UITextField/UITextView

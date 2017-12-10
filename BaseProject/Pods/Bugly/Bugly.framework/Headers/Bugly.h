@@ -1,10 +1,17 @@
 //
 //  Bugly.h
+<<<<<<< HEAD
 //  Bugly
 //
 //  Version: 2.4(8)
 //
 //  Copyright (c) 2016年 Bugly. All rights reserved.
+=======
+//
+//  Version: 2.5(0)
+//
+//  Copyright (c) 2017年 Tencent. All rights reserved.
+>>>>>>> develop
 //
 
 #import <Foundation/Foundation.h>
@@ -118,7 +125,16 @@ BLY_START_NONNULL
  *    @param info        附加数据
  *    @param terminate   上报后是否退出应用进程
  */
+<<<<<<< HEAD
 + (void)reportExceptionWithCategory:(NSUInteger)category name:(NSString *)aName reason:(NSString *)aReason callStack:(NSArray *)aStackArray extraInfo:(NSDictionary *)info terminateApp:(BOOL)terminate;
+=======
++ (void)reportExceptionWithCategory:(NSUInteger)category
+                               name:(NSString *)aName
+                             reason:(NSString *)aReason
+                          callStack:(NSArray *)aStackArray
+                          extraInfo:(NSDictionary *)info
+                       terminateApp:(BOOL)terminate;
+>>>>>>> develop
 
 /**
  *  SDK 版本信息
@@ -129,14 +145,21 @@ BLY_START_NONNULL
 
 /**
  *  App 是否发生了连续闪退
+<<<<<<< HEAD
  *  如果启动SDK 且 5秒内 闪退，且次数达到 3次 则判定为连续闪退
+=======
+ *  如果 启动SDK 且 5秒内 闪退，且次数达到 3次 则判定为连续闪退
+>>>>>>> develop
  *
  *  @return 是否连续闪退
  */
 + (BOOL)isAppCrashedOnStartUpExceedTheLimit;
 
+<<<<<<< HEAD
 + (void)setComponentIdentifier:(NSString *)componentId version:(NSString *)version;
 
+=======
+>>>>>>> develop
 BLY_END_NONNULL
 
 @end

@@ -8,6 +8,29 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+<<<<<<< HEAD
+=======
+		</dict>
+		<key>CocoaAsyncSocket.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CocoaHTTPServer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CocoaLumberjack.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FDFullscreenPopGesture.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+>>>>>>> develop
 		</dict>
 		<key>FMDB.xcscheme</key>
 		<dict>
@@ -18,6 +41,14 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+<<<<<<< HEAD
+=======
+		</dict>
+		<key>KTVHTTPCache.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+>>>>>>> develop
 		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
@@ -53,6 +84,14 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+<<<<<<< HEAD
+=======
+		</dict>
+		<key>UITableView+FDTemplateLayoutCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+>>>>>>> develop
 		</dict>
 		<key>YTKNetwork.xcscheme</key>
 		<dict>
@@ -63,6 +102,14 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+<<<<<<< HEAD
+=======
+		</dict>
+		<key>hpple.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+>>>>>>> develop
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

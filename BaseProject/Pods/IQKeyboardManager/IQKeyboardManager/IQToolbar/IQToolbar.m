@@ -39,8 +39,11 @@
     [super initialize];
 
     IQToolbar *appearanceProxy = [self appearance];
+<<<<<<< HEAD
 
     [appearanceProxy setBarTintColor:nil];
+=======
+>>>>>>> develop
     
     NSArray <NSNumber*> *positions = @[@(UIBarPositionAny),@(UIBarPositionBottom),@(UIBarPositionTop),@(UIBarPositionTopAttached)];
 
@@ -51,9 +54,12 @@
         [appearanceProxy setBackgroundImage:nil forToolbarPosition:toolbarPosition barMetrics:UIBarMetricsDefault];
         [appearanceProxy setShadowImage:nil forToolbarPosition:toolbarPosition];
     }
+<<<<<<< HEAD
     
     //Background color
     [appearanceProxy setBackgroundColor:nil];
+=======
+>>>>>>> develop
 }
 
 -(void)initialize
@@ -61,7 +67,10 @@
     [self sizeToFit];
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth;// | UIViewAutoresizingFlexibleHeight;
     self.translucent = YES;
+<<<<<<< HEAD
     [self setTintColor:[UIColor blackColor]];
+=======
+>>>>>>> develop
 }
 
 - (instancetype)initWithFrame:(CGRect)frame

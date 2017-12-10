@@ -20,7 +20,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< HEAD
     self.view.backgroundColor = [UIColor whiteColor];
+=======
+    self.view.backgroundColor = kWhiteColor;
+>>>>>>> develop
     [self configChildViewController];
 }
 
@@ -45,7 +49,7 @@
  */
 - (void)setUpChildViewController:(UIViewController *)viewController image:(UIImage *)image title:(NSString *)title{
     
-    viewController.view.backgroundColor = [UIColor whiteColor];
+    viewController.view.backgroundColor = kWhiteColor;
     BPRootNavigationController *navC = [[BPRootNavigationController alloc]initWithRootViewController:viewController];
     navC.title = title;
     navC.tabBarItem.image = image;

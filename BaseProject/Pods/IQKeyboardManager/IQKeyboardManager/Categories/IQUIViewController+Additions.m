@@ -22,6 +22,10 @@
 // THE SOFTWARE.
 
 #import "IQUIViewController+Additions.h"
+<<<<<<< HEAD
+=======
+#import <UIKit/NSLayoutConstraint.h>
+>>>>>>> develop
 #import <objc/runtime.h>
 
 @implementation UIViewController (Additions)

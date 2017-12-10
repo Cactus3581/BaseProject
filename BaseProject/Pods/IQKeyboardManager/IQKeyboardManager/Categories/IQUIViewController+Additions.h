@@ -21,7 +21,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+<<<<<<< HEAD
 #import <UIKit/UIKit.h>
+=======
+#import <UIKit/UIViewController.h>
+
+@class NSLayoutConstraint;
+>>>>>>> develop
 
 @interface UIViewController (Additions)
 
