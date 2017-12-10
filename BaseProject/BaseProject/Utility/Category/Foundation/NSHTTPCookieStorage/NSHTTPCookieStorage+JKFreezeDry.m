@@ -27,7 +27,7 @@
 /**
  *  @brief  /Persists UIWebView cookies to disk
  */
-- (void)jk_saveCookie {
+- (void)_saveCookie {
     NSMutableArray* cookieData = [NSMutableArray new];
     
     NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
@@ -49,7 +49,7 @@
 /**
  *  @brief  /load UIWebView cookies from disk
  */
-- (void)jk_loadCookie {
+- (void)_loadCookie {
     NSMutableArray* cookies = [NSMutableArray arrayWithContentsOfFile:[self storagePath]];
     NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     

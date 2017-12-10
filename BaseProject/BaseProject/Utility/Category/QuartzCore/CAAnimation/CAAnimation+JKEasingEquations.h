@@ -55,29 +55,29 @@ typedef NS_ENUM(NSInteger, CAAnimationEasingFunction) {
 };
 
 @interface CAAnimation (EasingEquations)
-+ (CAKeyframeAnimation*)jk_transformAnimationWithDuration:(CGFloat)duration
++ (CAKeyframeAnimation*)_transformAnimationWithDuration:(CGFloat)duration
                                                   from:(CATransform3D)startValue
                                                     to:(CATransform3D)endValue
                                         easingFunction:(CAAnimationEasingFunction)easingFunction;
 
-+ (void)jk_addAnimationToLayer:(CALayer *)layer
++ (void)_addAnimationToLayer:(CALayer *)layer
                    duration:(CGFloat)duration
                   transform:(CATransform3D)transform
              easingFunction:(CAAnimationEasingFunction)easingFunction;
 
-+ (CAKeyframeAnimation*)jk_animationWithKeyPath:(NSString *)keyPath
++ (CAKeyframeAnimation*)_animationWithKeyPath:(NSString *)keyPath
                                     duration:(CGFloat)duration
                                         from:(CGFloat)startValue
                                           to:(CGFloat)endValue
                               easingFunction:(CAAnimationEasingFunction)easingFunction;
 
-+ (void)jk_addAnimationToLayer:(CALayer *)layer
++ (void)_addAnimationToLayer:(CALayer *)layer
                 withKeyPath:(NSString *)keyPath
                    duration:(CGFloat)duration
                          to:(CGFloat)endValue
              easingFunction:(CAAnimationEasingFunction)easingFunction;
 
-+ (void)jk_addAnimationToLayer:(CALayer *)layer
++ (void)_addAnimationToLayer:(CALayer *)layer
                 withKeyPath:(NSString *)keyPath
                    duration:(CGFloat)duration
                        from:(CGFloat)startValue

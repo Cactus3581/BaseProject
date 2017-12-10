@@ -13,103 +13,103 @@
 /**
  * 获取日、月、年、小时、分钟、秒
  */
-- (NSUInteger)jk_day;
-- (NSUInteger)jk_month;
-- (NSUInteger)jk_year;
-- (NSUInteger)jk_hour;
-- (NSUInteger)jk_minute;
-- (NSUInteger)jk_second;
-+ (NSUInteger)jk_day:(NSDate *)date;
-+ (NSUInteger)jk_month:(NSDate *)date;
-+ (NSUInteger)jk_year:(NSDate *)date;
-+ (NSUInteger)jk_hour:(NSDate *)date;
-+ (NSUInteger)jk_minute:(NSDate *)date;
-+ (NSUInteger)jk_second:(NSDate *)date;
+- (NSUInteger)_day;
+- (NSUInteger)_month;
+- (NSUInteger)_year;
+- (NSUInteger)_hour;
+- (NSUInteger)_minute;
+- (NSUInteger)_second;
++ (NSUInteger)_day:(NSDate *)date;
++ (NSUInteger)_month:(NSDate *)date;
++ (NSUInteger)_year:(NSDate *)date;
++ (NSUInteger)_hour:(NSDate *)date;
++ (NSUInteger)_minute:(NSDate *)date;
++ (NSUInteger)_second:(NSDate *)date;
 
 /**
  * 获取一年中的总天数
  */
-- (NSUInteger)jk_daysInYear;
-+ (NSUInteger)jk_daysInYear:(NSDate *)date;
+- (NSUInteger)_daysInYear;
++ (NSUInteger)_daysInYear:(NSDate *)date;
 
 /**
  * 判断是否是润年
  * @return YES表示润年，NO表示平年
  */
-- (BOOL)jk_isLeapYear;
-+ (BOOL)jk_isLeapYear:(NSDate *)date;
+- (BOOL)_isLeapYear;
++ (BOOL)_isLeapYear:(NSDate *)date;
 
 /**
  * 获取该日期是该年的第几周
  */
-- (NSUInteger)jk_weekOfYear;
-+ (NSUInteger)jk_weekOfYear:(NSDate *)date;
+- (NSUInteger)_weekOfYear;
++ (NSUInteger)_weekOfYear:(NSDate *)date;
 
 /**
  * 获取格式化为YYYY-MM-dd格式的日期字符串
  */
-- (NSString *)jk_formatYMD;
-+ (NSString *)jk_formatYMD:(NSDate *)date;
+- (NSString *)_formatYMD;
++ (NSString *)_formatYMD:(NSDate *)date;
 
 /**
  * 返回当前月一共有几周(可能为4,5,6)
  */
-- (NSUInteger)jk_weeksOfMonth;
-+ (NSUInteger)jk_weeksOfMonth:(NSDate *)date;
+- (NSUInteger)_weeksOfMonth;
++ (NSUInteger)_weeksOfMonth:(NSDate *)date;
 
 /**
  * 获取该月的第一天的日期
  */
-- (NSDate *)jk_begindayOfMonth;
-+ (NSDate *)jk_begindayOfMonth:(NSDate *)date;
+- (NSDate *)_begindayOfMonth;
++ (NSDate *)_begindayOfMonth:(NSDate *)date;
 
 /**
  * 获取该月的最后一天的日期
  */
-- (NSDate *)jk_lastdayOfMonth;
-+ (NSDate *)jk_lastdayOfMonth:(NSDate *)date;
+- (NSDate *)_lastdayOfMonth;
++ (NSDate *)_lastdayOfMonth:(NSDate *)date;
 
 /**
  * 返回day天后的日期(若day为负数,则为|day|天前的日期)
  */
-- (NSDate *)jk_dateAfterDay:(NSUInteger)day;
-+ (NSDate *)jk_dateAfterDate:(NSDate *)date day:(NSInteger)day;
+- (NSDate *)_dateAfterDay:(NSUInteger)day;
++ (NSDate *)_dateAfterDate:(NSDate *)date day:(NSInteger)day;
 
 /**
  * 返回day天后的日期(若day为负数,则为|day|天前的日期)
  */
-- (NSDate *)jk_dateAfterMonth:(NSUInteger)month;
-+ (NSDate *)jk_dateAfterDate:(NSDate *)date month:(NSInteger)month;
+- (NSDate *)_dateAfterMonth:(NSUInteger)month;
++ (NSDate *)_dateAfterDate:(NSDate *)date month:(NSInteger)month;
 
 /**
  * 返回numYears年后的日期
  */
-- (NSDate *)jk_offsetYears:(int)numYears;
-+ (NSDate *)jk_offsetYears:(int)numYears fromDate:(NSDate *)fromDate;
+- (NSDate *)_offsetYears:(int)numYears;
++ (NSDate *)_offsetYears:(int)numYears fromDate:(NSDate *)fromDate;
 
 /**
  * 返回numMonths月后的日期
  */
-- (NSDate *)jk_offsetMonths:(int)numMonths;
-+ (NSDate *)jk_offsetMonths:(int)numMonths fromDate:(NSDate *)fromDate;
+- (NSDate *)_offsetMonths:(int)numMonths;
++ (NSDate *)_offsetMonths:(int)numMonths fromDate:(NSDate *)fromDate;
 
 /**
  * 返回numDays天后的日期
  */
-- (NSDate *)jk_offsetDays:(int)numDays;
-+ (NSDate *)jk_offsetDays:(int)numDays fromDate:(NSDate *)fromDate;
+- (NSDate *)_offsetDays:(int)numDays;
++ (NSDate *)_offsetDays:(int)numDays fromDate:(NSDate *)fromDate;
 
 /**
  * 返回numHours小时后的日期
  */
-- (NSDate *)jk_offsetHours:(int)hours;
-+ (NSDate *)jk_offsetHours:(int)numHours fromDate:(NSDate *)fromDate;
+- (NSDate *)_offsetHours:(int)hours;
++ (NSDate *)_offsetHours:(int)numHours fromDate:(NSDate *)fromDate;
 
 /**
  * 距离该日期前几天
  */
-- (NSUInteger)jk_daysAgo;
-+ (NSUInteger)jk_daysAgo:(NSDate *)date;
+- (NSUInteger)_daysAgo;
++ (NSUInteger)_daysAgo:(NSDate *)date;
 
 /**
  *  获取星期几
@@ -123,8 +123,8 @@
  *  [6 - Friday]
  *  [7 - Saturday]
  */
-- (NSInteger)jk_weekday;
-+ (NSInteger)jk_weekday:(NSDate *)date;
+- (NSInteger)_weekday;
++ (NSInteger)_weekday:(NSDate *)date;
 
 /**
  *  获取星期几(名称)
@@ -138,8 +138,8 @@
  *  [6 - Friday]
  *  [7 - Saturday]
  */
-- (NSString *)jk_dayFromWeekday;
-+ (NSString *)jk_dayFromWeekday:(NSDate *)date;
+- (NSString *)_dayFromWeekday;
++ (NSString *)_dayFromWeekday:(NSDate *)date;
 
 /**
  *  日期是否相等
@@ -147,14 +147,14 @@
  *  @param anotherDate The another date to compare as NSDate
  *  @return Return YES if is same day, NO if not
  */
-- (BOOL)jk_isSameDay:(NSDate *)anotherDate;
+- (BOOL)_isSameDay:(NSDate *)anotherDate;
 
 /**
  *  是否是今天
  *
  *  @return Return if self is today
  */
-- (BOOL)jk_isToday;
+- (BOOL)_isToday;
 
 /**
  *  Add days to self
@@ -162,7 +162,7 @@
  *  @param days The number of days to add
  *  @return Return self by adding the gived days number
  */
-- (NSDate *)jk_dateByAddingDays:(NSUInteger)days;
+- (NSDate *)_dateByAddingDays:(NSUInteger)days;
 
 /**
  *  Get the month as a localized string from the given month number
@@ -183,42 +183,42 @@
  *
  *  @return Return the given month as a localized string
  */
-+ (NSString *)jk_monthWithMonthNumber:(NSInteger)month;
++ (NSString *)_monthWithMonthNumber:(NSInteger)month;
 
 /**
  * 根据日期返回字符串
  */
-+ (NSString *)jk_stringWithDate:(NSDate *)date format:(NSString *)format;
-- (NSString *)jk_stringWithFormat:(NSString *)format;
-+ (NSDate *)jk_dateWithString:(NSString *)string format:(NSString *)format;
++ (NSString *)_stringWithDate:(NSDate *)date format:(NSString *)format;
+- (NSString *)_stringWithFormat:(NSString *)format;
++ (NSDate *)_dateWithString:(NSString *)string format:(NSString *)format;
 
 /**
  * 获取指定月份的天数
  */
-- (NSUInteger)jk_daysInMonth:(NSUInteger)month;
-+ (NSUInteger)jk_daysInMonth:(NSDate *)date month:(NSUInteger)month;
+- (NSUInteger)_daysInMonth:(NSUInteger)month;
++ (NSUInteger)_daysInMonth:(NSDate *)date month:(NSUInteger)month;
 
 /**
  * 获取当前月份的天数
  */
-- (NSUInteger)jk_daysInMonth;
-+ (NSUInteger)jk_daysInMonth:(NSDate *)date;
+- (NSUInteger)_daysInMonth;
++ (NSUInteger)_daysInMonth:(NSDate *)date;
 
 /**
  * 返回x分钟前/x小时前/昨天/x天前/x个月前/x年前
  */
-- (NSString *)jk_timeInfo;
-+ (NSString *)jk_timeInfoWithDate:(NSDate *)date;
-+ (NSString *)jk_timeInfoWithDateString:(NSString *)dateString;
+- (NSString *)_timeInfo;
++ (NSString *)_timeInfoWithDate:(NSDate *)date;
++ (NSString *)_timeInfoWithDateString:(NSString *)dateString;
 
 /**
  * 分别获取yyyy-MM-dd/HH:mm:ss/yyyy-MM-dd HH:mm:ss格式的字符串
  */
-- (NSString *)jk_ymdFormat;
-- (NSString *)jk_hmsFormat;
-- (NSString *)jk_ymdHmsFormat;
-+ (NSString *)jk_ymdFormat;
-+ (NSString *)jk_hmsFormat;
-+ (NSString *)jk_ymdHmsFormat;
+- (NSString *)_ymdFormat;
+- (NSString *)_hmsFormat;
+- (NSString *)_ymdHmsFormat;
++ (NSString *)_ymdFormat;
++ (NSString *)_hmsFormat;
++ (NSString *)_ymdHmsFormat;
 
 @end

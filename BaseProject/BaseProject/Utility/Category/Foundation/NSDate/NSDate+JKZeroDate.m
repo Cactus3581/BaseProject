@@ -9,7 +9,7 @@
 #import "NSDate+JKZeroDate.h"
 
 @implementation NSDate (JKZeroDate)
-+ (NSDate *)jk_zeroTodayDate
++ (NSDate *)_zeroTodayDate
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSUIntegerMax fromDate:[NSDate date]];
@@ -19,7 +19,7 @@
     return [calendar dateFromComponents:components];
 }
 
-+ (NSDate *)jk_zero24TodayDate
++ (NSDate *)_zero24TodayDate
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSUIntegerMax fromDate:[NSDate date]];
@@ -29,7 +29,7 @@
     return [calendar dateFromComponents:components];
 }
 
-- (NSDate *)jk_zeroDate
+- (NSDate *)_zeroDate
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSUIntegerMax fromDate:self];
@@ -38,7 +38,7 @@
     components.second = 0;
     return [calendar dateFromComponents:components];
 }
-- (NSDate *)jk_zero24Date
+- (NSDate *)_zero24Date
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSUIntegerMax fromDate:self];

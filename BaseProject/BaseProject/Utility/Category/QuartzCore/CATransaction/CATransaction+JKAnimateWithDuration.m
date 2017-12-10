@@ -9,7 +9,6 @@
 
 @implementation CATransaction (JKAnimateWithDuration)
 /**
- *  @author Denys Telezhkin
  *
  *  @brief  CATransaction 动画执 block回调
  *
@@ -17,7 +16,7 @@
  *  @param animations 动画块
  *  @param completion 动画结束回调
  */
-+(void)jk_animateWithDuration:(NSTimeInterval)duration
++(void)_animateWithDuration:(NSTimeInterval)duration
                    animations:(void (^)(void))animations
                    completion:(void (^)(void))completion
 {

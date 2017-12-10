@@ -9,7 +9,7 @@
 #import "NSBundle+JKAppIcon.h"
 
 @implementation NSBundle (JKAppIcon)
-- (NSString*)jk_appIconPath {
+- (NSString*)_appIconPath {
     NSString* iconFilename = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIconFile"] ;
     NSString* iconBasename = [iconFilename stringByDeletingPathExtension] ;
     NSString* iconExtension = [iconFilename pathExtension] ;
@@ -17,8 +17,8 @@
                                            ofType:iconExtension] ;
 }
 
-- (UIImage*)jk_appIcon {
-    UIImage*appIcon = [[UIImage alloc] initWithContentsOfFile:[self jk_appIconPath]] ;
+- (UIImage*)_appIcon {
+    UIImage*appIcon = [[UIImage alloc] initWithContentsOfFile:[self _appIconPath]] ;
     return appIcon;
 }
 @end

@@ -13,19 +13,19 @@
  *
  *  @return MIMEType
  */
-- (NSString *)jk_MIMEType {
-    return [[self class] jk_MIMETypeForExtension:[self pathExtension]];
+- (NSString *)_MIMEType {
+    return [[self class] _MIMETypeForExtension:[self pathExtension]];
 }
 
-+ (NSString *)jk_MIMETypeForExtension:(NSString *)extension {
-    return [[self jk_MIMEDict] valueForKey:[extension lowercaseString]];
++ (NSString *)_MIMETypeForExtension:(NSString *)extension {
+    return [[self _MIMEDict] valueForKey:[extension lowercaseString]];
 }
 /**
  *  @brief  常见MIME集合
  *
  *  @return 常见MIME集合
  */
-+ (NSDictionary *)jk_MIMEDict {
++ (NSDictionary *)_MIMEDict {
     NSDictionary * MIMEDict;
     // Lazy loads the MIME type dictionary.
     if (!MIMEDict) {

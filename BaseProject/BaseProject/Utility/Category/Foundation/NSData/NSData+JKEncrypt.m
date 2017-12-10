@@ -9,7 +9,7 @@
 
 
 @implementation NSData (JKEncrypt)
-static void jk_FixKeyLengths(CCAlgorithm algorithm, NSMutableData * keyData, NSMutableData * ivData)
+static void _FixKeyLengths(CCAlgorithm algorithm, NSMutableData * keyData, NSMutableData * ivData)
 {
     NSUInteger keyLength = [keyData length];
     switch ( algorithm )
@@ -80,8 +80,8 @@ static void jk_FixKeyLengths(CCAlgorithm algorithm, NSMutableData * keyData, NSM
  *
  *  @return data
  */
-- (NSData*)jk_encryptedWithAESUsingKey:(NSString*)key andIV:(NSData*)iv {
-    return [self jk_CCCryptData:self algorithm:kCCAlgorithmAES128 operation:kCCEncrypt key:key iv:iv];
+- (NSData*)_encryptedWithAESUsingKey:(NSString*)key andIV:(NSData*)iv {
+    return [self _CCCryptData:self algorithm:kCCAlgorithmAES128 operation:kCCEncrypt key:key iv:iv];
 }
 /**
  *  @brief  利用AES解密据
@@ -91,8 +91,8 @@ static void jk_FixKeyLengths(CCAlgorithm algorithm, NSMutableData * keyData, NSM
  *
  *  @return 解密后数据
  */
-- (NSData*)jk_decryptedWithAESUsingKey:(NSString*)key andIV:(NSData*)iv {
-    return [self jk_CCCryptData:self algorithm:kCCAlgorithmAES128 operation:kCCDecrypt key:key iv:iv];
+- (NSData*)_decryptedWithAESUsingKey:(NSString*)key andIV:(NSData*)iv {
+    return [self _CCCryptData:self algorithm:kCCAlgorithmAES128 operation:kCCDecrypt key:key iv:iv];
 }
 /**
  *  利用3DES加密数据
@@ -102,8 +102,8 @@ static void jk_FixKeyLengths(CCAlgorithm algorithm, NSMutableData * keyData, NSM
  *
  *  @return data
  */
-- (NSData*)jk_encryptedWith3DESUsingKey:(NSString*)key andIV:(NSData*)iv {
-    return [self jk_CCCryptData:self algorithm:kCCAlgorithm3DES operation:kCCEncrypt key:key iv:iv];
+- (NSData*)_encryptedWith3DESUsingKey:(NSString*)key andIV:(NSData*)iv {
+    return [self _CCCryptData:self algorithm:kCCAlgorithm3DES operation:kCCEncrypt key:key iv:iv];
 }
 /**
  *  @brief   利用3DES解密数据
@@ -113,8 +113,8 @@ static void jk_FixKeyLengths(CCAlgorithm algorithm, NSMutableData * keyData, NSM
  *
  *  @return 解密后数据
  */
-- (NSData*)jk_decryptedWith3DESUsingKey:(NSString*)key andIV:(NSData*)iv {
-    return [self jk_CCCryptData:self algorithm:kCCAlgorithm3DES operation:kCCDecrypt key:key iv:iv];
+- (NSData*)_decryptedWith3DESUsingKey:(NSString*)key andIV:(NSData*)iv {
+    return [self _CCCryptData:self algorithm:kCCAlgorithm3DES operation:kCCDecrypt key:key iv:iv];
 }
 
 /**
@@ -125,8 +125,8 @@ static void jk_FixKeyLengths(CCAlgorithm algorithm, NSMutableData * keyData, NSM
  *
  *  @return data
  */
-- (NSData *)jk_encryptedWithDESUsingKey:(NSString*)key andIV:(NSData*)iv{
-    return [self jk_CCCryptData:self algorithm:kCCAlgorithmDES operation:kCCEncrypt key:key iv:iv];
+- (NSData *)_encryptedWithDESUsingKey:(NSString*)key andIV:(NSData*)iv{
+    return [self _CCCryptData:self algorithm:kCCAlgorithmDES operation:kCCEncrypt key:key iv:iv];
 }
 /**
  *  @brief   利用DES解密数据
@@ -136,10 +136,10 @@ static void jk_FixKeyLengths(CCAlgorithm algorithm, NSMutableData * keyData, NSM
  *
  *  @return 解密后数据
  */
-- (NSData *)jk_decryptedWithDESUsingKey:(NSString*)key andIV:(NSData*)iv{
-    return [self jk_CCCryptData:self algorithm:kCCAlgorithmDES operation:kCCDecrypt key:key iv:iv];
+- (NSData *)_decryptedWithDESUsingKey:(NSString*)key andIV:(NSData*)iv{
+    return [self _CCCryptData:self algorithm:kCCAlgorithmDES operation:kCCDecrypt key:key iv:iv];
 }
-- (NSData *)jk_CCCryptData:(NSData *)data
+- (NSData *)_CCCryptData:(NSData *)data
               algorithm:(CCAlgorithm)algorithm
               operation:(CCOperation)operation
                     key:(NSString *)key
@@ -166,7 +166,7 @@ static void jk_FixKeyLengths(CCAlgorithm algorithm, NSMutableData * keyData, NSM
     if (iv) {
         option = kCCOptionPKCS7Padding;
     }
-    jk_FixKeyLengths(algorithm, keyData,ivData);
+    _FixKeyLengths(algorithm, keyData,ivData);
     CCCryptorStatus result = CCCrypt(operation,                    // kCCEncrypt or kCCDecrypt
                                      algorithm,
                                      option,                        // Padding option for CBC Mode
@@ -190,7 +190,7 @@ static void jk_FixKeyLengths(CCAlgorithm algorithm, NSMutableData * keyData, NSM
  *
  *  @return 转成UTF8 字符串
  */
--(NSString *)jk_UTF8String{
+-(NSString *)_UTF8String{
     return [[NSString alloc] initWithData:self encoding:NSUTF8StringEncoding];
 }
 

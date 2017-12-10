@@ -13,7 +13,7 @@
  *
  *  @return 清除后的结果
  */
-- (NSString *)jk_stringByStrippingHTML {
+- (NSString *)_stringByStrippingHTML {
     return [self stringByReplacingOccurrencesOfString:@"<[^>]+>" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, self.length)];
 }
 /**
@@ -21,7 +21,7 @@
  *
  *  @return 清楚js后的结果
  */
-- (NSString *)jk_stringByRemovingScriptsAndStrippingHTML {
+- (NSString *)_stringByRemovingScriptsAndStrippingHTML {
     NSMutableString *mString = [self mutableCopy];
     NSError *error;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"<script[^>]*>[\\w\\W]*</script>" options:NSRegularExpressionCaseInsensitive error:&error];
@@ -29,14 +29,14 @@
     for (NSTextCheckingResult *match in [matches reverseObjectEnumerator]) {
         [mString replaceCharactersInRange:match.range withString:@""];
     }
-    return [mString jk_stringByStrippingHTML];
+    return [mString _stringByStrippingHTML];
 }
 /**
  *  @brief  去除空格
  *
  *  @return 去除空格后的字符串
  */
-- (NSString *)jk_trimmingWhitespace
+- (NSString *)_trimmingWhitespace
 {
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
@@ -45,7 +45,7 @@
  *
  *  @return 去除字符串与空行的字符串
  */
-- (NSString *)jk_trimmingWhitespaceAndNewlines
+- (NSString *)_trimmingWhitespaceAndNewlines
 {
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }

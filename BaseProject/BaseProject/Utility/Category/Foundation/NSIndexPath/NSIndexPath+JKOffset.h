@@ -8,46 +8,40 @@
 #import <UIKit/UIKit.h>
 @interface NSIndexPath (JKOffset)
 /**
- *  @author JKCategories
  *
  *  Compute previous row indexpath
  *
  */
-- (NSIndexPath *)jk_previousRow;
+- (NSIndexPath *)_previousRow;
 /**
- *  @author JKCategories
  *
  *  Compute next row indexpath
  *
  */
-- (NSIndexPath *)jk_nextRow;
+- (NSIndexPath *)_nextRow;
 /**
- *  @author JKCategories
  *
  *  Compute previous item indexpath
  *
  */
-- (NSIndexPath *)jk_previousItem;
+- (NSIndexPath *)_previousItem;
 /**
- *  @author JKCategories
  *
  *  Compute next item indexpath
  *
  */
-- (NSIndexPath *)jk_nextItem;
+- (NSIndexPath *)_nextItem;
 /**
- *  @author JKCategories
  *
  *  Compute next section indexpath
  *
  */
-- (NSIndexPath *)jk_nextSection;
+- (NSIndexPath *)_nextSection;
 /**
- *  @author JKCategories
  *
  *  Compute previous section indexpath
  *
  */
-- (NSIndexPath *)jk_previousSection;
+- (NSIndexPath *)_previousSection;
 
 @end

@@ -29,5 +29,5 @@ _format.mSampleRate = 8000.0f;
  *
  *  @return wav data
  */
-- (NSData *)jk_wavDataWithPCMFormat:(AudioStreamBasicDescription)PCMFormat;
+- (NSData *)_wavDataWithPCMFormat:(AudioStreamBasicDescription)PCMFormat;
 @end

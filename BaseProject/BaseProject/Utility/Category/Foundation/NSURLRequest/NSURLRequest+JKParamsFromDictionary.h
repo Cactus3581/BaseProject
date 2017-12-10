@@ -14,18 +14,17 @@
 
 @interface NSURLRequest (JKParamsFromDictionary)
 /**
- *  @author JKCategories
  *
  *
  *
  */
 - (id)initWithURL:(NSURL *)URL parameters:(NSDictionary *)params;
 
-+(NSURLRequest *)jk_requestGETWithURL:(NSURL *)url parameters:(NSDictionary *)params;
++(NSURLRequest *)_requestGETWithURL:(NSURL *)url parameters:(NSDictionary *)params;
 
-+(NSString *)jk_URLfromParameters:(NSDictionary *)params;
++(NSString *)_URLfromParameters:(NSDictionary *)params;
 
-+(NSArray *)jk_queryStringComponentsFromKey:(NSString *)key value:(id)value;
-+(NSArray *)jk_queryStringComponentsFromKey:(NSString *)key dictionaryValue:(NSDictionary *)dict;
-+(NSArray *)jk_queryStringComponentsFromKey:(NSString *)key arrayValue:(NSArray *)array;
++(NSArray *)_queryStringComponentsFromKey:(NSString *)key value:(id)value;
++(NSArray *)_queryStringComponentsFromKey:(NSString *)key dictionaryValue:(NSDictionary *)dict;
++(NSArray *)_queryStringComponentsFromKey:(NSString *)key arrayValue:(NSArray *)array;
 @end

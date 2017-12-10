@@ -85,69 +85,69 @@
 /**
  *  手机号码的有效性:分电信、联通、移动和小灵通
  */
-- (BOOL)jk_isMobileNumberClassification;
+- (BOOL)_isMobileNumberClassification;
 /**
  *  手机号有效性
  */
-- (BOOL)jk_isMobileNumber;
+- (BOOL)_isMobileNumber;
 
 /**
  *  邮箱的有效性
  */
-- (BOOL)jk_isEmailAddress;
+- (BOOL)_isEmailAddress;
 
 /**
  *  简单的身份证有效性
  *
  */
-- (BOOL)jk_simpleVerifyIdentityCardNum;
+- (BOOL)_simpleVerifyIdentityCardNum;
 
 /**
  *  精确的身份证号码有效性检测
  *
  *  @param value 身份证号
  */
-+ (BOOL)jk_accurateVerifyIDCardNumber:(NSString *)value;
++ (BOOL)_accurateVerifyIDCardNumber:(NSString *)value;
 
 /**
  *  车牌号的有效性
  */
-- (BOOL)jk_isCarNumber;
+- (BOOL)_isCarNumber;
 
 /**
  *  银行卡的有效性
  */
-- (BOOL)jk_bankCardluhmCheck;
+- (BOOL)_bankCardluhmCheck;
 
 /**
  *  IP地址有效性
  */
-- (BOOL)jk_isIPAddress;
+- (BOOL)_isIPAddress;
 
 /**
  *  Mac地址有效性
  */
-- (BOOL)jk_isMacAddress;
+- (BOOL)_isMacAddress;
 
 /**
  *  网址有效性
  */
-- (BOOL)jk_isValidUrl;
+- (BOOL)_isValidUrl;
 
 /**
  *  纯汉字
  */
-- (BOOL)jk_isValidChinese;
+- (BOOL)_isValidChinese;
 
 /**
  *  邮政编码
  */
-- (BOOL)jk_isValidPostalcode;
+- (BOOL)_isValidPostalcode;
 
 /**
  *  工商税号
  */
-- (BOOL)jk_isValidTaxNo;
+- (BOOL)_isValidTaxNo;
 
 /**
  @brief     是否符合最小长度、最长长度，是否包含中文,首字母是否可以为数字
@@ -157,7 +157,7 @@
  @param     firstCannotBeDigtal 首字母不能为数字
  @return    正则验证成功返回YES, 否则返回NO
  */
-- (BOOL)jk_isValidWithMinLenth:(NSInteger)minLenth
+- (BOOL)_isValidWithMinLenth:(NSInteger)minLenth
                    maxLenth:(NSInteger)maxLenth
              containChinese:(BOOL)containChinese
         firstCannotBeDigtal:(BOOL)firstCannotBeDigtal;
@@ -173,7 +173,7 @@
  @param     firstCannotBeDigtal 首字母不能为数字
  @return    正则验证成功返回YES, 否则返回NO
  */
-- (BOOL)jk_isValidWithMinLenth:(NSInteger)minLenth
+- (BOOL)_isValidWithMinLenth:(NSInteger)minLenth
                    maxLenth:(NSInteger)maxLenth
              containChinese:(BOOL)containChinese
               containDigtal:(BOOL)containDigtal

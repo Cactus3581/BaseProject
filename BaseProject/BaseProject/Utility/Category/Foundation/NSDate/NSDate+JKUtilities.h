@@ -7,153 +7,153 @@
 //
 // https://github.com/erica/NSDate-Extensions
 #import <Foundation/Foundation.h>
-#define JK_D_MINUTE	60
-#define JK_D_HOUR	3600
-#define JK_D_DAY	86400
-#define JK_D_WEEK	604800
-#define JK_D_YEAR	31556926
+#define BP_D_MINUTE	60
+#define BP_D_HOUR	3600
+#define BP_D_DAY	86400
+#define BP_D_WEEK	604800
+#define BP_D_YEAR	31556926
 @interface NSDate (JKUtilities)
-+ (NSCalendar *)jk_currentCalendar; // avoid bottlenecks
++ (NSCalendar *)_currentCalendar; // avoid bottlenecks
 #pragma mark ---- Decomposing dates 分解的日期
-@property (readonly) NSInteger jk_nearestHour;
-@property (readonly) NSInteger jk_hour;
-@property (readonly) NSInteger jk_minute;
-@property (readonly) NSInteger jk_seconds;
-@property (readonly) NSInteger jk_day;
-@property (readonly) NSInteger jk_month;
-@property (readonly) NSInteger jk_week;
-@property (readonly) NSInteger jk_weekday;
-@property (readonly) NSInteger jk_nthWeekday; // e.g. 2nd Tuesday of the month == 2
-@property (readonly) NSInteger jk_year;
+@property (readonly) NSInteger _nearestHour;
+@property (readonly) NSInteger _hour;
+@property (readonly) NSInteger _minute;
+@property (readonly) NSInteger _seconds;
+@property (readonly) NSInteger _day;
+@property (readonly) NSInteger _month;
+@property (readonly) NSInteger _week;
+@property (readonly) NSInteger _weekday;
+@property (readonly) NSInteger _nthWeekday; // e.g. 2nd Tuesday of the month == 2
+@property (readonly) NSInteger _year;
 
 #pragma mark ----short time 格式化的时间
-@property (nonatomic, readonly) NSString *jk_shortString;
-@property (nonatomic, readonly) NSString *jk_shortDateString;
-@property (nonatomic, readonly) NSString *jk_shortTimeString;
-@property (nonatomic, readonly) NSString *jk_mediumString;
-@property (nonatomic, readonly) NSString *jk_mediumDateString;
-@property (nonatomic, readonly) NSString *jk_mediumTimeString;
-@property (nonatomic, readonly) NSString *jk_longString;
-@property (nonatomic, readonly) NSString *jk_longDateString;
-@property (nonatomic, readonly) NSString *jk_longTimeString;
+@property (nonatomic, readonly) NSString *_shortString;
+@property (nonatomic, readonly) NSString *_shortDateString;
+@property (nonatomic, readonly) NSString *_shortTimeString;
+@property (nonatomic, readonly) NSString *_mediumString;
+@property (nonatomic, readonly) NSString *_mediumDateString;
+@property (nonatomic, readonly) NSString *_mediumTimeString;
+@property (nonatomic, readonly) NSString *_longString;
+@property (nonatomic, readonly) NSString *_longDateString;
+@property (nonatomic, readonly) NSString *_longTimeString;
 
 ///使用dateStyle timeStyle格式化时间
-- (NSString *)jk_stringWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle;
+- (NSString *)_stringWithDateStyle:(NSDateFormatterStyle)dateStyle timeStyle:(NSDateFormatterStyle)timeStyle;
 ///给定format格式化时间
-- (NSString *)jk_stringWithFormat:(NSString *)format;
+- (NSString *)_stringWithFormat:(NSString *)format;
 
 #pragma mark ---- 从当前日期相对日期时间
 ///明天
-+ (NSDate *)jk_dateTomorrow;
++ (NSDate *)_dateTomorrow;
 ///昨天
-+ (NSDate *)jk_dateYesterday;
++ (NSDate *)_dateYesterday;
 ///今天后几天
-+ (NSDate *)jk_dateWithDaysFromNow:(NSInteger)days;
++ (NSDate *)_dateWithDaysFromNow:(NSInteger)days;
 ///今天前几天
-+ (NSDate *)jk_dateWithDaysBeforeNow:(NSInteger)days;
++ (NSDate *)_dateWithDaysBeforeNow:(NSInteger)days;
 ///当前小时后dHours个小时
-+ (NSDate *)jk_dateWithHoursFromNow:(NSInteger)dHours;
++ (NSDate *)_dateWithHoursFromNow:(NSInteger)dHours;
 ///当前小时前dHours个小时
-+ (NSDate *)jk_dateWithHoursBeforeNow:(NSInteger)dHours;
++ (NSDate *)_dateWithHoursBeforeNow:(NSInteger)dHours;
 ///当前分钟后dMinutes个分钟
-+ (NSDate *)jk_dateWithMinutesFromNow:(NSInteger)dMinutes;
++ (NSDate *)_dateWithMinutesFromNow:(NSInteger)dMinutes;
 ///当前分钟前dMinutes个分钟
-+ (NSDate *)jk_dateWithMinutesBeforeNow:(NSInteger)dMinutes;
++ (NSDate *)_dateWithMinutesBeforeNow:(NSInteger)dMinutes;
 
 
 #pragma mark ---- Comparing dates 比较时间
 ///比较年月日是否相等
-- (BOOL)jk_isEqualToDateIgnoringTime:(NSDate *)aDate;
+- (BOOL)_isEqualToDateIgnoringTime:(NSDate *)aDate;
 ///是否是今天
-- (BOOL)jk_isToday;
+- (BOOL)_isToday;
 ///是否是明天
-- (BOOL)jk_isTomorrow;
+- (BOOL)_isTomorrow;
 ///是否是昨天
-- (BOOL)jk_isYesterday;
+- (BOOL)_isYesterday;
 
 ///是否是同一周
-- (BOOL)jk_isSameWeekAsDate:(NSDate *)aDate;
+- (BOOL)_isSameWeekAsDate:(NSDate *)aDate;
 ///是否是本周
-- (BOOL)jk_isThisWeek;
+- (BOOL)_isThisWeek;
 ///是否是本周的下周
-- (BOOL)jk_isNextWeek;
+- (BOOL)_isNextWeek;
 ///是否是本周的上周
-- (BOOL)jk_isLastWeek;
+- (BOOL)_isLastWeek;
 
 ///是否是同一月
-- (BOOL)jk_isSameMonthAsDate:(NSDate *)aDate;
+- (BOOL)_isSameMonthAsDate:(NSDate *)aDate;
 ///是否是本月
-- (BOOL)jk_isThisMonth;
+- (BOOL)_isThisMonth;
 ///是否是本月的下月
-- (BOOL)jk_isNextMonth;
+- (BOOL)_isNextMonth;
 ///是否是本月的上月
-- (BOOL)jk_isLastMonth;
+- (BOOL)_isLastMonth;
 
 ///是否是同一年
-- (BOOL)jk_isSameYearAsDate:(NSDate *)aDate;
+- (BOOL)_isSameYearAsDate:(NSDate *)aDate;
 ///是否是今年
-- (BOOL)jk_isThisYear;
+- (BOOL)_isThisYear;
 ///是否是今年的下一年
-- (BOOL)jk_isNextYear;
+- (BOOL)_isNextYear;
 ///是否是今年的上一年
-- (BOOL)jk_isLastYear;
+- (BOOL)_isLastYear;
 
 ///是否提前aDate
-- (BOOL)jk_isEarlierThanDate:(NSDate *)aDate;
+- (BOOL)_isEarlierThanDate:(NSDate *)aDate;
 ///是否晚于aDate
-- (BOOL)jk_isLaterThanDate:(NSDate *)aDate;
+- (BOOL)_isLaterThanDate:(NSDate *)aDate;
 ///是否晚是未来
-- (BOOL)jk_isInFuture;
+- (BOOL)_isInFuture;
 ///是否晚是过去
-- (BOOL)jk_isInPast;
+- (BOOL)_isInPast;
 
 
 ///是否是工作日
-- (BOOL)jk_isTypicallyWorkday;
+- (BOOL)_isTypicallyWorkday;
 ///是否是周末
-- (BOOL)jk_isTypicallyWeekend;
+- (BOOL)_isTypicallyWeekend;
 
 #pragma mark ---- Adjusting dates 调节时间
 ///增加dYears年
-- (NSDate *)jk_dateByAddingYears:(NSInteger)dYears;
+- (NSDate *)_dateByAddingYears:(NSInteger)dYears;
 ///减少dYears年
-- (NSDate *)jk_dateBySubtractingYears:(NSInteger)dYears;
+- (NSDate *)_dateBySubtractingYears:(NSInteger)dYears;
 ///增加dMonths月
-- (NSDate *)jk_dateByAddingMonths:(NSInteger)dMonths;
+- (NSDate *)_dateByAddingMonths:(NSInteger)dMonths;
 ///减少dMonths月
-- (NSDate *)jk_dateBySubtractingMonths:(NSInteger)dMonths;
+- (NSDate *)_dateBySubtractingMonths:(NSInteger)dMonths;
 ///增加dDays天
-- (NSDate *)jk_dateByAddingDays:(NSInteger)dDays;
+- (NSDate *)_dateByAddingDays:(NSInteger)dDays;
 ///减少dDays天
-- (NSDate *)jk_dateBySubtractingDays:(NSInteger)dDays;
+- (NSDate *)_dateBySubtractingDays:(NSInteger)dDays;
 ///增加dHours小时
-- (NSDate *)jk_dateByAddingHours:(NSInteger)dHours;
+- (NSDate *)_dateByAddingHours:(NSInteger)dHours;
 ///减少dHours小时
-- (NSDate *)jk_dateBySubtractingHours:(NSInteger)dHours;
+- (NSDate *)_dateBySubtractingHours:(NSInteger)dHours;
 ///增加dMinutes分钟
-- (NSDate *)jk_dateByAddingMinutes:(NSInteger)dMinutes;
+- (NSDate *)_dateByAddingMinutes:(NSInteger)dMinutes;
 ///减少dMinutes分钟
-- (NSDate *)jk_dateBySubtractingMinutes:(NSInteger)dMinutes;
+- (NSDate *)_dateBySubtractingMinutes:(NSInteger)dMinutes;
 
 
 #pragma mark ---- 时间间隔
 ///比aDate晚多少分钟
-- (NSInteger)jk_minutesAfterDate:(NSDate *)aDate;
+- (NSInteger)_minutesAfterDate:(NSDate *)aDate;
 ///比aDate早多少分钟
-- (NSInteger)jk_minutesBeforeDate:(NSDate *)aDate;
+- (NSInteger)_minutesBeforeDate:(NSDate *)aDate;
 ///比aDate晚多少小时
-- (NSInteger)jk_hoursAfterDate:(NSDate *)aDate;
+- (NSInteger)_hoursAfterDate:(NSDate *)aDate;
 ///比aDate早多少小时
-- (NSInteger)jk_hoursBeforeDate:(NSDate *)aDate;
+- (NSInteger)_hoursBeforeDate:(NSDate *)aDate;
 ///比aDate晚多少天
-- (NSInteger)jk_daysAfterDate:(NSDate *)aDate;
+- (NSInteger)_daysAfterDate:(NSDate *)aDate;
 ///比aDate早多少天
-- (NSInteger)jk_daysBeforeDate:(NSDate *)aDate;
+- (NSInteger)_daysBeforeDate:(NSDate *)aDate;
 
 ///与anotherDate间隔几天
-- (NSInteger)jk_distanceDaysToDate:(NSDate *)anotherDate;
+- (NSInteger)_distanceDaysToDate:(NSDate *)anotherDate;
 ///与anotherDate间隔几月
-- (NSInteger)jk_distanceMonthsToDate:(NSDate *)anotherDate;
+- (NSInteger)_distanceMonthsToDate:(NSDate *)anotherDate;
 ///与anotherDate间隔几年
-- (NSInteger)jk_distanceYearsToDate:(NSDate *)anotherDate;
+- (NSInteger)_distanceYearsToDate:(NSDate *)anotherDate;
 @end

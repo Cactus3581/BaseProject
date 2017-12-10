@@ -11,7 +11,6 @@
 
 @interface NSDecimalNumber (JKCalculatingByString)
 /**
- *  @author JKCategories
  *
  *   use string calculation for nsdecimalnumber, for simplicity when doing much calculation works. 
  *
@@ -20,5 +19,5 @@
  *
  *  @return <#return value description#>
  */
-+ (NSDecimalNumber *)jk_decimalNumberWithEquation:(NSString *)equation decimalNumbers:(NSDictionary *)numbers;
++ (NSDecimalNumber *)_decimalNumberWithEquation:(NSString *)equation decimalNumbers:(NSDictionary *)numbers;
 @end

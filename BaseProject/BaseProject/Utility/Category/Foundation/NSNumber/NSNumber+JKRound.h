@@ -10,8 +10,8 @@
 
 @interface NSNumber (JKRound)
 /* 展示 */
-- (NSString*)jk_toDisplayNumberWithDigit:(NSInteger)digit;
-- (NSString*)jk_toDisplayPercentageWithDigit:(NSInteger)digit;
+- (NSString*)_toDisplayNumberWithDigit:(NSInteger)digit;
+- (NSString*)_toDisplayPercentageWithDigit:(NSInteger)digit;
 
 /*　四舍五入 */
 /**
@@ -21,7 +21,7 @@
  *
  *  @return 结果
  */
-- (NSNumber*)jk_doRoundWithDigit:(NSUInteger)digit;
+- (NSNumber*)_doRoundWithDigit:(NSUInteger)digit;
 /**
  *  @brief  取上整
  *
@@ -29,7 +29,7 @@
  *
  *  @return 结果
  */
-- (NSNumber*)jk_doCeilWithDigit:(NSUInteger)digit;
+- (NSNumber*)_doCeilWithDigit:(NSUInteger)digit;
 /**
  *  @brief  取下整
  *
@@ -37,5 +37,5 @@
  *
  *  @return 结果
  */
-- (NSNumber*)jk_doFloorWithDigit:(NSUInteger)digit;
+- (NSNumber*)_doFloorWithDigit:(NSUInteger)digit;
 @end

@@ -10,23 +10,23 @@
 #import <objc/runtime.h>
 
 @implementation NSObject (JKReflection)
-- (NSString *)jk_className
+- (NSString *)_className
 {
     return NSStringFromClass([self class]);
 }
-- (NSString *)jk_superClassName
+- (NSString *)_superClassName
 {
     return NSStringFromClass([self superclass]);
 }
-+ (NSString *)jk_className
++ (NSString *)_className
 {
     return NSStringFromClass([self class]);
 }
-+ (NSString *)jk_superClassName
++ (NSString *)_superClassName
 {
     return NSStringFromClass([self superclass]);
 }
--(NSDictionary *)jk_propertyDictionary
+-(NSDictionary *)_propertyDictionary
 {
     //创建可变字典
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
@@ -41,11 +41,11 @@
     free(props);
     return dict;
 }
-- (NSArray*)jk_propertyKeys
+- (NSArray*)_propertyKeys
 {
-    return [[self class] jk_propertyKeys];
+    return [[self class] _propertyKeys];
 }
-+ (NSArray *)jk_propertyKeys {
++ (NSArray *)_propertyKeys {
     unsigned int propertyCount = 0;
     objc_property_t * properties = class_copyPropertyList(self, &propertyCount);
     NSMutableArray * propertyNames = [NSMutableArray array];
@@ -57,18 +57,17 @@
     free(properties);
     return propertyNames;
 }
-- (NSArray *)jk_propertiesInfo
+- (NSArray *)_propertiesInfo
 {
-    return [[self class] jk_propertiesInfo];
+    return [[self class] _propertiesInfo];
 }
 /**
- *  @author Jakey, 15-12-22 11:12:38
  *
  *  属性列表与属性的各种信息
  *
  *  @return <#return value description#>
  */
-+ (NSArray *)jk_propertiesInfo
++ (NSArray *)_propertiesInfo
 {
     NSMutableArray *propertieArray = [NSMutableArray array];
     
@@ -79,7 +78,7 @@
     {
         [propertieArray addObject:({
             
-            NSDictionary *dictionary = [self jk_dictionaryWithProperty:properties[i]];
+            NSDictionary *dictionary = [self _dictionaryWithProperty:properties[i]];
             
             dictionary;
         })];
@@ -89,11 +88,11 @@
     
     return propertieArray;
 }
-+ (NSArray *)jk_propertiesWithCodeFormat
++ (NSArray *)_propertiesWithCodeFormat
 {
     NSMutableArray *array = [NSMutableArray array];
     
-    NSArray *properties = [[self class] jk_propertiesInfo];
+    NSArray *properties = [[self class] _propertiesInfo];
     
     for (NSDictionary *item in properties)
     {
@@ -135,7 +134,7 @@
     
     return array;
 }
--(NSArray*)jk_methodList{
+-(NSArray*)_methodList{
     u_int               count;
     NSMutableArray *methodList = [NSMutableArray array];
     Method *methods= class_copyMethodList([self class], &count);
@@ -148,7 +147,7 @@
     free(methods);
     return methodList;
 }
--(NSArray*)jk_methodListInfo{
+-(NSArray*)_methodListInfo{
     u_int               count;
     NSMutableArray *methodList = [NSMutableArray array];
     Method *methods= class_copyMethodList([self class], &count);
@@ -171,11 +170,11 @@
             // 获取方法的指定位置参数的类型字符串
           char *arg =   method_copyArgumentType(method,index);
 //            NSString *argString = [NSString stringWithCString:arg encoding:NSUTF8StringEncoding];
-            [arguments addObject:[[self class] jk_decodeType:arg]];
+            [arguments addObject:[[self class] _decodeType:arg]];
         }
         
-        NSString *returnTypeString =[[self class] jk_decodeType:returnType];
-        NSString *encodeString = [[self class] jk_decodeType:encoding];
+        NSString *returnTypeString =[[self class] _decodeType:returnType];
+        NSString *encodeString = [[self class] _decodeType:encoding];
         NSString *nameString = [NSString  stringWithCString:sel_getName(name) encoding:NSUTF8StringEncoding];
 
         [info setObject:arguments forKey:@"arguments"];
@@ -189,7 +188,7 @@
     free(methods);
     return methodList;
 }
-+(NSArray*)jk_methodList{
++(NSArray*)_methodList{
     u_int               count;
     NSMutableArray *methodList = [NSMutableArray array];
     Method * methods= class_copyMethodList([self class], &count);
@@ -204,7 +203,7 @@
     return methodList;
 }
 //创建并返回一个指向所有已注册类的指针列表
-+ (NSArray *)jk_registedClassList
++ (NSArray *)_registedClassList
 {
     NSMutableArray *result = [NSMutableArray array];
     
@@ -221,16 +220,15 @@
 }
 
 /**
- *  @author Jakey, 15-12-22 12:12:17
  *
  *  <>协议列表信息
  *
  *  @return 协议列表信息
  */
--(NSDictionary *)jk_protocolList{
-    return [[self class]jk_protocolList];
+-(NSDictionary *)_protocolList{
+    return [[self class]_protocolList];
 }
-+ (NSDictionary *)jk_protocolList
++ (NSDictionary *)_protocolList
 {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
     
@@ -268,13 +266,13 @@
     return dictionary;
 }
 
-+ (NSArray *)jk_instanceVariable
++ (NSArray *)_instanceVariable
 {
     unsigned int outCount;
     Ivar *ivars = class_copyIvarList([self class], &outCount);
     NSMutableArray *result = [NSMutableArray array];
     for (int i = 0; i < outCount; i++) {
-        NSString *type = [[self class] jk_decodeType:ivar_getTypeEncoding(ivars[i])];
+        NSString *type = [[self class] _decodeType:ivar_getTypeEncoding(ivars[i])];
         NSString *name = [NSString stringWithCString:ivar_getName(ivars[i]) encoding:NSUTF8StringEncoding];
         NSString *ivarDescription = [NSString stringWithFormat:@"%@ %@", type, name];
         [result addObject:ivarDescription];
@@ -283,18 +281,18 @@
     return result.count ? [result copy] : nil;
 }
 
-- (BOOL)jk_hasPropertyForKey:(NSString*)key
+- (BOOL)_hasPropertyForKey:(NSString*)key
 {
     objc_property_t property = class_getProperty([self class], [key UTF8String]);
     return (BOOL)property;
 }
-- (BOOL)jk_hasIvarForKey:(NSString*)key
+- (BOOL)_hasIvarForKey:(NSString*)key
 {
     Ivar ivar = class_getInstanceVariable([self class], [key UTF8String]);
     return (BOOL)ivar;
 }
 #pragma mark -- help
-+ (NSDictionary *)jk_dictionaryWithProperty:(objc_property_t)property
++ (NSDictionary *)_dictionaryWithProperty:(objc_property_t)property
 {
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
     
@@ -478,7 +476,7 @@
     
     return result;
 }
-+ (NSString *)jk_decodeType:(const char *)cString
++ (NSString *)_decodeType:(const char *)cString
 {
     if (!strcmp(cString, @encode(char)))
         return @"char";
@@ -552,7 +550,7 @@
     {
         if ([[result substringToIndex:1] isEqualToString:@"^"]) {
             result = [NSString stringWithFormat:@"%@ *",
-                      [NSString jk_decodeType:[[result substringFromIndex:1] cStringUsingEncoding:NSUTF8StringEncoding]]];
+                      [NSString _decodeType:[[result substringFromIndex:1] cStringUsingEncoding:NSUTF8StringEncoding]]];
         }
     }
     return result;

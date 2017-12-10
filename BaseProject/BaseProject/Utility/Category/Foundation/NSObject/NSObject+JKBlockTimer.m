@@ -37,7 +37,7 @@
 
 @implementation NSObject (JKBlockTimer)
 
--(void)jk_logTimeTakenToRunBlock:(void (^)(void)) block withPrefix:(NSString*) prefixString {
+-(void)_logTimeTakenToRunBlock:(void (^)(void)) block withPrefix:(NSString*) prefixString {
 	
 	double a = CFAbsoluteTimeGetCurrent();
 	block();

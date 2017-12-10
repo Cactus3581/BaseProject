@@ -26,7 +26,7 @@
 #import <UIKit/UIKit.h>
 @implementation NSDate (JKCupertinoYankee)
 
-- (NSDate *)jk_beginningOfDay {
+- (NSDate *)_beginningOfDay {
     NSCalendar *calendar = [NSCalendar currentCalendar];
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSDateComponents *components;
@@ -45,16 +45,16 @@
     return [calendar dateFromComponents:components];
 }
 
-- (NSDate *)jk_endOfDay {
+- (NSDate *)_endOfDay {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setDay:1];
     
-    return [[calendar dateByAddingComponents:components toDate:[self jk_beginningOfDay] options:0] dateByAddingTimeInterval:-1];
+    return [[calendar dateByAddingComponents:components toDate:[self _beginningOfDay] options:0] dateByAddingTimeInterval:-1];
 }
 
-- (NSDate *)jk_beginningOfWeek {
+- (NSDate *)_beginningOfWeek {
     NSCalendar *calendar = [NSCalendar currentCalendar];
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSDateComponents *components;
@@ -76,15 +76,15 @@
     return [calendar dateFromComponents:components];
 }
 
-- (NSDate *)jk_endOfWeek {
+- (NSDate *)_endOfWeek {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setWeekOfMonth:1];
     
-    return [[calendar dateByAddingComponents:components toDate:[self jk_beginningOfWeek] options:0] dateByAddingTimeInterval:-1];}
+    return [[calendar dateByAddingComponents:components toDate:[self _beginningOfWeek] options:0] dateByAddingTimeInterval:-1];}
 
-- (NSDate *)jk_beginningOfMonth {
+- (NSDate *)_beginningOfMonth {
     NSCalendar *calendar = [NSCalendar currentCalendar];
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSDateComponents *components;
@@ -102,16 +102,16 @@
     return [calendar dateFromComponents:components];
 }
 
-- (NSDate *)jk_endOfMonth {
+- (NSDate *)_endOfMonth {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setMonth:1];
     
-    return [[calendar dateByAddingComponents:components toDate:[self jk_beginningOfMonth] options:0] dateByAddingTimeInterval:-1];
+    return [[calendar dateByAddingComponents:components toDate:[self _beginningOfMonth] options:0] dateByAddingTimeInterval:-1];
 }
 
-- (NSDate *)jk_beginningOfYear {
+- (NSDate *)_beginningOfYear {
     NSCalendar *calendar = [NSCalendar currentCalendar];
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSDateComponents *components;
@@ -129,13 +129,13 @@
     return [calendar dateFromComponents:components];
 }
 
-- (NSDate *)jk_endOfYear {
+- (NSDate *)_endOfYear {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setYear:1];
     
-    return [[calendar dateByAddingComponents:components toDate:[self jk_beginningOfYear] options:0] dateByAddingTimeInterval:-1];
+    return [[calendar dateByAddingComponents:components toDate:[self _beginningOfYear] options:0] dateByAddingTimeInterval:-1];
 }
 
 @end

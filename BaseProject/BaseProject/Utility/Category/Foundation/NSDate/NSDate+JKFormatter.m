@@ -9,7 +9,7 @@
 #import "NSDate+JKFormatter.h"
 
 @implementation NSDate (JKFormatter)
-+(NSDateFormatter *)jk_formatter {
++(NSDateFormatter *)_formatter {
     
     static NSDateFormatter *formatter = nil;
     static dispatch_once_t oncePredicate;
@@ -24,26 +24,26 @@
     return formatter;
 }
 
-+(NSDateFormatter *)jk_formatterWithoutTime {
++(NSDateFormatter *)_formatterWithoutTime {
     
     static NSDateFormatter *formatterWithoutTime = nil;
     static dispatch_once_t oncePredicate;
     
     dispatch_once(&oncePredicate, ^{
-        formatterWithoutTime = [[NSDate jk_formatter] copy];
+        formatterWithoutTime = [[NSDate _formatter] copy];
         [formatterWithoutTime setTimeStyle:NSDateFormatterNoStyle];
     });
     
     return formatterWithoutTime;
 }
 
-+(NSDateFormatter *)jk_formatterWithoutDate {
++(NSDateFormatter *)_formatterWithoutDate {
     
     static NSDateFormatter *formatterWithoutDate = nil;
     static dispatch_once_t oncePredicate;
     
     dispatch_once(&oncePredicate, ^{
-        formatterWithoutDate = [[NSDate jk_formatter] copy];
+        formatterWithoutDate = [[NSDate _formatter] copy];
         [formatterWithoutDate setDateStyle:NSDateFormatterNoStyle];
     });
     
@@ -52,65 +52,65 @@
 
 #pragma mark -
 #pragma mark Formatter with date & time
--(NSString *)jk_formatWithUTCTimeZone {
-    return [self jk_formatWithTimeZoneOffset:0];
+-(NSString *)_formatWithUTCTimeZone {
+    return [self _formatWithTimeZoneOffset:0];
 }
 
--(NSString *)jk_formatWithLocalTimeZone {
-    return [self jk_formatWithTimeZone:[NSTimeZone localTimeZone]];
+-(NSString *)_formatWithLocalTimeZone {
+    return [self _formatWithTimeZone:[NSTimeZone localTimeZone]];
 }
 
--(NSString *)jk_formatWithTimeZoneOffset:(NSTimeInterval)offset {
-    return [self jk_formatWithTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:offset]];
+-(NSString *)_formatWithTimeZoneOffset:(NSTimeInterval)offset {
+    return [self _formatWithTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:offset]];
 }
 
--(NSString *)jk_formatWithTimeZone:(NSTimeZone *)timezone {
-    NSDateFormatter *formatter = [NSDate jk_formatter];
+-(NSString *)_formatWithTimeZone:(NSTimeZone *)timezone {
+    NSDateFormatter *formatter = [NSDate _formatter];
     [formatter setTimeZone:timezone];
     return [formatter stringFromDate:self];
 }
 
 #pragma mark -
 #pragma mark Formatter without time
--(NSString *)jk_formatWithUTCTimeZoneWithoutTime {
-    return [self jk_formatWithTimeZoneOffsetWithoutTime:0];
+-(NSString *)_formatWithUTCTimeZoneWithoutTime {
+    return [self _formatWithTimeZoneOffsetWithoutTime:0];
 }
 
--(NSString *)jk_formatWithLocalTimeZoneWithoutTime {
-    return [self jk_formatWithTimeZoneWithoutTime:[NSTimeZone localTimeZone]];
+-(NSString *)_formatWithLocalTimeZoneWithoutTime {
+    return [self _formatWithTimeZoneWithoutTime:[NSTimeZone localTimeZone]];
 }
 
--(NSString *)jk_formatWithTimeZoneOffsetWithoutTime:(NSTimeInterval)offset {
-    return [self jk_formatWithTimeZoneWithoutTime:[NSTimeZone timeZoneForSecondsFromGMT:offset]];
+-(NSString *)_formatWithTimeZoneOffsetWithoutTime:(NSTimeInterval)offset {
+    return [self _formatWithTimeZoneWithoutTime:[NSTimeZone timeZoneForSecondsFromGMT:offset]];
 }
 
--(NSString *)jk_formatWithTimeZoneWithoutTime:(NSTimeZone *)timezone {
-    NSDateFormatter *formatter = [NSDate jk_formatterWithoutTime];
+-(NSString *)_formatWithTimeZoneWithoutTime:(NSTimeZone *)timezone {
+    NSDateFormatter *formatter = [NSDate _formatterWithoutTime];
     [formatter setTimeZone:timezone];
     return [formatter stringFromDate:self];
 }
 
 #pragma mark -
 #pragma mark Formatter without date
--(NSString *)jk_formatWithUTCWithoutDate {
-    return [self jk_formatTimeWithTimeZone:0];
+-(NSString *)_formatWithUTCWithoutDate {
+    return [self _formatTimeWithTimeZone:0];
 }
--(NSString *)jk_formatWithLocalTimeWithoutDate {
-    return [self jk_formatTimeWithTimeZone:[NSTimeZone localTimeZone]];
-}
-
--(NSString *)jk_formatWithTimeZoneOffsetWithoutDate:(NSTimeInterval)offset {
-    return [self jk_formatTimeWithTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:offset]];
+-(NSString *)_formatWithLocalTimeWithoutDate {
+    return [self _formatTimeWithTimeZone:[NSTimeZone localTimeZone]];
 }
 
--(NSString *)jk_formatTimeWithTimeZone:(NSTimeZone *)timezone {
-    NSDateFormatter *formatter = [NSDate jk_formatterWithoutDate];
+-(NSString *)_formatWithTimeZoneOffsetWithoutDate:(NSTimeInterval)offset {
+    return [self _formatTimeWithTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:offset]];
+}
+
+-(NSString *)_formatTimeWithTimeZone:(NSTimeZone *)timezone {
+    NSDateFormatter *formatter = [NSDate _formatterWithoutDate];
     [formatter setTimeZone:timezone];
     return [formatter stringFromDate:self];
 }
 #pragma mark -
 #pragma mark Formatter  date
-+ (NSString *)jk_currentDateStringWithFormat:(NSString *)format
++ (NSString *)_currentDateStringWithFormat:(NSString *)format
 {
     NSDate *chosenDate = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -118,7 +118,7 @@
     NSString *date = [formatter stringFromDate:chosenDate];
     return date;
 }
-+ (NSDate *)jk_dateWithSecondsFromNow:(NSInteger)seconds {
++ (NSDate *)_dateWithSecondsFromNow:(NSInteger)seconds {
     NSDate *date = [NSDate date];
     NSDateComponents *components = [NSDateComponents new];
     [components setSecond:seconds];
@@ -127,7 +127,7 @@
     return dateSecondsAgo;
 }
 
-+ (NSDate *)jk_dateWithYear:(NSInteger)year month:(NSUInteger)month day:(NSUInteger)day {
++ (NSDate *)_dateWithYear:(NSInteger)year month:(NSUInteger)month day:(NSUInteger)day {
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setYear:year];
@@ -135,7 +135,7 @@
     [components setDay:day];
     return [calendar dateFromComponents:components];
 }
-- (NSString *)jk_dateWithFormat:(NSString *)format
+- (NSString *)_dateWithFormat:(NSString *)format
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:format];

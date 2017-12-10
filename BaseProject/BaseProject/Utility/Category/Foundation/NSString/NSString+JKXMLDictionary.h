@@ -24,6 +24,6 @@
  *
  *  @return NSDictionary
  */
--(NSDictionary *)jk_XMLDictionary;
+-(NSDictionary *)_XMLDictionary;
 
 @end

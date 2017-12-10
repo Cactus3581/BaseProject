@@ -11,10 +11,10 @@
 #import <UIKit/UIKit.h>
 @interface NSNumber (JKCGFloat)
 
-- (CGFloat)jk_CGFloatValue;
+- (CGFloat)_CGFloatValue;
 
-- (id)initWithJKCGFloat:(CGFloat)value;
+- (id)initWithBPCGFloat:(CGFloat)value;
 
-+ (NSNumber *)jk_numberWithCGFloat:(CGFloat)value;
++ (NSNumber *)_numberWithCGFloat:(CGFloat)value;
 
 @end

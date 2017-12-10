@@ -17,7 +17,7 @@
  *
  *  @return 合并后的NSDictionary
  */
-+ (NSDictionary *)jk_dictionaryByMerging:(NSDictionary *)dict1 with:(NSDictionary *)dict2;
++ (NSDictionary *)_dictionaryByMerging:(NSDictionary *)dict1 with:(NSDictionary *)dict2;
 /**
  *  @brief  并入一个NSDictionary
  *
@@ -25,10 +25,10 @@
  *
  *  @return 增加后的NSDictionary
  */
-- (NSDictionary *)jk_dictionaryByMergingWith:(NSDictionary *)dict;
+- (NSDictionary *)_dictionaryByMergingWith:(NSDictionary *)dict;
 
 #pragma mark - Manipulation
-- (NSDictionary *)jk_dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary;
-- (NSDictionary *)jk_dictionaryByRemovingEntriesWithKeys:(NSSet *)keys;
+- (NSDictionary *)_dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)_dictionaryByRemovingEntriesWithKeys:(NSSet *)keys;
 
 @end

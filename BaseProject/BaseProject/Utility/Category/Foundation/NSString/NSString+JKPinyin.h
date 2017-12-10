@@ -10,11 +10,11 @@
 
 @interface NSString (JKPinyin)
 
-- (NSString*)jk_pinyinWithPhoneticSymbol;
-- (NSString*)jk_pinyin;
-- (NSArray*)jk_pinyinArray;
-- (NSString*)jk_pinyinWithoutBlank;
-- (NSArray*)jk_pinyinInitialsArray;
-- (NSString*)jk_pinyinInitialsString;
+- (NSString*)_pinyinWithPhoneticSymbol;
+- (NSString*)_pinyin;
+- (NSArray*)_pinyinArray;
+- (NSString*)_pinyinWithoutBlank;
+- (NSArray*)_pinyinInitialsArray;
+- (NSString*)_pinyinInitialsString;
 
 @end

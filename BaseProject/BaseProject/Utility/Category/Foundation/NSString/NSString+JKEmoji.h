@@ -30,7 +30,7 @@
  Will be replaced with:
  "This is a smiley face \U0001F604"
  */
-- (NSString *)jk_stringByReplacingEmojiCheatCodesWithUnicode;
+- (NSString *)_stringByReplacingEmojiCheatCodesWithUnicode;
 
 /**
  Returns a NSString in which any occurrences that match the unicode characters
@@ -43,6 +43,6 @@
  Will be replaced with:
  "This is a smiley face :smiley:"
  */
-- (NSString *)jk_stringByReplacingEmojiUnicodeWithCheatCodes;
+- (NSString *)_stringByReplacingEmojiUnicodeWithCheatCodes;
 
 @end

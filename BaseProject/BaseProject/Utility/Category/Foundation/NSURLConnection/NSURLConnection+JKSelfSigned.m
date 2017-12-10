@@ -100,7 +100,7 @@
 
 @implementation NSURLConnection (SelfSigned)
 
-+ (void)jk_sendAsynchronousRequestAcceptingAllCerts:(NSURLRequest *)request queue:(NSOperationQueue *)queue completionHandler:(void (^)(NSURLResponse *, NSData *, NSError *))handler{
++ (void)_sendAsynchronousRequestAcceptingAllCerts:(NSURLRequest *)request queue:(NSOperationQueue *)queue completionHandler:(void (^)(NSURLResponse *, NSData *, NSError *))handler{
     NSURLConnectionDelegateWrapper* wrapper = [NSURLConnectionDelegateWrapper wrapperWithHandler:handler];
     NSURLConnection* connection = [[NSURLConnection alloc] initWithRequest:request delegate:wrapper startImmediately:NO];
     [wrapper setConnection:connection];

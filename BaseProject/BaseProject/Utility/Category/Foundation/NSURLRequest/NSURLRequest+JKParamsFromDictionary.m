@@ -17,14 +17,14 @@
 
 @implementation NSURLRequest (JKParamsFromDictionary)
 
-+(NSURLRequest *)jk_requestGETWithURL:(NSURL *)url parameters:(NSDictionary *)params {
++(NSURLRequest *)_requestGETWithURL:(NSURL *)url parameters:(NSDictionary *)params {
     //This code is ARC only.
     return [[NSURLRequest alloc] initWithURL:url parameters:params];
 }
 
 -(id)initWithURL:(NSURL *)URL parameters:(NSDictionary *)params {
     if (params) {
-        NSArray *queryStringComponents = [[self class] jk_queryStringComponentsFromKey:nil value:params];
+        NSArray *queryStringComponents = [[self class] _queryStringComponentsFromKey:nil value:params];
         NSString *parameterString = [queryStringComponents componentsJoinedByString:@"&"];
         if ([[URL absoluteString] rangeOfString:@"?"].location == NSNotFound) {
             URL = [NSURL URLWithString:[[URL absoluteString] stringByAppendingFormat:@"?%@",parameterString]];
@@ -39,21 +39,21 @@
     return self;
 }
 
-+(NSString *)jk_URLfromParameters:(NSDictionary *)params{
++(NSString *)_URLfromParameters:(NSDictionary *)params{
     if (params) {
-        NSArray *queryStringComponents = [[self class] jk_queryStringComponentsFromKey:nil value:params];
+        NSArray *queryStringComponents = [[self class] _queryStringComponentsFromKey:nil value:params];
         NSString *parameterString = [queryStringComponents componentsJoinedByString:@"&"];
         return parameterString;
     }
     return @"";
 }
 //These next three methods recursively break the dictionary down into its components.  Largely based on AFHTTPClient, but somewhat more readable and understandable (by me, anyway).
-+(NSArray *)jk_queryStringComponentsFromKey:(NSString *)key value:(id)value {
++(NSArray *)_queryStringComponentsFromKey:(NSString *)key value:(id)value {
     NSMutableArray *queryStringComponents = [NSMutableArray arrayWithCapacity:2];
     if ([value isKindOfClass:[NSDictionary class]]) {
-        [queryStringComponents addObjectsFromArray:[self jk_queryStringComponentsFromKey:key dictionaryValue:value]];
+        [queryStringComponents addObjectsFromArray:[self _queryStringComponentsFromKey:key dictionaryValue:value]];
     } else if ([value isKindOfClass:[NSArray class]]) {
-        [queryStringComponents addObjectsFromArray:[self jk_queryStringComponentsFromKey:key arrayValue:value]];
+        [queryStringComponents addObjectsFromArray:[self _queryStringComponentsFromKey:key arrayValue:value]];
     } else {
         static NSString * const kLegalURLEscapedCharacters = @"?!@#$^&%*+=,:;'\"`<>()[]{}/\\|~ ";
         NSString *valueString = [value description];
@@ -70,14 +70,14 @@
     return queryStringComponents;
 }
 
-+(NSArray *)jk_queryStringComponentsFromKey:(NSString *)key dictionaryValue:(NSDictionary *)dict{
++(NSArray *)_queryStringComponentsFromKey:(NSString *)key dictionaryValue:(NSDictionary *)dict{
     NSMutableArray *queryStringComponents = [NSMutableArray arrayWithCapacity:2];
     [dict enumerateKeysAndObjectsUsingBlock:^(id nestedKey, id nestedValue, BOOL *stop) {
         NSArray *components = nil;
         if (key == nil) {
-            components = [self jk_queryStringComponentsFromKey:nestedKey value:nestedValue];
+            components = [self _queryStringComponentsFromKey:nestedKey value:nestedValue];
         } else {
-            components = [self jk_queryStringComponentsFromKey:[NSString stringWithFormat:@"%@[%@]", key, nestedKey] value:nestedValue];
+            components = [self _queryStringComponentsFromKey:[NSString stringWithFormat:@"%@[%@]", key, nestedKey] value:nestedValue];
         }
         
         [queryStringComponents addObjectsFromArray:components];
@@ -86,10 +86,10 @@
     return queryStringComponents;
 }
 
-+(NSArray *)jk_queryStringComponentsFromKey:(NSString *)key arrayValue:(NSArray *)array{
++(NSArray *)_queryStringComponentsFromKey:(NSString *)key arrayValue:(NSArray *)array{
     NSMutableArray *queryStringComponents = [NSMutableArray arrayWithCapacity:2];
     [array enumerateObjectsUsingBlock:^(id nestedValue, NSUInteger index, BOOL *stop) {
-        [queryStringComponents addObjectsFromArray:[self jk_queryStringComponentsFromKey:[NSString stringWithFormat:@"%@[]", key] value:nestedValue]];
+        [queryStringComponents addObjectsFromArray:[self _queryStringComponentsFromKey:[NSString stringWithFormat:@"%@[]", key] value:nestedValue]];
     }];
     
     return queryStringComponents;

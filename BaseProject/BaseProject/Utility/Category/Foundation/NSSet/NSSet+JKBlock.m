@@ -9,13 +9,13 @@
 #import "NSSet+JKBlock.h"
 
 @implementation NSSet (JKBlock)
-- (void)jk_each:(void (^)(id))block {
+- (void)_each:(void (^)(id))block {
     [self enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
         block(obj);
     }];
 }
 
-- (void)jk_eachWithIndex:(void (^)(id, int))block {
+- (void)_eachWithIndex:(void (^)(id, int))block {
     __block int counter = 0;
     [self enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
         block(obj, counter);
@@ -23,7 +23,7 @@
     }];
 }
 
-- (NSArray *)jk_map:(id (^)(id object))block {
+- (NSArray *)_map:(id (^)(id object))block {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
     
     
@@ -37,7 +37,7 @@
     return array;
 }
 
-- (NSArray *)jk_select:(BOOL (^)(id object))block {
+- (NSArray *)_select:(BOOL (^)(id object))block {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
     
     for (id object in self) {
@@ -49,7 +49,7 @@
     return array;
 }
 
-- (NSArray *)jk_reject:(BOOL (^)(id object))block {
+- (NSArray *)_reject:(BOOL (^)(id object))block {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:self.count];
     
     for (id object in self) {
@@ -61,16 +61,16 @@
     return array;
 }
 
-- (NSArray *)jk_sort {
+- (NSArray *)_sort {
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES];
     return [self sortedArrayUsingDescriptors:@[sortDescriptor]];
 }
 
-- (id)jk_reduce:(id(^)(id accumulator, id object))block {
-    return [self jk_reduce:nil withBlock:block];
+- (id)_reduce:(id(^)(id accumulator, id object))block {
+    return [self _reduce:nil withBlock:block];
 }
 
-- (id)jk_reduce:(id)initial withBlock:(id(^)(id accumulator, id object))block {
+- (id)_reduce:(id)initial withBlock:(id(^)(id accumulator, id object))block {
     id accumulator = initial;
     
     for(id object in self)

@@ -9,14 +9,14 @@
 #import "NSObject+JKBlocks.h"
 #import <dispatch/dispatch.h>
 
-static inline dispatch_time_t jk_dTimeDelay(NSTimeInterval time) {
+static inline dispatch_time_t _dTimeDelay(NSTimeInterval time) {
     int64_t delta = (int64_t)(NSEC_PER_SEC * time);
     return dispatch_time(DISPATCH_TIME_NOW, delta);
 }
 
 @implementation NSObject (Blocks)
 
-+ (id)jk_performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay {
++ (id)_performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay {
     if (!block) return nil;
     
     __block BOOL cancelled = NO;
@@ -31,12 +31,12 @@ static inline dispatch_time_t jk_dTimeDelay(NSTimeInterval time) {
 
     wrappingBlock = [wrappingBlock copy];
     
-	dispatch_after(jk_dTimeDelay(delay), dispatch_get_main_queue(), ^{  wrappingBlock(NO); });
+	dispatch_after(_dTimeDelay(delay), dispatch_get_main_queue(), ^{  wrappingBlock(NO); });
     
     return wrappingBlock;
 }
 
-+ (id)jk_performBlock:(void (^)(id arg))block withObject:(id)anObject afterDelay:(NSTimeInterval)delay {
++ (id)_performBlock:(void (^)(id arg))block withObject:(id)anObject afterDelay:(NSTimeInterval)delay {
     if (!block) return nil;
     
     __block BOOL cancelled = NO;
@@ -51,12 +51,12 @@ static inline dispatch_time_t jk_dTimeDelay(NSTimeInterval time) {
     
     wrappingBlock = [wrappingBlock copy];
     
-	dispatch_after(jk_dTimeDelay(delay), dispatch_get_main_queue(), ^{  wrappingBlock(NO, anObject); });
+	dispatch_after(_dTimeDelay(delay), dispatch_get_main_queue(), ^{  wrappingBlock(NO, anObject); });
     
     return wrappingBlock;
 }
 
-- (id)jk_performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay {
+- (id)_performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay {
     
     if (!block) return nil;
     
@@ -72,12 +72,12 @@ static inline dispatch_time_t jk_dTimeDelay(NSTimeInterval time) {
     
     wrappingBlock = [wrappingBlock copy];
     
-	dispatch_after(jk_dTimeDelay(delay), dispatch_get_main_queue(), ^{  wrappingBlock(NO); });
+	dispatch_after(_dTimeDelay(delay), dispatch_get_main_queue(), ^{  wrappingBlock(NO); });
 
     return wrappingBlock;
 }
 
-- (id)jk_performBlock:(void (^)(id arg))block withObject:(id)anObject afterDelay:(NSTimeInterval)delay {
+- (id)_performBlock:(void (^)(id arg))block withObject:(id)anObject afterDelay:(NSTimeInterval)delay {
     if (!block) return nil;
     
     __block BOOL cancelled = NO;
@@ -92,19 +92,19 @@ static inline dispatch_time_t jk_dTimeDelay(NSTimeInterval time) {
     
     wrappingBlock = [wrappingBlock copy];
     
-	dispatch_after(jk_dTimeDelay(delay), dispatch_get_main_queue(), ^{  wrappingBlock(NO, anObject); });
+	dispatch_after(_dTimeDelay(delay), dispatch_get_main_queue(), ^{  wrappingBlock(NO, anObject); });
     
     return wrappingBlock;
 }
 
-+ (void)jk_cancelBlock:(id)block {
++ (void)_cancelBlock:(id)block {
     if (!block) return;
     void (^aWrappingBlock)(BOOL) = (void(^)(BOOL))block;
     aWrappingBlock(YES);
 }
 
-+ (void)jk_cancelPreviousPerformBlock:(id)aWrappingBlockHandle {
-    [self jk_cancelBlock:aWrappingBlockHandle];
++ (void)_cancelPreviousPerformBlock:(id)aWrappingBlockHandle {
+    [self _cancelBlock:aWrappingBlockHandle];
 }
 
 @end

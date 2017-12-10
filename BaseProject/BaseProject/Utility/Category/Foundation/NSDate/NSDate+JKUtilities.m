@@ -15,10 +15,10 @@
 #import "NSDate+JKUtilities.h"
 #import <UIKit/UIKit.h>
 // Thanks, AshFurrow
-//static const unsigned JK_NSDATE_UTILITIES_COMPONENT_FLAGS = (NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit |  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit);
+//static const unsigned BP_NSDATE_UTILITIES_COMPONENT_FLAGS = (NSYearCalendarUnit| NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit |  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit | NSWeekdayCalendarUnit | NSWeekdayOrdinalCalendarUnit);
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
-#define JK_NSDATE_UTILITIES_COMPONENT_FLAGS \
+#define BP_NSDATE_UTILITIES_COMPONENT_FLAGS \
 _Pragma("clang diagnostic push") \
 _Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"") \
 ({ \
@@ -33,7 +33,7 @@ _Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"") \
 _Pragma("clang diagnostic pop") \
 
 #else
-#define JK_NSDATE_UTILITIES_COMPONENT_FLAGS \
+#define BP_NSDATE_UTILITIES_COMPONENT_FLAGS \
 _Pragma("clang diagnostic push") \
 _Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"") \
 ({\
@@ -48,7 +48,7 @@ _Pragma("clang diagnostic pop") \
 
 // Courtesy of Lukasz Margielewski
 // Updated via Holger Haenisch
-+ (NSCalendar *) jk_currentCalendar
++ (NSCalendar *) _currentCalendar
 {
     static NSCalendar *sharedCalendar = nil;
     if (!sharedCalendar)
@@ -58,58 +58,58 @@ _Pragma("clang diagnostic pop") \
 
 #pragma mark - Relative Dates
 
-+ (NSDate *)jk_dateWithDaysFromNow: (NSInteger) days
++ (NSDate *)_dateWithDaysFromNow: (NSInteger) days
 {
     // Thanks, Jim Morrison
-    return [[NSDate date] jk_dateByAddingDays:days];
+    return [[NSDate date] _dateByAddingDays:days];
 }
 
-+ (NSDate *)jk_dateWithDaysBeforeNow: (NSInteger) days
++ (NSDate *)_dateWithDaysBeforeNow: (NSInteger) days
 {
     // Thanks, Jim Morrison
-    return [[NSDate date] jk_dateBySubtractingDays:days];
+    return [[NSDate date] _dateBySubtractingDays:days];
 }
 
-+ (NSDate *) jk_dateTomorrow
++ (NSDate *) _dateTomorrow
 {
-    return [NSDate jk_dateWithDaysFromNow:1];
+    return [NSDate _dateWithDaysFromNow:1];
 }
 
-+ (NSDate *) jk_dateYesterday
++ (NSDate *) _dateYesterday
 {
-    return [NSDate jk_dateWithDaysBeforeNow:1];
+    return [NSDate _dateWithDaysBeforeNow:1];
 }
 
-+ (NSDate *) jk_dateWithHoursFromNow: (NSInteger) dHours
++ (NSDate *) _dateWithHoursFromNow: (NSInteger) dHours
 {
-    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + JK_D_HOUR * dHours;
+    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + BP_D_HOUR * dHours;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
     return newDate;
 }
 
-+ (NSDate *) jk_dateWithHoursBeforeNow: (NSInteger) dHours
++ (NSDate *) _dateWithHoursBeforeNow: (NSInteger) dHours
 {
-    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] - JK_D_HOUR * dHours;
+    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] - BP_D_HOUR * dHours;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
     return newDate;
 }
 
-+ (NSDate *) jk_dateWithMinutesFromNow: (NSInteger) dMinutes
++ (NSDate *) _dateWithMinutesFromNow: (NSInteger) dMinutes
 {
-    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + JK_D_MINUTE * dMinutes;
+    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + BP_D_MINUTE * dMinutes;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
     return newDate;
 }
 
-+ (NSDate *) jk_dateWithMinutesBeforeNow: (NSInteger) dMinutes
++ (NSDate *) _dateWithMinutesBeforeNow: (NSInteger) dMinutes
 {
-    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] - JK_D_MINUTE * dMinutes;
+    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] - BP_D_MINUTE * dMinutes;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
     return newDate;
 }
 
 #pragma mark - String Properties
-- (NSString *) jk_stringWithFormat: (NSString *) format
+- (NSString *) _stringWithFormat: (NSString *) format
 {
     NSDateFormatter *formatter = [NSDateFormatter new];
     //    formatter.locale = [NSLocale currentLocale]; // Necessary?
@@ -117,7 +117,7 @@ _Pragma("clang diagnostic pop") \
     return [formatter stringFromDate:self];
 }
 
-- (NSString *) jk_stringWithDateStyle: (NSDateFormatterStyle) dateStyle timeStyle: (NSDateFormatterStyle) timeStyle
+- (NSString *) _stringWithDateStyle: (NSDateFormatterStyle) dateStyle timeStyle: (NSDateFormatterStyle) timeStyle
 {
     NSDateFormatter *formatter = [NSDateFormatter new];
     formatter.dateStyle = dateStyle;
@@ -126,263 +126,263 @@ _Pragma("clang diagnostic pop") \
     return [formatter stringFromDate:self];
 }
 
-- (NSString *) jk_shortString
+- (NSString *) _shortString
 {
-    return [self jk_stringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
+    return [self _stringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
 }
 
-- (NSString *) jk_shortTimeString
+- (NSString *) _shortTimeString
 {
-    return [self jk_stringWithDateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterShortStyle];
+    return [self _stringWithDateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterShortStyle];
 }
 
-- (NSString *) jk_shortDateString
+- (NSString *) _shortDateString
 {
-    return [self jk_stringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
+    return [self _stringWithDateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
 }
 
-- (NSString *) jk_mediumString
+- (NSString *) _mediumString
 {
-    return [self jk_stringWithDateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle ];
+    return [self _stringWithDateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle ];
 }
 
-- (NSString *) jk_mediumTimeString
+- (NSString *) _mediumTimeString
 {
-    return [self jk_stringWithDateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterMediumStyle ];
+    return [self _stringWithDateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterMediumStyle ];
 }
 
-- (NSString *) jk_mediumDateString
+- (NSString *) _mediumDateString
 {
-    return [self jk_stringWithDateStyle:NSDateFormatterMediumStyle  timeStyle:NSDateFormatterNoStyle];
+    return [self _stringWithDateStyle:NSDateFormatterMediumStyle  timeStyle:NSDateFormatterNoStyle];
 }
 
-- (NSString *) jk_longString
+- (NSString *) _longString
 {
-    return [self jk_stringWithDateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterLongStyle ];
+    return [self _stringWithDateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterLongStyle ];
 }
 
-- (NSString *) jk_longTimeString
+- (NSString *) _longTimeString
 {
-    return [self jk_stringWithDateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterLongStyle ];
+    return [self _stringWithDateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterLongStyle ];
 }
 
-- (NSString *) jk_longDateString
+- (NSString *) _longDateString
 {
-    return [self jk_stringWithDateStyle:NSDateFormatterLongStyle  timeStyle:NSDateFormatterNoStyle];
+    return [self _stringWithDateStyle:NSDateFormatterLongStyle  timeStyle:NSDateFormatterNoStyle];
 }
 
 #pragma mark - Comparing Dates
 
-- (BOOL) jk_isEqualToDateIgnoringTime: (NSDate *) aDate
+- (BOOL) _isEqualToDateIgnoringTime: (NSDate *) aDate
 {
-    NSDateComponents *components1 = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
-    NSDateComponents *components2 = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:aDate];
+    NSDateComponents *components1 = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    NSDateComponents *components2 = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:aDate];
     return ((components1.year == components2.year) &&
             (components1.month == components2.month) &&
             (components1.day == components2.day));
 }
 
-- (BOOL) jk_jk_isToday
+- (BOOL) __isToday
 {
-    return [self jk_isEqualToDateIgnoringTime:[NSDate date]];
+    return [self _isEqualToDateIgnoringTime:[NSDate date]];
 }
 
-- (BOOL) jk_isTomorrow
+- (BOOL) _isTomorrow
 {
-    return [self jk_isEqualToDateIgnoringTime:[NSDate jk_dateTomorrow]];
+    return [self _isEqualToDateIgnoringTime:[NSDate _dateTomorrow]];
 }
 
-- (BOOL) jk_isYesterday
+- (BOOL) _isYesterday
 {
-    return [self jk_isEqualToDateIgnoringTime:[NSDate jk_dateYesterday]];
+    return [self _isEqualToDateIgnoringTime:[NSDate _dateYesterday]];
 }
 
 // This hard codes the assumption that a week is 7 days
-- (BOOL)jk_isSameWeekAsDate: (NSDate *) aDate
+- (BOOL)_isSameWeekAsDate: (NSDate *) aDate
 {
-    NSDateComponents *components1 = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
-    NSDateComponents *components2 = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:aDate];
+    NSDateComponents *components1 = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    NSDateComponents *components2 = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:aDate];
 
     // Must be same week. 12/31 and 1/1 will both be week "1" if they are in the same week
     if (components1.weekOfYear != components2.weekOfYear) return NO;
     
     // Must have a time interval under 1 week. Thanks @aclark
-    return (fabs([self timeIntervalSinceDate:aDate]) < JK_D_WEEK);
+    return (fabs([self timeIntervalSinceDate:aDate]) < BP_D_WEEK);
 
 }
 
-- (BOOL) jk_isThisWeek
+- (BOOL) _isThisWeek
 {
-    return [self jk_isSameWeekAsDate:[NSDate date]];
+    return [self _isSameWeekAsDate:[NSDate date]];
 }
 
-- (BOOL) jk_isNextWeek
+- (BOOL) _isNextWeek
 {
-    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + JK_D_WEEK;
+    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + BP_D_WEEK;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
-    return [self jk_isSameWeekAsDate:newDate];
+    return [self _isSameWeekAsDate:newDate];
 }
 
-- (BOOL) jk_isLastWeek
+- (BOOL) _isLastWeek
 {
-    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] - JK_D_WEEK;
+    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] - BP_D_WEEK;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
-    return [self jk_isSameWeekAsDate:newDate];
+    return [self _isSameWeekAsDate:newDate];
 }
 
 // Thanks, mspasov
-- (BOOL) jk_isSameMonthAsDate: (NSDate *) aDate
+- (BOOL) _isSameMonthAsDate: (NSDate *) aDate
 {
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSDateComponents *components1;
     NSDateComponents *components2;
     if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
-        components1 = [[NSDate jk_currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth fromDate:self];
-        components2 = [[NSDate jk_currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth fromDate:aDate];
+        components1 = [[NSDate _currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth fromDate:self];
+        components2 = [[NSDate _currentCalendar] components:NSCalendarUnitYear | NSCalendarUnitMonth fromDate:aDate];
     }else{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        components1 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:self];
-        components2 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:aDate];
+        components1 = [[NSDate _currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:self];
+        components2 = [[NSDate _currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:aDate];
 #pragma clang diagnostic pop
     }
 #else
-    NSDateComponents *components1 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:self];
-    NSDateComponents *components2 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:aDate];
+    NSDateComponents *components1 = [[NSDate _currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:self];
+    NSDateComponents *components2 = [[NSDate _currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:aDate];
 #endif
     
     return ((components1.month == components2.month) &&
             (components1.year == components2.year));
 }
 
-- (BOOL) jk_isThisMonth
+- (BOOL) _isThisMonth
 {
-    return [self jk_isSameMonthAsDate:[NSDate date]];
+    return [self _isSameMonthAsDate:[NSDate date]];
 }
 
 // Thanks Marcin Krzyzanowski, also for adding/subtracting years and months
-- (BOOL) jk_isLastMonth
+- (BOOL) _isLastMonth
 {
-    return [self jk_isSameMonthAsDate:[[NSDate date] jk_dateBySubtractingMonths:1]];
+    return [self _isSameMonthAsDate:[[NSDate date] _dateBySubtractingMonths:1]];
 }
 
-- (BOOL) jk_isNextMonth
+- (BOOL) _isNextMonth
 {
-    return [self jk_isSameMonthAsDate:[[NSDate date] jk_dateByAddingMonths:1]];
+    return [self _isSameMonthAsDate:[[NSDate date] _dateByAddingMonths:1]];
 }
 
-- (BOOL) jk_isSameYearAsDate: (NSDate *) aDate
+- (BOOL) _isSameYearAsDate: (NSDate *) aDate
 {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSDateComponents *components1;
     NSDateComponents *components2;
     if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
-        components1 = [[NSDate jk_currentCalendar] components:NSCalendarUnitYear fromDate:self];
-        components2 = [[NSDate jk_currentCalendar] components:NSCalendarUnitYear fromDate:aDate];
+        components1 = [[NSDate _currentCalendar] components:NSCalendarUnitYear fromDate:self];
+        components2 = [[NSDate _currentCalendar] components:NSCalendarUnitYear fromDate:aDate];
     }else{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        components1 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit fromDate:self];
-        components2 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit  fromDate:aDate];
+        components1 = [[NSDate _currentCalendar] components:NSYearCalendarUnit fromDate:self];
+        components2 = [[NSDate _currentCalendar] components:NSYearCalendarUnit  fromDate:aDate];
 #pragma clang diagnostic pop
     }
 #else
-    NSDateComponents *components1 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:self];
-    NSDateComponents *components2 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:aDate];
+    NSDateComponents *components1 = [[NSDate _currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:self];
+    NSDateComponents *components2 = [[NSDate _currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:aDate];
 #endif
     return (components1.year == components2.year);
 }
 
-- (BOOL) jk_isThisYear
+- (BOOL) _isThisYear
 {
     // Thanks, baspellis
-    return [self jk_isSameYearAsDate:[NSDate date]];
+    return [self _isSameYearAsDate:[NSDate date]];
 }
 
-- (BOOL) jk_isNextYear
+- (BOOL) _isNextYear
 {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSDateComponents *components1;
     NSDateComponents *components2;
     if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
-        components1 = [[NSDate jk_currentCalendar] components:NSCalendarUnitYear fromDate:self];
-        components2 = [[NSDate jk_currentCalendar] components:NSCalendarUnitYear fromDate:[NSDate date]];
+        components1 = [[NSDate _currentCalendar] components:NSCalendarUnitYear fromDate:self];
+        components2 = [[NSDate _currentCalendar] components:NSCalendarUnitYear fromDate:[NSDate date]];
     }else{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        components1 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit fromDate:self];
-        components2 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit  fromDate:[NSDate date]];
+        components1 = [[NSDate _currentCalendar] components:NSYearCalendarUnit fromDate:self];
+        components2 = [[NSDate _currentCalendar] components:NSYearCalendarUnit  fromDate:[NSDate date]];
 #pragma clang diagnostic pop
     }
 #else
-    NSDateComponents *components1 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit fromDate:self];
-    NSDateComponents *components2 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit fromDate:[NSDate date]];
+    NSDateComponents *components1 = [[NSDate _currentCalendar] components:NSYearCalendarUnit fromDate:self];
+    NSDateComponents *components2 = [[NSDate _currentCalendar] components:NSYearCalendarUnit fromDate:[NSDate date]];
 #endif
     
     return (components1.year == (components2.year + 1));
 }
 
-- (BOOL) jk_isLastYear
+- (BOOL) _isLastYear
 {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSDateComponents *components1;
     NSDateComponents *components2;
     if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
-        components1 = [[NSDate jk_currentCalendar] components:NSCalendarUnitYear fromDate:self];
-        components2 = [[NSDate jk_currentCalendar] components:NSCalendarUnitYear fromDate:[NSDate date]];
+        components1 = [[NSDate _currentCalendar] components:NSCalendarUnitYear fromDate:self];
+        components2 = [[NSDate _currentCalendar] components:NSCalendarUnitYear fromDate:[NSDate date]];
     }else{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        components1 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit fromDate:self];
-        components2 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit  fromDate:[NSDate date]];
+        components1 = [[NSDate _currentCalendar] components:NSYearCalendarUnit fromDate:self];
+        components2 = [[NSDate _currentCalendar] components:NSYearCalendarUnit  fromDate:[NSDate date]];
 #pragma clang diagnostic pop
     }
 #else
-    NSDateComponents *components1 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit fromDate:self];
-    NSDateComponents *components2 = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit fromDate:[NSDate date]];
+    NSDateComponents *components1 = [[NSDate _currentCalendar] components:NSYearCalendarUnit fromDate:self];
+    NSDateComponents *components2 = [[NSDate _currentCalendar] components:NSYearCalendarUnit fromDate:[NSDate date]];
 #endif
     return (components1.year == (components2.year - 1));
 }
 
-- (BOOL) jk_isEarlierThanDate: (NSDate *) aDate
+- (BOOL) _isEarlierThanDate: (NSDate *) aDate
 {
     return ([self compare:aDate] == NSOrderedAscending);
 }
 
-- (BOOL) jk_isLaterThanDate: (NSDate *) aDate
+- (BOOL) _isLaterThanDate: (NSDate *) aDate
 {
     return ([self compare:aDate] == NSOrderedDescending);
 }
 
 // Thanks, markrickert
-- (BOOL) jk_isInFuture
+- (BOOL) _isInFuture
 {
-    return ([self jk_isLaterThanDate:[NSDate date]]);
+    return ([self _isLaterThanDate:[NSDate date]]);
 }
 
 // Thanks, markrickert
-- (BOOL) jk_isInPast
+- (BOOL) _isInPast
 {
-    return ([self jk_isEarlierThanDate:[NSDate date]]);
+    return ([self _isEarlierThanDate:[NSDate date]]);
 }
 
 
 #pragma mark - Roles
-- (BOOL) jk_isTypicallyWeekend
+- (BOOL) _isTypicallyWeekend
 {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSDateComponents *components;
     if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
-        components = [[NSDate jk_currentCalendar] components:NSCalendarUnitWeekday | NSCalendarUnitMonth fromDate:self];
+        components = [[NSDate _currentCalendar] components:NSCalendarUnitWeekday | NSCalendarUnitMonth fromDate:self];
     }else{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        components = [[NSDate jk_currentCalendar] components:NSWeekdayCalendarUnit fromDate:self];
+        components = [[NSDate _currentCalendar] components:NSWeekdayCalendarUnit fromDate:self];
 #pragma clang diagnostic pop
     }
 #else
-    NSDateComponents *components = [[NSDate jk_currentCalendar] components:NSWeekdayCalendarUnit fromDate:self];
+    NSDateComponents *components = [[NSDate _currentCalendar] components:NSWeekdayCalendarUnit fromDate:self];
 #endif
     if ((components.weekday == 1) ||
         (components.weekday == 7))
@@ -390,15 +390,15 @@ _Pragma("clang diagnostic pop") \
     return NO;
 }
 
-- (BOOL) jk_isTypicallyWorkday
+- (BOOL) _isTypicallyWorkday
 {
-    return ![self jk_isTypicallyWeekend];
+    return ![self _isTypicallyWeekend];
 }
 
 #pragma mark - Adjusting Dates
 
 // Thaks, rsjohnson
-- (NSDate *) jk_dateByAddingYears: (NSInteger) dYears
+- (NSDate *) _dateByAddingYears: (NSInteger) dYears
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     [dateComponents setYear:dYears];
@@ -406,12 +406,12 @@ _Pragma("clang diagnostic pop") \
     return newDate;
 }
 
-- (NSDate *) jk_dateBySubtractingYears: (NSInteger) dYears
+- (NSDate *) _dateBySubtractingYears: (NSInteger) dYears
 {
-    return [self jk_dateByAddingYears:-dYears];
+    return [self _dateByAddingYears:-dYears];
 }
 
-- (NSDate *) jk_dateByAddingMonths: (NSInteger) dMonths
+- (NSDate *) _dateByAddingMonths: (NSInteger) dMonths
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     [dateComponents setMonth:dMonths];
@@ -419,13 +419,13 @@ _Pragma("clang diagnostic pop") \
     return newDate;
 }
 
-- (NSDate *) jk_dateBySubtractingMonths: (NSInteger) dMonths
+- (NSDate *) _dateBySubtractingMonths: (NSInteger) dMonths
 {
-    return [self jk_dateByAddingMonths:-dMonths];
+    return [self _dateByAddingMonths:-dMonths];
 }
 
 // Courtesy of dedan who mentions issues with Daylight Savings
-- (NSDate *) jk_dateByAddingDays: (NSInteger) dDays
+- (NSDate *) _dateByAddingDays: (NSInteger) dDays
 {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     [dateComponents setDay:dDays];
@@ -433,225 +433,225 @@ _Pragma("clang diagnostic pop") \
     return newDate;
 }
 
-- (NSDate *) jk_dateBySubtractingDays: (NSInteger) dDays
+- (NSDate *) _dateBySubtractingDays: (NSInteger) dDays
 {
-    return [self jk_dateByAddingDays: (dDays * -1)];
+    return [self _dateByAddingDays: (dDays * -1)];
 }
 
-- (NSDate *) jk_dateByAddingHours: (NSInteger) dHours
+- (NSDate *) _dateByAddingHours: (NSInteger) dHours
 {
-    NSTimeInterval aTimeInterval = [self timeIntervalSinceReferenceDate] + JK_D_HOUR * dHours;
+    NSTimeInterval aTimeInterval = [self timeIntervalSinceReferenceDate] + BP_D_HOUR * dHours;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
     return newDate;
 }
 
-- (NSDate *) jk_dateBySubtractingHours: (NSInteger) dHours
+- (NSDate *) _dateBySubtractingHours: (NSInteger) dHours
 {
-    return [self jk_dateByAddingHours: (dHours * -1)];
+    return [self _dateByAddingHours: (dHours * -1)];
 }
 
-- (NSDate *) jk_dateByAddingMinutes: (NSInteger) dMinutes
+- (NSDate *) _dateByAddingMinutes: (NSInteger) dMinutes
 {
-    NSTimeInterval aTimeInterval = [self timeIntervalSinceReferenceDate] + JK_D_MINUTE * dMinutes;
+    NSTimeInterval aTimeInterval = [self timeIntervalSinceReferenceDate] + BP_D_MINUTE * dMinutes;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
     return newDate;
 }
 
-- (NSDate *) jk_dateBySubtractingMinutes: (NSInteger) dMinutes
+- (NSDate *) _dateBySubtractingMinutes: (NSInteger) dMinutes
 {
-    return [self jk_dateByAddingMinutes: (dMinutes * -1)];
+    return [self _dateByAddingMinutes: (dMinutes * -1)];
 }
 
-- (NSDateComponents *) jk_componentsWithOffsetFromDate: (NSDate *) aDate
+- (NSDateComponents *) _componentsWithOffsetFromDate: (NSDate *) aDate
 {
-    NSDateComponents *dTime = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:aDate toDate:self options:0];
+    NSDateComponents *dTime = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:aDate toDate:self options:0];
     return dTime;
 }
 
 #pragma mark - Extremes
 
-- (NSDate *) jk_dateAtStartOfDay
+- (NSDate *) _dateAtStartOfDay
 {
-    NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    NSDateComponents *components = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     components.hour = 0;
     components.minute = 0;
     components.second = 0;
-    return [[NSDate jk_currentCalendar] dateFromComponents:components];
+    return [[NSDate _currentCalendar] dateFromComponents:components];
 }
 
 // Thanks gsempe & mteece
-- (NSDate *) jk_dateAtEndOfDay
+- (NSDate *) _dateAtEndOfDay
 {
-    NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    NSDateComponents *components = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
 
     components.hour = 23; // Thanks Aleksey Kononov
     components.minute = 59;
     components.second = 59;
-    return [[NSDate jk_currentCalendar] dateFromComponents:components];
+    return [[NSDate _currentCalendar] dateFromComponents:components];
 }
 
 #pragma mark - Retrieving Intervals
 
-- (NSInteger) jk_minutesAfterDate: (NSDate *) aDate
+- (NSInteger) _minutesAfterDate: (NSDate *) aDate
 {
     NSTimeInterval ti = [self timeIntervalSinceDate:aDate];
-    return (NSInteger) (ti / JK_D_MINUTE);
+    return (NSInteger) (ti / BP_D_MINUTE);
 }
 
-- (NSInteger) jk_minutesBeforeDate: (NSDate *) aDate
+- (NSInteger) _minutesBeforeDate: (NSDate *) aDate
 {
     NSTimeInterval ti = [aDate timeIntervalSinceDate:self];
-    return (NSInteger) (ti / JK_D_MINUTE);
+    return (NSInteger) (ti / BP_D_MINUTE);
 }
 
-- (NSInteger) jk_hoursAfterDate: (NSDate *) aDate
+- (NSInteger) _hoursAfterDate: (NSDate *) aDate
 {
     NSTimeInterval ti = [self timeIntervalSinceDate:aDate];
-    return (NSInteger) (ti / JK_D_HOUR);
+    return (NSInteger) (ti / BP_D_HOUR);
 }
 
-- (NSInteger) jk_hoursBeforeDate: (NSDate *) aDate
+- (NSInteger) _hoursBeforeDate: (NSDate *) aDate
 {
     NSTimeInterval ti = [aDate timeIntervalSinceDate:self];
-    return (NSInteger) (ti / JK_D_HOUR);
+    return (NSInteger) (ti / BP_D_HOUR);
 }
 
-- (NSInteger) jk_daysAfterDate: (NSDate *) aDate
+- (NSInteger) _daysAfterDate: (NSDate *) aDate
 {
     NSTimeInterval ti = [self timeIntervalSinceDate:aDate];
-    return (NSInteger) (ti / JK_D_DAY);
+    return (NSInteger) (ti / BP_D_DAY);
 }
 
-- (NSInteger) jk_daysBeforeDate: (NSDate *) aDate
+- (NSInteger) _daysBeforeDate: (NSDate *) aDate
 {
     NSTimeInterval ti = [aDate timeIntervalSinceDate:self];
-    return (NSInteger) (ti / JK_D_DAY);
+    return (NSInteger) (ti / BP_D_DAY);
 }
 
 // Thanks, dmitrydims
 // I have not yet thoroughly tested this
-- (NSInteger)jk_distanceDaysToDate:(NSDate *)anotherDate
+- (NSInteger)_distanceDaysToDate:(NSDate *)anotherDate
 {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSDateComponents *components;
     if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
-        components = [[NSDate jk_currentCalendar] components:NSCalendarUnitDay fromDate:self toDate:anotherDate options:0];
+        components = [[NSDate _currentCalendar] components:NSCalendarUnitDay fromDate:self toDate:anotherDate options:0];
     }else{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        components = [[NSDate jk_currentCalendar] components:NSDayCalendarUnit fromDate:self toDate:anotherDate options:0];
+        components = [[NSDate _currentCalendar] components:NSDayCalendarUnit fromDate:self toDate:anotherDate options:0];
 #pragma clang diagnostic pop
     }
 #else
-    NSDateComponents *components = [[NSDate jk_currentCalendar] components:NSDayCalendarUnit fromDate:self toDate:anotherDate options:0]
+    NSDateComponents *components = [[NSDate _currentCalendar] components:NSDayCalendarUnit fromDate:self toDate:anotherDate options:0]
 #endif
     
     return components.day;
 }
-- (NSInteger)jk_distanceMonthsToDate:(NSDate *)anotherDate{
+- (NSInteger)_distanceMonthsToDate:(NSDate *)anotherDate{
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSDateComponents *components;
     if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
-        components = [[NSDate jk_currentCalendar] components:NSCalendarUnitMonth fromDate:self toDate:anotherDate options:0];
+        components = [[NSDate _currentCalendar] components:NSCalendarUnitMonth fromDate:self toDate:anotherDate options:0];
     }else{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        components = [[NSDate jk_currentCalendar] components:NSMonthCalendarUnit fromDate:self toDate:anotherDate options:0];
+        components = [[NSDate _currentCalendar] components:NSMonthCalendarUnit fromDate:self toDate:anotherDate options:0];
 #pragma clang diagnostic pop
     }
 #else
-    NSDateComponents *components = [[NSDate jk_currentCalendar] components:NSMonthCalendarUnit fromDate:self toDate:anotherDate options:0]
+    NSDateComponents *components = [[NSDate _currentCalendar] components:NSMonthCalendarUnit fromDate:self toDate:anotherDate options:0]
 #endif
     return components.month;
 }
-- (NSInteger)jk_distanceYearsToDate:(NSDate *)anotherDate{
+- (NSInteger)_distanceYearsToDate:(NSDate *)anotherDate{
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSDateComponents *components;
     if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
-        components = [[NSDate jk_currentCalendar] components:NSCalendarUnitYear fromDate:self toDate:anotherDate options:0];
+        components = [[NSDate _currentCalendar] components:NSCalendarUnitYear fromDate:self toDate:anotherDate options:0];
     }else{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        components = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit fromDate:self toDate:anotherDate options:0];
+        components = [[NSDate _currentCalendar] components:NSYearCalendarUnit fromDate:self toDate:anotherDate options:0];
 #pragma clang diagnostic pop
     }
 #else
-    NSDateComponents *components = [[NSDate jk_currentCalendar] components:NSYearCalendarUnit fromDate:self toDate:anotherDate options:0]
+    NSDateComponents *components = [[NSDate _currentCalendar] components:NSYearCalendarUnit fromDate:self toDate:anotherDate options:0]
 #endif
     return components.year;
 }
 #pragma mark Decomposing Dates
-- (NSInteger)jk_nearestHour
+- (NSInteger)_nearestHour
 {
-    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + JK_D_MINUTE * 30;
+    NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + BP_D_MINUTE * 30;
     NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSDateComponents *components;
     if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
-        components = [[NSDate jk_currentCalendar] components:NSCalendarUnitHour fromDate:newDate];
+        components = [[NSDate _currentCalendar] components:NSCalendarUnitHour fromDate:newDate];
     }else{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        components = [[NSDate jk_currentCalendar] components:NSHourCalendarUnit fromDate:newDate];
+        components = [[NSDate _currentCalendar] components:NSHourCalendarUnit fromDate:newDate];
 #pragma clang diagnostic pop
     }
 #else
-    NSDateComponents *components =  [[NSDate jk_currentCalendar] components:NSHourCalendarUnit fromDate:newDate];
+    NSDateComponents *components =  [[NSDate _currentCalendar] components:NSHourCalendarUnit fromDate:newDate];
 #endif
     return components.hour;
 }
-- (NSInteger) jk_hour
+- (NSInteger) _hour
 {
-    NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    NSDateComponents *components = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     return components.hour;
 }
 
-- (NSInteger) jk_minute
+- (NSInteger) _minute
 {
-    NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    NSDateComponents *components = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     return components.minute;
 }
 
-- (NSInteger) jk_seconds
+- (NSInteger) _seconds
 {
-    NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    NSDateComponents *components = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     return components.second;
 }
 
-- (NSInteger) jk_day
+- (NSInteger) _day
 {
-    NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    NSDateComponents *components = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     return components.day;
 }
 
-- (NSInteger) jk_month
+- (NSInteger) _month
 {
-    NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    NSDateComponents *components = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     return components.month;
 }
 
-- (NSInteger) jk_week
+- (NSInteger) _week
 {
-    NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    NSDateComponents *components = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     return components.weekOfMonth;
 }
 
-- (NSInteger) jk_weekday
+- (NSInteger) _weekday
 {
-    NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    NSDateComponents *components = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     return components.weekday;
 }
 
-- (NSInteger) jk_nthWeekday // e.g. 2nd Tuesday of the month is 2
+- (NSInteger) _nthWeekday // e.g. 2nd Tuesday of the month is 2
 {
-    NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    NSDateComponents *components = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     return components.weekdayOrdinal;
 }
 
-- (NSInteger) jk_year
+- (NSInteger) _year
 {
-    NSDateComponents *components = [[NSDate jk_currentCalendar] components:JK_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
+    NSDateComponents *components = [[NSDate _currentCalendar] components:BP_NSDATE_UTILITIES_COMPONENT_FLAGS fromDate:self];
     return components.year;
 }
 @end

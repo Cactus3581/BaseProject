@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (JKBase64)
-+ (NSString *)jk_stringWithBase64EncodedString:(NSString *)string;
-- (NSString *)jk_base64EncodedStringWithWrapWidth:(NSUInteger)wrapWidth;
-- (NSString *)jk_base64EncodedString;
-- (NSString *)jk_base64DecodedString;
-- (NSData *)jk_base64DecodedData;
++ (NSString *)_stringWithBase64EncodedString:(NSString *)string;
+- (NSString *)_base64EncodedStringWithWrapWidth:(NSUInteger)wrapWidth;
+- (NSString *)_base64EncodedString;
+- (NSString *)_base64DecodedString;
+- (NSData *)_base64DecodedData;
 @end

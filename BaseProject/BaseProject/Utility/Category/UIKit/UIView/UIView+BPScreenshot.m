@@ -88,7 +88,6 @@
 }
 
 /**
- *  @author Jakey
  *
  *  @brief  截图一个view中所有视图 包括旋转缩放效果
  *

@@ -15,7 +15,7 @@
  *
  *  @param identifier url.absoluteString
  */
-- (void)jk_saveDataCacheWithIdentifier:(NSString *)identifier;
+- (void)_saveDataCacheWithIdentifier:(NSString *)identifier;
 
 /**
  *  取出缓存data
@@ -24,6 +24,6 @@
  *
  *  @return 缓存
  */
-+ (NSData *)jk_getDataCacheWithIdentifier:(NSString *)identifier;
++ (NSData *)_getDataCacheWithIdentifier:(NSString *)identifier;
 
 @end

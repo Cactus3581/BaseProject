@@ -48,16 +48,16 @@ static const char *__BlockSignature__(id blockObj)
 
 @implementation NSInvocation (JKBlock)
 
-+ (instancetype)jk_invocationWithBlock:(id) block
++ (instancetype)_invocationWithBlock:(id) block
 {
     NSInvocation* invocation = [NSInvocation invocationWithMethodSignature:[NSMethodSignature signatureWithObjCTypes:__BlockSignature__(block)]];
     invocation.target = block;
     return invocation;
 }
 #define ARG_GET_SET(type) do { type val = 0; val = va_arg(args,type); [invocation setArgument:&val atIndex:1 + i];} while (0)
-+ (instancetype)jk_invocationWithBlockAndArguments:(id) block ,...
++ (instancetype)_invocationWithBlockAndArguments:(id) block ,...
 {
-    NSInvocation* invocation = [NSInvocation jk_invocationWithBlock:block];
+    NSInvocation* invocation = [NSInvocation _invocationWithBlock:block];
     NSUInteger argsCount = invocation.methodSignature.numberOfArguments - 1;
     va_list args;
     va_start(args, block);

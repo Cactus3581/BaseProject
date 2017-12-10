@@ -39,21 +39,21 @@
  *
  *  @return 压缩后的数据
  */
-- (NSData *)jk_gzippedDataWithCompressionLevel:(float)level;
+- (NSData *)_gzippedDataWithCompressionLevel:(float)level;
 
 /**
  *  @brief  GZIP压缩 压缩级别 默认-1
  *
  *  @return 压缩后的数据
  */
-- (NSData *)jk_gzippedData;
+- (NSData *)_gzippedData;
 
 /**
  *  @brief  GZIP解压
  *
  *  @return 解压后数据
  */
-- (NSData *)jk_gunzippedData;
+- (NSData *)_gunzippedData;
 
-- (BOOL)jk_isGzippedData;
+- (BOOL)_isGzippedData;
 @end

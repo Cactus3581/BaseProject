@@ -10,12 +10,11 @@
 
 @interface NSNumber (JKRomanNumerals)
 /**
- *  @author JKCategories
  *
  *   A category on NSNumber that returns the value as a roman numeral 
  *
  *  @return <#return value description#>
  */
-- (NSString *)jk_romanNumeral;
+- (NSString *)_romanNumeral;
 
 @end

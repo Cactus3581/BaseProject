@@ -14,21 +14,21 @@
 
 #pragma mark - Circ
 
-+(CAMediaTimingFunction *)jk_easeInCirc
++(CAMediaTimingFunction *)_easeInCirc
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.6 : 0.04 : 0.98 : 0.335];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeOutCirc
++(CAMediaTimingFunction *)_easeOutCirc
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.075 : 0.82 : 0.165 : 1.0];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeInOutCirc
++(CAMediaTimingFunction *)_easeInOutCirc
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.785 : 0.135 : 0.15 : 0.86];
 }
@@ -38,21 +38,21 @@
 
 #pragma mark - Cubic
 
-+(CAMediaTimingFunction *)jk_easeInCubic
++(CAMediaTimingFunction *)_easeInCubic
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.55 : 0.055 : 0.675 : 0.19];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeOutCubic
++(CAMediaTimingFunction *)_easeOutCubic
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.215 : 0.61 : 0.355 : 1.0];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeInOutCubic
++(CAMediaTimingFunction *)_easeInOutCubic
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.645 : 0.045 : 0.355 : 1.0];
 }
@@ -62,21 +62,21 @@
 
 #pragma mark - Expo
 
-+(CAMediaTimingFunction *)jk_easeInExpo
++(CAMediaTimingFunction *)_easeInExpo
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.95 : 0.05 : 0.795 : 0.035];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeOutExpo
++(CAMediaTimingFunction *)_easeOutExpo
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.19 : 1.0 : 0.22 : 1.0];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeInOutExpo
++(CAMediaTimingFunction *)_easeInOutExpo
 {
     return [CAMediaTimingFunction functionWithControlPoints: 1.0 : 0.0 : 0.0 : 1.0];
 }
@@ -86,21 +86,21 @@
 
 #pragma mark - Quad
 
-+(CAMediaTimingFunction *)jk_easeInQuad
++(CAMediaTimingFunction *)_easeInQuad
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.55 : 0.085 : 0.68 : 0.53];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeOutQuad
++(CAMediaTimingFunction *)_easeOutQuad
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.25 : 0.46 : 0.45 : 0.94];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeInOutQuad
++(CAMediaTimingFunction *)_easeInOutQuad
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.455 : 0.03 : 0.515 : 0.955];
 }
@@ -110,21 +110,21 @@
 
 #pragma mark - Quart
 
-+(CAMediaTimingFunction *)jk_easeInQuart
++(CAMediaTimingFunction *)_easeInQuart
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.895 : 0.03 : 0.685 : 0.22];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeOutQuart
++(CAMediaTimingFunction *)_easeOutQuart
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.165 : 0.84 : 0.44 : 1.0];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeInOutQuart
++(CAMediaTimingFunction *)_easeInOutQuart
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.77 : 0.0 : 0.175 : 1.0];
 }
@@ -134,21 +134,21 @@
 
 #pragma mark - Quint
 
-+(CAMediaTimingFunction *)jk_easeInQuint
++(CAMediaTimingFunction *)_easeInQuint
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.755 : 0.05 : 0.855 : 0.06];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeOutQuint
++(CAMediaTimingFunction *)_easeOutQuint
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.23 : 1.0 : 0.320 : 1.0];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeInOutQuint
++(CAMediaTimingFunction *)_easeInOutQuint
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.86 : 0.0 : 0.07 : 1.0];
 }
@@ -158,21 +158,21 @@
 
 #pragma mark - Sine
 
-+(CAMediaTimingFunction *)jk_easeInSine
++(CAMediaTimingFunction *)_easeInSine
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.47 : 0.0 : 0.745 : 0.715];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeOutSine
++(CAMediaTimingFunction *)_easeOutSine
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.39 : 0.575 : 0.565 : 1.0];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeInOutSine
++(CAMediaTimingFunction *)_easeInOutSine
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.445 : 0.05 : 0.55 : 0.95];
 }
@@ -182,21 +182,21 @@
 
 #pragma mark - Back
 
-+(CAMediaTimingFunction *)jk_easeInBack
++(CAMediaTimingFunction *)_easeInBack
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.6 : -0.28 : 0.735 : 0.045];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeOutBack
++(CAMediaTimingFunction *)_easeOutBack
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.175 : 0.885 : 0.320 : 1.275];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-+(CAMediaTimingFunction *)jk_easeInOutBack
++(CAMediaTimingFunction *)_easeInOutBack
 {
     return [CAMediaTimingFunction functionWithControlPoints: 0.68 : -0.55 : 0.265 : 1.55];
 }

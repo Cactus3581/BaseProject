@@ -31,12 +31,12 @@
 #import <Foundation/Foundation.h>
 @interface NSObject (JKAutoCoding) <NSSecureCoding>
 //coding
-+ (NSDictionary *)jk_codableProperties;
-- (void)jk_setWithCoder:(NSCoder *)aDecoder;
++ (NSDictionary *)_codableProperties;
+- (void)_setWithCoder:(NSCoder *)aDecoder;
 //property access
-- (NSDictionary *)jk_codableProperties;
-- (NSDictionary *)jk_dictionaryRepresentation;
+- (NSDictionary *)_codableProperties;
+- (NSDictionary *)_dictionaryRepresentation;
 //loading / saving
-+ (instancetype)jk_objectWithContentsOfFile:(NSString *)path;
-- (BOOL)jk_writeToFile:(NSString *)filePath atomically:(BOOL)useAuxiliaryFile;
++ (instancetype)_objectWithContentsOfFile:(NSString *)path;
+- (BOOL)_writeToFile:(NSString *)filePath atomically:(BOOL)useAuxiliaryFile;
 @end

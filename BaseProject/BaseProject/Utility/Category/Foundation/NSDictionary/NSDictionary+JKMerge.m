@@ -17,14 +17,14 @@
  *
  *  @return 合并后的NSDictionary
  */
-+ (NSDictionary *)jk_dictionaryByMerging:(NSDictionary *)dict1 with:(NSDictionary *)dict2 {
++ (NSDictionary *)_dictionaryByMerging:(NSDictionary *)dict1 with:(NSDictionary *)dict2 {
     NSMutableDictionary * result = [NSMutableDictionary dictionaryWithDictionary:dict1];
     NSMutableDictionary * resultTemp = [NSMutableDictionary dictionaryWithDictionary:dict1];
     [resultTemp addEntriesFromDictionary:dict2];
     [resultTemp enumerateKeysAndObjectsUsingBlock: ^(id key, id obj, BOOL *stop) {
         if ([dict1 objectForKey:key]) {
             if ([obj isKindOfClass:[NSDictionary class]]) {
-                NSDictionary * newVal = [[dict1 objectForKey: key] jk_dictionaryByMergingWith: (NSDictionary *) obj];
+                NSDictionary * newVal = [[dict1 objectForKey: key] _dictionaryByMergingWith: (NSDictionary *) obj];
                 [result setObject: newVal forKey: key];
             } else {
                 [result setObject: obj forKey: key];
@@ -33,7 +33,7 @@
         else if([dict2 objectForKey:key])
         {
             if ([obj isKindOfClass:[NSDictionary class]]) {
-                NSDictionary * newVal = [[dict2 objectForKey: key] jk_dictionaryByMergingWith: (NSDictionary *) obj];
+                NSDictionary * newVal = [[dict2 objectForKey: key] _dictionaryByMergingWith: (NSDictionary *) obj];
                 [result setObject: newVal forKey: key];
             } else {
                 [result setObject: obj forKey: key];
@@ -50,18 +50,18 @@
  *
  *  @return 增加后的NSDictionary
  */
-- (NSDictionary *)jk_dictionaryByMergingWith:(NSDictionary *)dict {
-    return [[self class] jk_dictionaryByMerging:self with: dict];
+- (NSDictionary *)_dictionaryByMergingWith:(NSDictionary *)dict {
+    return [[self class] _dictionaryByMerging:self with: dict];
 }
 
 #pragma mark - Manipulation
-- (NSDictionary *)jk_dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary {
+- (NSDictionary *)_dictionaryByAddingEntriesFromDictionary:(NSDictionary *)dictionary {
     NSMutableDictionary *result = [self mutableCopy];
     [result addEntriesFromDictionary:dictionary];
     return result;
 }
 
-- (NSDictionary *)jk_dictionaryByRemovingEntriesWithKeys:(NSSet *)keys {
+- (NSDictionary *)_dictionaryByRemovingEntriesWithKeys:(NSSet *)keys {
     NSMutableDictionary *result = [self mutableCopy];
     [result removeObjectsForKeys:keys.allObjects];
     return result;

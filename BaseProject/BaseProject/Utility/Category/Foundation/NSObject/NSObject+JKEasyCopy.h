@@ -16,7 +16,7 @@
  *
  *  @return BOOL—YES:复制成功,NO:复制失败
  */
-- (BOOL)jk_easyShallowCopy:(NSObject *)instance;
+- (BOOL)_easyShallowCopy:(NSObject *)instance;
 
 /**
  *  深复制目标的所有属性
@@ -25,6 +25,6 @@
  *
  *  @return BOOL—YES:复制成功,NO:复制失败
  */
-- (BOOL)jk_easyDeepCopy:(NSObject *)instance;
+- (BOOL)_easyDeepCopy:(NSObject *)instance;
 
 @end

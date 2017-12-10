@@ -15,14 +15,14 @@
  *  @param font  字体(默认为系统字体)
  *  @param width 约束宽度
  */
-- (CGFloat)jk_heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width;
+- (CGFloat)_heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width;
 /**
  *  @brief 计算文字的宽度
  *
  *  @param font   字体(默认为系统字体)
  *  @param height 约束高度
  */
-- (CGFloat)jk_widthWithFont:(UIFont *)font constrainedToHeight:(CGFloat)height;
+- (CGFloat)_widthWithFont:(UIFont *)font constrainedToHeight:(CGFloat)height;
 
 /**
  *  @brief 计算文字的大小
@@ -30,14 +30,14 @@
  *  @param font  字体(默认为系统字体)
  *  @param width 约束宽度
  */
-- (CGSize)jk_sizeWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width;
+- (CGSize)_sizeWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width;
 /**
  *  @brief 计算文字的大小
  *
  *  @param font   字体(默认为系统字体)
  *  @param height 约束高度
  */
-- (CGSize)jk_sizeWithFont:(UIFont *)font constrainedToHeight:(CGFloat)height;
+- (CGSize)_sizeWithFont:(UIFont *)font constrainedToHeight:(CGFloat)height;
 
 /**
  *  @brief  反转字符串
@@ -46,5 +46,5 @@
  *
  *  @return 反转后字符串
  */
-+ (NSString *)jk_reverseString:(NSString *)strSrc;
++ (NSString *)_reverseString:(NSString *)strSrc;
 @end

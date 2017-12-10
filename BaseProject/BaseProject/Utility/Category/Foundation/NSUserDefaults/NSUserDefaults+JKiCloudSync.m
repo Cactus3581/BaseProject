@@ -13,7 +13,7 @@
 @implementation NSUserDefaults (JKiCloudSync)
 
 
--(void)jk_setValue:(id)value forKey:(NSString *)key iCloudSync:(BOOL)sync
+-(void)_setValue:(id)value forKey:(NSString *)key iCloudSync:(BOOL)sync
 {
     if (sync)
         [[NSUbiquitousKeyValueStore defaultStore] setValue:value forKey:key];
@@ -21,7 +21,7 @@
     [self setValue:value forKey:key];
 }
 
--(id)jk_valueForKey:(NSString *)key iCloudSync:(BOOL)sync
+-(id)_valueForKey:(NSString *)key iCloudSync:(BOOL)sync
 {
     if (sync)
     {
@@ -38,14 +38,14 @@
     return [self valueForKey:key];
 }
 
-- (void)jk_removeValueForKey:(NSString *)key iCloudSync:(BOOL)sync
+- (void)_removeValueForKey:(NSString *)key iCloudSync:(BOOL)sync
 {
-    [self jk_removeObjectForKey:key iCloudSync:sync];
+    [self _removeObjectForKey:key iCloudSync:sync];
 }
 
 
 
--(void)jk_setObject:(id)value forKey:(NSString *)defaultName iCloudSync:(BOOL)sync
+-(void)_setObject:(id)value forKey:(NSString *)defaultName iCloudSync:(BOOL)sync
 {
     if (sync)
         [[NSUbiquitousKeyValueStore defaultStore] setObject:value forKey:defaultName];
@@ -53,7 +53,7 @@
     [self setObject:value forKey:defaultName];
 }
 
--(id)jk_objectForKey:(NSString *)key iCloudSync:(BOOL)sync
+-(id)_objectForKey:(NSString *)key iCloudSync:(BOOL)sync
 {
     if (sync)
     {
@@ -70,7 +70,7 @@
     return [self objectForKey:key];
 }
 
-- (void)jk_removeObjectForKey:(NSString *)key iCloudSync:(BOOL)sync
+- (void)_removeObjectForKey:(NSString *)key iCloudSync:(BOOL)sync
 {
     if (sync)
         [[NSUbiquitousKeyValueStore defaultStore] removeObjectForKey:key];
@@ -81,7 +81,7 @@
 
 
 
-- (BOOL)jk_synchronizeAlsoiCloudSync:(BOOL)sync
+- (BOOL)_synchronizeAlsoiCloudSync:(BOOL)sync
 {
     BOOL res = true;
     

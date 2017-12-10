@@ -11,7 +11,7 @@
 
 @implementation NSData (JKGzip)
 
-static void *jk_libzOpen()
+static void *_libzOpen()
 {
     static void *libz;
     static dispatch_once_t onceToken;
@@ -21,14 +21,14 @@ static void *jk_libzOpen()
     return libz;
 }
 
-- (NSData *)jk_gzippedDataWithCompressionLevel:(float)level
+- (NSData *)_gzippedDataWithCompressionLevel:(float)level
 {
-    if (self.length == 0 || [self jk_isGzippedData])
+    if (self.length == 0 || [self _isGzippedData])
     {
         return self;
     }
     
-    void *libz = jk_libzOpen();
+    void *libz = _libzOpen();
     int (*deflateInit2_)(z_streamp, int, int, int, int, int, const char *, int) =
     (int (*)(z_streamp, int, int, int, int, int, const char *, int))dlsym(libz, "deflateInit2_");
     int (*deflate)(z_streamp, int) = (int (*)(z_streamp, int))dlsym(libz, "deflate");
@@ -67,19 +67,19 @@ static void *jk_libzOpen()
     return output;
 }
 
-- (NSData *)jk_gzippedData
+- (NSData *)_gzippedData
 {
-    return [self jk_gzippedDataWithCompressionLevel:-1.0f];
+    return [self _gzippedDataWithCompressionLevel:-1.0f];
 }
 
-- (NSData *)jk_gunzippedData
+- (NSData *)_gunzippedData
 {
-    if (self.length == 0 || ![self jk_isGzippedData])
+    if (self.length == 0 || ![self _isGzippedData])
     {
         return self;
     }
     
-    void *libz = jk_libzOpen();
+    void *libz = _libzOpen();
     int (*inflateInit2_)(z_streamp, int, const char *, int) =
     (int (*)(z_streamp, int, const char *, int))dlsym(libz, "inflateInit2_");
     int (*inflate)(z_streamp, int) = (int (*)(z_streamp, int))dlsym(libz, "inflate");
@@ -120,7 +120,7 @@ static void *jk_libzOpen()
     return output;
 }
 
-- (BOOL)jk_isGzippedData
+- (BOOL)_isGzippedData
 {
     const UInt8 *bytes = (const UInt8 *)self.bytes;
     return (self.length >= 2 && bytes[0] == 0x1f && bytes[1] == 0x8b);

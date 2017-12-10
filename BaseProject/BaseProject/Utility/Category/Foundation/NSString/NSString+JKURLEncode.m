@@ -15,8 +15,8 @@
  *
  *  @return urlEncode 后的字符串
  */
-- (NSString *)jk_urlEncode {
-    return [self jk_urlEncodeUsingEncoding:NSUTF8StringEncoding];
+- (NSString *)_urlEncode {
+    return [self _urlEncodeUsingEncoding:NSUTF8StringEncoding];
 }
 /**
  *  @brief  urlEncode
@@ -25,7 +25,7 @@
  *
  *  @return urlEncode 后的字符串
  */
-- (NSString *)jk_urlEncodeUsingEncoding:(NSStringEncoding)encoding {
+- (NSString *)_urlEncodeUsingEncoding:(NSStringEncoding)encoding {
     return (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
                 (__bridge CFStringRef)self,NULL,(CFStringRef)@"!*'\"();:@&=+$,/?%#[]% ",
                  CFStringConvertNSStringEncodingToEncoding(encoding));
@@ -35,8 +35,8 @@
  *
  *  @return urlDecode 后的字符串
  */
-- (NSString *)jk_urlDecode {
-    return [self jk_urlDecodeUsingEncoding:NSUTF8StringEncoding];
+- (NSString *)_urlDecode {
+    return [self _urlDecodeUsingEncoding:NSUTF8StringEncoding];
 }
 /**
  *  @brief  urlDecode
@@ -45,7 +45,7 @@
  *
  *  @return urlDecode 后的字符串
  */
-- (NSString *)jk_urlDecodeUsingEncoding:(NSStringEncoding)encoding {
+- (NSString *)_urlDecodeUsingEncoding:(NSStringEncoding)encoding {
 	return (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,
              (__bridge CFStringRef)self,CFSTR(""),CFStringConvertNSStringEncodingToEncoding(encoding));
 }
@@ -54,7 +54,7 @@
  *
  *  @return NSDictionary
  */
-- (NSDictionary *)jk_dictionaryFromURLParameters
+- (NSDictionary *)_dictionaryFromURLParameters
 {
     NSArray *pairs = [self componentsSeparatedByString:@"&"];
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];

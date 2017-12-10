@@ -12,18 +12,18 @@
 
 @implementation NSData (JKDataCache)
 
-+ (NSString *)jk_cachePath
++ (NSString *)_cachePath
 {
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
     path = [path stringByAppendingPathComponent:@"Caches"];
-    path = [path stringByAppendingPathComponent:@"JKDataCache"];
+    path = [path stringByAppendingPathComponent:@"BPDataCache"];
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
     }
     return path;
 }
 
-+ (NSString *)jk_creatMD5StringWithString:(NSString *)string
++ (NSString *)_creatMD5StringWithString:(NSString *)string
 {
     const char *original_str = [string UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];
@@ -35,31 +35,31 @@
     return hash;
 }
 
-+ (NSString *)jk_creatDataPathWithString:(NSString *)string
++ (NSString *)_creatDataPathWithString:(NSString *)string
 {
-    NSString *path = [NSData jk_cachePath];
-    path = [path stringByAppendingPathComponent:[self jk_creatMD5StringWithString:string]];
+    NSString *path = [NSData _cachePath];
+    path = [path stringByAppendingPathComponent:[self _creatMD5StringWithString:string]];
     return path;
 }
 
-- (void)jk_saveDataCacheWithIdentifier:(NSString *)identifier
+- (void)_saveDataCacheWithIdentifier:(NSString *)identifier
 {
-    NSString *path = [NSData jk_creatDataPathWithString:identifier];
+    NSString *path = [NSData _creatDataPathWithString:identifier];
     [self writeToFile:path atomically:YES];
 }
 
-+ (NSData *)jk_getDataCacheWithIdentifier:(NSString *)identifier
++ (NSData *)_getDataCacheWithIdentifier:(NSString *)identifier
 {
     static BOOL isCheckedCacheDisk = NO;
     if (!isCheckedCacheDisk) {
         NSFileManager *manager = [NSFileManager defaultManager];
-        NSArray *contents = [manager contentsOfDirectoryAtPath:[self jk_cachePath] error:nil];
+        NSArray *contents = [manager contentsOfDirectoryAtPath:[self _cachePath] error:nil];
         if (contents.count >= kSDMaxCacheFileAmount) {
-            [manager removeItemAtPath:[self jk_cachePath] error:nil];
+            [manager removeItemAtPath:[self _cachePath] error:nil];
         }
         isCheckedCacheDisk = YES;
     }
-    NSString *path = [self jk_creatDataPathWithString:identifier];
+    NSString *path = [self _creatDataPathWithString:identifier];
     NSData *data = [NSData dataWithContentsOfFile:path];
     return data;
 }

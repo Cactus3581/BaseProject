@@ -33,10 +33,10 @@
 /**
  *  @brief 存储 UIWebView cookies到磁盘目录
  */
-- (void)jk_saveCookie;
+- (void)_saveCookie;
 /**
  *  @brief 读取UIWebView cookies从磁盘目录
  */
-- (void)jk_loadCookie;
+- (void)_loadCookie;
 
 @end

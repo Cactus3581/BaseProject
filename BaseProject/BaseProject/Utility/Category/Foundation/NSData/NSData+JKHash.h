@@ -12,19 +12,19 @@
 /**
  *  @brief  md5 NSData
  */
-@property (readonly) NSData *jk_md5Data;
+@property (readonly) NSData *_md5Data;
 /**
  *  @brief  sha1Data NSData
  */
-@property (readonly) NSData *jk_sha1Data;
+@property (readonly) NSData *_sha1Data;
 /**
  *  @brief  sha256Data NSData
  */
-@property (readonly) NSData *jk_sha256Data;
+@property (readonly) NSData *_sha256Data;
 /**
  *  @brief  sha512Data NSData
  */
-@property (readonly) NSData *jk_sha512Data;
+@property (readonly) NSData *_sha512Data;
 
 /**
  *  @brief  md5 NSData
@@ -33,7 +33,7 @@
  *
  *  @return 结果
  */
-- (NSData *)jk_hmacMD5DataWithKey:(NSData *)key;
+- (NSData *)_hmacMD5DataWithKey:(NSData *)key;
 /**
  *  @brief  sha1Data NSData
  *
@@ -41,7 +41,7 @@
  *
  *  @return 结果
  */
-- (NSData *)jk_hmacSHA1DataWithKey:(NSData *)key;
+- (NSData *)_hmacSHA1DataWithKey:(NSData *)key;
 /**
  *  @brief  sha256Data NSData
  *
@@ -49,7 +49,7 @@
  *
  *  @return 结果
  */
-- (NSData *)jk_hmacSHA256DataWithKey:(NSData *)key;
+- (NSData *)_hmacSHA256DataWithKey:(NSData *)key;
 /**
  *  @brief  sha512Data NSData
  *
@@ -57,5 +57,5 @@
  *
  *  @return 结果
  */
-- (NSData *)jk_hmacSHA512DataWithKey:(NSData *)key;
+- (NSData *)_hmacSHA512DataWithKey:(NSData *)key;
 @end

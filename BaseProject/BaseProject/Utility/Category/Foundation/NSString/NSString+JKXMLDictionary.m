@@ -6,8 +6,8 @@
 #import "NSString+JKXMLDictionary.h"
 #import <objc/runtime.h>
 
-#define JK_ASSOCIATIVE_CURRENT_DICTIONARY_KEY @"ASSOCIATIVE_CURRENT_DICTIONARY_KEY"
-#define JK_ASSOCIATIVE_CURRENT_TEXT_KEY @"ASSOCIATIVE_CURRENT_TEXT_KEY"
+#define BP_ASSOCIATIVE_CURRENT_DICTIONARY_KEY @"ASSOCIATIVE_CURRENT_DICTIONARY_KEY"
+#define BP_ASSOCIATIVE_CURRENT_TEXT_KEY @"ASSOCIATIVE_CURRENT_TEXT_KEY"
 
 @interface NSString () <NSXMLParserDelegate>
 
@@ -23,7 +23,7 @@
  *
  *  @return NSDictionary
  */
--(NSDictionary *)jk_XMLDictionary
+-(NSDictionary *)_XMLDictionary
 {
     //TURN THE STRING INTO DATA
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
@@ -52,22 +52,22 @@
 
 - (void)setCurrentDictionaries:(NSMutableArray *)currentDictionaries
 {
-    objc_setAssociatedObject(self, JK_ASSOCIATIVE_CURRENT_DICTIONARY_KEY, currentDictionaries, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, BP_ASSOCIATIVE_CURRENT_DICTIONARY_KEY, currentDictionaries, OBJC_ASSOCIATION_RETAIN);
 }
 
 - (NSMutableArray *)currentDictionaries
 {
-    return objc_getAssociatedObject(self, JK_ASSOCIATIVE_CURRENT_DICTIONARY_KEY);
+    return objc_getAssociatedObject(self, BP_ASSOCIATIVE_CURRENT_DICTIONARY_KEY);
 }
 
 - (void)setCurrentText:(NSMutableString *)currentText
 {
-    objc_setAssociatedObject(self, JK_ASSOCIATIVE_CURRENT_TEXT_KEY, currentText, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, BP_ASSOCIATIVE_CURRENT_TEXT_KEY, currentText, OBJC_ASSOCIATION_RETAIN);
 }
 
 - (NSMutableString *)currentText
 {
-    return objc_getAssociatedObject(self, JK_ASSOCIATIVE_CURRENT_TEXT_KEY);
+    return objc_getAssociatedObject(self, BP_ASSOCIATIVE_CURRENT_TEXT_KEY);
 }
 
 #pragma mark -

@@ -36,12 +36,12 @@
 /**
  
  */
-- (NSDate *)jk_beginningOfDay;
+- (NSDate *)_beginningOfDay;
 
 /**
  
  */
-- (NSDate *)jk_endOfDay;
+- (NSDate *)_endOfDay;
 
 ///----------------------------------------
 /// @name Calculate Beginning / End of Week
@@ -50,12 +50,12 @@
 /**
  
  */
-- (NSDate *)jk_beginningOfWeek;
+- (NSDate *)_beginningOfWeek;
 
 /**
  
  */
-- (NSDate *)jk_endOfWeek;
+- (NSDate *)_endOfWeek;
 
 ///-----------------------------------------
 /// @name Calculate Beginning / End of Month
@@ -64,12 +64,12 @@
 /**
  
  */
-- (NSDate *)jk_beginningOfMonth;
+- (NSDate *)_beginningOfMonth;
 
 /**
  
  */
-- (NSDate *)jk_endOfMonth;
+- (NSDate *)_endOfMonth;
 
 ///----------------------------------------
 /// @name Calculate Beginning / End of Year
@@ -78,11 +78,11 @@
 /**
  
  */
-- (NSDate *)jk_beginningOfYear;
+- (NSDate *)_beginningOfYear;
 
 /**
  
  */
-- (NSDate *)jk_endOfYear;
+- (NSDate *)_endOfYear;
 
 @end

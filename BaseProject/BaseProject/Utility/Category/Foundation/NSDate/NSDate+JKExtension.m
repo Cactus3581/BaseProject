@@ -9,31 +9,31 @@
 
 @implementation NSDate (JKExtension)
 
-- (NSUInteger)jk_day {
-    return [NSDate jk_day:self];
+- (NSUInteger)_day {
+    return [NSDate _day:self];
 }
 
-- (NSUInteger)jk_month {
-    return [NSDate jk_month:self];
+- (NSUInteger)_month {
+    return [NSDate _month:self];
 }
 
-- (NSUInteger)jk_year {
-    return [NSDate jk_year:self];
+- (NSUInteger)_year {
+    return [NSDate _year:self];
 }
 
-- (NSUInteger)jk_hour {
-    return [NSDate jk_hour:self];
+- (NSUInteger)_hour {
+    return [NSDate _hour:self];
 }
 
-- (NSUInteger)jk_minute {
-    return [NSDate jk_minute:self];
+- (NSUInteger)_minute {
+    return [NSDate _minute:self];
 }
 
-- (NSUInteger)jk_second {
-    return [NSDate jk_second:self];
+- (NSUInteger)_second {
+    return [NSDate _second:self];
 }
 
-+ (NSUInteger)jk_day:(NSDate *)date {
++ (NSUInteger)_day:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
@@ -46,7 +46,7 @@
     return [dayComponents day];
 }
 
-+ (NSUInteger)jk_month:(NSDate *)date {
++ (NSUInteger)_month:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
@@ -59,7 +59,7 @@
     return [dayComponents month];
 }
 
-+ (NSUInteger)jk_year:(NSDate *)date {
++ (NSUInteger)_year:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
@@ -72,7 +72,7 @@
     return [dayComponents year];
 }
 
-+ (NSUInteger)jk_hour:(NSDate *)date {
++ (NSUInteger)_hour:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
@@ -85,7 +85,7 @@
     return [dayComponents hour];
 }
 
-+ (NSUInteger)jk_minute:(NSDate *)date {
++ (NSUInteger)_minute:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
@@ -98,7 +98,7 @@
     return [dayComponents minute];
 }
 
-+ (NSUInteger)jk_second:(NSDate *)date {
++ (NSUInteger)_second:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
@@ -111,64 +111,64 @@
     return [dayComponents second];
 }
 
-- (NSUInteger)jk_daysInYear {
-    return [NSDate jk_daysInYear:self];
+- (NSUInteger)_daysInYear {
+    return [NSDate _daysInYear:self];
 }
 
-+ (NSUInteger)jk_daysInYear:(NSDate *)date {
-    return [self jk_isLeapYear:date] ? 366 : 365;
++ (NSUInteger)_daysInYear:(NSDate *)date {
+    return [self _isLeapYear:date] ? 366 : 365;
 }
 
-- (BOOL)jk_isLeapYear {
-    return [NSDate jk_isLeapYear:self];
+- (BOOL)_isLeapYear {
+    return [NSDate _isLeapYear:self];
 }
 
-+ (BOOL)jk_isLeapYear:(NSDate *)date {
-    NSUInteger year = [date jk_year];
++ (BOOL)_isLeapYear:(NSDate *)date {
+    NSUInteger year = [date _year];
     if ((year % 4  == 0 && year % 100 != 0) || year % 400 == 0) {
         return YES;
     }
     return NO;
 }
 
-- (NSString *)jk_formatYMD {
-    return [NSDate jk_formatYMD:self];
+- (NSString *)_formatYMD {
+    return [NSDate _formatYMD:self];
 }
 
-+ (NSString *)jk_formatYMD:(NSDate *)date {
-    return [NSString stringWithFormat:@"%zd-%zd-%zd",[date jk_year],[date jk_month], [date jk_day]];
++ (NSString *)_formatYMD:(NSDate *)date {
+    return [NSString stringWithFormat:@"%zd-%zd-%zd",[date _year],[date _month], [date _day]];
 }
 
-- (NSUInteger)jk_weeksOfMonth {
-    return [NSDate jk_weeksOfMonth:self];
+- (NSUInteger)_weeksOfMonth {
+    return [NSDate _weeksOfMonth:self];
 }
 
-+ (NSUInteger)jk_weeksOfMonth:(NSDate *)date {
-    return [[date jk_lastdayOfMonth] jk_weekOfYear] - [[date jk_begindayOfMonth] jk_weekOfYear] + 1;
++ (NSUInteger)_weeksOfMonth:(NSDate *)date {
+    return [[date _lastdayOfMonth] _weekOfYear] - [[date _begindayOfMonth] _weekOfYear] + 1;
 }
 
-- (NSUInteger)jk_weekOfYear {
-    return [NSDate jk_weekOfYear:self];
+- (NSUInteger)_weekOfYear {
+    return [NSDate _weekOfYear:self];
 }
 
-+ (NSUInteger)jk_weekOfYear:(NSDate *)date {
++ (NSUInteger)_weekOfYear:(NSDate *)date {
     NSUInteger i;
-    NSUInteger year = [date jk_year];
+    NSUInteger year = [date _year];
     
-    NSDate *lastdate = [date jk_lastdayOfMonth];
+    NSDate *lastdate = [date _lastdayOfMonth];
     
-    for (i = 1;[[lastdate jk_dateAfterDay:-7 * i] jk_year] == year; i++) {
+    for (i = 1;[[lastdate _dateAfterDay:-7 * i] _year] == year; i++) {
         
     }
     
     return i;
 }
 
-- (NSDate *)jk_dateAfterDay:(NSUInteger)day {
-    return [NSDate jk_dateAfterDate:self day:day];
+- (NSDate *)_dateAfterDay:(NSUInteger)day {
+    return [NSDate _dateAfterDate:self day:day];
 }
 
-+ (NSDate *)jk_dateAfterDate:(NSDate *)date day:(NSInteger)day {
++ (NSDate *)_dateAfterDate:(NSDate *)date day:(NSInteger)day {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *componentsToAdd = [[NSDateComponents alloc] init];
     [componentsToAdd setDay:day];
@@ -178,11 +178,11 @@
     return dateAfterDay;
 }
 
-- (NSDate *)jk_dateAfterMonth:(NSUInteger)month {
-    return [NSDate jk_dateAfterDate:self month:month];
+- (NSDate *)_dateAfterMonth:(NSUInteger)month {
+    return [NSDate _dateAfterDate:self month:month];
 }
 
-+ (NSDate *)jk_dateAfterDate:(NSDate *)date month:(NSInteger)month {
++ (NSDate *)_dateAfterDate:(NSDate *)date month:(NSInteger)month {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *componentsToAdd = [[NSDateComponents alloc] init];
     [componentsToAdd setMonth:month];
@@ -191,28 +191,28 @@
     return dateAfterMonth;
 }
 
-- (NSDate *)jk_begindayOfMonth {
-    return [NSDate jk_begindayOfMonth:self];
+- (NSDate *)_begindayOfMonth {
+    return [NSDate _begindayOfMonth:self];
 }
 
-+ (NSDate *)jk_begindayOfMonth:(NSDate *)date {
-    return [self jk_dateAfterDate:date day:-[date jk_day] + 1];
++ (NSDate *)_begindayOfMonth:(NSDate *)date {
+    return [self _dateAfterDate:date day:-[date _day] + 1];
 }
 
-- (NSDate *)jk_lastdayOfMonth {
-    return [NSDate jk_lastdayOfMonth:self];
+- (NSDate *)_lastdayOfMonth {
+    return [NSDate _lastdayOfMonth:self];
 }
 
-+ (NSDate *)jk_lastdayOfMonth:(NSDate *)date {
-    NSDate *lastDate = [self jk_begindayOfMonth:date];
-    return [[lastDate jk_dateAfterMonth:1] jk_dateAfterDay:-1];
++ (NSDate *)_lastdayOfMonth:(NSDate *)date {
+    NSDate *lastDate = [self _begindayOfMonth:date];
+    return [[lastDate _dateAfterMonth:1] _dateAfterDay:-1];
 }
 
-- (NSUInteger)jk_daysAgo {
-    return [NSDate jk_daysAgo:self];
+- (NSUInteger)_daysAgo {
+    return [NSDate _daysAgo:self];
 }
 
-+ (NSUInteger)jk_daysAgo:(NSDate *)date {
++ (NSUInteger)_daysAgo:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
@@ -230,11 +230,11 @@
     return [components day];
 }
 
-- (NSInteger)jk_weekday {
-    return [NSDate jk_weekday:self];
+- (NSInteger)_weekday {
+    return [NSDate _weekday:self];
 }
 
-+ (NSInteger)jk_weekday:(NSDate *)date {
++ (NSInteger)_weekday:(NSDate *)date {
     NSCalendar *gregorian = [[NSCalendar alloc]
                              initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *comps = [gregorian components:(NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitWeekday) fromDate:date];
@@ -243,12 +243,12 @@
     return weekday;
 }
 
-- (NSString *)jk_dayFromWeekday {
-    return [NSDate jk_dayFromWeekday:self];
+- (NSString *)_dayFromWeekday {
+    return [NSDate _dayFromWeekday:self];
 }
 
-+ (NSString *)jk_dayFromWeekday:(NSDate *)date {
-    switch([date jk_weekday]) {
++ (NSString *)_dayFromWeekday:(NSDate *)date {
+    switch([date _weekday]) {
         case 1:
             return @"星期天";
             break;
@@ -276,7 +276,7 @@
     return @"";
 }
 
-- (BOOL)jk_isSameDay:(NSDate *)anotherDate {
+- (BOOL)_isSameDay:(NSDate *)anotherDate {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components1 = [calendar components:(NSCalendarUnitYear
                                                           | NSCalendarUnitMonth
@@ -291,11 +291,11 @@
             && [components1 day] == [components2 day]);
 }
 
-- (BOOL)jk_isToday {
-    return [self jk_isSameDay:[NSDate date]];
+- (BOOL)_isToday {
+    return [self _isSameDay:[NSDate date]];
 }
 
-- (NSDate *)jk_dateByAddingDays:(NSUInteger)days {
+- (NSDate *)_dateByAddingDays:(NSUInteger)days {
     NSDateComponents *c = [[NSDateComponents alloc] init];
     c.day = days;
     return [[NSCalendar currentCalendar] dateByAddingComponents:c toDate:self options:0];
@@ -320,7 +320,7 @@
  *
  *  @return Return the given month as a localized string
  */
-+ (NSString *)jk_monthWithMonthNumber:(NSInteger)month {
++ (NSString *)_monthWithMonthNumber:(NSInteger)month {
     switch(month) {
         case 1:
             return @"January";
@@ -364,11 +364,11 @@
     return @"";
 }
 
-+ (NSString *)jk_stringWithDate:(NSDate *)date format:(NSString *)format {
-    return [date jk_stringWithFormat:format];
++ (NSString *)_stringWithDate:(NSDate *)date format:(NSString *)format {
+    return [date _stringWithFormat:format];
 }
 
-- (NSString *)jk_stringWithFormat:(NSString *)format {
+- (NSString *)_stringWithFormat:(NSString *)format {
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     [outputFormatter setDateFormat:format];
     
@@ -377,7 +377,7 @@
     return retStr;
 }
 
-+ (NSDate *)jk_dateWithString:(NSString *)string format:(NSString *)format {
++ (NSDate *)_dateWithString:(NSString *)string format:(NSString *)format {
     NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init];
     [inputFormatter setDateFormat:format];
     
@@ -386,45 +386,45 @@
     return date;
 }
 
-- (NSUInteger)jk_daysInMonth:(NSUInteger)month {
-    return [NSDate jk_daysInMonth:self month:month];
+- (NSUInteger)_daysInMonth:(NSUInteger)month {
+    return [NSDate _daysInMonth:self month:month];
 }
 
-+ (NSUInteger)jk_daysInMonth:(NSDate *)date month:(NSUInteger)month {
++ (NSUInteger)_daysInMonth:(NSDate *)date month:(NSUInteger)month {
     switch (month) {
         case 1: case 3: case 5: case 7: case 8: case 10: case 12:
             return 31;
         case 2:
-            return [date jk_isLeapYear] ? 29 : 28;
+            return [date _isLeapYear] ? 29 : 28;
     }
     return 30;
 }
 
-- (NSUInteger)jk_daysInMonth {
-    return [NSDate jk_daysInMonth:self];
+- (NSUInteger)_daysInMonth {
+    return [NSDate _daysInMonth:self];
 }
 
-+ (NSUInteger)jk_daysInMonth:(NSDate *)date {
-    return [self jk_daysInMonth:date month:[date jk_month]];
++ (NSUInteger)_daysInMonth:(NSDate *)date {
+    return [self _daysInMonth:date month:[date _month]];
 }
 
-- (NSString *)jk_timeInfo {
-    return [NSDate jk_timeInfoWithDate:self];
+- (NSString *)_timeInfo {
+    return [NSDate _timeInfoWithDate:self];
 }
 
-+ (NSString *)jk_timeInfoWithDate:(NSDate *)date {
-    return [self jk_timeInfoWithDateString:[self jk_stringWithDate:date format:[self jk_ymdHmsFormat]]];
++ (NSString *)_timeInfoWithDate:(NSDate *)date {
+    return [self _timeInfoWithDateString:[self _stringWithDate:date format:[self _ymdHmsFormat]]];
 }
 
-+ (NSString *)jk_timeInfoWithDateString:(NSString *)dateString {
-    NSDate *date = [self jk_dateWithString:dateString format:[self jk_ymdHmsFormat]];
++ (NSString *)_timeInfoWithDateString:(NSString *)dateString {
+    NSDate *date = [self _dateWithString:dateString format:[self _ymdHmsFormat]];
     
     NSDate *curDate = [NSDate date];
     NSTimeInterval time = -[date timeIntervalSinceDate:curDate];
     
-    int month = (int)([curDate jk_month] - [date jk_month]);
-    int year = (int)([curDate jk_year] - [date jk_year]);
-    int day = (int)([curDate jk_day] - [date jk_day]);
+    int month = (int)([curDate _month] - [date _month]);
+    int year = (int)([curDate _year] - [date _year]);
+    int day = (int)([curDate _day] - [date _day]);
     
     NSTimeInterval retTime = 1.0;
     if (time < 3600) { // 小于一小时
@@ -443,7 +443,7 @@
     // 第一个条件是同年，且相隔时间在一个月内
     // 第二个条件是隔年，对于隔年，只能是去年12月与今年1月这种情况
     else if ((abs(year) == 0 && abs(month) <= 1)
-             || (abs(year) == 1 && [curDate jk_month] == 1 && [date jk_month] == 12)) {
+             || (abs(year) == 1 && [curDate _month] == 1 && [date _month] == 12)) {
         int retDay = 0;
         if (year == 0) { // 同年
             if (month == 0) { // 同月
@@ -453,10 +453,10 @@
         
         if (retDay <= 0) {
             // 获取发布日期中，该月有多少天
-            int totalDays = (int)[self jk_daysInMonth:date month:[date jk_month]];
+            int totalDays = (int)[self _daysInMonth:date month:[date _month]];
             
             // 当前天数 + （发布日期月中的总天数-发布日期月中发布日，即等于距离今天的天数）
-            retDay = (int)[curDate jk_day] + (totalDays - (int)[date jk_day]);
+            retDay = (int)[curDate _day] + (totalDays - (int)[date _day]);
         }
         
         return [NSString stringWithFormat:@"%d天前", (abs)(retDay)];
@@ -467,8 +467,8 @@
             }
             
             // 隔年
-            int month = (int)[curDate jk_month];
-            int preMonth = (int)[date jk_month];
+            int month = (int)[curDate _month];
+            int preMonth = (int)[date _month];
             if (month == 12 && preMonth == 12) {// 隔年，但同月，就作为满一年来计算
                 return @"1年前";
             }
@@ -481,35 +481,35 @@
     return @"1小时前";
 }
 
-- (NSString *)jk_ymdFormat {
-    return [NSDate jk_ymdFormat];
+- (NSString *)_ymdFormat {
+    return [NSDate _ymdFormat];
 }
 
-- (NSString *)jk_hmsFormat {
-    return [NSDate jk_hmsFormat];
+- (NSString *)_hmsFormat {
+    return [NSDate _hmsFormat];
 }
 
-- (NSString *)jk_ymdHmsFormat {
-    return [NSDate jk_ymdHmsFormat];
+- (NSString *)_ymdHmsFormat {
+    return [NSDate _ymdHmsFormat];
 }
 
-+ (NSString *)jk_ymdFormat {
++ (NSString *)_ymdFormat {
     return @"yyyy-MM-dd";
 }
 
-+ (NSString *)jk_hmsFormat {
++ (NSString *)_hmsFormat {
     return @"HH:mm:ss";
 }
 
-+ (NSString *)jk_ymdHmsFormat {
-    return [NSString stringWithFormat:@"%@ %@", [self jk_ymdFormat], [self jk_hmsFormat]];
++ (NSString *)_ymdHmsFormat {
+    return [NSString stringWithFormat:@"%@ %@", [self _ymdFormat], [self _hmsFormat]];
 }
 
-- (NSDate *)jk_offsetYears:(int)numYears {
-    return [NSDate jk_offsetYears:numYears fromDate:self];
+- (NSDate *)_offsetYears:(int)numYears {
+    return [NSDate _offsetYears:numYears fromDate:self];
 }
 
-+ (NSDate *)jk_offsetYears:(int)numYears fromDate:(NSDate *)fromDate {
++ (NSDate *)_offsetYears:(int)numYears fromDate:(NSDate *)fromDate {
     if (fromDate == nil) {
         return nil;
     }
@@ -532,11 +532,11 @@
                                      options:0];
 }
 
-- (NSDate *)jk_offsetMonths:(int)numMonths {
-    return [NSDate jk_offsetMonths:numMonths fromDate:self];
+- (NSDate *)_offsetMonths:(int)numMonths {
+    return [NSDate _offsetMonths:numMonths fromDate:self];
 }
 
-+ (NSDate *)jk_offsetMonths:(int)numMonths fromDate:(NSDate *)fromDate {
++ (NSDate *)_offsetMonths:(int)numMonths fromDate:(NSDate *)fromDate {
     if (fromDate == nil) {
         return nil;
     }
@@ -559,11 +559,11 @@
                                      options:0];
 }
 
-- (NSDate *)jk_offsetDays:(int)numDays {
-    return [NSDate jk_offsetDays:numDays fromDate:self];
+- (NSDate *)_offsetDays:(int)numDays {
+    return [NSDate _offsetDays:numDays fromDate:self];
 }
 
-+ (NSDate *)jk_offsetDays:(int)numDays fromDate:(NSDate *)fromDate {
++ (NSDate *)_offsetDays:(int)numDays fromDate:(NSDate *)fromDate {
     if (fromDate == nil) {
         return nil;
     }
@@ -586,11 +586,11 @@
                                      options:0];
 }
 
-- (NSDate *)jk_offsetHours:(int)hours {
-    return [NSDate jk_offsetHours:hours fromDate:self];
+- (NSDate *)_offsetHours:(int)hours {
+    return [NSDate _offsetHours:hours fromDate:self];
 }
 
-+ (NSDate *)jk_offsetHours:(int)numHours fromDate:(NSDate *)fromDate {
++ (NSDate *)_offsetHours:(int)numHours fromDate:(NSDate *)fromDate {
     if (fromDate == nil) {
         return nil;
     }

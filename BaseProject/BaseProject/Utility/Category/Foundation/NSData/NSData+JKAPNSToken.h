@@ -14,5 +14,5 @@
  *
  *  @return 整理过后的字符串token
  */
-- (NSString *)jk_APNSToken;
+- (NSString *)_APNSToken;
 @end

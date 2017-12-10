@@ -14,7 +14,7 @@
  *
  *  @return urlEncode 后的字符串
  */
-- (NSString *)jk_urlEncode;
+- (NSString *)_urlEncode;
 /**
  *  @brief  urlEncode
  *
@@ -22,13 +22,13 @@
  *
  *  @return urlEncode 后的字符串
  */
-- (NSString *)jk_urlEncodeUsingEncoding:(NSStringEncoding)encoding;
+- (NSString *)_urlEncodeUsingEncoding:(NSStringEncoding)encoding;
 /**
  *  @brief  urlDecode
  *
  *  @return urlDecode 后的字符串
  */
-- (NSString *)jk_urlDecode;
+- (NSString *)_urlDecode;
 /**
  *  @brief  urlDecode
  *
@@ -36,13 +36,13 @@
  *
  *  @return urlDecode 后的字符串
  */
-- (NSString *)jk_urlDecodeUsingEncoding:(NSStringEncoding)encoding;
+- (NSString *)_urlDecodeUsingEncoding:(NSStringEncoding)encoding;
 
 /**
  *  @brief  url query转成NSDictionary
  *
  *  @return NSDictionary
  */
-- (NSDictionary *)jk_dictionaryFromURLParameters;
+- (NSDictionary *)_dictionaryFromURLParameters;
 
 @end

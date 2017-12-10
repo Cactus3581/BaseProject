@@ -24,11 +24,11 @@
 typedef struct {
 	__unsafe_unretained NSString *escapeSequence;
 	unichar uchar;
-} JK_HTMLEscapeMap;
+} BP_HTMLEscapeMap;
 
 // Taken from http://www.w3.org/TR/xhtml1/dtds.html#a_dtd_Special_characters
 // Ordered by uchar lowest to highest for bsearching
-static JK_HTMLEscapeMap jk_gAsciiHTMLEscapeMap[] = {
+static BP_HTMLEscapeMap _gAsciiHTMLEscapeMap[] = {
 	// A.2.2. Special characters
 	{ @"&quot;", 34 },
 	{ @"&amp;", 38 },
@@ -312,7 +312,7 @@ static JK_HTMLEscapeMap jk_gAsciiHTMLEscapeMap[] = {
 
 // Taken from http://www.w3.org/TR/xhtml1/dtds.html#a_dtd_Special_characters
 // This is table A.2.2 Special Characters
-static JK_HTMLEscapeMap jk_gUnicodeHTMLEscapeMap[] = {
+static BP_HTMLEscapeMap _gUnicodeHTMLEscapeMap[] = {
 	// C0 Controls and Basic Latin
 	{ @"&quot;", 34 },
 	{ @"&amp;", 38 },
@@ -357,9 +357,9 @@ static JK_HTMLEscapeMap jk_gUnicodeHTMLEscapeMap[] = {
 
 
 // Utility function for Bsearching table above
-static int JK_EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
+static int BP_EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
 	const unichar *uchar = (const unichar*)ucharVoid;
-	const JK_HTMLEscapeMap *map = (const JK_HTMLEscapeMap*)mapVoid;
+	const BP_HTMLEscapeMap *map = (const BP_HTMLEscapeMap*)mapVoid;
 	int val;
 	if (*uchar > map->uchar) {
 		val = 1;
@@ -374,7 +374,7 @@ static int JK_EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
 @implementation NSString (JKHTML)
 #pragma --mark GTM method
 
-- (NSString *)jk_stringByEscapingHTMLUsingTable:(JK_HTMLEscapeMap*)table
+- (NSString *)_stringByEscapingHTMLUsingTable:(BP_HTMLEscapeMap*)table
                                           ofSize:(NSUInteger)size 
                                  escapingUnicode:(BOOL)escapeUnicode {  
 	NSUInteger length = [self length];
@@ -413,9 +413,9 @@ static int JK_EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
 	NSUInteger buffer2Length = 0;
 	
 	for (NSUInteger i = 0; i < length; ++i) {
-		JK_HTMLEscapeMap *val = bsearch(&buffer[i], table,
-									 size / sizeof(JK_HTMLEscapeMap),
-									 sizeof(JK_HTMLEscapeMap), JK_EscapeMapCompare);
+		BP_HTMLEscapeMap *val = bsearch(&buffer[i], table,
+									 size / sizeof(BP_HTMLEscapeMap),
+									 sizeof(BP_HTMLEscapeMap), BP_EscapeMapCompare);
 		if (val || (escapeUnicode && buffer[i] > 127)) {
 			if (buffer2Length) {
 				CFStringAppendCharacters((CFMutableStringRef)finalString, 
@@ -443,19 +443,19 @@ static int JK_EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
 	return finalString;
 }
 
-- (NSString *)jk_stringByEscapingForHTML {
-	return [self jk_stringByEscapingHTMLUsingTable:jk_gUnicodeHTMLEscapeMap
-											 ofSize:sizeof(jk_gUnicodeHTMLEscapeMap) 
+- (NSString *)_stringByEscapingForHTML {
+	return [self _stringByEscapingHTMLUsingTable:_gUnicodeHTMLEscapeMap
+											 ofSize:sizeof(_gUnicodeHTMLEscapeMap) 
 									escapingUnicode:NO];
 } // gtm_stringByEscapingHTML
 
-- (NSString *)jk_stringByEscapingForAsciiHTML {
-	return [self jk_stringByEscapingHTMLUsingTable:jk_gAsciiHTMLEscapeMap
-											 ofSize:sizeof(jk_gAsciiHTMLEscapeMap) 
+- (NSString *)_stringByEscapingForAsciiHTML {
+	return [self _stringByEscapingHTMLUsingTable:_gAsciiHTMLEscapeMap
+											 ofSize:sizeof(_gAsciiHTMLEscapeMap) 
 									escapingUnicode:YES];
 } // gtm_stringByEscapingAsciiHTML
 
-- (NSString *)jk_stringByUnescapingFromHTML {
+- (NSString *)_stringByUnescapingFromHTML {
     
 	NSRange range = NSMakeRange(0, [self length]);
 	NSRange subrange = [self rangeOfString:@"&" options:NSBackwardsSearch range:range];
@@ -508,9 +508,9 @@ static int JK_EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
 				}
 			} else {
 				// "standard" sequences
-				for (unsigned i = 0; i < sizeof(jk_gAsciiHTMLEscapeMap) / sizeof(JK_HTMLEscapeMap); ++i) {
-					if ([escapeString isEqualToString:jk_gAsciiHTMLEscapeMap[i].escapeSequence]) {
-						[finalString replaceCharactersInRange:escapeRange withString:[NSString stringWithCharacters:&jk_gAsciiHTMLEscapeMap[i].uchar length:1]];
+				for (unsigned i = 0; i < sizeof(_gAsciiHTMLEscapeMap) / sizeof(BP_HTMLEscapeMap); ++i) {
+					if ([escapeString isEqualToString:_gAsciiHTMLEscapeMap[i].escapeSequence]) {
+						[finalString replaceCharactersInRange:escapeRange withString:[NSString stringWithCharacters:&_gAsciiHTMLEscapeMap[i].uchar length:1]];
 						break;
 					}
 				}
@@ -522,7 +522,7 @@ static int JK_EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
 
 
 #pragma --mark MWFeedParser method
-- (NSString *)jk_stringWithNewLinesAsBRs {
+- (NSString *)_stringWithNewLinesAsBRs {
     @autoreleasepool {
         // Strange New lines:
         //	Next Line, U+0085
@@ -575,7 +575,7 @@ static int JK_EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
 }
 
 
-- (NSString *)jk_stringByRemovingNewLinesAndWhitespace {
+- (NSString *)_stringByRemovingNewLinesAndWhitespace {
     @autoreleasepool {
         
         // Strange New lines:
@@ -617,7 +617,7 @@ static int JK_EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
     }
 }
 
-- (NSString *)jk_stringByLinkifyingURLs {
+- (NSString *)_stringByLinkifyingURLs {
     if (!NSClassFromString(@"NSRegularExpression")) return self;
     @autoreleasepool {
         NSString *pattern = @"(?<!=\")\\b((http|https):\\/\\/[\\w\\-_]+(\\.[\\w\\-_]+)+([\\w\\-\\.,@?^=%%&amp;:/~\\+#]*[\\w\\-\\@?^=%%&amp;/~\\+#])?)";
@@ -628,7 +628,7 @@ static int JK_EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
     }
 }
 
-- (NSString *)jk_stringByStrippingTags {
+- (NSString *)_stringByStrippingTags {
     @autoreleasepool {
         
         // Find first & and short-cut if we can
@@ -686,7 +686,7 @@ static int JK_EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
         }
         
         // Remove multi-spaces and line breaks
-        finalString = [result jk_stringByRemovingNewLinesAndWhitespace];
+        finalString = [result _stringByRemovingNewLinesAndWhitespace];
         
         // Cleanup
         
@@ -696,12 +696,12 @@ static int JK_EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
     }
 }
 
-- (NSString *)jk_stringByConvertingHTMLToPlainText {
+- (NSString *)_stringByConvertingHTMLToPlainText {
     @autoreleasepool {
         // Character sets
         NSCharacterSet *stopCharacters = [NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@"< \t\n\r%C%C%C%C", (unichar)0x0085, (unichar)0x000C, (unichar)0x2028, (unichar)0x2029]];
         NSCharacterSet *newLineAndWhitespaceCharacters = [NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@" \t\n\r%C%C%C%C", (unichar)0x0085, (unichar)0x000C, (unichar)0x2028, (unichar)0x2029]];
-        NSCharacterSet *tagNameCharacters = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+        NSCharacterSet *tagNameCharacters = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghilmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"];
         
         // Scan and find all tags
         NSMutableString *result = [[NSMutableString alloc] initWithCapacity:self.length];
@@ -782,7 +782,7 @@ static int JK_EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
         // Cleanup
         
         // Decode HTML entities and return
-        NSString *retString = [result jk_stringByUnescapingFromHTML];
+        NSString *retString = [result _stringByUnescapingFromHTML];
         
         // Return
         return retString;

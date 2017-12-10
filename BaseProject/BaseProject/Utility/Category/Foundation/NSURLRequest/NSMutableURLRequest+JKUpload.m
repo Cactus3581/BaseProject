@@ -10,25 +10,25 @@
 
 @implementation NSMutableURLRequest (JKUpload)
 
-+ (instancetype)jk_requestWithURL:(NSURL *)URL fileURL:(NSURL *)fileURL name:(NSString *)name {
-    return [self jk_requestWithURL:URL fileURLs:@[fileURL] name:name];
++ (instancetype)_requestWithURL:(NSURL *)URL fileURL:(NSURL *)fileURL name:(NSString *)name {
+    return [self _requestWithURL:URL fileURLs:@[fileURL] name:name];
 }
 
-+ (instancetype)jk_requestWithURL:(NSURL *)URL fileURL:(NSURL *)fileURL fileName:(NSString *)fileName name:(NSString *)name {
-    return [self jk_requestWithURL:URL fileURLs:@[fileURL] fileNames:@[fileName] name:name];
++ (instancetype)_requestWithURL:(NSURL *)URL fileURL:(NSURL *)fileURL fileName:(NSString *)fileName name:(NSString *)name {
+    return [self _requestWithURL:URL fileURLs:@[fileURL] fileNames:@[fileName] name:name];
 }
 
-+ (instancetype)jk_requestWithURL:(NSURL *)URL fileURLs:(NSArray *)fileURLs name:(NSString *)name {
++ (instancetype)_requestWithURL:(NSURL *)URL fileURLs:(NSArray *)fileURLs name:(NSString *)name {
     
     NSMutableArray *fileNames = [NSMutableArray arrayWithCapacity:fileURLs.count];
     [fileURLs enumerateObjectsUsingBlock:^(NSURL *fileURL, NSUInteger idx, BOOL *stop) {
         [fileNames addObject:fileURL.path.lastPathComponent];
     }];
     
-    return [self jk_requestWithURL:URL fileURLs:fileURLs fileNames:fileNames name:name];
+    return [self _requestWithURL:URL fileURLs:fileURLs fileNames:fileNames name:name];
 }
 
-+ (instancetype)jk_requestWithURL:(NSURL *)URL fileURLs:(NSArray *)fileURLs fileNames:(NSArray *)fileNames name:(NSString *)name {
++ (instancetype)_requestWithURL:(NSURL *)URL fileURLs:(NSArray *)fileURLs fileNames:(NSArray *)fileNames name:(NSString *)name {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
     
     request.HTTPMethod = @"POST";

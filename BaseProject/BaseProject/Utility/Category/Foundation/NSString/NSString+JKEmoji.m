@@ -10,10 +10,10 @@
 
 @implementation NSString (JKEmoji)
 
-static NSDictionary * jk_s_unicodeToCheatCodes = nil;
-static NSDictionary * jk_s_cheatCodesToUnicode = nil;
+static NSDictionary * _s_unicodeToCheatCodes = nil;
+static NSDictionary * _s_cheatCodesToUnicode = nil;
 
-+ (void)jk_initializeEmojiCheatCodes
++ (void)_initializeEmojiCheatCodes
 {
     NSDictionary *forwardMap = @{
                                  @"😄": @":smile:",
@@ -860,20 +860,20 @@ static NSDictionary * jk_s_cheatCodesToUnicode = nil;
     }];
 
     @synchronized(self) {
-        jk_s_unicodeToCheatCodes = forwardMap;
-        jk_s_cheatCodesToUnicode = [reversedMap copy];
+        _s_unicodeToCheatCodes = forwardMap;
+        _s_cheatCodesToUnicode = [reversedMap copy];
     }
 }
 
-- (NSString *)jk_stringByReplacingEmojiCheatCodesWithUnicode
+- (NSString *)_stringByReplacingEmojiCheatCodesWithUnicode
 {
-    if (!jk_s_cheatCodesToUnicode) {
-        [NSString jk_initializeEmojiCheatCodes];
+    if (!_s_cheatCodesToUnicode) {
+        [NSString _initializeEmojiCheatCodes];
     }
     
     if ([self rangeOfString:@":"].location != NSNotFound) {
         __block NSMutableString *newText = [NSMutableString stringWithString:self];
-        [jk_s_cheatCodesToUnicode enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
+        [_s_cheatCodesToUnicode enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
             [newText replaceOccurrencesOfString:key withString:obj options:NSLiteralSearch range:NSMakeRange(0, newText.length)];
         }];
         return newText;
@@ -882,15 +882,15 @@ static NSDictionary * jk_s_cheatCodesToUnicode = nil;
     return self;
 }
 
-- (NSString *)jk_stringByReplacingEmojiUnicodeWithCheatCodes
+- (NSString *)_stringByReplacingEmojiUnicodeWithCheatCodes
 {
-    if (!jk_s_cheatCodesToUnicode) {
-        [NSString jk_initializeEmojiCheatCodes];
+    if (!_s_cheatCodesToUnicode) {
+        [NSString _initializeEmojiCheatCodes];
     }
     
     if (self.length) {
         __block NSMutableString *newText = [NSMutableString stringWithString:self];
-        [jk_s_unicodeToCheatCodes enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [_s_unicodeToCheatCodes enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             NSString *string = ([obj isKindOfClass:[NSArray class]] ? [obj firstObject] : obj);
             [newText replaceOccurrencesOfString:key withString:string options:NSLiteralSearch range:NSMakeRange(0, newText.length)];
         }];

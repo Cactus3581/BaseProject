@@ -16,7 +16,7 @@ static NSDateFormatter *_internetDateTimeFormatter = nil;
 @implementation NSDate (JKInternetDateTime)
 
 // Instantiate single date formatter
-+ (NSDateFormatter *)jk_internetDateTimeFormatter {
++ (NSDateFormatter *)_internetDateTimeFormatter {
     @synchronized(self) {
         if (!_internetDateTimeFormatter) {
             NSLocale *en_US_POSIX = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
@@ -29,18 +29,18 @@ static NSDateFormatter *_internetDateTimeFormatter = nil;
 }
 
 // Get a date from a string - hint can be used to speed up
-+ (NSDate *)jk_dateFromInternetDateTimeString:(NSString *)dateString formatHint:(DateFormatHint)hint {
++ (NSDate *)_dateFromInternetDateTimeString:(NSString *)dateString formatHint:(DateFormatHint)hint {
      // Keep dateString around a while (for thread-safety)
 	NSDate *date = nil;
     if (dateString) {
         if (hint != DateFormatHintRFC3339) {
             // Try RFC822 first
-            date = [NSDate jk_dateFromRFC822String:dateString];
-            if (!date) date = [NSDate jk_dateFromRFC3339String:dateString];
+            date = [NSDate _dateFromRFC822String:dateString];
+            if (!date) date = [NSDate _dateFromRFC3339String:dateString];
         } else {
             // Try RFC3339 first
-            date = [NSDate jk_dateFromRFC3339String:dateString];
-            if (!date) date = [NSDate jk_dateFromRFC822String:dateString];
+            date = [NSDate _dateFromRFC3339String:dateString];
+            if (!date) date = [NSDate _dateFromRFC822String:dateString];
         }
     }
      // Finished with date string
@@ -48,11 +48,11 @@ static NSDateFormatter *_internetDateTimeFormatter = nil;
 }
 
 // See http://www.faqs.org/rfcs/rfc822.html
-+ (NSDate *)jk_dateFromRFC822String:(NSString *)dateString {
++ (NSDate *)_dateFromRFC822String:(NSString *)dateString {
      // Keep dateString around a while (for thread-safety)
     NSDate *date = nil;
     if (dateString) {
-        NSDateFormatter *dateFormatter = [NSDate jk_internetDateTimeFormatter];
+        NSDateFormatter *dateFormatter = [NSDate _internetDateTimeFormatter];
         @synchronized(dateFormatter) {
 
             // Process
@@ -101,11 +101,11 @@ static NSDateFormatter *_internetDateTimeFormatter = nil;
 }
 
 // See http://www.faqs.org/rfcs/rfc3339.html
-+ (NSDate *)jk_dateFromRFC3339String:(NSString *)dateString {
++ (NSDate *)_dateFromRFC3339String:(NSString *)dateString {
      // Keep dateString around a while (for thread-safety)
     NSDate *date = nil;
     if (dateString) {
-        NSDateFormatter *dateFormatter = [NSDate jk_internetDateTimeFormatter];
+        NSDateFormatter *dateFormatter = [NSDate _internetDateTimeFormatter];
         @synchronized(dateFormatter) {
             
             // Process date

@@ -15,7 +15,7 @@
  *
  *  @return 是否包含中文
  */
-- (BOOL)jk_isContainChinese
+- (BOOL)_isContainChinese
 {
     NSUInteger length = [self length];
     for (NSUInteger i = 0; i < length; i++) {
@@ -34,7 +34,7 @@
  *
  *  @return 是否包含空格
  */
-- (BOOL)jk_isContainBlank
+- (BOOL)_isContainBlank
 {
     NSRange range = [self rangeOfString:@" "];
     if (range.location != NSNotFound) {
@@ -44,7 +44,7 @@
 }
 
 //Unicode编码的字符串转成NSString
-- (NSString *)jk_makeUnicodeToString
+- (NSString *)_makeUnicodeToString
 {
     NSString *tempStr1 = [self stringByReplacingOccurrencesOfString:@"\\u"withString:@"\\U"];
     NSString *tempStr2 = [tempStr1 stringByReplacingOccurrencesOfString:@"\""withString:@"\\\""];
@@ -57,7 +57,7 @@
     return [returnStr stringByReplacingOccurrencesOfString:@"\\r\\n"withString:@"\n"];
 }
 
-- (BOOL)jk_containsCharacterSet:(NSCharacterSet *)set
+- (BOOL)_containsCharacterSet:(NSCharacterSet *)set
 {
     NSRange rang = [self rangeOfCharacterFromSet:set];
     if (rang.location == NSNotFound) {
@@ -73,7 +73,7 @@
  *
  *  @return YES, 包含; Otherwise
  */
-- (BOOL)jk_containsaString:(NSString *)string
+- (BOOL)_containsaString:(NSString *)string
 {
     NSRange rang = [self rangeOfString:string];
     if (rang.location == NSNotFound) {
@@ -86,7 +86,7 @@
 /**
  *  @brief 获取字符数量
  */
-- (int)jk_wordsCount
+- (int)_wordsCount
 {
     NSInteger n = self.length;
     int i;

@@ -11,15 +11,15 @@
 
 @implementation NSString (JKScore)
 
-- (CGFloat)jk_scoreAgainst:(NSString *)otherString{
-    return [self jk_scoreAgainst:otherString fuzziness:nil];
+- (CGFloat)_scoreAgainst:(NSString *)otherString{
+    return [self _scoreAgainst:otherString fuzziness:nil];
 }
 
-- (CGFloat)jk_scoreAgainst:(NSString *)otherString fuzziness:(NSNumber *)fuzziness{
-    return [self jk_scoreAgainst:otherString fuzziness:fuzziness options:NSStringJKScoreOptionNone];
+- (CGFloat)_scoreAgainst:(NSString *)otherString fuzziness:(NSNumber *)fuzziness{
+    return [self _scoreAgainst:otherString fuzziness:fuzziness options:NSStringBPScoreOptionNone];
 }
 
-- (CGFloat)jk_scoreAgainst:(NSString *)anotherString fuzziness:(NSNumber *)fuzziness options:(NSStringJKScoreOption)options{
+- (CGFloat)_scoreAgainst:(NSString *)anotherString fuzziness:(NSNumber *)fuzziness options:(NSStringBPScoreOption)options{
     NSMutableCharacterSet *workingInvalidCharacterSet = [NSMutableCharacterSet lowercaseLetterCharacterSet];
     [workingInvalidCharacterSet formUnionWithCharacterSet:[NSCharacterSet uppercaseLetterCharacterSet]];
     [workingInvalidCharacterSet addCharactersInString:@" "];
@@ -109,14 +109,14 @@
         totalCharacterScore += characterScore;
     }
     
-    if(NSStringJKScoreOptionFavorSmallerWords == (options & NSStringJKScoreOptionFavorSmallerWords)){
+    if(NSStringBPScoreOptionFavorSmallerWords == (options & NSStringBPScoreOptionFavorSmallerWords)){
         // Weigh smaller words higher
         return totalCharacterScore / stringLength;
     } 
     
     otherStringScore = totalCharacterScore / otherStringLength;
     
-    if(NSStringJKScoreOptionReducedLongStringPenalty == (options & NSStringJKScoreOptionReducedLongStringPenalty)){
+    if(NSStringBPScoreOptionReducedLongStringPenalty == (options & NSStringBPScoreOptionReducedLongStringPenalty)){
         // Reduce the penalty for longer words
         CGFloat percentageOfMatchedString = otherStringLength / stringLength;
         CGFloat wordScore = otherStringScore * percentageOfMatchedString;

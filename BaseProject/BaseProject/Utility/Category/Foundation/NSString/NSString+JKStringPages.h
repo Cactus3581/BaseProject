@@ -19,7 +19,7 @@
  *
  *  @return 返回一个数组，数组的元素是NSrange，根据NSRange来进行截取字符串
  */
-- (NSArray *)jk_getPagesOfString:(NSString *)cache
+- (NSArray *)_getPagesOfString:(NSString *)cache
                      withFont:(UIFont*)font
                        inRect:(CGRect)r;
 @end

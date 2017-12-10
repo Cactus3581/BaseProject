@@ -32,13 +32,13 @@
 #import "NSObject+JKAutoCoding.h"
 #import <objc/runtime.h>
 #pragma GCC diagnostic ignored "-Wgnu"
-static NSString *const JKAutocodingException = @"JKAutocodingException";
+static NSString *const BPAutocodingException = @"BPAutocodingException";
 @implementation NSObject (JKAutoCoding)
 + (BOOL)supportsSecureCoding
 {
     return YES;
 }
-+ (instancetype)jk_objectWithContentsOfFile:(NSString *)filePath
++ (instancetype)_objectWithContentsOfFile:(NSString *)filePath
 {
     //load the file
     NSData *data = [NSData dataWithContentsOfFile:filePath];
@@ -66,7 +66,7 @@ static NSString *const JKAutocodingException = @"JKAutocodingException";
     //return object
     return object;
 }
-- (BOOL)jk_writeToFile:(NSString *)filePath atomically:(BOOL)useAuxiliaryFile
+- (BOOL)_writeToFile:(NSString *)filePath atomically:(BOOL)useAuxiliaryFile
 {
     //note: NSData, NSDictionary and NSArray already implement this method
     //and do not save using NSCoding, however the objectWithContentsOfFile
@@ -75,7 +75,7 @@ static NSString *const JKAutocodingException = @"JKAutocodingException";
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self];
     return [data writeToFile:filePath atomically:useAuxiliaryFile];
 }
-+ (NSDictionary *)jk_codableProperties
++ (NSDictionary *)_codableProperties
 {
     //deprecated
     SEL deprecatedSelector = NSSelectorFromString(@"codableKeys");
@@ -186,7 +186,7 @@ static NSString *const JKAutocodingException = @"JKAutocodingException";
     free(properties);
     return codableProperties;
 }
-- (NSDictionary *)jk_codableProperties
+- (NSDictionary *)_codableProperties
 {
     __autoreleasing NSDictionary *codableProperties = objc_getAssociatedObject([self class], _cmd);
     if (!codableProperties)
@@ -195,7 +195,7 @@ static NSString *const JKAutocodingException = @"JKAutocodingException";
         Class subclass = [self class];
         while (subclass != [NSObject class])
         {
-            [(NSMutableDictionary *)codableProperties addEntriesFromDictionary:[subclass jk_codableProperties]];
+            [(NSMutableDictionary *)codableProperties addEntriesFromDictionary:[subclass _codableProperties]];
             subclass = [subclass superclass];
         }
         codableProperties = [NSDictionary dictionaryWithDictionary:codableProperties];
@@ -204,21 +204,21 @@ static NSString *const JKAutocodingException = @"JKAutocodingException";
     }
     return codableProperties;
 }
-- (NSDictionary *)jk_dictionaryRepresentation
+- (NSDictionary *)_dictionaryRepresentation
 {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    for (__unsafe_unretained NSString *key in [self jk_codableProperties])
+    for (__unsafe_unretained NSString *key in [self _codableProperties])
     {
         id value = [self valueForKey:key];
         if (value) dict[key] = value;
     }
     return dict;
 }
-- (void)jk_setWithCoder:(NSCoder *)aDecoder
+- (void)_setWithCoder:(NSCoder *)aDecoder
 {
     BOOL secureAvailable = [aDecoder respondsToSelector:@selector(decodeObjectOfClass:forKey:)];
     BOOL secureSupported = [[self class] supportsSecureCoding];
-    NSDictionary *properties = [self jk_codableProperties];
+    NSDictionary *properties = [self _codableProperties];
     for (NSString *key in properties)
     {
         id object = nil;
@@ -235,7 +235,7 @@ static NSString *const JKAutocodingException = @"JKAutocodingException";
         {
             if (secureSupported && ![object isKindOfClass:propertyClass])
             {
-                [NSException raise:JKAutocodingException format:@"Expected '%@' to be a %@, but was actually a %@", key, propertyClass, [object class]];
+                [NSException raise:BPAutocodingException format:@"Expected '%@' to be a %@, but was actually a %@", key, propertyClass, [object class]];
             }
             [self setValue:object forKey:key];
         }
@@ -245,13 +245,13 @@ static NSString *const JKAutocodingException = @"JKAutocodingException";
 #pragma clang diagnostic ignored "-Wobjc-designated-initializers"
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-    [self jk_setWithCoder:aDecoder];
+    [self _setWithCoder:aDecoder];
     return self;
 }
 #pragma clang diagnostic pop
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    for (NSString *key in [self jk_codableProperties])
+    for (NSString *key in [self _codableProperties])
     {
         id object = [self valueForKey:key];
         if (object) [aCoder encodeObject:object forKey:key];

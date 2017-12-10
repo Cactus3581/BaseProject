@@ -13,7 +13,7 @@
  *
  *  @param notification 一条通知
  */
-- (void)jk_postNotificationOnMainThread:(NSNotification *)notification
+- (void)_postNotificationOnMainThread:(NSNotification *)notification
 {
     [self performSelectorOnMainThread:@selector(postNotification:) withObject:notification waitUntilDone:YES];
 }
@@ -23,10 +23,10 @@
  *  @param aName    用来生成新通知的通知名称
  *  @param anObject 通知携带的对象
  */
-- (void)jk_postNotificationOnMainThreadName:(NSString *)aName object:(id)anObject
+- (void)_postNotificationOnMainThreadName:(NSString *)aName object:(id)anObject
 {
     NSNotification *notification = [NSNotification notificationWithName:aName object:anObject];
-    [self jk_postNotificationOnMainThread:notification];
+    [self _postNotificationOnMainThread:notification];
 }
 /**
  *  @brief  在主线程中发送一条通知
@@ -35,10 +35,10 @@
  *  @param anObject  通知携带的对象
  *  @param aUserInfo 通知携带的用户信息
  */
-- (void)jk_postNotificationOnMainThreadName:(NSString *)aName object:(id)anObject userInfo:(NSDictionary *)aUserInfo
+- (void)_postNotificationOnMainThreadName:(NSString *)aName object:(id)anObject userInfo:(NSDictionary *)aUserInfo
 {
     NSNotification *notification = [NSNotification notificationWithName:aName object:anObject userInfo:aUserInfo];
-    [self jk_postNotificationOnMainThread:notification];
+    [self _postNotificationOnMainThread:notification];
 }
 
 @end

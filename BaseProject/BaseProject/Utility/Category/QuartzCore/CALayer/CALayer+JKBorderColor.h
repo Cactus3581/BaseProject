@@ -10,9 +10,8 @@
 #import <UIKit/UIKit.h>
 @interface CALayer (JKBorderColor)
 /**
- *  @author JKCategories
  *
  *  layer边框颜色
  */
-@property(nonatomic, assign) UIColor *jk_borderColor;
+@property(nonatomic, assign) UIColor *_borderColor;
 @end

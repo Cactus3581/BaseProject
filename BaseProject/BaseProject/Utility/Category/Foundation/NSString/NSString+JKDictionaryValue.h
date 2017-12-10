@@ -14,5 +14,5 @@
  *
  *  @return NSDictionary
  */
--(NSDictionary *)jk_dictionaryValue;
+-(NSDictionary *)_dictionaryValue;
 @end

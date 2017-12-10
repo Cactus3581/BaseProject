@@ -12,7 +12,7 @@
 /**
  *  @brief  暂停NSTimer
  */
--(void)jk_pauseTimer
+-(void)_pauseTimer
 {
     if (![self isValid]) {
         return ;
@@ -22,7 +22,7 @@
 /**
  *  @brief  开始NSTimer
  */
--(void)jk_resumeTimer
+-(void)_resumeTimer
 {
     if (![self isValid]) {
         return ;
@@ -32,7 +32,7 @@
 /**
  *  @brief  延迟开始NSTimer
  */
-- (void)jk_resumeTimerAfterTimeInterval:(NSTimeInterval)interval
+- (void)_resumeTimerAfterTimeInterval:(NSTimeInterval)interval
 {
     if (![self isValid]) {
         return ;

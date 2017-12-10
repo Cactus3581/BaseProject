@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface NSObject (JKBlocks)
-+ (id)jk_performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
-+ (id)jk_performBlock:(void (^)(id arg))block withObject:(id)anObject afterDelay:(NSTimeInterval)delay;
-- (id)jk_performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
-- (id)jk_performBlock:(void (^)(id arg))block withObject:(id)anObject afterDelay:(NSTimeInterval)delay;
-+ (void)jk_cancelBlock:(id)block;
-+ (void)jk_cancelPreviousPerformBlock:(id)aWrappingBlockHandle __attribute__ ((deprecated));
++ (id)_performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
++ (id)_performBlock:(void (^)(id arg))block withObject:(id)anObject afterDelay:(NSTimeInterval)delay;
+- (id)_performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
+- (id)_performBlock:(void (^)(id arg))block withObject:(id)anObject afterDelay:(NSTimeInterval)delay;
++ (void)_cancelBlock:(id)block;
++ (void)_cancelPreviousPerformBlock:(id)aWrappingBlockHandle __attribute__ ((deprecated));
 
 @end

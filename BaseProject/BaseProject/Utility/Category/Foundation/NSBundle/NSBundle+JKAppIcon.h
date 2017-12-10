@@ -8,6 +8,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @interface NSBundle (JKAppIcon)
-- (NSString*)jk_appIconPath ;
-- (UIImage*)jk_appIcon ;
+- (NSString*)_appIconPath ;
+- (UIImage*)_appIcon ;
 @end

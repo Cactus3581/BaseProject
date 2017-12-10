@@ -14,7 +14,7 @@
  *
  *  @return 参数转字典结果
  */
-- (NSDictionary *)jk_parameters;
+- (NSDictionary *)_parameters;
 /**
  *  @brief  根据参数名 取参数值
  *
@@ -22,5 +22,5 @@
  *
  *  @return 参数值
  */
-- (NSString *)jk_valueForParameter:(NSString *)parameterKey;
+- (NSString *)_valueForParameter:(NSString *)parameterKey;
 @end

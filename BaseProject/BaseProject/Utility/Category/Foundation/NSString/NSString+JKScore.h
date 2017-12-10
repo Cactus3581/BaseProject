@@ -8,17 +8,17 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef NS_OPTIONS(NSUInteger, NSStringJKScoreOption) {
-    NSStringJKScoreOptionNone = 1 << 0,
-    NSStringJKScoreOptionFavorSmallerWords = 1 << 1,
-    NSStringJKScoreOptionReducedLongStringPenalty = 1 << 2
+typedef NS_OPTIONS(NSUInteger, NSStringBPScoreOption) {
+    NSStringBPScoreOptionNone = 1 << 0,
+    NSStringBPScoreOptionFavorSmallerWords = 1 << 1,
+    NSStringBPScoreOptionReducedLongStringPenalty = 1 << 2
 };
 
 //模糊匹配字符串 查找某两个字符串的相似程度
 @interface NSString (JKScore)
 
-- (CGFloat)jk_scoreAgainst:(NSString *)otherString;
-- (CGFloat)jk_scoreAgainst:(NSString *)otherString fuzziness:(NSNumber *)fuzziness;
-- (CGFloat)jk_scoreAgainst:(NSString *)otherString fuzziness:(NSNumber *)fuzziness options:(NSStringJKScoreOption)options;
+- (CGFloat)_scoreAgainst:(NSString *)otherString;
+- (CGFloat)_scoreAgainst:(NSString *)otherString fuzziness:(NSNumber *)fuzziness;
+- (CGFloat)_scoreAgainst:(NSString *)otherString fuzziness:(NSNumber *)fuzziness options:(NSStringBPScoreOption)options;
 
 @end

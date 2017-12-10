@@ -12,11 +12,10 @@
 
 @interface NSURLConnection (JKSelfSigned)
 /**
- *  @author JKCategories
  *
  *  Sends async request while accepting all self-signed certs
  *
  */
-+ (void)jk_sendAsynchronousRequestAcceptingAllCerts:(NSURLRequest *)request queue:(NSOperationQueue *)queue completionHandler:(void (^)(NSURLResponse *, NSData *, NSError *))handler;
++ (void)_sendAsynchronousRequestAcceptingAllCerts:(NSURLRequest *)request queue:(NSOperationQueue *)queue completionHandler:(void (^)(NSURLResponse *, NSData *, NSError *))handler;
 
 @end

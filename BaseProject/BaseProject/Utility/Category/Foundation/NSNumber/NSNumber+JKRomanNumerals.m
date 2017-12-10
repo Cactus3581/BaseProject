@@ -9,7 +9,7 @@
 
 @implementation NSNumber (JKRomanNumerals)
 
-- (NSString *)jk_romanNumeral
+- (NSString *)_romanNumeral
 {
     NSInteger n = [self integerValue];
     

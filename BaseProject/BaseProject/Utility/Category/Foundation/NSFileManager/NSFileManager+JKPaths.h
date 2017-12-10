@@ -15,55 +15,55 @@
  
  @return Documents directory URL.
  */
-+ (NSURL *)jk_documentsURL;
++ (NSURL *)_documentsURL;
 
 /**
  Get path of Documents directory.
  
  @return Documents directory path.
  */
-+ (NSString *)jk_documentsPath;
++ (NSString *)_documentsPath;
 
 /**
  Get URL of Library directory.
  
  @return Library directory URL.
  */
-+ (NSURL *)jk_libraryURL;
++ (NSURL *)_libraryURL;
 
 /**
  Get path of Library directory.
  
  @return Library directory path.
  */
-+ (NSString *)jk_libraryPath;
++ (NSString *)_libraryPath;
 
 /**
  Get URL of Caches directory.
  
  @return Caches directory URL.
  */
-+ (NSURL *)jk_cachesURL;
++ (NSURL *)_cachesURL;
 
 /**
  Get path of Caches directory.
  
  @return Caches directory path.
  */
-+ (NSString *)jk_cachesPath;
++ (NSString *)_cachesPath;
 
 /**
  Adds a special filesystem flag to a file to avoid iCloud backup it.
  
  @param path Path to a file to set an attribute.
  */
-+ (BOOL)jk_addSkipBackupAttributeToFile:(NSString *)path;
++ (BOOL)_addSkipBackupAttributeToFile:(NSString *)path;
 
 /**
  Get available disk space.
  
  @return An amount of available disk space in Megabytes.
  */
-+ (double)jk_availableDiskSpace;
++ (double)_availableDiskSpace;
 
 @end

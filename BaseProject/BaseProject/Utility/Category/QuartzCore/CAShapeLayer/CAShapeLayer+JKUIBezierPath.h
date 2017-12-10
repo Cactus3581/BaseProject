@@ -41,12 +41,12 @@
 /**
  Update CAShapeLayer with UIBezierPath.
  */
-- (void)jk_updateWithBezierPath:(UIBezierPath *)path;
+- (void)_updateWithBezierPath:(UIBezierPath *)path;
 
 /**
  Get UIBezierPath object, constructed from CAShapeLayer.
  */
-- (UIBezierPath*)jk_bezierPath;
+- (UIBezierPath*)_bezierPath;
 
 @end
 

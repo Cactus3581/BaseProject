@@ -9,25 +9,25 @@
 
 @interface NSString (JKRemoveEmoji)
 ///移除所有emoji，以“”替换
-- (NSString *)jk_removingEmoji;
+- (NSString *)_removingEmoji;
 ///移除所有emoji，以“”替换
-- (NSString *)jk_stringByRemovingEmoji;
+- (NSString *)_stringByRemovingEmoji;
 ///移除所有emoji，以string替换
-- (NSString *)jk_stringByReplaceingEmojiWithString:(NSString*)string;
+- (NSString *)_stringByReplaceingEmojiWithString:(NSString*)string;
 
 ///字符串是否包含emoji
-- (BOOL)jk_containsEmoji;
+- (BOOL)_containsEmoji;
 ///字符串中包含的所有emoji unicode格式
-- (NSArray<NSString *>*)jk_allEmoji;
+- (NSArray<NSString *>*)_allEmoji;
 ///字符串中包含的所有emoji
-- (NSString *)jk_allEmojiString;
+- (NSString *)_allEmojiString;
 ///字符串中包含的所有emoji rang
-- (NSArray<NSString *>*)jk_allEmojiRanges;
+- (NSArray<NSString *>*)_allEmojiRanges;
 
 ///所有emoji表情
-+ (NSString*)jk_allSystemEmoji;
++ (NSString*)_allSystemEmoji;
 @end
 
 @interface NSCharacterSet (JKEmojiCharacterSet)
-+ (NSCharacterSet *)jk_emojiCharacterSet;
++ (NSCharacterSet *)_emojiCharacterSet;
 @end

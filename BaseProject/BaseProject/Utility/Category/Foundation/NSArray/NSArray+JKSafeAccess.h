@@ -10,47 +10,47 @@
 #import <UIKit/UIKit.h>
 
 @interface NSArray (JKSafeAccess)
--(id)jk_objectWithIndex:(NSUInteger)index;
+-(id)_objectWithIndex:(NSUInteger)index;
 
-- (NSString*)jk_stringWithIndex:(NSUInteger)index;
+- (NSString*)_stringWithIndex:(NSUInteger)index;
 
-- (NSNumber*)jk_numberWithIndex:(NSUInteger)index;
+- (NSNumber*)_numberWithIndex:(NSUInteger)index;
 
-- (NSDecimalNumber *)jk_decimalNumberWithIndex:(NSUInteger)index;
+- (NSDecimalNumber *)_decimalNumberWithIndex:(NSUInteger)index;
 
-- (NSArray*)jk_arrayWithIndex:(NSUInteger)index;
+- (NSArray*)_arrayWithIndex:(NSUInteger)index;
 
-- (NSDictionary*)jk_dictionaryWithIndex:(NSUInteger)index;
+- (NSDictionary*)_dictionaryWithIndex:(NSUInteger)index;
 
-- (NSInteger)jk_integerWithIndex:(NSUInteger)index;
+- (NSInteger)_integerWithIndex:(NSUInteger)index;
 
-- (NSUInteger)jk_unsignedIntegerWithIndex:(NSUInteger)index;
+- (NSUInteger)_unsignedIntegerWithIndex:(NSUInteger)index;
 
-- (BOOL)jk_boolWithIndex:(NSUInteger)index;
+- (BOOL)_boolWithIndex:(NSUInteger)index;
 
-- (int16_t)jk_int16WithIndex:(NSUInteger)index;
+- (int16_t)_int16WithIndex:(NSUInteger)index;
 
-- (int32_t)jk_int32WithIndex:(NSUInteger)index;
+- (int32_t)_int32WithIndex:(NSUInteger)index;
 
-- (int64_t)jk_int64WithIndex:(NSUInteger)index;
+- (int64_t)_int64WithIndex:(NSUInteger)index;
 
-- (char)jk_charWithIndex:(NSUInteger)index;
+- (char)_charWithIndex:(NSUInteger)index;
 
-- (short)jk_shortWithIndex:(NSUInteger)index;
+- (short)_shortWithIndex:(NSUInteger)index;
 
-- (float)jk_floatWithIndex:(NSUInteger)index;
+- (float)_floatWithIndex:(NSUInteger)index;
 
-- (double)jk_doubleWithIndex:(NSUInteger)index;
+- (double)_doubleWithIndex:(NSUInteger)index;
 
-- (NSDate *)jk_dateWithIndex:(NSUInteger)index dateFormat:(NSString *)dateFormat;
+- (NSDate *)_dateWithIndex:(NSUInteger)index dateFormat:(NSString *)dateFormat;
 //CG
-- (CGFloat)jk_CGFloatWithIndex:(NSUInteger)index;
+- (CGFloat)_CGFloatWithIndex:(NSUInteger)index;
 
-- (CGPoint)jk_pointWithIndex:(NSUInteger)index;
+- (CGPoint)_pointWithIndex:(NSUInteger)index;
 
-- (CGSize)jk_sizeWithIndex:(NSUInteger)index;
+- (CGSize)_sizeWithIndex:(NSUInteger)index;
 
-- (CGRect)jk_rectWithIndex:(NSUInteger)index;
+- (CGRect)_rectWithIndex:(NSUInteger)index;
 @end
 
 
@@ -58,27 +58,27 @@
 
 @interface NSMutableArray(JKSafeAccess)
 
--(void)jk_addObj:(id)i;
+-(void)_addObj:(id)i;
 
--(void)jk_addString:(NSString*)i;
+-(void)_addString:(NSString*)i;
 
--(void)jk_addBool:(BOOL)i;
+-(void)_addBool:(BOOL)i;
 
--(void)jk_addInt:(int)i;
+-(void)_addInt:(int)i;
 
--(void)jk_addInteger:(NSInteger)i;
+-(void)_addInteger:(NSInteger)i;
 
--(void)jk_addUnsignedInteger:(NSUInteger)i;
+-(void)_addUnsignedInteger:(NSUInteger)i;
 
--(void)jk_addCGFloat:(CGFloat)f;
+-(void)_addCGFloat:(CGFloat)f;
 
--(void)jk_addChar:(char)c;
+-(void)_addChar:(char)c;
 
--(void)jk_addFloat:(float)i;
+-(void)_addFloat:(float)i;
 
--(void)jk_addPoint:(CGPoint)o;
+-(void)_addPoint:(CGPoint)o;
 
--(void)jk_addSize:(CGSize)o;
+-(void)_addSize:(CGSize)o;
 
--(void)jk_addRect:(CGRect)o;
+-(void)_addRect:(CGRect)o;
 @end

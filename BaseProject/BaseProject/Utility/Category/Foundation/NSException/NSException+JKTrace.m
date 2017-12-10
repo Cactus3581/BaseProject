@@ -10,7 +10,7 @@
 #include <execinfo.h>
 
 @implementation NSException (JKTrace)
-- (NSArray *)jk_backtrace
+- (NSArray *)_backtrace
 {
     NSArray *addresses = self.callStackReturnAddresses;
     unsigned count = (int)addresses.count;

@@ -34,20 +34,18 @@ extern NSString *const NSRunloopTimeoutException;
 
 @interface NSRunLoop (JKPerformBlock)
 /**
- *  @author ishkawa
  *
  *  @brief   extension of NSRunLoop for waiting.
  *
  *  @param block <#block description#>
  */
-- (void)jk_performBlockAndWait:(void (^)(BOOL *finish))block;
+- (void)_performBlockAndWait:(void (^)(BOOL *finish))block;
 /**
- *  @author ishkawa
  *
  *  @brief   extension of NSRunLoop for waiting.
  *
  *  @param block <#block description#>
  */
-- (void)jk_performBlockAndWait:(void (^)(BOOL *finish))block timeoutInterval:(NSTimeInterval)timeoutInterval;
+- (void)_performBlockAndWait:(void (^)(BOOL *finish))block timeoutInterval:(NSTimeInterval)timeoutInterval;
 
 @end

@@ -14,14 +14,14 @@
  *
  *  @param notification NSNotification对象
  */
-- (void)jk_postNotificationOnMainThread:(NSNotification *)notification;
+- (void)_postNotificationOnMainThread:(NSNotification *)notification;
 /**
  *  @brief  在主线程中发送一条通知
  *
  *  @param aName    用来生成新通知的通知名称
  *  @param anObject 通知携带的对象
  */
-- (void)jk_postNotificationOnMainThreadName:(NSString *)aName object:(id)anObject;
+- (void)_postNotificationOnMainThreadName:(NSString *)aName object:(id)anObject;
 /**
  *  @brief  在主线程中发送一条通知
  *
@@ -29,6 +29,6 @@
  *  @param anObject  通知携带的对象
  *  @param aUserInfo 通知携带的用户信息
  */
-- (void)jk_postNotificationOnMainThreadName:(NSString *)aName object:(id)anObject userInfo:(NSDictionary *)aUserInfo;
+- (void)_postNotificationOnMainThreadName:(NSString *)aName object:(id)anObject userInfo:(NSDictionary *)aUserInfo;
 
 @end

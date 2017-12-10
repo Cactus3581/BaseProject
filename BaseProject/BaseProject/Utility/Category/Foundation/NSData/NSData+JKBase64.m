@@ -18,7 +18,7 @@
  *
  *  @return 传入字符串 base64后的data
  */
-+ (NSData *)jk_dataWithBase64EncodedString:(NSString *)string
++ (NSData *)_dataWithBase64EncodedString:(NSString *)string
 {
     if (![string length]) return nil;
     NSData *decoded = nil;
@@ -44,7 +44,7 @@
  *
  *  @return base64后的字符串
  */
-- (NSString *)jk_base64EncodedStringWithWrapWidth:(NSUInteger)wrapWidth
+- (NSString *)_base64EncodedStringWithWrapWidth:(NSUInteger)wrapWidth
 {
     if (![self length]) return nil;
     NSString *encoded = nil;
@@ -99,8 +99,8 @@
  *
  *  @return base64后的字符串
  */
-- (NSString *)jk_base64EncodedString
+- (NSString *)_base64EncodedString
 {
-    return [self jk_base64EncodedStringWithWrapWidth:0];
+    return [self _base64EncodedStringWithWrapWidth:0];
 }
 @end

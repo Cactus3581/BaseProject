@@ -9,21 +9,21 @@
 
 @implementation NSTimer (JKBlocks)
 
-+(id)jk_scheduledTimerWithTimeInterval:(NSTimeInterval)inTimeInterval block:(void (^)(void))inBlock repeats:(BOOL)inRepeats
++(id)_scheduledTimerWithTimeInterval:(NSTimeInterval)inTimeInterval block:(void (^)(void))inBlock repeats:(BOOL)inRepeats
 {
     void (^block)(void) = [inBlock copy];
-    id ret = [self scheduledTimerWithTimeInterval:inTimeInterval target:self selector:@selector(jk_jdExecuteSimpleBlock:) userInfo:block repeats:inRepeats];
+    id ret = [self scheduledTimerWithTimeInterval:inTimeInterval target:self selector:@selector(_jdExecuteSimpleBlock:) userInfo:block repeats:inRepeats];
     return ret;
 }
 
-+(id)jk_timerWithTimeInterval:(NSTimeInterval)inTimeInterval block:(void (^)(void))inBlock repeats:(BOOL)inRepeats
++(id)_timerWithTimeInterval:(NSTimeInterval)inTimeInterval block:(void (^)(void))inBlock repeats:(BOOL)inRepeats
 {
     void (^block)(void) = [inBlock copy];
-    id ret = [self timerWithTimeInterval:inTimeInterval target:self selector:@selector(jk_jdExecuteSimpleBlock:) userInfo:block repeats:inRepeats];
+    id ret = [self timerWithTimeInterval:inTimeInterval target:self selector:@selector(_jdExecuteSimpleBlock:) userInfo:block repeats:inRepeats];
     return ret;
 }
 
-+(void)jk_jdExecuteSimpleBlock:(NSTimer *)inTimer;
++(void)_jdExecuteSimpleBlock:(NSTimer *)inTimer;
 {
     if([inTimer userInfo])
     {

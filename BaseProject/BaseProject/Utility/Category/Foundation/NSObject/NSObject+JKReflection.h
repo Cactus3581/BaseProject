@@ -9,43 +9,43 @@
 
 @interface NSObject (JKReflection)
 //类名
-- (NSString *)jk_className;
-+ (NSString *)jk_className;
+- (NSString *)_className;
++ (NSString *)_className;
 //父类名称
-- (NSString *)jk_superClassName;
-+ (NSString *)jk_superClassName;
+- (NSString *)_superClassName;
++ (NSString *)_superClassName;
 
 //实例属性字典
--(NSDictionary *)jk_propertyDictionary;
+-(NSDictionary *)_propertyDictionary;
 
 //属性名称列表
-- (NSArray*)jk_propertyKeys;
-+ (NSArray *)jk_propertyKeys;
+- (NSArray*)_propertyKeys;
++ (NSArray *)_propertyKeys;
 
 //属性详细信息列表
-- (NSArray *)jk_propertiesInfo;
-+ (NSArray *)jk_propertiesInfo;
+- (NSArray *)_propertiesInfo;
++ (NSArray *)_propertiesInfo;
 
 //格式化后的属性列表
-+ (NSArray *)jk_propertiesWithCodeFormat;
++ (NSArray *)_propertiesWithCodeFormat;
 
 //方法列表
--(NSArray*)jk_methodList;
-+(NSArray*)jk_methodList;
+-(NSArray*)_methodList;
++(NSArray*)_methodList;
 
--(NSArray*)jk_methodListInfo;
+-(NSArray*)_methodListInfo;
 
 //创建并返回一个指向所有已注册类的指针列表
-+ (NSArray *)jk_registedClassList;
++ (NSArray *)_registedClassList;
 //实例变量
-+ (NSArray *)jk_instanceVariable;
++ (NSArray *)_instanceVariable;
 
 //协议列表
--(NSDictionary *)jk_protocolList;
-+ (NSDictionary *)jk_protocolList;
+-(NSDictionary *)_protocolList;
++ (NSDictionary *)_protocolList;
 
 
-- (BOOL)jk_hasPropertyForKey:(NSString*)key;
-- (BOOL)jk_hasIvarForKey:(NSString*)key;
+- (BOOL)_hasPropertyForKey:(NSString*)key;
+- (BOOL)_hasIvarForKey:(NSString*)key;
 
 @end

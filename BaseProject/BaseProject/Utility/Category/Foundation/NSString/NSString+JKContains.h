@@ -14,22 +14,22 @@
  *
  *  @return 是否包含中文
  */
-- (BOOL)jk_isContainChinese;
+- (BOOL)_isContainChinese;
 /**
  *  @brief  是否包含空格
  *
  *  @return 是否包含空格
  */
-- (BOOL)jk_isContainBlank;
+- (BOOL)_isContainBlank;
 
 /**
  *  @brief  Unicode编码的字符串转成NSString
  *
  *  @return Unicode编码的字符串转成NSString
  */
-- (NSString *)jk_makeUnicodeToString;
+- (NSString *)_makeUnicodeToString;
 
-- (BOOL)jk_containsCharacterSet:(NSCharacterSet *)set;
+- (BOOL)_containsCharacterSet:(NSCharacterSet *)set;
 /**
  *  @brief 是否包含字符串
  *
@@ -37,10 +37,10 @@
  *
  *  @return YES, 包含;
  */
-- (BOOL)jk_containsaString:(NSString *)string;
+- (BOOL)_containsaString:(NSString *)string;
 /**
  *  @brief 获取字符数量
  */
-- (int)jk_wordsCount;
+- (int)_wordsCount;
 
 @end

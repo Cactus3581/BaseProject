@@ -13,39 +13,39 @@
 
 @implementation NSIndexPath (JKOffset)
 #pragma mark - Offset
-- (NSIndexPath *)jk_previousRow
+- (NSIndexPath *)_previousRow
 {
     return [NSIndexPath indexPathForRow:self.row - 1
                               inSection:self.section];
 }
 
-- (NSIndexPath *)jk_nextRow
+- (NSIndexPath *)_nextRow
 {
     return [NSIndexPath indexPathForRow:self.row + 1
                               inSection:self.section];
 }
 
-- (NSIndexPath *)jk_previousItem
+- (NSIndexPath *)_previousItem
 {
     return [NSIndexPath indexPathForItem:self.item - 1
                                inSection:self.section];
 }
 
 
-- (NSIndexPath *)jk_nextItem
+- (NSIndexPath *)_nextItem
 {
     return [NSIndexPath indexPathForItem:self.item + 1
                                inSection:self.section];
 }
 
 
-- (NSIndexPath *)jk_nextSection
+- (NSIndexPath *)_nextSection
 {
     return [NSIndexPath indexPathForRow:self.row
                               inSection:self.section + 1];
 }
 
-- (NSIndexPath *)jk_previousSection
+- (NSIndexPath *)_previousSection
 {
     return [NSIndexPath indexPathForRow:self.row
                               inSection:self.section - 1];

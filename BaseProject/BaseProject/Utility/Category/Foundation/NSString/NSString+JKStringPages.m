@@ -10,7 +10,7 @@
 
 @implementation NSString (JKStringPages)
 
-- (NSArray *)jk_getPagesOfString:(NSString *)cache
+- (NSArray *)_getPagesOfString:(NSString *)cache
                      withFont:(UIFont*)font
                        inRect:(CGRect)r {
     

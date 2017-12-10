@@ -14,7 +14,7 @@
  *
  *  @return 随机 UUID
  */
-+ (NSString *)jk_UUID
++ (NSString *)_UUID
 {
     if([[[UIDevice currentDevice] systemVersion] floatValue] > 6.0)
     {
@@ -34,7 +34,7 @@
  *
  *  @return 毫秒时间戳
  */
-+ (NSString *)jk_UUIDTimestamp
++ (NSString *)_UUIDTimestamp
 {
     return  [[NSNumber numberWithLongLong:[[NSDate date] timeIntervalSince1970]*1000] stringValue];
 }

@@ -9,7 +9,7 @@
 
 @implementation NSString (JKNormalRegex)
 #pragma mark - 正则相关
-- (BOOL)jk_isValidateByRegex:(NSString *)regex{
+- (BOOL)_isValidateByRegex:(NSString *)regex{
     NSPredicate *pre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
     return [pre evaluateWithObject:self];
 }
@@ -17,7 +17,7 @@
 #pragma mark -
 
 //手机号分服务商
-- (BOOL)jk_isMobileNumberClassification{
+- (BOOL)_isMobileNumberClassification{
     /**
      * 手机号码
      * 移动：134[0-8],135,136,137,138,139,150,151,157,158,159,182,187,188,1705
@@ -53,10 +53,10 @@
     
     //    NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
     
-    if (([self jk_isValidateByRegex:CM])
-        || ([self jk_isValidateByRegex:CU])
-        || ([self jk_isValidateByRegex:CT])
-        || ([self jk_isValidateByRegex:PHS]))
+    if (([self _isValidateByRegex:CM])
+        || ([self _isValidateByRegex:CU])
+        || ([self _isValidateByRegex:CT])
+        || ([self _isValidateByRegex:PHS]))
     {
         return YES;
     }
@@ -67,61 +67,61 @@
 }
 
 //手机号有效性
-- (BOOL)jk_isMobileNumber{
+- (BOOL)_isMobileNumber{
      NSString *mobileRegex = @"^(0|86|17951)?(13[0-9]|15[012356789]|17[0678]|18[0-9]|14[57])[0-9]{8}$";
-    BOOL ret1 = [self jk_isValidateByRegex:mobileRegex];
+    BOOL ret1 = [self _isValidateByRegex:mobileRegex];
     return ret1;
 }
 
 //邮箱
-- (BOOL)jk_isEmailAddress{
+- (BOOL)_isEmailAddress{
     NSString *emailRegex = @"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    return [self jk_isValidateByRegex:emailRegex];
+    return [self _isValidateByRegex:emailRegex];
 }
 
 //身份证号
-- (BOOL)jk_simpleVerifyIdentityCardNum
+- (BOOL)_simpleVerifyIdentityCardNum
 {
     NSString *regex2 = @"^(\\d{14}|\\d{17})(\\d|[xX])$";
-    return [self jk_isValidateByRegex:regex2];
+    return [self _isValidateByRegex:regex2];
 }
 
 //车牌
-- (BOOL)jk_isCarNumber{
+- (BOOL)_isCarNumber{
     //车牌号:湘K-DE829 香港车牌号码:粤Z-J499港
     NSString *carRegex = @"^[\u4e00-\u9fff]{1}[a-zA-Z]{1}[-][a-zA-Z_0-9]{4}[a-zA-Z_0-9_\u4e00-\u9fff]$";//其中\u4e00-\u9fa5表示unicode编码中汉字已编码部分，\u9fa5-\u9fff是保留部分，将来可能会添加
-    return [self jk_isValidateByRegex:carRegex];
+    return [self _isValidateByRegex:carRegex];
 }
 
-- (BOOL)jk_isMacAddress{
+- (BOOL)_isMacAddress{
     NSString * macAddRegex = @"([A-Fa-f\\d]{2}:){5}[A-Fa-f\\d]{2}";
-    return  [self jk_isValidateByRegex:macAddRegex];
+    return  [self _isValidateByRegex:macAddRegex];
 }
 
-- (BOOL)jk_isValidUrl
+- (BOOL)_isValidUrl
 {
     NSString *regex = @"^((http)|(https))+:[^\\s]+\\.[^\\s]*$";
-    return [self jk_isValidateByRegex:regex];
+    return [self _isValidateByRegex:regex];
 }
 
-- (BOOL)jk_isValidChinese;
+- (BOOL)_isValidChinese;
 {
     NSString *chineseRegex = @"^[\u4e00-\u9fa5]+$";
-    return [self jk_isValidateByRegex:chineseRegex];
+    return [self _isValidateByRegex:chineseRegex];
 }
 
-- (BOOL)jk_isValidPostalcode {
+- (BOOL)_isValidPostalcode {
     NSString *postalRegex = @"^[0-8]\\d{5}(?!\\d)$";
-    return [self jk_isValidateByRegex:postalRegex];
+    return [self _isValidateByRegex:postalRegex];
 }
 
-- (BOOL)jk_isValidTaxNo
+- (BOOL)_isValidTaxNo
 {
     NSString *taxNoRegex = @"[0-9]\\d{13}([0-9]|X)$";
-    return [self jk_isValidateByRegex:taxNoRegex];
+    return [self _isValidateByRegex:taxNoRegex];
 }
 
-- (BOOL)jk_isValidWithMinLenth:(NSInteger)minLenth
+- (BOOL)_isValidWithMinLenth:(NSInteger)minLenth
                    maxLenth:(NSInteger)maxLenth
              containChinese:(BOOL)containChinese
         firstCannotBeDigtal:(BOOL)firstCannotBeDigtal;
@@ -131,10 +131,10 @@
     NSString *first = firstCannotBeDigtal ? @"^[a-zA-Z_]" : @"";
     
     NSString *regex = [NSString stringWithFormat:@"%@[%@A-Za-z0-9_]{%d,%d}", first, hanzi, (int)(minLenth-1), (int)(maxLenth-1)];
-    return [self jk_isValidateByRegex:regex];
+    return [self _isValidateByRegex:regex];
 }
 
-- (BOOL)jk_isValidWithMinLenth:(NSInteger)minLenth
+- (BOOL)_isValidWithMinLenth:(NSInteger)minLenth
                    maxLenth:(NSInteger)maxLenth
              containChinese:(BOOL)containChinese
               containDigtal:(BOOL)containDigtal
@@ -149,12 +149,12 @@
     NSString *letterRegex = containLetter ? @"(?=(.*[a-zA-Z].*){1})" : @"";
     NSString *characterRegex = [NSString stringWithFormat:@"(?:%@[%@A-Za-z0-9%@]+)", first, hanzi, containOtherCharacter ? containOtherCharacter : @""];
     NSString *regex = [NSString stringWithFormat:@"%@%@%@%@", lengthRegex, digtalRegex, letterRegex, characterRegex];
-    return [self jk_isValidateByRegex:regex];
+    return [self _isValidateByRegex:regex];
 }
 
 #pragma mark - 算法相关
 //精确的身份证号码有效性检测
-+ (BOOL)jk_accurateVerifyIDCardNumber:(NSString *)value {
++ (BOOL)_accurateVerifyIDCardNumber:(NSString *)value {
     value = [value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     int length =0;
@@ -258,7 +258,7 @@
  *  2，将奇位乘积的个十位全部相加，再加上所有偶数位上的数字
  *  3，将加法和加上校验位能被 10 整除。
  */
-- (BOOL)jk_bankCardluhmCheck{
+- (BOOL)_bankCardluhmCheck{
     NSString * lastNum = [[self substringFromIndex:(self.length-1)] copy];//取出最后一位
     NSString * forwardNum = [[self substringToIndex:(self.length -1)] copy];//前15或18位
     
@@ -315,7 +315,7 @@
     return (luhmTotal%10 ==0)?YES:NO;
 }
 
-- (BOOL)jk_isIPAddress{
+- (BOOL)_isIPAddress{
     NSString *regex = [NSString stringWithFormat:@"^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"];
     NSPredicate *pre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
     BOOL rc = [pre evaluateWithObject:self];

@@ -17,7 +17,7 @@
  *
  *  @return wav data
  */
-- (NSData *)jk_wavDataWithPCMFormat:(AudioStreamBasicDescription)PCMFormat;
+- (NSData *)_wavDataWithPCMFormat:(AudioStreamBasicDescription)PCMFormat;
 
 {
     // Following https://ccrma.stanford.edu/courses/422/projects/WaveFormat/ formating wav

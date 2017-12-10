@@ -28,7 +28,7 @@ void initOperators(void);
 
 @implementation NSDecimalNumber (JKCalculatingByString)
 
-+ (NSDecimalNumber *)jk_decimalNumberWithEquation:(NSString *)equation decimalNumbers:(NSDictionary *)numbers
++ (NSDecimalNumber *)_decimalNumberWithEquation:(NSString *)equation decimalNumbers:(NSDictionary *)numbers
 {
     NSDecimalNumber *left, *right;
     

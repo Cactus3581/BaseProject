@@ -8,7 +8,7 @@
 
 #import "NSObject+JKRuntime.h"
 #import <objc/runtime.h>
-BOOL jk_method_swizzle(Class klass, SEL origSel, SEL altSel)
+BOOL _method_swizzle(Class klass, SEL origSel, SEL altSel)
 {
     if (!klass)
         return NO;
@@ -69,7 +69,7 @@ BOOL jk_method_swizzle(Class klass, SEL origSel, SEL altSel)
     return YES;
 }
 
-void jk_method_append(Class toClass, Class fromClass, SEL selector)
+void _method_append(Class toClass, Class fromClass, SEL selector)
 {
     if (!toClass || !fromClass || !selector)
         return;
@@ -82,7 +82,7 @@ void jk_method_append(Class toClass, Class fromClass, SEL selector)
     class_addMethod(toClass, method_getName(method), method_getImplementation(method), method_getTypeEncoding(method));
 }
 
-void jk_method_replace(Class toClass, Class fromClass, SEL selector)
+void _method_replace(Class toClass, Class fromClass, SEL selector)
 {
     if (!toClass || !fromClass || ! selector)
         return;
@@ -97,37 +97,37 @@ void jk_method_replace(Class toClass, Class fromClass, SEL selector)
 
 @implementation NSObject (JKRuntime)
 
-+ (void)jk_swizzleMethod:(SEL)originalMethod withMethod:(SEL)newMethod
++ (void)_swizzleMethod:(SEL)originalMethod withMethod:(SEL)newMethod
 {
-    jk_method_swizzle(self.class, originalMethod, newMethod);
+    _method_swizzle(self.class, originalMethod, newMethod);
 }
 
-+ (void)jk_appendMethod:(SEL)newMethod fromClass:(Class)klass
++ (void)_appendMethod:(SEL)newMethod fromClass:(Class)klass
 {
-    jk_method_append(self.class, klass, newMethod);
+    _method_append(self.class, klass, newMethod);
 }
 
-+ (void)jk_replaceMethod:(SEL)method fromClass:(Class)klass
++ (void)_replaceMethod:(SEL)method fromClass:(Class)klass
 {
-    jk_method_replace(self.class, klass, method);
+    _method_replace(self.class, klass, method);
 }
 
-- (BOOL)jk_respondsToSelector:(SEL)selector untilClass:(Class)stopClass
+- (BOOL)_respondsToSelector:(SEL)selector untilClass:(Class)stopClass
 {
-    return [self.class jk_instancesRespondToSelector:selector untilClass:stopClass];
+    return [self.class _instancesRespondToSelector:selector untilClass:stopClass];
 }
 
-- (BOOL)jk_superRespondsToSelector:(SEL)selector
+- (BOOL)_superRespondsToSelector:(SEL)selector
 {
     return [self.superclass instancesRespondToSelector:selector];
 }
 
-- (BOOL)jk_superRespondsToSelector:(SEL)selector untilClass:(Class)stopClass
+- (BOOL)_superRespondsToSelector:(SEL)selector untilClass:(Class)stopClass
 {
-    return [self.superclass jk_instancesRespondToSelector:selector untilClass:stopClass];
+    return [self.superclass _instancesRespondToSelector:selector untilClass:stopClass];
 }
 
-+ (BOOL)jk_instancesRespondToSelector:(SEL)selector untilClass:(Class)stopClass
++ (BOOL)_instancesRespondToSelector:(SEL)selector untilClass:(Class)stopClass
 {
     BOOL __block (^ __weak block_self)(Class klass, SEL selector, Class stopClass);
     BOOL (^block)(Class klass, SEL selector, Class stopClass) = [^

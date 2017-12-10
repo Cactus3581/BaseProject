@@ -9,54 +9,54 @@
 #include <sys/xattr.h>
 
 @implementation NSFileManager (JKPaths)
-+ (NSURL *)jk_URLForDirectory:(NSSearchPathDirectory)directory
++ (NSURL *)_URLForDirectory:(NSSearchPathDirectory)directory
 {
     return [self.defaultManager URLsForDirectory:directory inDomains:NSUserDomainMask].lastObject;
 }
 
-+ (NSString *)jk_pathForDirectory:(NSSearchPathDirectory)directory
++ (NSString *)_pathForDirectory:(NSSearchPathDirectory)directory
 {
     return NSSearchPathForDirectoriesInDomains(directory, NSUserDomainMask, YES)[0];
 }
 
-+ (NSURL *)jk_documentsURL
++ (NSURL *)_documentsURL
 {
-    return [self jk_URLForDirectory:NSDocumentDirectory];
+    return [self _URLForDirectory:NSDocumentDirectory];
 }
 
-+ (NSString *)jk_documentsPath
++ (NSString *)_documentsPath
 {
-    return [self jk_pathForDirectory:NSDocumentDirectory];
+    return [self _pathForDirectory:NSDocumentDirectory];
 }
 
-+ (NSURL *)jk_libraryURL
++ (NSURL *)_libraryURL
 {
-    return [self jk_URLForDirectory:NSLibraryDirectory];
+    return [self _URLForDirectory:NSLibraryDirectory];
 }
 
-+ (NSString *)jk_libraryPath
++ (NSString *)_libraryPath
 {
-    return [self jk_pathForDirectory:NSLibraryDirectory];
+    return [self _pathForDirectory:NSLibraryDirectory];
 }
 
-+ (NSURL *)jk_cachesURL
++ (NSURL *)_cachesURL
 {
-    return [self jk_URLForDirectory:NSCachesDirectory];
+    return [self _URLForDirectory:NSCachesDirectory];
 }
 
-+ (NSString *)jk_cachesPath
++ (NSString *)_cachesPath
 {
-    return [self jk_pathForDirectory:NSCachesDirectory];
+    return [self _pathForDirectory:NSCachesDirectory];
 }
 
-+ (BOOL)jk_addSkipBackupAttributeToFile:(NSString *)path
++ (BOOL)_addSkipBackupAttributeToFile:(NSString *)path
 {
     return [[NSURL.alloc initFileURLWithPath:path] setResourceValue:@(YES) forKey:NSURLIsExcludedFromBackupKey error:nil];
 }
 
-+ (double)jk_availableDiskSpace
++ (double)_availableDiskSpace
 {
-    NSDictionary *attributes = [self.defaultManager attributesOfFileSystemForPath:self.jk_documentsPath error:nil];
+    NSDictionary *attributes = [self.defaultManager attributesOfFileSystemForPath:self._documentsPath error:nil];
     
     return [attributes[NSFileSystemFreeSize] unsignedLongLongValue] / (double)0x100000;
 }

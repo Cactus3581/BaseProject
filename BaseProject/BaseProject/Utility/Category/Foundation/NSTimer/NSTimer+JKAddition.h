@@ -12,13 +12,13 @@
 /**
  *  @brief  暂停NSTimer
  */
-- (void)jk_pauseTimer;
+- (void)_pauseTimer;
 /**
  *  @brief  开始NSTimer
  */
-- (void)jk_resumeTimer;
+- (void)_resumeTimer;
 /**
  *  @brief  延迟开始NSTimer
  */
-- (void)jk_resumeTimerAfterTimeInterval:(NSTimeInterval)interval;
+- (void)_resumeTimerAfterTimeInterval:(NSTimeInterval)interval;
 @end

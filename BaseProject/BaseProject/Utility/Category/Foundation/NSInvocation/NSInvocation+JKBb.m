@@ -127,7 +127,7 @@
     }
 }
 
-+ (id)jk_doInstanceMethodTarget:(id)target selectorName:(NSString *)selectorName args:(NSArray *)args
++ (id)_doInstanceMethodTarget:(id)target selectorName:(NSString *)selectorName args:(NSArray *)args
 {
     if ( nil == target || nil == selectorName ) {
         return nil;
@@ -148,14 +148,14 @@
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSig];
     invocation.target = target;
     invocation.selector = theSelector;
-    [invocation jk_setArgumentsWithArray:args];
+    [invocation _setArgumentsWithArray:args];
     
     [invocation invoke];
     id result = [invocation getEncodedReturnValue];
     return result;
 }
 
-+ (id)jk_doClassMethod:(NSString *)className
++ (id)_doClassMethod:(NSString *)className
        selectorName:(NSString *)selectorName
                args:(NSArray *)args
 {
@@ -175,29 +175,29 @@
     invocation.target = c;
     invocation.selector = theSelector;
     
-    [invocation jk_setArgumentsWithArray:args];
+    [invocation _setArgumentsWithArray:args];
     
     [invocation invoke];
     id result = [invocation getEncodedReturnValue];
     return result;
 }
 
-- (void)jk_setArgumentsWithArray:(NSArray *)array
+- (void)_setArgumentsWithArray:(NSArray *)array
 {
     if (nil != array && array.count > 0) {
         NSUInteger numargs = [self.methodSignature numberOfArguments] - 2;
         if (array.count != numargs) {
             id arg = [self getArgAtIndex:0 fromArray:array];
-            [self jk_setArgumentWithObject:arg atIndex:0];
+            [self _setArgumentWithObject:arg atIndex:0];
         }else{
             for (NSUInteger i = 0; i < numargs; i++) {
-                [self jk_setArgumentWithObject:array[i] atIndex:i];
+                [self _setArgumentWithObject:array[i] atIndex:i];
             }
         }
     }
 }
 
-- (void)jk_setArgumentWithObject:(id)object atIndex:(NSUInteger)index
+- (void)_setArgumentWithObject:(id)object atIndex:(NSUInteger)index
 {
     NSInteger argIdx = 2+index;
     NSString *type = [NSString stringWithUTF8String:[self.methodSignature getArgumentTypeAtIndex:argIdx]];

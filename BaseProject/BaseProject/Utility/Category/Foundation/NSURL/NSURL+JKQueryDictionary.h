@@ -13,7 +13,7 @@
  *  @return URL's query component as keys/values
  *  Returns nil for an empty query
  */
-- (NSDictionary*) jk_queryDictionary;
+- (NSDictionary*) _queryDictionary;
 
 /**
  *  @return URL with keys values appending to query string
@@ -22,11 +22,11 @@
  *  @warning If keys overlap in receiver and query dictionary,
  *  behaviour is undefined.
  */
-- (NSURL*) jk_URLByAppendingQueryDictionary:(NSDictionary*) queryDictionary
+- (NSURL*) _URLByAppendingQueryDictionary:(NSDictionary*) queryDictionary
                              withSortedKeys:(BOOL) sortedKeys;
 
 /** As above, but `sortedKeys=NO` */
-- (NSURL*) jk_URLByAppendingQueryDictionary:(NSDictionary*) queryDictionary;
+- (NSURL*) _URLByAppendingQueryDictionary:(NSDictionary*) queryDictionary;
 
 /**
  *  @return Copy of URL with its query component replaced with
@@ -34,33 +34,33 @@
  *  @param queryDictionary A new query dictionary
  *  @param sortedKeys      Whether or not to sort the query keys
  */
-- (NSURL*) jk_URLByReplacingQueryWithDictionary:(NSDictionary*) queryDictionary
+- (NSURL*) _URLByReplacingQueryWithDictionary:(NSDictionary*) queryDictionary
                                  withSortedKeys:(BOOL) sortedKeys;
 
 /** As above, but `sortedKeys=NO` */
-- (NSURL*) jk_URLByReplacingQueryWithDictionary:(NSDictionary*) queryDictionary;
+- (NSURL*) _URLByReplacingQueryWithDictionary:(NSDictionary*) queryDictionary;
 
 /** @return Receiver with query component completely removed */
-- (NSURL*) jk_URLByRemovingQuery;
+- (NSURL*) _URLByRemovingQuery;
 
 @end
 
 #pragma mark -
 
-@interface NSString (jk_URLQuery)
+@interface NSString (_URLQuery)
 
 /**
  *  @return If the receiver is a valid URL query component, returns
  *  components as key/value pairs. If couldn't split into *any* pairs,
  *  returns nil.
  */
-- (NSDictionary*) jk_URLQueryDictionary;
+- (NSDictionary*) _URLQueryDictionary;
 
 @end
 
 #pragma mark -
 
-@interface NSDictionary (jk_URLQuery)
+@interface NSDictionary (_URLQuery)
 
 /**
  *  @return URL query string component created from the keys and values in
@@ -68,9 +68,9 @@
  *  @param sortedKeys Sorted the keys alphabetically?
  *  @see cavetas from the main `NSURL` category as well.
  */
-- (NSString*) jk_URLQueryStringWithSortedKeys:(BOOL) sortedKeys;
+- (NSString*) _URLQueryStringWithSortedKeys:(BOOL) sortedKeys;
 
 /** As above, but `sortedKeys=NO` */
-- (NSString*) jk_URLQueryString;
+- (NSString*) _URLQueryString;
 
 @end

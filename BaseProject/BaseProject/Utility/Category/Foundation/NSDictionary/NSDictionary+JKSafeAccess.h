@@ -10,83 +10,83 @@
 #import <UIKit/UIKit.h>
 
 @interface NSDictionary (JKSafeAccess)
-- (BOOL)jk_hasKey:(NSString *)key;
+- (BOOL)_hasKey:(NSString *)key;
 
-- (NSString*)jk_stringForKey:(id)key;
+- (NSString*)_stringForKey:(id)key;
 
-- (NSNumber*)jk_numberForKey:(id)key;
+- (NSNumber*)_numberForKey:(id)key;
 
-- (NSDecimalNumber *)jk_decimalNumberForKey:(id)key;
+- (NSDecimalNumber *)_decimalNumberForKey:(id)key;
 
-- (NSArray*)jk_arrayForKey:(id)key;
+- (NSArray*)_arrayForKey:(id)key;
 
-- (NSDictionary*)jk_dictionaryForKey:(id)key;
+- (NSDictionary*)_dictionaryForKey:(id)key;
 
-- (NSInteger)jk_integerForKey:(id)key;
+- (NSInteger)_integerForKey:(id)key;
 
-- (NSUInteger)jk_unsignedIntegerForKey:(id)key;
+- (NSUInteger)_unsignedIntegerForKey:(id)key;
 
-- (BOOL)jk_boolForKey:(id)key;
+- (BOOL)_boolForKey:(id)key;
 
-- (int16_t)jk_int16ForKey:(id)key;
+- (int16_t)_int16ForKey:(id)key;
 
-- (int32_t)jk_int32ForKey:(id)key;
+- (int32_t)_int32ForKey:(id)key;
 
-- (int64_t)jk_int64ForKey:(id)key;
+- (int64_t)_int64ForKey:(id)key;
 
-- (char)jk_charForKey:(id)key;
+- (char)_charForKey:(id)key;
 
-- (short)jk_shortForKey:(id)key;
+- (short)_shortForKey:(id)key;
 
-- (float)jk_floatForKey:(id)key;
+- (float)_floatForKey:(id)key;
 
-- (double)jk_doubleForKey:(id)key;
+- (double)_doubleForKey:(id)key;
 
-- (long long)jk_longLongForKey:(id)key;
+- (long long)_longLongForKey:(id)key;
 
-- (unsigned long long)jk_unsignedLongLongForKey:(id)key;
+- (unsigned long long)_unsignedLongLongForKey:(id)key;
 
-- (NSDate *)jk_dateForKey:(id)key dateFormat:(NSString *)dateFormat;
+- (NSDate *)_dateForKey:(id)key dateFormat:(NSString *)dateFormat;
 
 //CG
-- (CGFloat)jk_CGFloatForKey:(id)key;
+- (CGFloat)_CGFloatForKey:(id)key;
 
-- (CGPoint)jk_pointForKey:(id)key;
+- (CGPoint)_pointForKey:(id)key;
 
-- (CGSize)jk_sizeForKey:(id)key;
+- (CGSize)_sizeForKey:(id)key;
 
-- (CGRect)jk_rectForKey:(id)key;
+- (CGRect)_rectForKey:(id)key;
 @end
 
 #pragma --mark NSMutableDictionary setter
 
 @interface NSMutableDictionary(SafeAccess)
 
--(void)jk_setObj:(id)i forKey:(NSString*)key;
+-(void)_setObj:(id)i forKey:(NSString*)key;
 
--(void)jk_setString:(NSString*)i forKey:(NSString*)key;
+-(void)_setString:(NSString*)i forKey:(NSString*)key;
 
--(void)jk_setBool:(BOOL)i forKey:(NSString*)key;
+-(void)_setBool:(BOOL)i forKey:(NSString*)key;
 
--(void)jk_setInt:(int)i forKey:(NSString*)key;
+-(void)_setInt:(int)i forKey:(NSString*)key;
 
--(void)jk_setInteger:(NSInteger)i forKey:(NSString*)key;
+-(void)_setInteger:(NSInteger)i forKey:(NSString*)key;
 
--(void)jk_setUnsignedInteger:(NSUInteger)i forKey:(NSString*)key;
+-(void)_setUnsignedInteger:(NSUInteger)i forKey:(NSString*)key;
 
--(void)jk_setCGFloat:(CGFloat)f forKey:(NSString*)key;
+-(void)_setCGFloat:(CGFloat)f forKey:(NSString*)key;
 
--(void)jk_setChar:(char)c forKey:(NSString*)key;
+-(void)_setChar:(char)c forKey:(NSString*)key;
 
--(void)jk_setFloat:(float)i forKey:(NSString*)key;
+-(void)_setFloat:(float)i forKey:(NSString*)key;
 
--(void)jk_setDouble:(double)i forKey:(NSString*)key;
+-(void)_setDouble:(double)i forKey:(NSString*)key;
 
--(void)jk_setLongLong:(long long)i forKey:(NSString*)key;
+-(void)_setLongLong:(long long)i forKey:(NSString*)key;
 
--(void)jk_setPoint:(CGPoint)o forKey:(NSString*)key;
+-(void)_setPoint:(CGPoint)o forKey:(NSString*)key;
 
--(void)jk_setSize:(CGSize)o forKey:(NSString*)key;
+-(void)_setSize:(CGSize)o forKey:(NSString*)key;
 
--(void)jk_setRect:(CGRect)o forKey:(NSString*)key;
+-(void)_setRect:(CGRect)o forKey:(NSString*)key;
 @end

@@ -14,7 +14,7 @@
  *
  *  @return 参数转字典结果
  */
-- (NSDictionary *)jk_parameters
+- (NSDictionary *)_parameters
 {
     NSMutableDictionary * parametersDictionary = [NSMutableDictionary dictionary];
     NSArray * queryComponents = [self.query componentsSeparatedByString:@"&"];
@@ -32,8 +32,8 @@
  *
  *  @return 参数值
  */
-- (NSString *)jk_valueForParameter:(NSString *)parameterKey
+- (NSString *)_valueForParameter:(NSString *)parameterKey
 {
-    return [[self jk_parameters] objectForKey:parameterKey];
+    return [[self _parameters] objectForKey:parameterKey];
 }
 @end

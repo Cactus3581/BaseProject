@@ -15,14 +15,14 @@
  *  @param value 被附加的对象
  *  @param key   被附加对象的key
  */
-- (void)jk_associateValue:(id)value withKey:(void *)key; // Strong reference
+- (void)_associateValue:(id)value withKey:(void *)key; // Strong reference
 /**
  *  @brief  附加一个weak对象
  *
  *  @param value 被附加的对象
  *  @param key   被附加对象的key
  */
-- (void)jk_weaklyAssociateValue:(id)value withKey:(void *)key;
+- (void)_weaklyAssociateValue:(id)value withKey:(void *)key;
 
 /**
  *  @brief  根据附加对象的key取出附加对象
@@ -31,6 +31,6 @@
  *
  *  @return 附加对象
  */
-- (id)jk_associatedValueForKey:(void *)key;
+- (id)_associatedValueForKey:(void *)key;
 
 @end

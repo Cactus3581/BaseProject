@@ -14,17 +14,17 @@
  *
  *  @return MIMEType
  */
-- (NSString *)jk_MIMEType;
+- (NSString *)_MIMEType;
 /**
  *  @brief  根据文件url后缀 返回对应的MIMEType
  *
  *  @return MIMEType
  */
-+ (NSString *)jk_MIMETypeForExtension:(NSString *)extension;
++ (NSString *)_MIMETypeForExtension:(NSString *)extension;
 /**
  *  @brief  常见MIME集合
  *
  *  @return 常见MIME集合
  */
-+ (NSDictionary *)jk_MIMEDict;
++ (NSDictionary *)_MIMEDict;
 @end

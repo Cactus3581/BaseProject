@@ -10,7 +10,7 @@
 
 @implementation NSObject (JKEasyCopy)
 
-- (BOOL)jk_easyShallowCopy:(NSObject *)instance
+- (BOOL)_easyShallowCopy:(NSObject *)instance
 {
     Class currentClass = [self class];
     Class instanceClass = [instance class];
@@ -50,7 +50,7 @@
     return YES;
 }
 
-- (BOOL)jk_easyDeepCopy:(NSObject *)instance
+- (BOOL)_easyDeepCopy:(NSObject *)instance
 {
     Class currentClass = [self class];
     Class instanceClass = [instance class];
@@ -79,14 +79,14 @@
             if (propertyName && !readonly) {
                 id propertyValue = [instance valueForKey:propertyName];
                 Class propertyValueClass = [propertyValue class];
-                BOOL flag = [NSObject jk_isNSObjectClass:propertyValueClass];
+                BOOL flag = [NSObject _isNSObjectClass:propertyValueClass];
                 if (flag) {
                     if ([propertyValue conformsToProtocol:@protocol(NSCopying)]) {
                         NSObject *copyValue = [propertyValue copy];
                         [self setValue:copyValue forKey:propertyName];
                     }else{
                         NSObject *copyValue = [[[propertyValue class]alloc]init];
-                        [copyValue jk_easyDeepCopy:propertyValue];
+                        [copyValue _easyDeepCopy:propertyValue];
                         [self setValue:copyValue forKey:propertyName];
                     }
                 }else{
@@ -104,7 +104,7 @@
 }
 
 
-+ (BOOL)jk_isNSObjectClass:(Class)clazz{
++ (BOOL)_isNSObjectClass:(Class)clazz{
     
     BOOL flag = class_conformsToProtocol(clazz, @protocol(NSObject));
     if (flag) {
@@ -114,7 +114,7 @@
         if (!superClass) {
             return NO;
         }else{
-            return  [NSObject jk_isNSObjectClass:superClass];
+            return  [NSObject _isNSObjectClass:superClass];
         }
     }
 }

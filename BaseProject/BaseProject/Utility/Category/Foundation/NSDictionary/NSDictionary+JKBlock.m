@@ -12,25 +12,25 @@
 
 
 #pragma mark - RX
-- (void)jk_each:(void (^)(id k, id v))block {
+- (void)_each:(void (^)(id k, id v))block {
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         block(key, obj);
     }];
 }
 
-- (void)jk_eachKey:(void (^)(id k))block {
+- (void)_eachKey:(void (^)(id k))block {
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         block(key);
     }];
 }
 
-- (void)jk_eachValue:(void (^)(id v))block {
+- (void)_eachValue:(void (^)(id v))block {
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         block(obj);
     }];
 }
 
-- (NSArray *)jk_map:(id (^)(id key, id value))block {
+- (NSArray *)_map:(id (^)(id key, id value))block {
     NSMutableArray *array = [NSMutableArray array];
     
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -44,7 +44,7 @@
 }
 
 
-- (NSDictionary *)jk_pick:(NSArray *)keys {
+- (NSDictionary *)_pick:(NSArray *)keys {
     NSMutableDictionary *picked = [[NSMutableDictionary alloc] initWithCapacity:keys.count];
     
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -56,7 +56,7 @@
     return picked;
 }
 
-- (NSDictionary *)jk_omit:(NSArray *)keys {
+- (NSDictionary *)_omit:(NSArray *)keys {
     NSMutableDictionary *omitted = [[NSMutableDictionary alloc] initWithCapacity:([self allKeys].count - keys.count)];
     
     [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {

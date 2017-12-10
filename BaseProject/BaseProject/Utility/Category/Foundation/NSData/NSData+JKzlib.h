@@ -5,18 +5,18 @@
 /**
  ZLib error domain
  */
-extern NSString *const JKZlibErrorDomain;
+extern NSString *const BPZlibErrorDomain;
 /**
  When a zlib error occurs, querying this key in the @p userInfo dictionary of the
  @p NSError object will return the underlying zlib error code.
  */
-extern NSString *const JKZlibErrorInfoKey;
+extern NSString *const BPZlibErrorInfoKey;
 
-typedef NS_ENUM(NSUInteger, JKZlibErrorCode) {
-    JKZlibErrorCodeFileTooLarge = 0,
-    JKZlibErrorCodeDeflationError = 1,
-    JKZlibErrorCodeInflationError = 2,
-    JKZlibErrorCodeCouldNotCreateFileError = 3,
+typedef NS_ENUM(NSUInteger, BPZlibErrorCode) {
+    BPZlibErrorCodeFileTooLarge = 0,
+    BPZlibErrorCodeDeflationError = 1,
+    BPZlibErrorCodeInflationError = 2,
+    BPZlibErrorCodeCouldNotCreateFileError = 3,
 };
 
 /**
@@ -28,7 +28,7 @@ typedef NS_ENUM(NSUInteger, JKZlibErrorCode) {
  @returns An NSData instance containing the result of applying zlib
  compression to this instance.
  */
-- (NSData *)jk_dataByDeflatingWithError:(NSError *__autoreleasing *)error;
+- (NSData *)_dataByDeflatingWithError:(NSError *__autoreleasing *)error;
 
 /**
  Apply zlib decompression.
@@ -39,7 +39,7 @@ typedef NS_ENUM(NSUInteger, JKZlibErrorCode) {
  @returns An NSData instance containing the result of applying zlib
  decompression to this instance.
  */
-- (NSData *)jk_dataByInflatingWithError:(NSError *__autoreleasing *)error;
+- (NSData *)_dataByInflatingWithError:(NSError *__autoreleasing *)error;
 
 /**
  Apply zlib compression and write the result to a file at path
@@ -51,7 +51,7 @@ typedef NS_ENUM(NSUInteger, JKZlibErrorCode) {
 
  @returns @p YES if the compression succeeded; otherwise, @p NO.
  */
-- (BOOL)jk_writeDeflatedToFile:(NSString *)path
+- (BOOL)_writeDeflatedToFile:(NSString *)path
                           error:(NSError *__autoreleasing *)error;
 
 /**
@@ -64,6 +64,6 @@ typedef NS_ENUM(NSUInteger, JKZlibErrorCode) {
 
  @returns @p YES if the compression succeeded; otherwise, @p NO.
  */
-- (BOOL)jk_writeInflatedToFile:(NSString *)path
+- (BOOL)_writeInflatedToFile:(NSString *)path
                           error:(NSError *__autoreleasing *)error;
 @end

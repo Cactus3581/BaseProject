@@ -36,7 +36,7 @@
 //    Autoreleased NSString
 //
 
-- (NSString *)jk_stringByEscapingForHTML;
+- (NSString *)_stringByEscapingForHTML;
 /// 使用Ascii编码所有HTML实体  Get a string where internal characters that need escaping for HTML are escaped
 //
 ///  For example, '&' become '&amp;'
@@ -51,7 +51,7 @@
 //  Returns:
 //    Autoreleased NSString
 //
-- (NSString *)jk_stringByEscapingForAsciiHTML;
+- (NSString *)_stringByEscapingForAsciiHTML;
 /// 解码HTML实体 Get a string where internal characters that are escaped for HTML are unescaped
 //
 ///  For example, '&amp;' becomes '&'
@@ -60,14 +60,14 @@
 //  Returns:
 //    Autoreleased NSString
 //
-- (NSString *)jk_stringByUnescapingFromHTML;
+- (NSString *)_stringByUnescapingFromHTML;
 
 
 /// Replace newlines with <br /> tags.
-- (NSString *)jk_stringWithNewLinesAsBRs;
+- (NSString *)_stringWithNewLinesAsBRs;
 
 /// Remove newlines and white space from string.
-- (NSString *)jk_stringByRemovingNewLinesAndWhitespace;
+- (NSString *)_stringByRemovingNewLinesAndWhitespace;
 
 // Wrap plain URLs in <a href="..." class="linkified">...</a>
 //  - Ignores URLs inside tags (any URL beginning with =")
@@ -75,11 +75,11 @@
 //  - Only works in iOS 4+ as we use NSRegularExpression (returns self if not supported so be careful with NSMutableStrings)
 //  - Expression: (?<!=")\b((http|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?)
 //  - Adapted from http://regexlib.com/REDetails.aspx?regexp_id=96
-- (NSString *)jk_stringByLinkifyingURLs;
+- (NSString *)_stringByLinkifyingURLs;
 
 /// DEPRECIATED - Please use NSString stringByConvertingHTMLToPlainText
-- (NSString *)jk_stringByStrippingTags __attribute__((deprecated));
+- (NSString *)_stringByStrippingTags __attribute__((deprecated));
 
 /// 将html转换为纯文本 Convert HTML To Plain Text
-- (NSString *)jk_stringByConvertingHTMLToPlainText;
+- (NSString *)_stringByConvertingHTMLToPlainText;
 @end

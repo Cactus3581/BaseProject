@@ -8,6 +8,6 @@
 #import <Foundation/Foundation.h>
 
 @interface NSInvocation (JKBlock)
-+ (instancetype)jk_invocationWithBlock:(id) block;
-+ (instancetype)jk_invocationWithBlockAndArguments:(id) block ,...;
++ (instancetype)_invocationWithBlock:(id) block;
++ (instancetype)_invocationWithBlockAndArguments:(id) block ,...;
 @end

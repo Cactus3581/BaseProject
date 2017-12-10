@@ -19,6 +19,6 @@
  *
  *  @return An NSData* object is returned with the line if found, or nil if no more lines were found
  */
-- (NSData *)jk_readLineWithDelimiter:(NSString *)theDelimier;
+- (NSData *)_readLineWithDelimiter:(NSString *)theDelimier;
 
 @end

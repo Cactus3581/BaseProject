@@ -14,23 +14,23 @@
  *
  *  @return 清除后的结果
  */
-- (NSString *)jk_stringByStrippingHTML;
+- (NSString *)_stringByStrippingHTML;
 /**
  *  @brief  清除js脚本
  *
  *  @return 清楚js后的结果
  */
-- (NSString *)jk_stringByRemovingScriptsAndStrippingHTML;
+- (NSString *)_stringByRemovingScriptsAndStrippingHTML;
 /**
  *  @brief  去除空格
  *
  *  @return 去除空格后的字符串
  */
-- (NSString *)jk_trimmingWhitespace;
+- (NSString *)_trimmingWhitespace;
 /**
  *  @brief  去除字符串与空行
  *
  *  @return 去除字符串与空行的字符串
  */
-- (NSString *)jk_trimmingWhitespaceAndNewlines;
+- (NSString *)_trimmingWhitespaceAndNewlines;
 @end
