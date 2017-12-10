@@ -5,8 +5,10 @@
 //  Created by xiaruzhen on 2017/12/10.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
+
 #import "UITextField+BPBlocks.h"
 #import <objc/runtime.h>
+
 typedef BOOL (^BPUITextFieldReturnBlock) (UITextField *textField);
 typedef void (^BPUITextFieldVoidBlock) (UITextField *textField);
 typedef BOOL (^BPUITextFieldCharacterChangeBlock) (UITextField *textField, NSRange range, NSString *replacementString);
@@ -19,6 +21,7 @@ static const void *BPUITextFieldDidEndEditingKey = &BPUITextFieldDidEndEditingKe
 static const void *BPUITextFieldShouldChangeCharactersInRangeKey = &BPUITextFieldShouldChangeCharactersInRangeKey;
 static const void *BPUITextFieldShouldClearKey = &BPUITextFieldShouldClearKey;
 static const void *BPUITextFieldShouldReturnKey = &BPUITextFieldShouldReturnKey;
+
 #pragma mark UITextField Delegate methods
 + (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {

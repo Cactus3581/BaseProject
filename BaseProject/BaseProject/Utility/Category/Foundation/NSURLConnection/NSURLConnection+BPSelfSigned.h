@@ -6,8 +6,6 @@
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-// A category on NSURLConnection that allows making async requests that accept all https certificates. 
-//https://github.com/yuriy128/NSURLConnection-SelfSigned
 #import <Foundation/Foundation.h>
 
 @interface NSURLConnection (BPSelfSigned)

@@ -5,9 +5,12 @@
 //  Created by xiaruzhen on 2017/12/10.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
+
 #import <UIKit/UIKit.h>
+
 FOUNDATION_EXPORT double ImageEffectsVersionNumber;
 FOUNDATION_EXPORT const unsigned char ImageEffectsVersionString[];
+
 @interface UIImage (BPBlur)
 
 - (UIImage *)bp_lightImage;

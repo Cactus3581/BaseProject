@@ -7,28 +7,20 @@
 //
 
 #import "UIViewController+BPStoreKit.h"
-
 #import <objc/runtime.h>
-
 #import <StoreKit/StoreKit.h>
 
-////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Constants
-
 NSString* const bp_affiliateTokenKey = @"at";
 NSString* const bp_campaignTokenKey = @"ct";
 NSString* const bp_iTunesAppleString = @"itunes.apple.com";
 
-////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Interface
-
 @interface UIViewController (SKStoreProductViewControllerDelegate) <SKStoreProductViewControllerDelegate>
 
 @end
 
-////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Implementation
-
 @implementation UIViewController (BPStoreKit)
 
 - (void)bp_presentStoreKitItemWithIdentifier:(NSInteger)itemIdentifier

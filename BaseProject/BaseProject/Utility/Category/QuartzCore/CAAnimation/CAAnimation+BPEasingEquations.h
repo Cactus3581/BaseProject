@@ -6,8 +6,6 @@
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-//  A category on CAAnimation that provides a number of easing equations to add some zazz to your app (with examples!)
-
 #import <QuartzCore/QuartzCore.h>
 
 typedef NS_ENUM(NSInteger, CAAnimationEasingFunction) {

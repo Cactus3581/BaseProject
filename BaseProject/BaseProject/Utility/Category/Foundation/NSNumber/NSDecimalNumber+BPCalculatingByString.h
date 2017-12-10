@@ -6,7 +6,6 @@
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-//https://github.com/adi-li/NSDecimalNumber-StringCalculation
 #import <Foundation/Foundation.h>
 
 @interface NSDecimalNumber (BPCalculatingByString)

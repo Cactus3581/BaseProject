@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface UIImage (BPFXImage)
 
 - (UIImage *)bp_imageCroppedToRect:(CGRect)rect;

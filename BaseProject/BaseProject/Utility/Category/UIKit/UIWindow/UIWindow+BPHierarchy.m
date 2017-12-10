@@ -9,6 +9,7 @@
 #import "UIWindow+BPHierarchy.h"
 
 @implementation UIWindow (BPHierarchy)
+
 - (UIViewController*)bp_topMostController
 {
     UIViewController *topController = [self rootViewController];
@@ -29,4 +30,5 @@
     
     return currentViewController;
 }
+
 @end

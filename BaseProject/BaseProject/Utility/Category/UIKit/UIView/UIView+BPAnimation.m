@@ -8,7 +8,6 @@
 
 #import "UIView+BPAnimation.h"
 
-
 // Very helpful function
 
 float bp_radiansForDegrees(int degrees) {

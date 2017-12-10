@@ -5,9 +5,9 @@
 //  Created by xiaruzhen on 2017/12/10.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
+
 #import "UILabel+BPAutomaticWriting.h"
 #import <objc/runtime.h>
-
 
 NSTimeInterval const UILabelAWDefaultDuration = 0.4f;
 

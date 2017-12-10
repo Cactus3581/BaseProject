@@ -8,12 +8,15 @@
 
 #import "UIViewController+BPBackButtonTouched.h"
 #import <objc/runtime.h>
+
 static const void *BPBackButtonHandlerKey = &BPBackButtonHandlerKey;
 
 @implementation UIViewController (BPBackButtonTouched)
+
 -(void)bp_backButtonTouched:(BPBackButtonHandler)backButtonHandler{
     objc_setAssociatedObject(self, BPBackButtonHandlerKey, backButtonHandler, OBJC_ASSOCIATION_COPY);
 }
+
 - (BPBackButtonHandler)bp_backButtonTouched
 {
     return objc_getAssociatedObject(self, BPBackButtonHandlerKey);
@@ -21,6 +24,7 @@ static const void *BPBackButtonHandlerKey = &BPBackButtonHandlerKey;
 @end
 
 @implementation UINavigationController (ShouldPopItem)
+
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item {
 
 	if([self.viewControllers count] < [navigationBar.items count]) {

@@ -10,9 +10,7 @@
 #import <CoreImage/CoreImage.h>
 #import <QuartzCore/QuartzCore.h>
 
-
 static CIDetector * _bp_faceDetector;
-
 
 @implementation UIImageView (BPFaceAwareFill)
 

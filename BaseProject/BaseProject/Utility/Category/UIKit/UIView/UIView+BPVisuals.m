@@ -13,9 +13,6 @@
 
 @implementation UIView (BPVisuals)
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
 -(void)bp_cornerRadius: (CGFloat)radius strokeSize: (CGFloat)size color: (UIColor *)color
 {
     self.layer.cornerRadius = radius;
@@ -23,7 +20,6 @@
     self.layer.borderWidth = size;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
 -(void)bp_setRoundedCorners:(UIRectCorner)corners radius:(CGFloat)radius {
     CGRect rect = self.bounds;
     
@@ -41,8 +37,6 @@
     self.layer.mask = maskLayer;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
 -(void)bp_shadowWithColor: (UIColor *)color
                 offset: (CGSize)offset 
                opacity: (CGFloat)opacity 
@@ -55,8 +49,6 @@
     self.layer.shadowRadius = radius;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
 -(void)bp_removeFromSuperviewWithFadeDuration: (NSTimeInterval)duration
 {
     [UIView beginAnimations: nil context: NULL];
@@ -68,7 +60,6 @@
 	[UIView commitAnimations];	
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
 
 -(void)bp_addSubview: (UIView *)subview withTransition: (UIViewAnimationTransition)transition duration: (NSTimeInterval)duration
 {
@@ -79,7 +70,6 @@
 	[UIView commitAnimations];
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
 
 -(void)bp_removeFromSuperviewWithTransition: (UIViewAnimationTransition)transition duration: (NSTimeInterval)duration
 {
@@ -90,7 +80,6 @@
 	[UIView commitAnimations];
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
 
 -(void)bp_rotateByAngle: (CGFloat)angle
             duration: (NSTimeInterval)duration 
@@ -109,7 +98,6 @@
     [self.layer addAnimation: rotation forKey: @"rotationAnimation"];
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
 
 -(void)bp_moveToPoint: (CGPoint)newPoint 
           duration: (NSTimeInterval)duration 

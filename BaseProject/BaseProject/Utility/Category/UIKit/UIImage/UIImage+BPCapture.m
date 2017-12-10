@@ -8,6 +8,7 @@
 
 #import "UIImage+BPCapture.h"
 #import <QuartzCore/QuartzCore.h>
+
 @implementation UIImage (BPCapture)
 /**
  *  @brief  截图指定view成图片

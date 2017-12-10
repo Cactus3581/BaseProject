@@ -5,9 +5,12 @@
 //  Created by xiaruzhen on 2017/12/10.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
+
 #import "UIWebView+BPCanvas.h"
 #import "UIColor+BPWeb.h"
+
 @implementation UIWebView (BPCanvas)
+
 /// 创建一个指定大小的透明画布
 - (void)bp_createCanvas:(NSString *)canvasId width:(NSInteger)width height:(NSInteger)height
 {

@@ -5,8 +5,11 @@
 //  Created by xiaruzhen on 2017/12/10.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
+
 #import <UIKit/UIKit.h>
+
 @interface UITextField (BPBlocks)
+
 @property (copy, nonatomic) BOOL (^bp_shouldBegindEditingBlock)(UITextField *textField);
 @property (copy, nonatomic) BOOL (^bp_shouldEndEditingBlock)(UITextField *textField);
 @property (copy, nonatomic) void (^bp_didBeginEditingBlock)(UITextField *textField);
@@ -22,4 +25,5 @@
 - (void)setBp_shouldChangeCharactersInRangeBlock:(BOOL (^)(UITextField *textField, NSRange range, NSString *string))shouldChangeCharactersInRangeBlock;
 - (void)setBp_shouldClearBlock:(BOOL (^)(UITextField *textField))shouldClearBlock;
 - (void)setBp_shouldReturnBlock:(BOOL (^)(UITextField *textField))shouldReturnBlock;
+
 @end

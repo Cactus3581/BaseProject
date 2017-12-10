@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-
 @interface UIImageView (BPGeometryConversion)
 
 - (CGPoint)bp_convertPointFromImage:(CGPoint)imagePoint;

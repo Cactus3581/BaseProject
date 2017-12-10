@@ -5,9 +5,11 @@
 //  Created by xiaruzhen on 2017/12/10.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
+
 #import "UIImageView+BPAddition.h"
 
 @implementation UIImageView (BPAddition)
+
 + (id)bp_imageViewWithImageNamed:(NSString*)imageName
 {
     return [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];

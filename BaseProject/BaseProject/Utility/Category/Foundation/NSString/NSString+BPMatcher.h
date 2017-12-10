@@ -6,7 +6,6 @@
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 //
-//https://github.com/damienromito/NSString-Matcher
 #import <Foundation/Foundation.h>
 @interface NSString(BPMatcher)
 - (NSArray *)_matchWithRegex:(NSString *)regex;

@@ -10,7 +10,6 @@
 
 @implementation UILabel (BPAdjustableLabel)
 
-
 // General method. If minSize is set to CGSizeZero then
 // it is ignored.
 // =====================================================

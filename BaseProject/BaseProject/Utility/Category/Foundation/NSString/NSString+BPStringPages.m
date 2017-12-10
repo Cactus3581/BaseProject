@@ -1,5 +1,5 @@
 //
-//  NSString+XHStringPages.m
+//  NSString+BPStringPages.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/9/14.

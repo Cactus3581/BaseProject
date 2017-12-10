@@ -9,9 +9,6 @@
 #import "CAAnimation+BPEasingEquations.h"
 
 #define kAnimationStops 250
-
-// Thanks to http://www.dzone.com/snippets/robert-penner-easing-equations for the easing
-// equation implementations
 typedef CGFloat (^EasingFunction)(CGFloat, CGFloat, CGFloat, CGFloat);
 
 // Generally:

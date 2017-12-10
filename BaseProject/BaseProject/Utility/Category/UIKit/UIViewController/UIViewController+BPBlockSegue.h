@@ -4,8 +4,6 @@
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-//https://github.com/patoroco/UIViewController-BlockSegue
-
 #import <UIKit/UIKit.h>
 
 typedef void (^UIViewControllerBPSegueBlock) (id sender, id destinationVC, UIStoryboardSegue *segue);
