@@ -5,7 +5,6 @@ target 'BaseProject' do
     pod 'Masonry'
     pod 'MJRefresh'
     pod 'FMDB'
-    pod 'YYKit'
     pod 'YTKNetwork'
     pod 'MJExtension'
     pod 'Bugly'
@@ -16,5 +15,18 @@ target 'BaseProject' do
     pod 'FDFullscreenPopGesture'
     pod 'hpple'
     pod 'KTVHTTPCache'
+
+    pod 'YYModel'
+    pod 'YYCache'
+    pod 'YYImage'
+    pod 'YYWebImage'
+    pod 'YYText'
+    pod 'YYKeyboardManager'
+    pod 'YYDispatchQueuePool'
+    pod 'YYAsyncLayer'
+    pod 'YYCategories'
+    
     #pod 'FreeStreamer'
+    #pod 'YYKit'
+
 end

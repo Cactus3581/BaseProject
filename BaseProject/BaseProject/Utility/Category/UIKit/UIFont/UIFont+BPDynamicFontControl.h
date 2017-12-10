@@ -9,17 +9,12 @@
 
 @interface UIFont (BPDynamicFontControl)
 
-
 +(UIFont *)bp_preferredFontForTextStyle:(NSString *)style withFontName:(NSString *)fontName scale:(CGFloat)scale;
 
 +(UIFont *)bp_preferredFontForTextStyle:(NSString *)style withFontName:(NSString *)fontName;
 
-
-
 -(UIFont *)bp_adjustFontForTextStyle:(NSString *)style;
 
 -(UIFont *)bp_adjustFontForTextStyle:(NSString *)style scale:(CGFloat)scale;
-
-
 
 @end

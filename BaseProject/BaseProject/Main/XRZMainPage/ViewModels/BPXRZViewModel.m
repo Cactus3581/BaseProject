@@ -11,6 +11,9 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import "NSObject+YYModel.h"
+#import <YYModel.h>
+#import "YYModel.h"
+
 typedef void(^successed)(NSArray *);
 
 @interface BPXRZViewModel ()
@@ -73,7 +76,7 @@ typedef void(^successed)(NSArray *);
 - (NSArray *)getArrayData {
     NSMutableArray *array = [NSMutableArray array];
     for (NSDictionary *dic in [self readInDocuments]) {
-        BPSimpleModel *model = [BPSimpleModel modelWithDictionary:dic];
+        BPSimpleModel *model = [BPSimpleModel yy_modelWithDictionary:dic];
         [array addObject:model];
     }
     return array.copy;

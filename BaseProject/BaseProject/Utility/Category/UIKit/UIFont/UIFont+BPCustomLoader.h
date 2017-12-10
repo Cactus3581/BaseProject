@@ -58,6 +58,4 @@
  */
 + (NSArray *)bp_registerFontFromURL:(NSURL *)fontURL;
 
-
-
 @end
