@@ -1,9 +1,9 @@
 //
 //  UINavigationController+BPAdd.h
-//  叮咚(dingdong)
+//  BaseProject
 //
-//  Created by YouLoft_MacMini on 16/1/31.
-//  Copyright © 2016年 wazrx. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -1,11 +1,10 @@
 //
 //  UITextField+BPAdd.h
-//  TryLrc
+//  BaseProject
 //
-//  Created by wazrx on 16/6/23.
-//  Copyright © 2016年 wazrx. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import <UIKit/UIKit.h>
 
 @interface UITextField (BPAdd)

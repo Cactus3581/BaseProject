@@ -1,9 +1,9 @@
 //
 //  NSString+BPAdd.m
-//  BPCurrencyExchange
+//  BaseProject
 //
-//  Created by YouLoft_MacMini on 16/1/27.
-//  Copyright © 2016年 wazrx. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 #import "NSString+BPAdd.h"

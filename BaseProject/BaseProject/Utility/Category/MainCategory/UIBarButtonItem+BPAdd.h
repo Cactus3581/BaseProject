@@ -1,11 +1,10 @@
 //
 //  UIBarButtonItem+BPAdd.h
-//  WxSelected
+//  BaseProject
 //
-//  Created by wazrx on 15/12/20.
-//  Copyright © 2015年 wazrx. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN

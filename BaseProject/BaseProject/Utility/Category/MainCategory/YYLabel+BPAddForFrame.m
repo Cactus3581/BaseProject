@@ -1,11 +1,10 @@
 //
 //  YYLabel+BPAddForFrame.m
-//  TryCenter
+//  BaseProject
 //
-//  Created by wazrx on 16/6/7.
-//  Copyright © 2016年 wazrx. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import "YYLabel+BPAddForFrame.h"
 #import "UIView+BPAddForFrame.h"
 #import "NSString+BPAdd.h"
