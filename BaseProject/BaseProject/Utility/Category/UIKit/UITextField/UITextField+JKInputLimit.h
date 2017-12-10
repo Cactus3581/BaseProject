@@ -1,5 +1,5 @@
 //
-//  UIViewController+BPRemoveSelfFromNavi.h
+//  UITextField+JKInputLimit.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/12/10.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (BPRemoveSelfFromNavi)
-
-- (void)removeSelf_from_naviViewControllers;
-
+@interface UITextField (JKInputLimit)
+@property (assign, nonatomic)  NSInteger bp_maxLength;//if <=0, no limit
 @end
-

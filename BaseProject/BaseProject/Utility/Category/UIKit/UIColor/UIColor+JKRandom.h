@@ -1,5 +1,5 @@
 //
-//  UIViewController+BPRemoveSelfFromNavi.h
+//  UIColor+Random.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/12/10.
@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (BPRemoveSelfFromNavi)
-
-- (void)removeSelf_from_naviViewControllers;
-
+@interface UIColor (JKRandom)
+/**
+ *  @brief  随机颜色
+ *
+ *  @return UIColor
+ */
++ (UIColor *)bp_randomColor;
 @end
-

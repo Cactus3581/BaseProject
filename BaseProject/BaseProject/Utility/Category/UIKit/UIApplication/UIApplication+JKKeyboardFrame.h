@@ -1,5 +1,5 @@
 //
-//  UIViewController+BPRemoveSelfFromNavi.h
+//  UIApplication+JKKeyboardFrame.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/12/10.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (BPRemoveSelfFromNavi)
-
-- (void)removeSelf_from_naviViewControllers;
-
+@interface UIApplication (JKKeyboardFrame)
+- (CGRect)bp_keyboardFrame;
 @end
-

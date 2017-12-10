@@ -7,6 +7,122 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010DB7071FDD4D450099E66F /* UINavigationBar+JKAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB63E1FDD4D400099E66F /* UINavigationBar+JKAwesome.m */; };
+		010DB7081FDD4D450099E66F /* UILabel+JKSuggestSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6421FDD4D400099E66F /* UILabel+JKSuggestSize.m */; };
+		010DB7091FDD4D450099E66F /* UILabel+JKAutomaticWriting.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6441FDD4D400099E66F /* UILabel+JKAutomaticWriting.m */; };
+		010DB70A1FDD4D450099E66F /* UILabel+JKAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6451FDD4D400099E66F /* UILabel+JKAutoSize.m */; };
+		010DB70B1FDD4D450099E66F /* UILabel+JKAdjustableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6481FDD4D400099E66F /* UILabel+JKAdjustableLabel.m */; };
+		010DB70C1FDD4D450099E66F /* UIImageView+JKFaceAwareFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB64D1FDD4D400099E66F /* UIImageView+JKFaceAwareFill.m */; };
+		010DB70D1FDD4D450099E66F /* UIImageView+JKBetterFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB64E1FDD4D400099E66F /* UIImageView+JKBetterFace.m */; };
+		010DB70E1FDD4D450099E66F /* UIImageView+JKLetters.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6501FDD4D400099E66F /* UIImageView+JKLetters.m */; };
+		010DB70F1FDD4D450099E66F /* UIImageView+JKReflect.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6511FDD4D400099E66F /* UIImageView+JKReflect.m */; };
+		010DB7101FDD4D450099E66F /* UIImageView+JKAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6531FDD4D400099E66F /* UIImageView+JKAddition.m */; };
+		010DB7111FDD4D450099E66F /* UIImageView+JKGeometryConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6541FDD4D400099E66F /* UIImageView+JKGeometryConversion.m */; };
+		010DB7121FDD4D450099E66F /* UIScreen+JKFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6571FDD4D410099E66F /* UIScreen+JKFrame.m */; };
+		010DB7131FDD4D450099E66F /* UIAlertView+JKBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB65B1FDD4D410099E66F /* UIAlertView+JKBlock.m */; };
+		010DB7141FDD4D450099E66F /* UITextView+JKSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB65D1FDD4D410099E66F /* UITextView+JKSelect.m */; };
+		010DB7151FDD4D450099E66F /* UITextView+JKPinchZoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB65E1FDD4D410099E66F /* UITextView+JKPinchZoom.m */; };
+		010DB7161FDD4D450099E66F /* UITextView+JKPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB65F1FDD4D410099E66F /* UITextView+JKPlaceHolder.m */; };
+		010DB7171FDD4D450099E66F /* UITextView+JKInputLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6641FDD4D410099E66F /* UITextView+JKInputLimit.m */; };
+		010DB7181FDD4D450099E66F /* UINavigationItem+JKMargin.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6681FDD4D410099E66F /* UINavigationItem+JKMargin.m */; };
+		010DB7191FDD4D450099E66F /* UINavigationItem+JKLock.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6691FDD4D410099E66F /* UINavigationItem+JKLock.m */; };
+		010DB71A1FDD4D450099E66F /* UINavigationItem+JKLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB66A1FDD4D410099E66F /* UINavigationItem+JKLoading.m */; };
+		010DB71B1FDD4D450099E66F /* UIWebView+JKLoadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB66F1FDD4D410099E66F /* UIWebView+JKLoadInfo.m */; };
+		010DB71C1FDD4D450099E66F /* UIWebView+JKLoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6701FDD4D410099E66F /* UIWebView+JKLoad.m */; };
+		010DB71D1FDD4D450099E66F /* UIWebView+JKJavaScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6721FDD4D410099E66F /* UIWebView+JKJavaScript.m */; };
+		010DB71E1FDD4D450099E66F /* UIWebView+JKMetaParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6731FDD4D410099E66F /* UIWebView+JKMetaParser.m */; };
+		010DB71F1FDD4D450099E66F /* UIWebView+JKWebStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6751FDD4D410099E66F /* UIWebView+JKWebStorage.m */; };
+		010DB7201FDD4D450099E66F /* UIWebView+JKStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6761FDD4D410099E66F /* UIWebView+JKStyle.m */; };
+		010DB7211FDD4D450099E66F /* UIWebView+JKBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6791FDD4D410099E66F /* UIWebView+JKBlocks.m */; };
+		010DB7221FDD4D450099E66F /* UIWebVIew+JKSwipeGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB67A1FDD4D410099E66F /* UIWebVIew+JKSwipeGesture.m */; };
+		010DB7231FDD4D450099E66F /* UIWebView+JKCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB67B1FDD4D410099E66F /* UIWebView+JKCanvas.m */; };
+		010DB7241FDD4D450099E66F /* UIColor+JKWeb.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6811FDD4D410099E66F /* UIColor+JKWeb.m */; };
+		010DB7251FDD4D450099E66F /* UIColor+JKModify.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6821FDD4D410099E66F /* UIColor+JKModify.m */; };
+		010DB7261FDD4D450099E66F /* UIColor+JKHEX.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6841FDD4D410099E66F /* UIColor+JKHEX.m */; };
+		010DB7271FDD4D450099E66F /* UIColor+JKGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6851FDD4D410099E66F /* UIColor+JKGradient.m */; };
+		010DB7281FDD4D450099E66F /* UIColor+JKRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6881FDD4D410099E66F /* UIColor+JKRandom.m */; };
+		010DB7291FDD4D450099E66F /* UISplitViewController+JKQuickAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB68C1FDD4D420099E66F /* UISplitViewController+JKQuickAccess.m */; };
+		010DB72A1FDD4D450099E66F /* UIBezierPath+JKBasicShapes.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB68F1FDD4D420099E66F /* UIBezierPath+JKBasicShapes.m */; };
+		010DB72B1FDD4D450099E66F /* UIBezierPath+JKThroughPointsBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6901FDD4D420099E66F /* UIBezierPath+JKThroughPointsBezier.m */; };
+		010DB72C1FDD4D450099E66F /* UIBezierPath+JKLength.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6911FDD4D420099E66F /* UIBezierPath+JKLength.m */; };
+		010DB72D1FDD4D450099E66F /* UIBezierPath+JKSVGString.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6941FDD4D420099E66F /* UIBezierPath+JKSVGString.m */; };
+		010DB72E1FDD4D450099E66F /* UIBezierPath+JKSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6961FDD4D420099E66F /* UIBezierPath+JKSymbol.m */; };
+		010DB72F1FDD4D450099E66F /* UIPopoverController+iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6991FDD4D420099E66F /* UIPopoverController+iPhone.m */; };
+		010DB7301FDD4D450099E66F /* UIWindow+JKHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB69C1FDD4D420099E66F /* UIWindow+JKHierarchy.m */; };
+		010DB7311FDD4D450099E66F /* UIScrollView+JKAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB69F1FDD4D420099E66F /* UIScrollView+JKAddition.m */; };
+		010DB7321FDD4D450099E66F /* UIScrollView+JKPages.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6A01FDD4D420099E66F /* UIScrollView+JKPages.m */; };
+		010DB7331FDD4D450099E66F /* UIResponder+JKFirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6A41FDD4D420099E66F /* UIResponder+JKFirstResponder.m */; };
+		010DB7341FDD4D450099E66F /* UIResponder+JKChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6A61FDD4D420099E66F /* UIResponder+JKChain.m */; };
+		010DB7351FDD4D450099E66F /* UITextField+JKShake.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6A91FDD4D430099E66F /* UITextField+JKShake.m */; };
+		010DB7361FDD4D450099E66F /* UITextField+JKHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6AD1FDD4D430099E66F /* UITextField+JKHistory.m */; };
+		010DB7371FDD4D450099E66F /* UITextField+JKInputLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6AE1FDD4D430099E66F /* UITextField+JKInputLimit.m */; };
+		010DB7381FDD4D450099E66F /* UITextField+JKSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6B01FDD4D430099E66F /* UITextField+JKSelect.m */; };
+		010DB7391FDD4D450099E66F /* UITextField+JKBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6B21FDD4D430099E66F /* UITextField+JKBlocks.m */; };
+		010DB73A1FDD4D450099E66F /* UIImage+JKOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6B41FDD4D430099E66F /* UIImage+JKOrientation.m */; };
+		010DB73B1FDD4D450099E66F /* UIImage+JKBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6BA1FDD4D430099E66F /* UIImage+JKBlur.m */; };
+		010DB73C1FDD4D450099E66F /* UIImage+JKResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6BC1FDD4D430099E66F /* UIImage+JKResize.m */; };
+		010DB73D1FDD4D450099E66F /* UIImage+JKVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6BF1FDD4D430099E66F /* UIImage+JKVector.m */; };
+		010DB73E1FDD4D450099E66F /* UIImage+JKGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6C01FDD4D430099E66F /* UIImage+JKGIF.m */; };
+		010DB73F1FDD4D450099E66F /* UIImage+JKFXImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6C11FDD4D430099E66F /* UIImage+JKFXImage.m */; };
+		010DB7401FDD4D450099E66F /* UIImage+JKRemoteSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6C31FDD4D430099E66F /* UIImage+JKRemoteSize.m */; };
+		010DB7411FDD4D450099E66F /* UIImage+JKMerge.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6C41FDD4D430099E66F /* UIImage+JKMerge.m */; };
+		010DB7421FDD4D450099E66F /* UIImage+JKColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6C51FDD4D430099E66F /* UIImage+JKColor.m */; };
+		010DB7431FDD4D450099E66F /* UIImage+JKAnimatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6C61FDD4D430099E66F /* UIImage+JKAnimatedGIF.m */; };
+		010DB7441FDD4D450099E66F /* UIImage+JKBetterFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6C81FDD4D430099E66F /* UIImage+JKBetterFace.m */; };
+		010DB7451FDD4D450099E66F /* UIImage+JKAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6CA1FDD4D430099E66F /* UIImage+JKAlpha.m */; };
+		010DB7461FDD4D450099E66F /* UIImage+JKCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6CC1FDD4D430099E66F /* UIImage+JKCapture.m */; };
+		010DB7471FDD4D450099E66F /* UIImage+JKRoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6CD1FDD4D430099E66F /* UIImage+JKRoundedCorner.m */; };
+		010DB7481FDD4D450099E66F /* UIImage+JKSuperCompress.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6CE1FDD4D430099E66F /* UIImage+JKSuperCompress.m */; };
+		010DB7491FDD4D450099E66F /* UIImage+JKFileName.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6D01FDD4D430099E66F /* UIImage+JKFileName.m */; };
+		010DB74A1FDD4D450099E66F /* UIApplication+JKPermissions.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6D51FDD4D440099E66F /* UIApplication+JKPermissions.m */; };
+		010DB74B1FDD4D450099E66F /* UIApplication+JKNetworkActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6D71FDD4D440099E66F /* UIApplication+JKNetworkActivityIndicator.m */; };
+		010DB74C1FDD4D450099E66F /* UIApplication+JKApplicationSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6D81FDD4D440099E66F /* UIApplication+JKApplicationSize.m */; };
+		010DB74D1FDD4D450099E66F /* UIApplication+JKKeyboardFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6D91FDD4D440099E66F /* UIApplication+JKKeyboardFrame.m */; };
+		010DB74E1FDD4D450099E66F /* UIBarButtonItem+JKAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6E01FDD4D440099E66F /* UIBarButtonItem+JKAction.m */; };
+		010DB74F1FDD4D450099E66F /* UIBarButtonItem+JKBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6E11FDD4D440099E66F /* UIBarButtonItem+JKBadge.m */; };
+		010DB7501FDD4D450099E66F /* UINavigationController+JKStackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6E31FDD4D440099E66F /* UINavigationController+JKStackManager.m */; };
+		010DB7511FDD4D450099E66F /* UINavigationController+JKTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6E41FDD4D440099E66F /* UINavigationController+JKTransitions.m */; };
+		010DB7521FDD4D450099E66F /* UINavigationController+JKKeyboardFix.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6E51FDD4D440099E66F /* UINavigationController+JKKeyboardFix.m */; };
+		010DB7531FDD4D450099E66F /* UISearchBar+JKBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6EB1FDD4D440099E66F /* UISearchBar+JKBlocks.m */; };
+		010DB7541FDD4D450099E66F /* UITableViewCell+JKNIB.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6EF1FDD4D440099E66F /* UITableViewCell+JKNIB.m */; };
+		010DB7551FDD4D450099E66F /* UITableViewCell+JKDelaysContentTouches.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6F01FDD4D440099E66F /* UITableViewCell+JKDelaysContentTouches.m */; };
+		010DB7561FDD4D450099E66F /* UIControl+JKBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6F41FDD4D440099E66F /* UIControl+JKBlock.m */; };
+		010DB7571FDD4D450099E66F /* UIControl+JKSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6F51FDD4D440099E66F /* UIControl+JKSound.m */; };
+		010DB7581FDD4D450099E66F /* UIControl+JKActionBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6F61FDD4D440099E66F /* UIControl+JKActionBlocks.m */; };
+		010DB7591FDD4D450099E66F /* UITableView+JKiOS7Style.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6F91FDD4D440099E66F /* UITableView+JKiOS7Style.m */; };
+		010DB75A1FDD4D450099E66F /* UIFont+JKTTF.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6FD1FDD4D450099E66F /* UIFont+JKTTF.m */; };
+		010DB75B1FDD4D450099E66F /* UIFont+JKCustomLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6FF1FDD4D450099E66F /* UIFont+JKCustomLoader.m */; };
+		010DB75C1FDD4D450099E66F /* UIFont+JKDynamicFontControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7011FDD4D450099E66F /* UIFont+JKDynamicFontControl.m */; };
+		010DB75D1FDD4D450099E66F /* UIDevice+JKHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7031FDD4D450099E66F /* UIDevice+JKHardware.m */; };
+		010DB75E1FDD4D450099E66F /* UIDevice+JKPasscodeStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7061FDD4D450099E66F /* UIDevice+JKPasscodeStatus.m */; };
+		010DB76B1FDD4D560099E66F /* UIViewController+JKBackButtonTouched.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7621FDD4D550099E66F /* UIViewController+JKBackButtonTouched.m */; };
+		010DB76C1FDD4D560099E66F /* UIViewController+JKBlockSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7631FDD4D550099E66F /* UIViewController+JKBlockSegue.m */; };
+		010DB76D1FDD4D560099E66F /* UIViewController+JKBackButtonItemTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7661FDD4D550099E66F /* UIViewController+JKBackButtonItemTitle.m */; };
+		010DB76E1FDD4D560099E66F /* UIViewController+JKRecursiveDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7681FDD4D560099E66F /* UIViewController+JKRecursiveDescription.m */; };
+		010DB76F1FDD4D560099E66F /* UIViewController+JKStoreKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7691FDD4D560099E66F /* UIViewController+JKStoreKit.m */; };
+		010DB7701FDD4D560099E66F /* UIViewController+JKVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB76A1FDD4D560099E66F /* UIViewController+JKVisible.m */; };
+		010DB78B1FDD4D640099E66F /* UIView+JKAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7741FDD4D5F0099E66F /* UIView+JKAnimation.m */; };
+		010DB78C1FDD4D640099E66F /* UIView+JKFind.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7761FDD4D600099E66F /* UIView+JKFind.m */; };
+		010DB78D1FDD4D640099E66F /* UIView+JKScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7771FDD4D600099E66F /* UIView+JKScreenshot.m */; };
+		010DB78E1FDD4D640099E66F /* UIView+JKBlockGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7781FDD4D600099E66F /* UIView+JKBlockGesture.m */; };
+		010DB78F1FDD4D640099E66F /* UIView+JKNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7791FDD4D610099E66F /* UIView+JKNib.m */; };
+		010DB7901FDD4D640099E66F /* UIView+JKFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB77A1FDD4D610099E66F /* UIView+JKFrame.m */; };
+		010DB7911FDD4D640099E66F /* UIView+JKShake.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB77E1FDD4D610099E66F /* UIView+JKShake.m */; };
+		010DB7921FDD4D640099E66F /* UIView+JKCustomBorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7801FDD4D620099E66F /* UIView+JKCustomBorder.m */; };
+		010DB7931FDD4D640099E66F /* UIView+JKConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7811FDD4D620099E66F /* UIView+JKConstraints.m */; };
+		010DB7941FDD4D640099E66F /* UIView+JKToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7821FDD4D620099E66F /* UIView+JKToast.m */; };
+		010DB7951FDD4D640099E66F /* UIView+JKRecursion.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7861FDD4D630099E66F /* UIView+JKRecursion.m */; };
+		010DB7961FDD4D640099E66F /* UIView+JKDraggable.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7871FDD4D630099E66F /* UIView+JKDraggable.m */; };
+		010DB7971FDD4D640099E66F /* UIView+JKVisuals.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7891FDD4D630099E66F /* UIView+JKVisuals.m */; };
+		010DB7AA1FDD4D6F0099E66F /* UIButton+JKMiddleAligning.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7981FDD4D6B0099E66F /* UIButton+JKMiddleAligning.m */; };
+		010DB7AB1FDD4D6F0099E66F /* UIButton+JKBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7991FDD4D6B0099E66F /* UIButton+JKBadge.m */; };
+		010DB7AC1FDD4D6F0099E66F /* UIButton+JKBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB79A1FDD4D6C0099E66F /* UIButton+JKBlock.m */; };
+		010DB7AD1FDD4D6F0099E66F /* UIButton+JKTouchAreaInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB79E1FDD4D6D0099E66F /* UIButton+JKTouchAreaInsets.m */; };
+		010DB7AE1FDD4D6F0099E66F /* UIButton+JKSubmitting.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB79F1FDD4D6D0099E66F /* UIButton+JKSubmitting.m */; };
+		010DB7AF1FDD4D6F0099E66F /* UIButton+JKCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7A31FDD4D6D0099E66F /* UIButton+JKCountDown.m */; };
+		010DB7B01FDD4D6F0099E66F /* UIButton+JKBackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7A51FDD4D6E0099E66F /* UIButton+JKBackgroundColor.m */; };
+		010DB7B11FDD4D6F0099E66F /* UIButton+JKImagePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7A61FDD4D6E0099E66F /* UIButton+JKImagePosition.m */; };
+		010DB7B21FDD4D6F0099E66F /* UIButton+JKIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7A71FDD4D6E0099E66F /* UIButton+JKIndicator.m */; };
 		01119A0C1FD3EE29006DC02E /* BPCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01119A0A1FD3EE29006DC02E /* BPCollectionViewCell.m */; };
 		01119A0D1FD3EE29006DC02E /* BPCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01119A0B1FD3EE29006DC02E /* BPCollectionViewCell.xib */; };
 		01119A171FD3EE96006DC02E /* BPCollectionReusableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01119A151FD3EE96006DC02E /* BPCollectionReusableHeadView.m */; };
@@ -188,6 +304,238 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		010DB63E1FDD4D400099E66F /* UINavigationBar+JKAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+JKAwesome.m"; sourceTree = "<group>"; };
+		010DB63F1FDD4D400099E66F /* UINavigationBar+JKAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+JKAwesome.h"; sourceTree = "<group>"; };
+		010DB6411FDD4D400099E66F /* UILabel+JKAutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+JKAutoSize.h"; sourceTree = "<group>"; };
+		010DB6421FDD4D400099E66F /* UILabel+JKSuggestSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+JKSuggestSize.m"; sourceTree = "<group>"; };
+		010DB6431FDD4D400099E66F /* UILabel+JKAdjustableLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+JKAdjustableLabel.h"; sourceTree = "<group>"; };
+		010DB6441FDD4D400099E66F /* UILabel+JKAutomaticWriting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+JKAutomaticWriting.m"; sourceTree = "<group>"; };
+		010DB6451FDD4D400099E66F /* UILabel+JKAutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+JKAutoSize.m"; sourceTree = "<group>"; };
+		010DB6461FDD4D400099E66F /* UILabel+JKSuggestSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+JKSuggestSize.h"; sourceTree = "<group>"; };
+		010DB6471FDD4D400099E66F /* UILabel+JKAutomaticWriting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+JKAutomaticWriting.h"; sourceTree = "<group>"; };
+		010DB6481FDD4D400099E66F /* UILabel+JKAdjustableLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+JKAdjustableLabel.m"; sourceTree = "<group>"; };
+		010DB64A1FDD4D400099E66F /* UIImageView+JKLetters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JKLetters.h"; sourceTree = "<group>"; };
+		010DB64B1FDD4D400099E66F /* UIImageView+JKReflect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JKReflect.h"; sourceTree = "<group>"; };
+		010DB64C1FDD4D400099E66F /* UIImageView+JKAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JKAddition.h"; sourceTree = "<group>"; };
+		010DB64D1FDD4D400099E66F /* UIImageView+JKFaceAwareFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JKFaceAwareFill.m"; sourceTree = "<group>"; };
+		010DB64E1FDD4D400099E66F /* UIImageView+JKBetterFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JKBetterFace.m"; sourceTree = "<group>"; };
+		010DB64F1FDD4D400099E66F /* UIImageView+JKGeometryConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JKGeometryConversion.h"; sourceTree = "<group>"; };
+		010DB6501FDD4D400099E66F /* UIImageView+JKLetters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JKLetters.m"; sourceTree = "<group>"; };
+		010DB6511FDD4D400099E66F /* UIImageView+JKReflect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JKReflect.m"; sourceTree = "<group>"; };
+		010DB6521FDD4D400099E66F /* UIImageView+JKFaceAwareFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JKFaceAwareFill.h"; sourceTree = "<group>"; };
+		010DB6531FDD4D400099E66F /* UIImageView+JKAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JKAddition.m"; sourceTree = "<group>"; };
+		010DB6541FDD4D400099E66F /* UIImageView+JKGeometryConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JKGeometryConversion.m"; sourceTree = "<group>"; };
+		010DB6551FDD4D400099E66F /* UIImageView+JKBetterFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JKBetterFace.h"; sourceTree = "<group>"; };
+		010DB6571FDD4D410099E66F /* UIScreen+JKFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+JKFrame.m"; sourceTree = "<group>"; };
+		010DB6581FDD4D410099E66F /* UIScreen+JKFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+JKFrame.h"; sourceTree = "<group>"; };
+		010DB65A1FDD4D410099E66F /* UIAlertView+JKBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+JKBlock.h"; sourceTree = "<group>"; };
+		010DB65B1FDD4D410099E66F /* UIAlertView+JKBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+JKBlock.m"; sourceTree = "<group>"; };
+		010DB65D1FDD4D410099E66F /* UITextView+JKSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+JKSelect.m"; sourceTree = "<group>"; };
+		010DB65E1FDD4D410099E66F /* UITextView+JKPinchZoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+JKPinchZoom.m"; sourceTree = "<group>"; };
+		010DB65F1FDD4D410099E66F /* UITextView+JKPlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+JKPlaceHolder.m"; sourceTree = "<group>"; };
+		010DB6601FDD4D410099E66F /* UITextView+JKInputLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+JKInputLimit.h"; sourceTree = "<group>"; };
+		010DB6611FDD4D410099E66F /* UITextView+JKPinchZoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+JKPinchZoom.h"; sourceTree = "<group>"; };
+		010DB6621FDD4D410099E66F /* UITextView+JKSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+JKSelect.h"; sourceTree = "<group>"; };
+		010DB6631FDD4D410099E66F /* UITextView+JKPlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+JKPlaceHolder.h"; sourceTree = "<group>"; };
+		010DB6641FDD4D410099E66F /* UITextView+JKInputLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+JKInputLimit.m"; sourceTree = "<group>"; };
+		010DB6661FDD4D410099E66F /* UINavigationItem+JKLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+JKLock.h"; sourceTree = "<group>"; };
+		010DB6671FDD4D410099E66F /* UINavigationItem+JKLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+JKLoading.h"; sourceTree = "<group>"; };
+		010DB6681FDD4D410099E66F /* UINavigationItem+JKMargin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+JKMargin.m"; sourceTree = "<group>"; };
+		010DB6691FDD4D410099E66F /* UINavigationItem+JKLock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+JKLock.m"; sourceTree = "<group>"; };
+		010DB66A1FDD4D410099E66F /* UINavigationItem+JKLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+JKLoading.m"; sourceTree = "<group>"; };
+		010DB66B1FDD4D410099E66F /* UINavigationItem+JKMargin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+JKMargin.h"; sourceTree = "<group>"; };
+		010DB66D1FDD4D410099E66F /* UIWebView+JKStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+JKStyle.h"; sourceTree = "<group>"; };
+		010DB66E1FDD4D410099E66F /* UIWebView+JKBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+JKBlocks.h"; sourceTree = "<group>"; };
+		010DB66F1FDD4D410099E66F /* UIWebView+JKLoadInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+JKLoadInfo.m"; sourceTree = "<group>"; };
+		010DB6701FDD4D410099E66F /* UIWebView+JKLoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+JKLoad.m"; sourceTree = "<group>"; };
+		010DB6711FDD4D410099E66F /* UIWebVIew+JKSwipeGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebVIew+JKSwipeGesture.h"; sourceTree = "<group>"; };
+		010DB6721FDD4D410099E66F /* UIWebView+JKJavaScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+JKJavaScript.m"; sourceTree = "<group>"; };
+		010DB6731FDD4D410099E66F /* UIWebView+JKMetaParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+JKMetaParser.m"; sourceTree = "<group>"; };
+		010DB6741FDD4D410099E66F /* UIWebView+JKCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+JKCanvas.h"; sourceTree = "<group>"; };
+		010DB6751FDD4D410099E66F /* UIWebView+JKWebStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+JKWebStorage.m"; sourceTree = "<group>"; };
+		010DB6761FDD4D410099E66F /* UIWebView+JKStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+JKStyle.m"; sourceTree = "<group>"; };
+		010DB6771FDD4D410099E66F /* UIWebView+JKLoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+JKLoad.h"; sourceTree = "<group>"; };
+		010DB6781FDD4D410099E66F /* UIWebView+JKLoadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+JKLoadInfo.h"; sourceTree = "<group>"; };
+		010DB6791FDD4D410099E66F /* UIWebView+JKBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+JKBlocks.m"; sourceTree = "<group>"; };
+		010DB67A1FDD4D410099E66F /* UIWebVIew+JKSwipeGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebVIew+JKSwipeGesture.m"; sourceTree = "<group>"; };
+		010DB67B1FDD4D410099E66F /* UIWebView+JKCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+JKCanvas.m"; sourceTree = "<group>"; };
+		010DB67C1FDD4D410099E66F /* UIWebView+JKWebStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+JKWebStorage.h"; sourceTree = "<group>"; };
+		010DB67D1FDD4D410099E66F /* UIWebView+JKMetaParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+JKMetaParser.h"; sourceTree = "<group>"; };
+		010DB67E1FDD4D410099E66F /* UIWebView+JKJavaScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+JKJavaScript.h"; sourceTree = "<group>"; };
+		010DB6801FDD4D410099E66F /* UIColor+JKRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JKRandom.h"; sourceTree = "<group>"; };
+		010DB6811FDD4D410099E66F /* UIColor+JKWeb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JKWeb.m"; sourceTree = "<group>"; };
+		010DB6821FDD4D410099E66F /* UIColor+JKModify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JKModify.m"; sourceTree = "<group>"; };
+		010DB6831FDD4D410099E66F /* UIColor+JKGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JKGradient.h"; sourceTree = "<group>"; };
+		010DB6841FDD4D410099E66F /* UIColor+JKHEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JKHEX.m"; sourceTree = "<group>"; };
+		010DB6851FDD4D410099E66F /* UIColor+JKGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JKGradient.m"; sourceTree = "<group>"; };
+		010DB6861FDD4D410099E66F /* UIColor+JKModify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JKModify.h"; sourceTree = "<group>"; };
+		010DB6871FDD4D410099E66F /* UIColor+JKWeb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JKWeb.h"; sourceTree = "<group>"; };
+		010DB6881FDD4D410099E66F /* UIColor+JKRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JKRandom.m"; sourceTree = "<group>"; };
+		010DB6891FDD4D410099E66F /* UIColor+JKHEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JKHEX.h"; sourceTree = "<group>"; };
+		010DB68B1FDD4D420099E66F /* UISplitViewController+JKQuickAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISplitViewController+JKQuickAccess.h"; sourceTree = "<group>"; };
+		010DB68C1FDD4D420099E66F /* UISplitViewController+JKQuickAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISplitViewController+JKQuickAccess.m"; sourceTree = "<group>"; };
+		010DB68E1FDD4D420099E66F /* UIBezierPath+JKSVGString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+JKSVGString.h"; sourceTree = "<group>"; };
+		010DB68F1FDD4D420099E66F /* UIBezierPath+JKBasicShapes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+JKBasicShapes.m"; sourceTree = "<group>"; };
+		010DB6901FDD4D420099E66F /* UIBezierPath+JKThroughPointsBezier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+JKThroughPointsBezier.m"; sourceTree = "<group>"; };
+		010DB6911FDD4D420099E66F /* UIBezierPath+JKLength.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+JKLength.m"; sourceTree = "<group>"; };
+		010DB6921FDD4D420099E66F /* UIBezierPath+JKSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+JKSymbol.h"; sourceTree = "<group>"; };
+		010DB6931FDD4D420099E66F /* UIBezierPath+JKBasicShapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+JKBasicShapes.h"; sourceTree = "<group>"; };
+		010DB6941FDD4D420099E66F /* UIBezierPath+JKSVGString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+JKSVGString.m"; sourceTree = "<group>"; };
+		010DB6951FDD4D420099E66F /* UIBezierPath+JKThroughPointsBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+JKThroughPointsBezier.h"; sourceTree = "<group>"; };
+		010DB6961FDD4D420099E66F /* UIBezierPath+JKSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+JKSymbol.m"; sourceTree = "<group>"; };
+		010DB6971FDD4D420099E66F /* UIBezierPath+JKLength.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+JKLength.h"; sourceTree = "<group>"; };
+		010DB6991FDD4D420099E66F /* UIPopoverController+iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPopoverController+iPhone.m"; sourceTree = "<group>"; };
+		010DB69A1FDD4D420099E66F /* UIPopoverController+iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPopoverController+iPhone.h"; sourceTree = "<group>"; };
+		010DB69C1FDD4D420099E66F /* UIWindow+JKHierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+JKHierarchy.m"; sourceTree = "<group>"; };
+		010DB69D1FDD4D420099E66F /* UIWindow+JKHierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+JKHierarchy.h"; sourceTree = "<group>"; };
+		010DB69F1FDD4D420099E66F /* UIScrollView+JKAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+JKAddition.m"; sourceTree = "<group>"; };
+		010DB6A01FDD4D420099E66F /* UIScrollView+JKPages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+JKPages.m"; sourceTree = "<group>"; };
+		010DB6A11FDD4D420099E66F /* UIScrollView+JKAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+JKAddition.h"; sourceTree = "<group>"; };
+		010DB6A21FDD4D420099E66F /* UIScrollView+JKPages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+JKPages.h"; sourceTree = "<group>"; };
+		010DB6A41FDD4D420099E66F /* UIResponder+JKFirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+JKFirstResponder.m"; sourceTree = "<group>"; };
+		010DB6A51FDD4D420099E66F /* UIResponder+JKChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+JKChain.h"; sourceTree = "<group>"; };
+		010DB6A61FDD4D420099E66F /* UIResponder+JKChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+JKChain.m"; sourceTree = "<group>"; };
+		010DB6A71FDD4D420099E66F /* UIResponder+JKFirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+JKFirstResponder.h"; sourceTree = "<group>"; };
+		010DB6A91FDD4D430099E66F /* UITextField+JKShake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+JKShake.m"; sourceTree = "<group>"; };
+		010DB6AA1FDD4D430099E66F /* UITextField+JKInputLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+JKInputLimit.h"; sourceTree = "<group>"; };
+		010DB6AB1FDD4D430099E66F /* UITextField+JKSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+JKSelect.h"; sourceTree = "<group>"; };
+		010DB6AC1FDD4D430099E66F /* UITextField+JKBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+JKBlocks.h"; sourceTree = "<group>"; };
+		010DB6AD1FDD4D430099E66F /* UITextField+JKHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+JKHistory.m"; sourceTree = "<group>"; };
+		010DB6AE1FDD4D430099E66F /* UITextField+JKInputLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+JKInputLimit.m"; sourceTree = "<group>"; };
+		010DB6AF1FDD4D430099E66F /* UITextField+JKShake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+JKShake.h"; sourceTree = "<group>"; };
+		010DB6B01FDD4D430099E66F /* UITextField+JKSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+JKSelect.m"; sourceTree = "<group>"; };
+		010DB6B11FDD4D430099E66F /* UITextField+JKHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+JKHistory.h"; sourceTree = "<group>"; };
+		010DB6B21FDD4D430099E66F /* UITextField+JKBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+JKBlocks.m"; sourceTree = "<group>"; };
+		010DB6B41FDD4D430099E66F /* UIImage+JKOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKOrientation.m"; sourceTree = "<group>"; };
+		010DB6B51FDD4D430099E66F /* UIImage+JKColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKColor.h"; sourceTree = "<group>"; };
+		010DB6B61FDD4D430099E66F /* UIImage+JKAnimatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKAnimatedGIF.h"; sourceTree = "<group>"; };
+		010DB6B71FDD4D430099E66F /* UIImage+JKMerge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKMerge.h"; sourceTree = "<group>"; };
+		010DB6B81FDD4D430099E66F /* UIImage+JKCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKCapture.h"; sourceTree = "<group>"; };
+		010DB6B91FDD4D430099E66F /* UIImage+JKRoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKRoundedCorner.h"; sourceTree = "<group>"; };
+		010DB6BA1FDD4D430099E66F /* UIImage+JKBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKBlur.m"; sourceTree = "<group>"; };
+		010DB6BB1FDD4D430099E66F /* UIImage+JKAlpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKAlpha.h"; sourceTree = "<group>"; };
+		010DB6BC1FDD4D430099E66F /* UIImage+JKResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKResize.m"; sourceTree = "<group>"; };
+		010DB6BD1FDD4D430099E66F /* UIImage+JKBetterFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKBetterFace.h"; sourceTree = "<group>"; };
+		010DB6BE1FDD4D430099E66F /* UIImage+JKSuperCompress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKSuperCompress.h"; sourceTree = "<group>"; };
+		010DB6BF1FDD4D430099E66F /* UIImage+JKVector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKVector.m"; sourceTree = "<group>"; };
+		010DB6C01FDD4D430099E66F /* UIImage+JKGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKGIF.m"; sourceTree = "<group>"; };
+		010DB6C11FDD4D430099E66F /* UIImage+JKFXImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKFXImage.m"; sourceTree = "<group>"; };
+		010DB6C21FDD4D430099E66F /* UIImage+JKFileName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKFileName.h"; sourceTree = "<group>"; };
+		010DB6C31FDD4D430099E66F /* UIImage+JKRemoteSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKRemoteSize.m"; sourceTree = "<group>"; };
+		010DB6C41FDD4D430099E66F /* UIImage+JKMerge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKMerge.m"; sourceTree = "<group>"; };
+		010DB6C51FDD4D430099E66F /* UIImage+JKColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKColor.m"; sourceTree = "<group>"; };
+		010DB6C61FDD4D430099E66F /* UIImage+JKAnimatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKAnimatedGIF.m"; sourceTree = "<group>"; };
+		010DB6C71FDD4D430099E66F /* UIImage+JKOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKOrientation.h"; sourceTree = "<group>"; };
+		010DB6C81FDD4D430099E66F /* UIImage+JKBetterFace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKBetterFace.m"; sourceTree = "<group>"; };
+		010DB6C91FDD4D430099E66F /* UIImage+JKResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKResize.h"; sourceTree = "<group>"; };
+		010DB6CA1FDD4D430099E66F /* UIImage+JKAlpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKAlpha.m"; sourceTree = "<group>"; };
+		010DB6CB1FDD4D430099E66F /* UIImage+JKBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKBlur.h"; sourceTree = "<group>"; };
+		010DB6CC1FDD4D430099E66F /* UIImage+JKCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKCapture.m"; sourceTree = "<group>"; };
+		010DB6CD1FDD4D430099E66F /* UIImage+JKRoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKRoundedCorner.m"; sourceTree = "<group>"; };
+		010DB6CE1FDD4D430099E66F /* UIImage+JKSuperCompress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKSuperCompress.m"; sourceTree = "<group>"; };
+		010DB6CF1FDD4D430099E66F /* UIImage+JKRemoteSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKRemoteSize.h"; sourceTree = "<group>"; };
+		010DB6D01FDD4D430099E66F /* UIImage+JKFileName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKFileName.m"; sourceTree = "<group>"; };
+		010DB6D11FDD4D430099E66F /* UIImage+JKFXImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKFXImage.h"; sourceTree = "<group>"; };
+		010DB6D21FDD4D430099E66F /* UIImage+JKGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKGIF.h"; sourceTree = "<group>"; };
+		010DB6D31FDD4D430099E66F /* UIImage+JKVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKVector.h"; sourceTree = "<group>"; };
+		010DB6D51FDD4D440099E66F /* UIApplication+JKPermissions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JKPermissions.m"; sourceTree = "<group>"; };
+		010DB6D61FDD4D440099E66F /* UIApplication+JKKeyboardFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JKKeyboardFrame.h"; sourceTree = "<group>"; };
+		010DB6D71FDD4D440099E66F /* UIApplication+JKNetworkActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JKNetworkActivityIndicator.m"; sourceTree = "<group>"; };
+		010DB6D81FDD4D440099E66F /* UIApplication+JKApplicationSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JKApplicationSize.m"; sourceTree = "<group>"; };
+		010DB6D91FDD4D440099E66F /* UIApplication+JKKeyboardFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+JKKeyboardFrame.m"; sourceTree = "<group>"; };
+		010DB6DA1FDD4D440099E66F /* UIApplication+JKPermissions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JKPermissions.h"; sourceTree = "<group>"; };
+		010DB6DB1FDD4D440099E66F /* UIApplication+JKNetworkActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JKNetworkActivityIndicator.h"; sourceTree = "<group>"; };
+		010DB6DC1FDD4D440099E66F /* UIApplication+JKApplicationSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+JKApplicationSize.h"; sourceTree = "<group>"; };
+		010DB6DE1FDD4D440099E66F /* UIBarButtonItem+JKAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+JKAction.h"; sourceTree = "<group>"; };
+		010DB6DF1FDD4D440099E66F /* UIBarButtonItem+JKBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+JKBadge.h"; sourceTree = "<group>"; };
+		010DB6E01FDD4D440099E66F /* UIBarButtonItem+JKAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+JKAction.m"; sourceTree = "<group>"; };
+		010DB6E11FDD4D440099E66F /* UIBarButtonItem+JKBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+JKBadge.m"; sourceTree = "<group>"; };
+		010DB6E31FDD4D440099E66F /* UINavigationController+JKStackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JKStackManager.m"; sourceTree = "<group>"; };
+		010DB6E41FDD4D440099E66F /* UINavigationController+JKTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JKTransitions.m"; sourceTree = "<group>"; };
+		010DB6E51FDD4D440099E66F /* UINavigationController+JKKeyboardFix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JKKeyboardFix.m"; sourceTree = "<group>"; };
+		010DB6E61FDD4D440099E66F /* UINavigationController+JKTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JKTransitions.h"; sourceTree = "<group>"; };
+		010DB6E71FDD4D440099E66F /* UINavigationController+JKStackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JKStackManager.h"; sourceTree = "<group>"; };
+		010DB6E81FDD4D440099E66F /* UINavigationController+JKKeyboardFix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JKKeyboardFix.h"; sourceTree = "<group>"; };
+		010DB6EA1FDD4D440099E66F /* UISearchBar+JKBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+JKBlocks.h"; sourceTree = "<group>"; };
+		010DB6EB1FDD4D440099E66F /* UISearchBar+JKBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+JKBlocks.m"; sourceTree = "<group>"; };
+		010DB6ED1FDD4D440099E66F /* UITableViewCell+JKDelaysContentTouches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+JKDelaysContentTouches.h"; sourceTree = "<group>"; };
+		010DB6EE1FDD4D440099E66F /* UITableViewCell+JKNIB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+JKNIB.h"; sourceTree = "<group>"; };
+		010DB6EF1FDD4D440099E66F /* UITableViewCell+JKNIB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+JKNIB.m"; sourceTree = "<group>"; };
+		010DB6F01FDD4D440099E66F /* UITableViewCell+JKDelaysContentTouches.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+JKDelaysContentTouches.m"; sourceTree = "<group>"; };
+		010DB6F21FDD4D440099E66F /* UIControl+JKActionBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+JKActionBlocks.h"; sourceTree = "<group>"; };
+		010DB6F31FDD4D440099E66F /* UIControl+JKSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+JKSound.h"; sourceTree = "<group>"; };
+		010DB6F41FDD4D440099E66F /* UIControl+JKBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+JKBlock.m"; sourceTree = "<group>"; };
+		010DB6F51FDD4D440099E66F /* UIControl+JKSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+JKSound.m"; sourceTree = "<group>"; };
+		010DB6F61FDD4D440099E66F /* UIControl+JKActionBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+JKActionBlocks.m"; sourceTree = "<group>"; };
+		010DB6F71FDD4D440099E66F /* UIControl+JKBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+JKBlock.h"; sourceTree = "<group>"; };
+		010DB6F91FDD4D440099E66F /* UITableView+JKiOS7Style.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+JKiOS7Style.m"; sourceTree = "<group>"; };
+		010DB6FA1FDD4D440099E66F /* UITableView+JKiOS7Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+JKiOS7Style.h"; sourceTree = "<group>"; };
+		010DB6FC1FDD4D450099E66F /* UIFont+JKCustomLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+JKCustomLoader.h"; sourceTree = "<group>"; };
+		010DB6FD1FDD4D450099E66F /* UIFont+JKTTF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+JKTTF.m"; sourceTree = "<group>"; };
+		010DB6FE1FDD4D450099E66F /* UIFont+JKDynamicFontControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+JKDynamicFontControl.h"; sourceTree = "<group>"; };
+		010DB6FF1FDD4D450099E66F /* UIFont+JKCustomLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+JKCustomLoader.m"; sourceTree = "<group>"; };
+		010DB7001FDD4D450099E66F /* UIFont+JKTTF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+JKTTF.h"; sourceTree = "<group>"; };
+		010DB7011FDD4D450099E66F /* UIFont+JKDynamicFontControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+JKDynamicFontControl.m"; sourceTree = "<group>"; };
+		010DB7031FDD4D450099E66F /* UIDevice+JKHardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+JKHardware.m"; sourceTree = "<group>"; };
+		010DB7041FDD4D450099E66F /* UIDevice+JKPasscodeStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+JKPasscodeStatus.h"; sourceTree = "<group>"; };
+		010DB7051FDD4D450099E66F /* UIDevice+JKHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+JKHardware.h"; sourceTree = "<group>"; };
+		010DB7061FDD4D450099E66F /* UIDevice+JKPasscodeStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+JKPasscodeStatus.m"; sourceTree = "<group>"; };
+		010DB75F1FDD4D540099E66F /* UIViewController+JKBackButtonTouched.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JKBackButtonTouched.h"; sourceTree = "<group>"; };
+		010DB7601FDD4D540099E66F /* UIViewController+JKRecursiveDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JKRecursiveDescription.h"; sourceTree = "<group>"; };
+		010DB7611FDD4D540099E66F /* UIViewController+JKVisible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JKVisible.h"; sourceTree = "<group>"; };
+		010DB7621FDD4D550099E66F /* UIViewController+JKBackButtonTouched.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JKBackButtonTouched.m"; sourceTree = "<group>"; };
+		010DB7631FDD4D550099E66F /* UIViewController+JKBlockSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JKBlockSegue.m"; sourceTree = "<group>"; };
+		010DB7641FDD4D550099E66F /* UIViewController+JKBlockSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JKBlockSegue.h"; sourceTree = "<group>"; };
+		010DB7651FDD4D550099E66F /* UIViewController+JKBackButtonItemTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JKBackButtonItemTitle.h"; sourceTree = "<group>"; };
+		010DB7661FDD4D550099E66F /* UIViewController+JKBackButtonItemTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JKBackButtonItemTitle.m"; sourceTree = "<group>"; };
+		010DB7671FDD4D550099E66F /* UIViewController+JKStoreKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JKStoreKit.h"; sourceTree = "<group>"; };
+		010DB7681FDD4D560099E66F /* UIViewController+JKRecursiveDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JKRecursiveDescription.m"; sourceTree = "<group>"; };
+		010DB7691FDD4D560099E66F /* UIViewController+JKStoreKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JKStoreKit.m"; sourceTree = "<group>"; };
+		010DB76A1FDD4D560099E66F /* UIViewController+JKVisible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JKVisible.m"; sourceTree = "<group>"; };
+		010DB7711FDD4D5E0099E66F /* UIView+JKScreenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKScreenshot.h"; sourceTree = "<group>"; };
+		010DB7721FDD4D5F0099E66F /* UIView+JKShake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKShake.h"; sourceTree = "<group>"; };
+		010DB7731FDD4D5F0099E66F /* UIView+JKCustomBorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKCustomBorder.h"; sourceTree = "<group>"; };
+		010DB7741FDD4D5F0099E66F /* UIView+JKAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKAnimation.m"; sourceTree = "<group>"; };
+		010DB7751FDD4D5F0099E66F /* UIView+JKDraggable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKDraggable.h"; sourceTree = "<group>"; };
+		010DB7761FDD4D600099E66F /* UIView+JKFind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKFind.m"; sourceTree = "<group>"; };
+		010DB7771FDD4D600099E66F /* UIView+JKScreenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKScreenshot.m"; sourceTree = "<group>"; };
+		010DB7781FDD4D600099E66F /* UIView+JKBlockGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKBlockGesture.m"; sourceTree = "<group>"; };
+		010DB7791FDD4D610099E66F /* UIView+JKNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKNib.m"; sourceTree = "<group>"; };
+		010DB77A1FDD4D610099E66F /* UIView+JKFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKFrame.m"; sourceTree = "<group>"; };
+		010DB77B1FDD4D610099E66F /* UIView+JKFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKFrame.h"; sourceTree = "<group>"; };
+		010DB77C1FDD4D610099E66F /* UIView+JKVisuals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKVisuals.h"; sourceTree = "<group>"; };
+		010DB77D1FDD4D610099E66F /* UIView+JKFind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKFind.h"; sourceTree = "<group>"; };
+		010DB77E1FDD4D610099E66F /* UIView+JKShake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKShake.m"; sourceTree = "<group>"; };
+		010DB77F1FDD4D620099E66F /* UIView+JKToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKToast.h"; sourceTree = "<group>"; };
+		010DB7801FDD4D620099E66F /* UIView+JKCustomBorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKCustomBorder.m"; sourceTree = "<group>"; };
+		010DB7811FDD4D620099E66F /* UIView+JKConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKConstraints.m"; sourceTree = "<group>"; };
+		010DB7821FDD4D620099E66F /* UIView+JKToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKToast.m"; sourceTree = "<group>"; };
+		010DB7831FDD4D620099E66F /* UIView+JKConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKConstraints.h"; sourceTree = "<group>"; };
+		010DB7841FDD4D620099E66F /* UIView+JKAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKAnimation.h"; sourceTree = "<group>"; };
+		010DB7851FDD4D630099E66F /* UIView+JKBlockGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKBlockGesture.h"; sourceTree = "<group>"; };
+		010DB7861FDD4D630099E66F /* UIView+JKRecursion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRecursion.m"; sourceTree = "<group>"; };
+		010DB7871FDD4D630099E66F /* UIView+JKDraggable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKDraggable.m"; sourceTree = "<group>"; };
+		010DB7881FDD4D630099E66F /* UIView+JKNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKNib.h"; sourceTree = "<group>"; };
+		010DB7891FDD4D630099E66F /* UIView+JKVisuals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKVisuals.m"; sourceTree = "<group>"; };
+		010DB78A1FDD4D640099E66F /* UIView+JKRecursion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRecursion.h"; sourceTree = "<group>"; };
+		010DB7981FDD4D6B0099E66F /* UIButton+JKMiddleAligning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKMiddleAligning.m"; sourceTree = "<group>"; };
+		010DB7991FDD4D6B0099E66F /* UIButton+JKBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKBadge.m"; sourceTree = "<group>"; };
+		010DB79A1FDD4D6C0099E66F /* UIButton+JKBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKBlock.m"; sourceTree = "<group>"; };
+		010DB79B1FDD4D6C0099E66F /* UIButton+JKImagePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JKImagePosition.h"; sourceTree = "<group>"; };
+		010DB79C1FDD4D6C0099E66F /* UIButton+JKTouchAreaInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JKTouchAreaInsets.h"; sourceTree = "<group>"; };
+		010DB79D1FDD4D6D0099E66F /* UIButton+JKBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JKBlock.h"; sourceTree = "<group>"; };
+		010DB79E1FDD4D6D0099E66F /* UIButton+JKTouchAreaInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKTouchAreaInsets.m"; sourceTree = "<group>"; };
+		010DB79F1FDD4D6D0099E66F /* UIButton+JKSubmitting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKSubmitting.m"; sourceTree = "<group>"; };
+		010DB7A01FDD4D6D0099E66F /* UIButton+JKBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JKBadge.h"; sourceTree = "<group>"; };
+		010DB7A11FDD4D6D0099E66F /* UIButton+JKBackgroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JKBackgroundColor.h"; sourceTree = "<group>"; };
+		010DB7A21FDD4D6D0099E66F /* UIButton+JKCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JKCountDown.h"; sourceTree = "<group>"; };
+		010DB7A31FDD4D6D0099E66F /* UIButton+JKCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKCountDown.m"; sourceTree = "<group>"; };
+		010DB7A41FDD4D6D0099E66F /* UIButton+JKIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JKIndicator.h"; sourceTree = "<group>"; };
+		010DB7A51FDD4D6E0099E66F /* UIButton+JKBackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKBackgroundColor.m"; sourceTree = "<group>"; };
+		010DB7A61FDD4D6E0099E66F /* UIButton+JKImagePosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKImagePosition.m"; sourceTree = "<group>"; };
+		010DB7A71FDD4D6E0099E66F /* UIButton+JKIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JKIndicator.m"; sourceTree = "<group>"; };
+		010DB7A81FDD4D6F0099E66F /* UIButton+JKSubmitting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JKSubmitting.h"; sourceTree = "<group>"; };
+		010DB7A91FDD4D6F0099E66F /* UIButton+JKMiddleAligning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JKMiddleAligning.h"; sourceTree = "<group>"; };
 		01119A091FD3EE29006DC02E /* BPCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCollectionViewCell.h; sourceTree = "<group>"; };
 		01119A0A1FD3EE29006DC02E /* BPCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCollectionViewCell.m; sourceTree = "<group>"; };
 		01119A0B1FD3EE29006DC02E /* BPCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -540,6 +888,364 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		010DB63D1FDD4D400099E66F /* UINavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				010DB63E1FDD4D400099E66F /* UINavigationBar+JKAwesome.m */,
+				010DB63F1FDD4D400099E66F /* UINavigationBar+JKAwesome.h */,
+			);
+			path = UINavigationBar;
+			sourceTree = "<group>";
+		};
+		010DB6401FDD4D400099E66F /* UILable */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6411FDD4D400099E66F /* UILabel+JKAutoSize.h */,
+				010DB6421FDD4D400099E66F /* UILabel+JKSuggestSize.m */,
+				010DB6431FDD4D400099E66F /* UILabel+JKAdjustableLabel.h */,
+				010DB6441FDD4D400099E66F /* UILabel+JKAutomaticWriting.m */,
+				010DB6451FDD4D400099E66F /* UILabel+JKAutoSize.m */,
+				010DB6461FDD4D400099E66F /* UILabel+JKSuggestSize.h */,
+				010DB6471FDD4D400099E66F /* UILabel+JKAutomaticWriting.h */,
+				010DB6481FDD4D400099E66F /* UILabel+JKAdjustableLabel.m */,
+			);
+			path = UILable;
+			sourceTree = "<group>";
+		};
+		010DB6491FDD4D400099E66F /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				010DB64A1FDD4D400099E66F /* UIImageView+JKLetters.h */,
+				010DB64B1FDD4D400099E66F /* UIImageView+JKReflect.h */,
+				010DB64C1FDD4D400099E66F /* UIImageView+JKAddition.h */,
+				010DB64D1FDD4D400099E66F /* UIImageView+JKFaceAwareFill.m */,
+				010DB64E1FDD4D400099E66F /* UIImageView+JKBetterFace.m */,
+				010DB64F1FDD4D400099E66F /* UIImageView+JKGeometryConversion.h */,
+				010DB6501FDD4D400099E66F /* UIImageView+JKLetters.m */,
+				010DB6511FDD4D400099E66F /* UIImageView+JKReflect.m */,
+				010DB6521FDD4D400099E66F /* UIImageView+JKFaceAwareFill.h */,
+				010DB6531FDD4D400099E66F /* UIImageView+JKAddition.m */,
+				010DB6541FDD4D400099E66F /* UIImageView+JKGeometryConversion.m */,
+				010DB6551FDD4D400099E66F /* UIImageView+JKBetterFace.h */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		010DB6561FDD4D410099E66F /* UIScreen */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6571FDD4D410099E66F /* UIScreen+JKFrame.m */,
+				010DB6581FDD4D410099E66F /* UIScreen+JKFrame.h */,
+			);
+			path = UIScreen;
+			sourceTree = "<group>";
+		};
+		010DB6591FDD4D410099E66F /* UIAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				010DB65A1FDD4D410099E66F /* UIAlertView+JKBlock.h */,
+				010DB65B1FDD4D410099E66F /* UIAlertView+JKBlock.m */,
+			);
+			path = UIAlertView;
+			sourceTree = "<group>";
+		};
+		010DB65C1FDD4D410099E66F /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				010DB65D1FDD4D410099E66F /* UITextView+JKSelect.m */,
+				010DB65E1FDD4D410099E66F /* UITextView+JKPinchZoom.m */,
+				010DB65F1FDD4D410099E66F /* UITextView+JKPlaceHolder.m */,
+				010DB6601FDD4D410099E66F /* UITextView+JKInputLimit.h */,
+				010DB6611FDD4D410099E66F /* UITextView+JKPinchZoom.h */,
+				010DB6621FDD4D410099E66F /* UITextView+JKSelect.h */,
+				010DB6631FDD4D410099E66F /* UITextView+JKPlaceHolder.h */,
+				010DB6641FDD4D410099E66F /* UITextView+JKInputLimit.m */,
+			);
+			path = UITextView;
+			sourceTree = "<group>";
+		};
+		010DB6651FDD4D410099E66F /* UINavigationItem */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6661FDD4D410099E66F /* UINavigationItem+JKLock.h */,
+				010DB6671FDD4D410099E66F /* UINavigationItem+JKLoading.h */,
+				010DB6681FDD4D410099E66F /* UINavigationItem+JKMargin.m */,
+				010DB6691FDD4D410099E66F /* UINavigationItem+JKLock.m */,
+				010DB66A1FDD4D410099E66F /* UINavigationItem+JKLoading.m */,
+				010DB66B1FDD4D410099E66F /* UINavigationItem+JKMargin.h */,
+			);
+			path = UINavigationItem;
+			sourceTree = "<group>";
+		};
+		010DB66C1FDD4D410099E66F /* UIWebView */ = {
+			isa = PBXGroup;
+			children = (
+				010DB66D1FDD4D410099E66F /* UIWebView+JKStyle.h */,
+				010DB66E1FDD4D410099E66F /* UIWebView+JKBlocks.h */,
+				010DB66F1FDD4D410099E66F /* UIWebView+JKLoadInfo.m */,
+				010DB6701FDD4D410099E66F /* UIWebView+JKLoad.m */,
+				010DB6711FDD4D410099E66F /* UIWebVIew+JKSwipeGesture.h */,
+				010DB6721FDD4D410099E66F /* UIWebView+JKJavaScript.m */,
+				010DB6731FDD4D410099E66F /* UIWebView+JKMetaParser.m */,
+				010DB6741FDD4D410099E66F /* UIWebView+JKCanvas.h */,
+				010DB6751FDD4D410099E66F /* UIWebView+JKWebStorage.m */,
+				010DB6761FDD4D410099E66F /* UIWebView+JKStyle.m */,
+				010DB6771FDD4D410099E66F /* UIWebView+JKLoad.h */,
+				010DB6781FDD4D410099E66F /* UIWebView+JKLoadInfo.h */,
+				010DB6791FDD4D410099E66F /* UIWebView+JKBlocks.m */,
+				010DB67A1FDD4D410099E66F /* UIWebVIew+JKSwipeGesture.m */,
+				010DB67B1FDD4D410099E66F /* UIWebView+JKCanvas.m */,
+				010DB67C1FDD4D410099E66F /* UIWebView+JKWebStorage.h */,
+				010DB67D1FDD4D410099E66F /* UIWebView+JKMetaParser.h */,
+				010DB67E1FDD4D410099E66F /* UIWebView+JKJavaScript.h */,
+			);
+			path = UIWebView;
+			sourceTree = "<group>";
+		};
+		010DB67F1FDD4D410099E66F /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6801FDD4D410099E66F /* UIColor+JKRandom.h */,
+				010DB6811FDD4D410099E66F /* UIColor+JKWeb.m */,
+				010DB6821FDD4D410099E66F /* UIColor+JKModify.m */,
+				010DB6831FDD4D410099E66F /* UIColor+JKGradient.h */,
+				010DB6841FDD4D410099E66F /* UIColor+JKHEX.m */,
+				010DB6851FDD4D410099E66F /* UIColor+JKGradient.m */,
+				010DB6861FDD4D410099E66F /* UIColor+JKModify.h */,
+				010DB6871FDD4D410099E66F /* UIColor+JKWeb.h */,
+				010DB6881FDD4D410099E66F /* UIColor+JKRandom.m */,
+				010DB6891FDD4D410099E66F /* UIColor+JKHEX.h */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		010DB68A1FDD4D420099E66F /* UISplitViewController */ = {
+			isa = PBXGroup;
+			children = (
+				010DB68B1FDD4D420099E66F /* UISplitViewController+JKQuickAccess.h */,
+				010DB68C1FDD4D420099E66F /* UISplitViewController+JKQuickAccess.m */,
+			);
+			path = UISplitViewController;
+			sourceTree = "<group>";
+		};
+		010DB68D1FDD4D420099E66F /* UIBezierPath */ = {
+			isa = PBXGroup;
+			children = (
+				010DB68E1FDD4D420099E66F /* UIBezierPath+JKSVGString.h */,
+				010DB68F1FDD4D420099E66F /* UIBezierPath+JKBasicShapes.m */,
+				010DB6901FDD4D420099E66F /* UIBezierPath+JKThroughPointsBezier.m */,
+				010DB6911FDD4D420099E66F /* UIBezierPath+JKLength.m */,
+				010DB6921FDD4D420099E66F /* UIBezierPath+JKSymbol.h */,
+				010DB6931FDD4D420099E66F /* UIBezierPath+JKBasicShapes.h */,
+				010DB6941FDD4D420099E66F /* UIBezierPath+JKSVGString.m */,
+				010DB6951FDD4D420099E66F /* UIBezierPath+JKThroughPointsBezier.h */,
+				010DB6961FDD4D420099E66F /* UIBezierPath+JKSymbol.m */,
+				010DB6971FDD4D420099E66F /* UIBezierPath+JKLength.h */,
+			);
+			path = UIBezierPath;
+			sourceTree = "<group>";
+		};
+		010DB6981FDD4D420099E66F /* UIPopoverController */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6991FDD4D420099E66F /* UIPopoverController+iPhone.m */,
+				010DB69A1FDD4D420099E66F /* UIPopoverController+iPhone.h */,
+			);
+			path = UIPopoverController;
+			sourceTree = "<group>";
+		};
+		010DB69B1FDD4D420099E66F /* UIWindow */ = {
+			isa = PBXGroup;
+			children = (
+				010DB69C1FDD4D420099E66F /* UIWindow+JKHierarchy.m */,
+				010DB69D1FDD4D420099E66F /* UIWindow+JKHierarchy.h */,
+			);
+			path = UIWindow;
+			sourceTree = "<group>";
+		};
+		010DB69E1FDD4D420099E66F /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				010DB69F1FDD4D420099E66F /* UIScrollView+JKAddition.m */,
+				010DB6A01FDD4D420099E66F /* UIScrollView+JKPages.m */,
+				010DB6A11FDD4D420099E66F /* UIScrollView+JKAddition.h */,
+				010DB6A21FDD4D420099E66F /* UIScrollView+JKPages.h */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
+		010DB6A31FDD4D420099E66F /* UIResponder */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6A41FDD4D420099E66F /* UIResponder+JKFirstResponder.m */,
+				010DB6A51FDD4D420099E66F /* UIResponder+JKChain.h */,
+				010DB6A61FDD4D420099E66F /* UIResponder+JKChain.m */,
+				010DB6A71FDD4D420099E66F /* UIResponder+JKFirstResponder.h */,
+			);
+			path = UIResponder;
+			sourceTree = "<group>";
+		};
+		010DB6A81FDD4D430099E66F /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6A91FDD4D430099E66F /* UITextField+JKShake.m */,
+				010DB6AA1FDD4D430099E66F /* UITextField+JKInputLimit.h */,
+				010DB6AB1FDD4D430099E66F /* UITextField+JKSelect.h */,
+				010DB6AC1FDD4D430099E66F /* UITextField+JKBlocks.h */,
+				010DB6AD1FDD4D430099E66F /* UITextField+JKHistory.m */,
+				010DB6AE1FDD4D430099E66F /* UITextField+JKInputLimit.m */,
+				010DB6AF1FDD4D430099E66F /* UITextField+JKShake.h */,
+				010DB6B01FDD4D430099E66F /* UITextField+JKSelect.m */,
+				010DB6B11FDD4D430099E66F /* UITextField+JKHistory.h */,
+				010DB6B21FDD4D430099E66F /* UITextField+JKBlocks.m */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		010DB6B31FDD4D430099E66F /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6B41FDD4D430099E66F /* UIImage+JKOrientation.m */,
+				010DB6B51FDD4D430099E66F /* UIImage+JKColor.h */,
+				010DB6B61FDD4D430099E66F /* UIImage+JKAnimatedGIF.h */,
+				010DB6B71FDD4D430099E66F /* UIImage+JKMerge.h */,
+				010DB6B81FDD4D430099E66F /* UIImage+JKCapture.h */,
+				010DB6B91FDD4D430099E66F /* UIImage+JKRoundedCorner.h */,
+				010DB6BA1FDD4D430099E66F /* UIImage+JKBlur.m */,
+				010DB6BB1FDD4D430099E66F /* UIImage+JKAlpha.h */,
+				010DB6BC1FDD4D430099E66F /* UIImage+JKResize.m */,
+				010DB6BD1FDD4D430099E66F /* UIImage+JKBetterFace.h */,
+				010DB6BE1FDD4D430099E66F /* UIImage+JKSuperCompress.h */,
+				010DB6BF1FDD4D430099E66F /* UIImage+JKVector.m */,
+				010DB6C01FDD4D430099E66F /* UIImage+JKGIF.m */,
+				010DB6C11FDD4D430099E66F /* UIImage+JKFXImage.m */,
+				010DB6C21FDD4D430099E66F /* UIImage+JKFileName.h */,
+				010DB6C31FDD4D430099E66F /* UIImage+JKRemoteSize.m */,
+				010DB6C41FDD4D430099E66F /* UIImage+JKMerge.m */,
+				010DB6C51FDD4D430099E66F /* UIImage+JKColor.m */,
+				010DB6C61FDD4D430099E66F /* UIImage+JKAnimatedGIF.m */,
+				010DB6C71FDD4D430099E66F /* UIImage+JKOrientation.h */,
+				010DB6C81FDD4D430099E66F /* UIImage+JKBetterFace.m */,
+				010DB6C91FDD4D430099E66F /* UIImage+JKResize.h */,
+				010DB6CA1FDD4D430099E66F /* UIImage+JKAlpha.m */,
+				010DB6CB1FDD4D430099E66F /* UIImage+JKBlur.h */,
+				010DB6CC1FDD4D430099E66F /* UIImage+JKCapture.m */,
+				010DB6CD1FDD4D430099E66F /* UIImage+JKRoundedCorner.m */,
+				010DB6CE1FDD4D430099E66F /* UIImage+JKSuperCompress.m */,
+				010DB6CF1FDD4D430099E66F /* UIImage+JKRemoteSize.h */,
+				010DB6D01FDD4D430099E66F /* UIImage+JKFileName.m */,
+				010DB6D11FDD4D430099E66F /* UIImage+JKFXImage.h */,
+				010DB6D21FDD4D430099E66F /* UIImage+JKGIF.h */,
+				010DB6D31FDD4D430099E66F /* UIImage+JKVector.h */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		010DB6D41FDD4D440099E66F /* UIApplication */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6D51FDD4D440099E66F /* UIApplication+JKPermissions.m */,
+				010DB6D61FDD4D440099E66F /* UIApplication+JKKeyboardFrame.h */,
+				010DB6D71FDD4D440099E66F /* UIApplication+JKNetworkActivityIndicator.m */,
+				010DB6D81FDD4D440099E66F /* UIApplication+JKApplicationSize.m */,
+				010DB6D91FDD4D440099E66F /* UIApplication+JKKeyboardFrame.m */,
+				010DB6DA1FDD4D440099E66F /* UIApplication+JKPermissions.h */,
+				010DB6DB1FDD4D440099E66F /* UIApplication+JKNetworkActivityIndicator.h */,
+				010DB6DC1FDD4D440099E66F /* UIApplication+JKApplicationSize.h */,
+			);
+			path = UIApplication;
+			sourceTree = "<group>";
+		};
+		010DB6DD1FDD4D440099E66F /* UIBarButtonItem */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6DE1FDD4D440099E66F /* UIBarButtonItem+JKAction.h */,
+				010DB6DF1FDD4D440099E66F /* UIBarButtonItem+JKBadge.h */,
+				010DB6E01FDD4D440099E66F /* UIBarButtonItem+JKAction.m */,
+				010DB6E11FDD4D440099E66F /* UIBarButtonItem+JKBadge.m */,
+			);
+			path = UIBarButtonItem;
+			sourceTree = "<group>";
+		};
+		010DB6E21FDD4D440099E66F /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6E31FDD4D440099E66F /* UINavigationController+JKStackManager.m */,
+				010DB6E41FDD4D440099E66F /* UINavigationController+JKTransitions.m */,
+				010DB6E51FDD4D440099E66F /* UINavigationController+JKKeyboardFix.m */,
+				010DB6E61FDD4D440099E66F /* UINavigationController+JKTransitions.h */,
+				010DB6E71FDD4D440099E66F /* UINavigationController+JKStackManager.h */,
+				010DB6E81FDD4D440099E66F /* UINavigationController+JKKeyboardFix.h */,
+			);
+			path = UINavigationController;
+			sourceTree = "<group>";
+		};
+		010DB6E91FDD4D440099E66F /* UISearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6EA1FDD4D440099E66F /* UISearchBar+JKBlocks.h */,
+				010DB6EB1FDD4D440099E66F /* UISearchBar+JKBlocks.m */,
+			);
+			path = UISearchBar;
+			sourceTree = "<group>";
+		};
+		010DB6EC1FDD4D440099E66F /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6ED1FDD4D440099E66F /* UITableViewCell+JKDelaysContentTouches.h */,
+				010DB6EE1FDD4D440099E66F /* UITableViewCell+JKNIB.h */,
+				010DB6EF1FDD4D440099E66F /* UITableViewCell+JKNIB.m */,
+				010DB6F01FDD4D440099E66F /* UITableViewCell+JKDelaysContentTouches.m */,
+			);
+			path = UITableViewCell;
+			sourceTree = "<group>";
+		};
+		010DB6F11FDD4D440099E66F /* UIControl */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6F21FDD4D440099E66F /* UIControl+JKActionBlocks.h */,
+				010DB6F31FDD4D440099E66F /* UIControl+JKSound.h */,
+				010DB6F41FDD4D440099E66F /* UIControl+JKBlock.m */,
+				010DB6F51FDD4D440099E66F /* UIControl+JKSound.m */,
+				010DB6F61FDD4D440099E66F /* UIControl+JKActionBlocks.m */,
+				010DB6F71FDD4D440099E66F /* UIControl+JKBlock.h */,
+			);
+			path = UIControl;
+			sourceTree = "<group>";
+		};
+		010DB6F81FDD4D440099E66F /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6F91FDD4D440099E66F /* UITableView+JKiOS7Style.m */,
+				010DB6FA1FDD4D440099E66F /* UITableView+JKiOS7Style.h */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		010DB6FB1FDD4D450099E66F /* UIFont */ = {
+			isa = PBXGroup;
+			children = (
+				010DB6FC1FDD4D450099E66F /* UIFont+JKCustomLoader.h */,
+				010DB6FD1FDD4D450099E66F /* UIFont+JKTTF.m */,
+				010DB6FE1FDD4D450099E66F /* UIFont+JKDynamicFontControl.h */,
+				010DB6FF1FDD4D450099E66F /* UIFont+JKCustomLoader.m */,
+				010DB7001FDD4D450099E66F /* UIFont+JKTTF.h */,
+				010DB7011FDD4D450099E66F /* UIFont+JKDynamicFontControl.m */,
+			);
+			path = UIFont;
+			sourceTree = "<group>";
+		};
+		010DB7021FDD4D450099E66F /* UIDevice */ = {
+			isa = PBXGroup;
+			children = (
+				010DB7031FDD4D450099E66F /* UIDevice+JKHardware.m */,
+				010DB7041FDD4D450099E66F /* UIDevice+JKPasscodeStatus.h */,
+				010DB7051FDD4D450099E66F /* UIDevice+JKHardware.h */,
+				010DB7061FDD4D450099E66F /* UIDevice+JKPasscodeStatus.m */,
+			);
+			path = UIDevice;
+			sourceTree = "<group>";
+		};
 		01119A081FD3EDFB006DC02E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1567,6 +2273,32 @@
 		017A9A3B1FDD2B2200CDA599 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				010DB6591FDD4D410099E66F /* UIAlertView */,
+				010DB6D41FDD4D440099E66F /* UIApplication */,
+				010DB6DD1FDD4D440099E66F /* UIBarButtonItem */,
+				010DB68D1FDD4D420099E66F /* UIBezierPath */,
+				010DB67F1FDD4D410099E66F /* UIColor */,
+				010DB6F11FDD4D440099E66F /* UIControl */,
+				010DB7021FDD4D450099E66F /* UIDevice */,
+				010DB6FB1FDD4D450099E66F /* UIFont */,
+				010DB6B31FDD4D430099E66F /* UIImage */,
+				010DB6491FDD4D400099E66F /* UIImageView */,
+				010DB6401FDD4D400099E66F /* UILable */,
+				010DB63D1FDD4D400099E66F /* UINavigationBar */,
+				010DB6E21FDD4D440099E66F /* UINavigationController */,
+				010DB6651FDD4D410099E66F /* UINavigationItem */,
+				010DB6981FDD4D420099E66F /* UIPopoverController */,
+				010DB6A31FDD4D420099E66F /* UIResponder */,
+				010DB6561FDD4D410099E66F /* UIScreen */,
+				010DB69E1FDD4D420099E66F /* UIScrollView */,
+				010DB6E91FDD4D440099E66F /* UISearchBar */,
+				010DB68A1FDD4D420099E66F /* UISplitViewController */,
+				010DB6F81FDD4D440099E66F /* UITableView */,
+				010DB6EC1FDD4D440099E66F /* UITableViewCell */,
+				010DB6A81FDD4D430099E66F /* UITextField */,
+				010DB65C1FDD4D410099E66F /* UITextView */,
+				010DB66C1FDD4D410099E66F /* UIWebView */,
+				010DB69B1FDD4D420099E66F /* UIWindow */,
 				017A9A9D1FDD316C00CDA599 /* UIViewController */,
 				017A9A441FDD2B9A00CDA599 /* UIView */,
 				017A9A3C1FDD2B2200CDA599 /* UIButton */,
@@ -1577,6 +2309,24 @@
 		017A9A3C1FDD2B2200CDA599 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
+				010DB7A11FDD4D6D0099E66F /* UIButton+JKBackgroundColor.h */,
+				010DB7A51FDD4D6E0099E66F /* UIButton+JKBackgroundColor.m */,
+				010DB7A01FDD4D6D0099E66F /* UIButton+JKBadge.h */,
+				010DB7991FDD4D6B0099E66F /* UIButton+JKBadge.m */,
+				010DB79D1FDD4D6D0099E66F /* UIButton+JKBlock.h */,
+				010DB79A1FDD4D6C0099E66F /* UIButton+JKBlock.m */,
+				010DB7A21FDD4D6D0099E66F /* UIButton+JKCountDown.h */,
+				010DB7A31FDD4D6D0099E66F /* UIButton+JKCountDown.m */,
+				010DB79B1FDD4D6C0099E66F /* UIButton+JKImagePosition.h */,
+				010DB7A61FDD4D6E0099E66F /* UIButton+JKImagePosition.m */,
+				010DB7A41FDD4D6D0099E66F /* UIButton+JKIndicator.h */,
+				010DB7A71FDD4D6E0099E66F /* UIButton+JKIndicator.m */,
+				010DB7A91FDD4D6F0099E66F /* UIButton+JKMiddleAligning.h */,
+				010DB7981FDD4D6B0099E66F /* UIButton+JKMiddleAligning.m */,
+				010DB7A81FDD4D6F0099E66F /* UIButton+JKSubmitting.h */,
+				010DB79F1FDD4D6D0099E66F /* UIButton+JKSubmitting.m */,
+				010DB79C1FDD4D6C0099E66F /* UIButton+JKTouchAreaInsets.h */,
+				010DB79E1FDD4D6D0099E66F /* UIButton+JKTouchAreaInsets.m */,
 				017A9A921FDD314B00CDA599 /* UIButton+BPEnlargeEdge.h */,
 				017A9A911FDD314B00CDA599 /* UIButton+BPEnlargeEdge.m */,
 				017A9A931FDD314B00CDA599 /* UIButton+BPImagePosition.h */,
@@ -1609,6 +2359,32 @@
 		017A9A441FDD2B9A00CDA599 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				010DB7841FDD4D620099E66F /* UIView+JKAnimation.h */,
+				010DB7741FDD4D5F0099E66F /* UIView+JKAnimation.m */,
+				010DB7851FDD4D630099E66F /* UIView+JKBlockGesture.h */,
+				010DB7781FDD4D600099E66F /* UIView+JKBlockGesture.m */,
+				010DB7831FDD4D620099E66F /* UIView+JKConstraints.h */,
+				010DB7811FDD4D620099E66F /* UIView+JKConstraints.m */,
+				010DB7731FDD4D5F0099E66F /* UIView+JKCustomBorder.h */,
+				010DB7801FDD4D620099E66F /* UIView+JKCustomBorder.m */,
+				010DB7751FDD4D5F0099E66F /* UIView+JKDraggable.h */,
+				010DB7871FDD4D630099E66F /* UIView+JKDraggable.m */,
+				010DB77D1FDD4D610099E66F /* UIView+JKFind.h */,
+				010DB7761FDD4D600099E66F /* UIView+JKFind.m */,
+				010DB77B1FDD4D610099E66F /* UIView+JKFrame.h */,
+				010DB77A1FDD4D610099E66F /* UIView+JKFrame.m */,
+				010DB7881FDD4D630099E66F /* UIView+JKNib.h */,
+				010DB7791FDD4D610099E66F /* UIView+JKNib.m */,
+				010DB78A1FDD4D640099E66F /* UIView+JKRecursion.h */,
+				010DB7861FDD4D630099E66F /* UIView+JKRecursion.m */,
+				010DB7711FDD4D5E0099E66F /* UIView+JKScreenshot.h */,
+				010DB7771FDD4D600099E66F /* UIView+JKScreenshot.m */,
+				010DB7721FDD4D5F0099E66F /* UIView+JKShake.h */,
+				010DB77E1FDD4D610099E66F /* UIView+JKShake.m */,
+				010DB77F1FDD4D620099E66F /* UIView+JKToast.h */,
+				010DB7821FDD4D620099E66F /* UIView+JKToast.m */,
+				010DB77C1FDD4D610099E66F /* UIView+JKVisuals.h */,
+				010DB7891FDD4D630099E66F /* UIView+JKVisuals.m */,
 				017A9A971FDD315900CDA599 /* UIView+BPSafeArea.h */,
 				017A9A981FDD315900CDA599 /* UIView+BPSafeArea.m */,
 				017A9A991FDD315900CDA599 /* UIView+BPShadow.h */,
@@ -1738,6 +2514,18 @@
 		017A9A9D1FDD316C00CDA599 /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
+				010DB7651FDD4D550099E66F /* UIViewController+JKBackButtonItemTitle.h */,
+				010DB7661FDD4D550099E66F /* UIViewController+JKBackButtonItemTitle.m */,
+				010DB75F1FDD4D540099E66F /* UIViewController+JKBackButtonTouched.h */,
+				010DB7621FDD4D550099E66F /* UIViewController+JKBackButtonTouched.m */,
+				010DB7641FDD4D550099E66F /* UIViewController+JKBlockSegue.h */,
+				010DB7631FDD4D550099E66F /* UIViewController+JKBlockSegue.m */,
+				010DB7601FDD4D540099E66F /* UIViewController+JKRecursiveDescription.h */,
+				010DB7681FDD4D560099E66F /* UIViewController+JKRecursiveDescription.m */,
+				010DB7671FDD4D550099E66F /* UIViewController+JKStoreKit.h */,
+				010DB7691FDD4D560099E66F /* UIViewController+JKStoreKit.m */,
+				010DB7611FDD4D540099E66F /* UIViewController+JKVisible.h */,
+				010DB76A1FDD4D560099E66F /* UIViewController+JKVisible.m */,
 				017A9A9E1FDD316C00CDA599 /* UIViewController+BPRemoveSelfFromNavi.h */,
 				017A9A9F1FDD316C00CDA599 /* UIViewController+BPRemoveSelfFromNavi.m */,
 			);
@@ -2646,136 +3434,245 @@
 				017A9A9B1FDD315A00CDA599 /* UIView+BPSafeArea.m in Sources */,
 				017A9AA01FDD316C00CDA599 /* UIViewController+BPRemoveSelfFromNavi.m in Sources */,
 				0149953D1FB4A3F900077866 /* BPRootNavigationController.m in Sources */,
+				010DB7451FDD4D450099E66F /* UIImage+JKAlpha.m in Sources */,
 				01DF31E51FDD3B0300B8A955 /* NSDecimalNumber+JKExtensions.m in Sources */,
+				010DB7211FDD4D450099E66F /* UIWebView+JKBlocks.m in Sources */,
+				010DB7441FDD4D450099E66F /* UIImage+JKBetterFace.m in Sources */,
+				010DB75A1FDD4D450099E66F /* UIFont+JKTTF.m in Sources */,
 				01DF31C61FDD3A9100B8A955 /* NSURLConnection+JKSelfSigned.m in Sources */,
+				010DB7531FDD4D450099E66F /* UISearchBar+JKBlocks.m in Sources */,
 				01DF321C1FDD3B3000B8A955 /* NSString+JKHTML.m in Sources */,
+				010DB70A1FDD4D450099E66F /* UILabel+JKAutoSize.m in Sources */,
 				017A9A361FDD2A9A00CDA599 /* BPPaddingLabel.m in Sources */,
 				01DF31D31FDD3A9100B8A955 /* NSTimer+JKAddition.m in Sources */,
+				010DB72E1FDD4D450099E66F /* UIBezierPath+JKSymbol.m in Sources */,
 				01DF32171FDD3B3000B8A955 /* NSString+JKDictionaryValue.m in Sources */,
+				010DB7AC1FDD4D6F0099E66F /* UIButton+JKBlock.m in Sources */,
+				010DB70C1FDD4D450099E66F /* UIImageView+JKFaceAwareFill.m in Sources */,
+				010DB7941FDD4D640099E66F /* UIView+JKToast.m in Sources */,
 				01DF31C41FDD3A9100B8A955 /* NSHTTPCookieStorage+JKFreezeDry.m in Sources */,
+				010DB7431FDD4D450099E66F /* UIImage+JKAnimatedGIF.m in Sources */,
 				01DF31CD1FDD3A9100B8A955 /* NSMutableURLRequest+JKUpload.m in Sources */,
 				01DF31C71FDD3A9100B8A955 /* NSUserDefaults+JKiCloudSync.m in Sources */,
 				01DF32591FDD3B9D00B8A955 /* NSData+JKzlib.m in Sources */,
 				01DF325D1FDD3B9D00B8A955 /* NSData+JKHash.m in Sources */,
 				01DF31D71FDD3A9100B8A955 /* NSInvocation+JKBb.m in Sources */,
+				010DB7911FDD4D640099E66F /* UIView+JKShake.m in Sources */,
 				01BCB33E1FB55921009EF64E /* BPBaseServerAPI.m in Sources */,
 				01352FF51FD2E1AA0011D65C /* BPNaviProperyViewController.m in Sources */,
+				010DB7271FDD4D450099E66F /* UIColor+JKGradient.m in Sources */,
 				01DF31C81FDD3A9100B8A955 /* NSUserDefaults+JKSafeAccess.m in Sources */,
 				01DF31CF1FDD3A9100B8A955 /* NSArray+JKBlock.m in Sources */,
+				010DB7421FDD4D450099E66F /* UIImage+JKColor.m in Sources */,
+				010DB7101FDD4D450099E66F /* UIImageView+JKAddition.m in Sources */,
+				010DB7131FDD4D450099E66F /* UIAlertView+JKBlock.m in Sources */,
 				013530091FD3CA370011D65C /* BPCollectionViewController.m in Sources */,
 				01DF325F1FDD3B9D00B8A955 /* NSData+JKPCM.m in Sources */,
 				0173401D1FA9753F006192F0 /* BPBaseNavigationController.m in Sources */,
+				010DB78D1FDD4D640099E66F /* UIView+JKScreenshot.m in Sources */,
+				010DB7B11FDD4D6F0099E66F /* UIButton+JKImagePosition.m in Sources */,
+				010DB74E1FDD4D450099E66F /* UIBarButtonItem+JKAction.m in Sources */,
+				010DB7291FDD4D450099E66F /* UISplitViewController+JKQuickAccess.m in Sources */,
 				0149953A1FB4A3D600077866 /* BPRootTabBarController.m in Sources */,
 				018972CE1FC4824100D6DF5B /* BPCalendarCollectionHeadView.m in Sources */,
 				017A9A8D1FDD311D00CDA599 /* NSDate+BPExtension.m in Sources */,
+				010DB71A1FDD4D450099E66F /* UINavigationItem+JKLoading.m in Sources */,
 				014995331FB494D800077866 /* BPBaseTableView.m in Sources */,
+				010DB7521FDD4D450099E66F /* UINavigationController+JKKeyboardFix.m in Sources */,
 				017A9A2B1FDD22AB00CDA599 /* BPCacheTool.m in Sources */,
 				01DF32251FDD3B3000B8A955 /* NSString+JKURLEncode.m in Sources */,
+				010DB7491FDD4D450099E66F /* UIImage+JKFileName.m in Sources */,
+				010DB7411FDD4D450099E66F /* UIImage+JKMerge.m in Sources */,
 				01DF31C31FDD3A9100B8A955 /* NSIndexPath+JKOffset.m in Sources */,
+				010DB72F1FDD4D450099E66F /* UIPopoverController+iPhone.m in Sources */,
 				01DF31E71FDD3B0300B8A955 /* NSDecimalNumber+JKCalculatingByString.m in Sources */,
 				018972C31FC4811400D6DF5B /* BPBaseCollectionView.m in Sources */,
 				01DF31701FDD3A0900B8A955 /* CAMediaTimingFunction+JKAdditionalEquations.m in Sources */,
+				010DB73F1FDD4D450099E66F /* UIImage+JKFXImage.m in Sources */,
 				0184BF821FD6DB2C00CB9AAD /* BPTest_XibViewController.m in Sources */,
 				017A9A471FDD2B9A00CDA599 /* UIView+BPScreenshot.m in Sources */,
 				01119A171FD3EE96006DC02E /* BPCollectionReusableHeadView.m in Sources */,
 				01DF31E31FDD3B0300B8A955 /* NSNumber+JKRomanNumerals.m in Sources */,
+				010DB7AE1FDD4D6F0099E66F /* UIButton+JKSubmitting.m in Sources */,
 				01DF323D1FDD3B3D00B8A955 /* NSObject+JKAddProperty.m in Sources */,
 				01733FE01FA974FB006192F0 /* main.m in Sources */,
 				017A9A961FDD314C00CDA599 /* UIButton+BPImagePosition.m in Sources */,
+				010DB7181FDD4D450099E66F /* UINavigationItem+JKMargin.m in Sources */,
+				010DB72D1FDD4D450099E66F /* UIBezierPath+JKSVGString.m in Sources */,
 				01DF32451FDD3B3D00B8A955 /* NSObject+JKReflection.m in Sources */,
 				01DF32201FDD3B3000B8A955 /* NSString+JKStringPages.m in Sources */,
 				01C935A41FC337E100D98FD6 /* BPSYViewController.m in Sources */,
+				010DB76B1FDD4D560099E66F /* UIViewController+JKBackButtonTouched.m in Sources */,
+				010DB73E1FDD4D450099E66F /* UIImage+JKGIF.m in Sources */,
+				010DB7391FDD4D450099E66F /* UITextField+JKBlocks.m in Sources */,
+				010DB7541FDD4D450099E66F /* UITableViewCell+JKNIB.m in Sources */,
+				010DB75D1FDD4D450099E66F /* UIDevice+JKHardware.m in Sources */,
+				010DB7071FDD4D450099E66F /* UINavigationBar+JKAwesome.m in Sources */,
+				010DB7591FDD4D450099E66F /* UITableView+JKiOS7Style.m in Sources */,
 				01C935B41FC3399F00D98FD6 /* BPSimpleTableController.m in Sources */,
+				010DB7321FDD4D450099E66F /* UIScrollView+JKPages.m in Sources */,
 				01DF32721FDD3BB100B8A955 /* NSDate+JKInternetDateTime.m in Sources */,
 				017A9A371FDD2A9A00CDA599 /* BPZPositionCollectionHeadView.m in Sources */,
 				013530121FD3CAF80011D65C /* BPPlainTableViewController.m in Sources */,
+				010DB7141FDD4D450099E66F /* UITextView+JKSelect.m in Sources */,
 				0135300F1FD3CAEB0011D65C /* BPGroupTableViewController.m in Sources */,
 				01DF32601FDD3B9D00B8A955 /* NSData+JKGzip.m in Sources */,
 				01DF32241FDD3B3000B8A955 /* NSString+JKTrims.m in Sources */,
+				010DB73D1FDD4D450099E66F /* UIImage+JKVector.m in Sources */,
+				010DB7201FDD4D450099E66F /* UIWebView+JKStyle.m in Sources */,
 				01DF325A1FDD3B9D00B8A955 /* NSData+JKEncrypt.m in Sources */,
 				01DF32751FDD3BB100B8A955 /* NSDate+JKFormatter.m in Sources */,
+				010DB7351FDD4D450099E66F /* UITextField+JKShake.m in Sources */,
+				010DB7261FDD4D450099E66F /* UIColor+JKHEX.m in Sources */,
 				018682681FC479700015A9D7 /* BPCalendarController.m in Sources */,
+				010DB7931FDD4D640099E66F /* UIView+JKConstraints.m in Sources */,
 				018972B71FC47F6B00D6DF5B /* BPBaseCollectionViewController.m in Sources */,
 				01DF31CA1FDD3A9100B8A955 /* NSFileManager+JKPaths.m in Sources */,
 				01DF31BF1FDD3A9100B8A955 /* NSDictionary+JKURL.m in Sources */,
+				010DB7581FDD4D450099E66F /* UIControl+JKActionBlocks.m in Sources */,
+				010DB7AF1FDD4D6F0099E66F /* UIButton+JKCountDown.m in Sources */,
 				01DF31CC1FDD3A9100B8A955 /* NSURLSession+JKSynchronousTask.m in Sources */,
 				017A9A431FDD2B8C00CDA599 /* NSNumber+BPDecimalNumber.m in Sources */,
 				018972BF1FC4802400D6DF5B /* BPBaseCollectionReusableView.m in Sources */,
+				010DB73B1FDD4D450099E66F /* UIImage+JKBlur.m in Sources */,
 				01DF32211FDD3B3000B8A955 /* NSString+JKNormalRegex.m in Sources */,
+				010DB7091FDD4D450099E66F /* UILabel+JKAutomaticWriting.m in Sources */,
 				0126E0221FBDB0DA00EE2610 /* BPPopViewMainController.m in Sources */,
 				01DF32231FDD3B3000B8A955 /* NSString+JKBase64.m in Sources */,
 				01DF321B1FDD3B3000B8A955 /* NSString+JKContains.m in Sources */,
 				01DF32461FDD3B3D00B8A955 /* NSObject+JKKVOBlocks.m in Sources */,
 				01DF32731FDD3BB100B8A955 /* NSDate+JKCupertinoYankee.m in Sources */,
 				01DF32761FDD3BB100B8A955 /* NSDate+JKLunarCalendar.m in Sources */,
+				010DB7151FDD4D450099E66F /* UITextView+JKPinchZoom.m in Sources */,
+				010DB71C1FDD4D450099E66F /* UIWebView+JKLoad.m in Sources */,
 				01352FF81FD2E1D80011D65C /* BPNaviTableViewController.m in Sources */,
+				010DB75E1FDD4D450099E66F /* UIDevice+JKPasscodeStatus.m in Sources */,
 				01DF32711FDD3BB100B8A955 /* NSDate+JKUtilities.m in Sources */,
 				01352FFB1FD2E1E90011D65C /* BPNaviCollectionViewController.m in Sources */,
+				010DB7961FDD4D640099E66F /* UIView+JKDraggable.m in Sources */,
 				017A9A9C1FDD315A00CDA599 /* UIView+BPShadow.m in Sources */,
+				010DB7231FDD4D450099E66F /* UIWebView+JKCanvas.m in Sources */,
 				0184BF861FD6E0EC00CB9AAD /* BPTestViewController.m in Sources */,
 				0187FC6B1FC33CDB004E839E /* BPSimpleTableViewCell.m in Sources */,
 				01DF31D81FDD3A9100B8A955 /* NSInvocation+JKBlock.m in Sources */,
 				01C9359F1FC337E100D98FD6 /* BPXRZViewModel.m in Sources */,
 				01DF321A1FDD3B3000B8A955 /* NSString+JKEmoji.m in Sources */,
 				01DF32151FDD3B3000B8A955 /* NSString+JKScore.m in Sources */,
+				010DB78E1FDD4D640099E66F /* UIView+JKBlockGesture.m in Sources */,
+				010DB74C1FDD4D450099E66F /* UIApplication+JKApplicationSize.m in Sources */,
 				01DF321E1FDD3B3000B8A955 /* NSString+JKSize.m in Sources */,
+				010DB74B1FDD4D450099E66F /* UIApplication+JKNetworkActivityIndicator.m in Sources */,
+				010DB7B01FDD4D6F0099E66F /* UIButton+JKBackgroundColor.m in Sources */,
 				01DF31ED1FDD3B1600B8A955 /* NSURL+JKParam.m in Sources */,
+				010DB72B1FDD4D450099E66F /* UIBezierPath+JKThroughPointsBezier.m in Sources */,
+				010DB7951FDD4D640099E66F /* UIView+JKRecursion.m in Sources */,
+				010DB7AD1FDD4D6F0099E66F /* UIButton+JKTouchAreaInsets.m in Sources */,
 				01DF31CB1FDD3A9100B8A955 /* NSNotificationCenter+JKMainThread.m in Sources */,
 				01DF32191FDD3B3000B8A955 /* NSString+JKPinyin.m in Sources */,
 				017A9A381FDD2A9A00CDA599 /* BPScaleCollectionViewFlowLayout.m in Sources */,
+				010DB76D1FDD4D560099E66F /* UIViewController+JKBackButtonItemTitle.m in Sources */,
 				01DF32781FDD3BB100B8A955 /* NSDate+JKExtension.m in Sources */,
 				01DF323E1FDD3B3D00B8A955 /* NSObject+JKAppInfo.m in Sources */,
 				01C935A01FC337E100D98FD6 /* BPXRZViewController.m in Sources */,
 				017A9A8F1FDD311D00CDA599 /* NSString+BPFilepath.m in Sources */,
+				010DB7251FDD4D450099E66F /* UIColor+JKModify.m in Sources */,
 				0173401F1FA9753F006192F0 /* BPBaseTabBarController.m in Sources */,
+				010DB78F1FDD4D640099E66F /* UIView+JKNib.m in Sources */,
 				01DF323F1FDD3B3D00B8A955 /* NSObject+JKRuntime.m in Sources */,
+				010DB71D1FDD4D450099E66F /* UIWebView+JKJavaScript.m in Sources */,
 				01DF316F1FDD3A0900B8A955 /* CALayer+JKBorderColor.m in Sources */,
+				010DB7301FDD4D450099E66F /* UIWindow+JKHierarchy.m in Sources */,
+				010DB74F1FDD4D450099E66F /* UIBarButtonItem+JKBadge.m in Sources */,
+				010DB7481FDD4D450099E66F /* UIImage+JKSuperCompress.m in Sources */,
 				01DF31D41FDD3A9100B8A955 /* NSTimer+JKBlocks.m in Sources */,
 				01DF32401FDD3B3D00B8A955 /* NSObject+JKAutoCoding.m in Sources */,
+				010DB75B1FDD4D450099E66F /* UIFont+JKCustomLoader.m in Sources */,
 				01DF32471FDD3B3D00B8A955 /* NSObject+JKBlockTimer.m in Sources */,
 				01DF31C91FDD3A9100B8A955 /* NSSet+JKBlock.m in Sources */,
 				01DF32161FDD3B3000B8A955 /* NSString+JKXMLDictionary.m in Sources */,
+				010DB76E1FDD4D560099E66F /* UIViewController+JKRecursiveDescription.m in Sources */,
+				010DB7AB1FDD4D6F0099E66F /* UIButton+JKBadge.m in Sources */,
 				01DF31BD1FDD3A9100B8A955 /* NSDictionary+JKSafeAccess.m in Sources */,
+				010DB7161FDD4D450099E66F /* UITextView+JKPlaceHolder.m in Sources */,
+				010DB71B1FDD4D450099E66F /* UIWebView+JKLoadInfo.m in Sources */,
 				01DF32431FDD3B3D00B8A955 /* NSObject+JKAssociatedObject.m in Sources */,
+				010DB7081FDD4D450099E66F /* UILabel+JKSuggestSize.m in Sources */,
 				01DF32261FDD3B3000B8A955 /* NSString+JKUUID.m in Sources */,
 				01C935BA1FC33A5900D98FD6 /* BPSimpleModel.m in Sources */,
+				010DB7571FDD4D450099E66F /* UIControl+JKSound.m in Sources */,
 				017A9A281FDD229B00CDA599 /* BPNetTool.m in Sources */,
+				010DB7B21FDD4D6F0099E66F /* UIButton+JKIndicator.m in Sources */,
 				0173401C1FA9753F006192F0 /* BPAppDelegate.m in Sources */,
 				01DF32221FDD3B3000B8A955 /* NSString+JKRemoveEmoji.m in Sources */,
+				010DB7501FDD4D450099E66F /* UINavigationController+JKStackManager.m in Sources */,
 				01DF32181FDD3B3000B8A955 /* NSString+JKMIME.m in Sources */,
+				010DB7371FDD4D450099E66F /* UITextField+JKInputLimit.m in Sources */,
 				018972C71FC481BF00D6DF5B /* BPBaseCollectionViewCell.m in Sources */,
 				01DF325B1FDD3B9D00B8A955 /* NSData+JKBase64.m in Sources */,
 				01DF31C51FDD3A9100B8A955 /* NSRunLoop+JKPerformBlock.m in Sources */,
+				010DB7171FDD4D450099E66F /* UITextView+JKInputLimit.m in Sources */,
 				01ADC1F61FB492C1009150F0 /* BPBaseTableViewCell.m in Sources */,
+				010DB7971FDD4D640099E66F /* UIView+JKVisuals.m in Sources */,
 				01DF31721FDD3A0900B8A955 /* CAAnimation+JKEasingEquations.m in Sources */,
+				010DB7551FDD4D450099E66F /* UITableViewCell+JKDelaysContentTouches.m in Sources */,
+				010DB7241FDD4D450099E66F /* UIColor+JKWeb.m in Sources */,
+				010DB78B1FDD4D640099E66F /* UIView+JKAnimation.m in Sources */,
+				010DB70D1FDD4D450099E66F /* UIImageView+JKBetterFace.m in Sources */,
+				010DB74A1FDD4D450099E66F /* UIApplication+JKPermissions.m in Sources */,
+				010DB7221FDD4D450099E66F /* UIWebVIew+JKSwipeGesture.m in Sources */,
 				01DF32771FDD3BB100B8A955 /* NSDate+JKReporting.m in Sources */,
 				01DF31D21FDD3A9100B8A955 /* NSFileHandle+JKReadLine.m in Sources */,
+				010DB70B1FDD4D450099E66F /* UILabel+JKAdjustableLabel.m in Sources */,
 				01DF31C21FDD3A9100B8A955 /* NSDictionary+JKBlock.m in Sources */,
+				010DB7281FDD4D450099E66F /* UIColor+JKRandom.m in Sources */,
 				01119A1C1FD3EEAD006DC02E /* BPCollectionReusableFootView.m in Sources */,
+				010DB7AA1FDD4D6F0099E66F /* UIButton+JKMiddleAligning.m in Sources */,
+				010DB7701FDD4D560099E66F /* UIViewController+JKVisible.m in Sources */,
 				01DF31E41FDD3B0300B8A955 /* NSNumber+JKCGFloat.m in Sources */,
 				01DF325C1FDD3B9D00B8A955 /* NSData+JKDataCache.m in Sources */,
 				01ADC1F91FB492D8009150F0 /* BPBaseTableViewController.m in Sources */,
 				01DF321D1FDD3B3000B8A955 /* NSString+JKEncrypt.m in Sources */,
+				010DB7331FDD4D450099E66F /* UIResponder+JKFirstResponder.m in Sources */,
+				010DB71E1FDD4D450099E66F /* UIWebView+JKMetaParser.m in Sources */,
 				01DF31711FDD3A0900B8A955 /* CATransaction+JKAnimateWithDuration.m in Sources */,
+				010DB70E1FDD4D450099E66F /* UIImageView+JKLetters.m in Sources */,
+				010DB7461FDD4D450099E66F /* UIImage+JKCapture.m in Sources */,
 				0173401E1FA9753F006192F0 /* BPBaseViewController.m in Sources */,
+				010DB7471FDD4D450099E66F /* UIImage+JKRoundedCorner.m in Sources */,
+				010DB76C1FDD4D560099E66F /* UIViewController+JKBlockSegue.m in Sources */,
 				01DF32141FDD3B3000B8A955 /* NSString+JKHash.m in Sources */,
 				018972CA1FC481E500D6DF5B /* BPCalendarCollectionCell.m in Sources */,
 				01DF31D11FDD3A9100B8A955 /* NSException+JKTrace.m in Sources */,
+				010DB7381FDD4D450099E66F /* UITextField+JKSelect.m in Sources */,
+				010DB7111FDD4D450099E66F /* UIImageView+JKGeometryConversion.m in Sources */,
+				010DB74D1FDD4D450099E66F /* UIApplication+JKKeyboardFrame.m in Sources */,
+				010DB7341FDD4D450099E66F /* UIResponder+JKChain.m in Sources */,
 				01DF31C11FDD3A9100B8A955 /* NSDictionary+JKJSONString.m in Sources */,
 				01DF31D61FDD3A9100B8A955 /* NSDateFormatter+JKMake.m in Sources */,
 				01C935BD1FC33A6B00D98FD6 /* BPSimpleViewModel.m in Sources */,
 				01119A0C1FD3EE29006DC02E /* BPCollectionViewCell.m in Sources */,
 				01DF32441FDD3B3D00B8A955 /* NSObject+JKEasyCopy.m in Sources */,
 				01DF32421FDD3B3D00B8A955 /* NSObject+JKBlocks.m in Sources */,
+				010DB73A1FDD4D450099E66F /* UIImage+JKOrientation.m in Sources */,
 				017A9A3F1FDD2B2200CDA599 /* UIButton+BPSubmitting.m in Sources */,
+				010DB7361FDD4D450099E66F /* UITextField+JKHistory.m in Sources */,
+				010DB7921FDD4D640099E66F /* UIView+JKCustomBorder.m in Sources */,
 				017A9A951FDD314C00CDA599 /* UIButton+BPEnlargeEdge.m in Sources */,
 				017A9A901FDD311D00CDA599 /* NSURL+BPScheme.m in Sources */,
 				017A9A251FDD228600CDA599 /* BPCGUtilities.m in Sources */,
+				010DB76F1FDD4D560099E66F /* UIViewController+JKStoreKit.m in Sources */,
 				01DF32411FDD3B3D00B8A955 /* NSObject+JKGCD.m in Sources */,
+				010DB75C1FDD4D450099E66F /* UIFont+JKDynamicFontControl.m in Sources */,
+				010DB7121FDD4D450099E66F /* UIScreen+JKFrame.m in Sources */,
 				01DF316E1FDD3A0900B8A955 /* CAShapeLayer+JKUIBezierPath.m in Sources */,
+				010DB7561FDD4D450099E66F /* UIControl+JKBlock.m in Sources */,
 				017A9A8E1FDD311D00CDA599 /* NSDate+BPUtilities.m in Sources */,
+				010DB7311FDD4D450099E66F /* UIScrollView+JKAddition.m in Sources */,
+				010DB71F1FDD4D450099E66F /* UIWebView+JKWebStorage.m in Sources */,
 				01DF325E1FDD3B9D00B8A955 /* NSData+JKAPNSToken.m in Sources */,
 				01DF31CE1FDD3A9100B8A955 /* NSURLRequest+JKParamsFromDictionary.m in Sources */,
+				010DB72A1FDD4D450099E66F /* UIBezierPath+JKBasicShapes.m in Sources */,
+				010DB7901FDD4D640099E66F /* UIView+JKFrame.m in Sources */,
 				01DF321F1FDD3B3000B8A955 /* NSString+JKMatcher.m in Sources */,
 				01BCB3441FB5598B009EF64E /* BPBaseViewModel.m in Sources */,
 				01C935A71FC337E100D98FD6 /* BPZTViewController.m in Sources */,
@@ -2784,10 +3681,17 @@
 				01DF32741FDD3BB100B8A955 /* NSDate+JKZeroDate.m in Sources */,
 				01BCB3301FB54A99009EF64E /* BPBaseModel.m in Sources */,
 				01DF31D51FDD3A9100B8A955 /* NSBundle+JKAppIcon.m in Sources */,
+				010DB72C1FDD4D450099E66F /* UIBezierPath+JKLength.m in Sources */,
+				010DB7191FDD4D450099E66F /* UINavigationItem+JKLock.m in Sources */,
+				010DB70F1FDD4D450099E66F /* UIImageView+JKReflect.m in Sources */,
 				01DF31EC1FDD3B1600B8A955 /* NSURL+JKQueryDictionary.m in Sources */,
 				01DF31D01FDD3A9100B8A955 /* NSArray+JKSafeAccess.m in Sources */,
 				01DF31C01FDD3A9100B8A955 /* NSDictionary+JKXML.m in Sources */,
 				01DF31E61FDD3B0300B8A955 /* NSNumber+JKRound.m in Sources */,
+				010DB78C1FDD4D640099E66F /* UIView+JKFind.m in Sources */,
+				010DB7511FDD4D450099E66F /* UINavigationController+JKTransitions.m in Sources */,
+				010DB7401FDD4D450099E66F /* UIImage+JKRemoteSize.m in Sources */,
+				010DB73C1FDD4D450099E66F /* UIImage+JKResize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
