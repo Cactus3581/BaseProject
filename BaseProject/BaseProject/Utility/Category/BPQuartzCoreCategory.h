@@ -9,5 +9,10 @@
 #ifndef BPQuartzCoreCategory_h
 #define BPQuartzCoreCategory_h
 
+#import "CAAnimation+BPEasingEquations.h"
+#import "CALayer+BPBorderColor.h"
+#import "CAMediaTimingFunction+BPAdditionalEquations.h"
+#import "CAShapeLayer+BPUIBezierPath.h"
+#import "CATransaction+BPAnimateWithDuration.h"
 
 #endif /* BPQuartzCoreCategory_h */

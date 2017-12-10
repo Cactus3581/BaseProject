@@ -139,5 +139,3 @@ static inline NSString * BPTimeString(NSInteger seconds) {
 };
 
 NS_ASSUME_NONNULL_END
-
-
