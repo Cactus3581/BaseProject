@@ -1,9 +1,9 @@
 //
 //  NSObject+JKAddProperty.h
-//  JKCategories (https://github.com/shaojiankui/JKCategories)
+//  BaseProject
 //
-//  Created by Jakey on 14/12/15.
-//  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

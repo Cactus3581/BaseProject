@@ -1,10 +1,10 @@
 //
 // AutoCoding.m
+//  BaseProject
 //
-// Version 2.2.1
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-// Created by Nick Lockwood on 19/11/2011.
-// Copyright (c) 2011 Charcoal Design
 //
 // Distributed under the permissive zlib License
 // Get the latest version from here:

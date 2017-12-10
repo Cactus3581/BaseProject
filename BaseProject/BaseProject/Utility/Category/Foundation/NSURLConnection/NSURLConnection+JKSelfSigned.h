@@ -1,10 +1,11 @@
 //
 //  NSURLConnection+SelfSigned.h
-//  SAB Connect
+//  BaseProject
 //
-//  Created by Yuriy on 8/18/14.
-//  Copyright (c) 2014 yuriy. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
+
 // A category on NSURLConnection that allows making async requests that accept all https certificates. 
 //https://github.com/yuriy128/NSURLConnection-SelfSigned
 #import <Foundation/Foundation.h>

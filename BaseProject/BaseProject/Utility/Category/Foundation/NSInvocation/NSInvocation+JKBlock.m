@@ -1,9 +1,9 @@
 //
 //  NSInvocation+Block.m
-//  NSInvocation+Block
+//  BaseProject
 //
-//  Created by deput on 12/11/15.
-//  Copyright © 2015 deput. All rights reserved.
+//  Created by xiaruzhen on 2017/11/1.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 #import "NSInvocation+JKBlock.h"

@@ -1,8 +1,9 @@
 //
 //  NSFileHandle+readLine.m
+//  BaseProject
 //
-//  Created by Ethan Horger on 11/27/12.
-//  Copyright (c) 2012 Ethan Horger. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 #import "NSFileHandle+JKReadLine.h"

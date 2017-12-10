@@ -1,9 +1,11 @@
 //
 //  NSFileHandle+readLine.h
+//  BaseProject
 //
-//  Created by Ethan Horger on 11/27/12.
-//  Copyright (c) 2012 Ethan Horger. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
+
 // A Cocoa / Objective-C NSFileHandle category that adds the ability to read a file line by line.
 //https://github.com/arbalest/NSFileHandle-readLine
 #import <Foundation/Foundation.h>

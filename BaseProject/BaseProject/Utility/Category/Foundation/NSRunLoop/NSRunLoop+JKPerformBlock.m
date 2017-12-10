@@ -1,11 +1,10 @@
 //
 //  NSRunLoop+PerformBlock.m
-//  JKCategories
+//  BaseProject
 //
-//  Created by Jakey on 15/8/7.
-//  Copyright © 2015年 www.skyfox.org. All rights reserved.
+//  Created by xiaruzhen on 2017/11/1.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import "NSRunLoop+JKPerformBlock.h"
 
 NSString *const NSRunloopTimeoutException = @"NSRunloopTimeoutException";

@@ -1,9 +1,9 @@
 //
 //  NSString+JKDictionary.m
-//  JKCategories (https://github.com/shaojiankui/JKCategories)
+//  BaseProject
 //
-//  Created by Jakey on 14-6-13.
-//  Copyright (c) 2014年 jakey. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 #import "NSString+JKDictionaryValue.h"

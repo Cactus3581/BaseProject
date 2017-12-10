@@ -1,9 +1,9 @@
 //
 //  NSNotificationCenter+MainThread.h
-//  Elly
+//  BaseProject
 //
-//  Created by Milot Shala on 1/12/15.
-//  Copyright (c) 2015 Milot Shala. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -1,10 +1,10 @@
 //
 //  NSString+JKScore.h
+//  BaseProject
 //
-//  Created by Nicholas Bruning on 5/12/11.
-//  Copyright (c) 2011 Involved Pty Ltd. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 

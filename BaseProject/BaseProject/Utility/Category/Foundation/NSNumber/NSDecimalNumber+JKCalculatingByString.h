@@ -1,9 +1,9 @@
 //
 //  NSDecimalNumber+CalculatingByString.h
-//  NSDecimalNumber+StringCalculation
+//  BaseProject
 //
-//  Created by Adi Li on 11/5/14.
-//  Copyright (c) 2014 Adi Li. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 //https://github.com/adi-li/NSDecimalNumber-StringCalculation

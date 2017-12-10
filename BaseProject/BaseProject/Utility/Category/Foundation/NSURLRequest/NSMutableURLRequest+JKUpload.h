@@ -1,8 +1,8 @@
 //  NSMutableURLRequest+Upload.h
-//  UploadExamples
+//  BaseProject
 //
-//  Created by 刘凡 on 15/1/31.
-//  Copyright (c) 2015年 joyios. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

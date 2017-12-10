@@ -1,9 +1,10 @@
 //
 //  CAMediaTimingFunction+AdditionalEquations.h
+//  BaseProject
 //
-//  Created by Heiko Dreyer on 02.04.12.
-//  Copyright (c) 2012 boxedfolder.com. All rights reserved.
-//  https://github.com/bfolder/UIView-Visuals
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
+//
 
 #import <QuartzCore/QuartzCore.h>
 

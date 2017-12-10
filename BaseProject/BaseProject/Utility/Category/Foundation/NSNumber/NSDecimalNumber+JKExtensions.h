@@ -1,11 +1,10 @@
 //
 //  NSDecimalNumber+Extensions.h
-//  CocoaExtensions
+//  BaseProject
 //
-//  Created by Lars Kuhnt on 11.03.14.
-//  Copyright (c) 2014 Promptus. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 // Rounding policies :
 // Original

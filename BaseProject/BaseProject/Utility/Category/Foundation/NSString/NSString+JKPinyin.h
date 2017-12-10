@@ -1,12 +1,10 @@
 //
 //  NSString+JKPinyin.h
-//  Snowball
+//  BaseProject
 //
-//  Created by croath on 11/11/13.
-//  Copyright (c) 2013 Snowball. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-// https://github.com/croath/NSString-Pinyin
-//  the Chinese Pinyin string of the nsstring
 
 #import <Foundation/Foundation.h>
 

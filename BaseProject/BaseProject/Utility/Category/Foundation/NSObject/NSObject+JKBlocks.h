@@ -1,9 +1,9 @@
 //
 //  NSObject+JKBlocks.h
-//  PSFoundation
+//  BaseProject
 //
-//  Created by Peter Steinberger on 24.10.10.
-//  Copyright 2010 Peter Steinberger. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>

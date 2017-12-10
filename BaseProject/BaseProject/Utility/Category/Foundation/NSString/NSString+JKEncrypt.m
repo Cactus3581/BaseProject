@@ -1,11 +1,10 @@
 //
 //  NSString+JKEncrypt.m
-//  JKCategories (https://github.com/shaojiankui/JKCategories)
+//  BaseProject
 //
-//  Created by Jakey on 15/1/26.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 // 加密解密工具 http://tool.chacuo.net/cryptdes
 #import "NSString+JKEncrypt.h"
 #import "NSData+JKEncrypt.h"

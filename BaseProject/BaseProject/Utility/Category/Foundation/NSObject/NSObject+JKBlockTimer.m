@@ -1,10 +1,10 @@
 //
 //  NSObject+MKBlockTimer.m
-//  MKBlockTimerDemo
+//  BaseProject
 //
-//  Created by Mugunth Kumar (@mugunthkumar) on 4/4/13
-//  Copyright (C) 2011-2020 by Steinlogic Consulting And Training Pte Ltd.
-
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
+//
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
 //  in the Software without restriction, including without limitation the rights

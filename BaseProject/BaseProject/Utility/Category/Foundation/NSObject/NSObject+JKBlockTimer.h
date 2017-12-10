@@ -1,10 +1,10 @@
 //
 //  NSObject+MKBlockTimer.h
-//  MKBlockTimerDemo
+//  BaseProject
 //
-//  Created by Mugunth Kumar (@mugunthkumar) on 4/4/13
-//  Copyright (C) 2011-2020 by Steinlogic Consulting And Training Pte Ltd.
-
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
+//
 //  Uses code from http://stackoverflow.com/questions/741830/getting-the-time-elapsed-objective-c
 
 //  Permission is hereby granted, free of charge, to any person obtaining a copy

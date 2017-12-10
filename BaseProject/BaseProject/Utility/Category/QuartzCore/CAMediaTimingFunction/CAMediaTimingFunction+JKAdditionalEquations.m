@@ -1,10 +1,10 @@
 //
 //  CAMediaTimingFunction+AdditionalEquations.m
+//  BaseProject
 //
-//  Created by Heiko Dreyer on 02.04.12.
-//  Copyright (c) 2012 boxedfolder.com. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import "CAMediaTimingFunction+JKAdditionalEquations.h"
 
 @implementation CAMediaTimingFunction (JKAdditionalEquations)

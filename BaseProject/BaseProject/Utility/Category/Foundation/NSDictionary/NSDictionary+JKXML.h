@@ -1,16 +1,11 @@
 //
 //  NSDictionary+JKXML.h
-//  JKCategories (https://github.com/shaojiankui/JKCategories)
+//  BaseProject
 //
-//  Created by Jakey on 15/8/7.
-//  Copyright © 2015年 www.skyfox.org. All rights reserved.
-//  https://github.com/shaojiankui/NSDictionary-JKXML
+//  Created by xiaruzhen on 2017/11/1.
+//  Copyright © 2017年 cactus. All rights reserved.
+//
 
-// 在线XML、JSON数据互转
-// http://www.bejson.com/xml2json/
-
-//XML 新手入门基础知识
-//http://www.ibm.com/developerworks/cn/xml/x-newxml/
 #import <Foundation/Foundation.h>
 
 @interface NSDictionary (JKXML)

@@ -1,12 +1,10 @@
 //
 //  NSString+JKNormalRegex.h
-//  JKCategories
+//  BaseProject
 //
-//  Created by KevinHM on 15/6/24.
-//  Copyright (c) 2015年 KevinHM. All rights reserved.
-//  https://github.com/KevinHM
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import "NSString+JKNormalRegex.h"
 
 @implementation NSString (JKNormalRegex)

@@ -1,9 +1,9 @@
 //
 //  CAAnimation+EasingEquations.m
-//  OKEasingFunctions
+//  BaseProject
 //
-//  Created by Bryan Oltman on 12/18/12.
-//  Copyright (c) 2012 Bryan Oltman. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 #import "CAAnimation+JKEasingEquations.h"
@@ -322,7 +322,7 @@ static EasingFunction easeInOutBounce = ^CGFloat(CGFloat t, CGFloat b, CGFloat c
 };
 
 
-@implementation CAAnimation (JKEasingEquations)
+@implementation CAAnimation (EasingEquations)
 
 + (EasingFunction)blockForCAAnimationEasingFunction:(CAAnimationEasingFunction)easingFunction
 {

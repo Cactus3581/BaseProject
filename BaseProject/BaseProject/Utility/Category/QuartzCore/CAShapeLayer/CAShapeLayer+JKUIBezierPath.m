@@ -1,9 +1,10 @@
 //
 //  CAShapeLayer+UIBezierPath.m
-//  Shapes
+//  BaseProject
 //
-//  Created by Denys Telezhkin on 19.08.14.
-//  Copyright (c) 2014 Denys Telezhkin. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
+//
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal

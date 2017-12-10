@@ -1,9 +1,9 @@
 //
 //  NSData+JKPCM.m
-//  JKCategories (https://github.com/shaojiankui/JKCategories)
+//  BaseProject
 //
-//  Created by Jakey on 16/6/5.
-//  Copyright © 2016年 www.skyfox.org. All rights reserved.
+//  Created by xiaruzhen on 2017/11/1.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 #import "NSData+JKPCM.h"

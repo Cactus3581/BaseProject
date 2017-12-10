@@ -1,11 +1,10 @@
 //
 //  CAAnimation+EasingEquations.h
-//  OKEasingFunctions
+//  BaseProject
 //
-//  Created by Bryan Oltman on 12/18/12.
-//  Copyright (c) 2012 Bryan Oltman. All rights reserved.
-//  https://github.com/bryanoltman/CAAnimation-EasingEquations
-
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
+//
 
 //  A category on CAAnimation that provides a number of easing equations to add some zazz to your app (with examples!)
 
@@ -55,7 +54,7 @@ typedef NS_ENUM(NSInteger, CAAnimationEasingFunction) {
     CAAnimationEasingFunctionEaseInOutBounce
 };
 
-@interface CAAnimation (JKEasingEquations)
+@interface CAAnimation (EasingEquations)
 + (CAKeyframeAnimation*)jk_transformAnimationWithDuration:(CGFloat)duration
                                                   from:(CATransform3D)startValue
                                                     to:(CATransform3D)endValue

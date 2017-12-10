@@ -1,11 +1,10 @@
 //
 //  NSObject+JKEasyCopy.m
-//  NSObject-JKEasyCopy
+//  BaseProject
 //
-//  Created by York on 15/12/1.
-//  Copyright © 2015年 YK-Unit. All rights reserved.
+//  Created by xiaruzhen on 2017/11/1.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import "NSObject+JKEasyCopy.h"
 #import <objc/runtime.h>
 

@@ -1,8 +1,9 @@
 //
 //  NSIndexPath+Offset.h
+//  BaseProject
 //
-//  Created by Nicolas Goutaland on 04/04/15.
-//  Copyright 2015 Nicolas Goutaland. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 #import <UIKit/UIKit.h>
 @interface NSIndexPath (JKOffset)

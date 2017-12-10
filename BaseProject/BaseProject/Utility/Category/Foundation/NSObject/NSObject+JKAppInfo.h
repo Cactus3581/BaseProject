@@ -1,9 +1,9 @@
 //
 //  NSObject+JKAppInfo.h
-//  JKCategories
+//  BaseProject
 //
-//  Created by nidom on 15/9/29.
-//  Copyright © 2015年 www.skyfox.org. All rights reserved.
+//  Created by xiaruzhen on 2017/11/1.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

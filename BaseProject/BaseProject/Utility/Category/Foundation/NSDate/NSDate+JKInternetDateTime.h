@@ -1,11 +1,10 @@
 //
 //  NSDate+InternetDateTime.h
-//  MWFeedParser
+//  BaseProject
 //
-//  Created by Michael Waterfall on 07/10/2010.
-//  Copyright 2010 Michael Waterfall. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 
 // Formatting hints

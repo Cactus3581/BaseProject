@@ -1,10 +1,10 @@
 //
 //  NSTimer+JKBlocks.m
+//  BaseProject
 //
-//  Created by Jiva DeVoe on 1/14/11.
-//  Copyright 2011 Random Ideas, LLC. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import "NSTimer+JKBlocks.h"
 
 @implementation NSTimer (JKBlocks)

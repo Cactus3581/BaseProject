@@ -1,11 +1,10 @@
 //
 //  NSDateFormatter+Make.m
-//  JKCategories (https://github.com/shaojiankui/JKCategories)
+//  BaseProject
 //
-//  Created by Jakey on 15/4/25.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import "NSDateFormatter+JKMake.h"
 
 @implementation NSDateFormatter (JKMake)

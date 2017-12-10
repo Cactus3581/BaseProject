@@ -1,9 +1,9 @@
 //
 //  NSDate+Formatter.h
-//  JKCategories (https://github.com/shaojiankui/JKCategories)
+//  BaseProject
 //
-//  Copyright (C) 2013 by Christopher Meyer
-//  http://schwiiz.org/
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

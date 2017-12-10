@@ -1,7 +1,10 @@
 //
 //  NSURLSession+SynchronousTask.m
 //
-//  Copyright (c) 2015 Florian Schliep (http://floschliep.com/)
+//  BaseProject
+//
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal

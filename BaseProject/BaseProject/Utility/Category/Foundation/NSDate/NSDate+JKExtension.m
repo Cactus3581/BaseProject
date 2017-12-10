@@ -1,11 +1,10 @@
 //
 //  NSDate+Extension.m
-//  JKCategories (https://github.com/shaojiankui/JKCategories)
+//  BaseProject
 //
-//  Created by Jakey on 15/4/25.
-//  Copyright (c) 2015年 www.skyfox.org. All rights reserved.
-//  https://github.com/632840804/HYBNSDateExtension
-
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
+//
 #import "NSDate+JKExtension.h"
 
 @implementation NSDate (JKExtension)

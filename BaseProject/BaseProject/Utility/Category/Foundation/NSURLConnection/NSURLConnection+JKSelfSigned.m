@@ -1,9 +1,9 @@
 //
 //  NSURLConnection+SelfSigned.m
-//  SAB Connect
+//  BaseProject
 //
-//  Created by Yuriy on 8/18/14.
-//  Copyright (c) 2014 yuriy. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 #import "NSURLConnection+JKSelfSigned.h"

@@ -1,11 +1,10 @@
 //
 //  NSDate+JKLunarCalendar.h
-//  JKCategories-Demo
+//  BaseProject
 //
-//  Created by runlin on 2017/10/24.
-//  Copyright © 2017年 www.skyfox.org. All rights reserved.
+//  Created by xiaruzhen on 2017/11/1.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 ///农历大写日期
 @interface NSDate (JKLunarCalendar)

@@ -1,11 +1,10 @@
 //
 //  CALayer+JKBorderColor.m
-//  test
+//  BaseProject
 //
-//  Created by LiuLogan on 15/6/17.
-//  Copyright (c) 2015年 Xidibuy. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import "CALayer+JKBorderColor.h"
 
 @implementation CALayer (JKBorderColor)

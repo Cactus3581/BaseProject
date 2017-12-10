@@ -1,11 +1,10 @@
 //
 //  NSObject+JKReflection.h
-//  NSObject-JKReflection
+//  BaseProject
 //
-//  Created by Jakey on 15/12/22.
-//  Copyright © 2015年 Jakey. All rights reserved.
+//  Created by xiaruzhen on 2017/11/1.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 
 @interface NSObject (JKReflection)

@@ -1,8 +1,8 @@
 //  NSString+JKMatcher.m
-//  Whyd
+//  BaseProject
 //
-//  Created by Damien Romito on 29/01/15.
-//  Copyright (c) 2015 Damien Romito. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 #import "NSString+JKMatcher.h"

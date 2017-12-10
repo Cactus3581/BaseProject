@@ -1,9 +1,9 @@
 //
 //  NSString+JKRemoveEmoji.h
-//  NSString+RemoveEmoji
+//  BaseProject
 //
-//  Created by Jakey on 15/5/13.
-//  Copyright (c) 2015年 Jakey. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 #import <Foundation/Foundation.h>
 

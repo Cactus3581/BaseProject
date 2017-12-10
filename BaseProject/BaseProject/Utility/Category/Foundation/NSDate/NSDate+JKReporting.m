@@ -1,8 +1,10 @@
 //
 // NSDate+Reporting.m
+//  BaseProject
 //
-// Created by Mel Sampat on 5/11/12.
-// Copyright (c) 2012 Mel Sampat.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
+//
 
 
 // MIT LICENSE:

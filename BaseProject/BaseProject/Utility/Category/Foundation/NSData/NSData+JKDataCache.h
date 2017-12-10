@@ -1,11 +1,10 @@
 //
 //  NSData+SDDataCache.h
-//  SDCycleScrollView
+//  BaseProject
 //
-//  Created by aier on 15-3-30.
-//  Copyright (c) 2015年 GSD. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 
 

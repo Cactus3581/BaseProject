@@ -1,9 +1,9 @@
 //
 //  NSString+Emoji.m
+//  BaseProject
 //
-//
-//  Created by Valerio Mazzeo on 24/04/13.
-//  Copyright (c) 2013 Valerio Mazzeo. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
 #import "NSString+JKEmoji.h"

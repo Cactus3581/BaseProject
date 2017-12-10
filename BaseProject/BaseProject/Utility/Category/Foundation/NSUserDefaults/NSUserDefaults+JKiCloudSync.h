@@ -1,10 +1,10 @@
 //
 //  NSUserDefaults+iCloudSync.h
+//  BaseProject
 //
-//  Created by Riccardo Paolillo on 09/05/13.
-//  Copyright (c) 2013. All rights reserved.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
-
 //https://github.com/RiccardoPaolillo/NSUserDefault-iCloud
 // A very simple iOS Category for synchronize NSUserDefaults with iCloud (NSUbiquitousKeyValueStore)
 

@@ -1,8 +1,9 @@
 //
 //  GTMNSString+HTML.h
-//  Dealing with NSStrings that contain HTML
+//  BaseProject
 //
-//  Copyright 2006-2008 Google Inc.
+//  Created by xiaruzhen on 2017/12/10.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License"); you may not
 //  use this file except in compliance with the License.  You may obtain a copy
