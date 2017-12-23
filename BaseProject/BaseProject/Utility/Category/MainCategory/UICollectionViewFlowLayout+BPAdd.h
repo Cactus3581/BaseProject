@@ -3,7 +3,7 @@
 //  BPCurrencyExchange
 //
 //  Created by xiaruzhen on 16/3/6.
-//  Copyright © 2016年 xiaruzhen. All rights reserved.
+//  Copyright © 2016年 cactus. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
