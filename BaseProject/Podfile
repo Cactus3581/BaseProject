@@ -7,7 +7,6 @@ target 'BaseProject' do
     pod 'FMDB'
     pod 'YTKNetwork'
     pod 'MJExtension'
-    pod 'Bugly'
     pod 'Reachability'
     pod 'IQKeyboardManager'
     pod 'SSZipArchive'
@@ -26,6 +25,11 @@ target 'BaseProject' do
     pod 'YYAsyncLayer'
     pod 'YYCategories'
     
+    pod 'MLeaksFinder'
+    pod 'Bugly'
+    #pod 'FLEX'
+
+
     #pod 'FreeStreamer'
     #pod 'YYKit'
 

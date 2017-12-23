@@ -303,7 +303,7 @@ NSString * const BPToastPositionBottom          = @"bottom";
         titleLabel.textAlignment = NSTextAlignmentLeft;
         titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         titleLabel.textColor = [UIColor whiteColor];
-        titleLabel.backgroundColor = [UIColor clearColor];
+        titleLabel.backgroundColor = kClearColor;
         titleLabel.alpha = 1.0;
         titleLabel.text = title;
         
@@ -319,7 +319,7 @@ NSString * const BPToastPositionBottom          = @"bottom";
         messageLabel.font = [UIFont systemFontOfSize:BPToastFontSize];
         messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
         messageLabel.textColor = [UIColor whiteColor];
-        messageLabel.backgroundColor = [UIColor clearColor];
+        messageLabel.backgroundColor = kClearColor;
         messageLabel.alpha = 1.0;
         messageLabel.text = message;
         

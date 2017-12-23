@@ -9,25 +9,19 @@
 #ifndef BPAppInfoMacro_h
 #define BPAppInfoMacro_h
 
-/**
- *  Get App name
- */
-#define APP_NAME [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
 
-/**
- *  Get App build
- */
-#define APP_BUILD [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
 
-/**
- *  Get App version
+/*
+ //系统版本号
+ @property (strong, nonatomic,readonly) NSString *systemVersion;
+ //设备唯一标识码
+ @property (strong, nonatomic,readonly) NSString *uuid;
+ //idfa(identifierForIdentifier，广告标示符)
+ @property (strong, nonatomic, readonly) NSString *idfa;
+ //app版本号
+ @property (strong, nonatomic,readonly) NSString *clientVersion;
+ //设备类型,iPhone,iPad
+ @property (strong, nonatomic,readonly) NSString *mobileType;
  */
-#define APP_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
-
-/**
- *  Use BFLocalizedString to use the string translated 本地化
- */
-#define BFLocalizedString(key, comment) \
-[[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:@"BaseProject"]
 
 #endif /* BPAppInfoMacro_h */

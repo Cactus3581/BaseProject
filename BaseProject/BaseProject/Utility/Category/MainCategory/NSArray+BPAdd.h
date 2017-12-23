@@ -2,8 +2,8 @@
 //  NSArray+BPAdd.h
 //  CatergoryDemo
 //
-//  Created by wazrx on 16/5/13.
-//  Copyright © 2016年 wazrx. All rights reserved.
+//  Created by xiaruzhen on 16/5/13.
+//  Copyright © 2016年 xiaruzhen. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

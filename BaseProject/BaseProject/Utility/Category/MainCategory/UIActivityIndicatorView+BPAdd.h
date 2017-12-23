@@ -1,9 +1,9 @@
 //
 //  UIActivityIndicatorView+BPAdd.h
-//  WxSelected
+//  BaseProject
 //
-//  Created by YouLoft_MacMini on 15/12/23.
-//  Copyright © 2015年 wazrx. All rights reserved.
+//  Created by xiaruzhen on 15/12/23.
+//  Copyright © 2015年 xiaruzhen. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

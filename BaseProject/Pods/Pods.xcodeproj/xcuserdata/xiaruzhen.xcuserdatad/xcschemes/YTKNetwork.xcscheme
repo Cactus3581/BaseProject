@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '44B45D30BFC750BDAE55631087556597'
+               BlueprintIdentifier = 'D5513A5DC7F9AAF9D0293DFDC2FFA4F4'
                BlueprintName = 'YTKNetwork'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libYTKNetwork.a'>

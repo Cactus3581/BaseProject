@@ -2,8 +2,8 @@
 //  UILabel+BPAddForFrame.m
 //  CatergoryDemo
 //
-//  Created by wazrx on 16/5/26.
-//  Copyright © 2016年 wazrx. All rights reserved.
+//  Created by xiaruzhen on 16/5/26.
+//  Copyright © 2016年 xiaruzhen. All rights reserved.
 //
 
 #import "UILabel+BPAddForFrame.h"

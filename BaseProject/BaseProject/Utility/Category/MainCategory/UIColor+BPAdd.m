@@ -1,10 +1,9 @@
-
 //
 //  UIColor+BPAdd.m
-//  WxSelected
+//  BaseProject
 //
-//  Created by YouLoft_MacMini on 15/12/18.
-//  Copyright © 2015年 wazrx. All rights reserved.
+//  Created by xiaruzhen on 15/12/18.
+//  Copyright © 2015年 xiaruzhen. All rights reserved.
 //
 
 #import "UIColor+BPAdd.h"

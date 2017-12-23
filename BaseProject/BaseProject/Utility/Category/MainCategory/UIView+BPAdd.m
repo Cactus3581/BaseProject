@@ -2,8 +2,8 @@
 //  UIView+BPAdd.m
 //  RedEnvelopes
 //
-//  Created by YouLoft_MacMini on 16/3/9.
-//  Copyright © 2016年 wazrx. All rights reserved.
+//  Created by xiaruzhen on 16/3/9.
+//  Copyright © 2016年 xiaruzhen. All rights reserved.
 //
 
 #import "UIView+BPAdd.h"

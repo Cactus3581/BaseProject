@@ -107,7 +107,7 @@ static CIDetector * _bp_faceDetector;
             facesRectLine.frame = facesRect;
         }
         
-        facesRectLine.backgroundColor = [UIColor clearColor];
+        facesRectLine.backgroundColor = kClearColor;
         facesRectLine.layer.borderColor = [UIColor redColor].CGColor;
         facesRectLine.layer.borderWidth = 4.0;
         

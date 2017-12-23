@@ -3,8 +3,8 @@
 //  UINavigationController+BPAdd.m
 //  叮咚(dingdong)
 //
-//  Created by YouLoft_MacMini on 16/1/31.
-//  Copyright © 2016年 wazrx. All rights reserved.
+//  Created by xiaruzhen on 16/1/31.
+//  Copyright © 2016年 xiaruzhen. All rights reserved.
 //
 
 #import "UINavigationController+BPAdd.h"

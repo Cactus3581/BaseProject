@@ -6,6 +6,8 @@
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
+#import "BPAppToolMacro.h"
+
 #ifndef BPColorMacro_h
 #define BPColorMacro_h
 
@@ -47,6 +49,18 @@
 
 #ifndef kCyanColor
 #define kCyanColor [UIColor cyanColor]
+#endif
+
+#ifndef kClearColor
+#define kClearColor [UIColor clearColor]
+#endif
+
+#ifndef kBlackColor
+#define kBlackColor [UIColor blackColor]
+#endif
+
+#ifndef kThemeColor
+#define kThemeColor (kHexColor(0x333333))
 #endif
 
 #endif /* BPColorMacro_h */

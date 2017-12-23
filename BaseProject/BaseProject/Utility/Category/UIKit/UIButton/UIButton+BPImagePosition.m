@@ -33,7 +33,7 @@
             
         case BPImagePositionRight:
             self.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth + spacing/2, 0, -(labelWidth + spacing/2));
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, -(imageHeight + spacing/2), 0, imageHeight + spacing/2);
+            self.titleEdgeInsets = UIEdgeInsetsMake(0, -(imageWith + spacing/2), 0, imageWith + spacing/2);
             break;
             
         case BPImagePositionTop:
@@ -49,6 +49,17 @@
         default:
             break;
     }
+}
+
+- (void)layoutBtnWithBtn:(UIButton *)button{
+    button.titleLabel.backgroundColor = button.backgroundColor;
+    button.imageView.backgroundColor = button.backgroundColor;
+    CGSize titleSize = button.titleLabel.bounds.size;
+    CGSize imageSize = button.imageView.bounds.size;
+    //文字左移
+    button.titleEdgeInsets = UIEdgeInsetsMake(0.0, -imageSize.width, 0.0, imageSize.width);
+    //图片右移
+    button.imageEdgeInsets = UIEdgeInsetsMake(0.0, titleSize.width, 0.0, -titleSize.width);
 }
 
 @end

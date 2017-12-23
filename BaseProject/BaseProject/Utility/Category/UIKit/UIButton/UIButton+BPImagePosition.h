@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+//可参考 http://www.it610.com/article/5196532.htm
+
 typedef NS_ENUM(NSInteger, BPImagePosition) {
     BPImagePositionLeft = 0,              //图片在左，文字在右，默认
     BPImagePositionRight = 1,             //图片在右，文字在左

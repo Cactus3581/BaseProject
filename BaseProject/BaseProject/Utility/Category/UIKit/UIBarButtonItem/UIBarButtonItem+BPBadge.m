@@ -5,8 +5,9 @@
 //  Created by xiaruzhen on 2017/12/10.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
-#import <objc/runtime.h>
+
 #import "UIBarButtonItem+BPBadge.h"
+#import <objc/runtime.h>
 
 NSString const *bp_UIBarButtonItem_badgeKey = @"bp_UIBarButtonItem_badgeKey";
 

@@ -1,9 +1,9 @@
 //
 //  UIBarButtonItem+BPAdd.h
-//  WxSelected
+//  BaseProject
 //
-//  Created by wazrx on 15/12/20.
-//  Copyright © 2015年 wazrx. All rights reserved.
+//  Created by xiaruzhen on 15/12/20.
+//  Copyright © 2015年 xiaruzhen. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

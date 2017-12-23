@@ -9,11 +9,9 @@
 #ifndef BaseProject_Prefix_pch
 #define BaseProject_Prefix_pch
 
-#import "BPCatergory.h"
+#import "BPUtilConstant.h"
 #import "BPAppMacro.h"
 #import "BPAppTool.h"
-#import "BPMainCatergory.h"
-
 #import "Masonry.h"
 
 #endif /* BaseProject_Prefix_pch */

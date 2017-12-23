@@ -9,9 +9,9 @@
 #ifndef BPAppTool_h
 #define BPAppTool_h
 
-#import "BPCacheTool.h"
 #import "BPDataTool.h"
-#import "BPNetTool.h"
 #import "BPCGUtilities.h"
+#import "BPNetTool.h"
+#import "BPCacheTool.h"
 
 #endif /* BPAppTool_h */
