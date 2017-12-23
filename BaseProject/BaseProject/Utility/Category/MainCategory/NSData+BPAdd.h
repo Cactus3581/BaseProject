@@ -3,7 +3,7 @@
 //  BaseProject
 //
 //  Created by xiaruzhen on 16/5/13.
-//  Copyright © 2016年 xiaruzhen. All rights reserved.
+//  Copyright © 2016年 cactus. All rights reserved.
 //  使用前请添加libz.tbd
 
 #import <Foundation/Foundation.h>

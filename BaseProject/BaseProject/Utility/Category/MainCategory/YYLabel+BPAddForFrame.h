@@ -3,7 +3,7 @@
 //  BaseProject
 //
 //  Created by xiaruzhen on 16/6/7.
-//  Copyright © 2016年 xiaruzhen. All rights reserved.
+//  Copyright © 2016年 cactus. All rights reserved.
 //
 
 #import <YYText/YYText.h>
