@@ -2,8 +2,8 @@
 //  UIImage+BPAdd.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/12/10.
-//  Copyright © 2017年 cactus. All rights reserved.
+//  Created by xiaruzhen on 15/12/29.
+//  Copyright © 2015年 xiaruzhen. All rights reserved.
 //
 
 #import "UIImage+BPAdd.h"
@@ -87,7 +87,7 @@ BPSYNTH_DUMMY_CLASS(UIImage_BPAdd)
     CTFontRef font = CTFontCreateWithName(CFSTR("AppleColorEmoji"), size * scale, NULL);
     if (!font) return nil;
     
-    NSAttributedString *str = [[NSAttributedString alloc] initWithString:emoji attributes:@{ (__bridge id)kCTFontAttributeName:(__bridge id)font, (__bridge id)kCTForegroundColorAttributeName:(__bridge id)[UIColor clearColor].CGColor }];
+    NSAttributedString *str = [[NSAttributedString alloc] initWithString:emoji attributes:@{ (__bridge id)kCTFontAttributeName:(__bridge id)font, (__bridge id)kCTForegroundColorAttributeName:(__bridge id)kClearColor.CGColor }];
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef ctx = CGBitmapContextCreate(NULL, size * scale, size * scale, 8, 0, colorSpace, kCGBitmapByteOrderDefault | kCGImageAlphaPremultipliedFirst);
     CGContextSetInterpolationQuality(ctx, kCGInterpolationHigh);

@@ -14,21 +14,29 @@
 
 // Badge value to be display
 @property (nonatomic) NSString *bp_badgeValue;
+
 // Badge background color
 @property (nonatomic) UIColor *bp_badgeBGColor;
+
 // Badge text color
 @property (nonatomic) UIColor *bp_badgeTextColor;
+
 // Badge font
 @property (nonatomic) UIFont *bp_badgeFont;
+
 // Padding value for the badge
 @property (nonatomic) CGFloat bp_badgePadding;
+
 // Minimum size badge to small
 @property (nonatomic) CGFloat bp_badgeMinSize;
+
 // Values for offseting the badge over the BarButtonItem you picked
 @property (nonatomic) CGFloat bp_badgeOriginX;
 @property (nonatomic) CGFloat bp_badgeOriginY;
+
 // In case of numbers, remove the badge when reaching zero
 @property BOOL bp_shouldHideBadgeAtZero;
+
 // Badge has a bounce animation when value changes
 @property BOOL bp_shouldAnimateBadge;
 

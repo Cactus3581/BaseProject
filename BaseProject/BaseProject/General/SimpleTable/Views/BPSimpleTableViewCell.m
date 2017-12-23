@@ -25,8 +25,12 @@ static NSString *cellIdentifier = @"BPSimpleTableViewCell";
     return cell;
 }
 
-
 - (void)setModel:(BPSimpleModel *)model {
+    if (model.subVc_array.count) {
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }else {
+        self.accessoryType = UITableViewCellAccessoryNone;
+    }
     self.textLabel.text = model.title;
     self.detailTextLabel.text = model.briefIntro;
 }

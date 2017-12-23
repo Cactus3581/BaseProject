@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 static NSInteger second = 3600;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -24,6 +25,18 @@ static inline NSString * BPValidateString(NSString *rawString) {
         return [NSString stringWithFormat:@"%@", rawString];
     }
     return rawString;
+};
+
+
+//文字宽度处理
+static inline CGSize BPStringSize(NSString *rawString,UIFont *font) {
+    NSString *string = BPValidateString(rawString);
+    return [string length] > 0 ? [string sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
+};
+
+static inline CGSize BPMultiineStringSize(NSString *rawString,UIFont *font,CGSize maxSize,NSStringDrawingOptions mode) {
+    NSString *string = BPValidateString(rawString);
+    return [string length] > 0 ? [string boundingRectWithSize:maxSize options:mode attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
 };
 
 static inline NSString * BPJSON(id theData) {
@@ -137,5 +150,27 @@ static inline NSString * BPTimeString(NSInteger seconds) {
     NSInteger second = (NSInteger)seconds % 60;
     return  [NSString stringWithFormat:@"%02td:%02td",minute,second];
 };
+
+// 占位符
+#ifndef kPlacedString
+#define kPlacedString XRZPlacedString()
+#endif
+
+#ifndef kZero
+#define kZero 0
+#endif
+
+/**
+ 占位空字符串
+ */
+static inline NSString * XRZPlacedString () {
+    static NSString *placedString;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        placedString = @"";
+        
+    });
+    return placedString;
+}
 
 NS_ASSUME_NONNULL_END

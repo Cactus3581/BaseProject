@@ -63,7 +63,7 @@
  */
 -(void)bp_makeTransparent
 {
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = kClearColor;
     self.opaque = NO;
 }
 /**

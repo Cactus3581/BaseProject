@@ -6,7 +6,6 @@
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-
 /*
  1. 导航栏手势的影响
  2. 对导航栏基类的UI设置，对特定页面的导航栏ui设置
@@ -33,12 +32,18 @@
     //[self configNavigationItem];//navigationItem
     //[self configNavigationBar];//navigationBar
     //[self configSubViews];      //由导航栏引起的零点坐标问题
-    //[self configNewFeature];      // iOS 11 新特性
+    //[self configNewFeature];    // iOS 11 新特性
+    [self testBaseBar];
+}
+#pragma mark - 测试基类bar
+- (void)testBaseBar {
+    [self setLeftBarButtonTitle:@"返回"];
 }
 
 #pragma mark iOS 11 新特性
 - (void)configNewFeature {
     if (kiOS11) {
+        
         //self.navigationController.navigationBar.prefersLargeTitles = YES;
         
         /*
@@ -49,11 +54,10 @@
          // Never
          UINavigationItemLargeTitleDisplayModeNever,
          */
+        
         //self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAlways;
         
-        
         //self.viewRespectsSystemMinimumLayoutMargins = YES;
-        
         
         NSString *edgeStr = NSStringFromUIEdgeInsets(self.view.safeAreaInsets);
         NSString *layoutFrmStr = NSStringFromCGRect(self.view.safeAreaLayoutGuide.layoutFrame);
@@ -89,8 +93,8 @@
      UIImageRenderingModeAlwaysOriginal,     //  始终绘制图片原始状态，不受tintColor影响
      UIImageRenderingModeAlwaysTemplate,     //始终根据Tint Color绘制图片，忽略图片的颜色信息。
      */
-    UIImage *navi_backImage = [UIImage imageNamed:@"naviBar"];
-    //[self.navigationController.navigationBar setBackgroundImage:navi_backImage forBarMetrics:UIBarMetricsDefault];
+    UIImage *backImage = [UIImage imageNamed:@"naviBar"];
+    //[self.navigationController.navigationBar setBackgroundImage:backImage forBarMetrics:UIBarMetricsDefault];
     
     //导航栏透明
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
@@ -108,7 +112,7 @@
     //[navigationBar setShadowImage:[UIImage imageWithColor:[UIColor redColor]]];
     
     [UINavigationBar appearance].tintColor = kOrangeColor;
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navi_backImage"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"backImage"] forBarMetrics:UIBarMetricsDefault];
     
     /*
      设置风格：
@@ -132,7 +136,7 @@
     
     
     //定制返回按钮
-    UIImage *navi_item_Image = [[UIImage imageNamed:@"back"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImage *navi_item_Image = [[UIImage imageNamed:@"navi_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     //两个要一起用,为啥这么用，苹果言语不详
     self.navigationController.navigationBar.backIndicatorImage = navi_item_Image;
     self.navigationController.navigationBar.backIndicatorTransitionMaskImage = navi_item_Image;

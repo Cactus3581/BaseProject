@@ -2,9 +2,10 @@
 //  UIImage+BPAdd.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/12/10.
-//  Copyright © 2017年 cactus. All rights reserved.
+//  Created by xiaruzhen on 15/12/29.
+//  Copyright © 2015年 xiaruzhen. All rights reserved.
 //
+
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN

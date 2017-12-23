@@ -2,8 +2,8 @@
 //  UIColor+BPAdd.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/12/10.
-//  Copyright © 2017年 cactus. All rights reserved.
+//  Created by xiaruzhen on 15/12/18.
+//  Copyright © 2015年 xiaruzhen. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -15,18 +15,6 @@ typedef NS_ENUM (NSUInteger, BPGradientStyle) {
     BPGradientStyleRadial,//中间扩散
     BPGradientStyleTopToBottom//上->下渐变
 };
-
-#ifndef rgb
-#define rgb(_r_, _g_, _b_) [UIColor colorWithRed:(_r_) / 255.0 green:(_g_) / 255.0 blue:(_b_) / 255.0 alpha:1.0]
-#endif
-
-#ifndef rgba
-#define rgba(_r_, _g_, _b_, _a_) [UIColor colorWithRed:(_r_) / 255.0 green:(_g_) / 255.0 blue:(_b_) / 255.0 alpha:(_a_)]
-#endif
-
-#ifndef rgbf
-#define rgbf(_r_, _g_, _b_) [UIColor colorWithRed:(_r_) green:(_g_) blue:(_b_) alpha:1.0]
-#endif
 
 #ifndef hsb
 #define hsb(_h_, _s_, _b_) [UIColor colorWithHue:(_h_) / 360.0f saturation:(_s_) / 100.0f brightness:(_b_)/100.0f alpha:1.0]

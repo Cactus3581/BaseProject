@@ -8,6 +8,7 @@
 
 #import "NSObject+BPRuntime.h"
 #import <objc/runtime.h>
+
 BOOL _method_swizzle(Class klass, SEL origSel, SEL altSel)
 {
     if (!klass)

@@ -8,7 +8,7 @@
 
 #import "BPBaseNavigationController.h"
 
-@interface BPBaseNavigationController ()
+@interface BPBaseNavigationController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -16,22 +16,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.forbiddenInteractivePopGestureRecognizer = NO;
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        //修复navigationController侧滑关闭失效的问题
+        self.interactivePopGestureRecognizer.delegate = self;
+    }
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
+//- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+//    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)] && animated){
+//        self.interactivePopGestureRecognizer.enabled = NO;
+//    }
+//    if (!self.shouldIgnorePushingViewControllers) {
+//        [super pushViewController:viewController animated:animated];
+//    }
+//    self.shouldIgnorePushingViewControllers = YES;
+//}
+//
+//- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+//    if (viewController == navigationController.viewControllers.firstObject) {
+//        navigationController.interactivePopGestureRecognizer.enabled = NO;
+//    } else {
+//        if(self.forbiddenInteractivePopGestureRecognizer) {
+//            navigationController.interactivePopGestureRecognizer.enabled = NO;
+//        } else {
+//            navigationController.interactivePopGestureRecognizer.enabled = YES;
+//        }
+//    }
+//    self.shouldIgnorePushingViewControllers = NO;
+//}
+//
+//- (NSArray *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated {
+//    if([self respondsToSelector:@selector(interactivePopGestureRecognizer)]){
+//        self.interactivePopGestureRecognizer.enabled = NO;
+//    }
+//    return [super popToViewController:viewController animated:animated];
+//}
+//
+//- (NSArray *)popToRootViewControllerAnimated:(BOOL)animated {
+//    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)] && animated) {
+//        self.interactivePopGestureRecognizer.enabled = NO;
+//    }
+//    return [super popToRootViewControllerAnimated:animated];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

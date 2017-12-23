@@ -45,7 +45,7 @@ static void *BPSubstitutedViewAssociationKey = &BPSubstitutedViewAssociationKey;
 }
 
 - (void)bp_stopAnimating {
-    NSNumber* positionToRestore = objc_getAssociatedObject(self, BPLoaderPositionAssociationKey);
+    NSNumber *positionToRestore = objc_getAssociatedObject(self, BPLoaderPositionAssociationKey);
     id componentToRestore = objc_getAssociatedObject(self, BPSubstitutedViewAssociationKey);
     
     // restore UI if animation was in a progress
@@ -64,7 +64,6 @@ static void *BPSubstitutedViewAssociationKey = &BPSubstitutedViewAssociationKey;
                 break;
         }
     }
-    
     objc_setAssociatedObject(self, BPLoaderPositionAssociationKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     objc_setAssociatedObject(self, BPSubstitutedViewAssociationKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

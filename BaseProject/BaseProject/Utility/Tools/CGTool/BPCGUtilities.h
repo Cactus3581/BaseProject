@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -138,7 +139,7 @@ static inline UIEdgeInsets BPSafeAreaInset(UIView *view) {
  @param view vc.view
  @return 导航栏高度
  */
-static inline CGFloat BPCustomNaviHeight(UIView *view) {
+static inline CGFloat BPSafeAreaCustomNaviHeight(UIView *view) {
     UIEdgeInsets inset = BPSafeAreaInset(view);
     CGFloat height = kCustomNaviHeight;
     height += inset.top  > 0 ? inset.top : kPrimaryStatusBarHeight;
@@ -151,7 +152,7 @@ static inline CGFloat BPCustomNaviHeight(UIView *view) {
  @param view vc.view
  @return 状态栏的高度
  */
-static inline CGFloat BPStatusBarHeight(UIView *view) {
+static inline CGFloat BPSafeAreaStatusBarHeight(UIView *view) {
     UIEdgeInsets inset = BPSafeAreaInset(view);
     CGFloat inset_top = inset.top;
     return inset_top  > 0 ? inset_top : kPrimaryStatusBarHeight;
@@ -164,8 +165,8 @@ static inline CGFloat BPStatusBarHeight(UIView *view) {
  @param view vc.view
  @return 获取导航栏应增加的高度
  */
-static inline CGFloat BPStatusBarMetaHeight(UIView *view) {
-    CGFloat statusBarHeight = BPStatusBarHeight(view);
+static inline CGFloat BPSafeAreaStatusBarMetaHeight(UIView *view) {
+    CGFloat statusBarHeight = BPSafeAreaStatusBarHeight(view);
     return statusBarHeight - kPrimaryStatusBarHeight;
 }
 
@@ -175,7 +176,7 @@ static inline CGFloat BPStatusBarMetaHeight(UIView *view) {
  @param view vc.view
  @return bottom
  */
-static inline CGFloat BPHomeBarBottom(UIView *view) {
+static inline CGFloat BPSafeAreaHomeBarBottom(UIView *view) {
     UIEdgeInsets inset = BPSafeAreaInset(view);
     return inset.bottom;
 }
@@ -194,25 +195,26 @@ static inline CGFloat BPHomeBarBottom(UIView *view) {
  @param view vc.view
  @return 元素的centerY值
  */
-static inline CGFloat BPViewCenterYInNavi(UIView *view) { //centerY + 10 | centerY + 22
-    CGFloat centerY =  BPStatusBarHeight(view) / 2.0;
+static inline CGFloat BPSafeAreaViewCenterYInNavi(UIView *view) { //centerY + 10 | centerY + 22
+    CGFloat centerY =  BPSafeAreaStatusBarHeight(view) / 2.0;
     return centerY;
 }
 
 #pragma mark - 下面为写死高度的宏。优先使用上面的动态获取safeArea的值，如果特定环境下上面方法不能使用，可以使用下面的宏。
+
 // 状态栏增加的高度
-#ifndef kStatusBarAddHeight
-#define kStatusBarAddHeight (iPhoneX ? 24.f : 0.f)
+#ifndef kSafeAreaStatusBarMetaHeight
+#define kSafeAreaStatusBarMetaHeight (iPhoneX ? 24.f : 0.f)
 #endif
 
 // 适配iPhone X 状态栏高度
-#ifndef kStatusBarHeight
-#define kStatusBarHeight ((kStatusBarAddHeight) + (kPrimaryStatusBarHeight))
+#ifndef kSafeAreaStatusBarHeight
+#define kSafeAreaStatusBarHeight ((kSafeAreaStatusBarAddHeight) + (kPrimaryStatusBarHeight))
 #endif
 
 //适配iPhone X 导航栏高度
-#ifndef kNaviHeight
-#define kNaviHeight ((kStatusBarHeight) + (kCustomNaviHeight))
+#ifndef kSafeAreaNaviHeight
+#define kSafeAreaNaviHeight ((kSafeAreaStatusBarHeight) + (kCustomNaviHeight))
 #endif
 
 //适配iPhone X 距离底部的距离
@@ -226,9 +228,8 @@ static inline CGFloat BPViewCenterYInNavi(UIView *view) { //centerY + 10 | cente
 #endif
 
 //适配iPhone X Tabbar高度
-#ifndef kTabbarHeight
-#define kTabbarHeight ((kPrimaryTabbarHeight) + (kHomeBarBottom))
+#ifndef kSafeAreaTabbarHeight
+#define kSafeAreaTabbarHeight ((kPrimaryTabbarHeight) + (kHomeBarBottom))
 #endif
 
 NS_ASSUME_NONNULL_END
-

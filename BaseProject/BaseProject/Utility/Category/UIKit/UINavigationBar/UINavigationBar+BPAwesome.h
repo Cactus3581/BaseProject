@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface UINavigationBar (BPAwesome)
+
 - (void)bp_setBackgroundColor:(UIColor *)backgroundColor;
 - (void)bp_setElementsAlpha:(CGFloat)alpha;
 - (void)bp_setTranslationY:(CGFloat)translationY;
 - (void)bp_reset;
+
 @end

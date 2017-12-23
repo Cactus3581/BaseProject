@@ -27,7 +27,7 @@ static CGFloat cellH = 50;
     [super viewDidLoad];
     self.title = @"Group";
     self.view.backgroundColor = kGreenColor;
-//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navi_backImage"] forBarMetrics:UIBarMetricsDefault];
+//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"backImage"] forBarMetrics:UIBarMetricsDefault];
 //    self.extendedLayoutIncludesOpaqueBars = YES;
 //    self.edgesForExtendedLayout =  UIRectEdgeNone;
 //    self.navigationController.navigationBar.translucent = NO;

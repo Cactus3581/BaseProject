@@ -11,28 +11,28 @@
 @implementation UIView (BPSafeArea)
 
 - (void)updateNaviHeightWithConstraint:(NSLayoutConstraint *)constraint {
-    CGFloat value = BPCustomNaviHeight(self);
+    CGFloat value = BPSafeAreaCustomNaviHeight(self);
     if (value != constraint.constant) {
         constraint.constant = value;
     }
 }
 
 - (void)updateHomeBarBottomWithConstraint:(NSLayoutConstraint *)constraint {
-    CGFloat value = BPHomeBarBottom(self);
+    CGFloat value = BPSafeAreaHomeBarBottom(self);
     if (value != constraint.constant) {
         constraint.constant = value;
     }
 }
 
 - (void)updateStatusBarHeightWithConstraint:(NSLayoutConstraint *)constraint {
-    CGFloat value = BPStatusBarHeight(self);
+    CGFloat value = BPSafeAreaStatusBarHeight(self);
     if (value != constraint.constant) {
         constraint.constant = value;
     }
 }
 
 - (void)updateViewCenterYInNaviWithConstraint:(NSLayoutConstraint *)constraint {
-    CGFloat value = BPViewCenterYInNavi(self);
+    CGFloat value = BPSafeAreaViewCenterYInNavi(self);
     if (value != constraint.constant) {
         constraint.constant = value;
     }

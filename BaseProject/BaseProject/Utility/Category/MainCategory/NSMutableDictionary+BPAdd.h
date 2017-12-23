@@ -2,8 +2,8 @@
 //  NSMutableDictionary+BPAdd.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/12/10.
-//  Copyright © 2017年 cactus. All rights reserved.
+//  Created by xiaruzhen on 16/5/4.
+//  Copyright © 2016年 xiaruzhen. All rights reserved.
 //
 #import <Foundation/Foundation.h>
 NS_ASSUME_NONNULL_BEGIN
