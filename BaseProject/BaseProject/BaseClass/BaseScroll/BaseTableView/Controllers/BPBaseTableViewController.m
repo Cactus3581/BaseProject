@@ -147,7 +147,7 @@
 }
 
 - (void)dealloc{
-    NSLog(@"销毁了,移除通知");
+
 }
 
 @end

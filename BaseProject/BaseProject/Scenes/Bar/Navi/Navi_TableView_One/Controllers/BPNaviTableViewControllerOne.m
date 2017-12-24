@@ -11,8 +11,6 @@
 
 @interface BPNaviTableViewControllerOne ()<UITableViewDataSource, UITabBarDelegate, UIScrollViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) UIImageView *naviImageView;
-
 @end
 
 @implementation BPNaviTableViewControllerOne
@@ -20,39 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kRedColor;
-    self.navigationItem.title = @"系统导航栏";
-    [self initTableView];
+     [self initTableView];
     [self configNaviBar];
 }
 
 - (void)configNaviBar {
-    if (kiOS11) {
-        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    }
-    //导航栏透明
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"naviBar"]
-                                                  forBarMetrics:UIBarMetricsDefault];
-    
-    //导航栏透明渐变:对self.barImageView.alpha 做出改变
-    _naviImageView = self.navigationController.navigationBar.subviews.firstObject;
-    _naviImageView.alpha = 0.f;
-    
-    //shadowImage:是导航栏下面的那根细线，如果不设置则会看到一根线。
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-}
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat offset = scrollView.contentOffset.y;
-    if (offset > 0) {
-        if (offset>=100) {
-            _naviImageView.alpha = 1.0f;
-        }else {
-            _naviImageView.alpha = ABS(offset) / 100.0f;
-        }
-    }else {
-        _naviImageView.alpha = 1.0f;
-
-    }
 }
 
 #pragma mark 导航栏做动画时的隐藏与显示

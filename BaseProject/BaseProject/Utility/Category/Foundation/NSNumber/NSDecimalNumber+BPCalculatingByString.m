@@ -102,7 +102,7 @@ tokenType typeForCharacter (const unichar character)
     }
     
 #ifdef DEBUG
-    NSLog(@"Invalid Operator: %@ is not a valid character." ,[NSString stringWithCharacters:&character length:1]);
+    BPLog(@"Invalid Operator: %@ is not a valid character." ,[NSString stringWithCharacters:&character length:1]);
     exit(EXIT_FAILURE);
 #endif
     
@@ -189,7 +189,7 @@ NSArray* tokenizeEquation (NSString *equation, NSDictionary *numbers)
                     
                 } else {
 #ifdef DEBUG
-                    NSLog(@"Invalid Variable: object %@ has no string value.", object);
+                    BPLog(@"Invalid Variable: object %@ has no string value.", object);
                     exit(EXIT_FAILURE);
 #endif
                 }

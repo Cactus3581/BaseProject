@@ -140,8 +140,10 @@
 		014995331FB494D800077866 /* BPBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014995321FB494D800077866 /* BPBaseTableView.m */; };
 		0149953A1FB4A3D600077866 /* BPRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014995381FB4A3D500077866 /* BPRootTabBarController.m */; };
 		0149953D1FB4A3F900077866 /* BPRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0149953C1FB4A3F900077866 /* BPRootNavigationController.m */; };
-		0158A0501FDFD3570011AFE9 /* UILabel+KSInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158A04F1FDFD3570011AFE9 /* UILabel+KSInterval.m */; };
-		01733FD81FA974FB006192F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01733FD61FA974FB006192F0 /* Main.storyboard */; };
+		014ED0411FEFF0A300D2926C /* BPBackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 014ED03D1FEFF0A300D2926C /* BPBackButton.m */; };
+		014ED0421FEFF0A300D2926C /* BPImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 014ED03F1FEFF0A300D2926C /* BPImageButton.m */; };
+		014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 014ED04F1FEFF9EE00D2926C /* Localizable.strings */; };
+		0158A0501FDFD3570011AFE9 /* UILabel+BPInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */; };
 		01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01733FD91FA974FB006192F0 /* Assets.xcassets */; };
 		01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01733FDB1FA974FB006192F0 /* LaunchScreen.storyboard */; };
 		01733FE01FA974FB006192F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01733FDF1FA974FB006192F0 /* main.m */; };
@@ -604,11 +606,17 @@
 		014995391FB4A3D500077866 /* BPRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPRootTabBarController.h; sourceTree = "<group>"; };
 		0149953B1FB4A3F900077866 /* BPRootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPRootNavigationController.h; sourceTree = "<group>"; };
 		0149953C1FB4A3F900077866 /* BPRootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPRootNavigationController.m; sourceTree = "<group>"; };
-		0158A04E1FDFD3560011AFE9 /* UILabel+KSInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+KSInterval.h"; sourceTree = "<group>"; };
-		0158A04F1FDFD3570011AFE9 /* UILabel+KSInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+KSInterval.m"; sourceTree = "<group>"; };
+		014ED03B1FEFF0A300D2926C /* BPBackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBackButton.h; sourceTree = "<group>"; };
+		014ED03C1FEFF0A300D2926C /* BPImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPImageButton.h; sourceTree = "<group>"; };
+		014ED03D1FEFF0A300D2926C /* BPBackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBackButton.m; sourceTree = "<group>"; };
+		014ED03F1FEFF0A300D2926C /* BPImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPImageButton.m; sourceTree = "<group>"; };
+		014ED0441FEFF76F00D2926C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		014ED04E1FEFF9EE00D2926C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		014ED0501FEFF9F000D2926C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0158A04E1FDFD3560011AFE9 /* UILabel+BPInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BPInterval.h"; sourceTree = "<group>"; };
+		0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BPInterval.m"; sourceTree = "<group>"; };
 		015F4F1A1FDD7D9B000C6355 /* BPAppInfoMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppInfoMacro.h; sourceTree = "<group>"; };
 		01733FCD1FA974FB006192F0 /* BaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		01733FD71FA974FB006192F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01733FD91FA974FB006192F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01733FDC1FA974FB006192F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01733FDE1FA974FB006192F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1925,8 +1933,8 @@
 		010DB6401FDD4D400099E66F /* UILable */ = {
 			isa = PBXGroup;
 			children = (
-				0158A04E1FDFD3560011AFE9 /* UILabel+KSInterval.h */,
-				0158A04F1FDFD3570011AFE9 /* UILabel+KSInterval.m */,
+				0158A04E1FDFD3560011AFE9 /* UILabel+BPInterval.h */,
+				0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */,
 				010DB6411FDD4D400099E66F /* UILabel+BPAutoSize.h */,
 				010DB6451FDD4D400099E66F /* UILabel+BPAutoSize.m */,
 				010DB6461FDD4D400099E66F /* UILabel+BPSuggestSize.h */,
@@ -2545,6 +2553,17 @@
 			path = CardPopView;
 			sourceTree = "<group>";
 		};
+		014ED0391FEFF0A300D2926C /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				014ED03B1FEFF0A300D2926C /* BPBackButton.h */,
+				014ED03D1FEFF0A300D2926C /* BPBackButton.m */,
+				014ED03C1FEFF0A300D2926C /* BPImageButton.h */,
+				014ED03F1FEFF0A300D2926C /* BPImageButton.m */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		01733FC41FA974FB006192F0 = {
 			isa = PBXGroup;
 			children = (
@@ -2581,7 +2600,6 @@
 				01C935A81FC338CD00D98FD6 /* Macro */,
 				0173401B1FA9753F006192F0 /* Resources */,
 				0184BF7A1FD6DA8B00CB9AAD /* TestUnit */,
-				01733FD61FA974FB006192F0 /* Main.storyboard */,
 				01733FD91FA974FB006192F0 /* Assets.xcassets */,
 				01733FDB1FA974FB006192F0 /* LaunchScreen.storyboard */,
 				01733FDE1FA974FB006192F0 /* Info.plist */,
@@ -2792,6 +2810,7 @@
 		017A9A2D1FDD2A9A00CDA599 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				014ED0391FEFF0A300D2926C /* Button */,
 				017A9A2E1FDD2A9A00CDA599 /* UILabel */,
 				017A9A311FDD2A9A00CDA599 /* UICollectionView */,
 			);
@@ -3343,6 +3362,7 @@
 			isa = PBXGroup;
 			children = (
 				01352FE21FD2DDA20011D65C /* MainCatalog.plist */,
+				014ED04F1FEFF9EE00D2926C /* Localizable.strings */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -4007,6 +4027,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 01733FC41FA974FB006192F0;
 			productRefGroup = 01733FCE1FA974FB006192F0 /* Products */;
@@ -4026,6 +4047,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01119A181FD3EE96006DC02E /* BPCollectionReusableHeadView.xib in Resources */,
+				014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */,
 				01C935A51FC337E100D98FD6 /* BPSYViewController.xib in Resources */,
 				01C935831FC3358B00D98FD6 /* launchImage@2x.png in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
@@ -4036,7 +4058,6 @@
 				01C935841FC3358B00D98FD6 /* launchImage@3x.png in Resources */,
 				01119A0D1FD3EE29006DC02E /* BPCollectionViewCell.xib in Resources */,
 				01C935A61FC337E100D98FD6 /* BPZTViewController.xib in Resources */,
-				01733FD81FA974FB006192F0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4135,6 +4156,7 @@
 				010DB7451FDD4D450099E66F /* UIImage+BPAlpha.m in Sources */,
 				01DF31E51FDD3B0300B8A955 /* NSDecimalNumber+BPExtensions.m in Sources */,
 				010DB7211FDD4D450099E66F /* UIWebView+BPBlocks.m in Sources */,
+				014ED0411FEFF0A300D2926C /* BPBackButton.m in Sources */,
 				01D22BE71FDD814000BCC4AD /* NSNotificationCenter+BPAdd.m in Sources */,
 				010DB7441FDD4D450099E66F /* UIImage+BPBetterFace.m in Sources */,
 				010DB75A1FDD4D450099E66F /* UIFont+BPTTF.m in Sources */,
@@ -4158,7 +4180,7 @@
 				01DF31C71FDD3A9100B8A955 /* NSUserDefaults+BPiCloudSync.m in Sources */,
 				01DF32591FDD3B9D00B8A955 /* NSData+BPzlib.m in Sources */,
 				01DF325D1FDD3B9D00B8A955 /* NSData+BPHash.m in Sources */,
-				0158A0501FDFD3570011AFE9 /* UILabel+KSInterval.m in Sources */,
+				0158A0501FDFD3570011AFE9 /* UILabel+BPInterval.m in Sources */,
 				01DF31D71FDD3A9100B8A955 /* NSInvocation+BPBb.m in Sources */,
 				010DB7911FDD4D640099E66F /* UIView+BPShake.m in Sources */,
 				01BCB33E1FB55921009EF64E /* BPBaseServerAPI.m in Sources */,
@@ -4231,6 +4253,7 @@
 				01DF32601FDD3B9D00B8A955 /* NSData+BPGzip.m in Sources */,
 				01D22BD01FDD814000BCC4AD /* UICollectionViewFlowLayout+BPAdd.m in Sources */,
 				01D22BE21FDD814000BCC4AD /* UIImageView+BPAdd.m in Sources */,
+				014ED0421FEFF0A300D2926C /* BPImageButton.m in Sources */,
 				01DF32241FDD3B3000B8A955 /* NSString+BPTrims.m in Sources */,
 				01D22BCA1FDD814000BCC4AD /* NSObject+BPAdd.m in Sources */,
 				010DB73D1FDD4D450099E66F /* UIImage+BPVector.m in Sources */,
@@ -4463,18 +4486,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		01733FD61FA974FB006192F0 /* Main.storyboard */ = {
+		014ED04F1FEFF9EE00D2926C /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				01733FD71FA974FB006192F0 /* Base */,
+				014ED04E1FEFF9EE00D2926C /* en */,
+				014ED0501FEFF9F000D2926C /* zh-Hans */,
 			);
-			name = Main.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		01733FDB1FA974FB006192F0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				01733FDC1FA974FB006192F0 /* Base */,
+				014ED0441FEFF76F00D2926C /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -4486,6 +4511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -4541,6 +4567,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

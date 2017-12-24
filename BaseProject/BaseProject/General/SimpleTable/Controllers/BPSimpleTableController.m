@@ -49,10 +49,19 @@
     NSString *className = model.fileName;
     Class classVc = NSClassFromString(className);
     if (classVc) {
-        UIViewController *vc = [[classVc alloc] init];
+        BPBaseViewController *vc = [[classVc alloc] init];
+        [vc setLeftBarButtonTitle:model.title];
         [self.navigationController pushViewController:vc animated:YES];
     }
+    //点击后取消选中颜色。同[self.tableView deselectRowAtIndexPath:indexPath animated:NO];效果
+    BPSimpleTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.selected = NO;
 }
+
+- (void)tableView:(UITableView*)tableView didDeselectRowAtIndexPath:(NSIndexPath*)indexPath {
+
+}
+
 
 - (NSArray *)dataArray {
     if (!_dataArray) {

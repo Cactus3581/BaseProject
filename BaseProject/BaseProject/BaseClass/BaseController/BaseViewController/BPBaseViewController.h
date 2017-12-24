@@ -42,4 +42,6 @@
 - (void)configRightBarButtomItem;
 
 - (void)configLeftBarButtomItem;
+
+- (void)configBarDefaulyStyle;
 @end

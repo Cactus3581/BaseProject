@@ -29,7 +29,6 @@ typedef void(^BPAddViewBlock)(CGRect frame);
 @property (nonatomic) CGFloat bottomFromSuperView;
 @property (nonatomic) CGFloat rightFromSuperView;
 
-
 #pragma mark - snapshot (截图相关)
 
 @property (nullable, nonatomic, readonly) UIImage *snapshotImage;

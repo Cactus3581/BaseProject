@@ -16,6 +16,7 @@ static NSString *cellIdentifier = @"BPSimpleTableViewCell";
     BPSimpleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
         cell = [[BPSimpleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        //cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return cell;
 }

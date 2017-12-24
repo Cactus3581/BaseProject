@@ -61,15 +61,20 @@
     if (classVc) {
         if (model.subVc_array.count) {
             BPSimpleTableController *vc = [[classVc alloc] init];
+            [vc setLeftBarButtonTitle:model.title];
+            //[vc setLeftBarButtonTitle:BPLocalizedString(bp_naviItem_backTitle)];
             vc.dataArray = model.subVc_array;
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }else {
-            UIViewController * vc = [[classVc alloc] init];
+            BPBaseViewController * vc = [[classVc alloc] init];
             vc.hidesBottomBarWhenPushed = YES;
+            //vc.navigationItem.title = model.title;
+            [vc setLeftBarButtonTitle:model.title];
             [self.navigationController pushViewController:vc animated:YES];
         }
     }
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 - (NSArray *)dataArray {

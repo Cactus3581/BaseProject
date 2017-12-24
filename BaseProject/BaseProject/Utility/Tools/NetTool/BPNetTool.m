@@ -14,7 +14,7 @@
 static BPCacheTool *netCacheTool;
 __attribute__((constructor))
 static void BPStartMonitoringNetStatus(){
-    NSLog(@"开启网络监听,初始化网络缓存工具");
+    BPLog(@"开启网络监听,初始化网络缓存工具");
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
     [manager startMonitoring];
     netCacheTool = [BPCacheTool bp_cacheToolWithType:BPCacheToolTypeMemoryAndDisk name:@"BPNetCache"];

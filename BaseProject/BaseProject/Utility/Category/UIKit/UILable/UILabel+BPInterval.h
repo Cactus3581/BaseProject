@@ -1,5 +1,5 @@
 //
-//  UILabel+KSInterval.h
+//  UILabel+BPInterval.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/12/10.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UILabel (KSInterval)
+@interface UILabel (BPInterval)
 
 /**
  *  改变行间距

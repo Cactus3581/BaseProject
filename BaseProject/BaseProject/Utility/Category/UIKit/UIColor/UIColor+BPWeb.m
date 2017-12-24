@@ -34,7 +34,7 @@
     int r = arrRGBA[0] * 255;
     int g = arrRGBA[1] * 255;
     int b = arrRGBA[2] * 255;
-    NSLog(@"%d,%d,%d", r, g, b);
+    BPLog(@"%d,%d,%d", r, g, b);
     NSString *webColor = [NSString stringWithFormat:@"#%02X%02X%02X", r, g, b];
     return webColor;
 }

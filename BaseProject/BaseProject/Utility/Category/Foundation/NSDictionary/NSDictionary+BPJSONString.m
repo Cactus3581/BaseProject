@@ -20,7 +20,7 @@
                                                          error:&error];
     if (jsonData == nil) {
 #ifdef DEBUG
-        NSLog(@"fail to get JSON from dictionary: %@, error: %@", self, error);
+        BPLog(@"fail to get JSON from dictionary: %@, error: %@", self, error);
 #endif
         return nil;
     }

@@ -44,7 +44,7 @@
     NSError*   error = nil;
     id array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
     
-    if(array==nil) NSLog(@"An error occured in meta parser.");
+    if(array==nil) BPLog(@"An error occured in meta parser.");
     return array;
 }
 

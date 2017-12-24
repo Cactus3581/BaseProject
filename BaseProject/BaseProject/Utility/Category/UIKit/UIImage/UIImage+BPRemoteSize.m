@@ -261,7 +261,7 @@ typedef uint32_t dword;
 //        NSURLRequest* request = [NSURLRequest requestWithURL:imgURL];
 //
 //        [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *resp, NSData *d, NSError *e) {
-//            NSLog(@"respone%@", [(NSHTTPURLResponse*)resp allHeaderFields]);
+//            BPLog(@"respone%@", [(NSHTTPURLResponse*)resp allHeaderFields]);
 //    
 //            
 //        }];

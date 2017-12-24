@@ -13,9 +13,18 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.backgroundColor = kWhiteColor;
+        [self awakeFromNib];
     }
     return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self awakeFromNib];
+}
+
+- (void)config {
+    self.backgroundColor = kWhiteColor;
 }
 
 @end

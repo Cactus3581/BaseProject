@@ -61,7 +61,7 @@
         
         NSString *edgeStr = NSStringFromUIEdgeInsets(self.view.safeAreaInsets);
         NSString *layoutFrmStr = NSStringFromCGRect(self.view.safeAreaLayoutGuide.layoutFrame);
-        NSLog(@"viewDidAppear safeAreaInsets = %@, layoutFrame = %@", edgeStr, layoutFrmStr);
+        BPLog(@"viewDidAppear safeAreaInsets = %@, layoutFrame = %@", edgeStr, layoutFrmStr);
         //2017-09-19 14:45:50.257807+0800 Sample[5608:1365070] viewDidAppear safeAreaInsets = {20, 0, 0, 0}, layoutFrame = {{0, 20}, {375, 603}}
         
         //self.view.directionalLayoutMargins = NSDirectionalEdgeInsetsMake(0, 0, 0, 30);

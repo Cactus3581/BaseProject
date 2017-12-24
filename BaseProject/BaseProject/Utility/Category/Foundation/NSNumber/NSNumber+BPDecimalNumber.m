@@ -9,6 +9,7 @@
 #import "NSNumber+BPDecimalNumber.h"
 
 @implementation NSNumber (BPDecimalNumber)
+
 - (NSNumber *)doubleDecimalNumberWithFloat:(CGFloat)number {
     NSNumber * NSNumber_number = [self decimalNumberWithNumberString:[NSString stringWithFormat:@"%g",number]];
     return NSNumber_number;
@@ -28,4 +29,5 @@
 - (NSDecimalNumber *)decimalNumberWithNumberString:(NSString *)numberValue {
     return [NSDecimalNumber decimalNumberWithString:numberValue];
 }
+
 @end

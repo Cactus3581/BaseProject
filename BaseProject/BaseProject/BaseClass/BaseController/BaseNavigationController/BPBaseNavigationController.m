@@ -21,10 +21,16 @@
         //修复navigationController侧滑关闭失效的问题
         self.interactivePopGestureRecognizer.delegate = self;
     }
+    [self configBarStyle];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
+- (void)configBarStyle {
+    /*
+     self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:kWhiteColor,NSFontAttributeName:BPFont(18)};
+     self.navigationBar.barTintColor = kWhiteColor;
+     self.navigationBar.tintColor = kWhiteColor;//影响返回按钮的颜色,因为返回按钮还是用的系统的
+     */
+    self.navigationBar.barStyle = UIBarStyleBlack;
 }
 
 //- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {

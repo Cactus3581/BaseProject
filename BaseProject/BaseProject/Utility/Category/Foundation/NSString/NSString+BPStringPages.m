@@ -36,7 +36,7 @@
     
     NSInteger maxLine = floor(r.size.height/lineHeight);
     NSInteger totalLines = 0;
-    NSLog(@"Max Line Per Page: %zd (%.2f/%.2f)", maxLine, r.size.height, lineHeight);
+    BPLog(@"Max Line Per Page: %zd (%.2f/%.2f)", maxLine, r.size.height, lineHeight);
     NSString *lastParaLeft = nil;
     NSRange range = NSMakeRange(0, 0);
     //把字符串按段落分开, 提高解析效率

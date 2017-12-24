@@ -38,7 +38,7 @@ static char const * const bp_kSoundsKey = "bp_kSoundsKey";
 	[sounds setObject:tapSound forKey:controlEventKey];
 	[tapSound prepareToPlay];
 	if (!tapSound) {
-		NSLog(@"Couldn't add sound - error: %@", error);
+		BPLog(@"Couldn't add sound - error: %@", error);
 		return;
 	}
 	

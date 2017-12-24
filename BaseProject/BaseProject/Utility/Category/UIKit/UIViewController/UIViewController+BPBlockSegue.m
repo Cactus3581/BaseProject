@@ -31,7 +31,7 @@ void BPBlockSegue(void) {
     }
 
     if (!self.jmg_dictionaryBlock || !self.jmg_dictionaryBlock[segue.identifier]) {
-        NSLog(@"Segue identifier '%@' doesn't exist", segue.identifier);
+        BPLog(@"Segue identifier '%@' doesn't exist", segue.identifier);
         return;
     }
 

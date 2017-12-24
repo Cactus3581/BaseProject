@@ -10,8 +10,6 @@
 #import <Masonry.h>
 //#import "UINavigationItem+BPMargin.h"
 #import "UINavigationController+BPAdd.h"
-#import "UIBarButtonItem+BPBadge.h"
-#import "UIBarButtonItem+BPCreate.h"
 #import "BPAppInfoMacro.h"
 
 @interface BPNaviTableViewControllerTwo ()<UITableViewDataSource, UITabBarDelegate, UIScrollViewDelegate>
@@ -25,8 +23,6 @@
 //    self.navigationController.hideBottomLine = YES;
     //self.navigationItem.bp_leftMargin = 150;
 //    self.navigationController.customBackImage = [UIImage imageNamed:@"navi_back"];
-    
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(popAction) image:[UIImage imageNamed:@"navi_back"]];
 }
 
 - (void)viewSafeAreaInsetsDidChange {
@@ -38,9 +34,6 @@
     BPLog(@"%@",NSStringFromUIEdgeInsets(self.view.safeAreaInsets));
 }
 
-- (void)popAction {
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

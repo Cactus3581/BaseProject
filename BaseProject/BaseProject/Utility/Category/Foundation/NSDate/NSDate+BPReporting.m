@@ -236,7 +236,7 @@
     NSString *output = [NSDateFormatter localizedStringFromDate:self
                                                       dateStyle:NSDateFormatterMediumStyle
                                                       timeStyle:NSDateFormatterMediumStyle];
-    NSLog(@"%@: %@", comment, output);
+    BPLog(@"%@: %@", comment, output);
 }
 #endif
 
@@ -253,7 +253,7 @@
     NSDateComponents *components = [self _YMDComponentsFactor:date withGregorianCalendar:gregorianCalendar];
     
     NSInteger quarterNumber = floor((components.month - 1) / 3) + 1;
-    // NSLog(@"Quarter number: %d", quarterNumber);
+    // BPLog(@"Quarter number: %d", quarterNumber);
     
     NSInteger firstMonthOfQuarter = (quarterNumber - 1) * 3 + 1;
     [components setMonth:firstMonthOfQuarter];

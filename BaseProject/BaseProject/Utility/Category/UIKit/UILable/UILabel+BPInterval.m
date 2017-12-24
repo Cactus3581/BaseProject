@@ -1,13 +1,13 @@
 //
-//  UILabel+KSInterval.m
+//  UILabel+BPInterval.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/12/10.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
-#import "UILabel+KSInterval.h"
+#import "UILabel+BPInterval.h"
 
-@implementation UILabel (KSInterval)
+@implementation UILabel (BPInterval)
 
 /**
  *  改变行间距

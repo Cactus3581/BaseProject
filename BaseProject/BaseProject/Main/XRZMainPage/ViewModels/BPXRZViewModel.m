@@ -224,7 +224,7 @@ typedef void(^successed)(NSArray *);
 }
 
 - (void)dealloc{
-    NSLog(@"viewmodel销毁了");
+
 }
 
 @end

@@ -48,14 +48,14 @@ BPSYNTH_DUMMY_CLASS(UIImage_BPAdd)
     inBuffer.data = (void*)CFDataGetBytePtr(inBitmapData);
     pixelBuffer = malloc(CGImageGetBytesPerRow(img) * CGImageGetHeight(img));
     if(pixelBuffer == NULL)
-        NSLog(@"No pixelbuffer");
+        BPLog(@"No pixelbuffer");
     outBuffer.data = pixelBuffer;
     outBuffer.width = CGImageGetWidth(img);
     outBuffer.height = CGImageGetHeight(img);
     outBuffer.rowBytes = CGImageGetBytesPerRow(img);
     error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
     if (error) {
-        NSLog(@"error from convolution %ld", error);
+        BPLog(@"error from convolution %ld", error);
     }
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef ctx = CGBitmapContextCreate( outBuffer.data, outBuffer.width, outBuffer.height, 8, outBuffer.rowBytes, colorSpace, kCGImageAlphaNoneSkipLast);
@@ -364,15 +364,15 @@ BPSYNTH_DUMMY_CLASS(UIImage_BPAdd)
                              saturation:(CGFloat)saturation
                               maskImage:(UIImage *)maskImage {
     if (self.size.width < 1 || self.size.height < 1) {
-        NSLog(@"UIImage+BPAdd error: invalid size: (%.2f x %.2f). Both dimensions must be >= 1: %@", self.size.width, self.size.height, self);
+        BPLog(@"UIImage+BPAdd error: invalid size: (%.2f x %.2f). Both dimensions must be >= 1: %@", self.size.width, self.size.height, self);
         return nil;
     }
     if (!self.CGImage) {
-        NSLog(@"UIImage+BPAdd error: inputImage must be backed by a CGImage: %@", self);
+        BPLog(@"UIImage+BPAdd error: inputImage must be backed by a CGImage: %@", self);
         return nil;
     }
     if (maskImage && !maskImage.CGImage) {
-        NSLog(@"UIImage+BPAdd error: effectMaskImage must be backed by a CGImage: %@", maskImage);
+        BPLog(@"UIImage+BPAdd error: effectMaskImage must be backed by a CGImage: %@", maskImage);
         return nil;
     }
     
@@ -408,12 +408,12 @@ BPSYNTH_DUMMY_CLASS(UIImage_BPAdd)
         vImage_Error err;
         err = vImageBuffer_InitWithCGImage(&effect, &format, NULL, imageRef, kvImagePrintDiagnosticsToConsole);
         if (err != kvImageNoError) {
-            NSLog(@"UIImage+YYAdd error: vImageBuffer_InitWithCGImage returned error code %zi for inputImage: %@", err, self);
+            BPLog(@"UIImage+YYAdd error: vImageBuffer_InitWithCGImage returned error code %zi for inputImage: %@", err, self);
             return nil;
         }
         err = vImageBuffer_Init(&scratch, effect.height, effect.width, format.bitsPerPixel, kvImageNoFlags);
         if (err != kvImageNoError) {
-            NSLog(@"UIImage+YYAdd error: vImageBuffer_Init returned error code %zi for inputImage: %@", err, self);
+            BPLog(@"UIImage+YYAdd error: vImageBuffer_Init returned error code %zi for inputImage: %@", err, self);
             return nil;
         }
     } else {

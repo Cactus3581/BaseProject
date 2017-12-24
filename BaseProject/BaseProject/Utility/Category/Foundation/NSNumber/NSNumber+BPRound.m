@@ -31,7 +31,7 @@
     [formatter setNumberStyle:NSNumberFormatterPercentStyle];
     [formatter setRoundingMode:NSNumberFormatterRoundHalfUp];
     [formatter setMaximumFractionDigits:digit];
-    //NSLog(@"percentage target:%@ result:%@",number,[formatter  stringFromNumber:number]);
+    //BPLog(@"percentage target:%@ result:%@",number,[formatter  stringFromNumber:number]);
     result = [formatter  stringFromNumber:self];
     return result;
 }
@@ -51,7 +51,7 @@
     [formatter setRoundingMode:NSNumberFormatterRoundHalfUp];
     [formatter setMaximumFractionDigits:digit];
     [formatter setMinimumFractionDigits:digit];
-    //NSLog(@"round target:%@ result:%@",number,[formatter  stringFromNumber:number]);
+    //BPLog(@"round target:%@ result:%@",number,[formatter  stringFromNumber:number]);
     result = [NSNumber numberWithDouble:[[formatter  stringFromNumber:self] doubleValue]];
     return result;
 }
@@ -68,7 +68,7 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setRoundingMode:NSNumberFormatterRoundCeiling];
     [formatter setMaximumFractionDigits:digit];
-    //NSLog(@"ceil target:%@ result:%@",number,[formatter  stringFromNumber:number]);
+    //BPLog(@"ceil target:%@ result:%@",number,[formatter  stringFromNumber:number]);
     result = [NSNumber numberWithDouble:[[formatter  stringFromNumber:self] doubleValue]];
     return result;
 }
@@ -86,7 +86,7 @@
     [formatter setRoundingMode:NSNumberFormatterRoundFloor];
     [formatter setMaximumFractionDigits:digit];
     result = [NSNumber numberWithDouble:[[formatter  stringFromNumber:self] doubleValue]];
-    //NSLog(@"prev:%@, result:%@",number, result);
+    //BPLog(@"prev:%@, result:%@",number, result);
     return result;
 }
 

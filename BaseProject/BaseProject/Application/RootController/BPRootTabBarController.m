@@ -33,18 +33,17 @@
  */
 - (void)configChildViewController{
     BPXRZViewController *oneVC = [[BPXRZViewController alloc]init];
-    [self setUpChildViewController:oneVC image:[UIImage imageNamed:@""] title:@"A"];
+    [self setUpChildViewController:oneVC image:[UIImage imageNamed:@""] title:@"Utility"];
     BPZTViewController *twoVC = [[BPZTViewController alloc]init];
-    [self setUpChildViewController:twoVC image:[UIImage imageNamed:@""] title:@"B"];
+    [self setUpChildViewController:twoVC image:[UIImage imageNamed:@""] title:@"Place"];
     BPSYViewController *threeVC = [[BPSYViewController alloc]init];
-    [self setUpChildViewController:threeVC image:[UIImage imageNamed:@""] title:@"C"];
+    [self setUpChildViewController:threeVC image:[UIImage imageNamed:@""] title:@"Place"];
 }
 
 /**
  *  添加一个子控制器的方法
  */
-- (void)setUpChildViewController:(UIViewController *)viewController image:(UIImage *)image title:(NSString *)title{
-    
+- (void)setUpChildViewController:(UIViewController *)viewController image:(UIImage *)image title:(NSString *)title {
     viewController.view.backgroundColor = kWhiteColor;
     BPRootNavigationController *navC = [[BPRootNavigationController alloc]initWithRootViewController:viewController];
     navC.title = title;

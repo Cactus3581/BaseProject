@@ -15,8 +15,6 @@
 @property(nonatomic,strong) UIButton *rightBarButton;
 @end
 
-static CGFloat barButtonItemWidth = 40.0f;
-static CGFloat barButtonItemHeight = 40.0f;
 static CGFloat titleInset = 20.0f;
 
 @implementation BPBaseViewController
@@ -31,6 +29,7 @@ static CGFloat titleInset = 20.0f;
 
 - (void)configBarButtomItem {
     if (self.navigationController && self.navigationController.viewControllers.count) {
+        [self configBarDefaulyStyle];
         [self configLeftBarButtomItem];
         [self configRightBarButtomItem];
     }
@@ -46,28 +45,28 @@ static CGFloat titleInset = 20.0f;
     _leftBarButtonImage = [leftBarButtonImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.leftBarButton setImage:_leftBarButtonImage forState:UIControlStateNormal];
     [self.leftBarButton sizeToFit];
-    CGFloat width = self.leftBarButton.bounds.size.width > barButtonItemWidth ? self.leftBarButton.bounds.size.width:barButtonItemWidth;
-    self.leftBarButton.bounds = CGRectMake(0, 0,width, barButtonItemHeight);
-    [self.leftBarButton setTintColor:kBlackColor];
+    CGFloat width = self.leftBarButton.bounds.size.width > bp_naviItem_width ? self.leftBarButton.bounds.size.width:bp_naviItem_width;
+    self.leftBarButton.bounds = CGRectMake(0, 0,width, bp_naviItem_height);
+    [self.leftBarButton setTintColor:kWhiteColor];
 }
 
 - (void)setLeftBarButtonTitle:(NSString *)leftBarButtonTitle {
     _leftBarButtonTitle = leftBarButtonTitle;
     [self.leftBarButton setTitle:_leftBarButtonTitle forState:UIControlStateNormal];
-    [self.leftBarButton setTitleColor:kBlackColor forState:UIControlStateNormal];
+    [self.leftBarButton setTitleColor:kWhiteColor forState:UIControlStateNormal];
     [self.leftBarButton sizeToFit];
 
-    CGFloat width = self.leftBarButton.bounds.size.width > barButtonItemWidth ? self.leftBarButton.bounds.size.width:barButtonItemWidth;
-    CGFloat titleWidth = BPStringSize(_leftBarButtonTitle,BPFont(18)).width;
+    CGFloat width = self.leftBarButton.bounds.size.width > bp_naviItem_width ? self.leftBarButton.bounds.size.width:bp_naviItem_width;
+    CGFloat titleWidth = BPStringSize(_leftBarButtonTitle,BPFont(16)).width;
     if (!_leftBarButtonImage ) {
-        if ((titleWidth <= barButtonItemWidth) && (titleWidth >= titleInset)) {
-            width += (titleInset - (barButtonItemWidth - titleWidth)); //特殊情况
-        }else if (titleWidth > barButtonItemWidth) {
+        if ((titleWidth <= bp_naviItem_width) && (titleWidth >= titleInset)) {
+            width += (titleInset - (bp_naviItem_width - titleWidth)); //特殊情况
+        }else if (titleWidth > bp_naviItem_width) {
             width += titleInset;
         }
     }
-    self.leftBarButton.bounds = CGRectMake(0, 0,width, barButtonItemHeight);
-    [self.leftBarButton setTintColor:kBlackColor];
+    self.leftBarButton.bounds = CGRectMake(0, 0,width, bp_naviItem_height);
+    [self.leftBarButton setTintColor:kWhiteColor];
 }
 
 - (void)leftBarButtonItemClickAction:(id)sender {
@@ -88,18 +87,18 @@ static CGFloat titleInset = 20.0f;
 - (void)setRightBarButtonImage:(UIImage *)rightBarButtonImage {
     _rightBarButtonImage = rightBarButtonImage;
     [self.rightBarButton setImage:rightBarButtonImage forState:UIControlStateNormal];
-    [self.rightBarButton setTintColor:kBlackColor];
-    CGFloat width = self.rightBarButton.bounds.size.width > barButtonItemWidth ? self.leftBarButton.bounds.size.width:barButtonItemWidth;
-    self.rightBarButton.bounds = CGRectMake(0, 0,width, barButtonItemHeight);
+    [self.rightBarButton setTintColor:kWhiteColor];
+    CGFloat width = self.rightBarButton.bounds.size.width > bp_naviItem_width ? self.leftBarButton.bounds.size.width:bp_naviItem_width;
+    self.rightBarButton.bounds = CGRectMake(0, 0,width, bp_naviItem_height);
 }
 
 - (void)setRightBarButtonTitle:(NSString *)rightBarButtonTitle {
     _rightBarButtonTitle = rightBarButtonTitle;
     [self.rightBarButton setTitle:rightBarButtonTitle forState:UIControlStateNormal];
-    [self.rightBarButton setTintColor:kBlackColor];
+    [self.rightBarButton setTintColor:kWhiteColor];
     [self.rightBarButton sizeToFit];
-    CGFloat width = self.leftBarButton.bounds.size.width > barButtonItemWidth ? self.rightBarButton.bounds.size.width:barButtonItemWidth;
-    self.rightBarButton.bounds = CGRectMake(0, 0,width, barButtonItemHeight);
+    CGFloat width = self.leftBarButton.bounds.size.width > bp_naviItem_width ? self.rightBarButton.bounds.size.width:bp_naviItem_width;
+    self.rightBarButton.bounds = CGRectMake(0, 0,width, bp_naviItem_height);
 }
 
 - (void)setHideRightBarButton:(BOOL)hideRightBarButton {
@@ -122,11 +121,11 @@ static CGFloat titleInset = 20.0f;
 - (UIButton *)leftBarButton {
     if (!_leftBarButton) {
         _leftBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_leftBarButton setTintColor:kBlackColor];
+        [_leftBarButton setTintColor:kWhiteColor];
         [_leftBarButton setImage:self.leftBarButtonImage forState:UIControlStateNormal];
-        _leftBarButton.titleLabel.font  = BPFont(18);
+        _leftBarButton.titleLabel.font  = BPFont(16);
         [_leftBarButton addTarget:self action:@selector(leftBarButtonItemClickAction:) forControlEvents:UIControlEventTouchUpInside];
-        _leftBarButton.frame = CGRectMake(0, 0, barButtonItemWidth, barButtonItemHeight);
+        _leftBarButton.frame = CGRectMake(0, 0, bp_naviItem_width, bp_naviItem_height);
         //_leftBarButton.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     }
     return _leftBarButton;
@@ -135,11 +134,11 @@ static CGFloat titleInset = 20.0f;
 - (UIButton *)rightBarButton {
     if (!_rightBarButton) {
         _rightBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_rightBarButton setTintColor:kBlackColor];
+        [_rightBarButton setTintColor:kWhiteColor];
         [_rightBarButton setTitle:self.rightBarButtonTitle forState:UIControlStateNormal];
-        _rightBarButton.titleLabel.font  = BPFont(18);
+        _rightBarButton.titleLabel.font  = BPFont(16);
         [_rightBarButton addTarget:self action:@selector(rightBarButtonItemClickAction:) forControlEvents:UIControlEventTouchUpInside];
-        _rightBarButton.frame = CGRectMake(0, 0, barButtonItemWidth, barButtonItemHeight);
+        _rightBarButton.frame = CGRectMake(0, 0, bp_naviItem_width, bp_naviItem_height);
         //_rightBarButton.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     }
     return _rightBarButton;
@@ -147,12 +146,24 @@ static CGFloat titleInset = 20.0f;
 
 #pragma mark - config theme
 - (void)setTheme {
-    [self.leftBarButton setTintColor:kBlackColor];
-    [self.rightBarButton setTintColor:kBlackColor];
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:kBlackColor,NSFontAttributeName:BPFont(18)};
-    self.navigationController.navigationBar.barTintColor = kWhiteColor;
-    self.navigationController.navigationBar.tintColor = kBlackColor;//影响返回按钮的颜色,因为返回按钮还是用的系统的
+    /*
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    self.edgesForExtendedLayout = UIRectEdgeTop;
     self.navigationController.navigationBar.translucent = NO;
+     */
+}
+
+- (void)configBarDefaulyStyle {
+    /*
+    [self.leftBarButton setTintColor:kWhiteColor];
+    [self.rightBarButton setTintColor:kWhiteColor];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:kWhiteColor,NSFontAttributeName:BPFont(16)};
+    self.navigationController.navigationBar.barTintColor = kWhiteColor;
+    self.navigationController.navigationBar.tintColor = kWhiteColor;//影响返回按钮的颜色,因为返回按钮还是用的系统的
+     */
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    self.navigationController.navigationBar.translucent = YES;
 }
 
 @end

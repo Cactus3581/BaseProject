@@ -47,7 +47,7 @@
     for (int i = 0; i < [self bp_nodeCountOfTag:@"a"]; i++) {
         NSString *jsString = [NSString stringWithFormat:@"document.getElementsByTagName('a')[%d].getAttribute('onclick')", i];
         NSString *clickString = [self stringByEvaluatingJavaScriptFromString:jsString];
-        NSLog(@"%@", clickString);
+        BPLog(@"%@", clickString);
         [arrOnClicks addObject:clickString];
     }
     return arrOnClicks;

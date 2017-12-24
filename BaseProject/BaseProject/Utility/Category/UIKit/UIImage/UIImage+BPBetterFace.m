@@ -11,7 +11,7 @@
 #define GOLDEN_RATIO (0.618)
 
 #ifdef BF_DEBUG
-#define BFLog(format...) NSLog(format)
+#define BFLog(format...) BPLog(format)
 #else
 #define BFLog(format...)
 #endif

@@ -220,10 +220,10 @@ NSString *bp_completeRPCURLPath = @"/bpwebviewprogressproxy/complete";
     self.bp_readyState = BP_BPReadyState_complete;
     [self bp_updateProgress:1.0];
 //    CGFloat webViewHeight= [[self stringByEvaluatingJavaScriptFromString: @"document.body.offsetHeight"]floatValue];
-//    NSLog(@"body.offsetHeight:%lf",webViewHeight);
+//    BPLog(@"body.offsetHeight:%lf",webViewHeight);
 //    
 //    CGFloat webViewHeight2=self.scrollView.contentSize.height;
-//    NSLog(@"scrollView contentSize:%lf",webViewHeight2);
+//    BPLog(@"scrollView contentSize:%lf",webViewHeight2);
 }
 
 - (void)bp_updateProgress:(float)progress

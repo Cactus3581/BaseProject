@@ -12,4 +12,7 @@
 UIKIT_EXTERN  NSString * const bp_alert_title;
 UIKIT_EXTERN  NSString * const bp_alert_cancelText;
 
+UIKIT_EXTERN  CGFloat  const bp_naviItem_width;
+UIKIT_EXTERN  CGFloat  const bp_naviItem_height;
+UIKIT_EXTERN  NSString * const bp_naviItem_backTitle;
 

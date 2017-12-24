@@ -27,14 +27,14 @@
     NSString*path=[NSHomeDirectory() stringByAppendingString:@"/documents/1.png"];
     [data writeToFile:path atomically:YES];
     
-    NSLog(@"%@",path);
+    BPLog(@"%@",path);
     
     UIImageWriteToSavedPhotosAlbum(sendImage, nil, nil, nil);
     CGImageRelease(imageRefRect);
     /***************/
-        return sendImage;
-
+    return sendImage;
 }
+
 #pragma mark - 图片相关操作
 - (UIImage *)screenshotWithTopView:(UIView *)topView bottomView:(UIView *)bottomView {
     UIImage *topImage = [self captureView:topView];

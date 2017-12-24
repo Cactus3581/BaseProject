@@ -39,7 +39,6 @@
 #define kNotificationCenter [NSNotificationCenter defaultCenter]
 #endif
 
-//
 #ifndef kUserDefaults
 #define kUserDefaults [NSUserDefaults standardUserDefaults]
 #endif
@@ -86,12 +85,6 @@
 #define kAppName [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
 #endif
 
-//BFLocalizedString translated 本地化
-#ifndef BPLocalizedString
-#define BPLocalizedString(key, comment) \
-[[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:@"BaseProject"]
-#endif
-
 // 直接判断机型
 #ifndef kiPHONE4
 #define kiPHONE4 (fabs((double)[[UIScreen mainScreen]bounds].size.height - (double)480) < DBL_EPSILON)
@@ -109,14 +102,24 @@
 #define kiPHONE6P (fabs((double)[[UIScreen mainScreen]bounds].size.height - (double)736) < DBL_EPSILON)
 #endif
 
+//本地化
+#ifndef BPLocalizedString
+#define BPLocalizedString(_s_) NSLocalizedString((_s_), nil)
+#endif
+
+#ifndef BPLocalizedStringFromTable
+#define BPLocalizedStringFromTable(_s_,_table_) NSLocalizedStringFromTable((_s_),(_table_),nil)
+#endif
+
+//用来读去bundle中本地化字段的方法。而在使用中，我们用的更多的是以上两个简化的宏
+#ifndef BPLocalizedStringForKey
+#define BPLocalizedStringForKey(key) \
+    [[NSBundle mainBundle] localizedStringForKey:(key) value:nil table:@"BaseProject"]
+#endif
+
 //获取当前语言
 #ifndef kCurrentLanguage
 #define kCurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])
-#endif
-
-//本地化
-#ifndef BPLocalStr
-#define BPLocalStr(_s_) NSLocalizedString((_s_), nil)
 #endif
 
 // 返回中间值
@@ -208,10 +211,10 @@
 /**去除performSelector在ARC中的警告*/
 #define PerformSelectorLeakWarningIgnore(_method_) \
 do { \
-_Pragma("clang diagnostic push") \
-_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
-_method_; \
-_Pragma("clang diagnostic pop") \
+    _Pragma("clang diagnostic push") \
+    _Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+    _method_; \
+    _Pragma("clang diagnostic pop") \
 } while (0)
 
 //获取图片资源
@@ -316,7 +319,6 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 #define kEndTime   NSLog(@"Time: %f", CFAbsoluteTimeGetCurrent() - start)
 #endif
 
-
 //由角度转换弧度
 #ifndef kDegreesToRadian
 #define kDegreesToRadian(x)      (M_PI * (x) / 180.0)
@@ -344,11 +346,11 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 /**懒加载*/
 #ifndef LAZY
 #define LAZY(class,name) -(class *)name { \
-if (_##name == nil) { \
-_##name = [[class alloc] init]; \
-}\
-return _##name;\
-}
+    if (_##name == nil) { \
+        _##name = [[class alloc] init]; \
+    }\
+        return _##name;\
+    }
 #endif
 
 //字符串是否为空
@@ -369,9 +371,9 @@ return _##name;\
 //是否是空对象  ( " \ ":连接行标志，连接上下两行 )
 #ifndef kObjectIsEmpty
 #define kObjectIsEmpty(_object) (_object == nil \
-|| [_object isKindOfClass:[NSNull class]] \
-|| ([_object respondsToSelector:@selector(length)] && [(NSData *)_object length] == 0) \
-|| ([_object respondsToSelector:@selector(count)] && [(NSArray *)_object count] == 0))
+    || [_object isKindOfClass:[NSNull class]] \
+    || ([_object respondsToSelector:@selector(length)] && [(NSData *)_object length] == 0) \
+    || ([_object respondsToSelector:@selector(count)] && [(NSArray *)_object count] == 0))
 #endif
 
 /*如果支持横屏可以用下面的宏:
@@ -401,10 +403,10 @@ return _##name;\
 
 //设置加载提示框（第三方框架：Toast）
 #define kToast(str)              CSToastStyle *style = [[CSToastStyle alloc] initWithDefaultStyle]; \
-[kWindow  makeToast:str duration:0.6 position:CSToastPositionCenter style:style];\
-kWindow.userInteractionEnabled = NO; \
-dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{\
-kWindow.userInteractionEnabled = YES;\
+    [kWindow  makeToast:str duration:0.6 position:CSToastPositionCenter style:style];\
+    kWindow.userInteractionEnabled = NO; \
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{\
+    kWindow.userInteractionEnabled = YES;\
 });\
 
 //DEBUG 模式下打印日志,当前行 并弹出一个警告

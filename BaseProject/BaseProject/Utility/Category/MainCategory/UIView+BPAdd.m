@@ -272,26 +272,4 @@ BPSYNTH_DUMMY_CLASS(UIView_BPAdd)
     
 }
 
-//- (UIView *)_bp_hitTest:(CGPoint)point withEvent:(UIEvent *)event{
-//    if ([self isKindOfClass:NSClassFromString(@"BPSearchView")]) {
-//        NSLog(@"1");
-//    }
-//    
-//    UIView *view = [self _bp_hitTest:point withEvent:event];
-//    if ([view isKindOfClass:NSClassFromString(@"BPSearchView")]) {
-//        NSLog(@"2");
-//    }
-//    doBlock(self.touchBlock);
-//    if (self.endEditingBeforTouch) {
-//        if ([view isKindOfClass:[UITextField class]] || [view isKindOfClass:[UITextView class]] || [view isKindOfClass:NSClassFromString(@"UIRemoteKeyboardWindow")]) {
-//            return view;
-//        }else{
-//            [self endEditing:YES];
-//            return view;
-//        }
-//    }else{
-//        return view;
-//    }
-//}
-
 @end

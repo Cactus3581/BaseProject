@@ -30,7 +30,7 @@ NSString * const UIDevicePasscodeKeychainAccount = @"UIDevice-PasscodeStatus_Key
 - (BPPasscodeStatus)bp_passcodeStatus
 {
 #if TARGET_IPHONE_SIMULATOR
-    NSLog(@"-[%@ %@] - not supported in simulator", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    BPLog(@"-[%@ %@] - not supported in simulator", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     return BPPasscodeStatusUnknown;
 #endif
     
