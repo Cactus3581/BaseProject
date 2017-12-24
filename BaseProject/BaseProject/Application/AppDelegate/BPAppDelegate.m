@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     BPRootTabBarController *RootVC = [[BPRootTabBarController alloc]init];
     self.window.rootViewController = RootVC;
-    [self configLaunchImage];
+    //[self configLaunchImage]; // 代码启动图片（在info里把launch key删除，防止展示两次）
     [self configSDKS];
     return YES;
 }
@@ -60,12 +60,16 @@
     launchView.frame = [UIApplication sharedApplication].keyWindow.frame;
     [mainWindow addSubview:launchView];
     
+    
     [UIView animateWithDuration:0.6f delay:0.5f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        /*
         launchView.alpha = 0.0f;
         launchView.layer.transform = CATransform3DScale(CATransform3DIdentity, 1.5f, 1.5f, 1.0f);
+         */
     } completion:^(BOOL finished) {
         [launchView removeFromSuperview];
     }];
+     
 }
 
 - (void)configSDKS {

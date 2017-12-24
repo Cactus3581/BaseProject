@@ -127,8 +127,6 @@ static CGFloat cellH = 50;
         _tableView.delegate = (id)self;
         _tableView.dataSource = (id)self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//        _tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
-//        _tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
         
          UILabel *headerView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, headerH)];
          headerView.backgroundColor = kGreenColor;

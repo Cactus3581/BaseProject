@@ -10,21 +10,39 @@
 
 @implementation BPBaseTableView
 
+- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
+    self = [super initWithFrame:frame style:style];
+    if (self) {
+        [self config];
+    }
+    return self;
+}
+
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self awakeFromNib];
+        [self config];
     }
     return self;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self awakeFromNib];
+    [self config];
 }
 
 - (void)config {
     self.backgroundColor = kWhiteColor;
+    self.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableHeaderView = [[UIView alloc]init];
+    self.tableFooterView = [[UIView alloc]init];
+    //self.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
+    //self.tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
+    
+    //warning: 注意不能是CGFLOAT_MIN
+    self.estimatedRowHeight = 0;
+    self.estimatedSectionHeaderHeight = 0;
+    self.estimatedSectionFooterHeight = 0;
 }
 
 @end

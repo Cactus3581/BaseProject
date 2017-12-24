@@ -143,6 +143,8 @@
 		014ED0411FEFF0A300D2926C /* BPBackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 014ED03D1FEFF0A300D2926C /* BPBackButton.m */; };
 		014ED0421FEFF0A300D2926C /* BPImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 014ED03F1FEFF0A300D2926C /* BPImageButton.m */; };
 		014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 014ED04F1FEFF9EE00D2926C /* Localizable.strings */; };
+		014ED0DD1FF0135000D2926C /* launchImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014ED0DB1FF0134F00D2926C /* launchImage@3x.png */; };
+		014ED0DE1FF0135000D2926C /* launchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014ED0DC1FF0135000D2926C /* launchImage@2x.png */; };
 		0158A0501FDFD3570011AFE9 /* UILabel+BPInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */; };
 		01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01733FD91FA974FB006192F0 /* Assets.xcassets */; };
 		01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01733FDB1FA974FB006192F0 /* LaunchScreen.storyboard */; };
@@ -188,8 +190,6 @@
 		01BCB3301FB54A99009EF64E /* BPBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCB32F1FB54A99009EF64E /* BPBaseModel.m */; };
 		01BCB33E1FB55921009EF64E /* BPBaseServerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCB33C1FB55920009EF64E /* BPBaseServerAPI.m */; };
 		01BCB3441FB5598B009EF64E /* BPBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCB3431FB5598B009EF64E /* BPBaseViewModel.m */; };
-		01C935831FC3358B00D98FD6 /* launchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C935811FC3358B00D98FD6 /* launchImage@2x.png */; };
-		01C935841FC3358B00D98FD6 /* launchImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01C935821FC3358B00D98FD6 /* launchImage@3x.png */; };
 		01C9359F1FC337E100D98FD6 /* BPXRZViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C935891FC337E000D98FD6 /* BPXRZViewModel.m */; };
 		01C935A01FC337E100D98FD6 /* BPXRZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C9358C1FC337E000D98FD6 /* BPXRZViewController.m */; };
 		01C935A41FC337E100D98FD6 /* BPSYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C935981FC337E000D98FD6 /* BPSYViewController.m */; };
@@ -613,6 +613,9 @@
 		014ED0441FEFF76F00D2926C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		014ED04E1FEFF9EE00D2926C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		014ED0501FEFF9F000D2926C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		014ED0D21FF00B5200D2926C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		014ED0DB1FF0134F00D2926C /* launchImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@3x.png"; sourceTree = "<group>"; };
+		014ED0DC1FF0135000D2926C /* launchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@2x.png"; sourceTree = "<group>"; };
 		0158A04E1FDFD3560011AFE9 /* UILabel+BPInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BPInterval.h"; sourceTree = "<group>"; };
 		0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BPInterval.m"; sourceTree = "<group>"; };
 		015F4F1A1FDD7D9B000C6355 /* BPAppInfoMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppInfoMacro.h; sourceTree = "<group>"; };
@@ -707,8 +710,6 @@
 		01BCB3421FB5598B009EF64E /* BPBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBaseViewModel.h; sourceTree = "<group>"; };
 		01BCB3431FB5598B009EF64E /* BPBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBaseViewModel.m; sourceTree = "<group>"; };
 		01C56FC81FE2CCB1004EDD8A /* BPMainCatergory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMainCatergory.h; sourceTree = "<group>"; };
-		01C935811FC3358B00D98FD6 /* launchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@2x.png"; sourceTree = "<group>"; };
-		01C935821FC3358B00D98FD6 /* launchImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@3x.png"; sourceTree = "<group>"; };
 		01C935891FC337E000D98FD6 /* BPXRZViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPXRZViewModel.m; sourceTree = "<group>"; };
 		01C9358A1FC337E000D98FD6 /* BPXRZViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPXRZViewModel.h; sourceTree = "<group>"; };
 		01C9358C1FC337E000D98FD6 /* BPXRZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPXRZViewController.m; sourceTree = "<group>"; };
@@ -3370,8 +3371,8 @@
 		01C935801FC3358B00D98FD6 /* launchImage */ = {
 			isa = PBXGroup;
 			children = (
-				01C935811FC3358B00D98FD6 /* launchImage@2x.png */,
-				01C935821FC3358B00D98FD6 /* launchImage@3x.png */,
+				014ED0DC1FF0135000D2926C /* launchImage@2x.png */,
+				014ED0DB1FF0134F00D2926C /* launchImage@3x.png */,
 			);
 			path = launchImage;
 			sourceTree = "<group>";
@@ -4047,15 +4048,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				01119A181FD3EE96006DC02E /* BPCollectionReusableHeadView.xib in Resources */,
+				014ED0DE1FF0135000D2926C /* launchImage@2x.png in Resources */,
 				014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */,
 				01C935A51FC337E100D98FD6 /* BPSYViewController.xib in Resources */,
-				01C935831FC3358B00D98FD6 /* launchImage@2x.png in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
 				0184BF831FD6DB2C00CB9AAD /* BPTest_XibViewController.xib in Resources */,
 				01352FE31FD2DDA20011D65C /* MainCatalog.plist in Resources */,
 				01119A1D1FD3EEAD006DC02E /* BPCollectionReusableFootView.xib in Resources */,
 				01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */,
-				01C935841FC3358B00D98FD6 /* launchImage@3x.png in Resources */,
+				014ED0DD1FF0135000D2926C /* launchImage@3x.png in Resources */,
 				01119A0D1FD3EE29006DC02E /* BPCollectionViewCell.xib in Resources */,
 				01C935A61FC337E100D98FD6 /* BPZTViewController.xib in Resources */,
 			);
@@ -4500,6 +4501,7 @@
 			children = (
 				01733FDC1FA974FB006192F0 /* Base */,
 				014ED0441FEFF76F00D2926C /* zh-Hans */,
+				014ED0D21FF00B5200D2926C /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
