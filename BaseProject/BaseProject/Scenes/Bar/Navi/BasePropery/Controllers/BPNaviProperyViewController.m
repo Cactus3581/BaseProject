@@ -136,7 +136,7 @@
     
     
     //定制返回按钮
-    UIImage *navi_item_Image = [[UIImage imageNamed:@"navi_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImage *navi_item_Image = [[UIImage imageNamed:bp_naviItem_backImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     //两个要一起用,为啥这么用，苹果言语不详
     self.navigationController.navigationBar.backIndicatorImage = navi_item_Image;
     self.navigationController.navigationBar.backIndicatorTransitionMaskImage = navi_item_Image;

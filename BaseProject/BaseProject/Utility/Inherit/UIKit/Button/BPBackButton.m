@@ -31,13 +31,13 @@
 }
 
 - (void)config {
-    self.height =  44.0f;
+    self.height =  bp_naviItem_height;
     [self setImage:[[UIImage imageNamed:@"icon_back"] bp_imageByTintColor:kBlackColor] forState:UIControlStateNormal];
     [self setTintColor:kBlackColor];
 }
 
 - (void)configImage {
-    self.width = 44.0f;
+    self.width = bp_naviItem_width;
 }
 
 //使用前必须先设置自身大小 && 赋值title
@@ -74,7 +74,7 @@
 
 //分别设置image 和图片 颜色
 - (void)setImageColor:(UIColor *)imageColor {
-    [self setImage:[[UIImage imageNamed:@"navi_back"] bp_imageByTintColor:imageColor] forState:UIControlStateNormal];
+    [self setImage:[[UIImage imageNamed:bp_naviItem_backImage] bp_imageByTintColor:imageColor] forState:UIControlStateNormal];
 }
 
 - (void)setTextColor:(UIColor *)textColor {

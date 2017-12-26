@@ -27,6 +27,14 @@ static CGFloat titleInset = 20.0f;
     [self configBarButtomItem];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self naviBarHidden:NO animated:animated];
+}
+
 - (void)configBarButtomItem {
     if (self.navigationController && self.navigationController.viewControllers.count) {
         [self configBarDefaulyStyle];
@@ -47,26 +55,23 @@ static CGFloat titleInset = 20.0f;
     [self.leftBarButton sizeToFit];
     CGFloat width = self.leftBarButton.bounds.size.width > bp_naviItem_width ? self.leftBarButton.bounds.size.width:bp_naviItem_width;
     self.leftBarButton.bounds = CGRectMake(0, 0,width, bp_naviItem_height);
-    [self.leftBarButton setTintColor:kWhiteColor];
 }
 
 - (void)setLeftBarButtonTitle:(NSString *)leftBarButtonTitle {
     _leftBarButtonTitle = leftBarButtonTitle;
     [self.leftBarButton setTitle:_leftBarButtonTitle forState:UIControlStateNormal];
-    [self.leftBarButton setTitleColor:kWhiteColor forState:UIControlStateNormal];
     [self.leftBarButton sizeToFit];
 
     CGFloat width = self.leftBarButton.bounds.size.width > bp_naviItem_width ? self.leftBarButton.bounds.size.width:bp_naviItem_width;
     CGFloat titleWidth = BPStringSize(_leftBarButtonTitle,BPFont(16)).width;
-    if (!_leftBarButtonImage ) {
+    if (!_leftBarButtonImage ) {//特殊处理：没有返回图片，只有文字的情况
         if ((titleWidth <= bp_naviItem_width) && (titleWidth >= titleInset)) {
-            width += (titleInset - (bp_naviItem_width - titleWidth)); //特殊情况
+            width += (titleInset - (bp_naviItem_width - titleWidth));
         }else if (titleWidth > bp_naviItem_width) {
             width += titleInset;
         }
     }
     self.leftBarButton.bounds = CGRectMake(0, 0,width, bp_naviItem_height);
-    [self.leftBarButton setTintColor:kWhiteColor];
 }
 
 - (void)leftBarButtonItemClickAction:(id)sender {
@@ -87,7 +92,7 @@ static CGFloat titleInset = 20.0f;
 - (void)setRightBarButtonImage:(UIImage *)rightBarButtonImage {
     _rightBarButtonImage = rightBarButtonImage;
     [self.rightBarButton setImage:rightBarButtonImage forState:UIControlStateNormal];
-    [self.rightBarButton setTintColor:kWhiteColor];
+    [self.rightBarButton sizeToFit];
     CGFloat width = self.rightBarButton.bounds.size.width > bp_naviItem_width ? self.leftBarButton.bounds.size.width:bp_naviItem_width;
     self.rightBarButton.bounds = CGRectMake(0, 0,width, bp_naviItem_height);
 }
@@ -95,9 +100,17 @@ static CGFloat titleInset = 20.0f;
 - (void)setRightBarButtonTitle:(NSString *)rightBarButtonTitle {
     _rightBarButtonTitle = rightBarButtonTitle;
     [self.rightBarButton setTitle:rightBarButtonTitle forState:UIControlStateNormal];
-    [self.rightBarButton setTintColor:kWhiteColor];
     [self.rightBarButton sizeToFit];
-    CGFloat width = self.leftBarButton.bounds.size.width > bp_naviItem_width ? self.rightBarButton.bounds.size.width:bp_naviItem_width;
+    
+    CGFloat width = self.rightBarButton.bounds.size.width > bp_naviItem_width ? self.leftBarButton.bounds.size.width:bp_naviItem_width;
+    CGFloat titleWidth = BPStringSize(_rightBarButtonTitle,BPFont(16)).width;
+    if (!_rightBarButtonImage) {//特殊处理：没有返回图片，只有文字的情况
+        if ((titleWidth <= bp_naviItem_width) && (titleWidth >= titleInset)) {
+            width += (titleInset - (bp_naviItem_width - titleWidth));
+        }else if (titleWidth > bp_naviItem_width) {
+            width += titleInset;
+        }
+    }
     self.rightBarButton.bounds = CGRectMake(0, 0,width, bp_naviItem_height);
 }
 
@@ -112,7 +125,7 @@ static CGFloat titleInset = 20.0f;
 #pragma mark - lazy load methods
 - (UIImage *)leftBarButtonImage {
     if (!_leftBarButtonImage) {
-        _leftBarButtonImage = [[UIImage imageNamed:@"navi_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        _leftBarButtonImage = [[UIImage imageNamed:bp_naviItem_backImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     }
     return _leftBarButtonImage;
 }
@@ -124,9 +137,17 @@ static CGFloat titleInset = 20.0f;
         [_leftBarButton setTintColor:kWhiteColor];
         [_leftBarButton setImage:self.leftBarButtonImage forState:UIControlStateNormal];
         _leftBarButton.titleLabel.font  = BPFont(16);
+        [_leftBarButton setTitleColor:kBlackColor forState:UIControlStateNormal];
         [_leftBarButton addTarget:self action:@selector(leftBarButtonItemClickAction:) forControlEvents:UIControlEventTouchUpInside];
         _leftBarButton.frame = CGRectMake(0, 0, bp_naviItem_width, bp_naviItem_height);
-        //_leftBarButton.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+        _leftBarButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+        /*
+        _leftBarButton.backgroundColor = [UIColor redColor];
+        _leftBarButton.imageView.backgroundColor = [UIColor greenColor];
+        _leftBarButton.titleLabel.backgroundColor = [UIColor blueColor];
+        _leftBarButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+        _leftBarButton.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+         */
     }
     return _leftBarButton;
 }
@@ -135,11 +156,11 @@ static CGFloat titleInset = 20.0f;
     if (!_rightBarButton) {
         _rightBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_rightBarButton setTintColor:kWhiteColor];
+        [_rightBarButton setTitleColor:kWhiteColor forState:UIControlStateNormal];
         [_rightBarButton setTitle:self.rightBarButtonTitle forState:UIControlStateNormal];
         _rightBarButton.titleLabel.font  = BPFont(16);
         [_rightBarButton addTarget:self action:@selector(rightBarButtonItemClickAction:) forControlEvents:UIControlEventTouchUpInside];
         _rightBarButton.frame = CGRectMake(0, 0, bp_naviItem_width, bp_naviItem_height);
-        //_rightBarButton.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     }
     return _rightBarButton;
 }
@@ -164,6 +185,34 @@ static CGFloat titleInset = 20.0f;
      */
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationController.navigationBar.translucent = YES;
+}
+
+
+
+#pragma mark - 恢复默认样式
+- (void)recoverStyle {
+    
+}
+
+//#pragma mark - 屏幕旋转
+//// 不自动旋转
+//- (BOOL)shouldAutorotate {
+//    return NO;
+//}
+//
+//// 竖屏显示
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+//    return UIInterfaceOrientationPortrait;
+//}
+//
+//#pragma mark - 隐藏statusbar及恢复默认样式
+//-(BOOL)prefersStatusBarHidden {
+//    return YES;
+//}
+
+#pragma mark - 隐藏navibar及恢复默认样式
+- (void)naviBarHidden:(BOOL)hidden animated:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:hidden animated:animated];//无法提供手势滑动pop效果，但是有系统自动的动画效果。
 }
 
 @end

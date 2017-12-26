@@ -150,7 +150,7 @@
     //左边返回按钮
     UIButton *backBtn = [[UIButton alloc]init];
     backBtn.frame = CGRectMake(0, 20, 44, 44);
-    [backBtn setImage:[UIImage imageNamed:@"navi_back"] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:bp_naviItem_backImage] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(pop) forControlEvents:UIControlEventTouchUpInside];
     
     //右边设置按钮

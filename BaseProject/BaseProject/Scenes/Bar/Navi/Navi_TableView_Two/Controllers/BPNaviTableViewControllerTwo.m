@@ -22,7 +22,7 @@
     [super viewDidLoad];    
 //    self.navigationController.hideBottomLine = YES;
     //self.navigationItem.bp_leftMargin = 150;
-//    self.navigationController.customBackImage = [UIImage imageNamed:@"navi_back"];
+//    self.navigationController.customBackImage = [UIImage imageNamed:bp_naviItem_backImage];
 }
 
 - (void)viewSafeAreaInsetsDidChange {

@@ -9,9 +9,12 @@
 #ifndef BaseProject_Prefix_pch
 #define BaseProject_Prefix_pch
 
+#ifdef __OBJC__
 #import "BPUtilConstant.h"
 #import "BPAppMacro.h"
 #import "BPAppTool.h"
 #import "Masonry.h"
+#endif
+
 
 #endif /* BaseProject_Prefix_pch */

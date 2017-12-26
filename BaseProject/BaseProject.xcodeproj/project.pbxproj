@@ -136,6 +136,8 @@
 		013530091FD3CA370011D65C /* BPCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013530081FD3CA370011D65C /* BPCollectionViewController.m */; };
 		0135300F1FD3CAEB0011D65C /* BPGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0135300E1FD3CAEB0011D65C /* BPGroupTableViewController.m */; };
 		013530121FD3CAF80011D65C /* BPPlainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013530111FD3CAF80011D65C /* BPPlainTableViewController.m */; };
+		013676021FF2A0320009BA38 /* BPAlgorithm.c in Sources */ = {isa = PBXBuildFile; fileRef = 013676001FF2A0310009BA38 /* BPAlgorithm.c */; };
+		013676051FF2A03A0009BA38 /* BPAlgorithmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013676031FF2A03A0009BA38 /* BPAlgorithmController.m */; };
 		013B78841FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 013B78831FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m */; };
 		014995331FB494D800077866 /* BPBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014995321FB494D800077866 /* BPBaseTableView.m */; };
 		0149953A1FB4A3D600077866 /* BPRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014995381FB4A3D500077866 /* BPRootTabBarController.m */; };
@@ -598,6 +600,10 @@
 		0135300E1FD3CAEB0011D65C /* BPGroupTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPGroupTableViewController.m; sourceTree = "<group>"; };
 		013530101FD3CAF80011D65C /* BPPlainTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPlainTableViewController.h; sourceTree = "<group>"; };
 		013530111FD3CAF80011D65C /* BPPlainTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPlainTableViewController.m; sourceTree = "<group>"; };
+		013676001FF2A0310009BA38 /* BPAlgorithm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BPAlgorithm.c; sourceTree = "<group>"; };
+		013676011FF2A0320009BA38 /* BPAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPAlgorithm.h; sourceTree = "<group>"; };
+		013676031FF2A03A0009BA38 /* BPAlgorithmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPAlgorithmController.m; sourceTree = "<group>"; };
+		013676041FF2A03A0009BA38 /* BPAlgorithmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPAlgorithmController.h; sourceTree = "<group>"; };
 		013B78821FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BPCreate.h"; sourceTree = "<group>"; };
 		013B78831FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+BPCreate.m"; sourceTree = "<group>"; };
 		014995311FB494D800077866 /* BPBaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseTableView.h; sourceTree = "<group>"; };
@@ -1060,10 +1066,9 @@
 		01027ADA1FDED9990003F0FE /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
+				013676011FF2A0320009BA38 /* BPAlgorithm.h */,
+				013676001FF2A0310009BA38 /* BPAlgorithm.c */,
 				01027B3A1FDEDB700003F0FE /* Controllers */,
-				01027B3B1FDEDB700003F0FE /* Models */,
-				01027B3C1FDEDB710003F0FE /* ViewModels */,
-				01027B391FDEDB700003F0FE /* Views */,
 			);
 			path = Algorithm;
 			sourceTree = "<group>";
@@ -1787,32 +1792,13 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		01027B391FDEDB700003F0FE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		01027B3A1FDEDB700003F0FE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				013676041FF2A03A0009BA38 /* BPAlgorithmController.h */,
+				013676031FF2A03A0009BA38 /* BPAlgorithmController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		01027B3B1FDEDB700003F0FE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		01027B3C1FDEDB710003F0FE /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		01027B3D1FDEDB760003F0FE /* Views */ = {
@@ -4296,6 +4282,7 @@
 				017A9A9C1FDD315A00CDA599 /* UIView+BPShadow.m in Sources */,
 				010DB7231FDD4D450099E66F /* UIWebView+BPCanvas.m in Sources */,
 				0184BF861FD6E0EC00CB9AAD /* BPTestViewController.m in Sources */,
+				013676051FF2A03A0009BA38 /* BPAlgorithmController.m in Sources */,
 				0187FC6B1FC33CDB004E839E /* BPSimpleTableViewCell.m in Sources */,
 				01DF31D81FDD3A9100B8A955 /* NSInvocation+BPBlock.m in Sources */,
 				01C9359F1FC337E100D98FD6 /* BPXRZViewModel.m in Sources */,
@@ -4324,6 +4311,7 @@
 				01DF323F1FDD3B3D00B8A955 /* NSObject+BPRuntime.m in Sources */,
 				01D22BD71FDD814000BCC4AD /* UITextField+BPAdd.m in Sources */,
 				01D22BE81FDD814000BCC4AD /* UIControl+BPAdd.m in Sources */,
+				013676021FF2A0320009BA38 /* BPAlgorithm.c in Sources */,
 				010DB71D1FDD4D450099E66F /* UIWebView+BPJavaScript.m in Sources */,
 				01DF316F1FDD3A0900B8A955 /* CALayer+BPBorderColor.m in Sources */,
 				010DB7301FDD4D450099E66F /* UIWindow+BPHierarchy.m in Sources */,

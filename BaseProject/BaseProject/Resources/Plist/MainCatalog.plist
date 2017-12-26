@@ -516,28 +516,9 @@
 		<key>title</key>
 		<string>算法</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPAlgorithmController</string>
 		<key>briefIntro</key>
 		<string>常面试的几种算法</string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>XIB</string>
-				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>纯代码</string>
-				<key>fileName</key>
-				<string>BPTestViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
 	</dict>
 	<dict>
 		<key>title</key>

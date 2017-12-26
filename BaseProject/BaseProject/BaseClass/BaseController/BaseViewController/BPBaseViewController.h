@@ -44,4 +44,6 @@
 - (void)configLeftBarButtomItem;
 
 - (void)configBarDefaulyStyle;
+
+- (void)naviBarHidden:(BOOL)hidden animated:(BOOL)animated;
 @end
