@@ -366,33 +366,6 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>GCD应用及信号量</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>XIB</string>
-				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>纯代码</string>
-				<key>fileName</key>
-				<string>BPTestViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>自定义画图</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
@@ -597,6 +570,76 @@
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
 		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>测试</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>xib</string>
+				<key>fileName</key>
+				<string>BPTest_XibViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>知识点集合</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>内存管理</string>
+				<key>fileName</key>
+				<string>BPMemoryViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>GCD,信号量,锁</string>
+				<key>fileName</key>
+				<string>BPGCDViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>TableView优化点</string>
+				<key>fileName</key>
+				<string>BPOptimizeTableViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Runtime</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>DrawView</string>
+				<key>fileName</key>
+				<string>BPDrawViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 </array>
 </plist>

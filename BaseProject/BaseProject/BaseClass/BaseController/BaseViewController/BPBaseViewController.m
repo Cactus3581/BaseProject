@@ -137,7 +137,7 @@ static CGFloat titleInset = 20.0f;
         [_leftBarButton setTintColor:kWhiteColor];
         [_leftBarButton setImage:self.leftBarButtonImage forState:UIControlStateNormal];
         _leftBarButton.titleLabel.font  = BPFont(16);
-        [_leftBarButton setTitleColor:kBlackColor forState:UIControlStateNormal];
+        [_leftBarButton setTitleColor:kWhiteColor forState:UIControlStateNormal];
         [_leftBarButton addTarget:self action:@selector(leftBarButtonItemClickAction:) forControlEvents:UIControlEventTouchUpInside];
         _leftBarButton.frame = CGRectMake(0, 0, bp_naviItem_width, bp_naviItem_height);
         _leftBarButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;

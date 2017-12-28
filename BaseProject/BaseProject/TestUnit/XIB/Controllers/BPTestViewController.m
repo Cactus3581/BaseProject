@@ -119,6 +119,11 @@ static CGFloat cellH = 50;
     return _tableView;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_delegate && [_delegate respondsToSelector:@selector(pop)]) {
+        [_delegate pop];
+    }
+}
 - (UIView *)bottomView {
     if (!_bottomView) {
         _bottomView = [[UIView alloc] init];
@@ -127,8 +132,15 @@ static CGFloat cellH = 50;
     return _bottomView;
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+}
+
 #pragma mark - dealloc
 - (void)dealloc {
+    BPLog(@"retain  count = %ld\n",BPRetainCount(self));
+    BPLog(@"retain  count = %ld\n",BPRetainCount(self.view));
+    BPLog(@"retain  count = %ld\n",BPRetainCount(_tableView));
 }
 
 - (void)didReceiveMemoryWarning {

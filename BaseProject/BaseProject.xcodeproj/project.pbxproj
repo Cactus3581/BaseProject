@@ -139,6 +139,13 @@
 		013676021FF2A0320009BA38 /* BPAlgorithm.c in Sources */ = {isa = PBXBuildFile; fileRef = 013676001FF2A0310009BA38 /* BPAlgorithm.c */; };
 		013676051FF2A03A0009BA38 /* BPAlgorithmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013676031FF2A03A0009BA38 /* BPAlgorithmController.m */; };
 		013B78841FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 013B78831FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m */; };
+		01490C081FF548650035492D /* BPGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C071FF548650035492D /* BPGCDViewController.m */; };
+		01490C0B1FF548740035492D /* BPMemoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C0A1FF548740035492D /* BPMemoryViewController.m */; };
+		01490C0E1FF548A50035492D /* BPOptimizeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C0D1FF548A50035492D /* BPOptimizeTableViewController.m */; };
+		01490C111FF549250035492D /* BPWeakView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C101FF549250035492D /* BPWeakView.m */; };
+		01490C141FF54A3E0035492D /* NSTimer+BPUnRetain.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C131FF54A3E0035492D /* NSTimer+BPUnRetain.m */; };
+		01490C181FF54B9F0035492D /* BPRuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C171FF54B9F0035492D /* BPRuntimeViewController.m */; };
+		01490C201FF54E190035492D /* BPDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C1F1FF54E190035492D /* BPDrawViewController.m */; };
 		014995331FB494D800077866 /* BPBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014995321FB494D800077866 /* BPBaseTableView.m */; };
 		0149953A1FB4A3D600077866 /* BPRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014995381FB4A3D500077866 /* BPRootTabBarController.m */; };
 		0149953D1FB4A3F900077866 /* BPRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0149953C1FB4A3F900077866 /* BPRootNavigationController.m */; };
@@ -606,6 +613,20 @@
 		013676041FF2A03A0009BA38 /* BPAlgorithmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPAlgorithmController.h; sourceTree = "<group>"; };
 		013B78821FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BPCreate.h"; sourceTree = "<group>"; };
 		013B78831FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+BPCreate.m"; sourceTree = "<group>"; };
+		01490C061FF548650035492D /* BPGCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPGCDViewController.h; sourceTree = "<group>"; };
+		01490C071FF548650035492D /* BPGCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPGCDViewController.m; sourceTree = "<group>"; };
+		01490C091FF548740035492D /* BPMemoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMemoryViewController.h; sourceTree = "<group>"; };
+		01490C0A1FF548740035492D /* BPMemoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMemoryViewController.m; sourceTree = "<group>"; };
+		01490C0C1FF548A50035492D /* BPOptimizeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPOptimizeTableViewController.h; sourceTree = "<group>"; };
+		01490C0D1FF548A50035492D /* BPOptimizeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPOptimizeTableViewController.m; sourceTree = "<group>"; };
+		01490C0F1FF549250035492D /* BPWeakView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPWeakView.h; sourceTree = "<group>"; };
+		01490C101FF549250035492D /* BPWeakView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPWeakView.m; sourceTree = "<group>"; };
+		01490C121FF54A3E0035492D /* NSTimer+BPUnRetain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+BPUnRetain.h"; sourceTree = "<group>"; };
+		01490C131FF54A3E0035492D /* NSTimer+BPUnRetain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+BPUnRetain.m"; sourceTree = "<group>"; };
+		01490C161FF54B9F0035492D /* BPRuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPRuntimeViewController.h; sourceTree = "<group>"; };
+		01490C171FF54B9F0035492D /* BPRuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPRuntimeViewController.m; sourceTree = "<group>"; };
+		01490C1E1FF54E190035492D /* BPDrawViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDrawViewController.h; sourceTree = "<group>"; };
+		01490C1F1FF54E190035492D /* BPDrawViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDrawViewController.m; sourceTree = "<group>"; };
 		014995311FB494D800077866 /* BPBaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseTableView.h; sourceTree = "<group>"; };
 		014995321FB494D800077866 /* BPBaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseTableView.m; sourceTree = "<group>"; };
 		014995381FB4A3D500077866 /* BPRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPRootTabBarController.m; sourceTree = "<group>"; };
@@ -2453,6 +2474,99 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		01490C021FF547DA0035492D /* KnowledgePoint */ = {
+			isa = PBXGroup;
+			children = (
+				01490C191FF54DFC0035492D /* DrawView */,
+				01490C151FF54B940035492D /* Runtime */,
+				01490C051FF548460035492D /* OptimizeTableView */,
+				01490C041FF548010035492D /* Memory */,
+				01490C031FF547F00035492D /* GCD */,
+			);
+			path = KnowledgePoint;
+			sourceTree = "<group>";
+		};
+		01490C031FF547F00035492D /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				01490C061FF548650035492D /* BPGCDViewController.h */,
+				01490C071FF548650035492D /* BPGCDViewController.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		01490C041FF548010035492D /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				01490C091FF548740035492D /* BPMemoryViewController.h */,
+				01490C0A1FF548740035492D /* BPMemoryViewController.m */,
+				01490C0F1FF549250035492D /* BPWeakView.h */,
+				01490C101FF549250035492D /* BPWeakView.m */,
+				01490C121FF54A3E0035492D /* NSTimer+BPUnRetain.h */,
+				01490C131FF54A3E0035492D /* NSTimer+BPUnRetain.m */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
+		01490C051FF548460035492D /* OptimizeTableView */ = {
+			isa = PBXGroup;
+			children = (
+				01490C0C1FF548A50035492D /* BPOptimizeTableViewController.h */,
+				01490C0D1FF548A50035492D /* BPOptimizeTableViewController.m */,
+			);
+			path = OptimizeTableView;
+			sourceTree = "<group>";
+		};
+		01490C151FF54B940035492D /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				01490C161FF54B9F0035492D /* BPRuntimeViewController.h */,
+				01490C171FF54B9F0035492D /* BPRuntimeViewController.m */,
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
+		01490C191FF54DFC0035492D /* DrawView */ = {
+			isa = PBXGroup;
+			children = (
+				01490C1B1FF54E0C0035492D /* Controllers */,
+				01490C1C1FF54E0C0035492D /* Models */,
+				01490C1D1FF54E0C0035492D /* ViewModels */,
+				01490C1A1FF54E0C0035492D /* Views */,
+			);
+			path = DrawView;
+			sourceTree = "<group>";
+		};
+		01490C1A1FF54E0C0035492D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01490C1B1FF54E0C0035492D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01490C1E1FF54E190035492D /* BPDrawViewController.h */,
+				01490C1F1FF54E190035492D /* BPDrawViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01490C1C1FF54E0C0035492D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01490C1D1FF54E0C0035492D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		0149952D1FB4944A00077866 /* BaseModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2710,6 +2824,7 @@
 		017340181FA9753F006192F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				01490C021FF547DA0035492D /* KnowledgePoint */,
 				01027AEC1FDEDAC00003F0FE /* TopSliderCategory */,
 				01027AEB1FDEDAB10003F0FE /* TagView */,
 				01027AEA1FDEDAA50003F0FE /* SlideImageShow */,
@@ -4137,6 +4252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01490C201FF54E190035492D /* BPDrawViewController.m in Sources */,
 				017A9A9B1FDD315A00CDA599 /* UIView+BPSafeArea.m in Sources */,
 				017A9AA01FDD316C00CDA599 /* UIViewController+BPRemoveSelfFromNavi.m in Sources */,
 				0149953D1FB4A3F900077866 /* BPRootNavigationController.m in Sources */,
@@ -4176,6 +4292,7 @@
 				010DB7271FDD4D450099E66F /* UIColor+BPGradient.m in Sources */,
 				01DF31C81FDD3A9100B8A955 /* NSUserDefaults+BPSafeAccess.m in Sources */,
 				01DF31CF1FDD3A9100B8A955 /* NSArray+BPBlock.m in Sources */,
+				01490C0E1FF548A50035492D /* BPOptimizeTableViewController.m in Sources */,
 				010DB7421FDD4D450099E66F /* UIImage+BPColor.m in Sources */,
 				010DB7101FDD4D450099E66F /* UIImageView+BPAddition.m in Sources */,
 				010DB7131FDD4D450099E66F /* UIAlertView+BPBlock.m in Sources */,
@@ -4191,6 +4308,7 @@
 				017A9A8D1FDD311D00CDA599 /* NSDate+BPExtension.m in Sources */,
 				010DB71A1FDD4D450099E66F /* UINavigationItem+BPLoading.m in Sources */,
 				01D22BDC1FDD814000BCC4AD /* UIBezierPath+BPAdd.m in Sources */,
+				01490C111FF549250035492D /* BPWeakView.m in Sources */,
 				014995331FB494D800077866 /* BPBaseTableView.m in Sources */,
 				010DB7521FDD4D450099E66F /* UINavigationController+BPKeyboardFix.m in Sources */,
 				017A9A2B1FDD22AB00CDA599 /* BPCacheTool.m in Sources */,
@@ -4245,6 +4363,7 @@
 				01D22BCA1FDD814000BCC4AD /* NSObject+BPAdd.m in Sources */,
 				010DB73D1FDD4D450099E66F /* UIImage+BPVector.m in Sources */,
 				010DB7201FDD4D450099E66F /* UIWebView+BPStyle.m in Sources */,
+				01490C0B1FF548740035492D /* BPMemoryViewController.m in Sources */,
 				01DF325A1FDD3B9D00B8A955 /* NSData+BPEncrypt.m in Sources */,
 				01DF32751FDD3BB100B8A955 /* NSDate+BPFormatter.m in Sources */,
 				010DB7351FDD4D450099E66F /* UITextField+BPShake.m in Sources */,
@@ -4333,6 +4452,7 @@
 				01D22BDB1FDD814000BCC4AD /* NSString+BPAdd.m in Sources */,
 				010DB71B1FDD4D450099E66F /* UIWebView+BPLoadInfo.m in Sources */,
 				01DF32431FDD3B3D00B8A955 /* NSObject+BPAssociatedObject.m in Sources */,
+				01490C181FF54B9F0035492D /* BPRuntimeViewController.m in Sources */,
 				010DB7081FDD4D450099E66F /* UILabel+BPSuggestSize.m in Sources */,
 				01DF32261FDD3B3000B8A955 /* NSString+BPUUID.m in Sources */,
 				01C935BA1FC33A5900D98FD6 /* BPSimpleModel.m in Sources */,
@@ -4431,9 +4551,11 @@
 				010DB72C1FDD4D450099E66F /* UIBezierPath+BPLength.m in Sources */,
 				01F21D0B1FEBFD4000381183 /* UINavigation+BPFixSpace.m in Sources */,
 				010DB7191FDD4D450099E66F /* UINavigationItem+BPLock.m in Sources */,
+				01490C141FF54A3E0035492D /* NSTimer+BPUnRetain.m in Sources */,
 				010DB70F1FDD4D450099E66F /* UIImageView+BPReflect.m in Sources */,
 				01DF31EC1FDD3B1600B8A955 /* NSURL+BPQueryDictionary.m in Sources */,
 				01DF31D01FDD3A9100B8A955 /* NSArray+BPSafeAccess.m in Sources */,
+				01490C081FF548650035492D /* BPGCDViewController.m in Sources */,
 				01DF31C01FDD3A9100B8A955 /* NSDictionary+BPXML.m in Sources */,
 				01DF31E61FDD3B0300B8A955 /* NSNumber+BPRound.m in Sources */,
 				010DB78C1FDD4D640099E66F /* UIView+BPFind.m in Sources */,

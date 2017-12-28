@@ -8,6 +8,14 @@
 
 #import "BPBaseViewController.h"
 
+typedef void(^successDataSource)(NSString *str);
+
+@protocol BPTestViewControllerDelegate<NSObject>
+@optional
+- (void)pop;
+@end
 @interface BPTestViewController : BPBaseViewController
+@property (nonatomic,copy) successDataSource successDataSource;
+@property (nonatomic,weak) id<BPTestViewControllerDelegate> delegate;
 
 @end
