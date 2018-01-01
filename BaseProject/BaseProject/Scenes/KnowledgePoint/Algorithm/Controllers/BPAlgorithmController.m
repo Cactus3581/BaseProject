@@ -28,7 +28,9 @@
 
     [self binarySearch2Result];//二分查找-非递归方法
 
-    [self algorithm];
+    [self kmp];
+    
+    [self sum];
 }
 
 //递归-斐波那契奇数列
@@ -77,15 +79,21 @@
     printf("二分查找-非递归方法:%d\n",binarySearch2Result);
 }
 
-- (void)algorithm {
+- (void)sum {
+    int a[] = {1,2,3,4,5};
+    int sum = sumNumber(a, 5);
+    printf("数组求和 = %d",sum);
+}
+
+- (void)kmp {
 //    char str1[] = {'a','e','f','w','g','d'};
 //    char str2[] = {'e','f','d'};
     
     char *s = "aedsgdasasd";
     char *p = "gdasa";
-    int pLength = strlen(p);
+    long pLength = strlen(p);
     int *prefix = (int *)malloc(pLength*sizeof(int));//开辟个数组
-    printf("%d,%d",pLength,sizeof(int));
+    printf("%ld,%ld",pLength,sizeof(int));
 
     kmpPrefixFunction(p,pLength,prefix);
     printf("字符串的最长前缀长度分别是:");

@@ -201,55 +201,41 @@ int binarySearch2(int a[], int findNum,int length)
     return  -1;
 }
 
-
-
-// 数组求和
-int sum(int *a, int length) {
-    return length == 0 ? 0 : sum(a, length - 1) + a[length - 1];
+// 数组求和-递归
+int sumNumber(int *a, int length) {
+    return length == 0 ? 0 : sumNumber(a, length - 1) + a[length - 1];
 }
 
 //http://blog.csdn.net/u010593680/article/details/44536657
 void kmpMatch(char * s,int sLength,char * p,int pLength,int *prefix)
 {
-    int pPoint=0;
-    for(int i=0; i<=sLength-pLength;i++)
-    {
-        
-        
-        while(pPoint!=0&&(s[i]!=p[pPoint]))
-        {
+    int pPoint = 0;
+    for(int i = 0; i <= sLength-pLength;i++) {
+        while(pPoint != 0 && (s[i] != p[pPoint])) {
             pPoint = prefix[pPoint-1];
         }
-        if(s[i]==p[pPoint])
-        {
+        if(s[i] == p[pPoint]) {
             pPoint++;
-            if(pPoint == pLength)
-            {
+            if(pPoint == pLength) {
                 printf("找到:%d \n",i-pPoint+1);
                 //pPoint = 0;//上一个在s匹配的字符串,不能成为下一个匹配字符串的一部分
-                pPoint=prefix[pPoint-1];//上一个在s匹配的字符串,也能成为下一个匹配字符串的一部分
+                pPoint = prefix[pPoint-1];//上一个在s匹配的字符串,也能成为下一个匹配字符串的一部分
             }
         }
-        
-        
     }
 }
 
-void kmpPrefixFunction(char *p,int length,int *prefix)
-{
-    prefix[0]=0;
+void kmpPrefixFunction(char *p,int length,int *prefix) {
+    prefix[0] = 0;
     int k = 0;//前缀的长度
-    for(int i=1; i<length; i++)
-    {
-        while(k>0&&p[k]!=p[i])
-        {
-            k=prefix[k-1];
+    for(int i = 1; i < length; i++) {
+        while(k > 0 && p[k] != p[i]) {
+            k = prefix[k-1];
         }
-        if(p[k]==p[i])//说明p[0...k-1]共k个都匹配了
-        {
-            k=k+1;
+        if(p[k] == p[i]) {//说明p[0...k-1]共k个都匹配了
+            k = k+1;
         }
-        prefix[i]=k;
+        prefix[i] = k;
     }
 }
 
@@ -257,15 +243,14 @@ void kmpPrefixFunction(char *p,int length,int *prefix)
 //匹配函数的朴素算法,用于比较
 void normal_match(char * s,int sLength,char * p,int pLength){
     int k;
-    for(int i=0;i<sLength-pLength+1;i++){
-        for(k=0;k<pLength;k++){
-            if(s[i+k]!=p[k]){
+    for(int i = 0;i < sLength-pLength+1; i++) {
+        for(k = 0;k < pLength; k++) {
+            if(s[i+k] != p[k]){
                 break;
             }
         }
-        if(k==pLength){
+        if(k == pLength){
             printf("找到:%d \n",i);
         }
-        
     }
 }  

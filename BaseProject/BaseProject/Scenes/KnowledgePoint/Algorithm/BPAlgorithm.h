@@ -9,17 +9,20 @@
 #ifndef BPAlgorithm_h
 #define BPAlgorithm_h
 
-int * bubble_sort(int a[], int length);//冒泡
+//递归-斐波那契奇数列
+int fib(int n);
 
-int fib(int n);//递归-斐波那契奇数列
+//冒泡排序
+int * bubble_sort(int a[], int length);
 
-void quicksort(int a[],int left, int right);//快速排序
+//快速排序
+void quicksort(int a[],int left, int right);
 
-//二分查找 θ(logn)
-int binarySearch1(int a[] , int low , int high , int findNum);//递归方法
+//二分查找法-递归方法 θ(logn)
+int binarySearch1(int a[] , int low , int high , int findNum);
 
-int binarySearch2(int *a, int findNum,int length);//非递归方法-while循环
-
+//二分查找法-/非递归方法-while循环
+int binarySearch2(int *a, int findNum,int length);
 
 /*
  插值查找：
@@ -28,12 +31,14 @@ int binarySearch2(int *a, int findNum,int length);//非递归方法-while循环
  注： 对于表长较大，而关键字分布又比较均匀的查找表来说，插值查找算法的平均性能比折半查找要好的多。反之，数组中如果分布非常不均匀，那么插值查找未必是很合适的选择。
  */
 
+// 数组求和-递归
+int sumNumber(int *a, int length);
+
+//kmp算法
 void kmpMatch(char * s,int sLength,char * p,int pLength,int *prefix);
-
 void kmpPrefixFunction(char *p,int length,int *prefix);
-
-
 //匹配函数的朴素算法,用于比较
 void normal_match(char * s,int sLength,char * p,int pLength);
-    
+
+
 #endif /* BPAlgorithm_h */
