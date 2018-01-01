@@ -7,8 +7,9 @@
 //
 
 #include "BPAlgorithm.h"
-#include "string.h"
-
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 /*
  冒泡排序，核心思想：归位（以下是从左到右归位）
  1.从列表的第一个数字到倒数第二个数字，逐个检查：若某一位上的数字大于他的下一位，则将它与它的下一位交换。
@@ -176,16 +177,21 @@ int binarySearch1(int a[] , int low , int high , int findNum)
             return mid;
     }
 }
+
 /*
  二分查找-非递归方法-while循环
  */
-int binarySearch2(int a[] , int low , int high , int findNum)
+int binarySearch2(int a[], int findNum,int length)
 {
+    int low = 0;
+    int high = length - 1;
+
+    
     while (low <= high)
     {
         int mid = ( low + high) / 2;   //此处一定要放在while里面，求中点位置
         if (a[mid] < findNum)
-            
+
             low = mid + 1; // 继续在后半区间进行查找
         else if (a[mid] > findNum)
             high = mid - 1; // 继续在前半区间进行查找
@@ -195,113 +201,71 @@ int binarySearch2(int a[] , int low , int high , int findNum)
     return  -1;
 }
 
-//KMP算法
-void get_next(char pattern[], int next[],int p_len) {
-    int i = 0; // i用来记录当前计算的next数组元素的下标， 同时也作为模式串本身被匹配到的位置的下标
-    int j = 0; // j == -1 代表从在i的位置模式串无法匹配成功，从下一个位置开始匹配
-    next[0] = -1; // next[0]固定为-1
 
-    while (++i < p_len) {
-        if (pattern[i] == pattern[j]) {
-            // j是用来记录当前模式串匹配到的位置的下标， 这就意味着当j = l时，
-            // 则在pattern[j]这个字符前面已经有l - 1个成功匹配,
-            // 即子串前缀和后缀的最长公共匹配字符数有l - 1个。
-            next[i] = j++;
 
-            // 当根据next[i]偏移后的字符与偏移前的字符向同时
-            // 那么这次的偏移是没有意义的，因为匹配必定会失败
-            // 所以可以一直往前偏移，直到
-            // 1): 偏移前的字符和偏移后的字符不相同。
-            // 2): next[i] == -1
-            while (next[i] != -1 && pattern[i] == pattern[next[i]]) {
-                next[i] = next[next[i]];
-                printf("next = %d,%d\n",i,next[i]);
-            }
-        } else {
-            next[i] = j;
-            j = 0;
-            if (pattern[i] == pattern[j]) {
-                j++;
-            }
-        }
-    }
+// 数组求和
+int sum(int *a, int length) {
+    return length == 0 ? 0 : sum(a, length - 1) + a[length - 1];
 }
 
-int index_KMP(char sourceStr[], char subStr[], int next[]){
-
-    int i = 0;
-    int j = 0;
-    while(i < strlen(sourceStr) && j < strlen(subStr)) {
-
-        if(j == 0 || sourceStr[i] == subStr[j]){
-
-            i++;
-            j++;
-        } else {
-
-            j=next[j];
-        }
-    }
-    if (j == strlen(subStr)) {
-
-        return i - (int)strlen(subStr);
-    } else {
-
-        return -1;//匹配失败
-    }
-}
-
-/*
- KMP算法
-
- KMP算法的改进之处在于：能够知道在匹配失败后，有多少字符是不需要进行匹配可以直接跳过的，匹配失败后，下一次匹配从什么地方开始能够有效的减少不必要的匹配过程。
- */
-void GetNext(char* p,int next[]) {
-    int pLen = strlen(p);
-    next[0] = -1;
-    int k = -1;
-    int j = 0;
-    while (j < pLen - 1)
+//http://blog.csdn.net/u010593680/article/details/44536657
+void kmpMatch(char * s,int sLength,char * p,int pLength,int *prefix)
+{
+    int pPoint=0;
+    for(int i=0; i<=sLength-pLength;i++)
     {
-        //p[k]表示前缀，p[j]表示后缀
-        if (k == -1 || p[j] == p[k])
+        
+        
+        while(pPoint!=0&&(s[i]!=p[pPoint]))
         {
-            ++k;
-            ++j;
-            if (p[j] != p[k])
-                next[j] = k;   //之前只有这一行
-            else
-                //因为不能出现p[j] = p[ next[j ]]，所以当出现时需要继续递归，k = next[k] = next[next[k]]
-                next[j] = next[k];
+            pPoint = prefix[pPoint-1];
         }
-        else
+        if(s[i]==p[pPoint])
         {
-            k = next[k];
+            pPoint++;
+            if(pPoint == pLength)
+            {
+                printf("找到:%d \n",i-pPoint+1);
+                //pPoint = 0;//上一个在s匹配的字符串,不能成为下一个匹配字符串的一部分
+                pPoint=prefix[pPoint-1];//上一个在s匹配的字符串,也能成为下一个匹配字符串的一部分
+            }
         }
+        
+        
     }
-}
-int kmp(char *s,char *p){
-    int sLen = strlen(s);
-    int pLen = strlen(p);
-    int next[pLen];
-    GetNext(p,next);
-    int i = 0;
-    int j = 0;
-    
-    while(i<sLen && j<pLen){
-        if(j == -1 || s[i] == p[j]){
-            i++;
-            j++;
-            
-        }
-        else{
-            j = next[j];
-        }
-    }
-    //匹配成功，返回模式串p在文本串s中的位置，否则返回-1
-    if (j == pLen)
-        return i - j;
-    else
-        return -1;
 }
 
+void kmpPrefixFunction(char *p,int length,int *prefix)
+{
+    prefix[0]=0;
+    int k = 0;//前缀的长度
+    for(int i=1; i<length; i++)
+    {
+        while(k>0&&p[k]!=p[i])
+        {
+            k=prefix[k-1];
+        }
+        if(p[k]==p[i])//说明p[0...k-1]共k个都匹配了
+        {
+            k=k+1;
+        }
+        prefix[i]=k;
+    }
+}
+
+
+//匹配函数的朴素算法,用于比较
+void normal_match(char * s,int sLength,char * p,int pLength){
+    int k;
+    for(int i=0;i<sLength-pLength+1;i++){
+        for(k=0;k<pLength;k++){
+            if(s[i+k]!=p[k]){
+                break;
+            }
+        }
+        if(k==pLength){
+            printf("找到:%d \n",i);
+        }
+        
+    }
+}  

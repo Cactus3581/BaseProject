@@ -49,9 +49,20 @@
     NSString *className = model.fileName;
     Class classVc = NSClassFromString(className);
     if (classVc) {
-        BPBaseViewController *vc = [[classVc alloc] init];
-        [vc setLeftBarButtonTitle:model.title];
-        [self.navigationController pushViewController:vc animated:YES];
+        if (model.subVc_array.count) {
+            BPSimpleTableController *vc = [[classVc alloc] init];
+            [vc setLeftBarButtonTitle:model.title];
+            //[vc setLeftBarButtonTitle:BPLocalizedString(bp_naviItem_backTitle)];
+            vc.dataArray = model.subVc_array;
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }else {
+            BPBaseViewController * vc = [[classVc alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            //vc.navigationItem.title = model.title;
+            [vc setLeftBarButtonTitle:model.title];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
     }
     //点击后取消选中颜色。同[self.tableView deselectRowAtIndexPath:indexPath animated:NO];效果
     BPSimpleTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];

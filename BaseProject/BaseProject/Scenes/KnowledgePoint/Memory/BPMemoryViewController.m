@@ -8,7 +8,7 @@
 
 //http://blog.csdn.net/lvxiangan/article/details/50202673
 //https://www.cnblogs.com/flyFreeZn/p/4264220.html
-
+//https://www.jianshu.com/p/746c747e7e00
 
 #import "BPMemoryViewController.h"
 #import "BPTestViewController.h"
@@ -38,10 +38,15 @@
 
 static int b = 10;
 
+int age = 24;//全局初始化区（数据区）
+NSString *name;//全局未初始化区（BSS区）
+static NSString *sName = @"Dely";//全局（静态初始化）区
+
 @implementation BPMemoryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self head_stack];
     //    [self testPoint];
     //    [self testZombie];
     
@@ -51,6 +56,30 @@ static int b = 10;
     //    [self testDelegate];
     //    [self testTimer];
     //    [self testSystem];
+}
+
+/*
+ 本文的堆和栈是操作系统的内存中堆和栈，不是数据结构中的堆和栈。
+ 参数和局部变量在栈
+ */
+- (void)head_stack {
+    int tmpAge;//栈
+    NSString *number = @"123456"; //123456在常量区，number在栈上。文字常量区 存放常量字符串，程序结束后由系统释放
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:1];//分配而来的8字节的区域就在堆中，array在栈中，指向堆区的地址
+    NSInteger total = [self getTotalNumber:1 number2:1];
+    
+    
+    char s[] = "abc"; //栈
+    char *p2; //栈
+    char *p3 = "123456";  //123456\0在常量区，p3在栈上。
+    static int c = 0; //全局（静态）初始化区
+    char * p1 = (char *)malloc(10);   //分配得来的10 字节的区域就在堆区。
+    p2 = (char *)malloc(20);  //分配得来的 20字节的区域就在堆区。
+    strcpy(p1, "123456");   //123456\0放在常量区，编译器可能会将它与p3所指向的"123456"优化成一块。
+}
+
+- (NSInteger)getTotalNumber:(NSInteger)number1 number2:(NSInteger)number2{
+    return number1 + number2;//number1和number2 栈区
 }
 
 // 系统方法一般不会引起循环引用
@@ -77,14 +106,14 @@ static int b = 10;
     NSMutableArray *array = @[@"1"].mutableCopy;
     id obj = [array objectAtIndex:0];
     [array removeObjectAtIndex:0];
-    NSLog(@"%@",obj);
-    NSLog(@"%@",array);
-    NSLog(@"%ld",BPRetainCount(obj));
+    BPLog(@"%@",obj);
+    BPLog(@"%@",array);
+    BPLog(@"%ld",BPRetainCount(obj));
     
     __unsafe_unretained NSMutableArray *arrayM = [[NSMutableArray alloc] init];
     [arrayM addObject:@"1"];
     [arrayM addObject:@"2"];
-    NSLog(@"%@",arrayM);
+    BPLog(@"%@",arrayM);
 }
 
 /*
@@ -93,13 +122,15 @@ static int b = 10;
  3. 对象与指针：一般来说，我们在编程中创建的都是对象，我们使用变量来指向该对象，这个变量就是指针；换句话说，我们是使用指针来操作对象，并不是直接拿到对象来用，当然，我们使用指针，你也可以理解成是直接操作的对象，因为指针里保存着对象的地址；
  4. 修饰符：
  1> 在OC中，如果我们创建了对象，但是没有声明一个指针去指向该对象，该对象就会刚创建完就释放。说明：在ARC中内存的管理是由一个叫自动引用计数的东西，当对象的retainCount的值>0时，才不会被释放，若等于0就会被释放；那什么情况下指向该对象计数就会+1，当用strong修饰指针时，才会+1；让对象不被销毁，这就用到了下面的修饰符。
- 2> 都有哪些修饰符呢：strong，weak，assign，__unsafe_unretained
+  都有哪些修饰符呢：strong，weak，assign，__unsafe_unretained
  2> strong
- 隐式修饰：我们一般在方法内即函数体内创建的对象，用指针指向该对象，该对象的retainCount就会+1，所以该对象就不会被释放，为什么呢：因为默认的对象修饰符是strong，被strong修饰的指针，会强持有该对象；那什么时候销毁呢，在函数体结束的时候释放，因为该变量在函数栈里。
+ 隐式修饰：我们一般在方法内即函数体内创建的对象，用指针指向该对象，该对象的retainCount就会+1，所以该对象就不会被释放，为什么呢：因为默认的对象修饰符是strong，被strong修饰的指针，会强持有该对象；那什么时候销毁呢，在函数体结束的时候释放，因为该变量在函数栈里；
  显示修饰：在声明的属性里，如果用strong修饰，就表明在当前的声明类里，声明的类强持有该对象；一般在该类delloc的时候会销毁；
- 3> weak：UIView控件会使用，因为UIView一般来说，只针对父view负责，不应当被类文件（VC）所强持有；用于修饰delegate，防止循环引用，造成内存泄露（下面具体说）
- 4> assign和__unsafe_unretained：其实是一个东西，不同的时代不同的叫法，容易造成野指针，访问僵尸对象，会造成crash，下面会具体讲
+ 3> weak：UIView控件会使用，因为UIView一般来说，只针对父view负责，不应当被类文件（VC）所强持有；用于修饰delegate，防止循环引用，造成内存泄露（下面具体说）；
+ 4> assign和__unsafe_unretained：其实是一个东西，不同的时代不同的叫法，容易造成野指针，访问僵尸对象，会造成crash，下面会具体讲；
+ 
  */
+
 - (void)testWeak {
     //BPLog(@"%ld",BPRetainCount(_weakButton));// 打印被释放的对象的引用计数会crash
     
@@ -152,6 +183,8 @@ static int b = 10;
     
     self.strongView.block(@"");
     
+    
+    
     //self不持有block
     BPWeakView *view = [[BPWeakView alloc] init];
     __weak  BPWeakView * weakView = view;
@@ -160,14 +193,13 @@ static int b = 10;
         //BPLog(@"%p",view);//导致循环引用
         //BPLog(@"%p",self.view);//不会导致循环引用，因为view强引用了block，而不是self，
         //BPLog(@"%p",weakView);//不会导致循环引用
-        //        strongify(view);
+        //strongify(view);
         
-        BPWeakView *strongView = weakView;//在block中声明的引用变量strongMyController在函数中声明，存在于函数栈上。不存在block堆上，所以不是一个内存空间；防止在后面的使用过程中 self 被释放；然后在之后的 block 块中使用该强引用 self，注意在使用前要对 self 进行了 nil 检测，因为多线程环境下在用弱引用 wself 对强引用 sself 赋值时，弱引用 wself 可能已经为 nil 了。
+        BPWeakView *strongView = weakView;//在block中声明的引用变量strongView在函数中声明，存在于函数栈上。不存在block堆上，所以不是一个内存空间；防止在后面的使用过程中self被释放；然后在之后的block块中使用该强引用self，注意在使用前要对self进行了nil检测，因为多线程环境下在用弱引用self对强引用self赋值时，弱引用wself可能已经为nil了。
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
             //BPLog(@"%p",weakSelf.view);//不会循环引用，但是执行到这的时候view可能已经销毁了
-            
             if (strongView) {
                 BPLog(@"%ld",BPRetainCount(strongView));//不会导致循环引用
             } else {
@@ -300,7 +332,7 @@ static int b = 10;
     NSTimer *timer = [NSTimer bp_scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer *timer) {
         strongify(self);
         [self push];
-        NSLog(@"----------------");
+        BPLog(@"----------------");
         if (i++ > 10) {
             [timer invalidate];
         }

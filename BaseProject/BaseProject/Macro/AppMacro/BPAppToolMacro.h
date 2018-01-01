@@ -395,6 +395,11 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 #define BPRetainCount(__POINTER) (__POINTER ? CFGetRetainCount((__bridge  CFTypeRef)(__POINTER)):(0))
 #endif
 
+//获取retainCount
+#ifndef BPThread
+#define BPThread [NSThread currentThread],[NSThread isMainThread]
+#endif
+
 
 //释放一个对象
 #ifndef BPSAFE_RELEASE
