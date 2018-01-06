@@ -49,7 +49,6 @@ typedef NS_ENUM (NSUInteger, BPGradientStyle) {
 
 #pragma mark - color initailize (颜色初始化相关)
 
-
 /**Color With HSL*/
 + (UIColor *)bp_colorWithHue:(CGFloat)hue
                saturation:(CGFloat)saturation

@@ -59,6 +59,14 @@
 #define kBlackColor [UIColor blackColor]
 #endif
 
+#ifndef kDarkGrayColor
+#define kDarkGrayColor [UIColor darkGrayColor]
+#endif
+
+#ifndef kGrayColor
+#define kGrayColor [UIColor grayColor]
+#endif
+
 #ifndef kThemeColor
 #define kThemeColor (kHexColor(0x333333))
 #endif

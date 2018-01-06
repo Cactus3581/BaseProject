@@ -49,6 +49,8 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>相册</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

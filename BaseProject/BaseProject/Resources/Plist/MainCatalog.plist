@@ -48,7 +48,7 @@
 						<key>title</key>
 						<string>Cell自适应高度</string>
 						<key>fileName</key>
-						<string></string>
+						<string>BPAdaptiveHeightTableViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -159,6 +159,14 @@
 		<string>了解锚点动画/箭头PopView(图片/自定义画图)</string>
 		<key>subVc_array</key>
 		<array>
+			<dict>
+				<key>title</key>
+				<string>锚点</string>
+				<key>fileName</key>
+				<string>BPPopViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
 			<dict>
 				<key>title</key>
 				<string>箭头PopView-图片</string>
@@ -556,11 +564,153 @@
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>通用测试容器</string>
+				<key>fileName</key>
+				<string>BPGeneralTestViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Palette</string>
+				<key>fileName</key>
+				<string>BPPaletteViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
 		</array>
 	</dict>
 	<dict>
 		<key>title</key>
 		<string>知识点集合</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>内存管理</string>
+				<key>fileName</key>
+				<string>BPMemoryViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>GCD,信号量,锁</string>
+				<key>fileName</key>
+				<string>BPGCDViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>TableView优化点</string>
+				<key>fileName</key>
+				<string>BPOptimizeTableViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Runtime</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>自定义画图</string>
+				<key>fileName</key>
+				<string>BPDrawViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>数据结构</string>
+				<key>fileName</key>
+				<string>BPDataStructureViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>算法</string>
+				<key>fileName</key>
+				<string>BPAlgorithmController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>学习第三方库</string>
+				<key>fileName</key>
+				<string>BPSimpleTableController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>AFN</string>
+						<key>fileName</key>
+						<string>BPTest_XibViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>SDWebImage</string>
+						<key>fileName</key>
+						<string>BPTest_XibViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>YTK</string>
+						<key>fileName</key>
+						<string>BPTest_XibViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>MJRefresh</string>
+						<key>fileName</key>
+						<string>BPTest_XibViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>YYKit</string>
+						<key>fileName</key>
+						<string>BPTest_XibViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Runloop</string>
+				<key>fileName</key>
+				<string>BPRunloopViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>其他知识点集合</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>

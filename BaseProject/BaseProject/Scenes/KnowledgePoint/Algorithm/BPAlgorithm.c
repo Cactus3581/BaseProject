@@ -23,21 +23,20 @@
 int * bubble_sort(int a[], int length)
 {
     int i, j, temp;
-    for (j = 0; j < length - 1; j++)
-        for (i = 0; i < length - 1 - j; i++) //外层循环每循环一次就能确定出一个泡泡（最大或者最小），所以内层循环不用再计算已经排好的部分
+    for (i = 0; i < length - 1; i++)
+        for (j = 0; j < length - 1 - i; j++) //外层循环每循环一次就能确定出一个泡泡（最大或者最小），所以内层循环不用再计算已经排好的部分
         {
-            if(a[i] > a[i + 1])
-            {
-                temp = a[i];
-                a[i] = a[i + 1];
-                a[i + 1] = temp;
+            if(a[j] > a[i + 1]) {
+                temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
             }
         }
     return a;
 }
 
 /*
- 递归-斐波那契奇数列
+ 递归-斐波那契奇数列nn
  程序调用自身的编程技巧称为递归,是函数自己调用自己。
  递归就是有去（递去）有回（归来）；
  递归的基本思想是把规模大的问题转化为规模小的相似的子问题来解决。在函数实现时，因为解决大问题的方法和解决小问题的方法往往是同一个方法，所以就产生了函数调用它自身的情况。另外这个解决问题的函数必须有明显的结束条件，这样就不会产生无限递归的情况了。
@@ -206,51 +205,82 @@ int sumNumber(int *a, int length) {
     return length == 0 ? 0 : sumNumber(a, length - 1) + a[length - 1];
 }
 
-//http://blog.csdn.net/u010593680/article/details/44536657
-void kmpMatch(char * s,int sLength,char * p,int pLength,int *prefix)
-{
-    int pPoint = 0;
-    for(int i = 0; i <= sLength-pLength;i++) {
-        while(pPoint != 0 && (s[i] != p[pPoint])) {
-            pPoint = prefix[pPoint-1];
-        }
-        if(s[i] == p[pPoint]) {
-            pPoint++;
-            if(pPoint == pLength) {
-                printf("找到:%d \n",i-pPoint+1);
-                //pPoint = 0;//上一个在s匹配的字符串,不能成为下一个匹配字符串的一部分
-                pPoint = prefix[pPoint-1];//上一个在s匹配的字符串,也能成为下一个匹配字符串的一部分
-            }
+
+
+//KMP算法
+void get_next(char *t,int next[]) {   //修正前的next数组
+    int i = 1,j = 0;
+    next[0] = -1;
+    next[1] = 0;
+    while(i < strlen(t)-1) {
+        if(j == -1 || t[j] == t[i]) {
+            ++i;
+            ++j;
+            next[i] = j;
+        } else {
+            j = next[j];
         }
     }
 }
 
-void kmpPrefixFunction(char *p,int length,int *prefix) {
-    prefix[0] = 0;
-    int k = 0;//前缀的长度
-    for(int i = 1; i < length; i++) {
-        while(k > 0 && p[k] != p[i]) {
-            k = prefix[k-1];
+void get_nextval(char *t,int nextval[]) {      //修正后的nextval数组
+    int i = 1,j = 0;
+    nextval[0] = -1;
+    nextval[1] = 0;
+    int m = strlen(t);
+    while(i < strlen(t) - 1) {
+        if(j == -1 || t[j] == t[i]) {
+            ++i;
+            ++j;
+            if(t[i]!=t[j]) {
+                nextval[i] = j;
+            }else {
+                nextval[i] = nextval[j];
+            }
+        } else {
+            j = nextval[j];
         }
-        if(p[k] == p[i]) {//说明p[0...k-1]共k个都匹配了
-            k = k+1;
-        }
-        prefix[i] = k;
     }
 }
 
-
-//匹配函数的朴素算法,用于比较
-void normal_match(char * s,int sLength,char * p,int pLength){
-    int k;
-    for(int i = 0;i < sLength-pLength+1; i++) {
-        for(k = 0;k < pLength; k++) {
-            if(s[i+k] != p[k]){
-                break;
-            }
-        }
-        if(k == pLength){
-            printf("找到:%d \n",i);
+int Index_kmp(char *S,char *t,int next[]) {   //逐项比较
+    int j = 0;
+    int i = 0;
+    int lens = strlen(S);
+    int lent = strlen(t);
+    
+    get_next(t,next);
+    
+    while(i < lens && j < lent) {
+        if(S[i] == t[j] || j == -1) {
+            i++;
+            j++;
+        } else {
+            j = next[j];
         }
     }
+    
+    if (j >= lent) {
+        return i - lent;
+    } else {
+        return -1;
+    }
+}
+
+//输入一个整形数组，数组里有正数也有负数。
+//数组中连续的一个或多个整数组成一个子数组，每个子数组都有一个和，求所有子数组的和的最大值。
+//例如输入的数组为1, -2, 3, 10, -4, 7, 2, -5，和最大的子数组为3, 10, -4, 7, 2，
+//因此输出为该子数组的和18。
+int maxsum(int a[],  int n){
+    int *sum = (int *)malloc(n * sizeof(int));
+    sum[0] = a[0];
+    int i;
+    int max = a[0];
+    for(i = 1; i < n;i++){
+        sum[i] = (sum[i-1] + a[i] > a[i] ? sum[i-1] + a[i]: a[i]);
+        if(max < sum[i]){
+            max = sum[i];
+        }
+    }
+    return max;
 }  

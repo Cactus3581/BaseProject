@@ -1,14 +1,18 @@
+//
 // UIImage+RoundedCorner.m
 // Created by Trevor Harmon on 9/20/09.
 // Free for personal or commercial use, with or without modification.
 // No warranty is expressed or implied.
+//
 
 #import "UIImage+BPRoundedCorner.h"
 #import "UIImage+BPAlpha.h"
 
 // Private helper methods
 @interface UIImage (RoundedCornerPrivateMethods)
+
 - (void)bp_addRoundedRectToPath:(CGRect)rect context:(CGContextRef)context ovalWidth:(CGFloat)ovalWidth ovalHeight:(CGFloat)ovalHeight;
+
 @end
 
 @implementation UIImage (BPRoundedCorner)

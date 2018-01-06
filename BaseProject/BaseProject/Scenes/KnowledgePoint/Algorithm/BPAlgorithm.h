@@ -35,10 +35,11 @@ int binarySearch2(int *a, int findNum,int length);
 int sumNumber(int *a, int length);
 
 //kmp算法
-void kmpMatch(char * s,int sLength,char * p,int pLength,int *prefix);
-void kmpPrefixFunction(char *p,int length,int *prefix);
-//匹配函数的朴素算法,用于比较
-void normal_match(char * s,int sLength,char * p,int pLength);
+void get_next(char *t,int next[])  ;
 
+void get_nextval(char *t,int nextval[]) ;
 
+int Index_kmp(char *S,char *t,int next[]) ;
+
+int maxsum(int a[], int n);
 #endif /* BPAlgorithm_h */

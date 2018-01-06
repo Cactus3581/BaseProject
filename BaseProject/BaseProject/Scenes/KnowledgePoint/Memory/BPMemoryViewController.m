@@ -135,7 +135,7 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
     //BPLog(@"%ld",BPRetainCount(_weakButton));// 打印被释放的对象的引用计数会crash
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.backgroundColor = [UIColor redColor];
+    button.backgroundColor = kRedColor;
     button.frame = CGRectMake(100, 100, 100, 100);
     BPLog(@"%ld",BPRetainCount(button));
     
@@ -352,7 +352,7 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
 - (BPWeakView *)zoomAssignView {
     if (!_zoomAssignView) {
         _zoomAssignView = [[BPWeakView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-        _zoomAssignView.backgroundColor = [UIColor greenColor];
+        _zoomAssignView.backgroundColor = kGreenColor;
     }
     return _zoomAssignView;
 }
@@ -360,7 +360,7 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
 - (BPWeakView *)strongView {
     if (!_strongView) {
         _strongView = [[BPWeakView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-        _strongView.backgroundColor = [UIColor greenColor];
+        _strongView.backgroundColor = kGreenColor;
     }
     return _strongView;
 }
@@ -369,7 +369,7 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
     if (!_weakButton) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         _weakButton = button;
-        _weakButton.backgroundColor = [UIColor redColor];
+        _weakButton.backgroundColor = kRedColor;
         _weakButton.frame = CGRectMake(100, 100, 100, 100);
     }
     return _weakButton;

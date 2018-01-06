@@ -18,19 +18,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self bubble];//冒泡
+//    [self bubble];//冒泡
+//
+//    [self fib];//递归-斐波那契奇数列
+//
+//    [self quicksort];//快速排序
+//
+//    [self binarySearch1Result];//二分查找-递归方法
+//
+//    [self binarySearch2Result];//二分查找-非递归方法
+//
+//    [self sum];
+
+//    [self kmp];
     
-    [self fib];//递归-斐波那契奇数列
-
-    [self quicksort];//快速排序
-
-    [self binarySearch1Result];//二分查找-递归方法
-
-    [self binarySearch2Result];//二分查找-非递归方法
-
-    [self kmp];
+    int a[] = {3,2,4,4,2,2,2};
+    printf("%d",maxsum(a,7));
     
-    [self sum];
 }
 
 //递归-斐波那契奇数列
@@ -89,22 +93,19 @@
 //    char str1[] = {'a','e','f','w','g','d'};
 //    char str2[] = {'e','f','d'};
     
-    char *s = "aedsgdasasd";
-    char *p = "gdasa";
-    long pLength = strlen(p);
-    int *prefix = (int *)malloc(pLength*sizeof(int));//开辟个数组
-    printf("%ld,%ld",pLength,sizeof(int));
+    char *s = "adbadabbaabadabbadada";
+    char *t = "adabbadada";
 
-    kmpPrefixFunction(p,pLength,prefix);
-    printf("字符串的最长前缀长度分别是:");
-    for(int i=0; i<pLength; i++) {
-        printf("%d\t",prefix[i]);
-    }
-    printf("\n使用KMP匹配\n");
-    kmpMatch(s,strlen(s),p,pLength,prefix);
+    int *next = (int *)malloc((strlen(t) + 1) * sizeof(int));//修正后的nextval数组
+
+    int result = Index_kmp(s,t,next);
     
-    printf("使用朴素算法:\n");
-    normal_match(s,strlen(s),p,pLength);
+    if(result == -1) {
+        printf("\n无匹配项！\n");
+    }
+    else {
+        printf("\n在第%d项开始匹配成功\n",result+1);
+    }
 }
 
 - (void)didReceiveMemoryWarning {

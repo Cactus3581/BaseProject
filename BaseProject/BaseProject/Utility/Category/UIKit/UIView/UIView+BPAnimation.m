@@ -31,7 +31,7 @@ float bp_radiansForDegrees(int degrees) {
                      completion:^(BOOL finished) {
                          if (delegate != nil) {
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+#pragma clang diagnostic ignored "-Warc-performSelector-leabp"
                              [delegate performSelector:method];
 #pragma clang diagnostic pop
 
@@ -80,14 +80,14 @@ float bp_radiansForDegrees(int degrees) {
                                               }
                                               completion:^(BOOL finished) {
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+#pragma clang diagnostic ignored "-Warc-performSelector-leabp"
 [delegate performSelector:method];
 #pragma clang diagnostic pop
                                                   
                                               }];
                          } else {
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+#pragma clang diagnostic ignored "-Warc-performSelector-leabp"
                              [delegate performSelector:method];
 #pragma clang diagnostic pop
                          }
@@ -107,7 +107,7 @@ float bp_radiansForDegrees(int degrees) {
                      completion:^(BOOL finished) { 
                          if (delegate != nil) {
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+#pragma clang diagnostic ignored "-Warc-performSelector-leabp"
                              [delegate performSelector:method];
 #pragma clang diagnostic pop
                          }
@@ -124,7 +124,7 @@ float bp_radiansForDegrees(int degrees) {
                      completion:^(BOOL finished) { 
                          if (delegate != nil) {
 #pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+#pragma clang diagnostic ignored "-Warc-performSelector-leabp"
                              [delegate performSelector:method];
 #pragma clang diagnostic pop
                          }

@@ -119,6 +119,11 @@ static NSString *footer_nib_identifier = @"nib_footer";
 //设定Cell尺寸，定义某个Cell的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(kScreenWidth, cellH);
+    
+//    if (((indexPath.row+1) % 3) == 0) {
+//        return CGSizeMake((kScreenWidth - (int)(kScreenWidth/3)*2),80);
+//    }
+//    return CGSizeMake((int)(kScreenWidth/3), 80);
 }
 
 //设定Cell间距，设定指定区内Cell的最小间距

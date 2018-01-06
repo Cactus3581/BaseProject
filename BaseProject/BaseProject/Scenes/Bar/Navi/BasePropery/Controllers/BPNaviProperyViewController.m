@@ -15,6 +15,25 @@
  6. ios11 新特性：http://www.jianshu.com/p/04a9d1008276
  */
 
+/**
+ 1. navigationController
+ 2. navigationBar
+ 3. navigationItem
+ //navigationItem控制导航栏标题(title)、promt、标题视图(titleView)、以及按钮（barButtonItem）的添加和数量
+ UINavigationController并没有navigationItem这样一个直接的属性，由于UINavigationController继承于UIViewController,而UIViewController是有navigationItem这个属性的。
+ 它是UINavigationItem一个独特的实例。当视图控制器被推到导航控制器中时，它来代表这个视图控制器。当第一次访问这个属性的时候，它会被创建。因此，如果你并没有用导航控制器来管理视图控制器，那你不应该访问这个属性。为确保navigation item 已经配置，你可以在视图控制器初始化时，重写这个属性、创建bar button item。
+ navigation item 有leftBarButtonItems和rightBarButtonItems两个属性
+ 
+ 4. UIBarButtonItem:rightBarButtonItem
+ UIBarButtonItem是专门给UIToolBar和UINavigationBar定制的类似button的类就好了。
+ 
+ 
+ 
+ 我们来总结一下，如果把导航控制器比作一个剧院，那导航栏就相当于舞台，舞台必然是属于剧院的，所以，导航栏是导航控制器的一个属性。视图控制器（UIViewController）就相当于一个个剧团，而导航项（navigation item）就相当于每个剧团的负责人，负责与剧院的人接洽沟通。显然，导航项应该是视图控制器的一个属性。虽然导航栏和导航项都在做与导航相关的事情，但是它们的从属是不同的。
+ 
+ 我想，这个类比应该能解决以上的疑惑吧。导航栏相当于负责剧院舞台的布景配置，导航项则相当于协调每个在舞台上表演的演员（bar button item,title 等等），每个视图控制器的导航项可能都是不同的，可能一个右边有一个选择照片的bar button item,而另一个视图控制器的右边有两个bar button item。
+ */
+
 #import "BPNaviProperyViewController.h"
 #import <Masonry.h>
 
@@ -109,7 +128,7 @@
     //方法二：
     //self.navigationController.navigationBar.clipsToBounds = YES;
     //此处使底部线条颜色为红色
-    //[navigationBar setShadowImage:[UIImage imageWithColor:[UIColor redColor]]];
+    //[navigationBar setShadowImage:[UIImage imageWithColor:kRedColor]];
     
     [UINavigationBar appearance].tintColor = kOrangeColor;
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"backImage"] forBarMetrics:UIBarMetricsDefault];
@@ -143,7 +162,7 @@
     
     //titleTextAttributes:修改导航栏标题
     NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowColor = kRGBA(0, 0, 0, 0.8);
     shadow.shadowOffset = CGSizeMake(0, 2);
     //字典中放入你想修改的键值对,原来的UITextAttributeFont、UITextAttributeTextColor、UITextAttributeTextShadowColor、UITextAttributeTextShadowOffset已弃用
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:kRedColor,
@@ -207,6 +226,8 @@
     
     //修复navigationController侧滑关闭失效的问题
     self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+    
+//    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
 }
 
 //主要研究由导航栏及改变导航栏的属性引起的零点坐标问题
