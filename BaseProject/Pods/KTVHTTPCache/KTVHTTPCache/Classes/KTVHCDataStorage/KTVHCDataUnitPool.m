@@ -8,15 +8,16 @@
 
 #import "KTVHCDataUnitPool.h"
 #import "KTVHCDataUnitQueue.h"
-#import "KTVHCPathTools.h"
 #import "KTVHCDataPrivate.h"
+#import "KTVHCPathTools.h"
+#import "KTVHCURLTools.h"
 #import "KTVHCLog.h"
 
 
-@interface KTVHCDataUnitPool ()
+@interface KTVHCDataUnitPool () <NSLocking>
 
 
-@property (nonatomic, strong) NSLock * lock;
+@property (nonatomic, strong) NSRecursiveLock * coreLock;
 @property (nonatomic, strong) KTVHCDataUnitQueue * unitQueue;
 
 
@@ -40,7 +41,7 @@
 {
     if (self = [super init])
     {
-        self.lock = [[NSLock alloc] init];
+        self.coreLock = [[NSRecursiveLock alloc] init];
         self.unitQueue = [KTVHCDataUnitQueue unitQueueWithArchiverPath:[KTVHCPathTools absolutePathForArchiver]];
     }
     return self;
@@ -53,8 +54,8 @@
         return nil;
     }
     
-    [self.lock lock];
-    NSString * uniqueIdentifier = [KTVHCDataUnit uniqueIdentifierWithURLString:URLString];
+    [self lock];
+    NSString * uniqueIdentifier = [KTVHCURLTools uniqueIdentifierWithURLString:URLString];
     KTVHCDataUnit * unit = [self.unitQueue unitWithUniqueIdentifier:uniqueIdentifier];
     if (!unit)
     {
@@ -64,20 +65,22 @@
         [self.unitQueue putUnit:unit];
         [self.unitQueue archive];
     }
-    [self.lock unlock];
+    [self unlock];
     return unit;
 }
 
 - (long long)totalCacheLength
 {
+    [self lock];
     long long length = 0;
-    [self.lock lock];
     NSArray <KTVHCDataUnit *> * units = [self.unitQueue allUnits];
     for (KTVHCDataUnit * obj in units)
     {
+        [obj lock];
         length += obj.totalCacheLength;
+        [obj unlock];
     }
-    [self.lock unlock];
+    [self unlock];
     return length;
 }
 
@@ -87,12 +90,13 @@
         return nil;
     }
     
-    [self.lock lock];
+    [self lock];
     KTVHCDataCacheItem * cacheItem = nil;
-    NSString * uniqueIdentifier = [KTVHCDataUnit uniqueIdentifierWithURLString:URLString];
+    NSString * uniqueIdentifier = [KTVHCURLTools uniqueIdentifierWithURLString:URLString];
     KTVHCDataUnit * obj = [self.unitQueue unitWithUniqueIdentifier:uniqueIdentifier];
     if (obj)
     {
+        [obj lock];
         NSMutableArray * itemZones = [NSMutableArray array];
         for (KTVHCDataUnitItem * unitItem in obj.unitItems)
         {
@@ -107,38 +111,28 @@
                                               totalLength:obj.totalContentLength
                                               cacheLength:obj.totalCacheLength
                                                     zones:itemZones];
+        [obj unlock];
     }
-    [self.lock unlock];
+    [self unlock];
     return cacheItem;
 }
 
 - (NSArray <KTVHCDataCacheItem *> *)allCacheItem
 {
-    [self.lock lock];
+    [self lock];
     NSMutableArray * cacheItems = [NSMutableArray array];
     NSArray <KTVHCDataUnit *> * units = [self.unitQueue allUnits];
     for (KTVHCDataUnit * obj in units)
     {
-        NSMutableArray * itemZones = [NSMutableArray array];
-        for (KTVHCDataUnitItem * unitItem in obj.unitItems)
-        {
-            KTVHCDataCacheItemZone * itemZone = [KTVHCDataCacheItemZone itemZoneWithOffset:unitItem.offset
-                                                                                    length:unitItem.length];
-            [itemZones addObject:itemZone];
+        KTVHCDataCacheItem * cacheItem = [self cacheItemWithURLString:obj.URLString];
+        if (cacheItem) {
+            [cacheItems addObject:cacheItem];
         }
-        if (itemZones.count <= 0) {
-            itemZones = nil;
-        }
-        KTVHCDataCacheItem * cacheItem = [KTVHCDataCacheItem itemWithURLString:obj.URLString
-                                                                  totalLength:obj.totalContentLength
-                                                                  cacheLength:obj.totalCacheLength
-                                                                        zones:itemZones];
-        [cacheItems addObject:cacheItem];
     }
     if (cacheItems.count <= 0) {
         cacheItems = nil;
     }
-    [self.lock unlock];
+    [self unlock];
     return cacheItems;
 }
 
@@ -148,18 +142,20 @@
         return;
     }
     
-    [self.lock lock];
-    NSString * uniqueIdentifier = [KTVHCDataUnit uniqueIdentifierWithURLString:URLString];
+    [self lock];
+    NSString * uniqueIdentifier = [KTVHCURLTools uniqueIdentifierWithURLString:URLString];
     KTVHCDataUnit * obj = [self.unitQueue unitWithUniqueIdentifier:uniqueIdentifier];
     if (obj && !obj.working)
     {
         KTVHCLogDataUnit(@"delete unit 1, %@", URLString);
         
+        [obj lock];
         [obj deleteFiles];
         [self.unitQueue popUnit:obj];
         [self.unitQueue archive];
+        [obj unlock];
     }
-    [self.lock unlock];
+    [self unlock];
 }
 
 - (void)deleteUnitsWithMinSize:(long long)minSize
@@ -168,7 +164,7 @@
         return;
     }
     
-    [self.lock lock];
+    [self lock];
     
     BOOL needArchive = NO;
     long long currentSize = 0;
@@ -177,14 +173,19 @@
     
 #if 1
     [units sortedArrayUsingComparator:^NSComparisonResult(KTVHCDataUnit * obj1, KTVHCDataUnit * obj2) {
-        NSTimeInterval timeInterval1 = obj1.lastItemCerateInterval;
-        NSTimeInterval timeInterval2 = obj2.lastItemCerateInterval;
+        NSComparisonResult result = NSOrderedDescending;
+        [obj1 lock];
+        [obj2 lock];
+        NSTimeInterval timeInterval1 = obj1.lastItemCreateInterval;
+        NSTimeInterval timeInterval2 = obj2.lastItemCreateInterval;
         if (timeInterval1 < timeInterval2) {
-            return NSOrderedAscending;
+            result = NSOrderedAscending;
         } else if (timeInterval1 == timeInterval2 && obj1.createTimeInterval < obj2.createTimeInterval) {
-            return NSOrderedAscending;
+            result = NSOrderedAscending;
         }
-        return NSOrderedDescending;
+        [obj1 unlock];
+        [obj2 unlock];
+        return result;
     }];
 #endif
     
@@ -193,11 +194,13 @@
         if (!obj.working)
         {
             KTVHCLogDataUnitPool(@"delete unit 2, %@", obj.URLString);
-            
+         
+            [obj lock];
             currentSize += obj.totalCacheLength;
             [obj deleteFiles];
             [self.unitQueue popUnit:obj];
             needArchive = YES;
+            [obj unlock];
         }
         if (currentSize >= minSize)
         {
@@ -207,12 +210,12 @@
     if (needArchive) {
         [self.unitQueue archive];
     }
-    [self.lock unlock];
+    [self unlock];
 }
 
 - (void)deleteAllUnits
 {
-    [self.lock lock];
+    [self lock];
     BOOL needArchive = NO;
     NSArray <KTVHCDataUnit *> * units = [self.unitQueue allUnits];
     for (KTVHCDataUnit * obj in units)
@@ -221,15 +224,17 @@
         {
             KTVHCLogDataUnitPool(@"delete unit 2, %@", obj.URLString);
             
+            [obj lock];
             [obj deleteFiles];
             [self.unitQueue popUnit:obj];
             needArchive = YES;
+            [obj unlock];
         }
     }
     if (needArchive) {
         [self.unitQueue archive];
     }
-    [self.lock unlock];
+    [self unlock];
 }
 
 - (void)mergeUnitWithURLString:(NSString *)URLString
@@ -238,31 +243,35 @@
         return;
     }
     
-    [self.lock lock];
-    NSString * uniqueIdentifier = [KTVHCDataUnit uniqueIdentifierWithURLString:URLString];
+    [self lock];
+    NSString * uniqueIdentifier = [KTVHCURLTools uniqueIdentifierWithURLString:URLString];
     KTVHCDataUnit * obj = [self.unitQueue unitWithUniqueIdentifier:uniqueIdentifier];
+    [obj lock];
     BOOL success = [obj mergeFiles];
+    [obj unlock];
     if (success) {
         [self.unitQueue archive];
     }
-    [self.lock unlock];
+    [self unlock];
 }
 
 - (void)mergeAllUnits
 {
-    [self.lock lock];
+    [self lock];
     BOOL success = NO;
     NSArray <KTVHCDataUnit *> * units = [self.unitQueue allUnits];
     for (KTVHCDataUnit * obj in units)
     {
+        [obj lock];
         if ([obj mergeFiles]) {
             success = YES;
         }
+        [obj unlock];
     }
     if (success) {
         [self.unitQueue archive];
     }
-    [self.lock unlock];
+    [self unlock];
 }
 
 
@@ -276,12 +285,14 @@
     
     KTVHCLogDataUnitPool(@"insert unit item :%@", unitItem);
     
-    [self.lock lock];
-    NSString * uniqueIdentifier = [KTVHCDataUnit uniqueIdentifierWithURLString:unitURLString];
-    KTVHCDataUnit * unit = [self.unitQueue unitWithUniqueIdentifier:uniqueIdentifier];
-    [unit insertUnitItem:unitItem];
+    [self lock];
+    NSString * uniqueIdentifier = [KTVHCURLTools uniqueIdentifierWithURLString:unitURLString];
+    KTVHCDataUnit * obj = [self.unitQueue unitWithUniqueIdentifier:uniqueIdentifier];
+    [obj lock];
+    [obj insertUnitItem:unitItem];
     [self.unitQueue archive];
-    [self.lock unlock];
+    [obj unlock];
+    [self unlock];
 }
 
 - (void)unit:(NSString *)unitURLString updateRequestHeaderFields:(NSDictionary *)requestHeaderFields
@@ -292,11 +303,13 @@
     
     KTVHCLogDataUnitPool(@"update request header fields\n%@", requestHeaderFields);
     
-    [self.lock lock];
-    NSString * uniqueIdentifier = [KTVHCDataUnit uniqueIdentifierWithURLString:unitURLString];
-    KTVHCDataUnit * unit = [self.unitQueue unitWithUniqueIdentifier:uniqueIdentifier];
-    [unit updateRequestHeaderFields:requestHeaderFields];
-    [self.lock unlock];
+    [self lock];
+    NSString * uniqueIdentifier = [KTVHCURLTools uniqueIdentifierWithURLString:unitURLString];
+    KTVHCDataUnit * obj = [self.unitQueue unitWithUniqueIdentifier:uniqueIdentifier];
+    [obj lock];
+    [obj updateRequestHeaderFields:requestHeaderFields];
+    [obj unlock];
+    [self unlock];
 }
 
 - (void)unit:(NSString *)unitURLString updateResponseHeaderFields:(NSDictionary *)responseHeaderFields
@@ -307,12 +320,27 @@
     
     KTVHCLogDataUnitPool(@"update response header fields\n%@", responseHeaderFields);
     
-    [self.lock lock];
-    NSString * uniqueIdentifier = [KTVHCDataUnit uniqueIdentifierWithURLString:unitURLString];
-    KTVHCDataUnit * unit = [self.unitQueue unitWithUniqueIdentifier:uniqueIdentifier];
-    [unit updateResponseHeaderFields:responseHeaderFields];
+    [self lock];
+    NSString * uniqueIdentifier = [KTVHCURLTools uniqueIdentifierWithURLString:unitURLString];
+    KTVHCDataUnit * obj = [self.unitQueue unitWithUniqueIdentifier:uniqueIdentifier];
+    [obj lock];
+    [obj updateResponseHeaderFields:responseHeaderFields];
     [self.unitQueue archive];
-    [self.lock unlock];
+    [obj unlock];
+    [self unlock];
+}
+
+
+#pragma mark - NSLocking
+
+- (void)lock
+{
+    [self.coreLock lock];
+}
+
+- (void)unlock
+{
+    [self.coreLock unlock];
 }
 
 

@@ -10,7 +10,6 @@
 
 @implementation NSTimer (BPUnRetain)
 
-
 + (NSTimer *)bp_scheduledTimerWithTimeInterval:(NSTimeInterval)inerval repeats:(BOOL)repeats block:(void (^)(NSTimer *timer))block{
     return [NSTimer scheduledTimerWithTimeInterval:inerval target:self selector:@selector(bp_blcokInvoke:) userInfo:[block copy] repeats:repeats];
 }

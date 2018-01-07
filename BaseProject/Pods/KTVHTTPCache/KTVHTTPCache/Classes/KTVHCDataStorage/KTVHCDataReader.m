@@ -19,6 +19,7 @@
 
 @property (nonatomic, strong) dispatch_queue_t delegateQueue;
 @property (nonatomic, strong) dispatch_queue_t internalDelegateQueue;
+@property (nonatomic, strong) NSRecursiveLock * interfaceLock;
 
 @property (nonatomic, strong) KTVHCDataUnit * unit;
 @property (nonatomic, strong) KTVHCDataSourcer * sourcer;
@@ -60,10 +61,14 @@
         
         self.unit = unit;
         [self.unit workingRetain];
+        
         self.request = request;
+        [self.request updateRangeMaxIfNeeded:self.unit.totalContentLength];
+        
         self.delegateQueue = dispatch_queue_create("KTVHCDataReader_delegateQueue", DISPATCH_QUEUE_SERIAL);
         self.internalDelegateQueue = dispatch_queue_create("KTVHCDataReader_internalDelegateQueue", DISPATCH_QUEUE_SERIAL);
         [self.unit setDelegate:self delegateQueue:self.internalDelegateQueue];
+        self.interfaceLock = [[NSRecursiveLock alloc] init];
     }
     return self;
 }
@@ -87,7 +92,9 @@
     
     KTVHCLogDataReader(@"call prepare\n%@\n%@", self.unit.URLString, self.request.headerFields);
     
+    [self.interfaceLock lock];
     [self setupAndPrepareSourcer];
+    [self.interfaceLock unlock];
 }
 
 - (void)close
@@ -99,8 +106,10 @@
     
     KTVHCLogDataReader(@"call close, %@", self.unit.URLString);
     
+    [self.interfaceLock lock];
     [self.sourcer close];
     [self.unit workingRelease];
+    [self.interfaceLock unlock];
 }
 
 - (NSData *)readDataOfLength:(NSUInteger)length
@@ -112,6 +121,7 @@
         return nil;
     }
     
+    [self.interfaceLock lock];
     NSData * data = [self.sourcer readDataOfLength:length];;
     self.readOffset += data.length;
     
@@ -125,6 +135,7 @@
         
         [self close];
     }
+    [self.interfaceLock unlock];
     return data;
 }
 
@@ -149,24 +160,21 @@
     [self.unit sortUnitItems];
     for (KTVHCDataUnitItem * item in self.unit.unitItems)
     {
-        [item lock];
-        
         long long itemMin = item.offset;
         long long itemMax = item.offset + item.length - 1;
         
         if (itemMax < min || itemMin > max) {
-            [item unlock];
             continue;
         }
         
-        if (min >= itemMin) {
+        if (min > itemMin) {
             itemMin = min;
         }
-        if (max <= itemMax) {
+        if (max < itemMax) {
             itemMax = max;
         }
         
-        min = item.offset + (itemMin - item.offset) + (itemMax - itemMin + 1);
+        min = itemMax + 1;
         
         KTVHCDataFileSource * source = [KTVHCDataFileSource sourceWithFilePath:item.absolutePath
                                                                         offset:item.offset
@@ -174,8 +182,6 @@
                                                                    startOffset:itemMin - item.offset
                                                                 needReadLength:itemMax - itemMin + 1];
         [fileSources addObject:source];
-        
-        [item unlock];
     }
     [self.unit unlock];
     

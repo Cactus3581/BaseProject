@@ -29,6 +29,7 @@ target 'BaseProject' do
     pod 'Bugly'
     #pod 'FLEX'
 
+    pod 'CocoaAsyncSocket'
 
     #pod 'FreeStreamer'
     #pod 'YYKit'

@@ -9,7 +9,9 @@
 #import "KTVHTTPCacheImp.h"
 #import "KTVHCHTTPServer.h"
 #import "KTVHCDataStorage.h"
+#import "KTVHCDataNetworkSource.h"
 #import "KTVHCDownload.h"
+#import "KTVHCURLTools.h"
 #import "KTVHCLog.h"
 
 @implementation KTVHTTPCache
@@ -100,6 +102,21 @@
 + (void)cacheMergeCacheWtihURLString:(NSString *)URLString
 {
     [[KTVHCDataStorage storage] mergeCacheWithURLString:URLString];
+}
+
+
+#pragma mark - Data Stroage Filters
+
++ (void)cacheSetURLFilterForArchive:(NSString *(^)(NSString *))URLFilterBlock
+{
+    [KTVHCURLTools URLTools].archiveURLFilterBlock = URLFilterBlock;
+}
+
++ (void)cacheSetContentTypeFilterForResponseVerify:(BOOL (^)(NSString *,
+                                                             NSString *,
+                                                             NSArray <NSString *> *))contentTypeFilterBlock
+{
+    [KTVHCDataNetworkSource setContentTypeFilterBlock:contentTypeFilterBlock];
 }
 
 

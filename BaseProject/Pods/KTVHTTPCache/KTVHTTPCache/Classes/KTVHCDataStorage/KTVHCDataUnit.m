@@ -27,7 +27,7 @@
 @property (nonatomic, assign) long long totalContentLength;
 @property (nonatomic, assign) long long totalCacheLength;
 
-@property (nonatomic, strong) NSLock * coreLock;
+@property (nonatomic, strong) NSRecursiveLock * coreLock;
 @property (nonatomic, strong) NSMutableArray <KTVHCDataUnitItem *> * unitItems;
 
 @property (nonatomic, assign) NSInteger workingCount;
@@ -53,7 +53,7 @@
     {
         KTVHCLogAlloc(self);
         self.URLString = URLString;
-        self.uniqueIdentifier = [[self class] uniqueIdentifierWithURLString:self.URLString];
+        self.uniqueIdentifier = [KTVHCURLTools uniqueIdentifierWithURLString:self.URLString];
         self.createTimeInterval = [NSDate date].timeIntervalSince1970;
         [self prepare];
     }
@@ -95,7 +95,9 @@
 
 - (void)prepare
 {
-    self.coreLock = [[NSLock alloc] init];
+    self.coreLock = [[NSRecursiveLock alloc] init];
+    
+    [self lock];
     if (!self.unitItems) {
         self.unitItems = [NSMutableArray array];
     }
@@ -115,13 +117,13 @@
     }
     
     KTVHCLogDataUnit(@"prepare result, %@, %ld", self.URLString, self.unitItems.count);
+    
+    [self unlock];
 }
 
 - (void)sortUnitItems
 {
-    for (KTVHCDataUnitItem * obj in self.unitItems) {
-        [obj lock];
-    }
+    [self lock];
     [self.unitItems sortUsingComparator:^NSComparisonResult(KTVHCDataUnitItem * obj1, KTVHCDataUnitItem * obj2) {
         NSComparisonResult result = NSOrderedDescending;
         if (obj1.offset < obj2.offset) {
@@ -131,9 +133,7 @@
         }
         return result;
     }];
-    for (KTVHCDataUnitItem * obj in self.unitItems) {
-        [obj unlock];
-    }
+    [self unlock];
 }
 
 - (void)insertUnitItem:(KTVHCDataUnitItem *)unitItem
@@ -157,38 +157,38 @@
 - (void)updateResponseHeaderFields:(NSDictionary *)responseHeaderFields
 {
     self.responseHeaderFields = responseHeaderFields;
-    
-    NSString * contentRange = [self.responseHeaderFields objectForKey:@"Content-Range"];
-    if (!contentRange) {
-        contentRange = [self.responseHeaderFields objectForKey:@"content-range"];
-    }
-    
-    NSRange range = [contentRange rangeOfString:@"/"];
-    if (contentRange.length > 0 && range.location != NSNotFound) {
-        self.totalContentLength = [contentRange substringFromIndex:range.location + range.length].longLongValue;
-    }
+    [self updateTotalContentLength];
     
     KTVHCLogDataUnit(@"update response\n%@", self.responseHeaderFields);
 }
 
-
-#pragma mark - Setter/Getter
-
-- (void)setTotalContentLength:(long long)totalContentLength
+- (void)updateTotalContentLength
 {
-    if (_totalContentLength != totalContentLength)
+    NSString * contentRange = [self.responseHeaderFields objectForKey:@"Content-Range"];
+    if (!contentRange) {
+        contentRange = [self.responseHeaderFields objectForKey:@"content-range"];
+    }
+    NSRange range = [contentRange rangeOfString:@"/"];
+    if (contentRange.length > 0 && range.location != NSNotFound)
     {
-        _totalContentLength = totalContentLength;
-        
-        KTVHCLogDataUnit(@"set total content length, %lld", totalContentLength);
-        
-        if ([self.delegate respondsToSelector:@selector(unitDidUpdateTotalContentLength:)]) {
-            [KTVHCDataCallback callbackWithQueue:self.delegateQueue block:^{
-                [self.delegate unitDidUpdateTotalContentLength:self];
-            }];
+        long long totalContentLength = [contentRange substringFromIndex:range.location + range.length].longLongValue;
+        if (self.totalContentLength != totalContentLength)
+        {
+            self.totalContentLength = totalContentLength;
+            
+            KTVHCLogDataUnit(@"set total content length, %lld", totalContentLength);
+            
+            if ([self.delegate respondsToSelector:@selector(unitDidUpdateTotalContentLength:)]) {
+                [KTVHCDataCallback callbackWithQueue:self.delegateQueue block:^{
+                    [self.delegate unitDidUpdateTotalContentLength:self];
+                }];
+            }
         }
     }
 }
+
+
+#pragma mark - Setter/Getter
 
 - (long long)totalCacheLength
 {
@@ -229,7 +229,7 @@
     return self.responseHeaderFields;
 }
 
-- (NSTimeInterval)lastItemCerateInterval
+- (NSTimeInterval)lastItemCreateInterval
 {
     [self lock];
     NSTimeInterval timeInterval = self.createTimeInterval;
@@ -255,25 +255,25 @@
 
 - (BOOL)working
 {
-    [self lock];
+    [self.coreLock lock];
     BOOL working = self.workingCount > 0;
-    [self unlock];
+    [self.coreLock unlock];
     return working;
 }
 
 - (void)workingRetain
 {
-    [self lock];
+    [self.coreLock lock];
     self.workingCount++;
     
     KTVHCLogDataUnit(@"working retain, %@, %ld", self.URLString, self.workingCount);
     
-    [self unlock];
+    [self.coreLock unlock];
 }
 
 - (void)workingRelease
 {
-    [self lock];
+    [self.coreLock lock];
     self.workingCount--;
     
     KTVHCLogDataUnit(@"working release, %@, %ld", self.URLString, self.workingCount);
@@ -295,7 +295,7 @@
         }
     }
     
-    [self unlock];
+    [self.coreLock unlock];
 }
 
 
@@ -326,19 +326,17 @@
 - (void)lock
 {
     [self.coreLock lock];
+    for (KTVHCDataUnitItem * obj in self.unitItems) {
+        [obj lock];
+    }
 }
 
 - (void)unlock
 {
+    for (KTVHCDataUnitItem * obj in self.unitItems) {
+        [obj unlock];
+    }
     [self.coreLock unlock];
-}
-
-
-#pragma mark - Class Functions
-
-+ (NSString *)uniqueIdentifierWithURLString:(NSString *)URLString
-{
-    return [KTVHCURLTools md5:URLString];
 }
 
 
