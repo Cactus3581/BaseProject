@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BPCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="203" height="175"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="203" height="175"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAU-Vg-sZl">
+                        <rect key="frame" x="0.0" y="0.0" width="203" height="175"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="圣诞季卡上的卡萨的卡上的刷卡机打卡时间到卡上就打瞌睡的" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Oo-Y0-BCE">
+                                <rect key="frame" x="0.0" y="0.0" width="203" height="175"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1Oo-Y0-BCE" firstAttribute="top" secondItem="OAU-Vg-sZl" secondAttribute="top" id="ScB-OH-kVz"/>
+                            <constraint firstItem="1Oo-Y0-BCE" firstAttribute="leading" secondItem="OAU-Vg-sZl" secondAttribute="leading" id="lxR-Gs-A1d"/>
+                            <constraint firstAttribute="bottom" secondItem="1Oo-Y0-BCE" secondAttribute="bottom" id="nNn-ei-4Rl"/>
+                            <constraint firstAttribute="trailing" secondItem="1Oo-Y0-BCE" secondAttribute="trailing" id="vGd-ga-dfV"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="OAU-Vg-sZl" secondAttribute="trailing" id="brc-J1-nxP"/>
+                <constraint firstItem="OAU-Vg-sZl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="n4g-5f-AUd"/>
+                <constraint firstItem="OAU-Vg-sZl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vyW-e2-740"/>
+                <constraint firstAttribute="bottom" secondItem="OAU-Vg-sZl" secondAttribute="bottom" id="xi7-Ml-HqS"/>
+            </constraints>
+            <size key="customSize" width="203" height="175"/>
+            <connections>
+                <outlet property="aniamationBackView" destination="OAU-Vg-sZl" id="rPC-ZI-exP"/>
+            </connections>
+            <point key="canvasLocation" x="101.5" y="114.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -29,6 +29,15 @@ CGFloat XRZScreenWidthRatio(){
     return [UIScreen mainScreen].bounds.size.width/(375.0f);
 }
 
+CGFloat BPScreenWidthRatio(){
+    static CGFloat ratio;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        ratio = [UIScreen mainScreen].bounds.size.width / 375.0f;
+    });
+    return ratio;
+}
+
 /**
  获取宽度比例：在横屏下，获取的宽度比例，也是竖屏下的宽度比例
  */
@@ -101,4 +110,3 @@ CGFloat XRZScreenScale() {
     });
     return scale;
 }
-

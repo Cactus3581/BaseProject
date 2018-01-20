@@ -39,6 +39,11 @@ static inline CGSize BPMultiineStringSize(NSString *rawString,UIFont *font,CGSiz
     return [string length] > 0 ? [string boundingRectWithSize:maxSize options:mode attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
 };
 
+/**
+ obj->json
+ 
+ @return json字符串
+ */
 static inline NSString * BPJSON(id theData) {
     if (!theData) {
         return @"";
@@ -46,10 +51,25 @@ static inline NSString * BPJSON(id theData) {
     NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:theData options:NSJSONWritingPrettyPrinted error:&error];
     if (jsonData && error == nil) {
-        NSString *jsonStr = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+        NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
         return BPValidateString(jsonStr);
     }
     return @"";
+}
+
+// 将JSON串转化为字典或者数组
+static inline id BPFromJSON(NSString *jsonString) {
+    jsonString = BPValidateString(jsonString);
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    id obj = [NSJSONSerialization JSONObjectWithData:jsonData
+                                             options:NSJSONReadingMutableContainers
+                                               error:&err];
+    if(err) {
+        BPLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return obj;
 }
 
 
@@ -171,6 +191,62 @@ static inline NSString * XRZPlacedString () {
         
     });
     return placedString;
+}
+
+
+/*以下方法使用Foundation框架对 完整url 进行编解码*/
+/**
+ URL编码
+ 此方法适用于url或者参数中包含中文以及其它非法字符的情况，但不适用于参数包含保留字和其他特殊字符的情况。
+ 
+ @return URL
+ */
+static inline NSString * BPUrlStringEncode(NSString *url) {
+    if (!BPValidateString(url).length) {
+        return kPlacedString;
+    }
+    NSCharacterSet *encodeUrlSet = [NSCharacterSet URLQueryAllowedCharacterSet];
+    NSString *encodeUrl = [url stringByAddingPercentEncodingWithAllowedCharacters:encodeUrlSet];
+    return encodeUrl;
+};
+
+/**
+ URL解码
+ 
+ @return URL
+ */
+static inline NSString * BPUrlStringDecode(NSString *url) {
+    if (!BPValidateString(url).length) {
+        return kPlacedString;
+    }
+    NSString *decodeUrl = [url stringByRemovingPercentEncoding];
+    return decodeUrl;
+};
+
+/*
+ 使用CoreFoundation对 url参数 进行encode
+ 此方法适用于，url前缀不包含中文以及其它非法字符的情况，只需要对参数进行编码即可。
+ */
+static inline NSString * BPUrlStringParamEncode(NSString *url) {
+    if (!BPValidateString(url).length) {
+        return kPlacedString;
+    }
+    //9.0之后被废弃，encode方法建议用上面的方法
+    CFStringRef encodeParaCf = CFURLCreateStringByAddingPercentEscapes(NULL, (__bridge CFStringRef)url, NULL, CFSTR("!*'();:@&=+$,/?%#[]"), kCFStringEncodingUTF8);
+    NSString *encodePara = (__bridge NSString *)(encodeParaCf);
+    CFRelease(encodeParaCf);
+    return encodePara;
+};
+
+/*使用CoreFoundation 对 url参数 进行decode*/
+static inline NSString * BPUrlStringParamDecode(NSString *url) {
+    if (!BPValidateString(url).length) {
+        return kPlacedString;
+    }
+    //9.0之后被废弃
+    //NSString *decodedString = (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,(__bridge CFStringRef)url,CFSTR(""),CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+    NSString *decodedString = (NSString *)CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapes(kCFAllocatorDefault, (CFStringRef) url,NULL));
+    return decodedString;
 }
 
 NS_ASSUME_NONNULL_END

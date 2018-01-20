@@ -63,7 +63,8 @@ typedef void(^BPAddViewBlock)(CGRect frame);
 /**返回一个临时视图，一般用于辅助layer的布局，因为layer无法使用自动布局*/
 + (instancetype)bp_tempViewForFrameWithBlock:(BPAddViewBlock)block;
 
-@end
+- (void)bp_setAnchorPointTo:(CGPoint)point;
 
+@end
 
 NS_ASSUME_NONNULL_END

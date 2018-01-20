@@ -53,7 +53,7 @@ static CGFloat titleInset = 20.0f;
     _leftBarButtonImage = [leftBarButtonImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.leftBarButton setImage:_leftBarButtonImage forState:UIControlStateNormal];
     [self.leftBarButton sizeToFit];
-    CGFloat width = self.leftBarButton.bounds.size.width > bp_naviItem_width ? self.leftBarButton.bounds.size.width:bp_naviItem_width;
+    CGFloat width = MAX(self.leftBarButton.bounds.size.width , bp_naviItem_width);
     self.leftBarButton.bounds = CGRectMake(0, 0,width, bp_naviItem_height);
 }
 
@@ -62,7 +62,7 @@ static CGFloat titleInset = 20.0f;
     [self.leftBarButton setTitle:_leftBarButtonTitle forState:UIControlStateNormal];
     [self.leftBarButton sizeToFit];
 
-    CGFloat width = self.leftBarButton.bounds.size.width > bp_naviItem_width ? self.leftBarButton.bounds.size.width:bp_naviItem_width;
+    CGFloat width = MAX(self.leftBarButton.bounds.size.width , bp_naviItem_width);
     CGFloat titleWidth = BPStringSize(_leftBarButtonTitle,BPFont(16)).width;
     if (!_leftBarButtonImage ) {//特殊处理：没有返回图片，只有文字的情况
         if ((titleWidth <= bp_naviItem_width) && (titleWidth >= titleInset)) {
@@ -93,7 +93,7 @@ static CGFloat titleInset = 20.0f;
     _rightBarButtonImage = rightBarButtonImage;
     [self.rightBarButton setImage:rightBarButtonImage forState:UIControlStateNormal];
     [self.rightBarButton sizeToFit];
-    CGFloat width = self.rightBarButton.bounds.size.width > bp_naviItem_width ? self.leftBarButton.bounds.size.width:bp_naviItem_width;
+    CGFloat width = MAX(self.rightBarButton.bounds.size.width , bp_naviItem_width);
     self.rightBarButton.bounds = CGRectMake(0, 0,width, bp_naviItem_height);
 }
 
@@ -101,8 +101,7 @@ static CGFloat titleInset = 20.0f;
     _rightBarButtonTitle = rightBarButtonTitle;
     [self.rightBarButton setTitle:rightBarButtonTitle forState:UIControlStateNormal];
     [self.rightBarButton sizeToFit];
-    
-    CGFloat width = self.rightBarButton.bounds.size.width > bp_naviItem_width ? self.leftBarButton.bounds.size.width:bp_naviItem_width;
+    CGFloat width = MAX(self.rightBarButton.bounds.size.width , bp_naviItem_width);
     CGFloat titleWidth = BPStringSize(_rightBarButtonTitle,BPFont(16)).width;
     if (!_rightBarButtonImage) {//特殊处理：没有返回图片，只有文字的情况
         if ((titleWidth <= bp_naviItem_width) && (titleWidth >= titleInset)) {

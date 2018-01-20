@@ -295,7 +295,7 @@ do { \
 #endif
 
 #ifndef kRandomColor
-#define kRandomColor kRGBColor(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256))
+#define kRandomColor kRGB(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256))
 #endif
 
 #ifndef kAlphaComponentColor

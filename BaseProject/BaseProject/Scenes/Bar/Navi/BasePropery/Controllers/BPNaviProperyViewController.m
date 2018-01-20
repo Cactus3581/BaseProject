@@ -227,6 +227,7 @@
     //修复navigationController侧滑关闭失效的问题
     self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
     
+    //iOS 11 之前 把系统的backButton的文字去掉，11之后不管用了
 //    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
 }
 

@@ -12,6 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 //方法声明
+CGFloat BPScreenWidthRatio();
 CGSize XRZScreenSize();
 CGSize XRZScreenUniqueSize();
 
@@ -37,6 +38,23 @@ static inline CGFloat DegreesToRadians(CGFloat degrees) {
 
 static inline CGFloat RadiansToDegrees(CGFloat radians) {
     return radians * 180 / M_PI;
+}
+
+#define kWidthRatio(_f_) (_f_) * BPScreenWidthRatio()
+
+static inline CGSize BPSizeMake(CGFloat width, CGFloat height) {
+    CGSize size; size.width = kWidthRatio(width); size.height = kWidthRatio(height); return size;
+}
+
+static inline CGPoint BPPointMake(CGFloat x, CGFloat y) {
+    CGPoint point; point.x = kWidthRatio(x); point.y = kWidthRatio(y); return point;
+}
+
+static inline CGRect BPRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height) {
+    CGRect rect;
+    rect.origin.x = kWidthRatio(x); rect.origin.y = kWidthRatio(y);
+    rect.size.width = kWidthRatio(width); rect.size.height = kWidthRatio(height);
+    return rect;
 }
 
 //获取一像素

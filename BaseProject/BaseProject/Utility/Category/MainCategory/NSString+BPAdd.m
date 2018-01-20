@@ -54,7 +54,6 @@ BPSYNTH_DUMMY_CLASS(NSString_BPAdd)
 }
 
 - (CGSize)bp_sizeWithfont:(UIFont *)font maxSize:(CGSize)maxSize{
-    
     NSDictionary *attrs = @{NSFontAttributeName : font};
     return [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
 }

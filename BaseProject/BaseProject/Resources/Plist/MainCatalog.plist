@@ -4,95 +4,6 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string>ScrollView</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string>导航栏基本属性及动画/自定义Tabbar</string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>ScrollView</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string>ScrollView</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>TableView</string>
-				<key>fileName</key>
-				<string>BPSimpleTableController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>subVc_array</key>
-				<array>
-					<dict>
-						<key>title</key>
-						<string>TableViewPlain</string>
-						<key>fileName</key>
-						<string>BPPlainTableViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>TableViewGroup</string>
-						<key>fileName</key>
-						<string>BPGroupTableViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>Cell自适应高度</string>
-						<key>fileName</key>
-						<string>BPAdaptiveHeightTableViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>多级目录</string>
-						<key>fileName</key>
-						<string></string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>CollectionView</string>
-				<key>fileName</key>
-				<string>BPSimpleTableController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>subVc_array</key>
-				<array>
-					<dict>
-						<key>title</key>
-						<string>CollectionView</string>
-						<key>fileName</key>
-						<string>BPCollectionViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>CustomLayoutCollectionView</string>
-						<key>fileName</key>
-						<string></string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-				</array>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>Bar</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
@@ -161,7 +72,7 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>锚点</string>
+				<string>image切割</string>
 				<key>fileName</key>
 				<string>BPPopViewController</string>
 				<key>briefIntro</key>
@@ -169,17 +80,17 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>箭头PopView-图片</string>
+				<string>箭头PopView-图片/自定义画图</string>
 				<key>fileName</key>
-				<string>BPNaviProperyViewController</string>
+				<string>BPArrowPopViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>箭头PopView-自定义画图</string>
+				<string>锚点</string>
 				<key>fileName</key>
-				<string>BPNaviTableViewController</string>
+				<string>BPAnchorPopViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -192,6 +103,33 @@
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
 		<string>collectionView相关应用</string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>颜色左右渐变 + 底部线条</string>
+				<key>fileName</key>
+				<string>BP_ONE_TopSliderCatergoryViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>颜色变化 + 背后椭圆 + 设置默认index</string>
+				<key>fileName</key>
+				<string>BP_TWO_TopSliderCatergoryViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>颜色变化 + 文字缩放 + 模拟网络刷新</string>
+				<key>fileName</key>
+				<string>BP_THREE_TopSliderCatergoryViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -200,6 +138,14 @@
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
 		<string>边播边下载</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>添加圆角</string>
+		<key>fileName</key>
+		<string>BPAddRoundedCornerViewController</string>
+		<key>briefIntro</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -216,6 +162,49 @@
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
 		<string>导航栏基本属性及动画/自定义Tabbar</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>动画集合</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>水波纹</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>数字增长</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>淘宝购物车</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>Loading</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -325,12 +314,29 @@
 	<dict>
 		<key>title</key>
 		<string>轮播图</string>
-		<key>New item</key>
-		<string>轮播图</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
 		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>普通轮播图</string>
+				<key>fileName</key>
+				<string>BPSlideShowViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>卡片滑动</string>
+				<key>fileName</key>
+				<string>BPCardPageFlowViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -417,14 +423,6 @@
 				<string></string>
 			</dict>
 		</array>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>web桥接</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string>js与native交互</string>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -515,17 +513,95 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>UIButton</string>
+				<string>UIScrollView</string>
 				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
+				<string>BPScrollViewController</string>
+				<key>briefIntro</key>
+				<string>ScrollView</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UITableView</string>
+				<key>fileName</key>
+				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
 				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>TableViewPlain</string>
+						<key>fileName</key>
+						<string>BPPlainTableViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>TableViewGroup</string>
+						<key>fileName</key>
+						<string>BPGroupTableViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>Cell自适应高度</string>
+						<key>fileName</key>
+						<string>BPAdaptiveHeightTableViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>多级目录</string>
+						<key>fileName</key>
+						<string></string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UICollectionView</string>
+				<key>fileName</key>
+				<string>BPSimpleTableController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>CollectionView</string>
+						<key>fileName</key>
+						<string>BPCollectionViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>CustomLayoutCollectionView</string>
+						<key>fileName</key>
+						<string></string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>title</key>
 				<string>UILabel</string>
 				<key>fileName</key>
-				<string>BPTestViewController</string>
+				<string>BPLabelViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UIButton</string>
+				<key>fileName</key>
+				<string>BPButtonViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -533,7 +609,127 @@
 				<key>title</key>
 				<string>UIImageView</string>
 				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
+				<string>BPImageViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UITextField</string>
+				<key>fileName</key>
+				<string>BPTextFieldViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UITextView</string>
+				<key>fileName</key>
+				<string>BPTextViewViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UIView</string>
+				<key>fileName</key>
+				<string>BPViewViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UIViewController</string>
+				<key>fileName</key>
+				<string>BPViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UIProgressView</string>
+				<key>fileName</key>
+				<string>BPProgressViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UISlider</string>
+				<key>fileName</key>
+				<string>BPSliderViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UIWebView</string>
+				<key>fileName</key>
+				<string>BPWebViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UISlider</string>
+				<key>fileName</key>
+				<string>BPSliderViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UISlider</string>
+				<key>fileName</key>
+				<string>BPSliderViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UIPageControl</string>
+				<key>fileName</key>
+				<string>BPPageControlController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UISegmentedControl</string>
+				<key>fileName</key>
+				<string>BPSegmentedControlController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UIPickView</string>
+				<key>fileName</key>
+				<string>BPPickViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UIWindow</string>
+				<key>fileName</key>
+				<string>BPWindowController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UISearchBar</string>
+				<key>fileName</key>
+				<string>BPSearchBarViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UIDatePicker</string>
+				<key>fileName</key>
+				<string>BPDatePickerController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -546,6 +742,92 @@
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
 		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Foundation下的数据处理及常用算法</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>NSString</string>
+				<key>fileName</key>
+				<string> </string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>NSArray</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>NSDictionary</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>NSNumber</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>NSSet</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>小功能点</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>CollectionView 分页动画思路</string>
+				<key>fileName</key>
+				<string> </string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>取一张图片的色值</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>内容决定ViewBounds</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -577,6 +859,14 @@
 				<string>Palette</string>
 				<key>fileName</key>
 				<string>BPPaletteViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>TestCollectionView</string>
+				<key>fileName</key>
+				<string>BPCollectionPageViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -625,7 +915,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>自定义画图</string>
+				<string>图形</string>
 				<key>fileName</key>
 				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
@@ -634,7 +924,42 @@
 				<array>
 					<dict>
 						<key>title</key>
-						<string>drawView</string>
+						<string>View及ViewController显示过程</string>
+						<key>fileName</key>
+						<string>BPSimpleTableController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>Layout过程</string>
+								<key>fileName</key>
+								<string>BPLayoutViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>XIB布局下的系统方法执行顺序</string>
+								<key>fileName</key>
+								<string>BPXibViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>Masonry使用技巧</string>
+								<key>fileName</key>
+								<string>BPMasonrySkillViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>自定义画图</string>
 						<key>fileName</key>
 						<string>BPDrawViewController</string>
 						<key>briefIntro</key>
@@ -642,11 +967,73 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>Layer</string>
+						<string>Layer属性、分类及View重要属性</string>
 						<key>fileName</key>
-						<string>BPLayerController</string>
+						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
 						<string></string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>Layer属性</string>
+								<key>fileName</key>
+								<string>BPLayerController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>CAShapeLayer</string>
+								<key>fileName</key>
+								<string>BPShapeLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>CAReplicatorLayer</string>
+								<key>fileName</key>
+								<string>BPReplicatorLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>CAGradientLayer</string>
+								<key>fileName</key>
+								<string>BPGradientLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>动画</string>
+						<key>fileName</key>
+						<string>BPSimpleTableController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>UIView Block动画</string>
+								<key>fileName</key>
+								<string>BPBlockAnimatonVC</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>核心动画</string>
+								<key>fileName</key>
+								<string>BPCoreAnimationVC</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+						</array>
 					</dict>
 				</array>
 			</dict>
@@ -765,14 +1152,6 @@
 				<string>KVC</string>
 				<key>fileName</key>
 				<string>BPKVCViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>Masonry</string>
-				<key>fileName</key>
-				<string>BPMasonryViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
