@@ -11,7 +11,6 @@
 @interface BPBlockAnimatonVC ()
 @property (nonatomic,strong) UIView *testView;
 @property (nonatomic,strong) UIImageView *imageview;
-
 @end
 
 @implementation BPBlockAnimatonVC
