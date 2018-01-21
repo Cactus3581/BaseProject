@@ -441,6 +441,7 @@
 		01E672B12014898300FB22D4 /* BPLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E672A92014898300FB22D4 /* BPLayerViewController.m */; };
 		01E672B22014898300FB22D4 /* BPGradientLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E672AB2014898300FB22D4 /* BPGradientLayerViewController.m */; };
 		01E672B32014898300FB22D4 /* BPReplicatorLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E672AE2014898300FB22D4 /* BPReplicatorLayerViewController.m */; };
+		01E672B720148C1D00FB22D4 /* BPViewPropertyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E672B620148C1D00FB22D4 /* BPViewPropertyController.m */; };
 		01E6B18B2001FE870008C18C /* BPDatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E6B1892001FE870008C18C /* BPDatabaseViewController.m */; };
 		01E6B1922001FE970008C18C /* SchoolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E6B18D2001FE960008C18C /* SchoolModel.m */; };
 		01E6B1932001FE970008C18C /* DataBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E6B18F2001FE970008C18C /* DataBaseModel.m */; };
@@ -1340,6 +1341,8 @@
 		01E672AC2014898300FB22D4 /* BPGradientLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGradientLayerViewController.h; sourceTree = "<group>"; };
 		01E672AE2014898300FB22D4 /* BPReplicatorLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPReplicatorLayerViewController.m; sourceTree = "<group>"; };
 		01E672AF2014898300FB22D4 /* BPReplicatorLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPReplicatorLayerViewController.h; sourceTree = "<group>"; };
+		01E672B520148C1D00FB22D4 /* BPViewPropertyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPViewPropertyController.h; sourceTree = "<group>"; };
+		01E672B620148C1D00FB22D4 /* BPViewPropertyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPViewPropertyController.m; sourceTree = "<group>"; };
 		01E6B1892001FE870008C18C /* BPDatabaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDatabaseViewController.m; sourceTree = "<group>"; };
 		01E6B18A2001FE870008C18C /* BPDatabaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDatabaseViewController.h; sourceTree = "<group>"; };
 		01E6B18C2001FE950008C18C /* ClassModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassModel.h; sourceTree = "<group>"; };
@@ -5201,6 +5204,7 @@
 		01E672A32014897B00FB22D4 /* View&Layer */ = {
 			isa = PBXGroup;
 			children = (
+				01E672B420148BFA00FB22D4 /* View */,
 				01E672A72014898300FB22D4 /* Layer */,
 				01E672A42014898200FB22D4 /* CAShapeLayer */,
 				01E672AA2014898300FB22D4 /* CAGradientLayer */,
@@ -5243,6 +5247,15 @@
 				01E672AF2014898300FB22D4 /* BPReplicatorLayerViewController.h */,
 			);
 			path = CAReplicatorLayer;
+			sourceTree = "<group>";
+		};
+		01E672B420148BFA00FB22D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01E672B520148C1D00FB22D4 /* BPViewPropertyController.h */,
+				01E672B620148C1D00FB22D4 /* BPViewPropertyController.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		01E6B1852001FE590008C18C /* Views */ = {
@@ -5652,6 +5665,7 @@
 				01DF31C41FDD3A9100B8A955 /* NSHTTPCookieStorage+BPFreezeDry.m in Sources */,
 				010DB7431FDD4D450099E66F /* UIImage+BPAnimatedGIF.m in Sources */,
 				01DF31CD1FDD3A9100B8A955 /* NSMutableURLRequest+BPUpload.m in Sources */,
+				01E672B720148C1D00FB22D4 /* BPViewPropertyController.m in Sources */,
 				01DF31C71FDD3A9100B8A955 /* NSUserDefaults+BPiCloudSync.m in Sources */,
 				018C451E200A5AD300CF43D7 /* YYFPSLabel.m in Sources */,
 				01DF32591FDD3B9D00B8A955 /* NSData+BPzlib.m in Sources */,

@@ -976,6 +976,14 @@
 						<array>
 							<dict>
 								<key>title</key>
+								<string>View属性:mask/transform</string>
+								<key>fileName</key>
+								<string>BPViewPropertyController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
 								<string>Layer属性</string>
 								<key>fileName</key>
 								<string>BPLayerViewController</string>

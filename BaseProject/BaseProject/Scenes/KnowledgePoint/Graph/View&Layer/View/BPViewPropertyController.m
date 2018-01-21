@@ -1,28 +1,27 @@
 //
-//  BPLayerViewController.m
+//  BPViewPropertyController.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/1/12.
-//  Copyright © 2017年 xiaruzhen. All rights reserved.
+//  Created by xiaruzhen on 2018/1/21.
+//  Copyright © 2018年 cactus. All rights reserved.
 //
 
-#import "BPLayerViewController.h"
+#import "BPViewPropertyController.h"
 
 #define btn_inset (10)
 #define btn_bottom (-20)
 
-@interface BPLayerViewController ()
-@property (nonatomic,strong) CALayer *testLayer;
+@interface BPViewPropertyController ()
 @property (nonatomic,strong) UIView *testView;
 @end
 
-@implementation BPLayerViewController
+@implementation BPViewPropertyController
 
 //https://www.cnblogs.com/breezemist/p/3457286.html
 
 /*
- 主要测试transform对layer的影响
-
+ 
+ 主要测试transform对view的影响
  当一个view的transform被更改了，即不为CGAffineTransformIdentity。
  
  frame属性可能会更改，view的bounds，center不会变，layer的position不会变。这个很重要，这样保持了在transform后，view的frame虽然改变了，但是内部参考系是不变的，可以继续进行其他变换，只要不更改frame或center或layer的position。
@@ -34,82 +33,63 @@
     [self creatTransformButton];
     [self creatMaskButton];
     [self creatResetButton];
-    [self creatLayer];// layer基本属性
-//    [self setBig];
+    [self creatView];
 }
 
 #pragma mark - transform属性
 - (void)makeTranslationAction {
-    BPLog(@"%@",@(self.testLayer.frame));
-    BPLog(@"%@",@(self.testLayer.position));
-    BPLog(@"%@",@(self.testLayer.bounds));
-    self.testLayer.transform = CATransform3DMakeTranslation(0, 30, 0);
-    BPLog(@"%@",@(self.testLayer.frame));
-    BPLog(@"%@",@(self.testLayer.position));
-    BPLog(@"%@",@(self.testLayer.bounds));
+    BPLog(@"%@",@(self.testView.frame));
+    BPLog(@"%@",@(self.testView.center));
+    BPLog(@"%@",@(self.testView.bounds));
+    self.testView.transform = CGAffineTransformMakeTranslation(30, 30);
+    BPLog(@"%@",@(self.testView.frame));
+    BPLog(@"%@",@(self.testView.center));
+    BPLog(@"%@",@(self.testView.bounds));
 }
 
 - (void)translationAction {
-    self.testLayer.transform = CATransform3DTranslate(self.testLayer.transform, 0, 30, 0);
+    self.testView.transform = CGAffineTransformTranslate(self.testView.transform, 30, 30);
 }
 
 - (void)makeScaleAction {
-    self.testLayer.transform = CATransform3DMakeScale(0.5f, 0.5f, 1.0f);
+    self.testView.transform = CGAffineTransformMakeScale(0.5, 0.5);
 }
 
 - (void)scaleAction {
-    //self.testLayer.transform = CATransform3DScale(CATransform3DIdentity, 0.5f, 0.5f, 1.0f);
-    self.testLayer.transform = CATransform3DScale(self.testLayer.transform, 0.5f, 0.5f, 1.0f);
+    self.testView.transform = CGAffineTransformScale(self.testView.transform, 0.5, 0.5);
 }
 
 - (void)makeRotationAction {
-    //方法一
-    CATransform3D transform = CATransform3DIdentity;
-    transform = CATransform3DMakeRotation(kDegreesToRadian(45),1, 0, 0);
-    transform.m34 = 0.0005;
-    self.testLayer.transform =  transform;
-}
-
-- (void)scaleRotationAction {
-    //方法二
-    //旋转也可以用CATransform3DScale，当为负数的时候起到即旋转又缩放的效果
-    CATransform3D transform = CATransform3DIdentity;
-    transform = CATransform3DScale(transform, -1, 0.5, 1.0);
-    self.testLayer.transform =  transform;
+    self.testView.transform = CGAffineTransformMakeRotation(kDegreesToRadian(90));
 }
 
 - (void)rotateAction {
-    CATransform3D transform = CATransform3DRotate(self.testLayer.transform, kDegreesToRadian(45), 0, 1, 0);
-    transform.m34 = 0.0005;
-    self.testLayer.transform =  transform;
+    self.testView.transform = CGAffineTransformRotate(self.testView.transform, kDegreesToRadian(45));
 }
 
 #pragma mark - mask属性
-- (void)maskLayerAction {
+- (void)maskView {
+    UIImage *maskImage = [UIImage imageNamed:@"maskImage"];
+
     //第一种 maskLayer
     CALayer *maskLayer = [CALayer layer];
-    maskLayer.frame = self.testLayer.bounds;
-    UIImage *maskImage = [UIImage imageNamed:@"maskImage"];
+    maskLayer.frame = self.testView.bounds;
     maskLayer.contents = (__bridge id)maskImage.CGImage;
-    self.testLayer.mask = maskLayer;
+    //maskLayer.backgroundColor = kWhiteColor.CGColor;//如果mask的背景色为非clearcolor 会完全展现。
+    self.testView.layer.mask = maskLayer;
+    
+    //第二种 maskView
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.testView.bounds];
+    imageView.frame = CGRectMake(20, 20, 50, 50);
+    imageView.image = maskImage;
+    //self.testView.maskView = imageView;
 }
 
 #pragma mark - reset 重新测试
-- (void)resetAction {
-    self.testLayer.transform =  CATransform3DIdentity;
-    [self.testLayer removeFromSuperlayer];
-    self.testLayer = nil;
-    [self creatLayer];
-}
-
-#pragma mark - 创建testLayer
-- (void)creatLayer {
-    self.testLayer =[CALayer layer] ;
-    self.testLayer.frame = CGRectMake(50, 64, 200, 200);
-    UIImage *maskImage1 = [UIImage imageNamed:@"layerTest"];
-    self.testLayer.contents = (__bridge id)maskImage1.CGImage;
-    self.testLayer.shouldRasterize = YES;
-    [self.view.layer addSublayer:self.testLayer];
+- (void)reset {
+    [self.testView removeFromSuperview];
+    self.testView = nil;
+    [self creatView];
 }
 
 #pragma mark - 创建Button 操作Layer的属性
@@ -119,6 +99,7 @@
     [transform_makeRotation setTitle:@"Make旋转" forState:UIControlStateNormal];
     [transform_makeRotation setTitleColor:kBlackColor forState:UIControlStateNormal];
     transform_makeRotation.titleLabel.font = [UIFont systemFontOfSize:12];
+    transform_makeRotation.backgroundColor = kGreenColor;
     [self.view addSubview:transform_makeRotation];
     
     UIButton *transform_rotation = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -126,13 +107,15 @@
     [transform_rotation setTitle:@"旋转" forState:UIControlStateNormal];
     [transform_rotation setTitleColor:kBlackColor forState:UIControlStateNormal];
     transform_rotation.titleLabel.font = [UIFont systemFontOfSize:12];
+    transform_rotation.backgroundColor = kGreenColor;
     [self.view addSubview:transform_rotation];
-
+    
     UIButton *transform_makeTranslationAction = [UIButton buttonWithType:UIButtonTypeSystem];
     [transform_makeTranslationAction addTarget:self action:@selector(makeTranslationAction) forControlEvents:UIControlEventTouchUpInside];
     [transform_makeTranslationAction setTitle:@"Make平移" forState:UIControlStateNormal];
     [transform_makeTranslationAction setTitleColor:kBlackColor forState:UIControlStateNormal];
     transform_makeTranslationAction.titleLabel.font = [UIFont systemFontOfSize:12];
+    transform_makeTranslationAction.backgroundColor = kGreenColor;
     [self.view addSubview:transform_makeTranslationAction];
     
     UIButton *transform_translation = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -140,6 +123,7 @@
     [transform_translation setTitle:@"平移" forState:UIControlStateNormal];
     [transform_translation setTitleColor:kBlackColor forState:UIControlStateNormal];
     transform_translation.titleLabel.font = [UIFont systemFontOfSize:12];
+    transform_translation.backgroundColor = kGreenColor;
     [self.view addSubview:transform_translation];
     
     UIButton *transform_makeScale = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -147,6 +131,7 @@
     [transform_makeScale setTitle:@"Make缩放" forState:UIControlStateNormal];
     [transform_makeScale setTitleColor:kBlackColor forState:UIControlStateNormal];
     transform_makeScale.titleLabel.font = [UIFont systemFontOfSize:12];
+    transform_makeScale.backgroundColor = kGreenColor;
     [self.view addSubview:transform_makeScale];
     
     UIButton *transform_scale = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -154,14 +139,8 @@
     [transform_scale setTitle:@"缩放" forState:UIControlStateNormal];
     [transform_scale setTitleColor:kBlackColor forState:UIControlStateNormal];
     transform_scale.titleLabel.font = [UIFont systemFontOfSize:12];
+    transform_scale.backgroundColor = kGreenColor;
     [self.view addSubview:transform_scale];
-    
-    UIButton *transform_scaleRotation = [UIButton buttonWithType:UIButtonTypeSystem];
-    [transform_scaleRotation addTarget:self action:@selector(scaleRotationAction) forControlEvents:UIControlEventTouchUpInside];
-    [transform_scaleRotation setTitle:@"scale 缩放+旋转" forState:UIControlStateNormal];
-    [transform_scaleRotation setTitleColor:kBlackColor forState:UIControlStateNormal];
-    transform_scaleRotation.titleLabel.font = [UIFont systemFontOfSize:12];
-    [self.view addSubview:transform_scaleRotation];
     
     [transform_makeRotation mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(btn_inset);
@@ -192,78 +171,52 @@
         make.left.equalTo(transform_makeScale.mas_right).offset(btn_inset);
         make.bottom.equalTo(transform_makeRotation.mas_bottom);
     }];
-    
-    [transform_scaleRotation mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(transform_scale.mas_right).offset(btn_inset);
-        make.bottom.equalTo(transform_makeRotation.mas_bottom);
-    }];
 }
 
 - (void)creatMaskButton {
-    UIButton *mask_layer = [UIButton buttonWithType:UIButtonTypeSystem];
-    [mask_layer addTarget:self action:@selector(maskLayerAction) forControlEvents:UIControlEventTouchUpInside];
-    [mask_layer setTitle:@"MaskLayer" forState:UIControlStateNormal];
-    [mask_layer setTitleColor:kBlackColor forState:UIControlStateNormal];
-    mask_layer.titleLabel.font = [UIFont systemFontOfSize:12];
-    [self.view addSubview:mask_layer];
-    
-    [mask_layer mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [button addTarget:self action:@selector(maskView) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"Mask" forState:UIControlStateNormal];
+    [button setTitleColor:kBlackColor forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:12];
+    button.backgroundColor = kRedColor;
+    [self.view addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(btn_inset);
         make.bottom.equalTo(self.view.mas_bottom).offset(btn_bottom *2);
     }];
 }
 
 - (void)creatResetButton {
-    UIButton *reset = [UIButton buttonWithType:UIButtonTypeSystem];
-    [reset addTarget:self action:@selector(resetAction) forControlEvents:UIControlEventTouchUpInside];
-    [reset setTitle:@"重写运行" forState:UIControlStateNormal];
-    [reset setTitleColor:kBlackColor forState:UIControlStateNormal];
-    reset.titleLabel.font = [UIFont systemFontOfSize:12];
-    [self.view addSubview:reset];
-    
-    [reset mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIButton *resetButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [resetButton addTarget:self action:@selector(reset) forControlEvents:UIControlEventTouchUpInside];
+    [resetButton setTitle:@"重写运行" forState:UIControlStateNormal];
+    [resetButton setTitleColor:kBlackColor forState:UIControlStateNormal];
+    resetButton.titleLabel.font = [UIFont systemFontOfSize:12];
+    resetButton.backgroundColor = kYellowColor;
+    [self.view addSubview:resetButton];
+    [resetButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(btn_inset);
         make.bottom.equalTo(self.view.mas_bottom).offset(btn_bottom);
     }];
 }
 
+#pragma mark - 创建View
+- (void)creatView {
+    self.testView = [[UIView alloc]initWithFrame:CGRectMake(10, 100, 300, 100)];
+    self.testView.backgroundColor = kRedColor;
+    UIImage *maskImage1 = [UIImage imageNamed:@"layerTest"];
+    self.testView.layer.contents = (__bridge id)maskImage1.CGImage;
+    [self.view addSubview:self.testView];
+    
+    //    UILabel *label = [[UILabel alloc]init];
+    //    label.frame =CGRectMake(10, 20, 40, 20);
+    //    label.text = @"滑动解锁";
+    //    self.testView.layer.mask = label.layer;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-}
-
-- (void)setBig {
-    self.testView = [[UIView alloc]initWithFrame:CGRectMake(100, 300, 60, 60)];
-    self.testView.backgroundColor = kGreenColor;
-    self.testView.layer.cornerRadius = 30;
-    [self.view addSubview:self.testView];
-    [self performSelector:@selector(scan) withObject:nil afterDelay:2.0];
-    
-    //    CABasicAnimation *anmation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    //    anmation.fromValue = @0.0;
-    //    anmation.toValue = @1;
-    //    anmation.duration = 2.5;
-    //    anmation.repeatCount = MAXFLOAT;
-    //    [self.shapeLayer addAnimation:anmation forKey:@""];
-}
-
-- (void)scan {
-    [self transitionWithType:@"suckEffect" WithSubtype:@"kCATransitionFromRight" ForView:self.testView];
-}
-
-- (void) transitionWithType:(NSString *)type WithSubtype:(NSString *)subtype ForView:(UIView *)view {
-    //创建CATransition对象
-    CATransition *animation = [CATransition animation];
-    //设置运动时间
-    animation.duration = 0.5;
-    //设置运动type
-    animation.type = type;
-    if (subtype != nil) {
-        //设置子类
-        animation.subtype = subtype;
-    }
-    //设置运动速度
-    animation.timingFunction = UIViewAnimationOptionCurveEaseInOut;
-    [view.layer addAnimation:animation forKey:@"animation"];
 }
 
 @end
