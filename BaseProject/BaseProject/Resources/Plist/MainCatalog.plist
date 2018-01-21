@@ -978,7 +978,7 @@
 								<key>title</key>
 								<string>Layer属性</string>
 								<key>fileName</key>
-								<string>BPLayerController</string>
+								<string>BPLayerViewController</string>
 								<key>briefIntro</key>
 								<string></string>
 							</dict>

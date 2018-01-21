@@ -244,10 +244,6 @@
 		0195EAA7201373E700DC59A1 /* BPLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0195EA96201373E700DC59A1 /* BPLayoutView.m */; };
 		0195EAA8201373E700DC59A1 /* BPMasonrySkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0195EA9B201373E700DC59A1 /* BPMasonrySkillViewController.m */; };
 		0195EAA9201373E700DC59A1 /* BPMasonrySkillView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0195EA9E201373E700DC59A1 /* BPMasonrySkillView.m */; };
-		0195EAC420137C7E00DC59A1 /* BPReplicatorLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0195EAC320137C7E00DC59A1 /* BPReplicatorLayerViewController.m */; };
-		0195EAC720137C8900DC59A1 /* BPGradientLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0195EAC620137C8900DC59A1 /* BPGradientLayerViewController.m */; };
-		0195EACA20137C9400DC59A1 /* BPLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0195EAC920137C9400DC59A1 /* BPLayerViewController.m */; };
-		0195EACD20137C9F00DC59A1 /* BPShapeLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0195EACC20137C9F00DC59A1 /* BPShapeLayerViewController.m */; };
 		01A191AA2004E139005EE4CD /* BPLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A191A92004E139005EE4CD /* BPLabelViewController.m */; };
 		01A191AD2004E155005EE4CD /* BPButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A191AC2004E155005EE4CD /* BPButtonViewController.m */; };
 		01A191B02004E165005EE4CD /* BPTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A191AF2004E165005EE4CD /* BPTextFieldViewController.m */; };
@@ -441,6 +437,10 @@
 		01E0136B200D0B5700374C53 /* BPPaletteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E01366200D0B5700374C53 /* BPPaletteViewController.m */; };
 		01E01374200D0BBE00374C53 /* BPCollectionPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E01372200D0BBE00374C53 /* BPCollectionPageViewController.m */; };
 		01E01376200D0D0100374C53 /* palette.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 01E01375200D0D0100374C53 /* palette.jpeg */; };
+		01E672B02014898300FB22D4 /* BPShapeLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E672A52014898200FB22D4 /* BPShapeLayerViewController.m */; };
+		01E672B12014898300FB22D4 /* BPLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E672A92014898300FB22D4 /* BPLayerViewController.m */; };
+		01E672B22014898300FB22D4 /* BPGradientLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E672AB2014898300FB22D4 /* BPGradientLayerViewController.m */; };
+		01E672B32014898300FB22D4 /* BPReplicatorLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E672AE2014898300FB22D4 /* BPReplicatorLayerViewController.m */; };
 		01E6B18B2001FE870008C18C /* BPDatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E6B1892001FE870008C18C /* BPDatabaseViewController.m */; };
 		01E6B1922001FE970008C18C /* SchoolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E6B18D2001FE960008C18C /* SchoolModel.m */; };
 		01E6B1932001FE970008C18C /* DataBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E6B18F2001FE970008C18C /* DataBaseModel.m */; };
@@ -944,14 +944,6 @@
 		0195EA9C201373E700DC59A1 /* BPMasonrySkillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMasonrySkillViewController.h; sourceTree = "<group>"; };
 		0195EA9E201373E700DC59A1 /* BPMasonrySkillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPMasonrySkillView.m; sourceTree = "<group>"; };
 		0195EA9F201373E700DC59A1 /* BPMasonrySkillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMasonrySkillView.h; sourceTree = "<group>"; };
-		0195EAC220137C7E00DC59A1 /* BPReplicatorLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPReplicatorLayerViewController.h; sourceTree = "<group>"; };
-		0195EAC320137C7E00DC59A1 /* BPReplicatorLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPReplicatorLayerViewController.m; sourceTree = "<group>"; };
-		0195EAC520137C8900DC59A1 /* BPGradientLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPGradientLayerViewController.h; sourceTree = "<group>"; };
-		0195EAC620137C8900DC59A1 /* BPGradientLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPGradientLayerViewController.m; sourceTree = "<group>"; };
-		0195EAC820137C9400DC59A1 /* BPLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPLayerViewController.h; sourceTree = "<group>"; };
-		0195EAC920137C9400DC59A1 /* BPLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPLayerViewController.m; sourceTree = "<group>"; };
-		0195EACB20137C9F00DC59A1 /* BPShapeLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPShapeLayerViewController.h; sourceTree = "<group>"; };
-		0195EACC20137C9F00DC59A1 /* BPShapeLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPShapeLayerViewController.m; sourceTree = "<group>"; };
 		01A191A82004E139005EE4CD /* BPLabelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPLabelViewController.h; sourceTree = "<group>"; };
 		01A191A92004E139005EE4CD /* BPLabelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPLabelViewController.m; sourceTree = "<group>"; };
 		01A191AB2004E155005EE4CD /* BPButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPButtonViewController.h; sourceTree = "<group>"; };
@@ -1340,6 +1332,14 @@
 		01E01372200D0BBE00374C53 /* BPCollectionPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCollectionPageViewController.m; sourceTree = "<group>"; };
 		01E01373200D0BBE00374C53 /* BPCollectionPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCollectionPageViewController.h; sourceTree = "<group>"; };
 		01E01375200D0D0100374C53 /* palette.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = palette.jpeg; sourceTree = "<group>"; };
+		01E672A52014898200FB22D4 /* BPShapeLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPShapeLayerViewController.m; sourceTree = "<group>"; };
+		01E672A62014898200FB22D4 /* BPShapeLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPShapeLayerViewController.h; sourceTree = "<group>"; };
+		01E672A82014898300FB22D4 /* BPLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPLayerViewController.h; sourceTree = "<group>"; };
+		01E672A92014898300FB22D4 /* BPLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPLayerViewController.m; sourceTree = "<group>"; };
+		01E672AB2014898300FB22D4 /* BPGradientLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGradientLayerViewController.m; sourceTree = "<group>"; };
+		01E672AC2014898300FB22D4 /* BPGradientLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGradientLayerViewController.h; sourceTree = "<group>"; };
+		01E672AE2014898300FB22D4 /* BPReplicatorLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPReplicatorLayerViewController.m; sourceTree = "<group>"; };
+		01E672AF2014898300FB22D4 /* BPReplicatorLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPReplicatorLayerViewController.h; sourceTree = "<group>"; };
 		01E6B1892001FE870008C18C /* BPDatabaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDatabaseViewController.m; sourceTree = "<group>"; };
 		01E6B18A2001FE870008C18C /* BPDatabaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDatabaseViewController.h; sourceTree = "<group>"; };
 		01E6B18C2001FE950008C18C /* ClassModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassModel.h; sourceTree = "<group>"; };
@@ -3675,7 +3675,7 @@
 			children = (
 				0195EA262013727800DC59A1 /* AutoLayoutProcess */,
 				0195EA272013729500DC59A1 /* Draw */,
-				0195EABD20137C6100DC59A1 /* View&Layer */,
+				01E672A32014897B00FB22D4 /* View&Layer */,
 				0195EA7A201373C100DC59A1 /* Animation */,
 			);
 			path = Graph;
@@ -3858,54 +3858,6 @@
 				0195EA9E201373E700DC59A1 /* BPMasonrySkillView.m */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		0195EABD20137C6100DC59A1 /* View&Layer */ = {
-			isa = PBXGroup;
-			children = (
-				0195EAC020137C6100DC59A1 /* Layer */,
-				0195EAC120137C6100DC59A1 /* CAShapeLayer */,
-				0195EABE20137C6100DC59A1 /* CAReplicatorLayer */,
-				0195EABF20137C6100DC59A1 /* CAGradientLayer */,
-			);
-			name = "View&Layer";
-			path = "../../../../../../../Desktop/View&Layer";
-			sourceTree = "<group>";
-		};
-		0195EABE20137C6100DC59A1 /* CAReplicatorLayer */ = {
-			isa = PBXGroup;
-			children = (
-				0195EAC220137C7E00DC59A1 /* BPReplicatorLayerViewController.h */,
-				0195EAC320137C7E00DC59A1 /* BPReplicatorLayerViewController.m */,
-			);
-			path = CAReplicatorLayer;
-			sourceTree = "<group>";
-		};
-		0195EABF20137C6100DC59A1 /* CAGradientLayer */ = {
-			isa = PBXGroup;
-			children = (
-				0195EAC520137C8900DC59A1 /* BPGradientLayerViewController.h */,
-				0195EAC620137C8900DC59A1 /* BPGradientLayerViewController.m */,
-			);
-			path = CAGradientLayer;
-			sourceTree = "<group>";
-		};
-		0195EAC020137C6100DC59A1 /* Layer */ = {
-			isa = PBXGroup;
-			children = (
-				0195EAC820137C9400DC59A1 /* BPLayerViewController.h */,
-				0195EAC920137C9400DC59A1 /* BPLayerViewController.m */,
-			);
-			path = Layer;
-			sourceTree = "<group>";
-		};
-		0195EAC120137C6100DC59A1 /* CAShapeLayer */ = {
-			isa = PBXGroup;
-			children = (
-				0195EACB20137C9F00DC59A1 /* BPShapeLayerViewController.h */,
-				0195EACC20137C9F00DC59A1 /* BPShapeLayerViewController.m */,
-			);
-			path = CAShapeLayer;
 			sourceTree = "<group>";
 		};
 		01A191952004DF21005EE4CD /* UILabel */ = {
@@ -5246,6 +5198,53 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		01E672A32014897B00FB22D4 /* View&Layer */ = {
+			isa = PBXGroup;
+			children = (
+				01E672A72014898300FB22D4 /* Layer */,
+				01E672A42014898200FB22D4 /* CAShapeLayer */,
+				01E672AA2014898300FB22D4 /* CAGradientLayer */,
+				01E672AD2014898300FB22D4 /* CAReplicatorLayer */,
+			);
+			path = "View&Layer";
+			sourceTree = "<group>";
+		};
+		01E672A42014898200FB22D4 /* CAShapeLayer */ = {
+			isa = PBXGroup;
+			children = (
+				01E672A52014898200FB22D4 /* BPShapeLayerViewController.m */,
+				01E672A62014898200FB22D4 /* BPShapeLayerViewController.h */,
+			);
+			path = CAShapeLayer;
+			sourceTree = "<group>";
+		};
+		01E672A72014898300FB22D4 /* Layer */ = {
+			isa = PBXGroup;
+			children = (
+				01E672A82014898300FB22D4 /* BPLayerViewController.h */,
+				01E672A92014898300FB22D4 /* BPLayerViewController.m */,
+			);
+			path = Layer;
+			sourceTree = "<group>";
+		};
+		01E672AA2014898300FB22D4 /* CAGradientLayer */ = {
+			isa = PBXGroup;
+			children = (
+				01E672AB2014898300FB22D4 /* BPGradientLayerViewController.m */,
+				01E672AC2014898300FB22D4 /* BPGradientLayerViewController.h */,
+			);
+			path = CAGradientLayer;
+			sourceTree = "<group>";
+		};
+		01E672AD2014898300FB22D4 /* CAReplicatorLayer */ = {
+			isa = PBXGroup;
+			children = (
+				01E672AE2014898300FB22D4 /* BPReplicatorLayerViewController.m */,
+				01E672AF2014898300FB22D4 /* BPReplicatorLayerViewController.h */,
+			);
+			path = CAReplicatorLayer;
+			sourceTree = "<group>";
+		};
 		01E6B1852001FE590008C18C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -5631,13 +5630,13 @@
 				0179070920011D9E00E5C360 /* BPBlockViewController.m in Sources */,
 				010DB7441FDD4D450099E66F /* UIImage+BPBetterFace.m in Sources */,
 				010DB75A1FDD4D450099E66F /* UIFont+BPTTF.m in Sources */,
-				0195EAC720137C8900DC59A1 /* BPGradientLayerViewController.m in Sources */,
 				01DF31C61FDD3A9100B8A955 /* NSURLConnection+BPSelfSigned.m in Sources */,
 				010DB7531FDD4D450099E66F /* UISearchBar+BPBlocks.m in Sources */,
 				01DF321C1FDD3B3000B8A955 /* NSString+BPHTML.m in Sources */,
 				01D22BC71FDD814000BCC4AD /* NSDate+BPAdd.m in Sources */,
 				01A191BC2004E1B2005EE4CD /* BPViewViewController.m in Sources */,
 				01D22BE51FDD814000BCC4AD /* UIScrollView+BPAdd.m in Sources */,
+				01E672B02014898300FB22D4 /* BPShapeLayerViewController.m in Sources */,
 				010DB70A1FDD4D450099E66F /* UILabel+BPAutoSize.m in Sources */,
 				01E0136B200D0B5700374C53 /* BPPaletteViewController.m in Sources */,
 				01C31F86200FA1CD0096C2E0 /* BPAnchorAnimationView.m in Sources */,
@@ -5709,7 +5708,6 @@
 				0184BF821FD6DB2C00CB9AAD /* BPTest_XibViewController.m in Sources */,
 				01D22BD11FDD814000BCC4AD /* NSArray+BPAdd.m in Sources */,
 				017A9A471FDD2B9A00CDA599 /* UIView+BPScreenshot.m in Sources */,
-				0195EAC420137C7E00DC59A1 /* BPReplicatorLayerViewController.m in Sources */,
 				01C0B6661FFCC65F005BB4A5 /* PaletteColorModel.m in Sources */,
 				01DF31E31FDD3B0300B8A955 /* NSNumber+BPRomanNumerals.m in Sources */,
 				01DF323D1FDD3B3D00B8A955 /* NSObject+BPAddProperty.m in Sources */,
@@ -5721,6 +5719,7 @@
 				010DB72D1FDD4D450099E66F /* UIBezierPath+BPSVGString.m in Sources */,
 				018C44F3200A4AF700CF43D7 /* BPFlowCatergoryViewLayout.m in Sources */,
 				01DF32451FDD3B3D00B8A955 /* NSObject+BPReflection.m in Sources */,
+				01E672B22014898300FB22D4 /* BPGradientLayerViewController.m in Sources */,
 				01DF32201FDD3B3000B8A955 /* NSString+BPStringPages.m in Sources */,
 				01D22BE41FDD814000BCC4AD /* NSDictionary+BPAdd.m in Sources */,
 				01D22BDF1FDD814000BCC4AD /* NSData+BPAdd.m in Sources */,
@@ -5732,6 +5731,7 @@
 				018C44D22009E12400CF43D7 /* BPCardPageFlowViewController.m in Sources */,
 				01D22BD21FDD814000BCC4AD /* UIFont+BPAdd.m in Sources */,
 				01D22BD81FDD814000BCC4AD /* NSMutableArray+BPAdd.m in Sources */,
+				01E672B32014898300FB22D4 /* BPReplicatorLayerViewController.m in Sources */,
 				010DB73E1FDD4D450099E66F /* UIImage+BPGIF.m in Sources */,
 				010DB7391FDD4D450099E66F /* UITextField+BPBlocks.m in Sources */,
 				010DB7541FDD4D450099E66F /* UITableViewCell+BPNIB.m in Sources */,
@@ -5910,6 +5910,7 @@
 				018972C71FC481BF00D6DF5B /* BPBaseCollectionViewCell.m in Sources */,
 				0179070420011D8100E5C360 /* BPNetRequestViewController.m in Sources */,
 				01DF325B1FDD3B9D00B8A955 /* NSData+BPBase64.m in Sources */,
+				01E672B12014898300FB22D4 /* BPLayerViewController.m in Sources */,
 				01DF31C51FDD3A9100B8A955 /* NSRunLoop+BPPerformBlock.m in Sources */,
 				010DB7171FDD4D450099E66F /* UITextView+BPInputLimit.m in Sources */,
 				01ADC1F61FB492C1009150F0 /* BPBaseTableViewCell.m in Sources */,
@@ -5949,7 +5950,6 @@
 				010DB70E1FDD4D450099E66F /* UIImageView+BPLetters.m in Sources */,
 				01790782200121F800E5C360 /* CountryDBTools.m in Sources */,
 				01C31F79200FA1B40096C2E0 /* BPArrowPopView.m in Sources */,
-				0195EACD20137C9F00DC59A1 /* BPShapeLayerViewController.m in Sources */,
 				01A191D12004E1E1005EE4CD /* BPPickViewController.m in Sources */,
 				01A1921D2004E61F005EE4CD /* BPCollectionViewCell.m in Sources */,
 				01A191DD2004E1F9005EE4CD /* BPProgressViewController.m in Sources */,
@@ -6028,7 +6028,6 @@
 				01DF31D01FDD3A9100B8A955 /* NSArray+BPSafeAccess.m in Sources */,
 				0195EAA9201373E700DC59A1 /* BPMasonrySkillView.m in Sources */,
 				01490C081FF548650035492D /* BPGCDViewController.m in Sources */,
-				0195EACA20137C9400DC59A1 /* BPLayerViewController.m in Sources */,
 				01A191BF2004E1B9005EE4CD /* BPDatePickerController.m in Sources */,
 				01DF31C01FDD3A9100B8A955 /* NSDictionary+BPXML.m in Sources */,
 				01DF31E61FDD3B0300B8A955 /* NSNumber+BPRound.m in Sources */,
