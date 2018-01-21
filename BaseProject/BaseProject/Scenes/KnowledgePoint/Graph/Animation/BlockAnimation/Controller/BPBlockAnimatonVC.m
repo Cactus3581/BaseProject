@@ -17,10 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = kWhiteColor;
     [self.view addSubview:self.testView];
     [self.view addSubview:self.imageview];
-
     
 //    [self baseViewAnimation];//一般形式的UIView动画
 //    [self blockAnimation_1]; //block形式的UIView动画
@@ -44,13 +42,11 @@
 }
 
 - (void)animationWillStart {
-    BPLog(@"%@",@(self.testView.frame));
     self.testView.transform = CGAffineTransformMakeScale(0.2, 0.2);
 }
 
 - (void)animationDidStop {
-//    self.testView.transform = CGAffineTransformIdentity;
-    BPLog(@"%@",@(self.testView.frame));
+    self.testView.transform = CGAffineTransformIdentity;
 }
 
 #pragma mark - block形式的UIView动画
