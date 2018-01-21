@@ -71,6 +71,7 @@
 - (void)maskView {
     UIImage *maskImage = [UIImage imageNamed:@"maskImage"];
 
+    //mask的坐标系是根据对象view的
     //第一种 maskLayer
     CALayer *maskLayer = [CALayer layer];
     maskLayer.frame = self.testView.bounds;
