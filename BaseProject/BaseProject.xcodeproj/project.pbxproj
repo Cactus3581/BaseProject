@@ -443,6 +443,7 @@
 		01E672B32014898300FB22D4 /* BPReplicatorLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E672AE2014898300FB22D4 /* BPReplicatorLayerViewController.m */; };
 		01E672B720148C1D00FB22D4 /* BPViewPropertyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E672B620148C1D00FB22D4 /* BPViewPropertyController.m */; };
 		01E672BB2014B6F700FB22D4 /* BPBezierPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E672BA2014B6F700FB22D4 /* BPBezierPathViewController.m */; };
+		01E672BF2014E9ED00FB22D4 /* UIImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E672BE2014E9ED00FB22D4 /* UIImageViewController.m */; };
 		01E6B18B2001FE870008C18C /* BPDatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E6B1892001FE870008C18C /* BPDatabaseViewController.m */; };
 		01E6B1922001FE970008C18C /* SchoolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E6B18D2001FE960008C18C /* SchoolModel.m */; };
 		01E6B1932001FE970008C18C /* DataBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E6B18F2001FE970008C18C /* DataBaseModel.m */; };
@@ -1346,6 +1347,8 @@
 		01E672B620148C1D00FB22D4 /* BPViewPropertyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPViewPropertyController.m; sourceTree = "<group>"; };
 		01E672B92014B6F700FB22D4 /* BPBezierPathViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBezierPathViewController.h; sourceTree = "<group>"; };
 		01E672BA2014B6F700FB22D4 /* BPBezierPathViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBezierPathViewController.m; sourceTree = "<group>"; };
+		01E672BD2014E9ED00FB22D4 /* UIImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIImageViewController.h; sourceTree = "<group>"; };
+		01E672BE2014E9ED00FB22D4 /* UIImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageViewController.m; sourceTree = "<group>"; };
 		01E6B1892001FE870008C18C /* BPDatabaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDatabaseViewController.m; sourceTree = "<group>"; };
 		01E6B18A2001FE870008C18C /* BPDatabaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDatabaseViewController.h; sourceTree = "<group>"; };
 		01E6B18C2001FE950008C18C /* ClassModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassModel.h; sourceTree = "<group>"; };
@@ -4397,27 +4400,28 @@
 		01B726DA1FF806FC00648674 /* BaseUseControl */ = {
 			isa = PBXGroup;
 			children = (
-				01F240A02006588A00FA5174 /* UIScrollView */,
-				01A191E12004E61E005EE4CD /* UICollectionView */,
-				01A192002004E61E005EE4CD /* UITableView */,
-				01A191A72004E0FF005EE4CD /* UIDatePicker */,
-				01A191A62004E0D3005EE4CD /* UIWKWebView */,
-				01A191A52004E0C0005EE4CD /* UIWebView */,
-				01A191A42004E0B5005EE4CD /* UISearchBar */,
-				01A191A32004E09E005EE4CD /* UIToolBar */,
-				01A191A22004E085005EE4CD /* UIWindow */,
-				01A191A12004E07B005EE4CD /* UIPickView */,
-				01A191A02004E038005EE4CD /* UISegmentedControl */,
-				01A1919F2004E01D005EE4CD /* UIPageControl */,
-				01A1919E2004DFB1005EE4CD /* UISlider */,
-				01A1919D2004DFA9005EE4CD /* UIProgressView */,
-				01A1919C2004DF81005EE4CD /* UIViewController */,
-				01A1919B2004DF6A005EE4CD /* UIView */,
-				01A1919A2004DF62005EE4CD /* UIImageView */,
-				01A191982004DF3F005EE4CD /* UITextView */,
-				01A191972004DF36005EE4CD /* UITextField */,
 				01A191962004DF2B005EE4CD /* UIButton */,
+				01A191E12004E61E005EE4CD /* UICollectionView */,
+				01A191A72004E0FF005EE4CD /* UIDatePicker */,
+				01E672BC2014E9D500FB22D4 /* UIImage */,
+				01A1919A2004DF62005EE4CD /* UIImageView */,
 				01A191952004DF21005EE4CD /* UILabel */,
+				01A1919F2004E01D005EE4CD /* UIPageControl */,
+				01A191A12004E07B005EE4CD /* UIPickView */,
+				01A1919D2004DFA9005EE4CD /* UIProgressView */,
+				01F240A02006588A00FA5174 /* UIScrollView */,
+				01A191A42004E0B5005EE4CD /* UISearchBar */,
+				01A191A02004E038005EE4CD /* UISegmentedControl */,
+				01A1919E2004DFB1005EE4CD /* UISlider */,
+				01A192002004E61E005EE4CD /* UITableView */,
+				01A191972004DF36005EE4CD /* UITextField */,
+				01A191982004DF3F005EE4CD /* UITextView */,
+				01A191A32004E09E005EE4CD /* UIToolBar */,
+				01A1919B2004DF6A005EE4CD /* UIView */,
+				01A1919C2004DF81005EE4CD /* UIViewController */,
+				01A191A52004E0C0005EE4CD /* UIWebView */,
+				01A191A22004E085005EE4CD /* UIWindow */,
+				01A191A62004E0D3005EE4CD /* UIWKWebView */,
 			);
 			path = BaseUseControl;
 			sourceTree = "<group>";
@@ -5271,6 +5275,15 @@
 			path = BezierPath;
 			sourceTree = "<group>";
 		};
+		01E672BC2014E9D500FB22D4 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				01E672BD2014E9ED00FB22D4 /* UIImageViewController.h */,
+				01E672BE2014E9ED00FB22D4 /* UIImageViewController.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
 		01E6B1852001FE590008C18C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -5944,6 +5957,7 @@
 				01ADC1F61FB492C1009150F0 /* BPBaseTableViewCell.m in Sources */,
 				010DB7971FDD4D640099E66F /* UIView+BPVisuals.m in Sources */,
 				01D22BD91FDD814000BCC4AD /* UIScreen+BPAdd.m in Sources */,
+				01E672BF2014E9ED00FB22D4 /* UIImageViewController.m in Sources */,
 				01DF31721FDD3A0900B8A955 /* CAAnimation+BPEasingEquations.m in Sources */,
 				010DB7551FDD4D450099E66F /* UITableViewCell+BPDelaysContentTouches.m in Sources */,
 				010DB7241FDD4D450099E66F /* UIColor+BPWeb.m in Sources */,
