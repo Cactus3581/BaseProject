@@ -8,6 +8,7 @@
 
 #import "BPVolumeWaverView.h"
 #import "BPVolumeQueueHelper.h"
+#import "CADisplayLink+BPAdd.h"
 
 @interface BPVolumeWaverView ()<CAAnimationDelegate>
 @property (nonatomic, strong) CADisplayLink *displayLink;
@@ -15,7 +16,7 @@
 @property (nonatomic, assign) NSInteger waveNumber;
 @property (nonatomic, assign) BOOL secondAnimation;
 @property (nonatomic, strong) UIImageView *secondAnimationImageView;
-@property (nonatomic, strong) CALayer *secondAnimationLayer;
+@property (nonatomic, assign) BOOL delay;
 
 @end
 
@@ -67,30 +68,43 @@ static NSRunLoop *_voiceWaveRunLoop;
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    _waveWidth  = CGRectGetWidth(self.bounds);
+    _waveHeight = CGRectGetHeight(self.bounds);
+    _waveMid    = _waveWidth / 2.0f;
+
+    _maxAmplitude = _waveHeight * 0.5;//最大振幅
+
+    NSInteger centerX = _waveWidth / 2;
+    _lineCenter1 = CGPointMake(0, 0);
+    _lineCenter2 = CGPointMake(centerX, 0);
+
+    _maxWidth = _waveWidth + _density;
+}
+
 #pragma mark - 配置默认值
 - (void)configDefaultValue {
-    
 //    a=Asin(2πft)　　A为振幅，f为频率，t为时间，a为瞬时值。
-
-    _frequency = 1.5f;//频率
-    
-    _amplitude = 0.05f;//振幅
-    _idleAmplitude = 1.f;//闲置的振幅
+    _frequency = 2.0f;//频率，几个圆圈
+    _amplitude = 1.3f;//振幅
+    _idleAmplitude = .15f;//闲置的振幅
     
     _phase1 = 0.0f;
     _phase2 = 0.0f;
     _phaseShift1 = -0.22f;//移相
-    _phaseShift2 = -0.2194f;//移相
+    _phaseShift2 = -0.11f;//移相
     _density = 1.f;//密度
     
     _waveWidth  = CGRectGetWidth(self.bounds);
     _waveHeight = CGRectGetHeight(self.bounds);
+    
     _waveMid    = _waveWidth / 2.0f;
     
     _maxAmplitude = _waveHeight * 0.5;//最大振幅
     
     NSInteger centerX = _waveWidth / 2;
-    _lineCenter1 = CGPointMake(centerX, 0);
+    _lineCenter1 = CGPointMake(0, 0);
     _lineCenter2 = CGPointMake(centerX, 0);
     
     _maxWidth = _waveWidth + _density;
@@ -137,19 +151,33 @@ static NSRunLoop *_voiceWaveRunLoop;
 
 #pragma mark - 开启定时器，开始进行波浪动画（通过时时更新异步绘制来实现的）
 - (void)startVoiceWave {
+    _delay = NO;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.delay = YES;
+    });
     if (_isStopAnimating) {
         return;
     }
     [self configDefaultValue];
     if (_voiceWaveRunLoop) {
         [self.displayLink invalidate];
-        self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(invokeWaveCallback)];
+        __weak typeof (self) weakSelf = self;
+        
+        self.displayLink = [CADisplayLink displayLinkWithExecuteBlock:^(CADisplayLink *displayLink) {
+            [weakSelf invokeWaveCallback];
+        }];
+//        self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(invokeWaveCallback)];
         [self.displayLink addToRunLoop:_voiceWaveRunLoop forMode:NSRunLoopCommonModes];
     } else {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if (_voiceWaveRunLoop) {
                 [self.displayLink invalidate];
-                self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(invokeWaveCallback)];
+                __weak typeof (self) weakSelf = self;
+
+                self.displayLink = [CADisplayLink displayLinkWithExecuteBlock:^(CADisplayLink *displayLink) {
+                    [weakSelf invokeWaveCallback];
+                }];
+//                self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(invokeWaveCallback)];
                 [self.displayLink addToRunLoop:_voiceWaveRunLoop forMode:NSRunLoopCommonModes];
             }
         });
@@ -195,13 +223,22 @@ static NSRunLoop *_voiceWaveRunLoop;
     CGFloat amplitudeFactor = 1.0f;
 
     for (NSInteger i = 0; i < _waveNumber; i++) {
-        waveWidth = i==0 ? _mainWaveWidth : _mainWaveWidth / 2.0;
+        waveWidth = i==0 ? _mainWaveWidth : _mainWaveWidth / 3.0;
         progress = 1.0f - (CGFloat)i / _waveNumber;
         amplitudeFactor = 1.5f * progress - 0.5f;
+        amplitudeFactor = 1;
 #pragma mark - 生成贝塞尔曲线
-        UIBezierPath *linePath = [self generateGradientPathWithFrequency:_frequency maxAmplitude:_maxAmplitude * amplitudeFactor phase:_phase1 lineCenter:&_lineCenter1 yOffset:waveWidth / 2.0];
-        [_waveLinePathArray addObject:linePath];
-        
+        if(i==0) {
+            UIBezierPath *linePath = [self generateGradientPathWithFrequency:_frequency maxAmplitude:_maxAmplitude * amplitudeFactor phase:_phase1 lineCenter:&_lineCenter1 yOffset:waveWidth / 2.0];
+            if (linePath) {
+                [_waveLinePathArray addObject:linePath];
+            }
+        }else {
+            UIBezierPath *linePath = [self generateGradientPathWithFrequency:_frequency maxAmplitude:_maxAmplitude * amplitudeFactor phase:_phase2 lineCenter:&_lineCenter2 yOffset:waveWidth / 2.0];
+            if (linePath) {
+                [_waveLinePathArray addObject:linePath];
+            }
+        }
     }
     [_lock unlock];
     [self performSelectorOnMainThread:@selector(updateShapeLayerPath:) withObject:nil waitUntilDone:NO];
@@ -222,43 +259,23 @@ static NSRunLoop *_voiceWaveRunLoop;
             if (i==0) {
                 CGContextSetStrokeColorWithColor(context, kGreenColor.CGColor);
                 CGContextSetLineWidth(context, kOnePixel*3);
+                [self drawLine:context path:path color:kGreenColor.CGColor];
             }else {
                 CGContextSetLineWidth(context, kOnePixel);
-                CGContextSetStrokeColorWithColor(context, kRedColor.CGColor);
+                CGContextSetStrokeColorWithColor(context, kGreenColor.CGColor);
+                if (self.delay) {
+                    [self drawLine:context path:path color:kGreenColor.CGColor];
+                }
             }
-            [self drawLinearGradient:context path:path color:kGreenColor.CGColor];
         }
     }
     [_lock unlock];
 }
 
-- (void)drawLinearGradient:(CGContextRef)context path:(CGPathRef)path color:(CGColorRef)color {
-//    //设置笔触颜色
-//    CGContextSetStrokeColorWithColor(context, color);
-//    //设置笔触宽度
-//    //设置填充色
-//    CGContextSetFillColorWithColor(context, color);
-    /*设置拐点样式
-     enum CGLineJoin {
-     kCGLineJoinMiter, //尖的，斜接
-     kCGLineJoinRound, //圆
-     kCGLineJoinBevel //斜面
-     };
-     */
+- (void)drawLine:(CGContextRef)context path:(CGPathRef)path color:(CGColorRef)color {
     CGContextSetLineJoin(context, kCGLineJoinBevel);
-    
-    /*
-     Line cap 线的两端的样式
-     enum CGLineCap {
-     kCGLineCapButt,
-     kCGLineCapRound,
-     kCGLineCapSquare
-     };
-     */
     CGContextSetLineCap(context, kCGLineCapSquare);
-    //路径加入context
     CGContextAddPath(context, path);
-    //描出笔触
     CGContextStrokePath(context);
 }
 
@@ -337,6 +354,7 @@ static NSRunLoop *_voiceWaveRunLoop;
     if (_isStopAnimating) {
         return;
     }
+    self.delay = NO;
     _isStopAnimating = YES;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(voiceWaveDisappearDuration * 0.5  * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         showLoadingCircleCallback();
@@ -360,21 +378,15 @@ static NSRunLoop *_voiceWaveRunLoop;
     self.secondAnimationImageView.hidden = YES;
 }
 
-- (CALayer *)secondAnimationLayer {
-    if (!_secondAnimationLayer) {
-        _secondAnimationLayer = [CALayer layer];
-        [self.layer addSublayer:_secondAnimationLayer];
-        _secondAnimationLayer.bounds = CGRectMake(0, self.bounds.size.height/2.0, 48, 13);
-        //_secondAnimationLayer.position = CGRectMake(0, self.bounds.size.height/2.0, 48, 13);
-    }
-    return _secondAnimationLayer;
-}
-
 - (UIImageView *)secondAnimationImageView {
     if (!_secondAnimationImageView) {
         _secondAnimationImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"volumeWaverView"]];
         [self addSubview:_secondAnimationImageView];
-        _secondAnimationImageView.frame = CGRectMake(-48, self.bounds.size.height/2.0, 48, 13);
+        [_secondAnimationImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self);
+            make.leading.equalTo(self).offset(-48);
+        }];
+        //_secondAnimationImageView.frame = CGRectMake(-48, self.bounds.size.height/2.0-13/2.0, 48, 13);
     }
     return _secondAnimationImageView;
 }

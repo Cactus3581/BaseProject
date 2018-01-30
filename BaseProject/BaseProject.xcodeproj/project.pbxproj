@@ -251,6 +251,7 @@
 		0195EAA7201373E700DC59A1 /* BPLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0195EA96201373E700DC59A1 /* BPLayoutView.m */; };
 		0195EAA8201373E700DC59A1 /* BPMasonrySkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0195EA9B201373E700DC59A1 /* BPMasonrySkillViewController.m */; };
 		0195EAA9201373E700DC59A1 /* BPMasonrySkillView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0195EA9E201373E700DC59A1 /* BPMasonrySkillView.m */; };
+		019AA91820205BE80090B038 /* CADisplayLink+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 019AA91720205BE80090B038 /* CADisplayLink+BPAdd.m */; };
 		01A191AA2004E139005EE4CD /* BPLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A191A92004E139005EE4CD /* BPLabelViewController.m */; };
 		01A191AD2004E155005EE4CD /* BPButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A191AC2004E155005EE4CD /* BPButtonViewController.m */; };
 		01A191B02004E165005EE4CD /* BPTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A191AF2004E165005EE4CD /* BPTextFieldViewController.m */; };
@@ -970,6 +971,8 @@
 		0195EA9C201373E700DC59A1 /* BPMasonrySkillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMasonrySkillViewController.h; sourceTree = "<group>"; };
 		0195EA9E201373E700DC59A1 /* BPMasonrySkillView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPMasonrySkillView.m; sourceTree = "<group>"; };
 		0195EA9F201373E700DC59A1 /* BPMasonrySkillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMasonrySkillView.h; sourceTree = "<group>"; };
+		019AA91620205BE80090B038 /* CADisplayLink+BPAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CADisplayLink+BPAdd.h"; sourceTree = "<group>"; };
+		019AA91720205BE80090B038 /* CADisplayLink+BPAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CADisplayLink+BPAdd.m"; sourceTree = "<group>"; };
 		01A191A82004E139005EE4CD /* BPLabelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPLabelViewController.h; sourceTree = "<group>"; };
 		01A191A92004E139005EE4CD /* BPLabelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPLabelViewController.m; sourceTree = "<group>"; };
 		01A191AB2004E155005EE4CD /* BPButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPButtonViewController.h; sourceTree = "<group>"; };
@@ -4993,6 +4996,8 @@
 				01D22BAA1FDD813900BCC4AD /* UIView+BPAddForFrame.m */,
 				01D22BA91FDD813900BCC4AD /* YYLabel+BPAddForFrame.h */,
 				01D22B7C1FDD812E00BCC4AD /* YYLabel+BPAddForFrame.m */,
+				019AA91620205BE80090B038 /* CADisplayLink+BPAdd.h */,
+				019AA91720205BE80090B038 /* CADisplayLink+BPAdd.m */,
 			);
 			path = MainCategory;
 			sourceTree = "<group>";
@@ -5187,9 +5192,9 @@
 		01DF31AD1FDD3A9000B8A955 /* NSTimer */ = {
 			isa = PBXGroup;
 			children = (
+				01DF31B01FDD3A9000B8A955 /* NSTimer+BPAddition.h */,
 				01DF31AE1FDD3A9000B8A955 /* NSTimer+BPAddition.m */,
 				01DF31AF1FDD3A9000B8A955 /* NSTimer+BPBlocks.h */,
-				01DF31B01FDD3A9000B8A955 /* NSTimer+BPAddition.h */,
 				01DF31B11FDD3A9000B8A955 /* NSTimer+BPBlocks.m */,
 			);
 			path = NSTimer;
@@ -5938,6 +5943,7 @@
 				01C935B41FC3399F00D98FD6 /* BPSimpleTableController.m in Sources */,
 				010DB7321FDD4D450099E66F /* UIScrollView+BPPages.m in Sources */,
 				01D22BD51FDD814000BCC4AD /* CALayer+BPAddForFrame.m in Sources */,
+				019AA91820205BE80090B038 /* CADisplayLink+BPAdd.m in Sources */,
 				01DF32721FDD3BB100B8A955 /* NSDate+BPnternetDateTime.m in Sources */,
 				01A191D42004E1E7005EE4CD /* BPSegmentedControlController.m in Sources */,
 				017A9A371FDD2A9A00CDA599 /* BPZPositionCollectionHeadView.m in Sources */,
