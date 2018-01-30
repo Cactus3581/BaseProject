@@ -13,7 +13,8 @@
 @end
 
 @implementation BPButtonViewController
-
+//https://www.cnblogs.com/OIMM/p/5576853.html
+//addTarget uibutton 参数
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

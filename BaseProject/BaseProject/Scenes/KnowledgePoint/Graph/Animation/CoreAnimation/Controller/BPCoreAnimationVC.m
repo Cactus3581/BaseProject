@@ -66,9 +66,30 @@ typedef enum :NSUInteger{
 
     _subtype = 0;
 //    [self transitionAnimation_2];
-
+    
+    //[self springAnimation];
 
 }
+
+- (void)springAnimation {
+    UILabel *label = [[UILabel alloc]init];
+    [self.view addSubview:label];
+    label.text = @"CASpringAnimation";
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+    }];
+    CASpringAnimation *spring = [CASpringAnimation animationWithKeyPath:@"position.x"];
+    spring.damping = 5;
+    spring.stiffness = 100;
+    spring.mass = 1;
+    spring.initialVelocity = 0;
+    
+    spring.fromValue = @(label.layer.position.x);
+    spring.toValue = @(label.layer.position.x + 50);
+    spring.duration = spring.settlingDuration;
+    [label.layer addAnimation:spring forKey:@""];
+}
+
 #pragma mark - CABasicAnimation-基础动画:位移、透明度、缩放、旋转
 /**
  *  透明度动画

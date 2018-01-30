@@ -10,6 +10,7 @@
 
 @implementation BPImageButton
 
+//返回图片的rect
 - (CGRect)imageRectForContentRect:(CGRect)contentRect {
     CGFloat inteval = CGRectGetHeight(contentRect)/8.0;
     //设置图片的宽高为button高度的3/4;
@@ -18,6 +19,7 @@
     return rect;
 }
 
+//返回文字的的rect
 - (CGRect)titleRectForContentRect:(CGRect)contentRect {
     CGFloat inteval = CGRectGetHeight(contentRect)/8.0;
     //设置文字的宽高为button高度的3/4;

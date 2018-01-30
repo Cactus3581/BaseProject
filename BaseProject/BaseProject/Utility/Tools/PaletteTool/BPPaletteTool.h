@@ -10,6 +10,9 @@
 
 @interface BPPaletteTool : UIView
 
+//非缓存用的方法
 - (void)handleColorWithImage:(UIImage *)image paletteViewBounds:(CGRect)bounds resultBlock:(void (^)(UIColor *color))success;
 
+//缓存用的方法
+- (void)handleColorWithImage:(UIImage *)image url:(NSString *)url paletteViewBounds:(CGRect)bounds resultBlock:(void (^)(UIColor *color))success;
 @end

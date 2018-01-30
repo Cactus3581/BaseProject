@@ -25,7 +25,6 @@
 
 /*
  这里说明一个问题, xib 加载时候会调用 initWithCoder 方法, 但是子元素(视图)这个时候并没有被实例化.
- 
  要想使用这些子元素, 需要在 awakeFromNib 中使用和改变.
  */
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
@@ -38,6 +37,10 @@
     return self;
 }
 
+/*
+ 这个方法在initWithCoder:方法后调用，awakeFromNib 从xib或者storyboard加载完毕就会调用；
+ 可以这么来理解：一开始经过initWithCoder创建出来的控件是死的，然后通过awakeFromNib来唤醒，所以这会有一个先后的调用顺序。
+ */
 - (void)awakeFromNib {
     [super awakeFromNib];
     BPLog(@"UIView: xib-2-awakeFromNib");

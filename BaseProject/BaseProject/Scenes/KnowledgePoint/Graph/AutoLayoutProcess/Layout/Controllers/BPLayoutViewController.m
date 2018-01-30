@@ -102,9 +102,11 @@
  
  - (void)layoutSubviews
  系统重写布局
- 1.一个view是不能够自己调用layoutSubviews,如果要调用,需要调用 setNeedsLayout或者 layoutIfNeeded
- 2.如果view的frame值为0,即使被addSubview也不会调用layoutSubviews
- 3.如果一个view的frame中的 size 值前后发生了改变,那么layoutSubviews也会被触发。 重新设置 frame 但 size 不变的话,是不会触发的
+ 1.一个view是不能够自己调用layoutSubviews,如果要调用,需要调用 setNeedsLayout或者 layoutIfNeeded；
+ 2.如果view的frame值为0,即使被addSubview也不会调用layoutSubviews；
+ 3.如果一个view的frame中的 size 值前后发生了改变,那么layoutSubviews也会被触发。 重新设置frame但size不变的话,是不会触发的；
+ 4.滚动一个UIScrollView
+ 5.旋转 Screen
  
  */
 #pragma mark - 总结

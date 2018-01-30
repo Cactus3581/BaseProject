@@ -13,6 +13,18 @@
 @property (nonatomic,strong) UIButton *button;
 @property (nonatomic,strong) BPXibView *xibview;
 @end
+//intrinsicContentSize
+//http://blog.csdn.net/zhanglizhi111/article/details/78259814
+//http://blog.csdn.net/u012265444/article/details/51837562
+//http://www.cocoachina.com/cms/wap.php?action=article&id=12121
+//http://blog.csdn.net/pucker/article/details/45149759
+//https://www.jianshu.com/p/1410f4eab8b3
+//http://blog.csdn.net/zhuzhihai1988/article/details/44016715
+//http://www.cocoachina.com/ios/20151021/13825.html
+//https://www.jianshu.com/p/66e0b808d833
+//https://www.jianshu.com/p/094e6baccd5a
+//https://www.jianshu.com/p/683fbcbfb705
+//http://blog.csdn.net/PZ0605/article/details/47305981
 
 @implementation BPXibViewController
 

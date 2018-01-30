@@ -183,8 +183,6 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
     
     self.strongView.block(@"");
     
-    
-    
     //self不持有block
     BPWeakView *view = [[BPWeakView alloc] init];
     __weak  BPWeakView * weakView = view;
@@ -198,12 +196,10 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
         BPWeakView *strongView = weakView;//在block中声明的引用变量strongView在函数中声明，存在于函数栈上。不存在block堆上，所以不是一个内存空间；防止在后面的使用过程中self被释放；然后在之后的block块中使用该强引用self，注意在使用前要对self进行了nil检测，因为多线程环境下在用弱引用self对强引用self赋值时，弱引用wself可能已经为nil了。
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
             //BPLog(@"%p",weakSelf.view);//不会循环引用，但是执行到这的时候view可能已经销毁了
             if (strongView) {
                 BPLog(@"%ld",BPRetainCount(strongView));//不会导致循环引用
             } else {
-                
             }
         });
     };
@@ -228,8 +224,6 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
         BPLog(@"%ld",BPRetainCount(self));
         BPLog(@"%@",(self.strongStr));
     }];
-    
-    
     
     /*
      这是调用方法:

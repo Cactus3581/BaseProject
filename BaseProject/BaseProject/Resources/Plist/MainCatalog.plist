@@ -204,6 +204,14 @@
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>音量波浪</string>
+				<key>fileName</key>
+				<string>BPVolumeWaverViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -924,6 +932,14 @@
 				<array>
 					<dict>
 						<key>title</key>
+						<string>Autoresizing</string>
+						<key>fileName</key>
+						<string>BPAutoresizingViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
 						<string>View及ViewController显示过程</string>
 						<key>fileName</key>
 						<string>BPSimpleTableController</string>
@@ -1188,6 +1204,14 @@
 				<string></string>
 			</dict>
 		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>评论</string>
+		<key>fileName</key>
+		<string>BPCommentsViewController</string>
+		<key>briefIntro</key>
+		<string></string>
 	</dict>
 </array>
 </plist>
