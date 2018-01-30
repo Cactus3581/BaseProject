@@ -9,6 +9,7 @@
 #import "BPVolumeWaverViewController.h"
 #import "BPVolumeWaverView.h"
 #import <AVFoundation/AVFoundation.h>
+#import "NSTimer+BPUnRetain.h"
 
 @interface BPVolumeWaverViewController ()
 @property (nonatomic, strong) BPVolumeWaverView *voiceWaveView;
@@ -35,24 +36,31 @@
 
 - (void)config2 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [_voiceWaveView stopVoiceWaveWithShowLoadingViewCallback:^{
-            
-        }];
+//        [_voiceWaveView stopVoiceWaveWithShowLoadingViewCallback:^{
+//            [_voiceWaveView secondAnaimation];
+//        }];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [_voiceWaveView stopSecondAnaimation];
+//            [_voiceWaveView removeFromSuperview];
+        });
     });
 }
 
 - (void)config1 {
     [self.view addSubview:self.voiceWaveView];
     [self.voiceWaveView startVoiceWave];
-    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    weakify(self);
+    self.timer = [NSTimer bp_scheduledTimerWithTimeInterval:0.1 repeats:YES block:^(NSTimer *timer) {
+        strongify(self);
+        [self updateVolume];
+    }];
 }
 
-- (void)updateVolume:(NSTimer *)timer {
+- (void)updateVolume {
     [self.recorder updateMeters];
     CGFloat normalizedValue = pow (10, [self.recorder averagePowerForChannel:0] / 20);
     [_voiceWaveView changeVolume:normalizedValue];
-    
-
 }
 
 -(void)setupRecorder {
@@ -79,17 +87,11 @@
 #pragma mark - getters
 - (BPVolumeWaverView *)voiceWaveView {
     if (!_voiceWaveView) {
-        _voiceWaveView = [[BPVolumeWaverView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, 100)];
+        _voiceWaveView = [[BPVolumeWaverView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, 54)];
     }
     return _voiceWaveView;
 }
 
-- (NSTimer *)timer {
-    if (!_timer) {
-        self.timer = [NSTimer timerWithTimeInterval:0.1 target:self selector:@selector(updateVolume:) userInfo:nil repeats:YES];
-    }
-    return _timer;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

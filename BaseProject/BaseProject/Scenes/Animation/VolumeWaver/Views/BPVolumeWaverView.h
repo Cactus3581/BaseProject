@@ -36,4 +36,6 @@ typedef void (^YSCShowLoadingCircleCallback)(void);
  */
 - (void)stopVoiceWaveWithShowLoadingViewCallback:(YSCShowLoadingCircleCallback)showLoadingCircleCallback;
 
+- (void)secondAnaimation;
+- (void)stopSecondAnaimation;
 @end
