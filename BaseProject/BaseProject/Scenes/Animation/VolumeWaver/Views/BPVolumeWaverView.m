@@ -192,18 +192,20 @@ static NSRunLoop *_voiceWaveRunLoop;
 #pragma mark - 外部通过接口实现数据更新
 - (void)changeVolume:(CGFloat)volume {
     @synchronized (self) {
-        BPLog(@"volume = %.2f",volume);
+//        BPLog(@"volume = %.2f",volume);
         _lastVolume = _currentVolume;
         _currentVolume = volume;
 #pragma mark - 获取y坐标
         NSArray *volumeArray = [self generatePointsOfSize:6 withPowFactor:1 fromStartY:_lastVolume toEndY:_currentVolume];
-        BPLog(@"volumeArray = %@",volumeArray);
+//        BPLog(@"volumeArray = %@",volumeArray);
         [self.volumeQueueHelper pushVolumeWithArray:volumeArray];
     }
 }
 
 #pragma mark - 定时器方法：时时绘制：updateMeters
 - (void)updateMeters {
+//    BPLog(@"isMainThread1 %d",[NSThread isMainThread]);
+
     CGFloat volume = [self.volumeQueueHelper popVolume];
     if (volume > 0) {
         _middleVolume = volume;

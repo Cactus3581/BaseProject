@@ -25,46 +25,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self setupRecorder];
-//    [self config1];
-//    [self config2];
-    [self displayLink];
-
-}
-- (void)displayLink {
-    __weak typeof (self) weakSelf = self;
-    __block NSInteger timers  = 0;
-    
-    CADisplayLink *displayLink = [CADisplayLink displayLinkWithExecuteBlock:^(CADisplayLink *displayLink) {
-        NSLog(@"%d",self.removeWaver);
-        timers ++;
-        if (timers > 1000) {
-            [displayLink invalidate];
-        }
-    }];
-    //CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(invokeWaveCallback)];
-//    [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-}
-
-- (void)configAutoresizingMask {
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 100, 100, 100)];
-    view.backgroundColor = kLightGrayColor;
-    view.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin |UIViewAutoresizingFlexibleTopMargin;
-    [self.view addSubview:view];
-}
-
-- (void)config2 {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [_voiceWaveView stopVoiceWaveWithShowLoadingViewCallback:^{
-            [_voiceWaveView secondAnaimation];
-        }];
-
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [_voiceWaveView stopSecondAnaimation];
-            [_voiceWaveView removeFromSuperview];
-            _removeWaver = YES;
-        });
-    });
+    [self setupRecorder];
+    [self config1];
+    [self config2];
 }
 
 - (void)config1 {
@@ -75,29 +38,48 @@
         make.height.equalTo(@(54));
     }];
     [self.voiceWaveView startVoiceWave];
-
     __weak typeof (self) weakSelf = self;
+    NSTimer *timer = [NSTimer bp_scheduledTimerWithTimeInterval:0.3 block:^{
+        //BPLog(@"isMainThread1 %d",[NSThread isMainThread])
+        if (!weakSelf.removeWaver) {
+            [weakSelf updateVolume];
+        }else {
+            [timer invalidate];
+        }
+    } repeats:YES];
+}
+
+- (void)config2 {
     
-//    NSTimer *timer = [NSTimer bp_scheduledTimerWithTimeInterval:0.1 block:^{
-//        if (!weakSelf.removeWaver) {
-//            [weakSelf updateVolume];
-//        }else {
-//            [timer invalidate];
-//        }
-//    } repeats:YES];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        _removeWaver = YES;
+    });
     
-//    self.timer = timer;
-    
-//    self.timer = [NSTimer bp_scheduledTimerWithTimeInterval:0.1 repeats:YES block:^(NSTimer *timer) {
-//
-////        BPLog(@"%d",weakSelf.removeWaver);
-//    }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_voiceWaveView stopVoiceWaveWithShowLoadingViewCallback:^{
+           // BPLog(@"isMainThread2 %d",[NSThread isMainThread])
+            [_voiceWaveView secondAnaimation];
+            //BPLog(@"secondAnaimation");
+        }];
+
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [_voiceWaveView stopSecondAnaimation];
+//            [_voiceWaveView removeFromSuperview];
+//            _removeWaver = YES;
+//        });
+    });
 }
 
 - (void)updateVolume {
     [self.recorder updateMeters];
+    BPLog(@"normalizedValue = %.2f",[self.recorder averagePowerForChannel:0]);
+
     CGFloat normalizedValue = pow (10, [self.recorder averagePowerForChannel:0] / 20);
-    [_voiceWaveView changeVolume:normalizedValue];
+    BPLog(@"normalizedValue····· = %.2f",normalizedValue);
+    
+//    BPLog(@"normalizedValue = %.2f",[self.recorder averagePowerForChannel:0]);
+
+    [_voiceWaveView changeVolume:1];
 }
 
 -(void)setupRecorder {
