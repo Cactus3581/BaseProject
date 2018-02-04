@@ -15,23 +15,19 @@
 }
 @property (nonatomic,strong) CAShapeLayer *firstWaveLayer;
 @property (nonatomic,strong) CAShapeLayer *secondWaveLayer;
-@property (nonatomic,strong) UILabel *progressLabel;
-@property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) CADisplayLink *displayLink;
 @end
 
 @implementation BPWaterWaveView
 + (instancetype)waterWaveView {
     BPWaterWaveView *view = [[BPWaterWaveView alloc]init];
-    view.backgroundColor = kClearColor;
+    view.backgroundColor = kWhiteColor;
     return view;
 }
 
 - (void)layoutSubviews {
     [self setDefaultProperty];
     [self layoutWaveLayers];
-    [self addProgressLabel];
-    [self addTitleLabel];
 }
 
 #pragma mark - 圆环图片赋值
@@ -60,57 +56,6 @@
     });
 }
 
-#pragma mark  添加titleLabel
-- (void)addTitleLabel {
-    if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc] init];
-        [self addSubview:_titleLabel];
-    }
-    CGFloat font = self.titleFont == 0 ? kExplain_Default_Font : self.titleFont;
-    UIColor *color = self.titleColor == nil ? kExplain_Default_Color : self.titleColor;
-    _titleLabel.textAlignment = NSTextAlignmentCenter;
-    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self);
-        make.top.equalTo(self).offset(30);
-        make.width.equalTo(self);
-    }];
-    _titleLabel.text = self.titleText;
-    _titleLabel.textColor = color;
-    _titleLabel.font = [UIFont systemFontOfSize:font];
-}
-
-#pragma mark 添加进度百分比Label
-- (void)addProgressLabel {
-    if (_progressLabel == nil) {
-        _progressLabel = [[UILabel alloc] init];
-        [self addSubview:_progressLabel];
-    }
-    CGFloat font = self.completeProgressFont == 0 ? kComplete_Default_Font : self.completeProgressFont;
-    UIColor *color = self.completeProgressColor == nil ? kComplete_Default_Color : self.completeProgressColor;
-    _progressLabel.textAlignment = NSTextAlignmentCenter;
-    [_progressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.centerY.equalTo(self);
-        make.width.equalTo(self);
-    }];
-    _progressLabel.textColor = color;
-    _progressLabel.font = [UIFont systemFontOfSize:font weight:UIFontWeightLight];
-    _progressLabel.attributedText = [self attributeStringWithText:self.completeProgressText textFont:font];
-}
-
-#pragma mark - 获得可变属性字体
-- (NSMutableAttributedString *)attributeStringWithText:(NSString *)text textFont:(CGFloat)font {
-    NSRange range = [text rangeOfString:@"%"];
-    if (text == nil || range.location == NSNotFound) return nil;
-    NSMutableAttributedString *attrText = [[NSMutableAttributedString alloc] initWithString:text];
-    [attrText addAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:16]} range:range];
-    return attrText;
-}
-
-#pragma mark - 获得尺寸
-- (CGSize)sizeWithText:(NSString *)text font:(CGFloat)font {
-    return [text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:font]} context:nil].size;
-}
-
 #pragma mark - 添加水波纹Layer
 - (void)layoutWaveLayers {
     if (!self.firstWaveColor ) self.firstWaveColor = kFIRSTWAVE_DEFAULT_COLOR;
@@ -124,8 +69,8 @@
         _secondWaveLayer = [CAShapeLayer layer];
         [self.layer addSublayer:_secondWaveLayer];
     }
-    _firstWaveLayer.fillColor = self.firstWaveColor.CGColor;
-    _secondWaveLayer.fillColor = self.secondWaveColor.CGColor;
+    _firstWaveLayer.strokeColor = self.firstWaveColor.CGColor;
+    _secondWaveLayer.strokeColor = self.secondWaveColor.CGColor;
 }
 
 #pragma mark - 定时器事件
@@ -145,7 +90,6 @@
 
 #pragma mark - 通过改变percent的值实现动画效果
 - (void)percentChange {
-    _changePercent += 0.005;
     if (_changePercent > _percent) {// 当定时器改变的值(_changePercent)大于设定的值(_percent)时停止变化【注意:不可以使用等于号】
         _changePercent -= 0.005;
     }
@@ -179,10 +123,6 @@
 
 #pragma mark - 设置默认值
 - (void)setDefaultProperty {
-    self.layer.cornerRadius = self.bounds.size.width * 0.5;
-    self.clipsToBounds = YES;
-    //self.layer.borderColor = kRedColor.CGColor;
-    //self.layer.borderWidth = 1.0;
     // 设置默认值
     _waveHeight = self.bounds.size.height;
     _speed = kWATERWAVE_DEFAULT_SPEED;

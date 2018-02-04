@@ -7,35 +7,38 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol BPVolumeWaverViewDelegate<NSObject>
+@optional
+/**
+ *  所有动画结束回调
+ */
+- (void)allAnaimationFinish;
+/**
+ *  点击手势回调
+ */
+- (void)tapGesCallback;
 
-typedef void (^YSCShowLoadingCircleCallback)(void);
+@end
 
 @interface BPVolumeWaverView : UIView
 
-/**
- *  设置波纹个数，默认两个
- *
- *  @param waveNumber                 波纹个数
- */
-- (void)setVoiceWaveNumber:(NSInteger)waveNumber;
-
-/**
- *  开始声波动画
- */
+@property (nonatomic, assign) CGFloat value;//0-1之间
+@property (nonatomic,weak) id<BPVolumeWaverViewDelegate>delegate;
 - (void)startVoiceWave;
-
-/**
- *  改变音量来改变声波振动幅度
- *
- *  @param stopVoiceWave 音量大小 大小为0~1
- */
-- (void)changeVolume:(CGFloat)volume;
 
 /**
  *  停止声波动画
  */
-- (void)stopVoiceWaveWithShowLoadingViewCallback:(YSCShowLoadingCircleCallback)showLoadingCircleCallback;
+- (void)stopVoiceWaveWithCallback:(dispatch_block_t)callback;
 
+/**
+ *  开始第二部分动画
+ */
 - (void)secondAnaimation;
-- (void)stopSecondAnaimation;
+
+/**
+ *  重写移除方法
+ */
+- (void)removeFromSuperview;
+
 @end

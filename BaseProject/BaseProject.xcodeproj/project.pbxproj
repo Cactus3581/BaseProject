@@ -129,7 +129,6 @@
 		011664BB20179DF200B60453 /* BPBlockAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 011664BA20179DF200B60453 /* BPBlockAPI.m */; };
 		011A7731201F256F00D97E11 /* BPVolumeWaverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011A7730201F256F00D97E11 /* BPVolumeWaverViewController.m */; };
 		011A7734201F258600D97E11 /* BPVolumeWaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 011A7733201F258600D97E11 /* BPVolumeWaverView.m */; };
-		011A7737201F354C00D97E11 /* BPVolumeQueueHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 011A7736201F354C00D97E11 /* BPVolumeQueueHelper.m */; };
 		0126B5361FB4ACBB00E522CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0126B5351FB4ACBB00E522CF /* MapKit.framework */; };
 		01352FE31FD2DDA20011D65C /* MainCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01352FE21FD2DDA20011D65C /* MainCatalog.plist */; };
 		01352FF51FD2E1AA0011D65C /* BPNaviProperyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01352FF41FD2E1AA0011D65C /* BPNaviProperyViewController.m */; };
@@ -354,6 +353,7 @@
 		01D22BE71FDD814000BCC4AD /* NSNotificationCenter+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D22BBD1FDD813E00BCC4AD /* NSNotificationCenter+BPAdd.m */; };
 		01D22BE81FDD814000BCC4AD /* UIControl+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D22BC01FDD813F00BCC4AD /* UIControl+BPAdd.m */; };
 		01D22BE91FDD814000BCC4AD /* UILabel+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D22BC11FDD813F00BCC4AD /* UILabel+BPAdd.m */; };
+		01DD71E12025E97A007FADB3 /* BPNormalVolumeWaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DD71E02025E97A007FADB3 /* BPNormalVolumeWaverView.m */; };
 		01DF316E1FDD3A0900B8A955 /* CAShapeLayer+BPUIBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF31611FDD3A0800B8A955 /* CAShapeLayer+BPUIBezierPath.m */; };
 		01DF316F1FDD3A0900B8A955 /* CALayer+BPBorderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF31641FDD3A0800B8A955 /* CALayer+BPBorderColor.m */; };
 		01DF31701FDD3A0900B8A955 /* CAMediaTimingFunction+BPAdditionalEquations.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF31671FDD3A0800B8A955 /* CAMediaTimingFunction+BPAdditionalEquations.m */; };
@@ -730,8 +730,6 @@
 		011A7730201F256F00D97E11 /* BPVolumeWaverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPVolumeWaverViewController.m; sourceTree = "<group>"; };
 		011A7732201F258600D97E11 /* BPVolumeWaverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPVolumeWaverView.h; sourceTree = "<group>"; };
 		011A7733201F258600D97E11 /* BPVolumeWaverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPVolumeWaverView.m; sourceTree = "<group>"; };
-		011A7735201F354C00D97E11 /* BPVolumeQueueHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPVolumeQueueHelper.h; sourceTree = "<group>"; };
-		011A7736201F354C00D97E11 /* BPVolumeQueueHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPVolumeQueueHelper.m; sourceTree = "<group>"; };
 		0126B5351FB4ACBB00E522CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		01352FE21FD2DDA20011D65C /* MainCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MainCatalog.plist; sourceTree = "<group>"; };
 		01352FF31FD2E1AA0011D65C /* BPNaviProperyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNaviProperyViewController.h; sourceTree = "<group>"; };
@@ -1177,6 +1175,8 @@
 		01D22BC41FDD814000BCC4AD /* NSString+BPAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BPAdd.h"; sourceTree = "<group>"; };
 		01D509E01FDD900400A8B1B4 /* BPAppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppMacro.h; sourceTree = "<group>"; };
 		01D509E21FDD909C00A8B1B4 /* BPAppTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppTool.h; sourceTree = "<group>"; };
+		01DD71DF2025E97A007FADB3 /* BPNormalVolumeWaverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNormalVolumeWaverView.h; sourceTree = "<group>"; };
+		01DD71E02025E97A007FADB3 /* BPNormalVolumeWaverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNormalVolumeWaverView.m; sourceTree = "<group>"; };
 		01DF31581FDD38EA00B8A955 /* BPUIKitCatergory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPUIKitCatergory.h; sourceTree = "<group>"; };
 		01DF31591FDD390700B8A955 /* BPFoundationCatergory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPFoundationCatergory.h; sourceTree = "<group>"; };
 		01DF315A1FDD392100B8A955 /* BPQuartzCoreCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPQuartzCoreCategory.h; sourceTree = "<group>"; };
@@ -2485,7 +2485,6 @@
 			isa = PBXGroup;
 			children = (
 				011A772C201F255400D97E11 /* Controllers */,
-				011A772D201F255400D97E11 /* Models */,
 				011A772B201F255400D97E11 /* Views */,
 			);
 			path = VolumeWaver;
@@ -2496,6 +2495,8 @@
 			children = (
 				011A7732201F258600D97E11 /* BPVolumeWaverView.h */,
 				011A7733201F258600D97E11 /* BPVolumeWaverView.m */,
+				01DD71DF2025E97A007FADB3 /* BPNormalVolumeWaverView.h */,
+				01DD71E02025E97A007FADB3 /* BPNormalVolumeWaverView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2507,15 +2508,6 @@
 				011A7730201F256F00D97E11 /* BPVolumeWaverViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		011A772D201F255400D97E11 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				011A7735201F354C00D97E11 /* BPVolumeQueueHelper.h */,
-				011A7736201F354C00D97E11 /* BPVolumeQueueHelper.m */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		01352FE41FD2E1250011D65C /* BasePropery */ = {
@@ -6168,7 +6160,6 @@
 				010DB7381FDD4D450099E66F /* UITextField+BPSelect.m in Sources */,
 				01A1921A2004E61F005EE4CD /* BPTagCollectionViewController.m in Sources */,
 				010DB7111FDD4D450099E66F /* UIImageView+BPGeometryConversion.m in Sources */,
-				011A7737201F354C00D97E11 /* BPVolumeQueueHelper.m in Sources */,
 				010DB74D1FDD4D450099E66F /* UIApplication+BPKeyboardFrame.m in Sources */,
 				010DB7341FDD4D450099E66F /* UIResponder+BPChain.m in Sources */,
 				01DF31C11FDD3A9100B8A955 /* NSDictionary+BPJSONString.m in Sources */,
@@ -6235,6 +6226,7 @@
 				01490C081FF548650035492D /* BPGCDViewController.m in Sources */,
 				01A191BF2004E1B9005EE4CD /* BPDatePickerController.m in Sources */,
 				01DF31C01FDD3A9100B8A955 /* NSDictionary+BPXML.m in Sources */,
+				01DD71E12025E97A007FADB3 /* BPNormalVolumeWaverView.m in Sources */,
 				01DF31E61FDD3B0300B8A955 /* NSNumber+BPRound.m in Sources */,
 				010DB78C1FDD4D640099E66F /* UIView+BPFind.m in Sources */,
 				010DB7511FDD4D450099E66F /* UINavigationController+BPTransitions.m in Sources */,

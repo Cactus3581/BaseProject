@@ -53,6 +53,12 @@
     [self graphicsBeginImageContextWithOptions_CG];
     
     [self drawViewLayer];
+    
+    [self shapeLayer];
+}
+
+- (void)shapeLayer {
+    
 }
 
 - (void)drawViewLayer {
