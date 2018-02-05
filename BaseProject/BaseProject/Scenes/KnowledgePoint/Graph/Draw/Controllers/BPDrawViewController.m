@@ -54,12 +54,9 @@
     
     [self drawViewLayer];
     
-    [self shapeLayer];
 }
 
-- (void)shapeLayer {
-    
-}
+
 
 - (void)drawViewLayer {
     BPDrawView_Layer *view = [[BPDrawView_Layer alloc] init];

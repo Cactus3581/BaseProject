@@ -1,0 +1,25 @@
+//
+//  BPTestView.h
+//  BaseProject
+//
+//  Created by xiaruzhen on 2018/2/4.
+//  Copyright © 2018年 cactus. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+
+
+@interface BPTestView : UIView
+
+
+- (void)startVoiceWave;
+
+
+- (void)changeVolume:(CGFloat)volume;
+
+
+
+@end
+
+
