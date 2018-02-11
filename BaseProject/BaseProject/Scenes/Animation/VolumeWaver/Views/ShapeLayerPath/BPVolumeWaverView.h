@@ -24,6 +24,7 @@
 
 @property (nonatomic, assign) CGFloat value;//0-1之间
 @property (nonatomic,weak) id<BPVolumeWaverViewDelegate>delegate;
+
 - (void)startVoiceWave;
 
 /**

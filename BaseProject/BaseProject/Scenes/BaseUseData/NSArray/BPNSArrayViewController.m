@@ -1,0 +1,168 @@
+//
+//  BPNSArrayViewController.m
+//  BaseProject
+//
+//  Created by xiaruzhen on 2018/2/11.
+//  Copyright © 2018年 cactus. All rights reserved.
+//
+
+#import "BPNSArrayViewController.h"
+#import "BPPerson.h"
+
+@interface BPNSArrayViewController ()
+
+@end
+
+@implementation BPNSArrayViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
+- (void)handle {
+#pragma mark - NSArray
+    NSString *Nokia = @"Nokia";
+    NSString *apple = @"Apple";
+    NSString *mi = @"MI";
+    /*
+     nsarray 他是一个类
+     里面主要是对象就行
+     
+     三大集合 数组 集合
+     */
+    //initWithObjects: 在初始化时 一次性存储多个对象  对象和对象之间用“,”隔开
+    //以nil结尾  nil之后的对象不再存储
+    
+    NSArray  *array = [[NSArray alloc]initWithObjects:Nokia ,apple,mi, nil];// 不可变数组，不允许修改，只能取
+    NSLog(@"%@",array);
+    NSArray *a = [NSArray arrayWithObjects:@"23232",@"dsd",@23,@"si 家", nil];
+    NSLog(@"%@===========",a);
+    //数组元素个数
+    NSInteger count = [array count];
+    NSLog(@"count = %ld",count);
+    
+    //访问数组元素
+    NSString *ne= [array objectAtIndex:0];  // 只能取的方法
+    NSLog(@"%@,%@",ne,array[0]);
+    NSLog(@"%@",array[1]);
+    
+    //通过对象找到索引值
+    //indexOfObject:只是找到第一个满足条件的对象下标 后面的如果有一样的就找不到了
+    NSInteger index = [array indexOfObject:Nokia];
+    NSLog(@"%ld",index);
+    
+    //遍历数组
+    for (int i = 0; i<array.count; i++) {
+        NSLog(@"%@",[array objectAtIndex:i]);
+    }
+    
+    //排序
+    NSArray *sortArray = [array sortedArrayUsingSelector:@selector(compare:)];
+    NSLog(@"%@",sortArray);
+    
+#pragma mark - NSMutableArray 可变数组
+    
+    NSString *xiaoyi  = [NSString stringWithFormat:@"xiaoyi"];
+    NSString *xiaoyer = [NSString stringWithFormat:@"xiaoer"];
+    NSString *xiaosan = [NSString stringWithFormat:@"xiaosan"];
+    NSString *xiaosi  = [NSString stringWithFormat:@"xiaosi"];
+    NSString *xiaowu  = [NSString stringWithFormat:@"xiaowu"];
+    NSString *xiaoliu = [NSString stringWithFormat:@"xiaoliu"];
+    NSString *xiaoqi  = [NSString stringWithFormat:@"xiaqi"];
+    
+    NSMutableArray *muArr = [[NSMutableArray alloc]initWithObjects :xiaoyi,xiaoyer,xiaosan,xiaosi,xiaowu,nil];
+    
+    //打印数组
+    NSLog(@"%@",muArr);
+    
+    //循环便利打印
+    for (int i =0 ; i<5; i++) {
+        NSLog(@"%@",[muArr objectAtIndex:i]);
+    }
+    
+    
+    //增加
+    [muArr addObject:xiaoliu];
+    [muArr addObject:xiaoqi];
+    NSLog(@"%@",muArr);
+    
+    //插入
+    [muArr insertObject:xiaoqi atIndex:0];
+    NSLog(@"%@",muArr);
+    
+    //通过下标交换位置
+    [muArr exchangeObjectAtIndex:0 withObjectAtIndex:6];
+    NSLog(@"%@",muArr);
+    
+    
+    
+    //删除  /  移除
+    
+    //会将所有符合条件的对象全部移除
+    [muArr removeObject:xiaoqi];
+    NSLog(@"%@",muArr);
+    
+    //removeObjectAtIndex:7只会将对应下标的对象移除
+    [muArr removeObjectAtIndex:0];
+    NSLog(@"%@",muArr);
+    
+    //removeAllObjects 移除所有的对象。
+    [muArr removeAllObjects];
+    NSLog(@"%@",muArr);
+
+    
+
+#pragma mark - 数组排序
+    
+    //冒泡排序
+    NSMutableArray *arr = [NSMutableArray arrayWithObjects:@"1",@"8",@"3",@"4", nil];
+    //        for (int i = 0; i<arr.count-1; i++) {
+    //            for (int j = 0; j<arr.count-1-i; j++) {
+    //                if ([arr[j] compare:arr[j+1]] >0) {
+    //                    [arr exchangeObjectAtIndex:j withObjectAtIndex:j+1];
+    //                }
+    //            }
+    //        }
+    //
+    //
+    
+    //等同于上面！
+    //可改变的数组   数组方法
+    [arr sortUsingSelector :@selector(compare:)];
+    NSLog(@"%@",arr);
+    
+    //不可改变数组   数组排序方法
+    NSArray *arr1 = @[@"1",@"8",@"3",@"4"];
+    NSArray *sortedArr = [arr1 sortedArrayUsingSelector:@selector(compare:)]; //compare是字符串方法。
+    NSLog(@"%@",sortedArr);
+    
+    //对于年龄排序
+    BPPerson *stu1 = [BPPerson personWithName:@"zhaoda" weight:13];
+    BPPerson *stu2 = [BPPerson personWithName:@"suner" weight:14];
+    BPPerson *stu3 = [BPPerson personWithName:@"zhangsan" weight:17];
+    BPPerson *stu4 = [BPPerson personWithName:@"lisi" weight:11];
+    BPPerson *stu5 = [BPPerson personWithName:@"wangwu" weight:15];
+    NSArray *arr2 = @[stu1,stu2,stu3,stu4,stu5];
+    NSMutableArray *stus = [[NSMutableArray alloc]init];
+    for (int i = 0; i<5; i++) {
+        BPPerson * stu = [BPPerson personWithName:[NSString stringWithFormat:@"zhangsan%d号",i] weight:arc4random()%110];
+        //放入数组
+        [stus addObject:stu];
+    }
+    NSLog(@"%@",stus);
+    [stus sortUsingSelector:@selector(compareByAge:)];
+    NSLog(@"%@",stus);
+    
+    
+    //对于快速枚举 枚举数组 获取到每一个数组元素 ,枚举字典 获取到每一个key值，枚举集合 获取到每一个集合元素。
+    //三大集合都可以使用快速枚举来遍历打印。但是也有弊端.在枚举过程中，不允许对集合中的元素进行增加或者减少
+    for (NSString *str in arr) {
+        NSLog(@"%@",str);
+    }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+@end

@@ -1,16 +1,15 @@
 //
-//  BPDrawView.m
+//  BPVolumeWaverView.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2018/2/4.
+//  Created by xiaruzhen on 2018/1/29.
 //  Copyright © 2018年 cactus. All rights reserved.
 //
 
-#import "BPDrawView.h"
+#import "BPVolumeWaverView.h"
+#import "CADisplayLink+BPAdd.h"
 
-
-
-@interface BPDrawView ()
+@interface BPVolumeWaverView ()
 @property (nonatomic,strong) CAShapeLayer *shapeLayer1;
 @property (nonatomic,strong) CAShapeLayer *shapeLayer2;
 @property (nonatomic, strong) CADisplayLink *displayLink;
@@ -21,32 +20,29 @@
 @property (nonatomic,copy,nullable)  dispatch_block_t callback;
 @property (nonatomic, assign) BOOL stop;
 @property (nonatomic, strong) NSThread *thread;//常驻线程
-
 @end
 
 static NSRunLoop *_voiceWaveRunLoop;
-
+static NSThread *_voiceWaveThread = nil;
 /*
  1. 开辟子线程的问题
  2. 卡的原因
  3. 起始点的位置
  */
 
-@implementation BPDrawView {
-    dispatch_queue_t queue;
-}
+@implementation BPVolumeWaverView
 
 - (instancetype)init {
     self = [super init];
     if (self) {
         [self initLayer];
+        [self startVoiceWaveThread];
     }
     return self;
 }
 
 #pragma mark - 开启子线程准备进行异步绘制
 - (NSThread *)startVoiceWaveThread {
-    [self update];
     static NSThread *_voiceWaveThread = nil;
     static dispatch_once_t oncePredicate;
     dispatch_once(&oncePredicate, ^{
@@ -54,6 +50,7 @@ static NSRunLoop *_voiceWaveRunLoop;
         [[NSThread alloc] initWithTarget:self
                                 selector:@selector(voiceWaveThreadEntryPoint:)
                                   object:nil];
+        [_voiceWaveThread setName:@"bPVolumeWaver_thread"];
         [_voiceWaveThread start];
     });
     return _voiceWaveThread;
@@ -61,119 +58,66 @@ static NSRunLoop *_voiceWaveRunLoop;
 
 - (void)voiceWaveThreadEntryPoint:(id)__unused object {
     @autoreleasepool {
-        [[NSThread currentThread] setName:@"bpVolumeWaver_thread"];
-        _voiceWaveRunLoop = [NSRunLoop currentRunLoop];
-        [_voiceWaveRunLoop addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
-        [_voiceWaveRunLoop run];
+        if (_voiceWaveThread) {
+            _voiceWaveRunLoop = [NSRunLoop currentRunLoop];
+            [_voiceWaveRunLoop addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
+            [_voiceWaveRunLoop run];
+        }
     }
 }
 
 #pragma mark - 开启定时器，开始进行波浪动画（通过时时更新异步绘制来实现的）
 - (void)startVoiceWave {
-    //    if (_voiceWaveRunLoop) {
-    //        self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
-    //        [self.displayLink addToRunLoop:_voiceWaveRunLoop forMode:NSRunLoopCommonModes];
-    //    }
-    //    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
-    //    BPLog(@"NSThread%d",[NSThread isMainThread]);
-    //    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-    
     if (_voiceWaveRunLoop) {
         [self.displayLink invalidate];
         __weak typeof (self) weakSelf = self;
-        self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
-        [self.displayLink addToRunLoop:_voiceWaveRunLoop forMode:NSRunLoopCommonModes];
+        self.displayLink = [CADisplayLink displayLinkWithRunLoop:_voiceWaveRunLoop executeBlock:^(CADisplayLink *displayLink) {
+            [weakSelf update];
+        }];
     } else {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if (_voiceWaveRunLoop) {
                 [self.displayLink invalidate];
                 __weak typeof (self) weakSelf = self;
-                self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
-                [self.displayLink addToRunLoop:_voiceWaveRunLoop forMode:NSRunLoopCommonModes];
+                self.displayLink = [CADisplayLink displayLinkWithRunLoop:_voiceWaveRunLoop executeBlock:^(CADisplayLink *displayLink) {
+                    [weakSelf update];
+                }];
             }
         });
     }
 }
 
--(void)createThread1 {
-    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(startVoiceWave) object:nil];
-    [thread start];
-}
-
 - (void)initLayer {
     [self initGesture];
-    
-    [self createThread1];
-    [self startVoiceWaveThread];
-    
-    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
-    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-    
     self.shapeLayer1 = [CAShapeLayer layer];
-    self.shapeLayer1.lineCap       = kCALineCapButt;
-    self.shapeLayer1.lineJoin      = kCALineJoinRound;
+    self.shapeLayer1.lineCap       = kCALineCapSquare;
+    self.shapeLayer1.lineJoin      = kCALineJoinBevel;
     self.shapeLayer1.strokeColor   =  kGreenColor.CGColor;
-    self.shapeLayer1.fillColor     = [[UIColor clearColor] CGColor];
-    [self.shapeLayer1 setLineWidth:kOnePixel*3];
-//    [self.layer addSublayer:self.shapeLayer1];
+    self.shapeLayer1.fillColor     = [kGreenColor CGColor];
+    [self.shapeLayer1 setLineWidth:kOnePixel*1.5];
+    [self.layer addSublayer:self.shapeLayer1];
     
     self.shapeLayer2 = [CAShapeLayer layer];
-    self.shapeLayer2.lineCap       = kCALineCapButt;
-    self.shapeLayer2.lineJoin      = kCALineJoinRound;
-    self.shapeLayer2.strokeColor   =  kGreenColor.CGColor;
-    self.shapeLayer2.fillColor     = [[UIColor clearColor] CGColor];
-    [self.shapeLayer2 setLineWidth:kOnePixel];
-//    [self.layer addSublayer:self.shapeLayer2];
-    
-    //自定义串行串行队列
-    queue = dispatch_queue_create("com.test.gcd", DISPATCH_QUEUE_SERIAL);
+    self.shapeLayer2.lineCap       = kCALineCapSquare;
+    self.shapeLayer2.lineJoin      = kCALineJoinBevel;
+    UIColor *alphaColor1 = [kGreenColor colorWithAlphaComponent:0.5];
+    self.shapeLayer2.strokeColor   =  alphaColor1.CGColor;
+    self.shapeLayer2.fillColor     = [alphaColor1 CGColor];
+    [self.shapeLayer2 setLineWidth:kOnePixel*0.5];
+    [self.layer addSublayer:self.shapeLayer2];
 }
 
 
 - (void)update {
     self.phase -= 0.1;
-    //    if (self.stop) {
-    //        self.phase -= 0.05;//改变横向速度
-    //    }else {
-    //        self.phase -= 0.1;
-    //    }
-    //异步任务1加入串行队列中
-    //    dispatch_sync(queue, ^{
+//    if (self.stop) {
+//        self.phase -= 0.05;//改变横向速度
+//    }else {
+//        self.phase -= 0.1;
+//    }
     BPLog(@"isMainThread %d",[NSThread isMainThread]);
-//    self.shapeLayer1.path = [self creatPathWithValue:self.value frequency:2.00f].CGPath;
-//    self.shapeLayer2.path = [self creatPathWithValue:self.value frequency:3.00f].CGPath;
-    //    });
-    
-    [self performSelectorOnMainThread:@selector(updateShapeLayerPath:) withObject:nil waitUntilDone:NO];
-}
-
-- (void)updateShapeLayerPath:(NSDictionary *)dic {
-    [self setNeedsDisplay];
-}
-
-#pragma mark - drawRect方法
-- (void)drawRect:(CGRect)rect {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    //绘制渐变
-    CGPathRef path = [self creatPathWithValue:self.value frequency:2.00f].CGPath;
-
-    CGContextSetStrokeColorWithColor(context, kGreenColor.CGColor);
-    CGContextSetLineWidth(context, kOnePixel*3);
-    [self drawLine:context path:path color:kGreenColor.CGColor];
-    
-    CGPathRef path2 = [self creatPathWithValue:self.value frequency:3.00f].CGPath;
-    CGContextSetStrokeColorWithColor(context, kGreenColor.CGColor);
-    CGContextSetLineWidth(context, kOnePixel*3);
-    [self drawLine:context path:path2 color:kGreenColor.CGColor];
-
-
-}
-
-- (void)drawLine:(CGContextRef)context path:(CGPathRef)path color:(CGColorRef)color {
-    CGContextSetLineJoin(context, kCGLineJoinBevel);
-    CGContextSetLineCap(context, kCGLineCapSquare);
-    CGContextAddPath(context, path);
-    CGContextStrokePath(context);
+    self.shapeLayer1.path = [self creatPathWithValue:self.value frequency:2.00f].CGPath;
+    self.shapeLayer2.path = [self creatPathWithValue:self.value frequency:3.00f].CGPath;
 }
 
 - (void)setValue:(CGFloat)value {
@@ -212,13 +156,13 @@ static NSRunLoop *_voiceWaveRunLoop;
         if (A<=0) {
             A = 0;
             if (self.callback) {
-                //                self.callback();
+//                self.callback();
             }
         }
     }
     for(CGFloat x = 0; x < width; x++) {
-        
-        //    for(CGFloat x = 0; x < width; x+=0.1) {
+
+//    for(CGFloat x = 0; x < width; x+=0.1) {
         CGFloat scaling = -pow(x / waveMid - 1, 2) + 1; // 0-1之间,先从0加到1，再从1减到0
         CGFloat a =  A * scaling;
         CGFloat y = a  * sinf(ω *(x / width) + φ) + k;

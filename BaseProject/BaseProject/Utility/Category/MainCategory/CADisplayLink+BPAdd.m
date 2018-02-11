@@ -20,8 +20,15 @@
     return objc_getAssociatedObject(self, @selector(executeBlock));
 }
 
-+ (CADisplayLink *)displayLinkWithExecuteBlock:(displayLinkBlock)block{
++ (CADisplayLink *)displayLinkWithExecuteBlock:(displayLinkBlock)block {
     CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(bp_executeDisplayLink:)];
+    displayLink.executeBlock = [block copy];
+    return displayLink;
+}
+
++ (CADisplayLink *)displayLinkWithRunLoop:(NSRunLoop *)runloop executeBlock:(displayLinkBlock)block {
+    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(bp_executeDisplayLink:)];
+    [displayLink addToRunLoop:runloop forMode:NSRunLoopCommonModes];
     displayLink.executeBlock = [block copy];
     return displayLink;
 }

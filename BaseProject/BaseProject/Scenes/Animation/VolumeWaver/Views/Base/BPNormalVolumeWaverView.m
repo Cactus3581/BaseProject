@@ -14,7 +14,6 @@
 @property (nonatomic, strong) CADisplayLink *displayLink;
 @property (nonatomic, assign) CGFloat phase;
 @property (nonatomic, assign) CGFloat stopOffset;
-
 @end
 
 @implementation BPNormalVolumeWaverView {
@@ -72,8 +71,6 @@
     
     //自定义串行串行队列
     queue = dispatch_queue_create("com.test.gcd", DISPATCH_QUEUE_SERIAL);
-    
-    
 }
 
 - (void)update {
@@ -92,7 +89,6 @@
 - (void)setValue:(CGFloat)value {
     _value = value;
 }
-
 
 - (UIBezierPath *)creatPathWithValue:(CGFloat)value {
     UIBezierPath *path = [UIBezierPath bezierPath];
@@ -141,6 +137,7 @@
     }
     return path;
 }
+
 - (UIBezierPath *)creatPath {
     UIBezierPath *path = [UIBezierPath bezierPath];
     
@@ -192,4 +189,3 @@
 }
 
 @end
-

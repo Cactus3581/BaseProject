@@ -11,5 +11,4 @@
 @interface BPNormalVolumeWaverView : UIView
 @property (nonatomic, assign) BOOL stop;
 @property (nonatomic, assign) CGFloat value;//0-1之间
-
 @end

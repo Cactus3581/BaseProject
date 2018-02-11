@@ -16,8 +16,6 @@ typedef void (^UIControlBPActionBlock)(id weakSender);
 - (void)bp_invokeBlock:(id)sender;
 @end
 
-
-
 @interface UIControl (BPActionBlocks)
 - (void)bp_handleControlEvents:(UIControlEvents)controlEvents withBlock:(UIControlBPActionBlock)actionBlock;
 - (void)bp_removeActionBlocksForControlEvents:(UIControlEvents)controlEvents;

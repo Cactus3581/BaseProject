@@ -151,9 +151,9 @@
 		<key>title</key>
 		<string>图片浏览器</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPPhotoBrowserViewController</string>
 		<key>briefIntro</key>
-		<string>导航栏基本属性及动画/自定义Tabbar</string>
+		<string></string>
 	</dict>
 	<dict>
 		<key>title</key>

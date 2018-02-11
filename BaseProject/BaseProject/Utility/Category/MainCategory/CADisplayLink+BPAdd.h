@@ -16,5 +16,6 @@ typedef void(^displayLinkBlock) (CADisplayLink *displayLink);
 @property (nonatomic,copy)displayLinkBlock executeBlock;
 
 + (CADisplayLink *)displayLinkWithExecuteBlock:(displayLinkBlock)block;
++ (CADisplayLink *)displayLinkWithRunLoop:(NSRunLoop *)runloop executeBlock:(displayLinkBlock)block;
 
 @end

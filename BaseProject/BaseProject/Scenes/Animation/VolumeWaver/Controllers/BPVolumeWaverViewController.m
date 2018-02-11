@@ -7,21 +7,22 @@
 //
 
 #import "BPVolumeWaverViewController.h"
-#import "BPVolumeWaverView.h"
 #import <AVFoundation/AVFoundation.h>
 #import "NSTimer+BPUnRetain.h"
+#import "CADisplayLink+BPAdd.h"
+
+#import "BPNormalVolumeWaverView.h"
+#import "BPVolumeWaverView.h"
+#import "BPShapeLayerPathWaverView.h"
 #import "BPDrawWaverView.h"
-#import "BPTestView.h"
-#import "BPDrawView.h"
+
 @interface BPVolumeWaverViewController ()
-@property (nonatomic, weak) BPVolumeWaverView *voiceWaveView;
 @property (nonatomic, strong) AVAudioRecorder *recorder;
 @property (nonatomic, strong) NSTimer *timer;
-
-@property (nonatomic, strong) BPDrawWaverView *drawWaverView;
-@property (nonatomic, strong) BPDrawView *drawView;
-@property (nonatomic, strong) BPTestView *testView;
-
+@property (nonatomic, weak) BPNormalVolumeWaverView *baseWaverView;
+@property (nonatomic, weak) BPVolumeWaverView *voiceWaveView;
+@property (nonatomic, weak) BPShapeLayerPathWaverView *shapeLayerPathWaverView;
+@property (nonatomic, weak) BPDrawWaverView *drawWaverView;
 @end
 
 @implementation BPVolumeWaverViewController
@@ -29,114 +30,80 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self creatRecorder];
-    [self showRect];
-//    [self showRectTest];
-//    [self showRect1];
-
+    [self showBaseWaver];
+    [self showWaver_path_1];
+    [self showWaver_path_2];
+    [self showWaverd_draw_1];
+    [self showWaverd_draw_2];
     [self creatTimer];
     [self stop];
 }
 
-- (void)showRect1 {
-    [self.view addSubview:self.drawView];
-    [self.drawView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.centerY.equalTo(self.view);
-        make.height.equalTo(@(54));
-    }];
+#pragma mark - show methods
+- (void)showBaseWaver {
     
-    [self.drawView startVoiceWave];
 }
 
-- (BPDrawView *)drawView {
-    if (!_drawView) {
-        _drawView = [[BPDrawView alloc] init];
-        _drawView.backgroundColor = kWhiteColor;
-    }
-    return _drawView;
+- (void)showWaver_path_1 {
+    [self.voiceWaveView startVoiceWave];
 }
 
-- (void)showRectTest {
-    [self.view addSubview:self.testView];
-    [self.testView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.centerY.equalTo(self.view);
-        make.height.equalTo(@(54));
-    }];
-    
-    [self.testView startVoiceWave];
+- (void)showWaver_path_2 {
+    [self.shapeLayerPathWaverView startVoiceWave];
 }
 
-- (BPTestView *)testView {
-    if (!_testView) {
-        _testView = [[BPTestView alloc] init];
-        _testView.backgroundColor = kWhiteColor;
-    }
-    return _testView;
-}
-
-
-- (void)showRect {
-    [self.view addSubview:self.drawWaverView];
-    [self.drawWaverView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.centerY.equalTo(self.view);
-        make.height.equalTo(@(54));
-    }];
-    
+- (void)showWaverd_draw_1 {
     [self.drawWaverView startVoiceWave];
 }
 
-- (BPDrawWaverView *)drawWaverView {
-    if (!_drawWaverView) {
-        _drawWaverView = [[BPDrawWaverView alloc] init];
-//        _drawWaverView.backgroundColor = ;
-    }
-    return _drawWaverView;
+- (void)showWaverd_draw_2 {
+    
 }
 
-
-
-- (void)leftBarButtonItemClickAction:(id)sender {
-    [_voiceWaveView removeFromSuperview];
-    _voiceWaveView = nil;
-    [super leftBarButtonItemClickAction:sender];
-}
-
+#pragma mark - 停止
 - (void)stop {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.voiceWaveView stopVoiceWaveWithCallback:^{
 
-//        [self.voiceWaveView stopVoiceWaveWithCallback:^{
-//
-//        }];
-        
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            [_voiceWaveView stopSecondAnaimation];
-//            [_voiceWaveView removeFromSuperview];
-//            _removeWaver = YES;
-//        });
+        }];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [_voiceWaveView removeFromSuperview];
+        });
     });
 }
 
+#pragma mark - timer
 - (void)creatTimer {
-//    [self.voiceWaveView startVoiceWave];
     __weak typeof (self) weakSelf = self;
     self.timer = [NSTimer bp_scheduledTimerWithTimeInterval:0.1 repeats:YES block:^(NSTimer *timer) {
         [weakSelf updateVolume];
-//        [weakSelf.testView changeVolume:0.5];
-//        weakSelf.drawView.value = 0.5;
-
     }];
 }
 
 - (void)updateVolume {
     [self.recorder updateMeters];
     CGFloat normalizedValue = pow (10, [self.recorder averagePowerForChannel:0] / 20);
-//    self.voiceWaveView.value = normalizedValue;
-//            self.drawView.value = normalizedValue;
-    [self.drawWaverView changeVolume:normalizedValue];
-
-
+    self.baseWaverView.value = normalizedValue;
+    self.voiceWaveView.value = normalizedValue;
+    [self.shapeLayerPathWaverView changeVolume:normalizedValue];
+    self.drawWaverView.value = normalizedValue;
 }
 
-#pragma mark - getters
+#pragma mark - lazy methods
+- (BPNormalVolumeWaverView *)baseWaverView {
+    if (!_baseWaverView) {
+        BPNormalVolumeWaverView *voiceWaveView = [[BPNormalVolumeWaverView alloc] init];
+        _baseWaverView = voiceWaveView;
+        _baseWaverView.backgroundColor = kLightGrayColor;
+        [self.view addSubview:_baseWaverView];
+        [_baseWaverView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.top.equalTo(self.view);
+            make.height.equalTo(@60);
+        }];
+    }
+    return _baseWaverView;
+}
+
 - (BPVolumeWaverView *)voiceWaveView {
     if (!_voiceWaveView) {
         BPVolumeWaverView *voiceWaveView = [[BPVolumeWaverView alloc] init];
@@ -144,25 +111,45 @@
         _voiceWaveView.backgroundColor = kLightGrayColor;
         [self.view addSubview:_voiceWaveView];
         [_voiceWaveView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.centerY.equalTo(self.view);
+            make.left.right.equalTo(self.view);
+            make.top.right.equalTo(self.baseWaverView);
             make.height.equalTo(@60);
         }];
-        
     }
     return _voiceWaveView;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+- (BPShapeLayerPathWaverView *)shapeLayerPathWaverView {
+    if (!_shapeLayerPathWaverView) {
+        BPShapeLayerPathWaverView *voiceWaveView = [[BPShapeLayerPathWaverView alloc] init];
+        _shapeLayerPathWaverView = voiceWaveView;
+        _shapeLayerPathWaverView.backgroundColor = kLightGrayColor;
+        [self.view addSubview:_shapeLayerPathWaverView];
+        [_shapeLayerPathWaverView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.equalTo(self.view);
+            make.top.right.equalTo(self.voiceWaveView);
+            make.height.equalTo(@60);
+        }];
+    }
+    return _shapeLayerPathWaverView;
 }
 
-- (void)dealloc {
-    [_timer invalidate];
-    _timer = nil;
-    [_voiceWaveView removeFromSuperview];
+- (BPDrawWaverView *)drawWaverView {
+    if (!_drawWaverView) {
+        BPDrawWaverView *voiceWaveView = [[BPDrawWaverView alloc] init];
+        _drawWaverView = voiceWaveView;
+        _drawWaverView.backgroundColor = kLightGrayColor;
+        [self.view addSubview:_drawWaverView];
+        [_drawWaverView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.equalTo(self.view);
+            make.top.right.equalTo(self.shapeLayerPathWaverView);
+            make.height.equalTo(@60);
+        }];
+    }
+    return _drawWaverView;
 }
 
--(void)creatRecorder {
+- (void)creatRecorder {
     NSURL *url = [NSURL fileURLWithPath:@"/dev/null"];
     NSDictionary *settings = @{AVSampleRateKey:          [NSNumber numberWithFloat: 44100.0],
                                AVFormatIDKey:            [NSNumber numberWithInt: kAudioFormatAppleLossless],
@@ -179,6 +166,30 @@
     [self.recorder prepareToRecord];
     [self.recorder setMeteringEnabled:YES];
     [self.recorder record];
+}
+
+- (void)leftBarButtonItemClickAction:(id)sender {
+    [self removeSunViews];
+    [super leftBarButtonItemClickAction:sender];
+}
+
+- (void)removeSunViews {
+    [_voiceWaveView removeFromSuperview];
+    _voiceWaveView = nil;
+    [_baseWaverView removeFromSuperview];
+    _baseWaverView = nil;
+    [_shapeLayerPathWaverView removeFromSuperview];
+    _shapeLayerPathWaverView = nil;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc {
+    [_timer invalidate];
+    _timer = nil;
+    [self removeSunViews];
 }
 
 @end
