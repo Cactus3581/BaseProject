@@ -24,18 +24,20 @@
 
 
 @interface BPPerson : NSObject {
+#pragma 实例变量
 @public
-    //实例变量
     NSString *_name;
     CGFloat _weight;
+    CGFloat _weig;
 @private
     NSString *_sex;
 @protected
     NSInteger _age;
 }
 
+#pragma 属性
 @property NSString *name;
-@property CGFloat weight;
+@property (nonatomic,assign)CGFloat weight;
 
 //初始化方法
 -(instancetype)init;
@@ -50,7 +52,9 @@
 -(NSString *)name;
 
 - (NSComparisonResult)compareByAge:(BPPerson *)anotherPerson;
-
+//按照姓名升序
+- (NSComparisonResult)compareByName:(BPPerson *)anotherStudent;
+- (NSComparisonResult)compareByName2:(BPPerson *)anotherStudent;
 //重写description
 - (NSString *)description;
 @end

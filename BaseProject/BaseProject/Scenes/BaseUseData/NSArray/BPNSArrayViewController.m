@@ -153,7 +153,38 @@
     [stus sortUsingSelector:@selector(compareByAge:)];
     NSLog(@"%@",stus);
     
-    
+    //按照姓名升序
+    [stus sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        //转化
+        BPPerson *stu1 = (BPPerson *)obj1;
+        BPPerson *stu2 = (BPPerson *)obj2;
+        return [stu1.name compare:stu2.name];
+    }];
+    NSLog(@"%@",stus);
+
+    //按照姓名降序
+    [stus sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        //转化
+        BPPerson *stu1 = (BPPerson *)obj1;
+        BPPerson *stu2 = (BPPerson *)obj2;
+        return -[stu1.name compare:stu2.name];
+    }];
+    NSLog(@"%@",stus);
+
+    NSComparisonResult(^paixu)(id obj1, id obj2) = ^NSComparisonResult(id obj1, id obj2)
+    {
+        BPPerson *stu1 = (BPPerson *)obj1;
+        BPPerson *stu2 = (BPPerson *)obj2;
+        if (stu1.name <stu2.name) {
+            return NSOrderedAscending;
+        }else if (stu1.name>stu2.name)
+        {
+            return NSOrderedDescending;
+            
+        }
+        return NSOrderedSame;
+    };
+    [stus sortUsingComparator:paixu];
     //对于快速枚举 枚举数组 获取到每一个数组元素 ,枚举字典 获取到每一个key值，枚举集合 获取到每一个集合元素。
     //三大集合都可以使用快速枚举来遍历打印。但是也有弊端.在枚举过程中，不允许对集合中的元素进行增加或者减少
     for (NSString *str in arr) {

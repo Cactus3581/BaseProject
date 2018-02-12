@@ -11,6 +11,25 @@
 /*
  1。 类的实现部分 :以@impementation开头，以@end结尾 只要符号这种形式，就可以完成类的实现。类的实现部分  主要进行 方法的实现。
 */
+
+
+/*
+ @synthesize帮我们实现对应的setter和getter方法
+ @synthesize name = _name;
+ @synthesize 是关键字
+ name = _name name是属性名，_name是实例变量。
+ 
+ 1.实现了set get方法
+ 2.告知在set和get方法操作的实例变量是_name
+ 
+ //当@synthesize 生成的set，get方法 操作实例变量时，会进行一个检测，如果实例变量存在，进行赋值取值，如果实例变量不存在，则会帮我们生成私有的实例变量（_属性名，例如，name属性自动生成的实例变量为_name）
+ 
+ 如果@synthesize 省略不写  系统会为我们做这一切，也就是说我们只需要声明属性
+ 
+ */
+
+//@synthesize name = _name;
+
 @implementation BPPerson
 
 -(instancetype)initWithName:(NSString *)name weight:(CGFloat)weight {
@@ -61,13 +80,21 @@
     //降序 注意self 与anothe的使用; 如果传对象用什么表示的思想；传两个对象怎么表示的思想；点语法；三个return的思想；NSOrderedDescending；两两比较，数组返回的思想
     if (self.weight> anotherPerson.weight) {
         return NSOrderedDescending;
-        
         //升序
     }else if(self.weight < anotherPerson.weight){
         return NSOrderedAscending;
     }
     //相等
     return NSOrderedSame;
+}
+
+//升序
+- (NSComparisonResult)compareByName:(BPPerson *)anotherStudent {
+    return [self.name compare:anotherStudent.name];
+}
+//降序
+- (NSComparisonResult)compareByName2:(BPPerson *)anotherStudent {
+    return -[self.name compare:anotherStudent.name];
 }
 
 //重写desceiption
