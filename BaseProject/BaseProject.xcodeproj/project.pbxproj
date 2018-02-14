@@ -138,6 +138,8 @@
 		011A7731201F256F00D97E11 /* BPVolumeWaverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011A7730201F256F00D97E11 /* BPVolumeWaverViewController.m */; };
 		011F55A120304A50005F9C9E /* BPPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011F55A020304A50005F9C9E /* BPPhotoBrowserViewController.m */; };
 		0126B5361FB4ACBB00E522CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0126B5351FB4ACBB00E522CF /* MapKit.framework */; };
+		012D948620344AD100691E40 /* BPDesignPatternsKVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D948520344AD100691E40 /* BPDesignPatternsKVCViewController.m */; };
+		012D948920344C7600691E40 /* BPPersonHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D948820344C7600691E40 /* BPPersonHealth.m */; };
 		01352FE31FD2DDA20011D65C /* MainCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01352FE21FD2DDA20011D65C /* MainCatalog.plist */; };
 		01352FF51FD2E1AA0011D65C /* BPNaviProperyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01352FF41FD2E1AA0011D65C /* BPNaviProperyViewController.m */; };
 		01352FFB1FD2E1E90011D65C /* BPNaviCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01352FFA1FD2E1E90011D65C /* BPNaviCollectionViewController.m */; };
@@ -764,6 +766,10 @@
 		011F559F20304A50005F9C9E /* BPPhotoBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPhotoBrowserViewController.h; sourceTree = "<group>"; };
 		011F55A020304A50005F9C9E /* BPPhotoBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPhotoBrowserViewController.m; sourceTree = "<group>"; };
 		0126B5351FB4ACBB00E522CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		012D948420344AD100691E40 /* BPDesignPatternsKVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDesignPatternsKVCViewController.h; sourceTree = "<group>"; };
+		012D948520344AD100691E40 /* BPDesignPatternsKVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDesignPatternsKVCViewController.m; sourceTree = "<group>"; };
+		012D948720344C7600691E40 /* BPPersonHealth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPersonHealth.h; sourceTree = "<group>"; };
+		012D948820344C7600691E40 /* BPPersonHealth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPersonHealth.m; sourceTree = "<group>"; };
 		01352FE21FD2DDA20011D65C /* MainCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MainCatalog.plist; sourceTree = "<group>"; };
 		01352FF31FD2E1AA0011D65C /* BPNaviProperyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNaviProperyViewController.h; sourceTree = "<group>"; };
 		01352FF41FD2E1AA0011D65C /* BPNaviProperyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNaviProperyViewController.m; sourceTree = "<group>"; };
@@ -2540,6 +2546,8 @@
 				01161F352030890700FA3441 /* BPClassObjectViewController.m */,
 				01161F372030895E00FA3441 /* BPPerson.h */,
 				01161F382030895E00FA3441 /* BPPerson.m */,
+				012D948720344C7600691E40 /* BPPersonHealth.h */,
+				012D948820344C7600691E40 /* BPPersonHealth.m */,
 				01161F3A20308CB300FA3441 /* BPMan.h */,
 				01161F3B20308CB300FA3441 /* BPMan.m */,
 			);
@@ -2607,6 +2615,7 @@
 		01161F522030975C00FA3441 /* DesignPatterns */ = {
 			isa = PBXGroup;
 			children = (
+				012D948320344AC200691E40 /* KVC */,
 				0179BC3320316E840061CD84 /* Notification */,
 				0179BC3220316E6D0061CD84 /* KVO */,
 				0179BC3120316E660061CD84 /* Delegate */,
@@ -2653,6 +2662,15 @@
 				011A7730201F256F00D97E11 /* BPVolumeWaverViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		012D948320344AC200691E40 /* KVC */ = {
+			isa = PBXGroup;
+			children = (
+				012D948420344AD100691E40 /* BPDesignPatternsKVCViewController.h */,
+				012D948520344AD100691E40 /* BPDesignPatternsKVCViewController.m */,
+			);
+			path = KVC;
 			sourceTree = "<group>";
 		};
 		01352FE41FD2E1250011D65C /* BasePropery */ = {
@@ -6206,6 +6224,7 @@
 				01D22BD31FDD814000BCC4AD /* UITableView+BPAdd.m in Sources */,
 				010DB7931FDD4D640099E66F /* UIView+BPConstraints.m in Sources */,
 				018972B71FC47F6B00D6DF5B /* BPBaseCollectionViewController.m in Sources */,
+				012D948920344C7600691E40 /* BPPersonHealth.m in Sources */,
 				01DF31CA1FDD3A9100B8A955 /* NSFileManager+BPPaths.m in Sources */,
 				01DF31BF1FDD3A9100B8A955 /* NSDictionary+BPURL.m in Sources */,
 				010DB7581FDD4D450099E66F /* UIControl+BPActionBlocks.m in Sources */,
@@ -6223,6 +6242,7 @@
 				018C4510200A54AD00CF43D7 /* UICollectionViewFlowLayout+BPFullItem.m in Sources */,
 				01DF321B1FDD3B3000B8A955 /* NSString+BPContains.m in Sources */,
 				01D22BE91FDD814000BCC4AD /* UILabel+BPAdd.m in Sources */,
+				012D948620344AD100691E40 /* BPDesignPatternsKVCViewController.m in Sources */,
 				01D22BDD1FDD814000BCC4AD /* UIView+BPAddForFrame.m in Sources */,
 				01DF32461FDD3B3D00B8A955 /* NSObject+BPKVOBlocks.m in Sources */,
 				01DF32731FDD3BB100B8A955 /* NSDate+BPCupertinoYankee.m in Sources */,

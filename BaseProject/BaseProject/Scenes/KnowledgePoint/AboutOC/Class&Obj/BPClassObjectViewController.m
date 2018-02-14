@@ -33,29 +33,134 @@
     [self sendMessage];
 }
 
+#pragma mark - 发送消息
 - (void)sendMessage {
     //创建对象
-    BPPerson *p1 = [[BPPerson alloc] init];
-    NSLog(@"对象地址:%p",p1);
+    BPPerson *person = [[BPPerson alloc] init];
+    NSLog(@"对象地址:%p",person);
     //调用  打招呼。
     //中括号[receiver message];消息发送机制（消息语法）
-    [p1 sayHi];
+    [person sayHi];
     
     //操作访问实例变量
-    p1->_weight = 333333333;
-    [p1 sayHi];
-    
-    
+    person->_weight = 333333333;
+    [person sayHi];
+}
 
+#pragma mark - 释放池
+/*
+ 
+ autorelease  在未来的某一个时刻，将对象的引用计数－1（延缓－1）；一般和自动释放池连用，它会将被修饰的对象 放入离他最近的自动释放池中。
+ autoreleasePool自动释放池，当自动释放池自身将要销毁的时候，会对池子内部的每一个对象 发送一个release消息。注意，出池子并不意味着对象一定被销毁，空间一定被回收，只是对象的引用计数发生变化，当减小到0时，才会销毁
+ 
+ */
+- (void)configAutoPool {
+    //自动释放池对象
+    //NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init];
+    
+    @autoreleasepool {
+        
+    }
+    
+    //pool自动释放池
+    //[pool release];
+    
+    
+    //1.内存泄漏
+    //2.过度延缓释放
+    for (int i = 0; i<100; i++) {
+        /*
+        Person *per = [[Person alloc]init];
+         //[per release]; 若没有这句会造成：//1.内存泄漏
+        [per autorelease];  //2.这句话会造成过度延缓释放
+        */
+        @autoreleasepool {
+            BPPerson *per = [[BPPerson alloc]init];
+        }
+    }
+}
+
+#pragma mark - copy
+- (void)copyObj {
+    BPPerson *person = [[BPPerson alloc] init];
+    BPPerson *person1 = [person copy];
+    
+    NSLog(@"%lu,%lu",BPRetainCount(person),BPRetainCount(person1));
+
+    
+    BPPerson *per1 = [[BPPerson alloc]init];
+    BPPerson *per2 = [[BPPerson alloc]init];
+    BPPerson *per3 = [[BPPerson alloc]init];
+    NSArray *arr = [[NSArray alloc]initWithObjects:per1,per2,per3, nil];
+    
+    BPLog(@"per1:%lu,%p",BPRetainCount(per1),per1);
+
+    
+    //    NSArray *arr = [[NSArray alloc]initWithObjects:per1,per2,per3, nil];
+    NSLog(@"arr[0]:%lu %p",BPRetainCount(arr[0]),arr[0]);
+    
+    
+    //对不可变数组进行copy是一个浅拷贝,相当于retain操作，对数组元素也是浅拷贝，是简单的指针赋值，引用计数没有变化。
+    NSArray *copyArr = [arr copy];
+    NSLog(@"%p,%p",arr,copyArr);
+    NSLog(@"%lu",BPRetainCount(arr));
+    NSLog(@"%lu",BPRetainCount(arr[0]));
+    
+    //对可变数组进行拷贝是一个深拷贝，产生了一个新的数组对象。但是对于数组内的数组元素是浅拷贝，相当于retain操作。
+    //
+    NSMutableArray *muArr = [[NSMutableArray alloc]initWithObjects:per1,per2,per3, nil];
+    NSMutableArray *copyMuArr = [muArr copy];
+    NSLog(@"%p,%p",muArr,copyMuArr);
+    NSLog(@"%lu %lu",BPRetainCount(muArr),BPRetainCount(copyMuArr));
+    
+    NSLog(@"%p,%lu,%p,%lu",muArr[0],BPRetainCount(muArr[0]),copyMuArr[0],BPRetainCount(copyMuArr[0]));
+}
+
+#pragma mark - 多态
+- (void)polymorphism {
+    /*
+     多态面向对象编程三大特性:
+     父类指针可以指向子类对象，使用多态我们可以写出通用的代码减小代码的复杂程度（例如：UI中的addSubView:）
+     */
+}
+
+#pragma mark - 继承
+- (void)inherit {
     BPMan *man = [[BPMan alloc] init];
     [man sayHi];
-    
-    //三种方法
-    [p1 setName:@"李四"];
-    p1.weight = 12;
-    [p1 setValue:@66 forKey:@"weight"];
-    [p1 setValue:@66 forKey:@"_weight"];
+}
 
+#pragma mark - 赋值方法
+- (void)valuation {
+    BPPerson *person = [[BPPerson alloc] init];
+    //三种方法
+    [person setName:@"李四"];
+    person.weight = 12;
+    //KVC : 好处可以访问私有变量
+    [person setValue:@66 forKey:@"weight"];
+    
+    BPPersonHealth *health = [[BPPersonHealth alloc] init];
+    person.health = health;
+}
+
+#pragma mark - KVC
+- (void)kvc {
+    BPPerson *person = [[BPPerson alloc] init];
+    //KVC : 好处可以访问私有变量
+    [person setValue:@66 forKey:@"weight"];
+    [person setValue:@66 forKey:@"_weight"];
+    [person setValue:@"170" forKeyPath:@"health.height"];
+    
+    //kvc取值
+    [person valueForKey:@"money"];
+    [person valueForKeyPath:@"health.height"];
+    
+    //批次存入
+    NSDictionary *dic = @{@"name":@"zhangsan",@"sex":@"women"};
+    [person setValuesForKeysWithDictionary:dic];
+    
+    BPPersonHealth *health = [[BPPersonHealth alloc] init];
+    [dic setValue:health forKey:@"health"];
 }
 
 #pragma mark - 字面量 语法糖 笑笑语法  弊端：不可变
