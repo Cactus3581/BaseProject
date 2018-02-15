@@ -140,7 +140,7 @@
 		0126B5361FB4ACBB00E522CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0126B5351FB4ACBB00E522CF /* MapKit.framework */; };
 		012D948620344AD100691E40 /* BPDesignPatternsKVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D948520344AD100691E40 /* BPDesignPatternsKVCViewController.m */; };
 		012D948920344C7600691E40 /* BPPersonHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D948820344C7600691E40 /* BPPersonHealth.m */; };
-		01352FE31FD2DDA20011D65C /* MainCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01352FE21FD2DDA20011D65C /* MainCatalog.plist */; };
+		01352FE31FD2DDA20011D65C /* FeatureCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01352FE21FD2DDA20011D65C /* FeatureCatalog.plist */; };
 		01352FF51FD2E1AA0011D65C /* BPNaviProperyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01352FF41FD2E1AA0011D65C /* BPNaviProperyViewController.m */; };
 		01352FFB1FD2E1E90011D65C /* BPNaviCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01352FFA1FD2E1E90011D65C /* BPNaviCollectionViewController.m */; };
 		013B78841FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 013B78831FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m */; };
@@ -160,6 +160,8 @@
 		0158A0501FDFD3570011AFE9 /* UILabel+BPInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */; };
 		0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */; };
 		0168F3872035E66900D63D83 /* BPBaseKnowledgeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168F3862035E66900D63D83 /* BPBaseKnowledgeViewModel.m */; };
+		0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0168F3882035EC0B00D63D83 /* ImprovingTipCatalog.plist */; };
+		0168F38D2035EC6C00D63D83 /* BPImprovingTipViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168F38C2035EC6C00D63D83 /* BPImprovingTipViewModel.m */; };
 		01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01733FD91FA974FB006192F0 /* Assets.xcassets */; };
 		01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01733FDB1FA974FB006192F0 /* LaunchScreen.storyboard */; };
 		01733FE01FA974FB006192F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01733FDF1FA974FB006192F0 /* main.m */; };
@@ -324,12 +326,10 @@
 		01C31F85200FA1CD0096C2E0 /* BPAnchorPopTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C31F7F200FA1CD0096C2E0 /* BPAnchorPopTableView.m */; };
 		01C31F86200FA1CD0096C2E0 /* BPAnchorAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C31F80200FA1CD0096C2E0 /* BPAnchorAnimationView.m */; };
 		01C31F87200FA1CD0096C2E0 /* BPPopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C31F83200FA1CD0096C2E0 /* BPPopCollectionViewCell.m */; };
-		01C9359F1FC337E100D98FD6 /* BPXRZViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C935891FC337E000D98FD6 /* BPXRZViewModel.m */; };
-		01C935A01FC337E100D98FD6 /* BPXRZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C9358C1FC337E000D98FD6 /* BPXRZViewController.m */; };
-		01C935A41FC337E100D98FD6 /* BPSYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C935981FC337E000D98FD6 /* BPSYViewController.m */; };
-		01C935A51FC337E100D98FD6 /* BPSYViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01C935991FC337E000D98FD6 /* BPSYViewController.xib */; };
-		01C935A61FC337E100D98FD6 /* BPZTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01C9359D1FC337E000D98FD6 /* BPZTViewController.xib */; };
-		01C935A71FC337E100D98FD6 /* BPZTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C9359E1FC337E000D98FD6 /* BPZTViewController.m */; };
+		01C9359F1FC337E100D98FD6 /* BPFeatureViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C935891FC337E000D98FD6 /* BPFeatureViewModel.m */; };
+		01C935A01FC337E100D98FD6 /* BPFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C9358C1FC337E000D98FD6 /* BPFeatureViewController.m */; };
+		01C935A41FC337E100D98FD6 /* BPBaseKnowledgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C935981FC337E000D98FD6 /* BPBaseKnowledgeViewController.m */; };
+		01C935A71FC337E100D98FD6 /* BPImprovingTipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C9359E1FC337E000D98FD6 /* BPImprovingTipViewController.m */; };
 		01C935B41FC3399F00D98FD6 /* BPSimpleTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C935B31FC3399F00D98FD6 /* BPSimpleTableController.m */; };
 		01C935BA1FC33A5900D98FD6 /* BPSimpleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C935B91FC33A5900D98FD6 /* BPSimpleModel.m */; };
 		01C935BD1FC33A6B00D98FD6 /* BPSimpleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C935BC1FC33A6B00D98FD6 /* BPSimpleViewModel.m */; };
@@ -772,7 +772,7 @@
 		012D948520344AD100691E40 /* BPDesignPatternsKVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDesignPatternsKVCViewController.m; sourceTree = "<group>"; };
 		012D948720344C7600691E40 /* BPPersonHealth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPersonHealth.h; sourceTree = "<group>"; };
 		012D948820344C7600691E40 /* BPPersonHealth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPersonHealth.m; sourceTree = "<group>"; };
-		01352FE21FD2DDA20011D65C /* MainCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MainCatalog.plist; sourceTree = "<group>"; };
+		01352FE21FD2DDA20011D65C /* FeatureCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FeatureCatalog.plist; sourceTree = "<group>"; };
 		01352FF31FD2E1AA0011D65C /* BPNaviProperyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNaviProperyViewController.h; sourceTree = "<group>"; };
 		01352FF41FD2E1AA0011D65C /* BPNaviProperyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNaviProperyViewController.m; sourceTree = "<group>"; };
 		01352FF91FD2E1E90011D65C /* BPNaviCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNaviCollectionViewController.h; sourceTree = "<group>"; };
@@ -811,6 +811,9 @@
 		0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BasicKnowledgCatalog.plist; sourceTree = "<group>"; };
 		0168F3852035E66900D63D83 /* BPBaseKnowledgeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseKnowledgeViewModel.h; sourceTree = "<group>"; };
 		0168F3862035E66900D63D83 /* BPBaseKnowledgeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseKnowledgeViewModel.m; sourceTree = "<group>"; };
+		0168F3882035EC0B00D63D83 /* ImprovingTipCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ImprovingTipCatalog.plist; sourceTree = "<group>"; };
+		0168F38B2035EC6C00D63D83 /* BPImprovingTipViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPImprovingTipViewModel.h; sourceTree = "<group>"; };
+		0168F38C2035EC6C00D63D83 /* BPImprovingTipViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPImprovingTipViewModel.m; sourceTree = "<group>"; };
 		01733FCD1FA974FB006192F0 /* BaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01733FD91FA974FB006192F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01733FDC1FA974FB006192F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -1136,16 +1139,14 @@
 		01C31F82200FA1CD0096C2E0 /* BPPopCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPopCollectionViewCell.h; sourceTree = "<group>"; };
 		01C31F83200FA1CD0096C2E0 /* BPPopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPopCollectionViewCell.m; sourceTree = "<group>"; };
 		01C56FC81FE2CCB1004EDD8A /* BPMainCatergory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMainCatergory.h; sourceTree = "<group>"; };
-		01C935891FC337E000D98FD6 /* BPXRZViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPXRZViewModel.m; sourceTree = "<group>"; };
-		01C9358A1FC337E000D98FD6 /* BPXRZViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPXRZViewModel.h; sourceTree = "<group>"; };
-		01C9358C1FC337E000D98FD6 /* BPXRZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPXRZViewController.m; sourceTree = "<group>"; };
-		01C9358D1FC337E000D98FD6 /* BPXRZViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPXRZViewController.h; sourceTree = "<group>"; };
-		01C935971FC337E000D98FD6 /* BPSYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPSYViewController.h; sourceTree = "<group>"; };
-		01C935981FC337E000D98FD6 /* BPSYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPSYViewController.m; sourceTree = "<group>"; };
-		01C935991FC337E000D98FD6 /* BPSYViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPSYViewController.xib; sourceTree = "<group>"; };
-		01C9359C1FC337E000D98FD6 /* BPZTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPZTViewController.h; sourceTree = "<group>"; };
-		01C9359D1FC337E000D98FD6 /* BPZTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPZTViewController.xib; sourceTree = "<group>"; };
-		01C9359E1FC337E000D98FD6 /* BPZTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPZTViewController.m; sourceTree = "<group>"; };
+		01C935891FC337E000D98FD6 /* BPFeatureViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPFeatureViewModel.m; sourceTree = "<group>"; };
+		01C9358A1FC337E000D98FD6 /* BPFeatureViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPFeatureViewModel.h; sourceTree = "<group>"; };
+		01C9358C1FC337E000D98FD6 /* BPFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPFeatureViewController.m; sourceTree = "<group>"; };
+		01C9358D1FC337E000D98FD6 /* BPFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPFeatureViewController.h; sourceTree = "<group>"; };
+		01C935971FC337E000D98FD6 /* BPBaseKnowledgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBaseKnowledgeViewController.h; sourceTree = "<group>"; };
+		01C935981FC337E000D98FD6 /* BPBaseKnowledgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBaseKnowledgeViewController.m; sourceTree = "<group>"; };
+		01C9359C1FC337E000D98FD6 /* BPImprovingTipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPImprovingTipViewController.h; sourceTree = "<group>"; };
+		01C9359E1FC337E000D98FD6 /* BPImprovingTipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPImprovingTipViewController.m; sourceTree = "<group>"; };
 		01C935AA1FC338CD00D98FD6 /* BPSingletonMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPSingletonMacro.h; sourceTree = "<group>"; };
 		01C935AB1FC338CD00D98FD6 /* BPAppToolMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPAppToolMacro.h; sourceTree = "<group>"; };
 		01C935B21FC3399F00D98FD6 /* BPSimpleTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPSimpleTableController.h; sourceTree = "<group>"; };
@@ -2837,6 +2838,15 @@
 			children = (
 				0168F3852035E66900D63D83 /* BPBaseKnowledgeViewModel.h */,
 				0168F3862035E66900D63D83 /* BPBaseKnowledgeViewModel.m */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0168F38A2035EC3600D63D83 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0168F38B2035EC6C00D63D83 /* BPImprovingTipViewModel.h */,
+				0168F38C2035EC6C00D63D83 /* BPImprovingTipViewModel.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -4950,9 +4960,10 @@
 		01C9357F1FC3358000D98FD6 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
-				01352FE21FD2DDA20011D65C /* MainCatalog.plist */,
+				01352FE21FD2DDA20011D65C /* FeatureCatalog.plist */,
 				014ED04F1FEFF9EE00D2926C /* Localizable.strings */,
 				0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */,
+				0168F3882035EC0B00D63D83 /* ImprovingTipCatalog.plist */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -4978,27 +4989,27 @@
 		01C935861FC337E000D98FD6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				01C935871FC337E000D98FD6 /* XRZMainPage */,
-				01C935951FC337E000D98FD6 /* SYMainPage */,
-				01C9359A1FC337E000D98FD6 /* ZTMainPage */,
+				01C935871FC337E000D98FD6 /* Feature */,
+				01C935951FC337E000D98FD6 /* BaseKnowledge */,
+				01C9359A1FC337E000D98FD6 /* ImprovingTips */,
 			);
 			path = Main;
 			sourceTree = "<group>";
 		};
-		01C935871FC337E000D98FD6 /* XRZMainPage */ = {
+		01C935871FC337E000D98FD6 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
 				01C935881FC337E000D98FD6 /* ViewModels */,
 				01C9358B1FC337E000D98FD6 /* Controller */,
 			);
-			path = XRZMainPage;
+			path = Feature;
 			sourceTree = "<group>";
 		};
 		01C935881FC337E000D98FD6 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				01C9358A1FC337E000D98FD6 /* BPXRZViewModel.h */,
-				01C935891FC337E000D98FD6 /* BPXRZViewModel.m */,
+				01C9358A1FC337E000D98FD6 /* BPFeatureViewModel.h */,
+				01C935891FC337E000D98FD6 /* BPFeatureViewModel.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -5006,45 +5017,44 @@
 		01C9358B1FC337E000D98FD6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				01C9358D1FC337E000D98FD6 /* BPXRZViewController.h */,
-				01C9358C1FC337E000D98FD6 /* BPXRZViewController.m */,
+				01C9358D1FC337E000D98FD6 /* BPFeatureViewController.h */,
+				01C9358C1FC337E000D98FD6 /* BPFeatureViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		01C935951FC337E000D98FD6 /* SYMainPage */ = {
+		01C935951FC337E000D98FD6 /* BaseKnowledge */ = {
 			isa = PBXGroup;
 			children = (
 				0168F3842035E64800D63D83 /* ViewModels */,
 				01C935961FC337E000D98FD6 /* Controllers */,
 			);
-			path = SYMainPage;
+			path = BaseKnowledge;
 			sourceTree = "<group>";
 		};
 		01C935961FC337E000D98FD6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				01C935971FC337E000D98FD6 /* BPSYViewController.h */,
-				01C935981FC337E000D98FD6 /* BPSYViewController.m */,
-				01C935991FC337E000D98FD6 /* BPSYViewController.xib */,
+				01C935971FC337E000D98FD6 /* BPBaseKnowledgeViewController.h */,
+				01C935981FC337E000D98FD6 /* BPBaseKnowledgeViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		01C9359A1FC337E000D98FD6 /* ZTMainPage */ = {
+		01C9359A1FC337E000D98FD6 /* ImprovingTips */ = {
 			isa = PBXGroup;
 			children = (
+				0168F38A2035EC3600D63D83 /* ViewModels */,
 				01C9359B1FC337E000D98FD6 /* Controllers */,
 			);
-			path = ZTMainPage;
+			path = ImprovingTips;
 			sourceTree = "<group>";
 		};
 		01C9359B1FC337E000D98FD6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				01C9359C1FC337E000D98FD6 /* BPZTViewController.h */,
-				01C9359D1FC337E000D98FD6 /* BPZTViewController.xib */,
-				01C9359E1FC337E000D98FD6 /* BPZTViewController.m */,
+				01C9359C1FC337E000D98FD6 /* BPImprovingTipViewController.h */,
+				01C9359E1FC337E000D98FD6 /* BPImprovingTipViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -5945,6 +5955,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */,
 				017907A52001249500E5C360 /* cycleBorder.png in Resources */,
 				0195EAA4201373E700DC59A1 /* BPXibView.xib in Resources */,
 				01E01376200D0D0100374C53 /* palette.jpeg in Resources */,
@@ -5952,15 +5963,13 @@
 				014ED0DE1FF0135000D2926C /* launchImage@2x.png in Resources */,
 				014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */,
 				0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */,
-				01C935A51FC337E100D98FD6 /* BPSYViewController.xib in Resources */,
 				01A1921E2004E61F005EE4CD /* BPCollectionViewCell.xib in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
 				0184BF831FD6DB2C00CB9AAD /* BPTest_XibViewController.xib in Resources */,
-				01352FE31FD2DDA20011D65C /* MainCatalog.plist in Resources */,
+				01352FE31FD2DDA20011D65C /* FeatureCatalog.plist in Resources */,
 				01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */,
 				014ED0DD1FF0135000D2926C /* launchImage@3x.png in Resources */,
 				0195EAA2201373E700DC59A1 /* BPXibViewController.xib in Resources */,
-				01C935A61FC337E100D98FD6 /* BPZTViewController.xib in Resources */,
 				01A1921F2004E61F005EE4CD /* BPCollectionReusableFootView.xib in Resources */,
 				01A192222004E61F005EE4CD /* BPCollectionReusableHeadView.xib in Resources */,
 			);
@@ -6178,7 +6187,7 @@
 				01DF32201FDD3B3000B8A955 /* NSString+BPStringPages.m in Sources */,
 				01D22BE41FDD814000BCC4AD /* NSDictionary+BPAdd.m in Sources */,
 				01D22BDF1FDD814000BCC4AD /* NSData+BPAdd.m in Sources */,
-				01C935A41FC337E100D98FD6 /* BPSYViewController.m in Sources */,
+				01C935A41FC337E100D98FD6 /* BPBaseKnowledgeViewController.m in Sources */,
 				018C44F7200A4AF700CF43D7 /* BPFlowCatergoryView.m in Sources */,
 				01F240A32006589800FA5174 /* BPScrollViewController.m in Sources */,
 				0195EAA8201373E700DC59A1 /* BPMasonrySkillViewController.m in Sources */,
@@ -6273,7 +6282,7 @@
 				0195EA84201373C100DC59A1 /* BPCoreAnimationVC.m in Sources */,
 				0187FC6B1FC33CDB004E839E /* BPSimpleTableViewCell.m in Sources */,
 				01DF31D81FDD3A9100B8A955 /* NSInvocation+BPBlock.m in Sources */,
-				01C9359F1FC337E100D98FD6 /* BPXRZViewModel.m in Sources */,
+				01C9359F1FC337E100D98FD6 /* BPFeatureViewModel.m in Sources */,
 				01DF321A1FDD3B3000B8A955 /* NSString+BPEmoji.m in Sources */,
 				017907D52001345300E5C360 /* BPCircleView.m in Sources */,
 				01E672BB2014B6F700FB22D4 /* BPBezierPathViewController.m in Sources */,
@@ -6283,6 +6292,7 @@
 				01A192272004E61F005EE4CD /* BPPlainTableViewController.m in Sources */,
 				010DB78E1FDD4D640099E66F /* UIView+BPBlockGesture.m in Sources */,
 				010DB74C1FDD4D450099E66F /* UIApplication+BPApplicationSize.m in Sources */,
+				0168F38D2035EC6C00D63D83 /* BPImprovingTipViewModel.m in Sources */,
 				01DF321E1FDD3B3000B8A955 /* NSString+BPSize.m in Sources */,
 				01EAA0A62015F08C0084808D /* BPAutoresizingView.m in Sources */,
 				010DB74B1FDD4D450099E66F /* UIApplication+BPNetworkActivityIndicator.m in Sources */,
@@ -6309,7 +6319,7 @@
 				011F55A120304A50005F9C9E /* BPPhotoBrowserViewController.m in Sources */,
 				01A192242004E61F005EE4CD /* BPAdaptiveHeightTableViewController.m in Sources */,
 				01F21D0C1FEBFD4000381183 /* UIBarButtonItem+BPCreate.m in Sources */,
-				01C935A01FC337E100D98FD6 /* BPXRZViewController.m in Sources */,
+				01C935A01FC337E100D98FD6 /* BPFeatureViewController.m in Sources */,
 				017A9A8F1FDD311D00CDA599 /* NSString+BPFilepath.m in Sources */,
 				010DB7251FDD4D450099E66F /* UIColor+BPModify.m in Sources */,
 				018C44DD2009E75200CF43D7 /* BPCustomCardPageFlowViewCell.m in Sources */,
@@ -6478,7 +6488,7 @@
 				01D22BD61FDD814000BCC4AD /* UIDevice+BPAdd.m in Sources */,
 				01C0B62D1FFC885C005BB4A5 /* BPGeneralTestViewController.m in Sources */,
 				01BCB3441FB5598B009EF64E /* BPBaseViewModel.m in Sources */,
-				01C935A71FC337E100D98FD6 /* BPZTViewController.m in Sources */,
+				01C935A71FC337E100D98FD6 /* BPImprovingTipViewController.m in Sources */,
 				018972B11FC47CDD00D6DF5B /* BPCalenderView.m in Sources */,
 				01DF31BE1FDD3A9100B8A955 /* NSDictionary+BPMerge.m in Sources */,
 				018C44F4200A4AF700CF43D7 /* BPFlowCatergoryViewCellModel.m in Sources */,

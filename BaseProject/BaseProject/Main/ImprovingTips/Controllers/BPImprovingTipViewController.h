@@ -1,5 +1,5 @@
 //
-//  BPSYViewController.h
+//  BPImprovingTipViewController.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/11/1.
@@ -8,6 +8,6 @@
 
 #import "BPBaseTableViewController.h"
 
-@interface BPSYViewController : BPBaseTableViewController
+@interface BPImprovingTipViewController : BPBaseTableViewController
 
 @end

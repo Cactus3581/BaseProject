@@ -1,23 +1,23 @@
 //
-//  BPSYViewController.m
+//  BPImprovingTipViewController.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/11/1.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "BPSYViewController.h"
+#import "BPImprovingTipViewController.h"
 #import "BPSimpleModel.h"
-#import "BPBaseKnowledgeViewModel.h"
+#import "BPImprovingTipViewModel.h"
 #import "BPSimpleTableViewCell.h"
 #import "BPSimpleTableController.h"
 
-@interface BPSYViewController ()
+@interface BPImprovingTipViewController ()
 @property (strong, nonatomic) NSArray *dataArray;
-@property (strong, nonatomic) BPBaseKnowledgeViewModel *viewModel;
+@property (strong, nonatomic) BPImprovingTipViewModel *viewModel;
 @end
 
-@implementation BPSYViewController
+@implementation BPImprovingTipViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,9 +25,9 @@
     [self handleData];
 }
 
-- (BPBaseKnowledgeViewModel *)viewModel{
+- (BPImprovingTipViewModel *)viewModel{
     if (!_viewModel) {
-        BPBaseKnowledgeViewModel *viewModel = [BPBaseKnowledgeViewModel viewModel];
+        BPImprovingTipViewModel *viewModel = [BPImprovingTipViewModel viewModel];
         weakify(viewModel);
         [viewModel configTableviewCell:^BPSimpleTableViewCell * _Nonnull(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
             strongify(viewModel);
@@ -89,4 +89,5 @@
 }
 
 @end
+
 

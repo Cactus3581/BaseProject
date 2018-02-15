@@ -1,5 +1,5 @@
 //
-//  BPXRZViewController.h
+//  BPFeatureViewController.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/11/1.
@@ -8,6 +8,6 @@
 
 #import "BPBaseTableViewController.h"
 
-@interface BPXRZViewController : BPBaseTableViewController
+@interface BPFeatureViewController : BPBaseTableViewController
 
 @end

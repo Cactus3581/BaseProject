@@ -1,23 +1,23 @@
 //
-//  BPXRZViewController.m
+//  BPFeatureViewController.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/11/1.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "BPXRZViewController.h"
+#import "BPFeatureViewController.h"
 #import "BPSimpleModel.h"
-#import "BPXRZViewModel.h"
+#import "BPFeatureViewModel.h"
 #import "BPSimpleTableViewCell.h"
 #import "BPSimpleTableController.h"
 
-@interface BPXRZViewController ()
+@interface BPFeatureViewController ()
 @property (strong, nonatomic) NSArray *dataArray;
-@property (strong, nonatomic) BPXRZViewModel *viewModel;
+@property (strong, nonatomic) BPFeatureViewModel *viewModel;
 @end
 
-@implementation BPXRZViewController
+@implementation BPFeatureViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,9 +25,9 @@
     [self handleData];
 }
 
-- (BPXRZViewModel *)viewModel{
+- (BPFeatureViewModel *)viewModel{
     if (!_viewModel) {
-        BPXRZViewModel *viewModel = [BPXRZViewModel viewModel];
+        BPFeatureViewModel *viewModel = [BPFeatureViewModel viewModel];
         weakify(viewModel);
         [viewModel configTableviewCell:^BPSimpleTableViewCell * _Nonnull(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
             strongify(viewModel);

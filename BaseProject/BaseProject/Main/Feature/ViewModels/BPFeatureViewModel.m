@@ -1,12 +1,12 @@
 //
-//  BPXRZViewModel.m
+//  BPFeatureViewModel.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/11/10.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "BPXRZViewModel.h"
+#import "BPFeatureViewModel.h"
 #import "BPSimpleModel.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
@@ -16,12 +16,12 @@
 
 typedef void(^successed)(NSArray *);
 
-@interface BPXRZViewModel ()
+@interface BPFeatureViewModel ()
 @property (readwrite) NSArray *data;
 
 @end
 
-@implementation BPXRZViewModel{
+@implementation BPFeatureViewModel{
     dispatch_block_t _failed;
     successed _successed;
 }
@@ -83,7 +83,7 @@ typedef void(^successed)(NSArray *);
 }
 
 - (NSArray *)readInDocuments{
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"MainCatalog" ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"FeatureCatalog" ofType:@"plist"];
     NSArray *array = [NSArray arrayWithContentsOfFile:path];
     return array;
 }

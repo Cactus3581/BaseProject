@@ -670,56 +670,5 @@
 			</dict>
 		</array>
 	</dict>
-	<dict>
-		<key>title</key>
-		<string>Foundation下的数据处理及常用算法</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>NSString</string>
-				<key>fileName</key>
-				<string> </string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>NSArray</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>NSDictionary</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>NSNumber</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>NSSet</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
-	</dict>
 </array>
 </plist>

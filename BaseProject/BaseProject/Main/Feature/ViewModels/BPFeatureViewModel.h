@@ -1,5 +1,5 @@
 //
-//  BPXRZViewModel.h
+//  BPFeatureViewModel.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/11/10.
@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BPXRZViewModel : BPBaseViewModel
+@interface BPFeatureViewModel : BPBaseViewModel
 
 @property (nullable, nonatomic, readonly) NSArray<BPSimpleModel *> *data;
 

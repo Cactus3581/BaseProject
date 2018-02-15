@@ -8,9 +8,9 @@
 
 #import "BPRootTabBarController.h"
 #import "BPRootNavigationController.h"
-#import "BPSYViewController.h"
-#import "BPZTViewController.h"
-#import "BPXRZViewController.h"
+#import "BPBaseKnowledgeViewController.h"
+#import "BPImprovingTipViewController.h"
+#import "BPFeatureViewController.h"
 
 @interface BPRootTabBarController ()
 
@@ -32,12 +32,15 @@
  *  添加所有子控制器方法
  */
 - (void)configChildViewController{
-    BPXRZViewController *oneVC = [[BPXRZViewController alloc]init];
-    [self setUpChildViewController:oneVC image:[UIImage imageNamed:@""] title:@"常用场景"];
-    BPZTViewController *twoVC = [[BPZTViewController alloc]init];
-    [self setUpChildViewController:twoVC image:[UIImage imageNamed:@""] title:@"基本知识点"];
-    BPSYViewController *threeVC = [[BPSYViewController alloc]init];
-    [self setUpChildViewController:threeVC image:[UIImage imageNamed:@""] title:@"基本知识点"];
+    BPFeatureViewController *featureVC = [[BPFeatureViewController alloc]init];
+    [self setUpChildViewController:featureVC image:[UIImage imageNamed:@""] title:@"常用场景"];
+    
+    BPBaseKnowledgeViewController *baseKnowledgeVC = [[BPBaseKnowledgeViewController alloc]init];
+    [self setUpChildViewController:baseKnowledgeVC image:[UIImage imageNamed:@""] title:@"基本知识点"];
+    
+    BPImprovingTipViewController *improvingTipVC = [[BPImprovingTipViewController alloc]init];
+    [self setUpChildViewController:improvingTipVC image:[UIImage imageNamed:@""] title:@"提升技巧"];
+
 }
 
 /**
