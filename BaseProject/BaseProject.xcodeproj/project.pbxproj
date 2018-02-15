@@ -158,6 +158,8 @@
 		014ED0DD1FF0135000D2926C /* launchImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014ED0DB1FF0134F00D2926C /* launchImage@3x.png */; };
 		014ED0DE1FF0135000D2926C /* launchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014ED0DC1FF0135000D2926C /* launchImage@2x.png */; };
 		0158A0501FDFD3570011AFE9 /* UILabel+BPInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */; };
+		0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */; };
+		0168F3872035E66900D63D83 /* BPBaseKnowledgeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168F3862035E66900D63D83 /* BPBaseKnowledgeViewModel.m */; };
 		01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01733FD91FA974FB006192F0 /* Assets.xcassets */; };
 		01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01733FDB1FA974FB006192F0 /* LaunchScreen.storyboard */; };
 		01733FE01FA974FB006192F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01733FDF1FA974FB006192F0 /* main.m */; };
@@ -806,6 +808,9 @@
 		0158A04E1FDFD3560011AFE9 /* UILabel+BPInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BPInterval.h"; sourceTree = "<group>"; };
 		0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BPInterval.m"; sourceTree = "<group>"; };
 		015F4F1A1FDD7D9B000C6355 /* BPAppInfoMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppInfoMacro.h; sourceTree = "<group>"; };
+		0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BasicKnowledgCatalog.plist; sourceTree = "<group>"; };
+		0168F3852035E66900D63D83 /* BPBaseKnowledgeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseKnowledgeViewModel.h; sourceTree = "<group>"; };
+		0168F3862035E66900D63D83 /* BPBaseKnowledgeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseKnowledgeViewModel.m; sourceTree = "<group>"; };
 		01733FCD1FA974FB006192F0 /* BaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01733FD91FA974FB006192F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01733FDC1FA974FB006192F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -2827,6 +2832,15 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		0168F3842035E64800D63D83 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0168F3852035E66900D63D83 /* BPBaseKnowledgeViewModel.h */,
+				0168F3862035E66900D63D83 /* BPBaseKnowledgeViewModel.m */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		01733FC41FA974FB006192F0 = {
 			isa = PBXGroup;
 			children = (
@@ -3004,7 +3018,6 @@
 				01E0135C200D0B2000374C53 /* Features */,
 				01027AE31FDEDA410003F0FE /* GaussianBlur */,
 				01490C021FF547DA0035492D /* KnowledgePoint */,
-				01B726D81FF8069B00648674 /* KVO */,
 				017906DA20011C2E00E5C360 /* OtherKnowledge */,
 				01027AE61FDEDA670003F0FE /* PhotoBrowser */,
 				01027AE71FDEDA740003F0FE /* Player */,
@@ -4711,13 +4724,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		01B726D81FF8069B00648674 /* KVO */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = KVO;
-			sourceTree = "<group>";
-		};
 		01B726D91FF806AA00648674 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
@@ -4946,6 +4952,7 @@
 			children = (
 				01352FE21FD2DDA20011D65C /* MainCatalog.plist */,
 				014ED04F1FEFF9EE00D2926C /* Localizable.strings */,
+				0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -5008,6 +5015,7 @@
 		01C935951FC337E000D98FD6 /* SYMainPage */ = {
 			isa = PBXGroup;
 			children = (
+				0168F3842035E64800D63D83 /* ViewModels */,
 				01C935961FC337E000D98FD6 /* Controllers */,
 			);
 			path = SYMainPage;
@@ -5943,6 +5951,7 @@
 				017907E3200144F200E5C360 /* bookcatalogue.toc in Resources */,
 				014ED0DE1FF0135000D2926C /* launchImage@2x.png in Resources */,
 				014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */,
+				0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */,
 				01C935A51FC337E100D98FD6 /* BPSYViewController.xib in Resources */,
 				01A1921E2004E61F005EE4CD /* BPCollectionViewCell.xib in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
@@ -6115,6 +6124,7 @@
 				01D22BE61FDD814000BCC4AD /* NSMutableDictionary+BPAdd.m in Sources */,
 				01DF325F1FDD3B9D00B8A955 /* NSData+BPPCM.m in Sources */,
 				0173401D1FA9753F006192F0 /* BPBaseNavigationController.m in Sources */,
+				0168F3872035E66900D63D83 /* BPBaseKnowledgeViewModel.m in Sources */,
 				010DB74E1FDD4D450099E66F /* UIBarButtonItem+BPAction.m in Sources */,
 				01A192262004E61F005EE4CD /* BPGroupTableViewController.m in Sources */,
 				010DB7291FDD4D450099E66F /* UISplitViewController+BPQuickAccess.m in Sources */,

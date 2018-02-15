@@ -33,11 +33,11 @@
  */
 - (void)configChildViewController{
     BPXRZViewController *oneVC = [[BPXRZViewController alloc]init];
-    [self setUpChildViewController:oneVC image:[UIImage imageNamed:@""] title:@"Utility"];
+    [self setUpChildViewController:oneVC image:[UIImage imageNamed:@""] title:@"常用场景"];
     BPZTViewController *twoVC = [[BPZTViewController alloc]init];
-    [self setUpChildViewController:twoVC image:[UIImage imageNamed:@""] title:@"Place"];
+    [self setUpChildViewController:twoVC image:[UIImage imageNamed:@""] title:@"基本知识点"];
     BPSYViewController *threeVC = [[BPSYViewController alloc]init];
-    [self setUpChildViewController:threeVC image:[UIImage imageNamed:@""] title:@"Place"];
+    [self setUpChildViewController:threeVC image:[UIImage imageNamed:@""] title:@"基本知识点"];
 }
 
 /**
