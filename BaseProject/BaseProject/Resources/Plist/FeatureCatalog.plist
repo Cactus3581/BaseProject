@@ -442,6 +442,22 @@
 	</dict>
 	<dict>
 		<key>title</key>
+		<string>弹幕</string>
+		<key>fileName</key>
+		<string></string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>web桥接</string>
+		<key>fileName</key>
+		<string></string>
+		<key>briefIntro</key>
+		<string>js与native交互</string>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>一般动画(验证modelLayer)</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>

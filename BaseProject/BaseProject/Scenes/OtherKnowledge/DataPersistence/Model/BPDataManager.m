@@ -32,7 +32,7 @@ static BPDataManager *manager = nil;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:value forKey:key];
     [userDefaults synchronize];
-    //重置清零
+    //重置清零？同步变化Default中，并且释放内存中的值？
 //    [NSUserDefaults resetStandardUserDefaults];
 }
 

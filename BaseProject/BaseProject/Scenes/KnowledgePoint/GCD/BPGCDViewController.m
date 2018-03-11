@@ -33,7 +33,7 @@
 
 //    [self gcd_applications];
 //    [self gcd_safe];
-    [self gcd_test];
+//    [self gcd_test];
 }
 
 - (void)gcd_test {
@@ -505,7 +505,7 @@
 //    [self gcd_after];//延长执行
 //    [self gcd_once];//dispatch_once
 //    [self gcd_group];//队列组
-//    [self gcd_barrier];//栅栏
+    [self gcd_barrier];//栅栏
 //    [self gcd_signal_one];//信号量
 //    [self gcd_signal_two];//信号量
 //    [self gcd_signal_three_dependAction];//信号量依赖

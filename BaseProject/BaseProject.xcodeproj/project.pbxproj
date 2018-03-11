@@ -149,6 +149,10 @@
 		01490C0E1FF548A50035492D /* BPOptimizeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C0D1FF548A50035492D /* BPOptimizeTableViewController.m */; };
 		01490C111FF549250035492D /* BPWeakView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C101FF549250035492D /* BPWeakView.m */; };
 		01490C141FF54A3E0035492D /* NSTimer+BPUnRetain.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C131FF54A3E0035492D /* NSTimer+BPUnRetain.m */; };
+		01492F1C2052355100B28F84 /* KSCellProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01492F1B2052355100B28F84 /* KSCellProgressController.m */; };
+		01492F1F2052356D00B28F84 /* KSCellProgressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01492F1E2052356D00B28F84 /* KSCellProgressModel.m */; };
+		01492F222052358600B28F84 /* KSCellProgressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01492F212052358600B28F84 /* KSCellProgressTableViewCell.m */; };
+		01492F25205235C600B28F84 /* KSCellProgressSimulateDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 01492F24205235C600B28F84 /* KSCellProgressSimulateDownloader.m */; };
 		014995331FB494D800077866 /* BPBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014995321FB494D800077866 /* BPBaseTableView.m */; };
 		0149953A1FB4A3D600077866 /* BPRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014995381FB4A3D500077866 /* BPRootTabBarController.m */; };
 		0149953D1FB4A3F900077866 /* BPRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0149953C1FB4A3F900077866 /* BPRootNavigationController.m */; };
@@ -158,6 +162,9 @@
 		014ED0DD1FF0135000D2926C /* launchImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014ED0DB1FF0134F00D2926C /* launchImage@3x.png */; };
 		014ED0DE1FF0135000D2926C /* launchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014ED0DC1FF0135000D2926C /* launchImage@2x.png */; };
 		0158A0501FDFD3570011AFE9 /* UILabel+BPInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */; };
+		0160718A204D3530009C66A2 /* PHAsset+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 01607189204D3530009C66A2 /* PHAsset+BPAdd.m */; };
+		0160718D204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160718C204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m */; };
+		01607195204E382D009C66A2 /* BPWeiXinPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01607194204E382D009C66A2 /* BPWeiXinPhotoViewController.m */; };
 		0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */; };
 		0168F3872035E66900D63D83 /* BPBaseKnowledgeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168F3862035E66900D63D83 /* BPBaseKnowledgeViewModel.m */; };
 		0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0168F3882035EC0B00D63D83 /* ImprovingTipCatalog.plist */; };
@@ -789,6 +796,14 @@
 		01490C101FF549250035492D /* BPWeakView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPWeakView.m; sourceTree = "<group>"; };
 		01490C121FF54A3E0035492D /* NSTimer+BPUnRetain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+BPUnRetain.h"; sourceTree = "<group>"; };
 		01490C131FF54A3E0035492D /* NSTimer+BPUnRetain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+BPUnRetain.m"; sourceTree = "<group>"; };
+		01492F1A2052355100B28F84 /* KSCellProgressController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSCellProgressController.h; sourceTree = "<group>"; };
+		01492F1B2052355100B28F84 /* KSCellProgressController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSCellProgressController.m; sourceTree = "<group>"; };
+		01492F1D2052356D00B28F84 /* KSCellProgressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSCellProgressModel.h; sourceTree = "<group>"; };
+		01492F1E2052356D00B28F84 /* KSCellProgressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSCellProgressModel.m; sourceTree = "<group>"; };
+		01492F202052358600B28F84 /* KSCellProgressTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSCellProgressTableViewCell.h; sourceTree = "<group>"; };
+		01492F212052358600B28F84 /* KSCellProgressTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSCellProgressTableViewCell.m; sourceTree = "<group>"; };
+		01492F23205235C600B28F84 /* KSCellProgressSimulateDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSCellProgressSimulateDownloader.h; sourceTree = "<group>"; };
+		01492F24205235C600B28F84 /* KSCellProgressSimulateDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSCellProgressSimulateDownloader.m; sourceTree = "<group>"; };
 		014995311FB494D800077866 /* BPBaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseTableView.h; sourceTree = "<group>"; };
 		014995321FB494D800077866 /* BPBaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseTableView.m; sourceTree = "<group>"; };
 		014995381FB4A3D500077866 /* BPRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPRootTabBarController.m; sourceTree = "<group>"; };
@@ -808,6 +823,12 @@
 		0158A04E1FDFD3560011AFE9 /* UILabel+BPInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BPInterval.h"; sourceTree = "<group>"; };
 		0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BPInterval.m"; sourceTree = "<group>"; };
 		015F4F1A1FDD7D9B000C6355 /* BPAppInfoMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppInfoMacro.h; sourceTree = "<group>"; };
+		01607188204D3530009C66A2 /* PHAsset+BPAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PHAsset+BPAdd.h"; sourceTree = "<group>"; };
+		01607189204D3530009C66A2 /* PHAsset+BPAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PHAsset+BPAdd.m"; sourceTree = "<group>"; };
+		0160718B204D3905009C66A2 /* ALAssetsLibrary+BPAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+BPAdd.h"; sourceTree = "<group>"; };
+		0160718C204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+BPAdd.m"; sourceTree = "<group>"; };
+		01607193204E382D009C66A2 /* BPWeiXinPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPWeiXinPhotoViewController.h; sourceTree = "<group>"; };
+		01607194204E382D009C66A2 /* BPWeiXinPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPWeiXinPhotoViewController.m; sourceTree = "<group>"; };
 		0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BasicKnowledgCatalog.plist; sourceTree = "<group>"; };
 		0168F3852035E66900D63D83 /* BPBaseKnowledgeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseKnowledgeViewModel.h; sourceTree = "<group>"; };
 		0168F3862035E66900D63D83 /* BPBaseKnowledgeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseKnowledgeViewModel.m; sourceTree = "<group>"; };
@@ -2771,6 +2792,53 @@
 			path = Runtime;
 			sourceTree = "<group>";
 		};
+		01492F152052352A00B28F84 /* CellProgress */ = {
+			isa = PBXGroup;
+			children = (
+				01492F172052353B00B28F84 /* Controllers */,
+				01492F182052353B00B28F84 /* Models */,
+				01492F192052353C00B28F84 /* ViewModels */,
+				01492F162052353B00B28F84 /* Views */,
+			);
+			path = CellProgress;
+			sourceTree = "<group>";
+		};
+		01492F162052353B00B28F84 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01492F202052358600B28F84 /* KSCellProgressTableViewCell.h */,
+				01492F212052358600B28F84 /* KSCellProgressTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01492F172052353B00B28F84 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01492F1A2052355100B28F84 /* KSCellProgressController.h */,
+				01492F1B2052355100B28F84 /* KSCellProgressController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01492F182052353B00B28F84 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01492F1D2052356D00B28F84 /* KSCellProgressModel.h */,
+				01492F1E2052356D00B28F84 /* KSCellProgressModel.m */,
+				01492F23205235C600B28F84 /* KSCellProgressSimulateDownloader.h */,
+				01492F24205235C600B28F84 /* KSCellProgressSimulateDownloader.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01492F192052353C00B28F84 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		0149952D1FB4944A00077866 /* BaseModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2831,6 +2899,58 @@
 				014ED03F1FEFF0A300D2926C /* BPImageButton.m */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		01607187204D34EE009C66A2 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				01607188204D3530009C66A2 /* PHAsset+BPAdd.h */,
+				01607189204D3530009C66A2 /* PHAsset+BPAdd.m */,
+				0160718B204D3905009C66A2 /* ALAssetsLibrary+BPAdd.h */,
+				0160718C204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		0160718E204E3801009C66A2 /* WeiXinPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				01607190204E3815009C66A2 /* Controllers */,
+				01607191204E3815009C66A2 /* Models */,
+				01607192204E3816009C66A2 /* ViewModels */,
+				0160718F204E3815009C66A2 /* Views */,
+			);
+			path = WeiXinPhoto;
+			sourceTree = "<group>";
+		};
+		0160718F204E3815009C66A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01607190204E3815009C66A2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01607193204E382D009C66A2 /* BPWeiXinPhotoViewController.h */,
+				01607194204E382D009C66A2 /* BPWeiXinPhotoViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01607191204E3815009C66A2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01607192204E3816009C66A2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		0168F3842035E64800D63D83 /* ViewModels */ = {
@@ -2999,6 +3119,7 @@
 				01C56FC81FE2CCB1004EDD8A /* BPMainCatergory.h */,
 				01DF315A1FDD392100B8A955 /* BPQuartzCoreCategory.h */,
 				01DF31581FDD38EA00B8A955 /* BPUIKitCatergory.h */,
+				01607187204D34EE009C66A2 /* Photos */,
 				017A9A391FDD2B2100CDA599 /* Foundation */,
 				01D22B781FDD811900BCC4AD /* MainCategory */,
 				017A9A3A1FDD2B2200CDA599 /* QuartzCore */,
@@ -3010,6 +3131,8 @@
 		017340181FA9753F006192F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				01492F152052352A00B28F84 /* CellProgress */,
+				0160718E204E3801009C66A2 /* WeiXinPhoto */,
 				01161F522030975C00FA3441 /* DesignPatterns */,
 				01027AD91FDED98E0003F0FE /* Alert */,
 				01027ADC1FDED9C50003F0FE /* Animation */,
@@ -4930,12 +5053,12 @@
 		01C31F7A200FA1CD0096C2E0 /* AnchorPopView */ = {
 			isa = PBXGroup;
 			children = (
-				01C31F7B200FA1CD0096C2E0 /* BPAnchorPopTableView.h */,
-				01C31F7C200FA1CD0096C2E0 /* BPAnchorPopView.h */,
 				01C31F7D200FA1CD0096C2E0 /* BPAnchorAnimationView.h */,
-				01C31F7E200FA1CD0096C2E0 /* BPAnchorPopView.m */,
-				01C31F7F200FA1CD0096C2E0 /* BPAnchorPopTableView.m */,
 				01C31F80200FA1CD0096C2E0 /* BPAnchorAnimationView.m */,
+				01C31F7B200FA1CD0096C2E0 /* BPAnchorPopTableView.h */,
+				01C31F7F200FA1CD0096C2E0 /* BPAnchorPopTableView.m */,
+				01C31F7C200FA1CD0096C2E0 /* BPAnchorPopView.h */,
+				01C31F7E200FA1CD0096C2E0 /* BPAnchorPopView.m */,
 			);
 			path = AnchorPopView;
 			sourceTree = "<group>";
@@ -4961,9 +5084,9 @@
 			isa = PBXGroup;
 			children = (
 				01352FE21FD2DDA20011D65C /* FeatureCatalog.plist */,
-				014ED04F1FEFF9EE00D2926C /* Localizable.strings */,
 				0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */,
 				0168F3882035EC0B00D63D83 /* ImprovingTipCatalog.plist */,
+				014ED04F1FEFF9EE00D2926C /* Localizable.strings */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -6181,6 +6304,7 @@
 				010DB7181FDD4D450099E66F /* UINavigationItem+BPMargin.m in Sources */,
 				01D22BCC1FDD814000BCC4AD /* UIAlertView+BPAdd.m in Sources */,
 				010DB72D1FDD4D450099E66F /* UIBezierPath+BPSVGString.m in Sources */,
+				0160718D204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m in Sources */,
 				018C44F3200A4AF700CF43D7 /* BPFlowCatergoryViewLayout.m in Sources */,
 				01DF32451FDD3B3D00B8A955 /* NSObject+BPReflection.m in Sources */,
 				01E672B22014898300FB22D4 /* BPGradientLayerViewController.m in Sources */,
@@ -6237,6 +6361,8 @@
 				01DF32751FDD3BB100B8A955 /* NSDate+BPFormatter.m in Sources */,
 				010DB7351FDD4D450099E66F /* UITextField+BPShake.m in Sources */,
 				010DB7261FDD4D450099E66F /* UIColor+BPHEX.m in Sources */,
+				01492F222052358600B28F84 /* KSCellProgressTableViewCell.m in Sources */,
+				01607195204E382D009C66A2 /* BPWeiXinPhotoViewController.m in Sources */,
 				017907D82001348200E5C360 /* BPGeneralAnimationsViewController.m in Sources */,
 				017907A42001249500E5C360 /* BPWaterWaveView.m in Sources */,
 				018682681FC479700015A9D7 /* BPCalendarController.m in Sources */,
@@ -6273,6 +6399,7 @@
 				01D22BE01FDD814000BCC4AD /* UIBarButtonItem+BPAdd.m in Sources */,
 				010DB75E1FDD4D450099E66F /* UIDevice+BPPasscodeStatus.m in Sources */,
 				01352FFB1FD2E1E90011D65C /* BPNaviCollectionViewController.m in Sources */,
+				01492F25205235C600B28F84 /* KSCellProgressSimulateDownloader.m in Sources */,
 				010DB7961FDD4D640099E66F /* UIView+BPDraggable.m in Sources */,
 				017A9A9C1FDD315A00CDA599 /* UIView+BPShadow.m in Sources */,
 				010DB7231FDD4D450099E66F /* UIWebView+BPCanvas.m in Sources */,
@@ -6283,6 +6410,7 @@
 				0187FC6B1FC33CDB004E839E /* BPSimpleTableViewCell.m in Sources */,
 				01DF31D81FDD3A9100B8A955 /* NSInvocation+BPBlock.m in Sources */,
 				01C9359F1FC337E100D98FD6 /* BPFeatureViewModel.m in Sources */,
+				01492F1F2052356D00B28F84 /* KSCellProgressModel.m in Sources */,
 				01DF321A1FDD3B3000B8A955 /* NSString+BPEmoji.m in Sources */,
 				017907D52001345300E5C360 /* BPCircleView.m in Sources */,
 				01E672BB2014B6F700FB22D4 /* BPBezierPathViewController.m in Sources */,
@@ -6304,6 +6432,7 @@
 				01DF31ED1FDD3B1600B8A955 /* NSURL+BPParam.m in Sources */,
 				010DB72B1FDD4D450099E66F /* UIBezierPath+BPThroughPointsBezier.m in Sources */,
 				010DB7951FDD4D640099E66F /* UIView+BPRecursion.m in Sources */,
+				0160718A204D3530009C66A2 /* PHAsset+BPAdd.m in Sources */,
 				010DB7AD1FDD4D6F0099E66F /* UIButton+BPTouchAreaInsets.m in Sources */,
 				01DF31CB1FDD3A9100B8A955 /* NSNotificationCenter+BPMainThread.m in Sources */,
 				0179BC42203176190061CD84 /* BPDesignPatternsBlockViewController.m in Sources */,
@@ -6473,6 +6602,7 @@
 				01D22BC81FDD814000BCC4AD /* Foundation+Log.m in Sources */,
 				01DF316E1FDD3A0900B8A955 /* CAShapeLayer+BPUIBezierPath.m in Sources */,
 				017906E120011C7E00E5C360 /* BPKVCModel.m in Sources */,
+				01492F1C2052355100B28F84 /* KSCellProgressController.m in Sources */,
 				010DB7561FDD4D450099E66F /* UIControl+BPBlock.m in Sources */,
 				017A9A8E1FDD311D00CDA599 /* NSDate+BPUtilities.m in Sources */,
 				010DB7311FDD4D450099E66F /* UIScrollView+BPAddition.m in Sources */,

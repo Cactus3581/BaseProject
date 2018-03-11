@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<array/>
+<array>
+	<dict>
+		<key>title</key>
+		<string>仿微信获取照片</string>
+		<key>fileName</key>
+		<string>BPWeiXinPhotoViewController</string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
+</array>
 </plist>

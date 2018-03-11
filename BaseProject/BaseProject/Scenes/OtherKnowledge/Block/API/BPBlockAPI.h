@@ -16,4 +16,7 @@ typedef void (^successBlock) (NSDictionary *_Nullable responseObject);
 
 - (void)handleBlock:(dispatch_block_t)failure;
 
+- (void)handleBlock1:(successBlock)block;
+
+- (void)test;
 @end

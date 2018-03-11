@@ -10,8 +10,8 @@
 #import "BPBlockAPI.h"
 
 @interface BPBlockViewController ()
-@property (nonatomic,strong) NSString *blockString;
-@property (nonatomic,weak) BPBlockAPI *blockObj;
+@property (nonatomic,copy) NSString *blockString;
+@property (nonatomic,strong) BPBlockAPI *blockObj;
 
 @end
 
@@ -29,22 +29,66 @@
      
 
      */
-    BPBlockAPI *block = [[BPBlockAPI alloc] init];
-    _blockObj = block;
-    block.block = ^(NSDictionary *responseObject) {
-        BPLog(@"propery");
-    };
-    
-    [block handleBlock:^{
-        BPLog(@"selector");
-    }];
+//    BPBlockAPI *block = [[BPBlockAPI alloc] init];
+//    _blockObj = block;
+//    block.block = ^(NSDictionary *responseObject) {
+//        BPLog(@"propery");
+//    };
+//
+//    [block handleBlock:^{
+//        BPLog(@"selector");
+//    }];
     
 //    [self setBlock];
+    
+    
+    self.blockObj = [[BPBlockAPI alloc] init];
+        [self.blockObj handleBlock1:^(NSDictionary *responseObject) {
+    //        [blockAPI test];
+            [self test];
+            NSLog(@"ds");
+        }];
+    
+    BPBlockAPI *blockAPI = [[BPBlockAPI alloc] init];
+
+//    [blockAPI handleBlock:^{
+//        if (self) {
+//            [self test];
+//        }
+//    }];
+
+//    blockAPI.block = ^(NSDictionary * responseObject) {
+//        [self test];
+//    };
+//
+//    blockAPI.block = ^(NSDictionary * responseObject) {
+////        [blockAPI test];
+//    };
+    
+
+    
+//    [self initSUbViews];
+}
+
+- (void)initSUbViews {
+    UIButton *backBtn = [[UIButton alloc]init];
+    backBtn.frame = CGRectMake(0, 120, 44, 44);
+    [backBtn setImage:[UIImage imageNamed:bp_naviItem_backImage] forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(pop) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backBtn];
+}
+
+- (void)pop {
+    BPBlockAPI *blockAPI = [[BPBlockAPI alloc] init];
+    [blockAPI handleBlock1:^(NSDictionary *responseObject) {
+        [blockAPI test];
+        [self test];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self setcycle];
+//    [self setcycle];
 }
 
 /*
@@ -110,12 +154,12 @@
     //例子1.
         NSMutableArray *firstArray = [NSMutableArray array];
         NSMutableArray *secondArray = [NSMutableArray array];
-        [firstArray addObject:secondArray];
-        [secondArray addObject:firstArray];
+//        [firstArray addObject:secondArray];
+//        [secondArray addObject:firstArray];
     
     
     //例子2.
-    //代码解释：定义一个和self相同数据类型的bself ，并赋值为self，在block中使用
+    //代码解释：定义一个和self相同数据类型的weakSelf ，并赋值为self，在block中使用
     __weak typeof (self) weakSelf = self;
     
     /*
@@ -125,7 +169,7 @@
     
     self.passValueBlock = ^(NSString *str){
         //循环引用1
-        [self test];
+//        [self test];
         
         //解决方法:
         //[weakSelf test];
@@ -138,9 +182,7 @@
         //NSString *localString = weakSelf.blockString;
 
     };
-    
-    
-    self.passValueBlock(@"s");
+//    self.passValueBlock(@"s");
     //例子3.
     //宏定义一个block
     typedef void(^blockAct)();
@@ -160,6 +202,10 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc {
+    BPLog(@"dealloc");
 }
 
 @end

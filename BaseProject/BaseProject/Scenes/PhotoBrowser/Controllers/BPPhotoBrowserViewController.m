@@ -57,6 +57,29 @@
     }
 }
 
+- (void)configImagePickerController:(UIImagePickerController *)imagePickerController {
+//    //设置导航栏背景颜色
+//    imagePickerController.navigationBar.barTintColor = [UIColor colorWithRed:20.f/255.0 green:24.0/255.0 blue:38.0/255.0 alpha:1];
+//    //设置右侧取消按钮的字体颜色
+//    imagePickerController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"bp_naviItem_backImage"] style:UIBarButtonItemStylePlain target:self action:@selector(popViewController)];
+    
+    imagePickerController.navigationItem.rightBarButtonItem = barButtonItem;
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [cancelBtn setTitle:@"11" forState:(UIControlStateNormal)];
+    [cancelBtn setTintColor:kWhiteColor];
+    cancelBtn.titleLabel.font  = BPFont(16);
+    [cancelBtn setTitleColor:kRedColor forState:UIControlStateNormal];
+    [cancelBtn addTarget:self action:@selector(leftBarButtonItemClickAction:) forControlEvents:UIControlEventTouchUpInside];
+    cancelBtn.frame = CGRectMake(0, 0, bp_naviItem_width, bp_naviItem_height);
+    cancelBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelBtn];
+}
+
 #pragma mark - 从相册获取媒体
 - (void)getMediaFromPhotoLibrary {
     // 判断当前的sourceType是否可用
@@ -75,6 +98,7 @@
         imagePickerVC.delegate = self;
         // 是否允许编辑（YES：图片选择完成进入编辑模式）
         imagePickerVC.allowsEditing = YES;
+        [self configImagePickerController:imagePickerVC];
         // model出控制器
         [self presentViewController:imagePickerVC animated:YES completion:nil];
     }
