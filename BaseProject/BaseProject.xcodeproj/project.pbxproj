@@ -126,6 +126,15 @@
 		010DB7B01FDD4D6F0099E66F /* UIButton+BPBackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7A51FDD4D6E0099E66F /* UIButton+BPBackgroundColor.m */; };
 		010DB7B21FDD4D6F0099E66F /* UIButton+BPIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB7A71FDD4D6E0099E66F /* UIButton+BPIndicator.m */; };
 		010FBABD1FF8A3D2000729FE /* BPRunloopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010FBABC1FF8A3D2000729FE /* BPRunloopViewController.m */; };
+		010FBD0420601D3E00BC9EC4 /* BPWeiXinPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010FBD0120601D3E00BC9EC4 /* BPWeiXinPhotoViewController.m */; };
+		010FBD0F20601D6300BC9EC4 /* BPNSThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 010FBD0A20601D6300BC9EC4 /* BPNSThread.m */; };
+		010FBD1020601D6300BC9EC4 /* BPNSThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010FBD0C20601D6300BC9EC4 /* BPNSThreadViewController.m */; };
+		010FBD2320601D9E00BC9EC4 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 010FBD1420601D9D00BC9EC4 /* UIColor+Hex.m */; };
+		010FBD2420601D9E00BC9EC4 /* BPPaletteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 010FBD1620601D9D00BC9EC4 /* BPPaletteCell.m */; };
+		010FBD2520601D9E00BC9EC4 /* BPPaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 010FBD1820601D9D00BC9EC4 /* BPPaletteView.m */; };
+		010FBD2620601D9E00BC9EC4 /* palette.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 010FBD1920601D9D00BC9EC4 /* palette.jpeg */; };
+		010FBD2720601D9E00BC9EC4 /* BPPaletteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010FBD1A20601D9D00BC9EC4 /* BPPaletteViewController.m */; };
+		010FBD2820601D9E00BC9EC4 /* BPCollectionPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010FBD2120601D9E00BC9EC4 /* BPCollectionPageViewController.m */; };
 		01161F362030890700FA3441 /* BPClassObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01161F352030890700FA3441 /* BPClassObjectViewController.m */; };
 		01161F392030895E00FA3441 /* BPPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 01161F382030895E00FA3441 /* BPPerson.m */; };
 		01161F3C20308CB300FA3441 /* BPMan.m in Sources */ = {isa = PBXBuildFile; fileRef = 01161F3B20308CB300FA3441 /* BPMan.m */; };
@@ -164,7 +173,6 @@
 		0158A0501FDFD3570011AFE9 /* UILabel+BPInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */; };
 		0160718A204D3530009C66A2 /* PHAsset+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 01607189204D3530009C66A2 /* PHAsset+BPAdd.m */; };
 		0160718D204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160718C204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m */; };
-		01607195204E382D009C66A2 /* BPWeiXinPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01607194204E382D009C66A2 /* BPWeiXinPhotoViewController.m */; };
 		0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */; };
 		0168F3872035E66900D63D83 /* BPBaseKnowledgeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168F3862035E66900D63D83 /* BPBaseKnowledgeViewModel.m */; };
 		0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0168F3882035EC0B00D63D83 /* ImprovingTipCatalog.plist */; };
@@ -468,12 +476,6 @@
 		01DF32761FDD3BB100B8A955 /* NSDate+BPLunarCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF326D1FDD3BB000B8A955 /* NSDate+BPLunarCalendar.m */; };
 		01DF32771FDD3BB100B8A955 /* NSDate+BPReporting.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF326E1FDD3BB000B8A955 /* NSDate+BPReporting.m */; };
 		01E01327200CFEEB00374C53 /* BPPaletteTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E01326200CFEEA00374C53 /* BPPaletteTool.m */; };
-		01E01367200D0B5700374C53 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E01360200D0B5700374C53 /* UIColor+Hex.m */; };
-		01E01369200D0B5700374C53 /* BPPaletteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E01363200D0B5700374C53 /* BPPaletteCell.m */; };
-		01E0136A200D0B5700374C53 /* BPPaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E01365200D0B5700374C53 /* BPPaletteView.m */; };
-		01E0136B200D0B5700374C53 /* BPPaletteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E01366200D0B5700374C53 /* BPPaletteViewController.m */; };
-		01E01374200D0BBE00374C53 /* BPCollectionPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E01372200D0BBE00374C53 /* BPCollectionPageViewController.m */; };
-		01E01376200D0D0100374C53 /* palette.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 01E01375200D0D0100374C53 /* palette.jpeg */; };
 		01E1DC23202ECD9F00529ADB /* BPShapeLayerPathWaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E1DC22202ECD9F00529ADB /* BPShapeLayerPathWaverView.m */; };
 		01E1DC26202ECDB100529ADB /* BPVolumeQueueHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E1DC25202ECDB100529ADB /* BPVolumeQueueHelper.m */; };
 		01E1DC29202ECE5700529ADB /* BPVolumeWaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E1DC28202ECE5700529ADB /* BPVolumeWaverView.m */; };
@@ -756,6 +758,23 @@
 		010DB7A91FDD4D6F0099E66F /* UIButton+BPMiddleAligning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BPMiddleAligning.h"; sourceTree = "<group>"; };
 		010FBABB1FF8A3D2000729FE /* BPRunloopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPRunloopViewController.h; sourceTree = "<group>"; };
 		010FBABC1FF8A3D2000729FE /* BPRunloopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPRunloopViewController.m; sourceTree = "<group>"; };
+		010FBD0120601D3E00BC9EC4 /* BPWeiXinPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPWeiXinPhotoViewController.m; sourceTree = "<group>"; };
+		010FBD0220601D3E00BC9EC4 /* BPWeiXinPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPWeiXinPhotoViewController.h; sourceTree = "<group>"; };
+		010FBD0920601D6300BC9EC4 /* BPNSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPNSThread.h; sourceTree = "<group>"; };
+		010FBD0A20601D6300BC9EC4 /* BPNSThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPNSThread.m; sourceTree = "<group>"; };
+		010FBD0C20601D6300BC9EC4 /* BPNSThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPNSThreadViewController.m; sourceTree = "<group>"; };
+		010FBD0D20601D6300BC9EC4 /* BPNSThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPNSThreadViewController.h; sourceTree = "<group>"; };
+		010FBD1220601D9D00BC9EC4 /* BPPaletteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPaletteCell.h; sourceTree = "<group>"; };
+		010FBD1320601D9D00BC9EC4 /* BPPaletteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPaletteView.h; sourceTree = "<group>"; };
+		010FBD1420601D9D00BC9EC4 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		010FBD1520601D9D00BC9EC4 /* BPPaletteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPaletteViewController.h; sourceTree = "<group>"; };
+		010FBD1620601D9D00BC9EC4 /* BPPaletteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPaletteCell.m; sourceTree = "<group>"; };
+		010FBD1720601D9D00BC9EC4 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		010FBD1820601D9D00BC9EC4 /* BPPaletteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPaletteView.m; sourceTree = "<group>"; };
+		010FBD1920601D9D00BC9EC4 /* palette.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = palette.jpeg; sourceTree = "<group>"; };
+		010FBD1A20601D9D00BC9EC4 /* BPPaletteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPaletteViewController.m; sourceTree = "<group>"; };
+		010FBD2020601D9E00BC9EC4 /* BPCollectionPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCollectionPageViewController.h; sourceTree = "<group>"; };
+		010FBD2120601D9E00BC9EC4 /* BPCollectionPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCollectionPageViewController.m; sourceTree = "<group>"; };
 		01119A1E1FD3F71D006DC02E /* BPColorMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPColorMacro.h; sourceTree = "<group>"; };
 		01161F342030890700FA3441 /* BPClassObjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPClassObjectViewController.h; sourceTree = "<group>"; };
 		01161F352030890700FA3441 /* BPClassObjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPClassObjectViewController.m; sourceTree = "<group>"; };
@@ -832,8 +851,6 @@
 		01607189204D3530009C66A2 /* PHAsset+BPAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PHAsset+BPAdd.m"; sourceTree = "<group>"; };
 		0160718B204D3905009C66A2 /* ALAssetsLibrary+BPAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+BPAdd.h"; sourceTree = "<group>"; };
 		0160718C204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+BPAdd.m"; sourceTree = "<group>"; };
-		01607193204E382D009C66A2 /* BPWeiXinPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPWeiXinPhotoViewController.h; sourceTree = "<group>"; };
-		01607194204E382D009C66A2 /* BPWeiXinPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPWeiXinPhotoViewController.m; sourceTree = "<group>"; };
 		0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BasicKnowledgCatalog.plist; sourceTree = "<group>"; };
 		0168F3852035E66900D63D83 /* BPBaseKnowledgeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseKnowledgeViewModel.h; sourceTree = "<group>"; };
 		0168F3862035E66900D63D83 /* BPBaseKnowledgeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseKnowledgeViewModel.m; sourceTree = "<group>"; };
@@ -1441,17 +1458,6 @@
 		01DF32701FDD3BB100B8A955 /* NSDate+BPCupertinoYankee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BPCupertinoYankee.h"; sourceTree = "<group>"; };
 		01E01325200CFEEA00374C53 /* BPPaletteTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPaletteTool.h; sourceTree = "<group>"; };
 		01E01326200CFEEA00374C53 /* BPPaletteTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPaletteTool.m; sourceTree = "<group>"; };
-		01E0135E200D0B5700374C53 /* BPPaletteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPaletteCell.h; sourceTree = "<group>"; };
-		01E0135F200D0B5700374C53 /* BPPaletteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPaletteView.h; sourceTree = "<group>"; };
-		01E01360200D0B5700374C53 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
-		01E01362200D0B5700374C53 /* BPPaletteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPaletteViewController.h; sourceTree = "<group>"; };
-		01E01363200D0B5700374C53 /* BPPaletteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPaletteCell.m; sourceTree = "<group>"; };
-		01E01364200D0B5700374C53 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
-		01E01365200D0B5700374C53 /* BPPaletteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPaletteView.m; sourceTree = "<group>"; };
-		01E01366200D0B5700374C53 /* BPPaletteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPaletteViewController.m; sourceTree = "<group>"; };
-		01E01372200D0BBE00374C53 /* BPCollectionPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCollectionPageViewController.m; sourceTree = "<group>"; };
-		01E01373200D0BBE00374C53 /* BPCollectionPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCollectionPageViewController.h; sourceTree = "<group>"; };
-		01E01375200D0D0100374C53 /* palette.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = palette.jpeg; sourceTree = "<group>"; };
 		01E1DC21202ECD9F00529ADB /* BPShapeLayerPathWaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPShapeLayerPathWaverView.h; sourceTree = "<group>"; };
 		01E1DC22202ECD9F00529ADB /* BPShapeLayerPathWaverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPShapeLayerPathWaverView.m; sourceTree = "<group>"; };
 		01E1DC24202ECDB100529ADB /* BPVolumeQueueHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPVolumeQueueHelper.h; sourceTree = "<group>"; };
@@ -2573,6 +2579,227 @@
 			path = Runloop;
 			sourceTree = "<group>";
 		};
+		010FBC3F206018B500BC9EC4 /* ImprovingTips */ = {
+			isa = PBXGroup;
+			children = (
+				010FBD1B20601D9E00BC9EC4 /* CollectionViewAnimation */,
+				010FBD1120601D9D00BC9EC4 /* Palette */,
+				0184BF7A1FD6DA8B00CB9AAD /* TestUnit */,
+				010FBCFD20601D3E00BC9EC4 /* WeiXinPhoto */,
+			);
+			path = ImprovingTips;
+			sourceTree = "<group>";
+		};
+		010FBC4320601A0800BC9EC4 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				010FBE9A20602E5F00BC9EC4 /* Web&JS */,
+				01027AD91FDED98E0003F0FE /* Alert */,
+				01027ADC1FDED9C50003F0FE /* Animation */,
+				014995991FB4A5F400077866 /* Bar */,
+				01027AD71FDED9770003F0FE /* Barrage */,
+				01B726D91FF806AA00648674 /* Cache */,
+				018682431FC43A390015A9D7 /* Calendar */,
+				01492F152052352A00B28F84 /* CellProgress */,
+				01027ADE1FDEDA030003F0FE /* Chart */,
+				01027ADF1FDEDA0E0003F0FE /* CodeScanner */,
+				01050631201B3C1B000085C1 /* Comments */,
+				01027AE11FDEDA250003F0FE /* DataBase */,
+				01B726DB1FF8079B00648674 /* Drawer */,
+				01027AE21FDEDA2F0003F0FE /* EnlargeImage */,
+				01027AE31FDEDA410003F0FE /* GaussianBlur */,
+				01027AE61FDEDA670003F0FE /* PhotoBrowser */,
+				01027AE71FDEDA740003F0FE /* Player */,
+				014995941FB4A5F300077866 /* PopView */,
+				01027AE81FDEDA8D0003F0FE /* ReadBook */,
+				018C4511200A561800CF43D7 /* RoundedCorner */,
+				01027AE91FDEDA990003F0FE /* SecondaryMenu */,
+				01027AEA1FDEDAA50003F0FE /* SlideImageShow */,
+				01027AEB1FDEDAB10003F0FE /* TagView */,
+				01027AEC1FDEDAC00003F0FE /* TopSliderCategory */,
+				01027ADD1FDED9F80003F0FE /* Transition&Gesture */,
+				01027AD61FDED94C0003F0FE /* WeChat */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		010FBCFC20601CEB00BC9EC4 /* BaseKnowledge */ = {
+			isa = PBXGroup;
+			children = (
+				01B726DA1FF806FC00648674 /* BaseUseControl */,
+				01161F3D20308F4900FA3441 /* BaseUseData */,
+				01161F522030975C00FA3441 /* DesignPatterns */,
+				01490C021FF547DA0035492D /* KnowledgePoint */,
+				017906DA20011C2E00E5C360 /* OtherKnowledge */,
+				017907AD200127EF00E5C360 /* SwiftCode */,
+			);
+			path = BaseKnowledge;
+			sourceTree = "<group>";
+		};
+		010FBCFD20601D3E00BC9EC4 /* WeiXinPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				010FBCFE20601D3E00BC9EC4 /* ViewModels */,
+				010FBCFF20601D3E00BC9EC4 /* Models */,
+				010FBD0020601D3E00BC9EC4 /* Controllers */,
+				010FBD0320601D3E00BC9EC4 /* Views */,
+			);
+			path = WeiXinPhoto;
+			sourceTree = "<group>";
+		};
+		010FBCFE20601D3E00BC9EC4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		010FBCFF20601D3E00BC9EC4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		010FBD0020601D3E00BC9EC4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				010FBD0120601D3E00BC9EC4 /* BPWeiXinPhotoViewController.m */,
+				010FBD0220601D3E00BC9EC4 /* BPWeiXinPhotoViewController.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		010FBD0320601D3E00BC9EC4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		010FBD0520601D6300BC9EC4 /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				010FBD0620601D6300BC9EC4 /* NSThread */,
+			);
+			path = Thread;
+			sourceTree = "<group>";
+		};
+		010FBD0620601D6300BC9EC4 /* NSThread */ = {
+			isa = PBXGroup;
+			children = (
+				010FBD0720601D6300BC9EC4 /* ViewModels */,
+				010FBD0820601D6300BC9EC4 /* Models */,
+				010FBD0B20601D6300BC9EC4 /* Controllers */,
+				010FBD0E20601D6300BC9EC4 /* Views */,
+			);
+			path = NSThread;
+			sourceTree = "<group>";
+		};
+		010FBD0720601D6300BC9EC4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		010FBD0820601D6300BC9EC4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				010FBD0920601D6300BC9EC4 /* BPNSThread.h */,
+				010FBD0A20601D6300BC9EC4 /* BPNSThread.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		010FBD0B20601D6300BC9EC4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				010FBD0C20601D6300BC9EC4 /* BPNSThreadViewController.m */,
+				010FBD0D20601D6300BC9EC4 /* BPNSThreadViewController.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		010FBD0E20601D6300BC9EC4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		010FBD1120601D9D00BC9EC4 /* Palette */ = {
+			isa = PBXGroup;
+			children = (
+				010FBD1220601D9D00BC9EC4 /* BPPaletteCell.h */,
+				010FBD1320601D9D00BC9EC4 /* BPPaletteView.h */,
+				010FBD1420601D9D00BC9EC4 /* UIColor+Hex.m */,
+				010FBD1520601D9D00BC9EC4 /* BPPaletteViewController.h */,
+				010FBD1620601D9D00BC9EC4 /* BPPaletteCell.m */,
+				010FBD1720601D9D00BC9EC4 /* UIColor+Hex.h */,
+				010FBD1820601D9D00BC9EC4 /* BPPaletteView.m */,
+				010FBD1920601D9D00BC9EC4 /* palette.jpeg */,
+				010FBD1A20601D9D00BC9EC4 /* BPPaletteViewController.m */,
+			);
+			path = Palette;
+			sourceTree = "<group>";
+		};
+		010FBD1B20601D9E00BC9EC4 /* CollectionViewAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				010FBD1C20601D9E00BC9EC4 /* Page */,
+			);
+			path = CollectionViewAnimation;
+			sourceTree = "<group>";
+		};
+		010FBD1C20601D9E00BC9EC4 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				010FBD1D20601D9E00BC9EC4 /* ViewModels */,
+				010FBD1E20601D9E00BC9EC4 /* Models */,
+				010FBD1F20601D9E00BC9EC4 /* Controllers */,
+				010FBD2220601D9E00BC9EC4 /* Views */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+		010FBD1D20601D9E00BC9EC4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		010FBD1E20601D9E00BC9EC4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		010FBD1F20601D9E00BC9EC4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				010FBD2020601D9E00BC9EC4 /* BPCollectionPageViewController.h */,
+				010FBD2120601D9E00BC9EC4 /* BPCollectionPageViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		010FBD2220601D9E00BC9EC4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		010FBE9A20602E5F00BC9EC4 /* Web&JS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Web&JS";
+			sourceTree = "<group>";
+		};
 		01161F32203088D500FA3441 /* AboutOC */ = {
 			isa = PBXGroup;
 			children = (
@@ -2752,6 +2979,7 @@
 		01490C021FF547DA0035492D /* KnowledgePoint */ = {
 			isa = PBXGroup;
 			children = (
+				010FBD0520601D6300BC9EC4 /* Thread */,
 				01161F32203088D500FA3441 /* AboutOC */,
 				01B7268F1FF7E45B00648674 /* Algorithm */,
 				01B7268B1FF7DF1900648674 /* DataStructure */,
@@ -2927,47 +3155,6 @@
 			path = Photos;
 			sourceTree = "<group>";
 		};
-		0160718E204E3801009C66A2 /* WeiXinPhoto */ = {
-			isa = PBXGroup;
-			children = (
-				01607190204E3815009C66A2 /* Controllers */,
-				01607191204E3815009C66A2 /* Models */,
-				01607192204E3816009C66A2 /* ViewModels */,
-				0160718F204E3815009C66A2 /* Views */,
-			);
-			path = WeiXinPhoto;
-			sourceTree = "<group>";
-		};
-		0160718F204E3815009C66A2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		01607190204E3815009C66A2 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				01607193204E382D009C66A2 /* BPWeiXinPhotoViewController.h */,
-				01607194204E382D009C66A2 /* BPWeiXinPhotoViewController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		01607191204E3815009C66A2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		01607192204E3816009C66A2 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		0168F3842035E64800D63D83 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -3044,7 +3231,6 @@
 				01C935861FC337E000D98FD6 /* Main */,
 				0173401B1FA9753F006192F0 /* Resources */,
 				017340181FA9753F006192F0 /* Scenes */,
-				0184BF7A1FD6DA8B00CB9AAD /* TestUnit */,
 				017340161FA9753F006192F0 /* Utility */,
 				01F21D021FEBFBC200381183 /* Vendors */,
 				01733FDB1FA974FB006192F0 /* LaunchScreen.storyboard */,
@@ -3172,39 +3358,9 @@
 		017340181FA9753F006192F0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				01492F152052352A00B28F84 /* CellProgress */,
-				0160718E204E3801009C66A2 /* WeiXinPhoto */,
-				01161F522030975C00FA3441 /* DesignPatterns */,
-				01027AD91FDED98E0003F0FE /* Alert */,
-				01027ADC1FDED9C50003F0FE /* Animation */,
-				014995991FB4A5F400077866 /* Bar */,
-				01027AD71FDED9770003F0FE /* Barrage */,
-				01B726DA1FF806FC00648674 /* BaseUseControl */,
-				01161F3D20308F4900FA3441 /* BaseUseData */,
-				01B726D91FF806AA00648674 /* Cache */,
-				018682431FC43A390015A9D7 /* Calendar */,
-				01027ADE1FDEDA030003F0FE /* Chart */,
-				01027ADF1FDEDA0E0003F0FE /* CodeScanner */,
-				01050631201B3C1B000085C1 /* Comments */,
-				01027AE11FDEDA250003F0FE /* DataBase */,
-				01B726DB1FF8079B00648674 /* Drawer */,
-				01027AE21FDEDA2F0003F0FE /* EnlargeImage */,
-				01E0135C200D0B2000374C53 /* Features */,
-				01027AE31FDEDA410003F0FE /* GaussianBlur */,
-				01490C021FF547DA0035492D /* KnowledgePoint */,
-				017906DA20011C2E00E5C360 /* OtherKnowledge */,
-				01027AE61FDEDA670003F0FE /* PhotoBrowser */,
-				01027AE71FDEDA740003F0FE /* Player */,
-				014995941FB4A5F300077866 /* PopView */,
-				01027AE81FDEDA8D0003F0FE /* ReadBook */,
-				018C4511200A561800CF43D7 /* RoundedCorner */,
-				01027AE91FDEDA990003F0FE /* SecondaryMenu */,
-				01027AEA1FDEDAA50003F0FE /* SlideImageShow */,
-				017907AD200127EF00E5C360 /* SwiftCode */,
-				01027AEB1FDEDAB10003F0FE /* TagView */,
-				01027AEC1FDEDAC00003F0FE /* TopSliderCategory */,
-				01027ADD1FDED9F80003F0FE /* Transition&Gesture */,
-				01027AD61FDED94C0003F0FE /* WeChat */,
+				010FBC4320601A0800BC9EC4 /* Features */,
+				010FBC3F206018B500BC9EC4 /* ImprovingTips */,
+				010FBCFC20601CEB00BC9EC4 /* BaseKnowledge */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -5646,80 +5802,6 @@
 			path = PaletteTool;
 			sourceTree = "<group>";
 		};
-		01E0135C200D0B2000374C53 /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				01E0136C200D0B8500374C53 /* CollectionViewAnimation */,
-				01E0135D200D0B5700374C53 /* Palette */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
-		01E0135D200D0B5700374C53 /* Palette */ = {
-			isa = PBXGroup;
-			children = (
-				01E0135E200D0B5700374C53 /* BPPaletteCell.h */,
-				01E01363200D0B5700374C53 /* BPPaletteCell.m */,
-				01E0135F200D0B5700374C53 /* BPPaletteView.h */,
-				01E01365200D0B5700374C53 /* BPPaletteView.m */,
-				01E01362200D0B5700374C53 /* BPPaletteViewController.h */,
-				01E01366200D0B5700374C53 /* BPPaletteViewController.m */,
-				01E01375200D0D0100374C53 /* palette.jpeg */,
-				01E01364200D0B5700374C53 /* UIColor+Hex.h */,
-				01E01360200D0B5700374C53 /* UIColor+Hex.m */,
-			);
-			path = Palette;
-			sourceTree = "<group>";
-		};
-		01E0136C200D0B8500374C53 /* CollectionViewAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				01E0136D200D0B9B00374C53 /* Page */,
-			);
-			path = CollectionViewAnimation;
-			sourceTree = "<group>";
-		};
-		01E0136D200D0B9B00374C53 /* Page */ = {
-			isa = PBXGroup;
-			children = (
-				01E01371200D0BBE00374C53 /* Controllers */,
-				01E0136E200D0BBD00374C53 /* Models */,
-				01E01370200D0BBE00374C53 /* ViewModels */,
-				01E0136F200D0BBE00374C53 /* Views */,
-			);
-			path = Page;
-			sourceTree = "<group>";
-		};
-		01E0136E200D0BBD00374C53 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		01E0136F200D0BBE00374C53 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		01E01370200D0BBE00374C53 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		01E01371200D0BBE00374C53 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				01E01372200D0BBE00374C53 /* BPCollectionPageViewController.m */,
-				01E01373200D0BBE00374C53 /* BPCollectionPageViewController.h */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		01E1DC1A202ECD0100529ADB /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -6122,7 +6204,7 @@
 				0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */,
 				017907A52001249500E5C360 /* cycleBorder.png in Resources */,
 				0195EAA4201373E700DC59A1 /* BPXibView.xib in Resources */,
-				01E01376200D0D0100374C53 /* palette.jpeg in Resources */,
+				010FBD2620601D9E00BC9EC4 /* palette.jpeg in Resources */,
 				017907E3200144F200E5C360 /* bookcatalogue.toc in Resources */,
 				014ED0DE1FF0135000D2926C /* launchImage@2x.png in Resources */,
 				014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */,
@@ -6254,11 +6336,11 @@
 				01D22BE51FDD814000BCC4AD /* UIScrollView+BPAdd.m in Sources */,
 				01E672B02014898300FB22D4 /* BPShapeLayerViewController.m in Sources */,
 				010DB70A1FDD4D450099E66F /* UILabel+BPAutoSize.m in Sources */,
-				01E0136B200D0B5700374C53 /* BPPaletteViewController.m in Sources */,
 				01E1DC29202ECE5700529ADB /* BPVolumeWaverView.m in Sources */,
 				01C31F86200FA1CD0096C2E0 /* BPAnchorAnimationView.m in Sources */,
 				017A9A361FDD2A9A00CDA599 /* BPPaddingLabel.m in Sources */,
 				01DF31D31FDD3A9100B8A955 /* NSTimer+BPAddition.m in Sources */,
+				010FBD0420601D3E00BC9EC4 /* BPWeiXinPhotoViewController.m in Sources */,
 				010DB72E1FDD4D450099E66F /* UIBezierPath+BPSymbol.m in Sources */,
 				017906CE2001041B00E5C360 /* BPTestAutoLayoutViewController.m in Sources */,
 				01DF32171FDD3B3000B8A955 /* NSString+BPDictionaryValue.m in Sources */,
@@ -6345,6 +6427,7 @@
 				010DB7181FDD4D450099E66F /* UINavigationItem+BPMargin.m in Sources */,
 				01D22BCC1FDD814000BCC4AD /* UIAlertView+BPAdd.m in Sources */,
 				010DB72D1FDD4D450099E66F /* UIBezierPath+BPSVGString.m in Sources */,
+				010FBD2420601D9E00BC9EC4 /* BPPaletteCell.m in Sources */,
 				0160718D204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m in Sources */,
 				018C44F3200A4AF700CF43D7 /* BPFlowCatergoryViewLayout.m in Sources */,
 				01DF32451FDD3B3D00B8A955 /* NSObject+BPReflection.m in Sources */,
@@ -6403,7 +6486,6 @@
 				010DB7351FDD4D450099E66F /* UITextField+BPShake.m in Sources */,
 				010DB7261FDD4D450099E66F /* UIColor+BPHEX.m in Sources */,
 				01492F222052358600B28F84 /* KSCellProgressTableViewCell.m in Sources */,
-				01607195204E382D009C66A2 /* BPWeiXinPhotoViewController.m in Sources */,
 				017907D82001348200E5C360 /* BPGeneralAnimationsViewController.m in Sources */,
 				017907A42001249500E5C360 /* BPWaterWaveView.m in Sources */,
 				016DADC820582FB100AA95EC /* NSDictionary+BPSafe.m in Sources */,
@@ -6411,6 +6493,8 @@
 				01D22BD31FDD814000BCC4AD /* UITableView+BPAdd.m in Sources */,
 				010DB7931FDD4D640099E66F /* UIView+BPConstraints.m in Sources */,
 				018972B71FC47F6B00D6DF5B /* BPBaseCollectionViewController.m in Sources */,
+				010FBD2720601D9E00BC9EC4 /* BPPaletteViewController.m in Sources */,
+				010FBD1020601D6300BC9EC4 /* BPNSThreadViewController.m in Sources */,
 				012D948920344C7600691E40 /* BPPersonHealth.m in Sources */,
 				01DF31CA1FDD3A9100B8A955 /* NSFileManager+BPPaths.m in Sources */,
 				01DF31BF1FDD3A9100B8A955 /* NSDictionary+BPURL.m in Sources */,
@@ -6471,11 +6555,11 @@
 				017906FE20011D4100E5C360 /* BPDataManager.m in Sources */,
 				010DB7B01FDD4D6F0099E66F /* UIButton+BPBackgroundColor.m in Sources */,
 				01B726961FF7E45B00648674 /* BPAlgorithmController.m in Sources */,
-				01E01367200D0B5700374C53 /* UIColor+Hex.m in Sources */,
 				01E6B1922001FE970008C18C /* SchoolModel.m in Sources */,
 				01DF31ED1FDD3B1600B8A955 /* NSURL+BPParam.m in Sources */,
 				010DB72B1FDD4D450099E66F /* UIBezierPath+BPThroughPointsBezier.m in Sources */,
 				010DB7951FDD4D640099E66F /* UIView+BPRecursion.m in Sources */,
+				010FBD2520601D9E00BC9EC4 /* BPPaletteView.m in Sources */,
 				0160718A204D3530009C66A2 /* PHAsset+BPAdd.m in Sources */,
 				010DB7AD1FDD4D6F0099E66F /* UIButton+BPTouchAreaInsets.m in Sources */,
 				01DF31CB1FDD3A9100B8A955 /* NSNotificationCenter+BPMainThread.m in Sources */,
@@ -6505,7 +6589,6 @@
 				01E1DC2C202ECE6E00529ADB /* BPNormalVolumeWaverView.m in Sources */,
 				01C0B6211FFC87AB005BB4A5 /* PaletteColorUtils.m in Sources */,
 				017907CE2001336100E5C360 /* BPAlertViewController.m in Sources */,
-				01E01374200D0BBE00374C53 /* BPCollectionPageViewController.m in Sources */,
 				01DF323F1FDD3B3D00B8A955 /* NSObject+BPRuntime.m in Sources */,
 				018C44F9200A4AF700CF43D7 /* BPFlowCatergoryViewProperty.m in Sources */,
 				01D22BD71FDD814000BCC4AD /* UITextField+BPAdd.m in Sources */,
@@ -6513,7 +6596,6 @@
 				01C0B6231FFC87AB005BB4A5 /* PaletteTarget.m in Sources */,
 				01E6B19C2001FEEE0008C18C /* FMDatabaseQueueManager.m in Sources */,
 				0195EAA5201373E700DC59A1 /* BPXibView.m in Sources */,
-				01E01369200D0B5700374C53 /* BPPaletteCell.m in Sources */,
 				010DB71D1FDD4D450099E66F /* UIWebView+BPJavaScript.m in Sources */,
 				01E6B1932001FE970008C18C /* DataBaseModel.m in Sources */,
 				01DF316F1FDD3A0900B8A955 /* CALayer+BPBorderColor.m in Sources */,
@@ -6534,6 +6616,7 @@
 				01B7268E1FF7DF2700648674 /* BPDataStructureViewController.m in Sources */,
 				01DF32161FDD3B3000B8A955 /* NSString+BPXMLDictionary.m in Sources */,
 				010DB76E1FDD4D560099E66F /* UIViewController+BPRecursiveDescription.m in Sources */,
+				010FBD2820601D9E00BC9EC4 /* BPCollectionPageViewController.m in Sources */,
 				010DB7AB1FDD4D6F0099E66F /* UIButton+BPBadge.m in Sources */,
 				01DF31BD1FDD3A9100B8A955 /* NSDictionary+BPSafeAccess.m in Sources */,
 				010DB7161FDD4D450099E66F /* UITextView+BPPlaceHolder.m in Sources */,
@@ -6547,11 +6630,11 @@
 				018C44FE200A4F2200CF43D7 /* BP_ONE_TopSliderCatergoryViewController.m in Sources */,
 				0195EAA7201373E700DC59A1 /* BPLayoutView.m in Sources */,
 				01DF32431FDD3B3D00B8A955 /* NSObject+BPAssociatedObject.m in Sources */,
-				01E0136A200D0B5700374C53 /* BPPaletteView.m in Sources */,
 				010DB7081FDD4D450099E66F /* UILabel+BPSuggestSize.m in Sources */,
 				01DF32261FDD3B3000B8A955 /* NSString+BPUUID.m in Sources */,
 				01C935BA1FC33A5900D98FD6 /* BPSimpleModel.m in Sources */,
 				0179077B200121F800E5C360 /* FMDBTools.m in Sources */,
+				010FBD0F20601D6300BC9EC4 /* BPNSThread.m in Sources */,
 				010DB7571FDD4D450099E66F /* UIControl+BPSound.m in Sources */,
 				017A9A281FDD229B00CDA599 /* BPNetTool.m in Sources */,
 				010DB7B21FDD4D6F0099E66F /* UIButton+BPIndicator.m in Sources */,
@@ -6568,6 +6651,7 @@
 				01DF31C51FDD3A9100B8A955 /* NSRunLoop+BPPerformBlock.m in Sources */,
 				010DB7171FDD4D450099E66F /* UITextView+BPInputLimit.m in Sources */,
 				01ADC1F61FB492C1009150F0 /* BPBaseTableViewCell.m in Sources */,
+				010FBD2320601D9E00BC9EC4 /* UIColor+Hex.m in Sources */,
 				010DB7971FDD4D640099E66F /* UIView+BPVisuals.m in Sources */,
 				01D22BD91FDD814000BCC4AD /* UIScreen+BPAdd.m in Sources */,
 				01E672BF2014E9ED00FB22D4 /* UIImageViewController.m in Sources */,

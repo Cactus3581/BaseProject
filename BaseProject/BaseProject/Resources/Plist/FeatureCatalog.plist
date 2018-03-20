@@ -63,7 +63,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>popview</string>
+		<string>PopView</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
@@ -174,6 +174,14 @@
 		<array>
 			<dict>
 				<key>title</key>
+				<string>系统卡片动画</string>
+				<key>fileName</key>
+				<string>BPTest_XibViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
 				<string>水波纹</string>
 				<key>fileName</key>
 				<string></string>
@@ -190,7 +198,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>淘宝购物车</string>
+				<string>淘宝购物车折叠动画</string>
 				<key>fileName</key>
 				<string></string>
 				<key>briefIntro</key>
@@ -434,14 +442,6 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>swift简单语法</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string>学习下swift</string>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>弹幕</string>
 		<key>fileName</key>
 		<string></string>
@@ -458,76 +458,6 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>一般动画(验证modelLayer)</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string>淘宝购物车折叠动画/水波动画/系统卡片动画/数字增长动画</string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>淘宝购物车折叠动画</string>
-				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>水波动画</string>
-				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>系统卡片动画</string>
-				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>数字增长动画</string>
-				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>KVO封装</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>XIB</string>
-				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>纯代码</string>
-				<key>fileName</key>
-				<string>BPTestViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>缓存设计</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
@@ -536,87 +466,17 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>小功能点</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>CollectionView 分页动画思路</string>
-				<key>fileName</key>
-				<string> </string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>取一张图片的色值</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>内容决定ViewBounds</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>测试</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>xib</string>
-				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>通用测试容器</string>
-				<key>fileName</key>
-				<string>BPGeneralTestViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>Palette</string>
-				<key>fileName</key>
-				<string>BPPaletteViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>TestCollectionView</string>
-				<key>fileName</key>
-				<string>BPCollectionPageViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>评论</string>
 		<key>fileName</key>
 		<string>BPCommentsViewController</string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Cell进度</string>
+		<key>fileName</key>
+		<string></string>
 		<key>briefIntro</key>
 		<string></string>
 	</dict>

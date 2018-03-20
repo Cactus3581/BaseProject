@@ -4,9 +4,52 @@
 <array>
 	<dict>
 		<key>title</key>
+		<string>测试</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>xib</string>
+				<key>fileName</key>
+				<string>BPTest_XibViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>通用测试容器</string>
+				<key>fileName</key>
+				<string>BPGeneralTestViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>仿微信获取照片</string>
 		<key>fileName</key>
 		<string>BPWeiXinPhotoViewController</string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Palette:取一张图片的色值</string>
+		<key>fileName</key>
+		<string>BPPaletteViewController</string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>CollectionView 分页动画思路</string>
+		<key>fileName</key>
+		<string>BPCollectionPageViewController</string>
 		<key>briefIntro</key>
 		<string></string>
 	</dict>

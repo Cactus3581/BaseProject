@@ -4,6 +4,14 @@
 <array>
 	<dict>
 		<key>title</key>
+		<string>swift简单语法</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string>学习下swift</string>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>重点知识点集合</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
@@ -11,6 +19,14 @@
 		<string></string>
 		<key>subVc_array</key>
 		<array>
+			<dict>
+				<key>title</key>
+				<string>多线程种类</string>
+				<key>fileName</key>
+				<string>BPSimpleTableController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
 			<dict>
 				<key>title</key>
 				<string>了解OC</string>
@@ -638,7 +654,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>KVO</string>
+				<string>KVO及封装</string>
 				<key>fileName</key>
 				<string></string>
 				<key>briefIntro</key>
