@@ -1563,9 +1563,9 @@
 		01027AD91FDED98E0003F0FE /* Alert */ = {
 			isa = PBXGroup;
 			children = (
+				010FBE9F2060E64F00BC9EC4 /* Models */,
+				010FBE9E2060E63400BC9EC4 /* ViewModels */,
 				01027B361FDEDB6C0003F0FE /* Controllers */,
-				01027B371FDEDB6C0003F0FE /* Models */,
-				01027B381FDEDB6C0003F0FE /* ViewModels */,
 				01027B351FDEDB6B0003F0FE /* Views */,
 			);
 			path = Alert;
@@ -2070,20 +2070,6 @@
 				017907CD2001336100E5C360 /* BPAlertViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		01027B371FDEDB6C0003F0FE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		01027B381FDEDB6C0003F0FE /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		01027B411FDEDB7B0003F0FE /* Views */ = {
@@ -2593,7 +2579,6 @@
 		010FBC4320601A0800BC9EC4 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				010FBE9A20602E5F00BC9EC4 /* Web&JS */,
 				01027AD91FDED98E0003F0FE /* Alert */,
 				01027ADC1FDED9C50003F0FE /* Animation */,
 				014995991FB4A5F400077866 /* Bar */,
@@ -2618,6 +2603,7 @@
 				01027AEB1FDEDAB10003F0FE /* TagView */,
 				01027AEC1FDEDAC00003F0FE /* TopSliderCategory */,
 				01027ADD1FDED9F80003F0FE /* Transition&Gesture */,
+				010FBE9A20602E5F00BC9EC4 /* Web&JS */,
 				01027AD61FDED94C0003F0FE /* WeChat */,
 			);
 			path = Features;
@@ -2798,6 +2784,20 @@
 			children = (
 			);
 			path = "Web&JS";
+			sourceTree = "<group>";
+		};
+		010FBE9E2060E63400BC9EC4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		010FBE9F2060E64F00BC9EC4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		01161F32203088D500FA3441 /* AboutOC */ = {
