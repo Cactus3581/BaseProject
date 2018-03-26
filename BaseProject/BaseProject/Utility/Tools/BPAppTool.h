@@ -13,5 +13,6 @@
 #import "BPCGUtilities.h"
 #import "BPNetTool.h"
 #import "BPCacheTool.h"
+#import "BPAppInfoTool.h"
 
 #endif /* BPAppTool_h */

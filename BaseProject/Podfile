@@ -27,6 +27,7 @@ target 'BaseProject' do
     
     pod 'MLeaksFinder'
     pod 'Bugly'
+    pod 'SAMKeychain'
     #pod 'FLEX'
 
     pod 'CocoaAsyncSocket'

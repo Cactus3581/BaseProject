@@ -145,6 +145,10 @@
 		01161F512030901300FA3441 /* BPNSSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01161F502030901300FA3441 /* BPNSSetViewController.m */; };
 		011664BB20179DF200B60453 /* BPBlockAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 011664BA20179DF200B60453 /* BPBlockAPI.m */; };
 		011A7731201F256F00D97E11 /* BPVolumeWaverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011A7730201F256F00D97E11 /* BPVolumeWaverViewController.m */; };
+		011B7DD1206906CB0071CB5D /* BPAppInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD0206906CB0071CB5D /* BPAppInfoTool.m */; };
+		011B7DD920693E5B0071CB5D /* UIBarButtonItem+BPCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD320693E5B0071CB5D /* UIBarButtonItem+BPCreate.m */; };
+		011B7DDA20693E5B0071CB5D /* UINavigation+BPFixSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD420693E5B0071CB5D /* UINavigation+BPFixSpace.m */; };
+		011B7DDB20693E5B0071CB5D /* NSObject+BPAddRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD520693E5B0071CB5D /* NSObject+BPAddRuntime.m */; };
 		011F55A120304A50005F9C9E /* BPPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011F55A020304A50005F9C9E /* BPPhotoBrowserViewController.m */; };
 		0126B5361FB4ACBB00E522CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0126B5351FB4ACBB00E522CF /* MapKit.framework */; };
 		012D948620344AD100691E40 /* BPDesignPatternsKVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D948520344AD100691E40 /* BPDesignPatternsKVCViewController.m */; };
@@ -499,9 +503,6 @@
 		01E6B19D2001FEEE0008C18C /* FMDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E6B19B2001FEEE0008C18C /* FMDatabaseManager.m */; };
 		01EAA0A32015F06F0084808D /* BPAutoresizingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EAA0A22015F06F0084808D /* BPAutoresizingViewController.m */; };
 		01EAA0A62015F08C0084808D /* BPAutoresizingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EAA0A52015F08C0084808D /* BPAutoresizingView.m */; };
-		01F21D0B1FEBFD4000381183 /* UINavigation+BPFixSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F21D071FEBFD4000381183 /* UINavigation+BPFixSpace.m */; };
-		01F21D0C1FEBFD4000381183 /* UIBarButtonItem+BPCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F21D091FEBFD4000381183 /* UIBarButtonItem+BPCreate.m */; };
-		01F21D0F1FEC001C00381183 /* NSObject+BPAddRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F21D0E1FEC001C00381183 /* NSObject+BPAddRuntime.m */; };
 		01F240A32006589800FA5174 /* BPScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F240A22006589800FA5174 /* BPScrollViewController.m */; };
 		01F372F82065420E007B1498 /* BPDesignPatternsDelegateViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F372F72065420E007B1498 /* BPDesignPatternsDelegateViewControllerB.m */; };
 		01F372FC206545E0007B1498 /* BPDesignPatternsSingleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F372FB206545E0007B1498 /* BPDesignPatternsSingleClass.m */; };
@@ -807,6 +808,14 @@
 		011664BA20179DF200B60453 /* BPBlockAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBlockAPI.m; sourceTree = "<group>"; };
 		011A772F201F256F00D97E11 /* BPVolumeWaverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPVolumeWaverViewController.h; sourceTree = "<group>"; };
 		011A7730201F256F00D97E11 /* BPVolumeWaverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPVolumeWaverViewController.m; sourceTree = "<group>"; };
+		011B7DCF206906CB0071CB5D /* BPAppInfoTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppInfoTool.h; sourceTree = "<group>"; };
+		011B7DD0206906CB0071CB5D /* BPAppInfoTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAppInfoTool.m; sourceTree = "<group>"; };
+		011B7DD320693E5B0071CB5D /* UIBarButtonItem+BPCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+BPCreate.m"; sourceTree = "<group>"; };
+		011B7DD420693E5B0071CB5D /* UINavigation+BPFixSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigation+BPFixSpace.m"; sourceTree = "<group>"; };
+		011B7DD520693E5B0071CB5D /* NSObject+BPAddRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BPAddRuntime.m"; sourceTree = "<group>"; };
+		011B7DD620693E5B0071CB5D /* UIBarButtonItem+BPCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BPCreate.h"; sourceTree = "<group>"; };
+		011B7DD720693E5B0071CB5D /* NSObject+BPAddRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPAddRuntime.h"; sourceTree = "<group>"; };
+		011B7DD820693E5B0071CB5D /* UINavigation+BPFixSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigation+BPFixSpace.h"; sourceTree = "<group>"; };
 		011F559F20304A50005F9C9E /* BPPhotoBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPhotoBrowserViewController.h; sourceTree = "<group>"; };
 		011F55A020304A50005F9C9E /* BPPhotoBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPhotoBrowserViewController.m; sourceTree = "<group>"; };
 		0126B5351FB4ACBB00E522CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -1517,12 +1526,6 @@
 		01EAA0A42015F08C0084808D /* BPAutoresizingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAutoresizingView.h; sourceTree = "<group>"; };
 		01EAA0A52015F08C0084808D /* BPAutoresizingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAutoresizingView.m; sourceTree = "<group>"; };
 		01EC5F201FA9A78200838BE2 /* BaseProject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseProject-Prefix.pch"; sourceTree = "<group>"; };
-		01F21D041FEBFD3F00381183 /* UINavigation+BPFixSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigation+BPFixSpace.h"; sourceTree = "<group>"; };
-		01F21D061FEBFD3F00381183 /* UIBarButtonItem+BPCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BPCreate.h"; sourceTree = "<group>"; };
-		01F21D071FEBFD4000381183 /* UINavigation+BPFixSpace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigation+BPFixSpace.m"; sourceTree = "<group>"; };
-		01F21D091FEBFD4000381183 /* UIBarButtonItem+BPCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+BPCreate.m"; sourceTree = "<group>"; };
-		01F21D0D1FEC001C00381183 /* NSObject+BPAddRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPAddRuntime.h"; sourceTree = "<group>"; };
-		01F21D0E1FEC001C00381183 /* NSObject+BPAddRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BPAddRuntime.m"; sourceTree = "<group>"; };
 		01F240A12006589800FA5174 /* BPScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPScrollViewController.h; sourceTree = "<group>"; };
 		01F240A22006589800FA5174 /* BPScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPScrollViewController.m; sourceTree = "<group>"; };
 		01F372F62065420E007B1498 /* BPDesignPatternsDelegateViewControllerB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDesignPatternsDelegateViewControllerB.h; sourceTree = "<group>"; };
@@ -2932,6 +2935,28 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		011B7DCE206906920071CB5D /* AppInfoTool */ = {
+			isa = PBXGroup;
+			children = (
+				011B7DCF206906CB0071CB5D /* BPAppInfoTool.h */,
+				011B7DD0206906CB0071CB5D /* BPAppInfoTool.m */,
+			);
+			path = AppInfoTool;
+			sourceTree = "<group>";
+		};
+		011B7DD220693E5B0071CB5D /* NaviSpace */ = {
+			isa = PBXGroup;
+			children = (
+				011B7DD320693E5B0071CB5D /* UIBarButtonItem+BPCreate.m */,
+				011B7DD420693E5B0071CB5D /* UINavigation+BPFixSpace.m */,
+				011B7DD520693E5B0071CB5D /* NSObject+BPAddRuntime.m */,
+				011B7DD620693E5B0071CB5D /* UIBarButtonItem+BPCreate.h */,
+				011B7DD720693E5B0071CB5D /* NSObject+BPAddRuntime.h */,
+				011B7DD820693E5B0071CB5D /* UINavigation+BPFixSpace.h */,
+			);
+			path = NaviSpace;
+			sourceTree = "<group>";
+		};
 		012D948320344AC200691E40 /* KVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -3230,6 +3255,7 @@
 		016DADBB20582F7F00AA95EC /* Special */ = {
 			isa = PBXGroup;
 			children = (
+				011B7DD220693E5B0071CB5D /* NaviSpace */,
 				016DADBC20582F9D00AA95EC /* AvoidCrash */,
 			);
 			path = Special;
@@ -6082,8 +6108,8 @@
 			isa = PBXGroup;
 			children = (
 				01D509E21FDD909C00A8B1B4 /* BPAppTool.h */,
+				011B7DCE206906920071CB5D /* AppInfoTool */,
 				01E01324200CFEEA00374C53 /* PaletteTool */,
-				01F21D031FEBFD2B00381183 /* NaviTool */,
 				017A9A211FDD225700CDA599 /* DataTool */,
 				017A9A201FDD224700CDA599 /* CGTool */,
 				017A9A1F1FDD223400CDA599 /* CacheTool */,
@@ -6106,19 +6132,6 @@
 				01C0B6111FFC8792005BB4A5 /* Palette */,
 			);
 			path = Vendors;
-			sourceTree = "<group>";
-		};
-		01F21D031FEBFD2B00381183 /* NaviTool */ = {
-			isa = PBXGroup;
-			children = (
-				01F21D0D1FEC001C00381183 /* NSObject+BPAddRuntime.h */,
-				01F21D0E1FEC001C00381183 /* NSObject+BPAddRuntime.m */,
-				01F21D061FEBFD3F00381183 /* UIBarButtonItem+BPCreate.h */,
-				01F21D091FEBFD4000381183 /* UIBarButtonItem+BPCreate.m */,
-				01F21D041FEBFD3F00381183 /* UINavigation+BPFixSpace.h */,
-				01F21D071FEBFD4000381183 /* UINavigation+BPFixSpace.m */,
-			);
-			path = NaviTool;
 			sourceTree = "<group>";
 		};
 		01F240A02006588A00FA5174 /* UIScrollView */ = {
@@ -6492,6 +6505,7 @@
 				01490C0E1FF548A50035492D /* BPOptimizeTableViewController.m in Sources */,
 				01A192192004E61F005EE4CD /* BPTagFlowLayout.m in Sources */,
 				010DB7421FDD4D450099E66F /* UIImage+BPColor.m in Sources */,
+				011B7DD1206906CB0071CB5D /* BPAppInfoTool.m in Sources */,
 				010DB7101FDD4D450099E66F /* UIImageView+BPAddition.m in Sources */,
 				010DB7131FDD4D450099E66F /* UIAlertView+BPBlock.m in Sources */,
 				01C31F84200FA1CD0096C2E0 /* BPAnchorPopView.m in Sources */,
@@ -6516,6 +6530,7 @@
 				01D22BDC1FDD814000BCC4AD /* UIBezierPath+BPAdd.m in Sources */,
 				01490C111FF549250035492D /* BPWeakView.m in Sources */,
 				0195EA622013736A00DC59A1 /* BPDrawRect_OC.m in Sources */,
+				011B7DD920693E5B0071CB5D /* UIBarButtonItem+BPCreate.m in Sources */,
 				014995331FB494D800077866 /* BPBaseTableView.m in Sources */,
 				018C44DA2009E74100CF43D7 /* BPCustomCardPageFlowViewController.m in Sources */,
 				010DB7521FDD4D450099E66F /* UINavigationController+BPKeyboardFix.m in Sources */,
@@ -6546,6 +6561,7 @@
 				01DF323D1FDD3B3D00B8A955 /* NSObject+BPAddProperty.m in Sources */,
 				01733FE01FA974FB006192F0 /* main.m in Sources */,
 				018C451D200A5AD300CF43D7 /* YYWeakProxy.m in Sources */,
+				011B7DDA20693E5B0071CB5D /* UINavigation+BPFixSpace.m in Sources */,
 				017A9A961FDD314C00CDA599 /* UIButton+BPImagePosition.m in Sources */,
 				010DB7181FDD4D450099E66F /* UINavigationItem+BPMargin.m in Sources */,
 				01D22BCC1FDD814000BCC4AD /* UIAlertView+BPAdd.m in Sources */,
@@ -6698,8 +6714,8 @@
 				01A191AD2004E155005EE4CD /* BPButtonViewController.m in Sources */,
 				01161F3C20308CB300FA3441 /* BPMan.m in Sources */,
 				011F55A120304A50005F9C9E /* BPPhotoBrowserViewController.m in Sources */,
+				011B7DDB20693E5B0071CB5D /* NSObject+BPAddRuntime.m in Sources */,
 				01A192242004E61F005EE4CD /* BPAdaptiveHeightTableViewController.m in Sources */,
-				01F21D0C1FEBFD4000381183 /* UIBarButtonItem+BPCreate.m in Sources */,
 				01C935A01FC337E100D98FD6 /* BPFeatureViewController.m in Sources */,
 				017A9A8F1FDD311D00CDA599 /* NSString+BPFilepath.m in Sources */,
 				010DB7251FDD4D450099E66F /* UIColor+BPModify.m in Sources */,
@@ -6803,7 +6819,6 @@
 				010DB7701FDD4D560099E66F /* UIViewController+BPVisible.m in Sources */,
 				01DF31E41FDD3B0300B8A955 /* NSNumber+BPCGFloat.m in Sources */,
 				01DF325C1FDD3B9D00B8A955 /* NSData+BPDataCache.m in Sources */,
-				01F21D0F1FEC001C00381183 /* NSObject+BPAddRuntime.m in Sources */,
 				01E6B1942001FE970008C18C /* ClassModel.m in Sources */,
 				01ADC1F91FB492D8009150F0 /* BPBaseTableViewController.m in Sources */,
 				017F82C620623EBA00B656BA /* BPDrawWaverView.m in Sources */,
@@ -6887,7 +6902,6 @@
 				0179BC4620317D410061CD84 /* BPNSDateViewController.m in Sources */,
 				01DF31D51FDD3A9100B8A955 /* NSBundle+BPAppIcon.m in Sources */,
 				010DB72C1FDD4D450099E66F /* UIBezierPath+BPLength.m in Sources */,
-				01F21D0B1FEBFD4000381183 /* UINavigation+BPFixSpace.m in Sources */,
 				010DB7191FDD4D450099E66F /* UINavigationItem+BPLock.m in Sources */,
 				016760CF2060F94400F82ACE /* BPNSOperationViewController.m in Sources */,
 				01F3730F20654A22007B1498 /* BPDesignPatternsBlockViewControllerB.m in Sources */,

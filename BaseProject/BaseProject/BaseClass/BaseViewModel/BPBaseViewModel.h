@@ -6,11 +6,10 @@
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "BPBaseModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BPBaseViewModel : BPBaseModel<UITableViewDataSource, UICollectionViewDataSource>
+@interface BPBaseViewModel : NSObject<UITableViewDataSource, UICollectionViewDataSource>
 
 @property (nullable, nonatomic, readonly) NSArray *data;
 
