@@ -49,7 +49,11 @@
  *  在创建的thread上执行任务
  */
 - (void)update {
-    
+    BPLog(@"isMainThread = %d",[NSThread isMainThread]);
+}
+
+- (void)dealloc {
+    BPLog(@"%@ = dealloc",NSStringFromClass([self class]));
 }
 
 @end
@@ -57,7 +61,6 @@
 
 @interface BPNSThreadTimer()
 @property (nonatomic, strong) NSThread *thread;//常驻线程
-@property (nonatomic, strong) CADisplayLink *displayLink;
 @end
 
 @implementation BPNSThreadTimer
@@ -92,13 +95,19 @@
 - (void)startTimer {
     __weak typeof (self) weakSelf = self;
     self.displayLink = [CADisplayLink displayLinkWithRunLoop:[NSRunLoop currentRunLoop] executeBlock:^(CADisplayLink *displayLink) {
-        [weakSelf updateMeters];
-        [weakSelf performSelector:@selector(updateMeters) onThread:weakSelf.thread withObject:nil waitUntilDone:NO];
+        //[weakSelf updateMeters];//此方法不可以，还是在主线程执行
+        [weakSelf performSelector:@selector(updateMeters) onThread:self.thread withObject:nil waitUntilDone:NO];
     }];
 }
 
 - (void)updateMeters {
-    
+    BPLog(@"isMainThread = %d",[NSThread isMainThread]);
+}
+
+- (void)dealloc {
+    BPLog(@"%@ = dealloc",NSStringFromClass([self class]));
+    [_displayLink invalidate];
+    _displayLink = nil;
 }
 
 @end
@@ -133,29 +142,37 @@
 - (void)configureRunloop {
     @autoreleasepool {
         self.runLoop = [NSRunLoop currentRunLoop];
-        [self.runLoop addPort:[NSPort port] forMode:NSDefaultRunLoopMode];
-        [self.runLoop run];
+        [[NSRunLoop currentRunLoop] addPort:[NSPort port] forMode:NSDefaultRunLoopMode];
+        [[NSRunLoop currentRunLoop] run];
     }
 }
 
 - (void)startTimer {
-    if (self.runLoop) {
-        __weak typeof (self) weakSelf = self;
-        self.displayLink = [CADisplayLink displayLinkWithRunLoop:self.runLoop executeBlock:^(CADisplayLink *displayLink) {
-            [weakSelf updateMeters];
-            //[weakSelf performSelector:@selector(updateMeters) onThread:weakSelf.thread withObject:nil waitUntilDone:NO];
+    __weak typeof (self) weakSelf = self;
 
-        }];
-        
-        self.displayLink = [CADisplayLink displayLinkWithRunLoop:[NSRunLoop currentRunLoop] executeBlock:^(CADisplayLink *displayLink) {
-            [weakSelf updateMeters];
-            //[weakSelf performSelector:@selector(updateMeters) onThread:weakSelf.thread withObject:nil waitUntilDone:NO];
-        }];
-    }
+    self.displayLink = [CADisplayLink displayLinkWithRunLoop:[NSRunLoop currentRunLoop] executeBlock:^(CADisplayLink *displayLink) {
+        //[weakSelf updateMeters];//此方法不可以，还是在主线程执行
+        [weakSelf performSelector:@selector(updateMeters) onThread:weakSelf.thread withObject:nil waitUntilDone:NO];
+    }];
+    
+    //以下方法不可以，获取不到runloop
+//    if (self.runLoop) {
+//        self.displayLink = [CADisplayLink displayLinkWithRunLoop:self.runLoop executeBlock:^(CADisplayLink *displayLink) {
+//            [weakSelf updateMeters];
+//            //[weakSelf performSelector:@selector(updateMeters) onThread:weakSelf.thread withObject:nil waitUntilDone:NO];
+//        }];
+//    }
+
 }
 
 - (void)updateMeters {
-    
+    BPLog(@"isMainThread = %d",[NSThread isMainThread]);
+}
+
+- (void)dealloc {
+    BPLog(@"%@ = dealloc",NSStringFromClass([self class]));
+    [_displayLink invalidate];
+    _displayLink = nil;
 }
 
 @end

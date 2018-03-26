@@ -1,13 +1,13 @@
 //
-//  BPDesignPatternsBlockViewController.m
+//  BPDesignPatternsBlockViewControllerA.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/2/12.
 //  Copyright © 2018年 cactus. All rights reserved.
 //
 
-#import "BPDesignPatternsBlockViewController.h"
-
+#import "BPDesignPatternsBlockViewControllerA.h"
+#import "BPDesignPatternsBlockViewControllerB.h"
 
 #pragma mark - 函数声明
 int max(int a,int b);
@@ -24,18 +24,30 @@ typedef float (^BlockType)(float,float);
 //全局变量
 int b = 100;
 
-@interface BPDesignPatternsBlockViewController ()
+@interface BPDesignPatternsBlockViewControllerA ()
 
 @end
 
-@implementation BPDesignPatternsBlockViewController
+@implementation BPDesignPatternsBlockViewControllerA
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+- (void)test {
+    BPDesignPatternsBlockViewControllerB *secondVC = [[BPDesignPatternsBlockViewControllerB alloc] init];
+    [self.navigationController pushViewController:secondVC animated:YES];
+    
+    //4.回调。回到赋值页面，给block变量赋值
+    //    __block FirstViewController *firstVC = self;
+    //    secondVC.passValueBlock =  ^(NSString *string)
+    //    {
+    //        //给当前视图的控件赋值
+    //        firstVC.TfFirst.text = string;
+    //    };
+    secondVC.passValueBlock = ^(NSString *str) {
+        BPLog(@"%@",str);
+    };
 }
 
 - (void)handle {
@@ -117,6 +129,10 @@ int b = 100;
      };
      testBlock();
      NSLog(@"%d",testBlock());
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 @end

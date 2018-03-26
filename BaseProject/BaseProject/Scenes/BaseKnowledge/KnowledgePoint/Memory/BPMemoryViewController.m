@@ -16,10 +16,6 @@
 #import "NSTimer+BPAdd.h"
 #import "NSTimer+BPUnRetain.h"
 
-@interface BPMemoryViewController ()
-
-@end
-
 @interface BPMemoryViewController()<BPTestViewControllerDelegate>
 
 @property(nonatomic,weak) UIButton *weakButton;
@@ -33,6 +29,7 @@
 
 @property(nonatomic,strong) BPWeakView *strongView;
 @property(nonatomic,weak) BPWeakView *zoomAssignView;
+@property (nonatomic,strong) NSTimer *timer;
 
 @end
 
@@ -46,7 +43,7 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self head_stack];
+//    [self head_stack];
     //    [self testPoint];
     //    [self testZombie];
     
@@ -54,7 +51,7 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
     //    [self testBlock];
     
     //    [self testDelegate];
-    //    [self testTimer];
+        [self testTimer];
     //    [self testSystem];
 }
 
@@ -323,7 +320,7 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
     //把timer的target设置为了timer的分类，从而消除了timer对vc的引用
     __block NSInteger i = 0;
     weakify(self);
-    NSTimer *timer = [NSTimer bp_scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer *timer) {
+    self.timer = [NSTimer bp_scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer *timer) {
         strongify(self);
         [self push];
         BPLog(@"----------------");
@@ -386,6 +383,10 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
  */
 
 - (void)dealloc {
+    if (_timer) {
+        [_timer invalidate];
+        _timer = nil;
+    }
     BPLog(@"retain  count = %ld\n",BPRetainCount(_weakButton));
     BPLog(@"retain  count = %ld\n",BPRetainCount(self.view));
     BPLog(@"%p,%.2f",_strongButton,_strongButton.bounds.size.width);

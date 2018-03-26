@@ -1,18 +1,18 @@
 //
-//  BPDesignPatternsNotificationViewController.m
+//  BPSubAddChildViewController.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2018/2/12.
+//  Created by xiaruzhen on 2018/3/22.
 //  Copyright © 2018年 cactus. All rights reserved.
 //
 
-#import "BPDesignPatternsNotificationViewController.h"
+#import "BPSubAddChildViewController.h"
 
-@interface BPDesignPatternsNotificationViewController ()
+@interface BPSubAddChildViewController ()
 
 @end
 
-@implementation BPDesignPatternsNotificationViewController
+@implementation BPSubAddChildViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

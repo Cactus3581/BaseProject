@@ -1,5 +1,5 @@
 //
-//  BPDesignPatternsBlockViewController.h
+//  BPDesignPatternsNotificationViewControllerA.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/2/12.
@@ -8,6 +8,6 @@
 
 #import "BPBaseViewController.h"
 
-@interface BPDesignPatternsBlockViewController : BPBaseViewController
+@interface BPDesignPatternsNotificationViewControllerA : BPBaseViewController
 
 @end

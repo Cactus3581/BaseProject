@@ -13,6 +13,7 @@
 @end
 
 @interface BPNSThreadTimer : NSObject
+@property (nonatomic, strong) CADisplayLink *displayLink;
 
 @end
 

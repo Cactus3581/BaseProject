@@ -22,7 +22,7 @@
  *
  *  @return 返回结果
  */
-- (NSDecimalNumber*)_roundToScale:(NSUInteger)scale;
+- (NSDecimalNumber *)_roundToScale:(NSUInteger)scale;
 /**
  *  @brief  四舍五入
  *
@@ -33,10 +33,10 @@
  */
 - (NSDecimalNumber*)_roundToScale:(NSUInteger)scale mode:(NSRoundingMode)roundingMode;
 
-- (NSDecimalNumber*)_decimalNumberWithPercentage:(float)percent;
-- (NSDecimalNumber*)_decimalNumberWithDiscountPercentage:(NSDecimalNumber *)discountPercentage;
-- (NSDecimalNumber*)_decimalNumberWithDiscountPercentage:(NSDecimalNumber *)discountPercentage roundToScale:(NSUInteger)scale;
-- (NSDecimalNumber*)_discountPercentageWithBaseValue:(NSDecimalNumber *)baseValue;
-- (NSDecimalNumber*)_discountPercentageWithBaseValue:(NSDecimalNumber *)baseValue roundToScale:(NSUInteger)scale;
+- (NSDecimalNumber *)_decimalNumberWithPercentage:(float)percent;
+- (NSDecimalNumber *)_decimalNumberWithDiscountPercentage:(NSDecimalNumber *)discountPercentage;
+- (NSDecimalNumber *)_decimalNumberWithDiscountPercentage:(NSDecimalNumber *)discountPercentage roundToScale:(NSUInteger)scale;
+- (NSDecimalNumber *)_discountPercentageWithBaseValue:(NSDecimalNumber *)baseValue;
+- (NSDecimalNumber *)_discountPercentageWithBaseValue:(NSDecimalNumber *)baseValue roundToScale:(NSUInteger)scale;
 
 @end

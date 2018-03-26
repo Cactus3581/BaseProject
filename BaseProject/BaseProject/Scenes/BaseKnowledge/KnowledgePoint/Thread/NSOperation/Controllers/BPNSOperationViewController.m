@@ -1,18 +1,18 @@
 //
-//  BPDesignPatternsKVOView.m
+//  BPNSOperationViewController.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2018/2/12.
+//  Created by xiaruzhen on 2018/3/20.
 //  Copyright © 2018年 cactus. All rights reserved.
 //
 
-#import "BPDesignPatternsKVOView.h"
+#import "BPNSOperationViewController.h"
 
-@interface BPDesignPatternsKVOView ()
+@interface BPNSOperationViewController ()
 
 @end
 
-@implementation BPDesignPatternsKVOView
+@implementation BPNSOperationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

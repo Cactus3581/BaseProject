@@ -18,6 +18,7 @@
 
 @implementation BPAppDelegate
 
+//程序准备就绪 将要运行时执行 我们一般用来进行 window创建 以及视图控件等等配置
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     BPRootTabBarController *RootVC = [[BPRootTabBarController alloc]init];
     self.window.rootViewController = RootVC;
@@ -78,26 +79,36 @@
     [Bugly startWithAppId:@"dc9e61f4db" developmentDevice:YES config:debugMode];
 }
 
+//程序将要取消活跃状态 执行的方法  我们可以进行歌曲 视频的暂停操作
 - (void)applicationWillResignActive:(UIApplication *)application {
-
+    BPLog(@"程序将要取消活跃状态%s %d",__FUNCTION__,__LINE__);
 }
 
+//程序已经进入到后台  执行的方法(一般用来保存临时的数据)
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    BPLog(@"程序已经进入到后台执行的方法 %s %d",__FUNCTION__,__LINE__);
 
 }
 
+//程序将要进入到前台  执行的方法(一般进行视频 歌曲数据的恢复)
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+    BPLog(@"程序将要进入到前台 %s %d",__FUNCTION__,__LINE__);
 
 }
 
+//程序已经变成活跃状态执行的方法   一般进行UI界面刷新
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    BPLog(@"程序已经变成活跃状态 %s %d",__FUNCTION__,__LINE__);
+
 }
 
+//程序将要退出执行的方法
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    BPLog(@"程序将要退出 %s %d",__FUNCTION__,__LINE__);
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
