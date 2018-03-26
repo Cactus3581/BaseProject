@@ -33,13 +33,13 @@
  */
 - (void)configChildViewController{
     BPFeatureViewController *featureVC = [[BPFeatureViewController alloc]init];
-    [self setUpChildViewController:featureVC image:[UIImage imageNamed:@""] title:@"常用场景"];
+    [self setUpChildViewController:featureVC image:[UIImage imageNamed:@""] title:@"场景"];
     
     BPBaseKnowledgeViewController *baseKnowledgeVC = [[BPBaseKnowledgeViewController alloc]init];
-    [self setUpChildViewController:baseKnowledgeVC image:[UIImage imageNamed:@""] title:@"基本知识点"];
+    [self setUpChildViewController:baseKnowledgeVC image:[UIImage imageNamed:@""] title:@"知识点"];
     
     BPImprovingTipViewController *improvingTipVC = [[BPImprovingTipViewController alloc]init];
-    [self setUpChildViewController:improvingTipVC image:[UIImage imageNamed:@""] title:@"提升技巧"];
+    [self setUpChildViewController:improvingTipVC image:[UIImage imageNamed:@""] title:@"技巧"];
 
 }
 
