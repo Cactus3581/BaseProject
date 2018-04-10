@@ -18,8 +18,8 @@
     3. Model基类
     4. Scroll（主要是TableView及CollectionView）的基类
     5. ViewController的基类
-3. General：目前暂时没用到
-4. Helpers：目前暂时没用到
+3. General：这个目录放会被重用的Views/Classes。*目前暂时没用到*
+4. Helpers：这个目录放一些助手类，文件名与功能挂钩。助手类的主要作用是帮助Controller瘦身，也可以提供一定程度的复用。*目前暂时没用到* 
 5. Macro
     1. Constant：字符串常量，能用Constant的不用Macro
     2. Macro：宏定义的常用方法

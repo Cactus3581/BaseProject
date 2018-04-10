@@ -15,4 +15,5 @@
 @property (nonatomic,strong) BPSimpleModel *model;
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
+- (void)setModel:(BPSimpleModel *)model indexPath:(NSIndexPath *)indexPath;
 @end

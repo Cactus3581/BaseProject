@@ -164,6 +164,11 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     NSLog(@"4 - 已经结束拖拽");
+    if (decelerate == NO) {
+        NSLog(@"scrollView停止滚动，完全静止");
+    } else {
+        NSLog(@"用户停止拖拽，但是scrollView由于惯性，会继续滚动，并且减速");
+    }
 }
 
 // 关键执行操作时机

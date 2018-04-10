@@ -32,7 +32,7 @@
         [viewModel configTableviewCell:^BPSimpleTableViewCell * _Nonnull(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
             strongify(viewModel);
             BPSimpleTableViewCell *cell = [BPSimpleTableViewCell cellWithTableView:tableView];
-            cell.model = viewModel.data[indexPath.row];
+            [cell setModel:viewModel.data[indexPath.row] indexPath:indexPath];
             return cell;
         }];
         weakify(self);
@@ -89,5 +89,3 @@
 }
 
 @end
-
-

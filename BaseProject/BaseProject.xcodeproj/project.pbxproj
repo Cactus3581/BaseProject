@@ -156,6 +156,12 @@
 		01352FE31FD2DDA20011D65C /* FeatureCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01352FE21FD2DDA20011D65C /* FeatureCatalog.plist */; };
 		01352FF51FD2E1AA0011D65C /* BPNaviProperyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01352FF41FD2E1AA0011D65C /* BPNaviProperyViewController.m */; };
 		01352FFB1FD2E1E90011D65C /* BPNaviCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01352FFA1FD2E1E90011D65C /* BPNaviCollectionViewController.m */; };
+		0137C73D207B3AD200F6B6CE /* BPPresentAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C73C207B3AD200F6B6CE /* BPPresentAViewController.m */; };
+		0137C740207B3ADF00F6B6CE /* BPPresentBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C73F207B3ADF00F6B6CE /* BPPresentBViewController.m */; };
+		0137C743207B4A6000F6B6CE /* BPPresentCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C742207B4A6000F6B6CE /* BPPresentCViewController.m */; };
+		0137C751207B656B00F6B6CE /* BPAutoLayoutCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C750207B656B00F6B6CE /* BPAutoLayoutCodeViewController.m */; };
+		0137C755207B658400F6B6CE /* BPAutoLayoutXIBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C753207B658400F6B6CE /* BPAutoLayoutXIBViewController.m */; };
+		0137C756207B658400F6B6CE /* BPAutoLayoutXIBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0137C754207B658400F6B6CE /* BPAutoLayoutXIBViewController.xib */; };
 		013B78841FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 013B78831FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m */; };
 		01490C081FF548650035492D /* BPGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C071FF548650035492D /* BPGCDViewController.m */; };
 		01490C0B1FF548740035492D /* BPMemoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C0A1FF548740035492D /* BPMemoryViewController.m */; };
@@ -828,6 +834,17 @@
 		01352FF41FD2E1AA0011D65C /* BPNaviProperyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNaviProperyViewController.m; sourceTree = "<group>"; };
 		01352FF91FD2E1E90011D65C /* BPNaviCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNaviCollectionViewController.h; sourceTree = "<group>"; };
 		01352FFA1FD2E1E90011D65C /* BPNaviCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNaviCollectionViewController.m; sourceTree = "<group>"; };
+		0137C73B207B3AD200F6B6CE /* BPPresentAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPresentAViewController.h; sourceTree = "<group>"; };
+		0137C73C207B3AD200F6B6CE /* BPPresentAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPresentAViewController.m; sourceTree = "<group>"; };
+		0137C73E207B3ADF00F6B6CE /* BPPresentBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPresentBViewController.h; sourceTree = "<group>"; };
+		0137C73F207B3ADF00F6B6CE /* BPPresentBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPresentBViewController.m; sourceTree = "<group>"; };
+		0137C741207B4A6000F6B6CE /* BPPresentCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPresentCViewController.h; sourceTree = "<group>"; };
+		0137C742207B4A6000F6B6CE /* BPPresentCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPresentCViewController.m; sourceTree = "<group>"; };
+		0137C74F207B656B00F6B6CE /* BPAutoLayoutCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAutoLayoutCodeViewController.h; sourceTree = "<group>"; };
+		0137C750207B656B00F6B6CE /* BPAutoLayoutCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAutoLayoutCodeViewController.m; sourceTree = "<group>"; };
+		0137C752207B658400F6B6CE /* BPAutoLayoutXIBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAutoLayoutXIBViewController.h; sourceTree = "<group>"; };
+		0137C753207B658400F6B6CE /* BPAutoLayoutXIBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAutoLayoutXIBViewController.m; sourceTree = "<group>"; };
+		0137C754207B658400F6B6CE /* BPAutoLayoutXIBViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPAutoLayoutXIBViewController.xib; sourceTree = "<group>"; };
 		013B78821FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BPCreate.h"; sourceTree = "<group>"; };
 		013B78831FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+BPCreate.m"; sourceTree = "<group>"; };
 		01490C061FF548650035492D /* BPGCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPGCDViewController.h; sourceTree = "<group>"; };
@@ -2565,6 +2582,7 @@
 		010FBC3F206018B500BC9EC4 /* ImprovingTips */ = {
 			isa = PBXGroup;
 			children = (
+				0137C73A207B3AA800F6B6CE /* Present */,
 				017F82C82063A87B00B656BA /* AddChildVC */,
 				010FBD1B20601D9E00BC9EC4 /* CollectionViewAnimation */,
 				010FBD1120601D9D00BC9EC4 /* Palette */,
@@ -2998,6 +3016,111 @@
 				01352FF41FD2E1AA0011D65C /* BPNaviProperyViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0137C73A207B3AA800F6B6CE /* Present */ = {
+			isa = PBXGroup;
+			children = (
+				0137C73B207B3AD200F6B6CE /* BPPresentAViewController.h */,
+				0137C73C207B3AD200F6B6CE /* BPPresentAViewController.m */,
+				0137C73E207B3ADF00F6B6CE /* BPPresentBViewController.h */,
+				0137C73F207B3ADF00F6B6CE /* BPPresentBViewController.m */,
+				0137C741207B4A6000F6B6CE /* BPPresentCViewController.h */,
+				0137C742207B4A6000F6B6CE /* BPPresentCViewController.m */,
+			);
+			path = Present;
+			sourceTree = "<group>";
+		};
+		0137C744207B64EB00F6B6CE /* AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				0137C746207B653F00F6B6CE /* XIB */,
+				0137C745207B653700F6B6CE /* Code_Masonry */,
+			);
+			path = AutoLayout;
+			sourceTree = "<group>";
+		};
+		0137C745207B653700F6B6CE /* Code_Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				0137C74B207B655000F6B6CE /* Controllers */,
+				0137C74C207B655000F6B6CE /* Models */,
+				0137C74E207B655000F6B6CE /* ViewModels */,
+				0137C74D207B655000F6B6CE /* Views */,
+			);
+			path = Code_Masonry;
+			sourceTree = "<group>";
+		};
+		0137C746207B653F00F6B6CE /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				0137C747207B654B00F6B6CE /* Controllers */,
+				0137C748207B654B00F6B6CE /* Models */,
+				0137C74A207B654C00F6B6CE /* ViewModels */,
+				0137C749207B654C00F6B6CE /* Views */,
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
+		0137C747207B654B00F6B6CE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0137C752207B658400F6B6CE /* BPAutoLayoutXIBViewController.h */,
+				0137C753207B658400F6B6CE /* BPAutoLayoutXIBViewController.m */,
+				0137C754207B658400F6B6CE /* BPAutoLayoutXIBViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0137C748207B654B00F6B6CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0137C749207B654C00F6B6CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0137C74A207B654C00F6B6CE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0137C74B207B655000F6B6CE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0137C74F207B656B00F6B6CE /* BPAutoLayoutCodeViewController.h */,
+				0137C750207B656B00F6B6CE /* BPAutoLayoutCodeViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0137C74C207B655000F6B6CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0137C74D207B655000F6B6CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0137C74E207B655000F6B6CE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		01490C021FF547DA0035492D /* KnowledgePoint */ = {
@@ -4465,6 +4588,7 @@
 		0195EA252013724E00DC59A1 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
+				0137C744207B64EB00F6B6CE /* AutoLayout */,
 				01EAA09C2015F0150084808D /* Autoresizing */,
 				0195EA262013727800DC59A1 /* AutoLayoutProcess */,
 				0195EA272013729500DC59A1 /* Draw */,
@@ -6344,6 +6468,7 @@
 				01A1921E2004E61F005EE4CD /* BPCollectionViewCell.xib in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
 				0184BF831FD6DB2C00CB9AAD /* BPTest_XibViewController.xib in Resources */,
+				0137C756207B658400F6B6CE /* BPAutoLayoutXIBViewController.xib in Resources */,
 				01352FE31FD2DDA20011D65C /* FeatureCatalog.plist in Resources */,
 				01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */,
 				014ED0DD1FF0135000D2926C /* launchImage@3x.png in Resources */,
@@ -6599,6 +6724,7 @@
 				01C935B41FC3399F00D98FD6 /* BPSimpleTableController.m in Sources */,
 				010DB7321FDD4D450099E66F /* UIScrollView+BPPages.m in Sources */,
 				01E1DC26202ECDB100529ADB /* BPVolumeQueueHelper.m in Sources */,
+				0137C751207B656B00F6B6CE /* BPAutoLayoutCodeViewController.m in Sources */,
 				01D22BD51FDD814000BCC4AD /* CALayer+BPAddForFrame.m in Sources */,
 				019AA91820205BE80090B038 /* CADisplayLink+BPAdd.m in Sources */,
 				01DF32721FDD3BB100B8A955 /* NSDate+BPnternetDateTime.m in Sources */,
@@ -6622,7 +6748,9 @@
 				010DB7201FDD4D450099E66F /* UIWebView+BPStyle.m in Sources */,
 				01A192252004E61F005EE4CD /* BPAdaptiveHeightCell.m in Sources */,
 				01490C0B1FF548740035492D /* BPMemoryViewController.m in Sources */,
+				0137C73D207B3AD200F6B6CE /* BPPresentAViewController.m in Sources */,
 				01DF325A1FDD3B9D00B8A955 /* NSData+BPEncrypt.m in Sources */,
+				0137C740207B3ADF00F6B6CE /* BPPresentBViewController.m in Sources */,
 				01DF32751FDD3BB100B8A955 /* NSDate+BPFormatter.m in Sources */,
 				010DB7351FDD4D450099E66F /* UITextField+BPShake.m in Sources */,
 				010DB7261FDD4D450099E66F /* UIColor+BPHEX.m in Sources */,
@@ -6796,6 +6924,7 @@
 				01ADC1F61FB492C1009150F0 /* BPBaseTableViewCell.m in Sources */,
 				010FBD2320601D9E00BC9EC4 /* UIColor+Hex.m in Sources */,
 				010DB7971FDD4D640099E66F /* UIView+BPVisuals.m in Sources */,
+				0137C743207B4A6000F6B6CE /* BPPresentCViewController.m in Sources */,
 				01D22BD91FDD814000BCC4AD /* UIScreen+BPAdd.m in Sources */,
 				01E672BF2014E9ED00FB22D4 /* UIImageViewController.m in Sources */,
 				01DF31721FDD3A0900B8A955 /* CAAnimation+BPEasingEquations.m in Sources */,
@@ -6805,6 +6934,7 @@
 				013B78841FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m in Sources */,
 				01A191CE2004E1DC005EE4CD /* BPWindowController.m in Sources */,
 				01C31F85200FA1CD0096C2E0 /* BPAnchorPopTableView.m in Sources */,
+				0137C755207B658400F6B6CE /* BPAutoLayoutXIBViewController.m in Sources */,
 				010DB78B1FDD4D640099E66F /* UIView+BPAnimation.m in Sources */,
 				010DB70D1FDD4D450099E66F /* UIImageView+BPBetterFace.m in Sources */,
 				01C0B6251FFC87AB005BB4A5 /* PriorityBoxArray.m in Sources */,

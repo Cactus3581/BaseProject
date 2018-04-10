@@ -58,11 +58,11 @@
 #endif
 
 #ifndef kKeyWindow
-#define kKeyWindow          ([UIApplication sharedApplication].keyWindow)
+#define kKeyWindow          [UIApplication sharedApplication].keyWindow
 #endif
 
 #ifndef kAppDelegate
-#define kAppDelegate        ([UIApplication sharedApplication].delegate)
+#define kAppDelegate        (BPAppDelegate *)[[UIApplication sharedApplication] delegate]
 #endif
 
 //APP版本号
@@ -308,6 +308,11 @@ do { \
 [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0 \
 blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
+#endif
+
+//随机数
+#ifndef kRandomNumber
+#define kRandomNumber(from,to) ((int)((from) + (arc4random() % ((to) - (from) + 1))))
 #endif
 
 //获取一段时间间隔

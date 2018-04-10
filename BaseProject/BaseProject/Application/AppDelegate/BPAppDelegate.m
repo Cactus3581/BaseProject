@@ -13,6 +13,7 @@
 #import "BPBaseNavigationController.h"
 
 @interface BPAppDelegate ()
+@property (strong, nonatomic) UITabBarController *rootTabbarViewController;
 
 @end
 
@@ -20,8 +21,8 @@
 
 //程序准备就绪 将要运行时执行 我们一般用来进行 window创建 以及视图控件等等配置
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    BPRootTabBarController *RootVC = [[BPRootTabBarController alloc]init];
-    self.window.rootViewController = RootVC;
+    self.rootTabbarViewController = [[BPRootTabBarController alloc]init];
+    self.window.rootViewController = self.rootTabbarViewController;
     //[self configLaunchImage]; // 代码启动图片（在info里把launch key删除，防止展示两次）
     [self configSDKS];
     return YES;
@@ -71,6 +72,60 @@
         [launchView removeFromSuperview];
     }];
      
+}
+
+- (void)testCurrentViewController {
+    UIViewController *visibleViewController = [self currentViewController];
+//    if ([visibleViewController isKindOfClass:[KSScanPaperContainerController class]]) {
+//    }
+}
+
+// 获取导航栏控制器
+- (UINavigationController *)selectedNavigationController {
+    return self.rootTabbarViewController.selectedViewController;
+}
+
+#pragma mark - 获取当前展示的vc(参数传入导航试图控制器或者UITabBarController,self.window.rootViewController 也可。（这个比较通用）)
+- (UIViewController*)currentViewController {
+    // Find best view controller
+    UIViewController* viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    return [self findcurrentViewController:viewController];
+}
+
+- (UIViewController*)findcurrentViewController:(UIViewController*)vc {
+    if (vc.presentedViewController) {
+        // Return presented view controller
+        return [self findcurrentViewController:vc.presentedViewController];
+        
+    } else if ([vc isKindOfClass:[UISplitViewController class]]) {
+        // Return right hand side
+        UISplitViewController* svc = (UISplitViewController*) vc;
+        if (svc.viewControllers.count > 0)
+            return [self findcurrentViewController:svc.viewControllers.lastObject];
+        else
+            return vc;
+        
+    } else if ([vc isKindOfClass:[UINavigationController class]]) {
+        // Return top view
+        UINavigationController* svc = (UINavigationController*) vc;
+        if (svc.viewControllers.count > 0)
+            return [self findcurrentViewController:svc.topViewController];
+        else
+            return vc;
+        
+    } else if ([vc isKindOfClass:[UITabBarController class]]) {
+        // Return visible view
+        UITabBarController* svc = (UITabBarController*) vc;
+        if (svc.viewControllers.count > 0)
+            return [self findcurrentViewController:svc.selectedViewController];
+        else
+            return vc;
+        
+    } else {
+        // Unknown view controller type, return last child view controller
+        return vc;
+        
+    }
 }
 
 - (void)configSDKS {

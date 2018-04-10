@@ -167,7 +167,6 @@
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     BPLog(@"ViewController: 6-viewWillLayoutSubviews");
-    
 }
 
 //在view的layoutSubViews或者ViewController的viewDidLayoutSubviews方法里后可以拿到view的实际frame，所以当我们真的需要frame的时候需要在这个时间点以后才能拿到。
@@ -201,10 +200,24 @@
 }
 
 - (void)initSubView {
+    UIButton *backBtn = [[UIButton alloc]init];
+    backBtn.frame = CGRectMake(0, 100, 44, 44);
+    [backBtn setImage:[UIImage imageNamed:bp_naviItem_backImage] forState:UIControlStateNormal];
+    [backBtn addTarget:self action:@selector(changeFrame) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backBtn];
+    
     [self.layoutView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view);
         make.width.height.equalTo(@200);
     }];
+}
+
+- (void)changeFrame {
+//    [self.layoutView mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.equalTo(self.view).offset(-50);
+//    }];
+    [self.layoutView changeSubViewFrame];
 }
 
 - (BPLayoutView *)layoutView {

@@ -129,9 +129,20 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)bp_getPinYinWithChineseString;
 
 #pragma mark - Hex string
-
 /**将16进制的hexString转为普通string*/
 - (NSString *)bp_hexStringToString;
+
+#pragma mark - 字典 URL参数
+//参数字典转URL参数
+- (NSString *)bp_getUrlParametersWithDict:(NSDictionary *)dict;
+
+/**截取URL中的参数：直接使用字符串分割*/
+- (NSMutableDictionary *)bp_getURLParameters;
+//另一种方法则是使用系统的类 NSURLComponents
+
+//获取URL的指定参数对应值
+- (NSString *)bp_getParamKey:(NSString *)param;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -26,14 +26,69 @@ static NSString *cellIdentifier = @"BPSimpleTableViewCell";
     return cell;
 }
 
-- (void)setModel:(BPSimpleModel *)model {
+- (void)setModel:(BPSimpleModel *)model indexPath:(NSIndexPath *)indexPath {
+    _model = model;
     if (model.subVc_array.count) {
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }else {
         self.accessoryType = UITableViewCellAccessoryNone;
     }
-    self.textLabel.text = model.title;
+    if (indexPath) {
+        self.textLabel.text = [NSString stringWithFormat:@"%ld. %@",indexPath.row+1,model.title];
+    }else {
+        self.textLabel.text = model.title;
+    }
     self.detailTextLabel.text = model.briefIntro;
+    
+    switch (model.importance) {
+        case BPImportanceRegular: {
+            
+        }
+            break;
+            
+        case BPImportanceMedium: {
+            
+        }
+            break;
+            
+        case BPImportanceHigh: {
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    switch (model.completePerformance) {
+        case BPCompletePerformanceNone: {
+            
+        }
+            break;
+            
+        case BPCompletePerformanceDoing: {
+            
+        }
+            break;
+            
+        case BPCompletePerformanceWillDone: {
+            
+        }
+            break;
+            
+        case BPCompletePerformanceDone: {
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void)setModel:(BPSimpleModel *)model {
+    _model = model;
+    [self setModel:model indexPath:nil];
 }
 
 - (void)awakeFromNib {
@@ -42,8 +97,6 @@ static NSString *cellIdentifier = @"BPSimpleTableViewCell";
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
 }
 
 @end
-

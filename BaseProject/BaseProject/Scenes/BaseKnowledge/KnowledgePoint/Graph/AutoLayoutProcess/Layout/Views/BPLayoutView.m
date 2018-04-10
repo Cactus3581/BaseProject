@@ -15,7 +15,6 @@
 //https://blog.cnbluebox.com/blog/2015/02/02/autolayout2/
 @interface BPLayoutView()
 @property (nonatomic,weak) UIButton *button;
-
 @end
 
 @implementation BPLayoutView
@@ -245,6 +244,12 @@
          */
         [self setNeedsLayout];
         [self layoutIfNeeded];
+    }];
+}
+
+- (void)changeSubViewFrame {
+    [self.button mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(-20);
     }];
 }
 

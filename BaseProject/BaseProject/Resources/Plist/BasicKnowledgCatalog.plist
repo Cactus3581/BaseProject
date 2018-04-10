@@ -232,6 +232,33 @@
 							</dict>
 						</array>
 					</dict>
+					<dict>
+						<key>title</key>
+						<string>AutoLayout</string>
+						<key>fileName</key>
+						<string>BPSimpleTableController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>XIB自动布局</string>
+								<key>fileName</key>
+								<string>BPAutoLayoutXIBViewController</string>
+								<key>briefIntro</key>
+								<string>约束优先级的使用，抗压缩，active的使用</string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>纯代码自动布局</string>
+								<key>fileName</key>
+								<string>BPAutoLayoutCodeViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+						</array>
+					</dict>
 				</array>
 			</dict>
 			<dict>
@@ -698,6 +725,73 @@
 			<dict>
 				<key>title</key>
 				<string>Block</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>研究方向</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>音视频：AVFoundation</string>
+				<key>fileName</key>
+				<string> </string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>网络协议：AFN，socket，im</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>图像：GPUImage，CoreImage</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>优化：列表优化和启动优化</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>安全性：捕捉bug上传机制，和解析bug，再深一点就是热更新</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>地图：CoreLocation，MapKit</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>文字排版渲染</string>
 				<key>fileName</key>
 				<string></string>
 				<key>briefIntro</key>

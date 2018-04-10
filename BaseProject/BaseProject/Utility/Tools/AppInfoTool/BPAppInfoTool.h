@@ -22,5 +22,7 @@
 //设备类型,iPhone,iPad
 @property (strong, nonatomic,readonly) NSString *mobileType;
 
+//获取网络时间,防止手机系统时间人为修改
+- (void)getInternetDate;
 
 @end

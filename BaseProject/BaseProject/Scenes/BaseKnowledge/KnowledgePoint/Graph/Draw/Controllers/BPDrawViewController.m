@@ -53,10 +53,7 @@
     [self graphicsBeginImageContextWithOptions_CG];
     
     [self drawViewLayer];
-    
 }
-
-
 
 - (void)drawViewLayer {
     BPDrawView_Layer *view = [[BPDrawView_Layer alloc] init];

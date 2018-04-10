@@ -40,7 +40,6 @@
     
     BPImprovingTipViewController *improvingTipVC = [[BPImprovingTipViewController alloc]init];
     [self setUpChildViewController:improvingTipVC image:[UIImage imageNamed:@""] title:@"技巧"];
-
 }
 
 /**

@@ -13,4 +13,5 @@
 + (BPDesignPatternsSingleClass *)shareSingleClass;
 
 + (BPDesignPatternsSingleClass *)shareSingleClassB;
+
 @end

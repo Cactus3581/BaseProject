@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BPLayoutView : UIView
-
+- (void)changeSubViewFrame;
 @end
