@@ -28,7 +28,7 @@
 
 - (void)prepareLayout{
     [super prepareLayout];
-//    NSLog(@"prepareLayout");
+//    BPLog(@"prepareLayout");
     _contentWidth = 0;
     _realItemSpacing = _property.itemSpacing;
     //把所有title组合成一个字符串计算所有的文字的宽度

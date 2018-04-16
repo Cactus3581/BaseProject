@@ -63,7 +63,7 @@
 
 //弹框消失时调用的方法
 -(void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController{
-    NSLog(@"弹框已经消失");
+    BPLog(@"弹框已经消失");
 }
 
 #pragma mark -cell - delegate

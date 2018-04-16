@@ -9,6 +9,7 @@
 #import "BPPhotoBrowserViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <Photos/Photos.h>
 
 @interface BPPhotoBrowserViewController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic,strong) UIButton *chooseImageBtn;
@@ -148,7 +149,7 @@
      
      */
     
-    NSLog(@"%@", info);
+    BPLog(@"%@", info);
     [self handleMediaWithInfo:info];
 }
 
@@ -161,11 +162,11 @@
 - (void)handleMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     NSString *type = [info objectForKey:@"UIImagePickerControllerMediaType"];
     if (![type isEqualToString:@"public.image"]){
-        NSLog(@"请选择图片格式");
+        BPLog(@"请选择图片格式");
     }
     NSURL *assetUrl = [info objectForKey:@"UIImagePickerControllerReferenceURL"];
     if (!assetUrl){
-        NSLog(@"出现未知错误");
+        BPLog(@"出现未知错误");
     }
     __weak typeof (self) weakSelf = self;
     [self.assetLibrary assetForURL:assetUrl resultBlock:^(ALAsset *asset) {
@@ -173,7 +174,7 @@
         UIImage *image =  [UIImage imageWithCGImage:fullRef];
         weakSelf.chooseImageView.image = image;
     } failureBlock:^(NSError *error) {
-        NSLog(@"出错了");
+        BPLog(@"出错了");
     }];
 }
 
@@ -183,6 +184,42 @@
         _assetLibrary = [[ALAssetsLibrary alloc]init];
     }
     return _assetLibrary;
+}
+
+- (void)saveCurrentImageClick{
+    __weak typeof(self) weakSelf = self;
+    UIImage *image = nil;
+    [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+        PHAssetChangeRequest *req = [PHAssetChangeRequest creationRequestForAssetFromImage:image];
+        req = nil;
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (success) {
+                BPLog(@"保存成功!");
+            }else{
+                if ([PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusAuthorized) {
+                     BPLog(@"保存成功!");
+                }else{
+                    // 处理第三种情况,监听用户第一次授权情况
+                    if ([PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusNotDetermined) {
+                        //请求允许访问允许访问的机会
+                        [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+                            if (status == PHAuthorizationStatusAuthorized) {
+                                BPLog(@"用户同意授权相册");
+                                // 递归处理一次 , 因为系统框只弹出这一次
+                                [weakSelf saveCurrentImageClick];
+                                return ;
+                            }else {
+                                BPLog(@"用户拒绝授权相册");
+                            }
+                        }];
+                    } else{
+                         BPLog(@"暂无权限访问您的相册!");
+                    }
+                }
+            }
+        });
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -34,31 +34,31 @@
     //以nil结尾  nil之后的对象不再存储
     
     NSArray  *array = [[NSArray alloc]initWithObjects:Nokia ,apple,mi, nil];// 不可变数组，不允许修改，只能取
-    NSLog(@"%@",array);
+    BPLog(@"%@",array);
     NSArray *a = [NSArray arrayWithObjects:@"23232",@"dsd",@23,@"si 家", nil];
-    NSLog(@"%@===========",a);
+    BPLog(@"%@===========",a);
     //数组元素个数
     NSInteger count = [array count];
-    NSLog(@"count = %ld",count);
+    BPLog(@"count = %ld",count);
     
     //访问数组元素
     NSString *ne= [array objectAtIndex:0];  // 只能取的方法
-    NSLog(@"%@,%@",ne,array[0]);
-    NSLog(@"%@",array[1]);
+    BPLog(@"%@,%@",ne,array[0]);
+    BPLog(@"%@",array[1]);
     
     //通过对象找到索引值
     //indexOfObject:只是找到第一个满足条件的对象下标 后面的如果有一样的就找不到了
     NSInteger index = [array indexOfObject:Nokia];
-    NSLog(@"%ld",index);
+    BPLog(@"%ld",index);
     
     //遍历数组
     for (int i = 0; i<array.count; i++) {
-        NSLog(@"%@",[array objectAtIndex:i]);
+        BPLog(@"%@",[array objectAtIndex:i]);
     }
     
     //排序
     NSArray *sortArray = [array sortedArrayUsingSelector:@selector(compare:)];
-    NSLog(@"%@",sortArray);
+    BPLog(@"%@",sortArray);
     
 #pragma mark - NSMutableArray 可变数组
     
@@ -73,26 +73,26 @@
     NSMutableArray *muArr = [[NSMutableArray alloc]initWithObjects :xiaoyi,xiaoyer,xiaosan,xiaosi,xiaowu,nil];
     
     //打印数组
-    NSLog(@"%@",muArr);
+    BPLog(@"%@",muArr);
     
     //循环便利打印
     for (int i =0 ; i<5; i++) {
-        NSLog(@"%@",[muArr objectAtIndex:i]);
+        BPLog(@"%@",[muArr objectAtIndex:i]);
     }
     
     
     //增加
     [muArr addObject:xiaoliu];
     [muArr addObject:xiaoqi];
-    NSLog(@"%@",muArr);
+    BPLog(@"%@",muArr);
     
     //插入
     [muArr insertObject:xiaoqi atIndex:0];
-    NSLog(@"%@",muArr);
+    BPLog(@"%@",muArr);
     
     //通过下标交换位置
     [muArr exchangeObjectAtIndex:0 withObjectAtIndex:6];
-    NSLog(@"%@",muArr);
+    BPLog(@"%@",muArr);
     
     
     
@@ -100,15 +100,15 @@
     
     //会将所有符合条件的对象全部移除
     [muArr removeObject:xiaoqi];
-    NSLog(@"%@",muArr);
+    BPLog(@"%@",muArr);
     
     //removeObjectAtIndex:7只会将对应下标的对象移除
     [muArr removeObjectAtIndex:0];
-    NSLog(@"%@",muArr);
+    BPLog(@"%@",muArr);
     
     //removeAllObjects 移除所有的对象。
     [muArr removeAllObjects];
-    NSLog(@"%@",muArr);
+    BPLog(@"%@",muArr);
 
     
 
@@ -129,12 +129,12 @@
     //等同于上面！
     //可改变的数组   数组方法
     [arr sortUsingSelector :@selector(compare:)];
-    NSLog(@"%@",arr);
+    BPLog(@"%@",arr);
     
     //不可改变数组   数组排序方法
     NSArray *arr1 = @[@"1",@"8",@"3",@"4"];
     NSArray *sortedArr = [arr1 sortedArrayUsingSelector:@selector(compare:)]; //compare是字符串方法。
-    NSLog(@"%@",sortedArr);
+    BPLog(@"%@",sortedArr);
     
     //对于年龄排序
     BPPerson *stu1 = [BPPerson personWithName:@"zhaoda" weight:13];
@@ -149,9 +149,9 @@
         //放入数组
         [stus addObject:stu];
     }
-    NSLog(@"%@",stus);
+    BPLog(@"%@",stus);
     [stus sortUsingSelector:@selector(compareByAge:)];
-    NSLog(@"%@",stus);
+    BPLog(@"%@",stus);
     
     //按照姓名升序
     [stus sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -160,7 +160,7 @@
         BPPerson *stu2 = (BPPerson *)obj2;
         return [stu1.name compare:stu2.name];
     }];
-    NSLog(@"%@",stus);
+    BPLog(@"%@",stus);
 
     //按照姓名降序
     [stus sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -169,7 +169,7 @@
         BPPerson *stu2 = (BPPerson *)obj2;
         return -[stu1.name compare:stu2.name];
     }];
-    NSLog(@"%@",stus);
+    BPLog(@"%@",stus);
 
     NSComparisonResult(^paixu)(id obj1, id obj2) = ^NSComparisonResult(id obj1, id obj2)
     {
@@ -188,7 +188,7 @@
     //对于快速枚举 枚举数组 获取到每一个数组元素 ,枚举字典 获取到每一个key值，枚举集合 获取到每一个集合元素。
     //三大集合都可以使用快速枚举来遍历打印。但是也有弊端.在枚举过程中，不允许对集合中的元素进行增加或者减少
     for (NSString *str in arr) {
-        NSLog(@"%@",str);
+        BPLog(@"%@",str);
     }
 }
 

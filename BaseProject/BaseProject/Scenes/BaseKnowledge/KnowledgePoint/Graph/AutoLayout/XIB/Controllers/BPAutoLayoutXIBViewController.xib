@@ -26,16 +26,15 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="我是中国人我是中国人很好" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fX-pT-jAG">
-                    <rect key="frame" x="10" y="478" width="137" height="21"/>
-                    <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="我是中国人我是中国人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzW-1Y-Cxb">
+                    <rect key="frame" x="10" y="100" width="173.5" height="20.5"/>
+                    <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是中国人对啊不错啊哈哈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JM-9V-ayV">
-                    <rect key="frame" x="157" y="478" width="208" height="21"/>
-                    <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcz-vc-yB4">
+                    <rect key="frame" x="193.5" y="100" width="171.5" height="142.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -43,14 +42,14 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="8JM-9V-ayV" firstAttribute="centerY" secondItem="4fX-pT-jAG" secondAttribute="centerY" id="3wa-fP-y3i"/>
-                <constraint firstItem="8JM-9V-ayV" firstAttribute="leading" secondItem="4fX-pT-jAG" secondAttribute="trailing" constant="10" id="K6h-xN-a3U"/>
+                <constraint firstItem="lzW-1Y-Cxb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="L8T-6W-h7d"/>
                 <constraint firstItem="peC-md-4Aq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" priority="250" constant="145" id="NzI-pv-fwG"/>
                 <constraint firstAttribute="trailing" secondItem="peC-md-4Aq" secondAttribute="trailing" constant="145" id="TCt-Af-q6Z"/>
-                <constraint firstItem="4fX-pT-jAG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="ZlU-Om-msO"/>
+                <constraint firstAttribute="trailing" secondItem="qcz-vc-yB4" secondAttribute="trailing" constant="10" id="TSM-j8-3XG"/>
+                <constraint firstItem="lzW-1Y-Cxb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Z7D-BD-xDo"/>
+                <constraint firstItem="qcz-vc-yB4" firstAttribute="top" secondItem="lzW-1Y-Cxb" secondAttribute="top" id="aIS-tO-Uxm"/>
+                <constraint firstItem="qcz-vc-yB4" firstAttribute="leading" secondItem="lzW-1Y-Cxb" secondAttribute="trailing" constant="10" id="iAs-vw-ruR"/>
                 <constraint firstItem="peC-md-4Aq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="q5W-3f-Fs4"/>
-                <constraint firstItem="4fX-pT-jAG" firstAttribute="top" secondItem="peC-md-4Aq" secondAttribute="bottom" constant="134" id="rBF-1p-DmT"/>
-                <constraint firstAttribute="trailing" secondItem="8JM-9V-ayV" secondAttribute="trailing" constant="10" id="xhz-S2-leC"/>
             </constraints>
         </view>
     </objects>

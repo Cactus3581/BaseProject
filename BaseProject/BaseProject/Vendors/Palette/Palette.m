@@ -472,7 +472,7 @@ int hist[32768];
             // Then offer the box back
             [queue addVBox:vbox];
         }else{
-            NSLog(@"All boxes split");
+            BPLog(@"All boxes split");
             return;
         }
     }

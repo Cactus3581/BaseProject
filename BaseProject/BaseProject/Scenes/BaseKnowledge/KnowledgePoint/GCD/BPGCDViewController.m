@@ -54,16 +54,16 @@
 
     //异步任务1加入串行队列中
     dispatch_async(queue, ^{
-        NSLog(@"串行队列任务1");
+        BPLog(@"串行队列任务1");
         for (NSInteger i = 0; i < 10; i++) {
-            NSLog(@"串行队列任务1_i:%ld",i);
+            BPLog(@"串行队列任务1_i:%ld",i);
         }
     });
     //同步任务2加入串行队列中
     dispatch_sync(queue, ^{
-        NSLog(@"串行队列任务2");
+        BPLog(@"串行队列任务2");
         for (NSInteger i = 0; i < 10; i++) {
-            NSLog(@"串行队列任务2_i:%ld",i);
+            BPLog(@"串行队列任务2_i:%ld",i);
         }
 
     });
@@ -87,7 +87,7 @@
     });
 
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"2");
+        BPLog(@"2");
     });
     //执行顺序 1 -> 2
 }

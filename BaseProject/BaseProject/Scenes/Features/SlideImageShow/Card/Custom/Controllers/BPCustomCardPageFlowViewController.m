@@ -41,7 +41,7 @@
 - (void)rightBarButtonItemClickAction:(id)sender {
     //产生跳转的随机数
     int value = arc4random() % self.imageArray.count;
-    NSLog(@"value~~%d",value);
+    BPLog(@"value~~%d",value);
     [self.pageFlowView scrollToPage:value];
 }
 
@@ -76,12 +76,12 @@
 
 #pragma mark --BPCardPageFlowView Delegate
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
-    NSLog(@"点击了第%ld张图",(long)subIndex + 1);
+    BPLog(@"点击了第%ld张图",(long)subIndex + 1);
     self.indicateLabel.text = [NSString stringWithFormat:@"点击了第%ld张图",(long)subIndex + 1];
 }
 
 - (void)didScrollToPage:(NSInteger)pageNumber inFlowView:(BPCardPageFlowView *)flowView {
-    NSLog(@"BPCustomCardPageFlowViewController 滚动到了第%ld页",pageNumber);
+    BPLog(@"BPCustomCardPageFlowViewController 滚动到了第%ld页",pageNumber);
 }
 
 #warning 假设产品需求左右中间页显示大小为 kScreenWidth - 50, (kScreenWidth - 50) * 9 / 16

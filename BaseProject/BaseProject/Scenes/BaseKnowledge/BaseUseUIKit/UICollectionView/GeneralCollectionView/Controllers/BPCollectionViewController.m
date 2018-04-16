@@ -195,7 +195,7 @@ static NSString *footer_nib_identifier = @"nib_footer";
 
 //已经结束拖拽 触发
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-    NSLog(@"3 - 已经结束拖拽");
+    BPLog(@"3 - 已经结束拖拽");
     
     CGPoint originalTargetContentOffset = CGPointMake(targetContentOffset->x, targetContentOffset->y);
     CGPoint targetCenter = CGPointMake(originalTargetContentOffset.x + CGRectGetWidth(self.collectionView.bounds)/2, CGRectGetHeight(self.collectionView.bounds) / 2);

@@ -74,7 +74,7 @@
     BPAnchorViewAnimationType Animation1 = NormalShowAnimation | NormalRemoveAnimation;
     
     if (type & NormalShowAnimation) {
-        NSLog(@"NormalShowAnimation");
+        BPLog(@"NormalShowAnimation");
     }else if (type & SpringShowAnimation) {
         [self removeAletView];
     }
@@ -83,7 +83,7 @@
 
 - (void)removeAnimation:(BPAnchorViewAnimationType)type {
     if (type & NormalRemoveAnimation) {
-        NSLog(@"NormalShowAnimation");
+        BPLog(@"NormalShowAnimation");
         [self removeAletView];
     }else if (type & SpringRemoveAnimation) {
         [self removeAletView];

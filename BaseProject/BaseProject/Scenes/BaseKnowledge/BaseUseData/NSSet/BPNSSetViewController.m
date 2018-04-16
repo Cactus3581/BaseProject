@@ -28,61 +28,61 @@
     //initWithObjects:在初始化时，一次性存入多个对象，对象和对象之间使用逗号隔开，以nil结尾。重复对象不进行存储。
     
     NSSet *aSet = [[NSSet alloc]initWithObjects:num1,num2,num3,num4,nil];
-    NSLog(@"%@",aSet);
+    BPLog(@"%@",aSet);
     
     //获取元素个数
     NSInteger count = [aSet count];
-    NSLog(@"%ld",count);
+    BPLog(@"%ld",count);
     
     //获取所有集合元素
     NSArray *allObjects = [aSet allObjects];
-    NSLog(@"%@",allObjects);
+    BPLog(@"%@",allObjects);
     
     //获取任意集合元素
     NSNumber *anyNum = [aSet anyObject];
-    NSLog(@"%@",anyNum);
+    BPLog(@"%@",anyNum);
     
     //快速枚举
     for (NSNumber *num in aSet) {
-        NSLog(@"%@",num);
+        BPLog(@"%@",num);
     }
     
     //判断集合是否包含 指定对象
     BOOL iscontain = [aSet containsObject:@1];
-    NSLog(@"%d",iscontain);
+    BPLog(@"%d",iscontain);
     
 #pragma mark - NSMutableSet   可变set
     
     NSMutableSet *muSet = [[NSMutableSet alloc]initWithObjects:@"zhangsan",@"lisi",@"wangwu", nil];
-    NSLog(@"%@",muSet);
+    BPLog(@"%@",muSet);
     
     //增加一个对象
     [muSet addObject:@"zhaoda"];
-    NSLog(@"%@",muSet);
+    BPLog(@"%@",muSet);
     
     //改  也就是替换
     NSSet *set = [NSSet setWithObjects:@"zhangsan",@"lisi",@"wangwu",@"zhaoliu", nil];
     
     [muSet setSet:set];  //没指定怎么知道替换谁
-    NSLog(@"%@",muSet);
+    BPLog(@"%@",muSet);
     
     // 删除某个对象
     [muSet removeObject:@"zhaoliu"];
-    NSLog(@"%@",muSet);
+    BPLog(@"%@",muSet);
     
     // 全部删除
     [muSet removeAllObjects];
-    NSLog(@"%@",muSet);
+    BPLog(@"%@",muSet);
     
     
 #pragma mark -  NSCountedSet
     // 子类是父类的一种扩充
     NSCountedSet *countedSet = [NSCountedSet setWithObjects:@"zhangSan",@"Zhangsan",@"zhangSan",@"lisi", nil];
-    NSLog(@"%@",countedSet);
+    BPLog(@"%@",countedSet);
     
     // 查看集合元素重复出现次数
     NSInteger repeaCount = [countedSet countForObject:@"zhangSan"];
-    NSLog(@"%ld",repeaCount);
+    BPLog(@"%ld",repeaCount);
     //
 }
 - (void)didReceiveMemoryWarning {

@@ -21,7 +21,7 @@
 @implementation BP_ONE_TopSliderCatergoryViewController
 
 - (void)dealloc{
-    NSLog(@"销毁了");
+    BPLog(@"销毁了");
 }
 
 - (void)viewDidLoad {
@@ -88,7 +88,7 @@
 
 /**监听item点击*/
 - (void)catergoryView:(BPFlowCatergoryView *)catergoryView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"点击了%zd个item", indexPath.item);
+    BPLog(@"点击了%zd个item", indexPath.item);
 }
 
 

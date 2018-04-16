@@ -40,7 +40,7 @@
 }
 
 - (void)swipeGesture:(UILongPressGestureRecognizer*)gestureRecognizer{
-    NSLog(@"swipeGesture");
+    BPLog(@"swipeGesture");
 }
 
 - (CGSize)intrinsicContentSize {

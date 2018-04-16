@@ -46,7 +46,7 @@
         [self.blockObj handleBlock1:^(NSDictionary *responseObject) {
     //        [blockAPI test];
             [self test];
-            NSLog(@"ds");
+            BPLog(@"ds");
         }];
     
     BPBlockAPI *blockAPI = [[BPBlockAPI alloc] init];

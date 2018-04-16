@@ -30,25 +30,25 @@
      key value  不会单独的。如果value 没有，key就没意义。
      */
     NSDictionary *xiaoming =[[NSDictionary alloc]initWithObjectsAndKeys:@"xiaoming",@"name",@"男",@"sex",@14, @"age",nil];
-    NSLog(@"%@",xiaoming);
+    BPLog(@"%@",xiaoming);
     
     //通过key 获取Value
     NSString *sex = [xiaoming valueForKey:@"sex"];
-    NSLog(@"%@",sex);
+    BPLog(@"%@",sex);
     
     NSString *name = [xiaoming valueForKey:@"name"];
-    NSLog(@"%@",name);
+    BPLog(@"%@",name);
     
     NSNumber *age = [xiaoming valueForKey:@"age"];  //注意类型转换问题！！！
-    NSLog(@"%@",age);
+    BPLog(@"%@",age);
     
     //获取所有的key
     NSArray *allKey = [xiaoming allKeys];
-    NSLog(@"%@",allKey);
+    BPLog(@"%@",allKey);
     
     //获取所有的value
     NSArray *values = [xiaoming allValues];
-    NSLog(@"%@",values);
+    BPLog(@"%@",values);
     
     //遍历字典  当成数组来做
     //遍历所有的key
@@ -57,26 +57,26 @@
         NSString *key = [allKey objectAtIndex:i];
         //通过key 获取对应的value
         NSString *value = [xiaoming valueForKey:key];
-        NSLog(@"%@",key);
-        NSLog(@"%@",value);
+        BPLog(@"%@",key);
+        BPLog(@"%@",value);
     }
-    NSLog(@"=======================");
+    BPLog(@"=======================");
     //快速枚举
     //快速得到字典中的每一个key值（对于字典，只能枚举到key 想要获取value 还需要使用 valueForKey：方法）
     for (NSString *key in xiaoming) {
-        NSLog(@"%@",key);
+        BPLog(@"%@",key);
         //通过key获取对象的value
-        NSLog(@"value = %@",[xiaoming valueForKey:key]);
+        BPLog(@"value = %@",[xiaoming valueForKey:key]);
     }
-    NSLog(@"=======================");
+    BPLog(@"=======================");
     
     
     
     
 #pragma mark - NSMutableDictionary 可变字典
     NSMutableDictionary *xiaoDing = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"丁岩",@"name",@"男",@"sex",@18,@"age",@"think",@"hobby",nil];
-    NSLog(@"@%@",xiaoDing);;
-    NSLog(@"=======================");
+    BPLog(@"@%@",xiaoDing);;
+    BPLog(@"=======================");
     
     //添加
     //setObject:forkey:  和 setValue:forkey: 都可以添加键值对，但是前者不允许添加的object为空。
@@ -89,24 +89,24 @@
     //添加
     [xiaoDing setValue:@50 forKey:@"weight"];
     // [xiaoDing setValue:nil forKey:@"weight"]; 说明没有value，也就没有他们。
-    NSLog(@"%@",xiaoDing);
-    NSLog(@"－－－－－－－－－－－－－－－");
+    BPLog(@"%@",xiaoDing);
+    BPLog(@"－－－－－－－－－－－－－－－");
     
     //更改内容
     [xiaoDing setValue:@19 forKey:@"age"];
-    NSLog(@"%@",xiaoDing);
+    BPLog(@"%@",xiaoDing);
     
     //删除
     [xiaoDing setValue:nil forKey:@"hobby"];
-    NSLog(@"%@",xiaoDing);
+    BPLog(@"%@",xiaoDing);
     
     //通过给定key 删除对应键值对
     [xiaoDing removeObjectForKey:@"sex"];
-    NSLog(@"%@",xiaoDing);
+    BPLog(@"%@",xiaoDing);
     
     //删除所有键值对
     [xiaoDing removeAllObjects];
-    NSLog(@"%@",xiaoDing);
+    BPLog(@"%@",xiaoDing);
     
     
     /*
@@ -136,7 +136,7 @@
     
     //创建省  字典
     NSDictionary *provinceDic = [NSDictionary dictionaryWithObjectsAndKeys:@"河南省",@"provinceName",cities,@"cityArr", nil];
-    NSLog(@"%@",provinceDic);
+    BPLog(@"%@",provinceDic);
     
     //获取海淀区的人数－》海淀区－》区数组（北京）－》北京市－》市数组
     //获取城市数组
@@ -146,7 +146,7 @@
     NSArray *ares3 = [beijing1 valueForKey:@"areArr"];
     NSDictionary *haidian1 = [ares3 objectAtIndex:0];
     NSNumber *population = [haidian1 valueForKey:@"population"];
-    NSLog(@"%@",population);
+    BPLog(@"%@",population);
     
 }
 

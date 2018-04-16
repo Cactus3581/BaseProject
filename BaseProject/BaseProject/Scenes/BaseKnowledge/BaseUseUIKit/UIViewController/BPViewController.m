@@ -37,7 +37,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    NSLog(@"内存警告%s %d",__FUNCTION__,__LINE__);
+    BPLog(@"内存警告%s %d",__FUNCTION__,__LINE__);
     //将加载过 并且不在window上显示的视图 进行销毁 回收空间
     if ([self isViewLoaded] && !self.view.window) {
         //销毁
@@ -59,17 +59,17 @@
 #pragma mark - 被弃用的旋转 方法
 //屏幕将要旋转时 触发 之前一般用来 进行视频，音频的暂停操作。
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    NSLog(@"屏幕将要旋转");
+    BPLog(@"屏幕将要旋转");
 }
 
 //旋转动画 将要开始时 触发之前一般进行过渡动画的控制
 - (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    NSLog(@"将要开始旋转动画");
+    BPLog(@"将要开始旋转动画");
 }
 
 //旋转结束时 触发之前一般进行暂停视频,音频的重新播放。
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    NSLog(@"结束旋转");
+    BPLog(@"结束旋转");
 }
 
 @end

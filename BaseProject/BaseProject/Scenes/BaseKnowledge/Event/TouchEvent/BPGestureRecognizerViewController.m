@@ -87,8 +87,8 @@
     
     swipe.direction = UISwipeGestureRecognizerDirectionLeft;
     //
-    //    NSLog(@"left = %ld",UISwipeGestureRecognizerDirectionLeft);
-    //    NSLog(@"right = %ld",UISwipeGestureRecognizerDirectionRight);
+    //    BPLog(@"left = %ld",UISwipeGestureRecognizerDirectionLeft);
+    //    BPLog(@"right = %ld",UISwipeGestureRecognizerDirectionRight);
     
     
     //    添加到指定视图
@@ -165,7 +165,7 @@
 //轻拍事件
 -(void)tapAction:(UITapGestureRecognizer *)tap
 {
-    NSLog(@"轻拍");
+    BPLog(@"轻拍");
     //    图片的切换
     _index++;
     if (_index == 8) {
@@ -179,15 +179,15 @@
 {
     ////    判断当前是左清扫 还是右清扫
     //    if ((swipe.direction^UISwipeGestureRecognizerDirectionRight) == UISwipeGestureRecognizerDirectionLeft) {
-    //        NSLog(@"左轻扫");
+    //        BPLog(@"左轻扫");
     //    } else if ((swipe.direction^UISwipeGestureRecognizerDirectionLeft) == UISwipeGestureRecognizerDirectionRight)
     //    {
-    //        NSLog(@"右轻扫");
+    //        BPLog(@"右轻扫");
     //    }
-    //    NSLog(@"%ld",swipe.direction);
+    //    BPLog(@"%ld",swipe.direction);
     //    通过清扫方向，进行判定
     if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
-        NSLog(@"右清扫上一张");
+        BPLog(@"右清扫上一张");
         _index--;
         if (_index<0) {
             _index = 7 ;
@@ -195,7 +195,7 @@
         _imageView.image = [UIImage imageNamed:_images[_index]];
     }else if(swipe.direction == UISwipeGestureRecognizerDirectionLeft)
     {
-        NSLog(@"左清扫下一张");
+        BPLog(@"左清扫下一张");
         _index++;
         if (_index ==8) {
             _index = 0 ;
@@ -207,10 +207,10 @@
 // 长按事件
 -(void)longPressAction:(UILongPressGestureRecognizer *)longPress
 {
-    //    NSLog(@"长按");
+    //    BPLog(@"长按");
     //    对于长按手势有开始和结束状态
     if (longPress.state == UIGestureRecognizerStateBegan) {
-        NSLog(@"长按开始");
+        BPLog(@"长按开始");
     }
     //    将图片保存到相册
     //    UIImageWriteToSavedPhotosAlbum(<#UIImage *image#>, <#id completionTarget#>, <#SEL completionSelector#>, <#void *contextInfo#>)
@@ -230,7 +230,7 @@
 //捏合
 -(void)pinchAction:(UIPinchGestureRecognizer *)pinch
 {
-    //    NSLog(@"w");
+    //    BPLog(@"w");
     //    通过transform进行视图的捏合
     _imageView.transform = CGAffineTransformScale(_imageView.transform,pinch.scale ,pinch.scale );
     //    设置比例
@@ -248,7 +248,7 @@
 
 -(void)screenAction:(UIScreenEdgePanGestureRecognizer *)screen
 {
-    NSLog(@"d");
+    BPLog(@"d");
 }
 
 //屏幕边缘

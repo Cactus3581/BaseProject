@@ -86,12 +86,12 @@
     _sex = @"男";
     _age = 18;
     _weight = 140;
-    NSLog(@"初始化方法:%p",self);
+    BPLog(@"初始化方法:%p",self);
     return self;
 }
 
 -(void)sayHi {
-    NSLog(@"name:%@ sex:%@ age: %ld,weight :%f",_name,_sex,_age,_weight);
+    BPLog(@"name:%@ sex:%@ age: %ld,weight :%f",_name,_sex,_age,_weight);
 }
 
 #pragma mark - setter getter
@@ -143,11 +143,11 @@
 #pragma mark - KVC
 //kvc 模式下：不用管 自己就会调用。触发使用
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key {
-    NSLog(@"没有发现key:%@",key);
+    BPLog(@"没有发现key:%@",key);
 }
 
 -(id)valueForUndefinedKey:(NSString *)key {
-    NSLog(@"找不到key:%@",key);
+    BPLog(@"找不到key:%@",key);
     return nil;
 }
 

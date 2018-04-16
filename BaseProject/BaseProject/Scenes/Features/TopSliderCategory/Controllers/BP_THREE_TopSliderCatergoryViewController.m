@@ -107,7 +107,7 @@
 
 /**监听item点击*/
 - (void)catergoryView:(BPFlowCatergoryView *)catergoryView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"点击了%zd个item", indexPath.item);
+    BPLog(@"点击了%zd个item", indexPath.item);
 }
 
 

@@ -143,7 +143,7 @@ static NSString *kPaletteDefaultColor = @"#000000";
 #pragma mark - NSCacheDelegate
 // 即将回收对象的时候进行调用，实现代理方法之前要遵守NSCacheDelegate协议。
 - (void)cache:(NSCache *)cache willEvictObject:(id)obj{
-    NSLog(@"回收--------%@",obj);
+    BPLog(@"回收--------%@",obj);
 }
 
 - (NSMutableArray *)colorArray {

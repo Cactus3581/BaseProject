@@ -49,7 +49,7 @@
                                           NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
                                           [formatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
                                           NSString *nowtimeStr = [formatter stringFromDate:localeDate];
-                                          NSLog(@"nowtimeStr = %@",nowtimeStr);
+                                          BPLog(@"nowtimeStr = %@",nowtimeStr);
                                       }];
     [dataTask resume];
 }

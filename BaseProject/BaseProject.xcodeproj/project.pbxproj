@@ -149,6 +149,13 @@
 		011B7DD920693E5B0071CB5D /* UIBarButtonItem+BPCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD320693E5B0071CB5D /* UIBarButtonItem+BPCreate.m */; };
 		011B7DDA20693E5B0071CB5D /* UINavigation+BPFixSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD420693E5B0071CB5D /* UINavigation+BPFixSpace.m */; };
 		011B7DDB20693E5B0071CB5D /* NSObject+BPAddRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD520693E5B0071CB5D /* NSObject+BPAddRuntime.m */; };
+		011DCE862084F1010045C035 /* BPCellAutoLayoutHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DCE852084F1010045C035 /* BPCellAutoLayoutHeightViewController.m */; };
+		011DCE8A2084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DCE882084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.m */; };
+		011DCE8B2084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011DCE892084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.xib */; };
+		011DCE8E2084F13E0045C035 /* BPCellAutoLayoutHeightHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DCE8D2084F13E0045C035 /* BPCellAutoLayoutHeightHeaderView.m */; };
+		011DCE902084F14A0045C035 /* BPCellAutoLayoutHeightHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011DCE8F2084F14A0045C035 /* BPCellAutoLayoutHeightHeaderView.xib */; };
+		011DCE932084F15A0045C035 /* BPCellAutoLayoutHeightFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DCE922084F15A0045C035 /* BPCellAutoLayoutHeightFooterView.m */; };
+		011DCE952084F1660045C035 /* BPCellAutoLayoutHeightFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011DCE942084F1660045C035 /* BPCellAutoLayoutHeightFooterView.xib */; };
 		011F55A120304A50005F9C9E /* BPPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011F55A020304A50005F9C9E /* BPPhotoBrowserViewController.m */; };
 		0126B5361FB4ACBB00E522CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0126B5351FB4ACBB00E522CF /* MapKit.framework */; };
 		012D948620344AD100691E40 /* BPDesignPatternsKVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D948520344AD100691E40 /* BPDesignPatternsKVCViewController.m */; };
@@ -162,7 +169,19 @@
 		0137C751207B656B00F6B6CE /* BPAutoLayoutCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C750207B656B00F6B6CE /* BPAutoLayoutCodeViewController.m */; };
 		0137C755207B658400F6B6CE /* BPAutoLayoutXIBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C753207B658400F6B6CE /* BPAutoLayoutXIBViewController.m */; };
 		0137C756207B658400F6B6CE /* BPAutoLayoutXIBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0137C754207B658400F6B6CE /* BPAutoLayoutXIBViewController.xib */; };
+		0137C760207C952700F6B6CE /* BPTextCompositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C75E207C952700F6B6CE /* BPTextCompositionViewController.m */; };
+		0137C761207C952700F6B6CE /* BPTextCompositionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0137C75F207C952700F6B6CE /* BPTextCompositionViewController.xib */; };
 		013B78841FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 013B78831FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m */; };
+		0143B5E02082517500524ABB /* BPMultiLevelCatalogueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143B5DF2082517500524ABB /* BPMultiLevelCatalogueViewController.m */; };
+		0143B5F32082518A00524ABB /* KSPhraseCardInsideHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143B5E42082518900524ABB /* KSPhraseCardInsideHeaderView.m */; };
+		0143B5F42082518A00524ABB /* KSPhraseCardHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143B5E52082518900524ABB /* KSPhraseCardHeaderView.m */; };
+		0143B5F52082518A00524ABB /* KSPhraseCardInsideHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0143B5E72082518900524ABB /* KSPhraseCardInsideHeaderView.xib */; };
+		0143B5F62082518A00524ABB /* KSPhraseCardInsideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0143B5E82082518900524ABB /* KSPhraseCardInsideTableViewCell.xib */; };
+		0143B5F72082518A00524ABB /* KSPhraseCardInsideTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143B5E92082518900524ABB /* KSPhraseCardInsideTableViewCell.m */; };
+		0143B5F82082518A00524ABB /* KSPhraseCardHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143B5EA2082518900524ABB /* KSPhraseCardHeadCell.m */; };
+		0143B5F92082518A00524ABB /* KSPhraseCardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0143B5EC2082518900524ABB /* KSPhraseCardHeaderView.xib */; };
+		0143B5FB2082518A00524ABB /* KSPhraseCardHeightHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143B5F12082518900524ABB /* KSPhraseCardHeightHelper.m */; };
+		0143B5FE208251EF00524ABB /* KSMultiLevelCatalogueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143B5FD208251EF00524ABB /* KSMultiLevelCatalogueModel.m */; };
 		01490C081FF548650035492D /* BPGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C071FF548650035492D /* BPGCDViewController.m */; };
 		01490C0B1FF548740035492D /* BPMemoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C0A1FF548740035492D /* BPMemoryViewController.m */; };
 		01490C0E1FF548A50035492D /* BPOptimizeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C0D1FF548A50035492D /* BPOptimizeTableViewController.m */; };
@@ -333,10 +352,9 @@
 		01A192202004E61F005EE4CD /* BPCollectionReusableHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A191F82004E61E005EE4CD /* BPCollectionReusableHeadView.m */; };
 		01A192212004E61F005EE4CD /* BPCollectionReusableFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A191F92004E61E005EE4CD /* BPCollectionReusableFootView.m */; };
 		01A192222004E61F005EE4CD /* BPCollectionReusableHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A191FB2004E61E005EE4CD /* BPCollectionReusableHeadView.xib */; };
-		01A192242004E61F005EE4CD /* BPAdaptiveHeightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A192062004E61E005EE4CD /* BPAdaptiveHeightTableViewController.m */; };
-		01A192252004E61F005EE4CD /* BPAdaptiveHeightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A192092004E61E005EE4CD /* BPAdaptiveHeightCell.m */; };
 		01A192262004E61F005EE4CD /* BPGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A192152004E61E005EE4CD /* BPGroupTableViewController.m */; };
 		01A192272004E61F005EE4CD /* BPPlainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A192162004E61E005EE4CD /* BPPlainTableViewController.m */; };
+		01AB23E02084F6CF00F58490 /* BPCellAutoLayoutHeightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB23DF2084F6CF00F58490 /* BPCellAutoLayoutHeightModel.m */; };
 		01ADC1F61FB492C1009150F0 /* BPBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC1F51FB492C1009150F0 /* BPBaseTableViewCell.m */; };
 		01ADC1F91FB492D8009150F0 /* BPBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC1F81FB492D8009150F0 /* BPBaseTableViewController.m */; };
 		01B7268E1FF7DF2700648674 /* BPDataStructureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B7268D1FF7DF2700648674 /* BPDataStructureViewController.m */; };
@@ -822,6 +840,17 @@
 		011B7DD620693E5B0071CB5D /* UIBarButtonItem+BPCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BPCreate.h"; sourceTree = "<group>"; };
 		011B7DD720693E5B0071CB5D /* NSObject+BPAddRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPAddRuntime.h"; sourceTree = "<group>"; };
 		011B7DD820693E5B0071CB5D /* UINavigation+BPFixSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigation+BPFixSpace.h"; sourceTree = "<group>"; };
+		011DCE842084F1010045C035 /* BPCellAutoLayoutHeightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightViewController.h; sourceTree = "<group>"; };
+		011DCE852084F1010045C035 /* BPCellAutoLayoutHeightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightViewController.m; sourceTree = "<group>"; };
+		011DCE872084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightTableViewCell.h; sourceTree = "<group>"; };
+		011DCE882084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightTableViewCell.m; sourceTree = "<group>"; };
+		011DCE892084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPCellAutoLayoutHeightTableViewCell.xib; sourceTree = "<group>"; };
+		011DCE8C2084F13E0045C035 /* BPCellAutoLayoutHeightHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightHeaderView.h; sourceTree = "<group>"; };
+		011DCE8D2084F13E0045C035 /* BPCellAutoLayoutHeightHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightHeaderView.m; sourceTree = "<group>"; };
+		011DCE8F2084F14A0045C035 /* BPCellAutoLayoutHeightHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPCellAutoLayoutHeightHeaderView.xib; sourceTree = "<group>"; };
+		011DCE912084F15A0045C035 /* BPCellAutoLayoutHeightFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightFooterView.h; sourceTree = "<group>"; };
+		011DCE922084F15A0045C035 /* BPCellAutoLayoutHeightFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightFooterView.m; sourceTree = "<group>"; };
+		011DCE942084F1660045C035 /* BPCellAutoLayoutHeightFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPCellAutoLayoutHeightFooterView.xib; sourceTree = "<group>"; };
 		011F559F20304A50005F9C9E /* BPPhotoBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPhotoBrowserViewController.h; sourceTree = "<group>"; };
 		011F55A020304A50005F9C9E /* BPPhotoBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPhotoBrowserViewController.m; sourceTree = "<group>"; };
 		0126B5351FB4ACBB00E522CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -845,8 +874,28 @@
 		0137C752207B658400F6B6CE /* BPAutoLayoutXIBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAutoLayoutXIBViewController.h; sourceTree = "<group>"; };
 		0137C753207B658400F6B6CE /* BPAutoLayoutXIBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAutoLayoutXIBViewController.m; sourceTree = "<group>"; };
 		0137C754207B658400F6B6CE /* BPAutoLayoutXIBViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPAutoLayoutXIBViewController.xib; sourceTree = "<group>"; };
+		0137C75D207C952700F6B6CE /* BPTextCompositionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTextCompositionViewController.h; sourceTree = "<group>"; };
+		0137C75E207C952700F6B6CE /* BPTextCompositionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTextCompositionViewController.m; sourceTree = "<group>"; };
+		0137C75F207C952700F6B6CE /* BPTextCompositionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTextCompositionViewController.xib; sourceTree = "<group>"; };
 		013B78821FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BPCreate.h"; sourceTree = "<group>"; };
 		013B78831FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+BPCreate.m"; sourceTree = "<group>"; };
+		0143B5DE2082517500524ABB /* BPMultiLevelCatalogueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMultiLevelCatalogueViewController.h; sourceTree = "<group>"; };
+		0143B5DF2082517500524ABB /* BPMultiLevelCatalogueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPMultiLevelCatalogueViewController.m; sourceTree = "<group>"; };
+		0143B5E32082518900524ABB /* KSPhraseCardInsideTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPhraseCardInsideTableViewCell.h; sourceTree = "<group>"; };
+		0143B5E42082518900524ABB /* KSPhraseCardInsideHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPhraseCardInsideHeaderView.m; sourceTree = "<group>"; };
+		0143B5E52082518900524ABB /* KSPhraseCardHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPhraseCardHeaderView.m; sourceTree = "<group>"; };
+		0143B5E62082518900524ABB /* KSPhraseCardHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPhraseCardHeadCell.h; sourceTree = "<group>"; };
+		0143B5E72082518900524ABB /* KSPhraseCardInsideHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSPhraseCardInsideHeaderView.xib; sourceTree = "<group>"; };
+		0143B5E82082518900524ABB /* KSPhraseCardInsideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSPhraseCardInsideTableViewCell.xib; sourceTree = "<group>"; };
+		0143B5E92082518900524ABB /* KSPhraseCardInsideTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPhraseCardInsideTableViewCell.m; sourceTree = "<group>"; };
+		0143B5EA2082518900524ABB /* KSPhraseCardHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPhraseCardHeadCell.m; sourceTree = "<group>"; };
+		0143B5EB2082518900524ABB /* KSPhraseCardHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPhraseCardHeaderView.h; sourceTree = "<group>"; };
+		0143B5EC2082518900524ABB /* KSPhraseCardHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSPhraseCardHeaderView.xib; sourceTree = "<group>"; };
+		0143B5ED2082518900524ABB /* KSPhraseCardInsideHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPhraseCardInsideHeaderView.h; sourceTree = "<group>"; };
+		0143B5F02082518900524ABB /* KSPhraseCardHeightHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPhraseCardHeightHelper.h; sourceTree = "<group>"; };
+		0143B5F12082518900524ABB /* KSPhraseCardHeightHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPhraseCardHeightHelper.m; sourceTree = "<group>"; };
+		0143B5FC208251EF00524ABB /* KSMultiLevelCatalogueModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSMultiLevelCatalogueModel.h; sourceTree = "<group>"; };
+		0143B5FD208251EF00524ABB /* KSMultiLevelCatalogueModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSMultiLevelCatalogueModel.m; sourceTree = "<group>"; };
 		01490C061FF548650035492D /* BPGCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPGCDViewController.h; sourceTree = "<group>"; };
 		01490C071FF548650035492D /* BPGCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPGCDViewController.m; sourceTree = "<group>"; };
 		01490C091FF548740035492D /* BPMemoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMemoryViewController.h; sourceTree = "<group>"; };
@@ -1181,14 +1230,12 @@
 		01A191FA2004E61E005EE4CD /* BPCollectionReusableHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCollectionReusableHeadView.h; sourceTree = "<group>"; };
 		01A191FB2004E61E005EE4CD /* BPCollectionReusableHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPCollectionReusableHeadView.xib; sourceTree = "<group>"; };
 		01A191FC2004E61E005EE4CD /* BPCollectionReusableFootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCollectionReusableFootView.h; sourceTree = "<group>"; };
-		01A192052004E61E005EE4CD /* BPAdaptiveHeightTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPAdaptiveHeightTableViewController.h; sourceTree = "<group>"; };
-		01A192062004E61E005EE4CD /* BPAdaptiveHeightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPAdaptiveHeightTableViewController.m; sourceTree = "<group>"; };
-		01A192092004E61E005EE4CD /* BPAdaptiveHeightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPAdaptiveHeightCell.m; sourceTree = "<group>"; };
-		01A1920A2004E61E005EE4CD /* BPAdaptiveHeightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPAdaptiveHeightCell.h; sourceTree = "<group>"; };
 		01A192132004E61E005EE4CD /* BPGroupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGroupTableViewController.h; sourceTree = "<group>"; };
 		01A192142004E61E005EE4CD /* BPPlainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPlainTableViewController.h; sourceTree = "<group>"; };
 		01A192152004E61E005EE4CD /* BPGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGroupTableViewController.m; sourceTree = "<group>"; };
 		01A192162004E61E005EE4CD /* BPPlainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPlainTableViewController.m; sourceTree = "<group>"; };
+		01AB23DE2084F6CF00F58490 /* BPCellAutoLayoutHeightModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightModel.h; sourceTree = "<group>"; };
+		01AB23DF2084F6CF00F58490 /* BPCellAutoLayoutHeightModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightModel.m; sourceTree = "<group>"; };
 		01ADC1F41FB492C1009150F0 /* BPBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseTableViewCell.h; sourceTree = "<group>"; };
 		01ADC1F51FB492C1009150F0 /* BPBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseTableViewCell.m; sourceTree = "<group>"; };
 		01ADC1F71FB492D8009150F0 /* BPBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseTableViewController.h; sourceTree = "<group>"; };
@@ -2466,14 +2513,14 @@
 		010DB6D41FDD4D440099E66F /* UIApplication */ = {
 			isa = PBXGroup;
 			children = (
-				010DB6D51FDD4D440099E66F /* UIApplication+BPPermissions.m */,
-				010DB6D61FDD4D440099E66F /* UIApplication+BPKeyboardFrame.h */,
-				010DB6D71FDD4D440099E66F /* UIApplication+BPNetworkActivityIndicator.m */,
+				010DB6DC1FDD4D440099E66F /* UIApplication+BPApplicationSize.h */,
 				010DB6D81FDD4D440099E66F /* UIApplication+BPApplicationSize.m */,
+				010DB6D61FDD4D440099E66F /* UIApplication+BPKeyboardFrame.h */,
 				010DB6D91FDD4D440099E66F /* UIApplication+BPKeyboardFrame.m */,
 				010DB6DB1FDD4D440099E66F /* UIApplication+BPNetworkActivityIndicator.h */,
+				010DB6D71FDD4D440099E66F /* UIApplication+BPNetworkActivityIndicator.m */,
 				010DB6DA1FDD4D440099E66F /* UIApplication+BPPermissions.h */,
-				010DB6DC1FDD4D440099E66F /* UIApplication+BPApplicationSize.h */,
+				010DB6D51FDD4D440099E66F /* UIApplication+BPPermissions.m */,
 			);
 			path = UIApplication;
 			sourceTree = "<group>";
@@ -2628,6 +2675,7 @@
 		010FBCFC20601CEB00BC9EC4 /* BaseKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				0137C757207C94DF00F6B6CE /* ResearchDirection */,
 				01F373102065525D007B1498 /* Event */,
 				01B726DA1FF806FC00648674 /* BaseUseUIKit */,
 				01161F3D20308F4900FA3441 /* BaseUseData */,
@@ -2975,6 +3023,66 @@
 			path = NaviSpace;
 			sourceTree = "<group>";
 		};
+		011DCE7E2084F0BF0045C035 /* CellAutoLayoutHeight */ = {
+			isa = PBXGroup;
+			children = (
+				011DCE7F2084F0D00045C035 /* iOS8 */,
+			);
+			path = CellAutoLayoutHeight;
+			sourceTree = "<group>";
+		};
+		011DCE7F2084F0D00045C035 /* iOS8 */ = {
+			isa = PBXGroup;
+			children = (
+				011DCE802084F0E60045C035 /* Controllers */,
+				011DCE812084F0E60045C035 /* Models */,
+				011DCE832084F0E70045C035 /* ViewModels */,
+				011DCE822084F0E70045C035 /* Views */,
+			);
+			path = iOS8;
+			sourceTree = "<group>";
+		};
+		011DCE802084F0E60045C035 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				011DCE842084F1010045C035 /* BPCellAutoLayoutHeightViewController.h */,
+				011DCE852084F1010045C035 /* BPCellAutoLayoutHeightViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		011DCE812084F0E60045C035 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01AB23DE2084F6CF00F58490 /* BPCellAutoLayoutHeightModel.h */,
+				01AB23DF2084F6CF00F58490 /* BPCellAutoLayoutHeightModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		011DCE822084F0E70045C035 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				011DCE872084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.h */,
+				011DCE882084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.m */,
+				011DCE892084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.xib */,
+				011DCE8C2084F13E0045C035 /* BPCellAutoLayoutHeightHeaderView.h */,
+				011DCE8D2084F13E0045C035 /* BPCellAutoLayoutHeightHeaderView.m */,
+				011DCE8F2084F14A0045C035 /* BPCellAutoLayoutHeightHeaderView.xib */,
+				011DCE912084F15A0045C035 /* BPCellAutoLayoutHeightFooterView.h */,
+				011DCE922084F15A0045C035 /* BPCellAutoLayoutHeightFooterView.m */,
+				011DCE942084F1660045C035 /* BPCellAutoLayoutHeightFooterView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		011DCE832084F0E70045C035 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		012D948320344AC200691E40 /* KVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -3121,6 +3229,112 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0137C757207C94DF00F6B6CE /* ResearchDirection */ = {
+			isa = PBXGroup;
+			children = (
+				0137C758207C950200F6B6CE /* TextComposition */,
+			);
+			path = ResearchDirection;
+			sourceTree = "<group>";
+		};
+		0137C758207C950200F6B6CE /* TextComposition */ = {
+			isa = PBXGroup;
+			children = (
+				0137C759207C950F00F6B6CE /* Controllers */,
+				0137C75A207C950F00F6B6CE /* Models */,
+				0137C75C207C951000F6B6CE /* ViewModels */,
+				0137C75B207C950F00F6B6CE /* Views */,
+			);
+			path = TextComposition;
+			sourceTree = "<group>";
+		};
+		0137C759207C950F00F6B6CE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0137C75D207C952700F6B6CE /* BPTextCompositionViewController.h */,
+				0137C75E207C952700F6B6CE /* BPTextCompositionViewController.m */,
+				0137C75F207C952700F6B6CE /* BPTextCompositionViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0137C75A207C950F00F6B6CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0137C75B207C950F00F6B6CE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0137C75C207C951000F6B6CE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0143B5D92082516200524ABB /* MultiLevelCatalogue */ = {
+			isa = PBXGroup;
+			children = (
+				0143B5DA2082516700524ABB /* Controllers */,
+				0143B5EE2082518900524ABB /* Models */,
+				0143B5E12082518900524ABB /* ViewModels */,
+				0143B5E22082518900524ABB /* Views */,
+			);
+			path = MultiLevelCatalogue;
+			sourceTree = "<group>";
+		};
+		0143B5DA2082516700524ABB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0143B5DE2082517500524ABB /* BPMultiLevelCatalogueViewController.h */,
+				0143B5DF2082517500524ABB /* BPMultiLevelCatalogueViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0143B5E12082518900524ABB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0143B5E22082518900524ABB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0143B5E62082518900524ABB /* KSPhraseCardHeadCell.h */,
+				0143B5EA2082518900524ABB /* KSPhraseCardHeadCell.m */,
+				0143B5EB2082518900524ABB /* KSPhraseCardHeaderView.h */,
+				0143B5E52082518900524ABB /* KSPhraseCardHeaderView.m */,
+				0143B5EC2082518900524ABB /* KSPhraseCardHeaderView.xib */,
+				0143B5ED2082518900524ABB /* KSPhraseCardInsideHeaderView.h */,
+				0143B5E42082518900524ABB /* KSPhraseCardInsideHeaderView.m */,
+				0143B5E72082518900524ABB /* KSPhraseCardInsideHeaderView.xib */,
+				0143B5E32082518900524ABB /* KSPhraseCardInsideTableViewCell.h */,
+				0143B5E92082518900524ABB /* KSPhraseCardInsideTableViewCell.m */,
+				0143B5E82082518900524ABB /* KSPhraseCardInsideTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0143B5EE2082518900524ABB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0143B5F02082518900524ABB /* KSPhraseCardHeightHelper.h */,
+				0143B5F12082518900524ABB /* KSPhraseCardHeightHelper.m */,
+				0143B5FC208251EF00524ABB /* KSMultiLevelCatalogueModel.h */,
+				0143B5FD208251EF00524ABB /* KSMultiLevelCatalogueModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		01490C021FF547DA0035492D /* KnowledgePoint */ = {
@@ -5046,109 +5260,11 @@
 		01A192002004E61E005EE4CD /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
-				01A192012004E61E005EE4CD /* CellAdaptiveHeightTableView */,
-				01A1920B2004E61E005EE4CD /* MultiLevelCatalogue */,
-				01A192102004E61E005EE4CD /* Controllers */,
+				011DCE7E2084F0BF0045C035 /* CellAutoLayoutHeight */,
+				0143B5D92082516200524ABB /* MultiLevelCatalogue */,
 				01A192112004E61E005EE4CD /* GeneralTableView */,
 			);
 			path = UITableView;
-			sourceTree = "<group>";
-		};
-		01A192012004E61E005EE4CD /* CellAdaptiveHeightTableView */ = {
-			isa = PBXGroup;
-			children = (
-				01A192022004E61E005EE4CD /* ViewModels */,
-				01A192032004E61E005EE4CD /* Models */,
-				01A192042004E61E005EE4CD /* Controllers */,
-				01A192072004E61E005EE4CD /* Views */,
-			);
-			path = CellAdaptiveHeightTableView;
-			sourceTree = "<group>";
-		};
-		01A192022004E61E005EE4CD /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		01A192032004E61E005EE4CD /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		01A192042004E61E005EE4CD /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				01A192052004E61E005EE4CD /* BPAdaptiveHeightTableViewController.h */,
-				01A192062004E61E005EE4CD /* BPAdaptiveHeightTableViewController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		01A192072004E61E005EE4CD /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				01A192082004E61E005EE4CD /* Cells */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		01A192082004E61E005EE4CD /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				01A192092004E61E005EE4CD /* BPAdaptiveHeightCell.m */,
-				01A1920A2004E61E005EE4CD /* BPAdaptiveHeightCell.h */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		01A1920B2004E61E005EE4CD /* MultiLevelCatalogue */ = {
-			isa = PBXGroup;
-			children = (
-				01A1920C2004E61E005EE4CD /* ViewModels */,
-				01A1920D2004E61E005EE4CD /* Models */,
-				01A1920E2004E61E005EE4CD /* Controllers */,
-				01A1920F2004E61E005EE4CD /* Views */,
-			);
-			path = MultiLevelCatalogue;
-			sourceTree = "<group>";
-		};
-		01A1920C2004E61E005EE4CD /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		01A1920D2004E61E005EE4CD /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		01A1920E2004E61E005EE4CD /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		01A1920F2004E61E005EE4CD /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		01A192102004E61E005EE4CD /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		01A192112004E61E005EE4CD /* GeneralTableView */ = {
@@ -6457,21 +6573,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0143B5F92082518A00524ABB /* KSPhraseCardHeaderView.xib in Resources */,
 				0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */,
 				017907A52001249500E5C360 /* cycleBorder.png in Resources */,
+				011DCE902084F14A0045C035 /* BPCellAutoLayoutHeightHeaderView.xib in Resources */,
 				0195EAA4201373E700DC59A1 /* BPXibView.xib in Resources */,
 				010FBD2620601D9E00BC9EC4 /* palette.jpeg in Resources */,
 				017907E3200144F200E5C360 /* bookcatalogue.toc in Resources */,
 				014ED0DE1FF0135000D2926C /* launchImage@2x.png in Resources */,
+				0143B5F62082518A00524ABB /* KSPhraseCardInsideTableViewCell.xib in Resources */,
 				014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */,
 				0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */,
 				01A1921E2004E61F005EE4CD /* BPCollectionViewCell.xib in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
+				011DCE8B2084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.xib in Resources */,
+				011DCE952084F1660045C035 /* BPCellAutoLayoutHeightFooterView.xib in Resources */,
 				0184BF831FD6DB2C00CB9AAD /* BPTest_XibViewController.xib in Resources */,
 				0137C756207B658400F6B6CE /* BPAutoLayoutXIBViewController.xib in Resources */,
 				01352FE31FD2DDA20011D65C /* FeatureCatalog.plist in Resources */,
+				0137C761207C952700F6B6CE /* BPTextCompositionViewController.xib in Resources */,
 				01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */,
 				014ED0DD1FF0135000D2926C /* launchImage@3x.png in Resources */,
+				0143B5F52082518A00524ABB /* KSPhraseCardInsideHeaderView.xib in Resources */,
 				0195EAA2201373E700DC59A1 /* BPXibViewController.xib in Resources */,
 				01A1921F2004E61F005EE4CD /* BPCollectionReusableFootView.xib in Resources */,
 				01A192222004E61F005EE4CD /* BPCollectionReusableHeadView.xib in Resources */,
@@ -6582,6 +6705,7 @@
 				01D22BE71FDD814000BCC4AD /* NSNotificationCenter+BPAdd.m in Sources */,
 				017906FB20011D4100E5C360 /* BPDataPersistenceVC.m in Sources */,
 				0195EAA3201373E700DC59A1 /* BPXibViewController.m in Sources */,
+				0143B5E02082517500524ABB /* BPMultiLevelCatalogueViewController.m in Sources */,
 				0179070920011D9E00E5C360 /* BPBlockViewController.m in Sources */,
 				010DB7441FDD4D450099E66F /* UIImage+BPBetterFace.m in Sources */,
 				010DB75A1FDD4D450099E66F /* UIFont+BPTTF.m in Sources */,
@@ -6634,9 +6758,11 @@
 				011B7DD1206906CB0071CB5D /* BPAppInfoTool.m in Sources */,
 				010DB7101FDD4D450099E66F /* UIImageView+BPAddition.m in Sources */,
 				010DB7131FDD4D450099E66F /* UIAlertView+BPBlock.m in Sources */,
+				0143B5FB2082518A00524ABB /* KSPhraseCardHeightHelper.m in Sources */,
 				01C31F84200FA1CD0096C2E0 /* BPAnchorPopView.m in Sources */,
 				01D22BE61FDD814000BCC4AD /* NSMutableDictionary+BPAdd.m in Sources */,
 				01DF325F1FDD3B9D00B8A955 /* NSData+BPPCM.m in Sources */,
+				0143B5F82082518A00524ABB /* KSPhraseCardHeadCell.m in Sources */,
 				0173401D1FA9753F006192F0 /* BPBaseNavigationController.m in Sources */,
 				0168F3872035E66900D63D83 /* BPBaseKnowledgeViewModel.m in Sources */,
 				010DB74E1FDD4D450099E66F /* UIBarButtonItem+BPAction.m in Sources */,
@@ -6711,8 +6837,10 @@
 				01D22BD81FDD814000BCC4AD /* NSMutableArray+BPAdd.m in Sources */,
 				01E672B32014898300FB22D4 /* BPReplicatorLayerViewController.m in Sources */,
 				010DB73E1FDD4D450099E66F /* UIImage+BPGIF.m in Sources */,
+				011DCE862084F1010045C035 /* BPCellAutoLayoutHeightViewController.m in Sources */,
 				010DB7391FDD4D450099E66F /* UITextField+BPBlocks.m in Sources */,
 				010DB7541FDD4D450099E66F /* UITableViewCell+BPNIB.m in Sources */,
+				011DCE8E2084F13E0045C035 /* BPCellAutoLayoutHeightHeaderView.m in Sources */,
 				01A191B02004E165005EE4CD /* BPTextFieldViewController.m in Sources */,
 				010DB75D1FDD4D450099E66F /* UIDevice+BPHardware.m in Sources */,
 				01A191D72004E1ED005EE4CD /* BPPageControlController.m in Sources */,
@@ -6727,6 +6855,7 @@
 				0137C751207B656B00F6B6CE /* BPAutoLayoutCodeViewController.m in Sources */,
 				01D22BD51FDD814000BCC4AD /* CALayer+BPAddForFrame.m in Sources */,
 				019AA91820205BE80090B038 /* CADisplayLink+BPAdd.m in Sources */,
+				0143B5F42082518A00524ABB /* KSPhraseCardHeaderView.m in Sources */,
 				01DF32721FDD3BB100B8A955 /* NSDate+BPnternetDateTime.m in Sources */,
 				01A191D42004E1E7005EE4CD /* BPSegmentedControlController.m in Sources */,
 				017A9A371FDD2A9A00CDA599 /* BPZPositionCollectionHeadView.m in Sources */,
@@ -6746,7 +6875,6 @@
 				010DB73D1FDD4D450099E66F /* UIImage+BPVector.m in Sources */,
 				01C0B6261FFC87AB005BB4A5 /* UIImage+Palette.m in Sources */,
 				010DB7201FDD4D450099E66F /* UIWebView+BPStyle.m in Sources */,
-				01A192252004E61F005EE4CD /* BPAdaptiveHeightCell.m in Sources */,
 				01490C0B1FF548740035492D /* BPMemoryViewController.m in Sources */,
 				0137C73D207B3AD200F6B6CE /* BPPresentAViewController.m in Sources */,
 				01DF325A1FDD3B9D00B8A955 /* NSData+BPEncrypt.m in Sources */,
@@ -6762,6 +6890,7 @@
 				01D22BD31FDD814000BCC4AD /* UITableView+BPAdd.m in Sources */,
 				010DB7931FDD4D640099E66F /* UIView+BPConstraints.m in Sources */,
 				018972B71FC47F6B00D6DF5B /* BPBaseCollectionViewController.m in Sources */,
+				01AB23E02084F6CF00F58490 /* BPCellAutoLayoutHeightModel.m in Sources */,
 				010FBD2720601D9E00BC9EC4 /* BPPaletteViewController.m in Sources */,
 				010FBD1020601D6300BC9EC4 /* BPNSThreadViewController.m in Sources */,
 				012D948920344C7600691E40 /* BPPersonHealth.m in Sources */,
@@ -6830,6 +6959,7 @@
 				010DB7951FDD4D640099E66F /* UIView+BPRecursion.m in Sources */,
 				010FBD2520601D9E00BC9EC4 /* BPPaletteView.m in Sources */,
 				0160718A204D3530009C66A2 /* PHAsset+BPAdd.m in Sources */,
+				0137C760207C952700F6B6CE /* BPTextCompositionViewController.m in Sources */,
 				010DB7AD1FDD4D6F0099E66F /* UIButton+BPTouchAreaInsets.m in Sources */,
 				01DF31CB1FDD3A9100B8A955 /* NSNotificationCenter+BPMainThread.m in Sources */,
 				0179BC42203176190061CD84 /* BPDesignPatternsBlockViewControllerA.m in Sources */,
@@ -6844,7 +6974,6 @@
 				01161F3C20308CB300FA3441 /* BPMan.m in Sources */,
 				011F55A120304A50005F9C9E /* BPPhotoBrowserViewController.m in Sources */,
 				011B7DDB20693E5B0071CB5D /* NSObject+BPAddRuntime.m in Sources */,
-				01A192242004E61F005EE4CD /* BPAdaptiveHeightTableViewController.m in Sources */,
 				01C935A01FC337E100D98FD6 /* BPFeatureViewController.m in Sources */,
 				017A9A8F1FDD311D00CDA599 /* NSString+BPFilepath.m in Sources */,
 				010DB7251FDD4D450099E66F /* UIColor+BPModify.m in Sources */,
@@ -6853,6 +6982,7 @@
 				01A191AA2004E139005EE4CD /* BPLabelViewController.m in Sources */,
 				0173401F1FA9753F006192F0 /* BPBaseTabBarController.m in Sources */,
 				010DB78F1FDD4D640099E66F /* UIView+BPNib.m in Sources */,
+				0143B5FE208251EF00524ABB /* KSMultiLevelCatalogueModel.m in Sources */,
 				01E6B19D2001FEEE0008C18C /* FMDatabaseManager.m in Sources */,
 				018C44CF2009E03D00CF43D7 /* BPCardPageFlowViewCell.m in Sources */,
 				01E1DC2C202ECE6E00529ADB /* BPNormalVolumeWaverView.m in Sources */,
@@ -6871,6 +7001,7 @@
 				01DF316F1FDD3A0900B8A955 /* CALayer+BPBorderColor.m in Sources */,
 				01050638201B3C40000085C1 /* BPCommentsViewController.m in Sources */,
 				010DB7301FDD4D450099E66F /* UIWindow+BPHierarchy.m in Sources */,
+				0143B5F72082518A00524ABB /* KSPhraseCardInsideTableViewCell.m in Sources */,
 				01A191E02004E1FF005EE4CD /* BPViewController.m in Sources */,
 				01D22BDE1FDD814000BCC4AD /* NSTimer+BPAdd.m in Sources */,
 				010DB74F1FDD4D450099E66F /* UIBarButtonItem+BPBadge.m in Sources */,
@@ -7000,6 +7131,7 @@
 				01DF32411FDD3B3D00B8A955 /* NSObject+BPGCD.m in Sources */,
 				01027B501FDEE02B0003F0FE /* BPNaviTableViewControllerTwo.m in Sources */,
 				010DB75C1FDD4D450099E66F /* UIFont+BPDynamicFontControl.m in Sources */,
+				011DCE932084F15A0045C035 /* BPCellAutoLayoutHeightFooterView.m in Sources */,
 				010DB7121FDD4D450099E66F /* UIScreen+BPFrame.m in Sources */,
 				01D22BC81FDD814000BCC4AD /* Foundation+Log.m in Sources */,
 				01DF316E1FDD3A0900B8A955 /* CAShapeLayer+BPUIBezierPath.m in Sources */,
@@ -7034,6 +7166,7 @@
 				01DF31D51FDD3A9100B8A955 /* NSBundle+BPAppIcon.m in Sources */,
 				010DB72C1FDD4D450099E66F /* UIBezierPath+BPLength.m in Sources */,
 				010DB7191FDD4D450099E66F /* UINavigationItem+BPLock.m in Sources */,
+				0143B5F32082518A00524ABB /* KSPhraseCardInsideHeaderView.m in Sources */,
 				016760CF2060F94400F82ACE /* BPNSOperationViewController.m in Sources */,
 				01F3730F20654A22007B1498 /* BPDesignPatternsBlockViewControllerB.m in Sources */,
 				01E01327200CFEEB00374C53 /* BPPaletteTool.m in Sources */,
@@ -7051,6 +7184,7 @@
 				01DF31C01FDD3A9100B8A955 /* NSDictionary+BPXML.m in Sources */,
 				01DF31E61FDD3B0300B8A955 /* NSNumber+BPRound.m in Sources */,
 				010DB78C1FDD4D640099E66F /* UIView+BPFind.m in Sources */,
+				011DCE8A2084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.m in Sources */,
 				010DB7511FDD4D450099E66F /* UINavigationController+BPTransitions.m in Sources */,
 				018C44F5200A4AF700CF43D7 /* BPFlowCollectionView.m in Sources */,
 				010DB7401FDD4D450099E66F /* UIImage+BPRemoteSize.m in Sources */,

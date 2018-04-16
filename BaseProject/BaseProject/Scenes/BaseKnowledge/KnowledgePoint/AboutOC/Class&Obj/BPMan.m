@@ -18,7 +18,7 @@
 
 - (void)sayHi {
     [super sayHi];
-    NSLog(@"%p",&self);
+    BPLog(@"%p",&self);
 }
 
 @end

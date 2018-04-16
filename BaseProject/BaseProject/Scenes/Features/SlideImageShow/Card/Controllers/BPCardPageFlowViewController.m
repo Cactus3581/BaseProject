@@ -85,12 +85,12 @@
 }
 
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
-    NSLog(@"点击了第%ld张图",(long)subIndex + 1);
+    BPLog(@"点击了第%ld张图",(long)subIndex + 1);
     self.indicateLabel.text = [NSString stringWithFormat:@"点击了第%ld张图",(long)subIndex + 1];
 }
 
 - (void)didScrollToPage:(NSInteger)pageNumber inFlowView:(BPCardPageFlowView *)flowView {
-    NSLog(@"ViewController 滚动到了第%ld页",pageNumber);
+    BPLog(@"ViewController 滚动到了第%ld页",pageNumber);
 }
 
 #pragma mark --懒加载

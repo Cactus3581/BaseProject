@@ -37,7 +37,7 @@
 - (void)sendMessage {
     //创建对象
     BPPerson *person = [[BPPerson alloc] init];
-    NSLog(@"对象地址:%p",person);
+    BPLog(@"对象地址:%p",person);
     //调用  打招呼。
     //中括号[receiver message];消息发送机制（消息语法）
     [person sayHi];
@@ -85,7 +85,7 @@
     BPPerson *person = [[BPPerson alloc] init];
     BPPerson *person1 = [person copy];
     
-    NSLog(@"%lu,%lu",BPRetainCount(person),BPRetainCount(person1));
+    BPLog(@"%lu,%lu",BPRetainCount(person),BPRetainCount(person1));
 
     
     BPPerson *per1 = [[BPPerson alloc]init];
@@ -97,23 +97,23 @@
 
     
     //    NSArray *arr = [[NSArray alloc]initWithObjects:per1,per2,per3, nil];
-    NSLog(@"arr[0]:%lu %p",BPRetainCount(arr[0]),arr[0]);
+    BPLog(@"arr[0]:%lu %p",BPRetainCount(arr[0]),arr[0]);
     
     
     //对不可变数组进行copy是一个浅拷贝,相当于retain操作，对数组元素也是浅拷贝，是简单的指针赋值，引用计数没有变化。
     NSArray *copyArr = [arr copy];
-    NSLog(@"%p,%p",arr,copyArr);
-    NSLog(@"%lu",BPRetainCount(arr));
-    NSLog(@"%lu",BPRetainCount(arr[0]));
+    BPLog(@"%p,%p",arr,copyArr);
+    BPLog(@"%lu",BPRetainCount(arr));
+    BPLog(@"%lu",BPRetainCount(arr[0]));
     
     //对可变数组进行拷贝是一个深拷贝，产生了一个新的数组对象。但是对于数组内的数组元素是浅拷贝，相当于retain操作。
     //
     NSMutableArray *muArr = [[NSMutableArray alloc]initWithObjects:per1,per2,per3, nil];
     NSMutableArray *copyMuArr = [muArr copy];
-    NSLog(@"%p,%p",muArr,copyMuArr);
-    NSLog(@"%lu %lu",BPRetainCount(muArr),BPRetainCount(copyMuArr));
+    BPLog(@"%p,%p",muArr,copyMuArr);
+    BPLog(@"%lu %lu",BPRetainCount(muArr),BPRetainCount(copyMuArr));
     
-    NSLog(@"%p,%lu,%p,%lu",muArr[0],BPRetainCount(muArr[0]),copyMuArr[0],BPRetainCount(copyMuArr[0]));
+    BPLog(@"%p,%lu,%p,%lu",muArr[0],BPRetainCount(muArr[0]),copyMuArr[0],BPRetainCount(copyMuArr[0]));
 }
 
 #pragma mark - 多态
@@ -178,11 +178,11 @@
     arr[1];
     //   NSDictionary
     NSDictionary *dic = @{@"name": @"笑笑语法",@"name1":@"语法糖",@"name3":@"字面量"};
-    NSLog(@"%@",dic);
-    NSLog(@"%@",dic[@"name3"]);
+    BPLog(@"%@",dic);
+    BPLog(@"%@",dic[@"name3"]);
     
     NSMutableDictionary *muDic = [NSMutableDictionary dictionaryWithDictionary:dic ];
-    NSLog(@"%@",muDic);
+    BPLog(@"%@",muDic);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -58,7 +58,7 @@
     }else{
         showText = [NSString stringWithFormat:@"%@:%@",modeKey,model.imageColorString];
         percentageText = [NSString stringWithFormat:@"%.1f%@",model.percentage*100,@"%"];
-        NSLog(@"%@",model.imageColorString);
+        BPLog(@"%@",model.imageColorString);
         self.contentView.backgroundColor = [UIColor colorWithHexString:(model.imageColorString)];
     }
     _showColorLabel.text = showText;

@@ -110,7 +110,7 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-//    NSLog(@"layoutSubviews");
+//    BPLog(@"layoutSubviews");
     _mainView.frame = self.bounds;
     if (!_lastIndexPath) {
         _lastIndexPath = [NSIndexPath indexPathForItem:MIN(_defaultIndex, _titles.count - 1) inSection:0];

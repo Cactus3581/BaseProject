@@ -109,11 +109,11 @@
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    NSLog(@"1 - 将开始拖拽");
+    BPLog(@"1 - 将开始拖拽");
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"2 - 图片在滚动着呢");
+    BPLog(@"2 - 图片在滚动着呢");
     BPCollectionViewCell *currentCell = (BPCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:self.currentIndex inSection:0]];
     CGRect currentRect = [currentCell convertRect:currentCell.bounds toView:self.view.window];
     if (currentRect.origin.x < 0) {
@@ -150,11 +150,11 @@
 
 //已经结束拖拽 触发
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-    NSLog(@"3 - 已经结束拖拽");
+    BPLog(@"3 - 已经结束拖拽");
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSLog(@"4 - 已经结束减速（停止）");
+    BPLog(@"4 - 已经结束减速（停止）");
     CGPoint point = [self.view convertPoint:self.collectionView.center toView:self.collectionView];
     NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:point];
     if(self.currentIndex == indexPath.item){

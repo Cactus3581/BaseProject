@@ -443,15 +443,50 @@
 						<key>title</key>
 						<string>Cell自适应高度</string>
 						<key>fileName</key>
-						<string>BPAdaptiveHeightTableViewController</string>
+						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
 						<string></string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>第一种</string>
+								<key>fileName</key>
+								<string>BPAdaptiveHeightTableViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>第二种</string>
+								<key>fileName</key>
+								<string></string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>第三种</string>
+								<key>fileName</key>
+								<string></string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>第四种</string>
+								<key>fileName</key>
+								<string></string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+						</array>
 					</dict>
 					<dict>
 						<key>title</key>
 						<string>多级目录</string>
 						<key>fileName</key>
-						<string></string>
+						<string>BPMultiLevelCatalogueViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -679,6 +714,14 @@
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>NSValue</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -793,7 +836,7 @@
 				<key>title</key>
 				<string>文字排版渲染</string>
 				<key>fileName</key>
-				<string></string>
+				<string>BPTextCompositionViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>

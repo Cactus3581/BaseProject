@@ -131,11 +131,11 @@ static CGFloat paletteViewHeight = 100.0f;
     
     NSString *type = [info objectForKey:@"UIImagePickerControllerMediaType"];
     if (![type isEqualToString:@"public.image"]){
-        NSLog(@"请选择图片格式");
+        BPLog(@"请选择图片格式");
     }
     NSURL *assetUrl = [info objectForKey:@"UIImagePickerControllerReferenceURL"];
     if (!assetUrl){
-        NSLog(@"出现未知错误");
+        BPLog(@"出现未知错误");
     }
     
     __weak typeof (self) weakSelf = self;
@@ -156,7 +156,7 @@ static CGFloat paletteViewHeight = 100.0f;
         }];
         
     } failureBlock:^(NSError *error) {
-        NSLog(@"出错了");
+        BPLog(@"出错了");
     }];
 }
 

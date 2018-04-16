@@ -148,32 +148,32 @@
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    NSLog(@"1 - 将开始拖拽");
+    BPLog(@"1 - 将开始拖拽");
     if (self.autoScroll) {
         [self invalidateTimer];
     }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"2 - 在滚动着");
+    BPLog(@"2 - 在滚动着");
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-    NSLog(@"3 - 将要结束拖拽");
+    BPLog(@"3 - 将要结束拖拽");
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    NSLog(@"4 - 已经结束拖拽");
+    BPLog(@"4 - 已经结束拖拽");
     if (decelerate == NO) {
-        NSLog(@"scrollView停止滚动，完全静止");
+        BPLog(@"scrollView停止滚动，完全静止");
     } else {
-        NSLog(@"用户停止拖拽，但是scrollView由于惯性，会继续滚动，并且减速");
+        BPLog(@"用户停止拖拽，但是scrollView由于惯性，会继续滚动，并且减速");
     }
 }
 
 // 关键执行操作时机
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSLog(@"5 - 停止");
+    BPLog(@"5 - 停止");
     /*
      0.展示当前center的下一张图片，offset为第三部分
      1. 修改当前索引

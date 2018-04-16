@@ -31,6 +31,8 @@
 @property(nonatomic,weak) BPWeakView *zoomAssignView;
 @property (nonatomic,strong) NSTimer *timer;
 
+@property (nonatomic, copy) NSMutableArray *muArray;
+
 @end
 
 static int b = 10;
@@ -51,8 +53,9 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
     //    [self testBlock];
     
     //    [self testDelegate];
-        [self testTimer];
+//        [self testTimer];
     //    [self testSystem];
+    [self testCopy];
 }
 
 /*
@@ -421,5 +424,38 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
  对象去完成自己的使命,在此过程中引用计数发生变化,变化中系统会基于TLS做出优化,并在SideTable中保存对象的引用计数和弱引用信息
  最后调用dealloc方法,析构对象,释放内存,一切又归于平静了.
  */
+
+- (void)testCopy {
+    /*
+     NSMutableArray *muArray = [[NSMutableArray alloc] init];
+     self.muArray = muArray; //崩溃 调用setter方法: _muArray = [muArray copy];
+     _muArray = muArray; //不崩溃 访问的是实例变量，没有进行copy操作；
+     //修饰词通过setter方法决定属性的内存管理.
+     [_muArray removeAllObjects];
+     */
+    
+    /*
+     _muArray = [[NSMutableArray alloc] init];
+     [_muArray removeAllObjects];//不崩溃：之前的疑惑点在这：_muArray指的是谁，这里指的肯定是NSMutableArray类的对象,虽然是copy，但是这里没用到copy方法，所以_muArray一直是NSMutableArray的对象，除非用到了setter方法;
+     */
+    
+    /*
+     _muArray = [[NSMutableArray alloc] init];
+     [_muArray addObject:@"1"];
+     NSMutableArray *muArray = [[NSMutableArray alloc] init];
+     [muArray addObject:@"2"];
+     BPLog(@"%@,%@",muArray,_muArray);
+     
+     //self.muArray = muArray;//崩溃
+     _muArray = muArray;//不崩溃
+     BPLog(@"%@,%@",muArray,_muArray);
+     [_muArray removeAllObjects];
+     
+     //总结：我知道我的迷惑点在哪里了：属性或者实例变量表明它只是一个指针，不是真正的对象，除非它指向了一个真正的对象，才能对对象起到作用；属性的修饰词只关系到对象的setter getter方法，其他方法不会被修饰词影响到。
+     */
+    
+    self.muArray = [[NSMutableArray alloc] init];
+    //[self.muArray removeAllObjects];//崩溃
+}
 
 @end
