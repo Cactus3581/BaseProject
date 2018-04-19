@@ -149,13 +149,7 @@
 		011B7DD920693E5B0071CB5D /* UIBarButtonItem+BPCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD320693E5B0071CB5D /* UIBarButtonItem+BPCreate.m */; };
 		011B7DDA20693E5B0071CB5D /* UINavigation+BPFixSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD420693E5B0071CB5D /* UINavigation+BPFixSpace.m */; };
 		011B7DDB20693E5B0071CB5D /* NSObject+BPAddRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD520693E5B0071CB5D /* NSObject+BPAddRuntime.m */; };
-		011DCE862084F1010045C035 /* BPCellAutoLayoutHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DCE852084F1010045C035 /* BPCellAutoLayoutHeightViewController.m */; };
-		011DCE8A2084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DCE882084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.m */; };
-		011DCE8B2084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011DCE892084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.xib */; };
-		011DCE8E2084F13E0045C035 /* BPCellAutoLayoutHeightHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DCE8D2084F13E0045C035 /* BPCellAutoLayoutHeightHeaderView.m */; };
-		011DCE902084F14A0045C035 /* BPCellAutoLayoutHeightHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011DCE8F2084F14A0045C035 /* BPCellAutoLayoutHeightHeaderView.xib */; };
-		011DCE932084F15A0045C035 /* BPCellAutoLayoutHeightFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DCE922084F15A0045C035 /* BPCellAutoLayoutHeightFooterView.m */; };
-		011DCE952084F1660045C035 /* BPCellAutoLayoutHeightFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011DCE942084F1660045C035 /* BPCellAutoLayoutHeightFooterView.xib */; };
+		011DCE862084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DCE852084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.m */; };
 		011F55A120304A50005F9C9E /* BPPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011F55A020304A50005F9C9E /* BPPhotoBrowserViewController.m */; };
 		0126B5361FB4ACBB00E522CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0126B5351FB4ACBB00E522CF /* MapKit.framework */; };
 		012D948620344AD100691E40 /* BPDesignPatternsKVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D948520344AD100691E40 /* BPDesignPatternsKVCViewController.m */; };
@@ -172,16 +166,6 @@
 		0137C760207C952700F6B6CE /* BPTextCompositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C75E207C952700F6B6CE /* BPTextCompositionViewController.m */; };
 		0137C761207C952700F6B6CE /* BPTextCompositionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0137C75F207C952700F6B6CE /* BPTextCompositionViewController.xib */; };
 		013B78841FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 013B78831FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m */; };
-		0143B5E02082517500524ABB /* BPMultiLevelCatalogueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143B5DF2082517500524ABB /* BPMultiLevelCatalogueViewController.m */; };
-		0143B5F32082518A00524ABB /* KSPhraseCardInsideHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143B5E42082518900524ABB /* KSPhraseCardInsideHeaderView.m */; };
-		0143B5F42082518A00524ABB /* KSPhraseCardHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143B5E52082518900524ABB /* KSPhraseCardHeaderView.m */; };
-		0143B5F52082518A00524ABB /* KSPhraseCardInsideHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0143B5E72082518900524ABB /* KSPhraseCardInsideHeaderView.xib */; };
-		0143B5F62082518A00524ABB /* KSPhraseCardInsideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0143B5E82082518900524ABB /* KSPhraseCardInsideTableViewCell.xib */; };
-		0143B5F72082518A00524ABB /* KSPhraseCardInsideTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143B5E92082518900524ABB /* KSPhraseCardInsideTableViewCell.m */; };
-		0143B5F82082518A00524ABB /* KSPhraseCardHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143B5EA2082518900524ABB /* KSPhraseCardHeadCell.m */; };
-		0143B5F92082518A00524ABB /* KSPhraseCardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0143B5EC2082518900524ABB /* KSPhraseCardHeaderView.xib */; };
-		0143B5FB2082518A00524ABB /* KSPhraseCardHeightHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143B5F12082518900524ABB /* KSPhraseCardHeightHelper.m */; };
-		0143B5FE208251EF00524ABB /* KSMultiLevelCatalogueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143B5FD208251EF00524ABB /* KSMultiLevelCatalogueModel.m */; };
 		01490C081FF548650035492D /* BPGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C071FF548650035492D /* BPGCDViewController.m */; };
 		01490C0B1FF548740035492D /* BPMemoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C0A1FF548740035492D /* BPMemoryViewController.m */; };
 		01490C0E1FF548A50035492D /* BPOptimizeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C0D1FF548A50035492D /* BPOptimizeTableViewController.m */; };
@@ -354,7 +338,15 @@
 		01A192222004E61F005EE4CD /* BPCollectionReusableHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A191FB2004E61E005EE4CD /* BPCollectionReusableHeadView.xib */; };
 		01A192262004E61F005EE4CD /* BPGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A192152004E61E005EE4CD /* BPGroupTableViewController.m */; };
 		01A192272004E61F005EE4CD /* BPPlainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A192162004E61E005EE4CD /* BPPlainTableViewController.m */; };
-		01AB23E02084F6CF00F58490 /* BPCellAutoLayoutHeightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AB23DF2084F6CF00F58490 /* BPCellAutoLayoutHeightModel.m */; };
+		01A597A72085CA5C000C6237 /* BPCellAutoLayoutHeightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A5979C2085CA5B000C6237 /* BPCellAutoLayoutHeightModel.m */; };
+		01A597A82085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5979E2085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.xib */; };
+		01A597A92085CA5C000C6237 /* BPCellAutoLayoutHeightFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A597A12085CA5C000C6237 /* BPCellAutoLayoutHeightFooterView.m */; };
+		01A597AA2085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A597A22085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.xib */; };
+		01A597AB2085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A597A32085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.m */; };
+		01A597AC2085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A597A42085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.m */; };
+		01A597B32085CAF7000C6237 /* BP2NDCellAutoLayoutHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A597B12085CAF7000C6237 /* BP2NDCellAutoLayoutHeightViewController.m */; };
+		01A597B62085CB6A000C6237 /* BPCellAutoLayoutHeightDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A597B52085CB6A000C6237 /* BPCellAutoLayoutHeightDataSource.m */; };
+		01A597BB2085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A597BA2085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.m */; };
 		01ADC1F61FB492C1009150F0 /* BPBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC1F51FB492C1009150F0 /* BPBaseTableViewCell.m */; };
 		01ADC1F91FB492D8009150F0 /* BPBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ADC1F81FB492D8009150F0 /* BPBaseTableViewController.m */; };
 		01B7268E1FF7DF2700648674 /* BPDataStructureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B7268D1FF7DF2700648674 /* BPDataStructureViewController.m */; };
@@ -423,6 +415,20 @@
 		01D22BE71FDD814000BCC4AD /* NSNotificationCenter+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D22BBD1FDD813E00BCC4AD /* NSNotificationCenter+BPAdd.m */; };
 		01D22BE81FDD814000BCC4AD /* UIControl+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D22BC01FDD813F00BCC4AD /* UIControl+BPAdd.m */; };
 		01D22BE91FDD814000BCC4AD /* UILabel+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D22BC11FDD813F00BCC4AD /* UILabel+BPAdd.m */; };
+		01D2F5B12088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D2F5B02088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib */; };
+		01D2F5D62088DB1C00D21B20 /* BPMultiLevelCatalogueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5C42088DB1B00D21B20 /* BPMultiLevelCatalogueModel.m */; };
+		01D2F5DF2088DB1C00D21B20 /* BP1STManualHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5D52088DB1C00D21B20 /* BP1STManualHeightViewController.m */; };
+		01D2F5E22088DB9C00D21B20 /* BP1STManualHeightHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5E12088DB9C00D21B20 /* BP1STManualHeightHelper.m */; };
+		01D2F5EF2088DBBA00D21B20 /* BP1STManualInsideHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5E52088DBB900D21B20 /* BP1STManualInsideHeaderView.m */; };
+		01D2F5F02088DBBA00D21B20 /* BP1STManualHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5E62088DBB900D21B20 /* BP1STManualHeaderView.m */; };
+		01D2F5F12088DBBA00D21B20 /* BP1STManualInsideHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D2F5E82088DBB900D21B20 /* BP1STManualInsideHeaderView.xib */; };
+		01D2F5F22088DBBA00D21B20 /* BPS1STManualInsideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D2F5E92088DBB900D21B20 /* BPS1STManualInsideTableViewCell.xib */; };
+		01D2F5F32088DBBA00D21B20 /* BPS1STManualInsideTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5EA2088DBB900D21B20 /* BPS1STManualInsideTableViewCell.m */; };
+		01D2F5F42088DBBA00D21B20 /* BP1STManualHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5EB2088DBB900D21B20 /* BP1STManualHeadCell.m */; };
+		01D2F5F52088DBBA00D21B20 /* BP1STManualHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D2F5ED2088DBB900D21B20 /* BP1STManualHeaderView.xib */; };
+		01D2F5F92088E63F00D21B20 /* NSAttributedString+BPMarkColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5F82088E63F00D21B20 /* NSAttributedString+BPMarkColor.m */; };
+		01D2F5FC2088E72800D21B20 /* NSString+BPMarkColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5FB2088E72800D21B20 /* NSString+BPMarkColor.m */; };
+		01D2F5FF2088EB1A00D21B20 /* BPMultiLevelCatalogueModelDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5FE2088EB1A00D21B20 /* BPMultiLevelCatalogueModelDataSource.m */; };
 		01DF316E1FDD3A0900B8A955 /* CAShapeLayer+BPUIBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF31611FDD3A0800B8A955 /* CAShapeLayer+BPUIBezierPath.m */; };
 		01DF316F1FDD3A0900B8A955 /* CALayer+BPBorderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF31641FDD3A0800B8A955 /* CALayer+BPBorderColor.m */; };
 		01DF31701FDD3A0900B8A955 /* CAMediaTimingFunction+BPAdditionalEquations.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF31671FDD3A0800B8A955 /* CAMediaTimingFunction+BPAdditionalEquations.m */; };
@@ -840,17 +846,8 @@
 		011B7DD620693E5B0071CB5D /* UIBarButtonItem+BPCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BPCreate.h"; sourceTree = "<group>"; };
 		011B7DD720693E5B0071CB5D /* NSObject+BPAddRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPAddRuntime.h"; sourceTree = "<group>"; };
 		011B7DD820693E5B0071CB5D /* UINavigation+BPFixSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigation+BPFixSpace.h"; sourceTree = "<group>"; };
-		011DCE842084F1010045C035 /* BPCellAutoLayoutHeightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightViewController.h; sourceTree = "<group>"; };
-		011DCE852084F1010045C035 /* BPCellAutoLayoutHeightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightViewController.m; sourceTree = "<group>"; };
-		011DCE872084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightTableViewCell.h; sourceTree = "<group>"; };
-		011DCE882084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightTableViewCell.m; sourceTree = "<group>"; };
-		011DCE892084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPCellAutoLayoutHeightTableViewCell.xib; sourceTree = "<group>"; };
-		011DCE8C2084F13E0045C035 /* BPCellAutoLayoutHeightHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightHeaderView.h; sourceTree = "<group>"; };
-		011DCE8D2084F13E0045C035 /* BPCellAutoLayoutHeightHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightHeaderView.m; sourceTree = "<group>"; };
-		011DCE8F2084F14A0045C035 /* BPCellAutoLayoutHeightHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPCellAutoLayoutHeightHeaderView.xib; sourceTree = "<group>"; };
-		011DCE912084F15A0045C035 /* BPCellAutoLayoutHeightFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightFooterView.h; sourceTree = "<group>"; };
-		011DCE922084F15A0045C035 /* BPCellAutoLayoutHeightFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightFooterView.m; sourceTree = "<group>"; };
-		011DCE942084F1660045C035 /* BPCellAutoLayoutHeightFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPCellAutoLayoutHeightFooterView.xib; sourceTree = "<group>"; };
+		011DCE842084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BP1STCellAutoLayoutHeightViewController.h; sourceTree = "<group>"; };
+		011DCE852084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BP1STCellAutoLayoutHeightViewController.m; sourceTree = "<group>"; };
 		011F559F20304A50005F9C9E /* BPPhotoBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPhotoBrowserViewController.h; sourceTree = "<group>"; };
 		011F55A020304A50005F9C9E /* BPPhotoBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPhotoBrowserViewController.m; sourceTree = "<group>"; };
 		0126B5351FB4ACBB00E522CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -879,23 +876,6 @@
 		0137C75F207C952700F6B6CE /* BPTextCompositionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTextCompositionViewController.xib; sourceTree = "<group>"; };
 		013B78821FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BPCreate.h"; sourceTree = "<group>"; };
 		013B78831FE80DF700DB1FCD /* UIBarButtonItem+BPCreate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+BPCreate.m"; sourceTree = "<group>"; };
-		0143B5DE2082517500524ABB /* BPMultiLevelCatalogueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMultiLevelCatalogueViewController.h; sourceTree = "<group>"; };
-		0143B5DF2082517500524ABB /* BPMultiLevelCatalogueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPMultiLevelCatalogueViewController.m; sourceTree = "<group>"; };
-		0143B5E32082518900524ABB /* KSPhraseCardInsideTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPhraseCardInsideTableViewCell.h; sourceTree = "<group>"; };
-		0143B5E42082518900524ABB /* KSPhraseCardInsideHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPhraseCardInsideHeaderView.m; sourceTree = "<group>"; };
-		0143B5E52082518900524ABB /* KSPhraseCardHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPhraseCardHeaderView.m; sourceTree = "<group>"; };
-		0143B5E62082518900524ABB /* KSPhraseCardHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPhraseCardHeadCell.h; sourceTree = "<group>"; };
-		0143B5E72082518900524ABB /* KSPhraseCardInsideHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSPhraseCardInsideHeaderView.xib; sourceTree = "<group>"; };
-		0143B5E82082518900524ABB /* KSPhraseCardInsideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSPhraseCardInsideTableViewCell.xib; sourceTree = "<group>"; };
-		0143B5E92082518900524ABB /* KSPhraseCardInsideTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPhraseCardInsideTableViewCell.m; sourceTree = "<group>"; };
-		0143B5EA2082518900524ABB /* KSPhraseCardHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPhraseCardHeadCell.m; sourceTree = "<group>"; };
-		0143B5EB2082518900524ABB /* KSPhraseCardHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPhraseCardHeaderView.h; sourceTree = "<group>"; };
-		0143B5EC2082518900524ABB /* KSPhraseCardHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSPhraseCardHeaderView.xib; sourceTree = "<group>"; };
-		0143B5ED2082518900524ABB /* KSPhraseCardInsideHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPhraseCardInsideHeaderView.h; sourceTree = "<group>"; };
-		0143B5F02082518900524ABB /* KSPhraseCardHeightHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPhraseCardHeightHelper.h; sourceTree = "<group>"; };
-		0143B5F12082518900524ABB /* KSPhraseCardHeightHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPhraseCardHeightHelper.m; sourceTree = "<group>"; };
-		0143B5FC208251EF00524ABB /* KSMultiLevelCatalogueModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSMultiLevelCatalogueModel.h; sourceTree = "<group>"; };
-		0143B5FD208251EF00524ABB /* KSMultiLevelCatalogueModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSMultiLevelCatalogueModel.m; sourceTree = "<group>"; };
 		01490C061FF548650035492D /* BPGCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPGCDViewController.h; sourceTree = "<group>"; };
 		01490C071FF548650035492D /* BPGCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPGCDViewController.m; sourceTree = "<group>"; };
 		01490C091FF548740035492D /* BPMemoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMemoryViewController.h; sourceTree = "<group>"; };
@@ -1234,8 +1214,22 @@
 		01A192142004E61E005EE4CD /* BPPlainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPlainTableViewController.h; sourceTree = "<group>"; };
 		01A192152004E61E005EE4CD /* BPGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGroupTableViewController.m; sourceTree = "<group>"; };
 		01A192162004E61E005EE4CD /* BPPlainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPlainTableViewController.m; sourceTree = "<group>"; };
-		01AB23DE2084F6CF00F58490 /* BPCellAutoLayoutHeightModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightModel.h; sourceTree = "<group>"; };
-		01AB23DF2084F6CF00F58490 /* BPCellAutoLayoutHeightModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightModel.m; sourceTree = "<group>"; };
+		01A5979B2085CA5B000C6237 /* BPCellAutoLayoutHeightModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightModel.h; sourceTree = "<group>"; };
+		01A5979C2085CA5B000C6237 /* BPCellAutoLayoutHeightModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightModel.m; sourceTree = "<group>"; };
+		01A5979E2085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPCellAutoLayoutHeightHeaderView.xib; sourceTree = "<group>"; };
+		01A5979F2085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightTableViewCell.h; sourceTree = "<group>"; };
+		01A597A02085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightHeaderView.h; sourceTree = "<group>"; };
+		01A597A12085CA5C000C6237 /* BPCellAutoLayoutHeightFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightFooterView.m; sourceTree = "<group>"; };
+		01A597A22085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPCellAutoLayoutHeightTableViewCell.xib; sourceTree = "<group>"; };
+		01A597A32085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightTableViewCell.m; sourceTree = "<group>"; };
+		01A597A42085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightHeaderView.m; sourceTree = "<group>"; };
+		01A597A62085CA5C000C6237 /* BPCellAutoLayoutHeightFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightFooterView.h; sourceTree = "<group>"; };
+		01A597B12085CAF7000C6237 /* BP2NDCellAutoLayoutHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BP2NDCellAutoLayoutHeightViewController.m; sourceTree = "<group>"; };
+		01A597B22085CAF7000C6237 /* BP2NDCellAutoLayoutHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP2NDCellAutoLayoutHeightViewController.h; sourceTree = "<group>"; };
+		01A597B42085CB6A000C6237 /* BPCellAutoLayoutHeightDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightDataSource.h; sourceTree = "<group>"; };
+		01A597B52085CB6A000C6237 /* BPCellAutoLayoutHeightDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightDataSource.m; sourceTree = "<group>"; };
+		01A597B92085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BP3RDCellAutoLayoutHeightViewController.h; sourceTree = "<group>"; };
+		01A597BA2085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BP3RDCellAutoLayoutHeightViewController.m; sourceTree = "<group>"; };
 		01ADC1F41FB492C1009150F0 /* BPBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseTableViewCell.h; sourceTree = "<group>"; };
 		01ADC1F51FB492C1009150F0 /* BPBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseTableViewCell.m; sourceTree = "<group>"; };
 		01ADC1F71FB492D8009150F0 /* BPBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseTableViewController.h; sourceTree = "<group>"; };
@@ -1375,6 +1369,30 @@
 		01D22BC21FDD813F00BCC4AD /* NSObject+BPAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPAdd.h"; sourceTree = "<group>"; };
 		01D22BC31FDD814000BCC4AD /* NSDictionary+BPAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BPAdd.h"; sourceTree = "<group>"; };
 		01D22BC41FDD814000BCC4AD /* NSString+BPAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BPAdd.h"; sourceTree = "<group>"; };
+		01D2F5B02088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPCellAutoLayoutHeightFooterView.xib; sourceTree = "<group>"; };
+		01D2F5C32088DB1B00D21B20 /* BPMultiLevelCatalogueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMultiLevelCatalogueModel.h; sourceTree = "<group>"; };
+		01D2F5C42088DB1B00D21B20 /* BPMultiLevelCatalogueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPMultiLevelCatalogueModel.m; sourceTree = "<group>"; };
+		01D2F5D42088DB1C00D21B20 /* BP1STManualHeightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP1STManualHeightViewController.h; sourceTree = "<group>"; };
+		01D2F5D52088DB1C00D21B20 /* BP1STManualHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BP1STManualHeightViewController.m; sourceTree = "<group>"; };
+		01D2F5E02088DB9B00D21B20 /* BP1STManualHeightHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP1STManualHeightHelper.h; sourceTree = "<group>"; };
+		01D2F5E12088DB9C00D21B20 /* BP1STManualHeightHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BP1STManualHeightHelper.m; sourceTree = "<group>"; };
+		01D2F5E42088DBB900D21B20 /* BPS1STManualInsideTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPS1STManualInsideTableViewCell.h; sourceTree = "<group>"; };
+		01D2F5E52088DBB900D21B20 /* BP1STManualInsideHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BP1STManualInsideHeaderView.m; sourceTree = "<group>"; };
+		01D2F5E62088DBB900D21B20 /* BP1STManualHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BP1STManualHeaderView.m; sourceTree = "<group>"; };
+		01D2F5E72088DBB900D21B20 /* BP1STManualHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP1STManualHeadCell.h; sourceTree = "<group>"; };
+		01D2F5E82088DBB900D21B20 /* BP1STManualInsideHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BP1STManualInsideHeaderView.xib; sourceTree = "<group>"; };
+		01D2F5E92088DBB900D21B20 /* BPS1STManualInsideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPS1STManualInsideTableViewCell.xib; sourceTree = "<group>"; };
+		01D2F5EA2088DBB900D21B20 /* BPS1STManualInsideTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPS1STManualInsideTableViewCell.m; sourceTree = "<group>"; };
+		01D2F5EB2088DBB900D21B20 /* BP1STManualHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BP1STManualHeadCell.m; sourceTree = "<group>"; };
+		01D2F5EC2088DBB900D21B20 /* BP1STManualHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP1STManualHeaderView.h; sourceTree = "<group>"; };
+		01D2F5ED2088DBB900D21B20 /* BP1STManualHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BP1STManualHeaderView.xib; sourceTree = "<group>"; };
+		01D2F5EE2088DBB900D21B20 /* BP1STManualInsideHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP1STManualInsideHeaderView.h; sourceTree = "<group>"; };
+		01D2F5F72088E63F00D21B20 /* NSAttributedString+BPMarkColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+BPMarkColor.h"; sourceTree = "<group>"; };
+		01D2F5F82088E63F00D21B20 /* NSAttributedString+BPMarkColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+BPMarkColor.m"; sourceTree = "<group>"; };
+		01D2F5FA2088E72800D21B20 /* NSString+BPMarkColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BPMarkColor.h"; sourceTree = "<group>"; };
+		01D2F5FB2088E72800D21B20 /* NSString+BPMarkColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BPMarkColor.m"; sourceTree = "<group>"; };
+		01D2F5FD2088EB1A00D21B20 /* BPMultiLevelCatalogueModelDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMultiLevelCatalogueModelDataSource.h; sourceTree = "<group>"; };
+		01D2F5FE2088EB1A00D21B20 /* BPMultiLevelCatalogueModelDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMultiLevelCatalogueModelDataSource.m; sourceTree = "<group>"; };
 		01D509E01FDD900400A8B1B4 /* BPAppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppMacro.h; sourceTree = "<group>"; };
 		01D509E21FDD909C00A8B1B4 /* BPAppTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppTool.h; sourceTree = "<group>"; };
 		01DF31581FDD38EA00B8A955 /* BPUIKitCatergory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPUIKitCatergory.h; sourceTree = "<group>"; };
@@ -3027,6 +3045,11 @@
 			isa = PBXGroup;
 			children = (
 				011DCE7F2084F0D00045C035 /* iOS8 */,
+				01A597B72085E270000C6237 /* HandCalculator */,
+				01A597AE2085CAB1000C6237 /* iOS6 */,
+				01A5979A2085CA5B000C6237 /* Models */,
+				01A5979D2085CA5C000C6237 /* Views */,
+				01A597992085CA29000C6237 /* DataSource */,
 			);
 			path = CellAutoLayoutHeight;
 			sourceTree = "<group>";
@@ -3035,9 +3058,6 @@
 			isa = PBXGroup;
 			children = (
 				011DCE802084F0E60045C035 /* Controllers */,
-				011DCE812084F0E60045C035 /* Models */,
-				011DCE832084F0E70045C035 /* ViewModels */,
-				011DCE822084F0E70045C035 /* Views */,
 			);
 			path = iOS8;
 			sourceTree = "<group>";
@@ -3045,42 +3065,10 @@
 		011DCE802084F0E60045C035 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				011DCE842084F1010045C035 /* BPCellAutoLayoutHeightViewController.h */,
-				011DCE852084F1010045C035 /* BPCellAutoLayoutHeightViewController.m */,
+				011DCE842084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.h */,
+				011DCE852084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		011DCE812084F0E60045C035 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				01AB23DE2084F6CF00F58490 /* BPCellAutoLayoutHeightModel.h */,
-				01AB23DF2084F6CF00F58490 /* BPCellAutoLayoutHeightModel.m */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		011DCE822084F0E70045C035 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				011DCE872084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.h */,
-				011DCE882084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.m */,
-				011DCE892084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.xib */,
-				011DCE8C2084F13E0045C035 /* BPCellAutoLayoutHeightHeaderView.h */,
-				011DCE8D2084F13E0045C035 /* BPCellAutoLayoutHeightHeaderView.m */,
-				011DCE8F2084F14A0045C035 /* BPCellAutoLayoutHeightHeaderView.xib */,
-				011DCE912084F15A0045C035 /* BPCellAutoLayoutHeightFooterView.h */,
-				011DCE922084F15A0045C035 /* BPCellAutoLayoutHeightFooterView.m */,
-				011DCE942084F1660045C035 /* BPCellAutoLayoutHeightFooterView.xib */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		011DCE832084F0E70045C035 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		012D948320344AC200691E40 /* KVC */ = {
@@ -3284,57 +3272,11 @@
 		0143B5D92082516200524ABB /* MultiLevelCatalogue */ = {
 			isa = PBXGroup;
 			children = (
-				0143B5DA2082516700524ABB /* Controllers */,
-				0143B5EE2082518900524ABB /* Models */,
-				0143B5E12082518900524ABB /* ViewModels */,
-				0143B5E22082518900524ABB /* Views */,
+				01D2F5BE2088DAE700D21B20 /* 1ST */,
+				01D2F5BF2088DAF100D21B20 /* 2ND */,
+				01D2F5C02088DAFB00D21B20 /* 3RD */,
 			);
 			path = MultiLevelCatalogue;
-			sourceTree = "<group>";
-		};
-		0143B5DA2082516700524ABB /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				0143B5DE2082517500524ABB /* BPMultiLevelCatalogueViewController.h */,
-				0143B5DF2082517500524ABB /* BPMultiLevelCatalogueViewController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		0143B5E12082518900524ABB /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		0143B5E22082518900524ABB /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				0143B5E62082518900524ABB /* KSPhraseCardHeadCell.h */,
-				0143B5EA2082518900524ABB /* KSPhraseCardHeadCell.m */,
-				0143B5EB2082518900524ABB /* KSPhraseCardHeaderView.h */,
-				0143B5E52082518900524ABB /* KSPhraseCardHeaderView.m */,
-				0143B5EC2082518900524ABB /* KSPhraseCardHeaderView.xib */,
-				0143B5ED2082518900524ABB /* KSPhraseCardInsideHeaderView.h */,
-				0143B5E42082518900524ABB /* KSPhraseCardInsideHeaderView.m */,
-				0143B5E72082518900524ABB /* KSPhraseCardInsideHeaderView.xib */,
-				0143B5E32082518900524ABB /* KSPhraseCardInsideTableViewCell.h */,
-				0143B5E92082518900524ABB /* KSPhraseCardInsideTableViewCell.m */,
-				0143B5E82082518900524ABB /* KSPhraseCardInsideTableViewCell.xib */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		0143B5EE2082518900524ABB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				0143B5F02082518900524ABB /* KSPhraseCardHeightHelper.h */,
-				0143B5F12082518900524ABB /* KSPhraseCardHeightHelper.m */,
-				0143B5FC208251EF00524ABB /* KSMultiLevelCatalogueModel.h */,
-				0143B5FD208251EF00524ABB /* KSMultiLevelCatalogueModel.m */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		01490C021FF547DA0035492D /* KnowledgePoint */ = {
@@ -4226,6 +4168,7 @@
 		017A9A391FDD2B2100CDA599 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				01D2F5F62088E61E00D21B20 /* NSAttributedString */,
 				01DF32481FDD3B9D00B8A955 /* NSData */,
 				01DF31A21FDD3A8E00B8A955 /* NSArray */,
 				01DF31B21FDD3A9000B8A955 /* NSBundle */,
@@ -4482,6 +4425,8 @@
 				01DF31F61FDD3B2500B8A955 /* NSString+BPXMLDictionary.m */,
 				017A9A881FDD311C00CDA599 /* NSString+BPFilepath.h */,
 				017A9A891FDD311C00CDA599 /* NSString+BPFilepath.m */,
+				01D2F5FA2088E72800D21B20 /* NSString+BPMarkColor.h */,
+				01D2F5FB2088E72800D21B20 /* NSString+BPMarkColor.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -5302,6 +5247,74 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		01A597992085CA29000C6237 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				01A597B42085CB6A000C6237 /* BPCellAutoLayoutHeightDataSource.h */,
+				01A597B52085CB6A000C6237 /* BPCellAutoLayoutHeightDataSource.m */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		01A5979A2085CA5B000C6237 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01A5979B2085CA5B000C6237 /* BPCellAutoLayoutHeightModel.h */,
+				01A5979C2085CA5B000C6237 /* BPCellAutoLayoutHeightModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01A5979D2085CA5C000C6237 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01A597A62085CA5C000C6237 /* BPCellAutoLayoutHeightFooterView.h */,
+				01A597A12085CA5C000C6237 /* BPCellAutoLayoutHeightFooterView.m */,
+				01D2F5B02088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib */,
+				01A597A02085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.h */,
+				01A597A42085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.m */,
+				01A5979E2085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.xib */,
+				01A5979F2085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.h */,
+				01A597A32085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.m */,
+				01A597A22085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01A597AE2085CAB1000C6237 /* iOS6 */ = {
+			isa = PBXGroup;
+			children = (
+				01A597B02085CAF7000C6237 /* Controllers */,
+			);
+			path = iOS6;
+			sourceTree = "<group>";
+		};
+		01A597B02085CAF7000C6237 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01A597B22085CAF7000C6237 /* BP2NDCellAutoLayoutHeightViewController.h */,
+				01A597B12085CAF7000C6237 /* BP2NDCellAutoLayoutHeightViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01A597B72085E270000C6237 /* HandCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				01A597B82085E27F000C6237 /* Controllers */,
+			);
+			path = HandCalculator;
+			sourceTree = "<group>";
+		};
+		01A597B82085E27F000C6237 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01A597B92085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.h */,
+				01A597BA2085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		01ADC1E71FB490FC009150F0 /* BaseScroll */ = {
 			isa = PBXGroup;
 			children = (
@@ -5880,6 +5893,88 @@
 				019AA91720205BE80090B038 /* CADisplayLink+BPAdd.m */,
 			);
 			path = MainCategory;
+			sourceTree = "<group>";
+		};
+		01D2F5BE2088DAE700D21B20 /* 1ST */ = {
+			isa = PBXGroup;
+			children = (
+				01D2F5E32088DBB900D21B20 /* Views */,
+				01D2F5D32088DB1C00D21B20 /* Controllers */,
+				01D2F5C12088DB1B00D21B20 /* Models */,
+				01D2F5C62088DB1C00D21B20 /* ViewModels */,
+			);
+			path = 1ST;
+			sourceTree = "<group>";
+		};
+		01D2F5BF2088DAF100D21B20 /* 2ND */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 2ND;
+			sourceTree = "<group>";
+		};
+		01D2F5C02088DAFB00D21B20 /* 3RD */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = 3RD;
+			sourceTree = "<group>";
+		};
+		01D2F5C12088DB1B00D21B20 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01D2F5E02088DB9B00D21B20 /* BP1STManualHeightHelper.h */,
+				01D2F5E12088DB9C00D21B20 /* BP1STManualHeightHelper.m */,
+				01D2F5C32088DB1B00D21B20 /* BPMultiLevelCatalogueModel.h */,
+				01D2F5C42088DB1B00D21B20 /* BPMultiLevelCatalogueModel.m */,
+				01D2F5FD2088EB1A00D21B20 /* BPMultiLevelCatalogueModelDataSource.h */,
+				01D2F5FE2088EB1A00D21B20 /* BPMultiLevelCatalogueModelDataSource.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01D2F5C62088DB1C00D21B20 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		01D2F5D32088DB1C00D21B20 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01D2F5D42088DB1C00D21B20 /* BP1STManualHeightViewController.h */,
+				01D2F5D52088DB1C00D21B20 /* BP1STManualHeightViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01D2F5E32088DBB900D21B20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01D2F5E72088DBB900D21B20 /* BP1STManualHeadCell.h */,
+				01D2F5EB2088DBB900D21B20 /* BP1STManualHeadCell.m */,
+				01D2F5EC2088DBB900D21B20 /* BP1STManualHeaderView.h */,
+				01D2F5E62088DBB900D21B20 /* BP1STManualHeaderView.m */,
+				01D2F5ED2088DBB900D21B20 /* BP1STManualHeaderView.xib */,
+				01D2F5EE2088DBB900D21B20 /* BP1STManualInsideHeaderView.h */,
+				01D2F5E52088DBB900D21B20 /* BP1STManualInsideHeaderView.m */,
+				01D2F5E82088DBB900D21B20 /* BP1STManualInsideHeaderView.xib */,
+				01D2F5E42088DBB900D21B20 /* BPS1STManualInsideTableViewCell.h */,
+				01D2F5EA2088DBB900D21B20 /* BPS1STManualInsideTableViewCell.m */,
+				01D2F5E92088DBB900D21B20 /* BPS1STManualInsideTableViewCell.xib */,
+			);
+			name = Views;
+			path = ../../../../../../../../../../Desktop/SearchResultPhrase/Views;
+			sourceTree = "<group>";
+		};
+		01D2F5F62088E61E00D21B20 /* NSAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				01D2F5F72088E63F00D21B20 /* NSAttributedString+BPMarkColor.h */,
+				01D2F5F82088E63F00D21B20 /* NSAttributedString+BPMarkColor.m */,
+			);
+			path = NSAttributedString;
 			sourceTree = "<group>";
 		};
 		01DF315F1FDD3A0800B8A955 /* CAShapeLayer */ = {
@@ -6573,29 +6668,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0143B5F92082518A00524ABB /* KSPhraseCardHeaderView.xib in Resources */,
 				0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */,
 				017907A52001249500E5C360 /* cycleBorder.png in Resources */,
-				011DCE902084F14A0045C035 /* BPCellAutoLayoutHeightHeaderView.xib in Resources */,
 				0195EAA4201373E700DC59A1 /* BPXibView.xib in Resources */,
 				010FBD2620601D9E00BC9EC4 /* palette.jpeg in Resources */,
 				017907E3200144F200E5C360 /* bookcatalogue.toc in Resources */,
 				014ED0DE1FF0135000D2926C /* launchImage@2x.png in Resources */,
-				0143B5F62082518A00524ABB /* KSPhraseCardInsideTableViewCell.xib in Resources */,
+				01D2F5F22088DBBA00D21B20 /* BPS1STManualInsideTableViewCell.xib in Resources */,
 				014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */,
+				01A597A82085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.xib in Resources */,
 				0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */,
 				01A1921E2004E61F005EE4CD /* BPCollectionViewCell.xib in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
-				011DCE8B2084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.xib in Resources */,
-				011DCE952084F1660045C035 /* BPCellAutoLayoutHeightFooterView.xib in Resources */,
+				01D2F5F52088DBBA00D21B20 /* BP1STManualHeaderView.xib in Resources */,
 				0184BF831FD6DB2C00CB9AAD /* BPTest_XibViewController.xib in Resources */,
+				01D2F5B12088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib in Resources */,
 				0137C756207B658400F6B6CE /* BPAutoLayoutXIBViewController.xib in Resources */,
 				01352FE31FD2DDA20011D65C /* FeatureCatalog.plist in Resources */,
 				0137C761207C952700F6B6CE /* BPTextCompositionViewController.xib in Resources */,
+				01D2F5F12088DBBA00D21B20 /* BP1STManualInsideHeaderView.xib in Resources */,
 				01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */,
 				014ED0DD1FF0135000D2926C /* launchImage@3x.png in Resources */,
-				0143B5F52082518A00524ABB /* KSPhraseCardInsideHeaderView.xib in Resources */,
 				0195EAA2201373E700DC59A1 /* BPXibViewController.xib in Resources */,
+				01A597AA2085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.xib in Resources */,
 				01A1921F2004E61F005EE4CD /* BPCollectionReusableFootView.xib in Resources */,
 				01A192222004E61F005EE4CD /* BPCollectionReusableHeadView.xib in Resources */,
 			);
@@ -6692,12 +6787,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				017A9A9B1FDD315A00CDA599 /* UIView+BPSafeArea.m in Sources */,
+				01D2F5D62088DB1C00D21B20 /* BPMultiLevelCatalogueModel.m in Sources */,
 				017A9AA01FDD316C00CDA599 /* UIViewController+BPRemoveSelfFromNavi.m in Sources */,
 				0149953D1FB4A3F900077866 /* BPRootNavigationController.m in Sources */,
 				018C449D20093F8900CF43D7 /* BPSliderShowView.m in Sources */,
 				010DB7451FDD4D450099E66F /* UIImage+BPAlpha.m in Sources */,
 				01DF31E51FDD3B0300B8A955 /* NSDecimalNumber+BPExtensions.m in Sources */,
 				010DB7211FDD4D450099E66F /* UIWebView+BPBlocks.m in Sources */,
+				01D2F5EF2088DBBA00D21B20 /* BP1STManualInsideHeaderView.m in Sources */,
 				0179BC3F20316EFD0061CD84 /* BPDesignPatternsNotificationViewControllerA.m in Sources */,
 				018C44CC2009DF5600CF43D7 /* BPCardPageFlowView.m in Sources */,
 				014ED0411FEFF0A300D2926C /* BPBackButton.m in Sources */,
@@ -6705,7 +6802,6 @@
 				01D22BE71FDD814000BCC4AD /* NSNotificationCenter+BPAdd.m in Sources */,
 				017906FB20011D4100E5C360 /* BPDataPersistenceVC.m in Sources */,
 				0195EAA3201373E700DC59A1 /* BPXibViewController.m in Sources */,
-				0143B5E02082517500524ABB /* BPMultiLevelCatalogueViewController.m in Sources */,
 				0179070920011D9E00E5C360 /* BPBlockViewController.m in Sources */,
 				010DB7441FDD4D450099E66F /* UIImage+BPBetterFace.m in Sources */,
 				010DB75A1FDD4D450099E66F /* UIFont+BPTTF.m in Sources */,
@@ -6744,6 +6840,7 @@
 				0105063B201B3C69000085C1 /* BPCommentsTableViewCell.m in Sources */,
 				010DB7911FDD4D640099E66F /* UIView+BPShake.m in Sources */,
 				01BCB33E1FB55921009EF64E /* BPBaseServerAPI.m in Sources */,
+				01D2F5F02088DBBA00D21B20 /* BP1STManualHeaderView.m in Sources */,
 				01027B531FDEE0380003F0FE /* BPNaviTableViewControllerThree.m in Sources */,
 				01352FF51FD2E1AA0011D65C /* BPNaviProperyViewController.m in Sources */,
 				010DB7271FDD4D450099E66F /* UIColor+BPGradient.m in Sources */,
@@ -6758,11 +6855,9 @@
 				011B7DD1206906CB0071CB5D /* BPAppInfoTool.m in Sources */,
 				010DB7101FDD4D450099E66F /* UIImageView+BPAddition.m in Sources */,
 				010DB7131FDD4D450099E66F /* UIAlertView+BPBlock.m in Sources */,
-				0143B5FB2082518A00524ABB /* KSPhraseCardHeightHelper.m in Sources */,
 				01C31F84200FA1CD0096C2E0 /* BPAnchorPopView.m in Sources */,
 				01D22BE61FDD814000BCC4AD /* NSMutableDictionary+BPAdd.m in Sources */,
 				01DF325F1FDD3B9D00B8A955 /* NSData+BPPCM.m in Sources */,
-				0143B5F82082518A00524ABB /* KSPhraseCardHeadCell.m in Sources */,
 				0173401D1FA9753F006192F0 /* BPBaseNavigationController.m in Sources */,
 				0168F3872035E66900D63D83 /* BPBaseKnowledgeViewModel.m in Sources */,
 				010DB74E1FDD4D450099E66F /* UIBarButtonItem+BPAction.m in Sources */,
@@ -6836,11 +6931,11 @@
 				01161F512030901300FA3441 /* BPNSSetViewController.m in Sources */,
 				01D22BD81FDD814000BCC4AD /* NSMutableArray+BPAdd.m in Sources */,
 				01E672B32014898300FB22D4 /* BPReplicatorLayerViewController.m in Sources */,
+				01D2F5FF2088EB1A00D21B20 /* BPMultiLevelCatalogueModelDataSource.m in Sources */,
 				010DB73E1FDD4D450099E66F /* UIImage+BPGIF.m in Sources */,
-				011DCE862084F1010045C035 /* BPCellAutoLayoutHeightViewController.m in Sources */,
+				011DCE862084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.m in Sources */,
 				010DB7391FDD4D450099E66F /* UITextField+BPBlocks.m in Sources */,
 				010DB7541FDD4D450099E66F /* UITableViewCell+BPNIB.m in Sources */,
-				011DCE8E2084F13E0045C035 /* BPCellAutoLayoutHeightHeaderView.m in Sources */,
 				01A191B02004E165005EE4CD /* BPTextFieldViewController.m in Sources */,
 				010DB75D1FDD4D450099E66F /* UIDevice+BPHardware.m in Sources */,
 				01A191D72004E1ED005EE4CD /* BPPageControlController.m in Sources */,
@@ -6855,7 +6950,6 @@
 				0137C751207B656B00F6B6CE /* BPAutoLayoutCodeViewController.m in Sources */,
 				01D22BD51FDD814000BCC4AD /* CALayer+BPAddForFrame.m in Sources */,
 				019AA91820205BE80090B038 /* CADisplayLink+BPAdd.m in Sources */,
-				0143B5F42082518A00524ABB /* KSPhraseCardHeaderView.m in Sources */,
 				01DF32721FDD3BB100B8A955 /* NSDate+BPnternetDateTime.m in Sources */,
 				01A191D42004E1E7005EE4CD /* BPSegmentedControlController.m in Sources */,
 				017A9A371FDD2A9A00CDA599 /* BPZPositionCollectionHeadView.m in Sources */,
@@ -6890,7 +6984,6 @@
 				01D22BD31FDD814000BCC4AD /* UITableView+BPAdd.m in Sources */,
 				010DB7931FDD4D640099E66F /* UIView+BPConstraints.m in Sources */,
 				018972B71FC47F6B00D6DF5B /* BPBaseCollectionViewController.m in Sources */,
-				01AB23E02084F6CF00F58490 /* BPCellAutoLayoutHeightModel.m in Sources */,
 				010FBD2720601D9E00BC9EC4 /* BPPaletteViewController.m in Sources */,
 				010FBD1020601D6300BC9EC4 /* BPNSThreadViewController.m in Sources */,
 				012D948920344C7600691E40 /* BPPersonHealth.m in Sources */,
@@ -6909,9 +7002,12 @@
 				010DB7091FDD4D450099E66F /* UILabel+BPAutomaticWriting.m in Sources */,
 				01D22BCE1FDD814000BCC4AD /* UIImage+BPAdd.m in Sources */,
 				01DF32231FDD3B3000B8A955 /* NSString+BPBase64.m in Sources */,
+				01A597A72085CA5C000C6237 /* BPCellAutoLayoutHeightModel.m in Sources */,
+				01A597A92085CA5C000C6237 /* BPCellAutoLayoutHeightFooterView.m in Sources */,
 				018C4510200A54AD00CF43D7 /* UICollectionViewFlowLayout+BPFullItem.m in Sources */,
 				01DF321B1FDD3B3000B8A955 /* NSString+BPContains.m in Sources */,
 				01D22BE91FDD814000BCC4AD /* UILabel+BPAdd.m in Sources */,
+				01D2F5F92088E63F00D21B20 /* NSAttributedString+BPMarkColor.m in Sources */,
 				012D948620344AD100691E40 /* BPDesignPatternsKVCViewController.m in Sources */,
 				01D22BDD1FDD814000BCC4AD /* UIView+BPAddForFrame.m in Sources */,
 				01DF32461FDD3B3D00B8A955 /* NSObject+BPKVOBlocks.m in Sources */,
@@ -6952,15 +7048,19 @@
 				010DB74B1FDD4D450099E66F /* UIApplication+BPNetworkActivityIndicator.m in Sources */,
 				017906FE20011D4100E5C360 /* BPDataManager.m in Sources */,
 				010DB7B01FDD4D6F0099E66F /* UIButton+BPBackgroundColor.m in Sources */,
+				01D2F5F32088DBBA00D21B20 /* BPS1STManualInsideTableViewCell.m in Sources */,
 				01B726961FF7E45B00648674 /* BPAlgorithmController.m in Sources */,
 				01E6B1922001FE970008C18C /* SchoolModel.m in Sources */,
 				01DF31ED1FDD3B1600B8A955 /* NSURL+BPParam.m in Sources */,
 				010DB72B1FDD4D450099E66F /* UIBezierPath+BPThroughPointsBezier.m in Sources */,
 				010DB7951FDD4D640099E66F /* UIView+BPRecursion.m in Sources */,
 				010FBD2520601D9E00BC9EC4 /* BPPaletteView.m in Sources */,
+				01A597AC2085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.m in Sources */,
 				0160718A204D3530009C66A2 /* PHAsset+BPAdd.m in Sources */,
 				0137C760207C952700F6B6CE /* BPTextCompositionViewController.m in Sources */,
+				01D2F5F42088DBBA00D21B20 /* BP1STManualHeadCell.m in Sources */,
 				010DB7AD1FDD4D6F0099E66F /* UIButton+BPTouchAreaInsets.m in Sources */,
+				01A597AB2085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.m in Sources */,
 				01DF31CB1FDD3A9100B8A955 /* NSNotificationCenter+BPMainThread.m in Sources */,
 				0179BC42203176190061CD84 /* BPDesignPatternsBlockViewControllerA.m in Sources */,
 				01DF32191FDD3B3000B8A955 /* NSString+BPPinyin.m in Sources */,
@@ -6982,7 +7082,6 @@
 				01A191AA2004E139005EE4CD /* BPLabelViewController.m in Sources */,
 				0173401F1FA9753F006192F0 /* BPBaseTabBarController.m in Sources */,
 				010DB78F1FDD4D640099E66F /* UIView+BPNib.m in Sources */,
-				0143B5FE208251EF00524ABB /* KSMultiLevelCatalogueModel.m in Sources */,
 				01E6B19D2001FEEE0008C18C /* FMDatabaseManager.m in Sources */,
 				018C44CF2009E03D00CF43D7 /* BPCardPageFlowViewCell.m in Sources */,
 				01E1DC2C202ECE6E00529ADB /* BPNormalVolumeWaverView.m in Sources */,
@@ -6995,13 +7094,13 @@
 				01D22BE81FDD814000BCC4AD /* UIControl+BPAdd.m in Sources */,
 				01C0B6231FFC87AB005BB4A5 /* PaletteTarget.m in Sources */,
 				01E6B19C2001FEEE0008C18C /* FMDatabaseQueueManager.m in Sources */,
+				01D2F5DF2088DB1C00D21B20 /* BP1STManualHeightViewController.m in Sources */,
 				0195EAA5201373E700DC59A1 /* BPXibView.m in Sources */,
 				010DB71D1FDD4D450099E66F /* UIWebView+BPJavaScript.m in Sources */,
 				01E6B1932001FE970008C18C /* DataBaseModel.m in Sources */,
 				01DF316F1FDD3A0900B8A955 /* CALayer+BPBorderColor.m in Sources */,
 				01050638201B3C40000085C1 /* BPCommentsViewController.m in Sources */,
 				010DB7301FDD4D450099E66F /* UIWindow+BPHierarchy.m in Sources */,
-				0143B5F72082518A00524ABB /* KSPhraseCardInsideTableViewCell.m in Sources */,
 				01A191E02004E1FF005EE4CD /* BPViewController.m in Sources */,
 				01D22BDE1FDD814000BCC4AD /* NSTimer+BPAdd.m in Sources */,
 				010DB74F1FDD4D450099E66F /* UIBarButtonItem+BPBadge.m in Sources */,
@@ -7020,6 +7119,7 @@
 				010FBD2820601D9E00BC9EC4 /* BPCollectionPageViewController.m in Sources */,
 				010DB7AB1FDD4D6F0099E66F /* UIButton+BPBadge.m in Sources */,
 				01DF31BD1FDD3A9100B8A955 /* NSDictionary+BPSafeAccess.m in Sources */,
+				01A597BB2085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.m in Sources */,
 				010DB7161FDD4D450099E66F /* UITextView+BPPlaceHolder.m in Sources */,
 				01C31F87200FA1CD0096C2E0 /* BPPopCollectionViewCell.m in Sources */,
 				017906E020011C7E00E5C360 /* BPKVCViewController.m in Sources */,
@@ -7033,12 +7133,14 @@
 				01DF32431FDD3B3D00B8A955 /* NSObject+BPAssociatedObject.m in Sources */,
 				010DB7081FDD4D450099E66F /* UILabel+BPSuggestSize.m in Sources */,
 				01DF32261FDD3B3000B8A955 /* NSString+BPUUID.m in Sources */,
+				01D2F5FC2088E72800D21B20 /* NSString+BPMarkColor.m in Sources */,
 				01C935BA1FC33A5900D98FD6 /* BPSimpleModel.m in Sources */,
 				0179077B200121F800E5C360 /* FMDBTools.m in Sources */,
 				010FBD0F20601D6300BC9EC4 /* BPNSThread.m in Sources */,
 				010DB7571FDD4D450099E66F /* UIControl+BPSound.m in Sources */,
 				017A9A281FDD229B00CDA599 /* BPNetTool.m in Sources */,
 				010DB7B21FDD4D6F0099E66F /* UIButton+BPIndicator.m in Sources */,
+				01A597B62085CB6A000C6237 /* BPCellAutoLayoutHeightDataSource.m in Sources */,
 				0173401C1FA9753F006192F0 /* BPAppDelegate.m in Sources */,
 				01DF32221FDD3B3000B8A955 /* NSString+BPRemoveEmoji.m in Sources */,
 				0195EA612013736A00DC59A1 /* BPDrawViewController.m in Sources */,
@@ -7058,6 +7160,7 @@
 				0137C743207B4A6000F6B6CE /* BPPresentCViewController.m in Sources */,
 				01D22BD91FDD814000BCC4AD /* UIScreen+BPAdd.m in Sources */,
 				01E672BF2014E9ED00FB22D4 /* UIImageViewController.m in Sources */,
+				01D2F5E22088DB9C00D21B20 /* BP1STManualHeightHelper.m in Sources */,
 				01DF31721FDD3A0900B8A955 /* CAAnimation+BPEasingEquations.m in Sources */,
 				010DB7551FDD4D450099E66F /* UITableViewCell+BPDelaysContentTouches.m in Sources */,
 				010DB7241FDD4D450099E66F /* UIColor+BPWeb.m in Sources */,
@@ -7113,6 +7216,7 @@
 				010DB7341FDD4D450099E66F /* UIResponder+BPChain.m in Sources */,
 				01DF31C11FDD3A9100B8A955 /* NSDictionary+BPJSONString.m in Sources */,
 				01DF31D61FDD3A9100B8A955 /* NSDateFormatter+BPMake.m in Sources */,
+				01A597B32085CAF7000C6237 /* BP2NDCellAutoLayoutHeightViewController.m in Sources */,
 				01C935BD1FC33A6B00D98FD6 /* BPSimpleViewModel.m in Sources */,
 				01DF32441FDD3B3D00B8A955 /* NSObject+BPEasyCopy.m in Sources */,
 				01C0B6221FFC87AB005BB4A5 /* Palette.m in Sources */,
@@ -7131,7 +7235,6 @@
 				01DF32411FDD3B3D00B8A955 /* NSObject+BPGCD.m in Sources */,
 				01027B501FDEE02B0003F0FE /* BPNaviTableViewControllerTwo.m in Sources */,
 				010DB75C1FDD4D450099E66F /* UIFont+BPDynamicFontControl.m in Sources */,
-				011DCE932084F15A0045C035 /* BPCellAutoLayoutHeightFooterView.m in Sources */,
 				010DB7121FDD4D450099E66F /* UIScreen+BPFrame.m in Sources */,
 				01D22BC81FDD814000BCC4AD /* Foundation+Log.m in Sources */,
 				01DF316E1FDD3A0900B8A955 /* CAShapeLayer+BPUIBezierPath.m in Sources */,
@@ -7166,7 +7269,6 @@
 				01DF31D51FDD3A9100B8A955 /* NSBundle+BPAppIcon.m in Sources */,
 				010DB72C1FDD4D450099E66F /* UIBezierPath+BPLength.m in Sources */,
 				010DB7191FDD4D450099E66F /* UINavigationItem+BPLock.m in Sources */,
-				0143B5F32082518A00524ABB /* KSPhraseCardInsideHeaderView.m in Sources */,
 				016760CF2060F94400F82ACE /* BPNSOperationViewController.m in Sources */,
 				01F3730F20654A22007B1498 /* BPDesignPatternsBlockViewControllerB.m in Sources */,
 				01E01327200CFEEB00374C53 /* BPPaletteTool.m in Sources */,
@@ -7184,7 +7286,6 @@
 				01DF31C01FDD3A9100B8A955 /* NSDictionary+BPXML.m in Sources */,
 				01DF31E61FDD3B0300B8A955 /* NSNumber+BPRound.m in Sources */,
 				010DB78C1FDD4D640099E66F /* UIView+BPFind.m in Sources */,
-				011DCE8A2084F11F0045C035 /* BPCellAutoLayoutHeightTableViewCell.m in Sources */,
 				010DB7511FDD4D450099E66F /* UINavigationController+BPTransitions.m in Sources */,
 				018C44F5200A4AF700CF43D7 /* BPFlowCollectionView.m in Sources */,
 				010DB7401FDD4D450099E66F /* UIImage+BPRemoteSize.m in Sources */,

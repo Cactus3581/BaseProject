@@ -452,7 +452,7 @@
 								<key>title</key>
 								<string>第一种</string>
 								<key>fileName</key>
-								<string>BPAdaptiveHeightTableViewController</string>
+								<string>BP1STCellAutoLayoutHeightViewController</string>
 								<key>briefIntro</key>
 								<string></string>
 							</dict>
@@ -460,7 +460,7 @@
 								<key>title</key>
 								<string>第二种</string>
 								<key>fileName</key>
-								<string></string>
+								<string>BP2NDCellAutoLayoutHeightViewController</string>
 								<key>briefIntro</key>
 								<string></string>
 							</dict>
@@ -468,7 +468,7 @@
 								<key>title</key>
 								<string>第三种</string>
 								<key>fileName</key>
-								<string></string>
+								<string>BP3RDCellAutoLayoutHeightViewController</string>
 								<key>briefIntro</key>
 								<string></string>
 							</dict>
@@ -486,7 +486,7 @@
 						<key>title</key>
 						<string>多级目录</string>
 						<key>fileName</key>
-						<string>BPMultiLevelCatalogueViewController</string>
+						<string>BP1STManualHeightViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>

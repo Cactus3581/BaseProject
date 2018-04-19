@@ -38,7 +38,7 @@ static NSString *cellIdentifier = @"BPSimpleTableViewCell";
     }else {
         self.textLabel.text = model.title;
     }
-    self.detailTextLabel.text = model.briefIntro;
+    //self.detailTextLabel.text = model.briefIntro;
     
     switch (model.importance) {
         case BPImportanceRegular: {
