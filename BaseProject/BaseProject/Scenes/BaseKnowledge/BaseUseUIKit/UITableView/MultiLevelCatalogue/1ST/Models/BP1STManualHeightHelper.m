@@ -64,9 +64,9 @@ static NSInteger limitNumber = 2;
                 model2.cellHeight = smallHeight;
             }
         }];
-        NSString *cizu_name  = BPValidateString(model.title_1st);
+        NSString *title_1st  = BPValidateString(model.title_1st);
         UIFont *textFont = [UIFont systemFontOfSize:font weight:UIFontWeightMedium];
-        model.headerHeight = [BP1STManualHeightHelper getHeightWithString:cizu_name font:textFont width:kScreenWidth-bigHeadH lineSpace:1 kern:0];
+        model.headerHeight = [BP1STManualHeightHelper getHeightWithString:title_1st font:textFont width:kScreenWidth-bigHeadH lineSpace:1 kern:0];
         if (model.headerHeight > 0.01 && idx > 0) {
             model.headerHeight += bigHeadV;
         }

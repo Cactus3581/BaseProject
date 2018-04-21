@@ -13,6 +13,13 @@
 		01050638201B3C40000085C1 /* BPCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01050637201B3C40000085C1 /* BPCommentsViewController.m */; };
 		0105063B201B3C69000085C1 /* BPCommentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0105063A201B3C69000085C1 /* BPCommentsTableViewCell.m */; };
 		0105063E201B3C84000085C1 /* BPCommentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0105063D201B3C84000085C1 /* BPCommentsModel.m */; };
+		01096505208AC910003B3380 /* BPS1STManualInsideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010964FA208AC90E003B3380 /* BPS1STManualInsideTableViewCell.xib */; };
+		01096506208AC910003B3380 /* BPS1STManualInsideTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 010964FC208AC90E003B3380 /* BPS1STManualInsideTableViewCell.m */; };
+		01096507208AC910003B3380 /* BP1STManualHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 010964FD208AC90E003B3380 /* BP1STManualHeaderView.m */; };
+		01096508208AC910003B3380 /* BP1STManualInsideHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 010964FF208AC90F003B3380 /* BP1STManualInsideHeaderView.xib */; };
+		01096509208AC910003B3380 /* BP1STManualHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01096501208AC90F003B3380 /* BP1STManualHeadCell.m */; };
+		0109650A208AC910003B3380 /* BP1STManualInsideHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01096502208AC90F003B3380 /* BP1STManualInsideHeaderView.m */; };
+		0109650B208AC910003B3380 /* BP1STManualHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01096503208AC90F003B3380 /* BP1STManualHeaderView.xib */; };
 		010DB7071FDD4D450099E66F /* UINavigationBar+BPAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB63E1FDD4D400099E66F /* UINavigationBar+BPAwesome.m */; };
 		010DB7081FDD4D450099E66F /* UILabel+BPSuggestSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6421FDD4D400099E66F /* UILabel+BPSuggestSize.m */; };
 		010DB7091FDD4D450099E66F /* UILabel+BPAutomaticWriting.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6441FDD4D400099E66F /* UILabel+BPAutomaticWriting.m */; };
@@ -419,13 +426,6 @@
 		01D2F5D62088DB1C00D21B20 /* BPMultiLevelCatalogueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5C42088DB1B00D21B20 /* BPMultiLevelCatalogueModel.m */; };
 		01D2F5DF2088DB1C00D21B20 /* BP1STManualHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5D52088DB1C00D21B20 /* BP1STManualHeightViewController.m */; };
 		01D2F5E22088DB9C00D21B20 /* BP1STManualHeightHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5E12088DB9C00D21B20 /* BP1STManualHeightHelper.m */; };
-		01D2F5EF2088DBBA00D21B20 /* BP1STManualInsideHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5E52088DBB900D21B20 /* BP1STManualInsideHeaderView.m */; };
-		01D2F5F02088DBBA00D21B20 /* BP1STManualHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5E62088DBB900D21B20 /* BP1STManualHeaderView.m */; };
-		01D2F5F12088DBBA00D21B20 /* BP1STManualInsideHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D2F5E82088DBB900D21B20 /* BP1STManualInsideHeaderView.xib */; };
-		01D2F5F22088DBBA00D21B20 /* BPS1STManualInsideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D2F5E92088DBB900D21B20 /* BPS1STManualInsideTableViewCell.xib */; };
-		01D2F5F32088DBBA00D21B20 /* BPS1STManualInsideTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5EA2088DBB900D21B20 /* BPS1STManualInsideTableViewCell.m */; };
-		01D2F5F42088DBBA00D21B20 /* BP1STManualHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5EB2088DBB900D21B20 /* BP1STManualHeadCell.m */; };
-		01D2F5F52088DBBA00D21B20 /* BP1STManualHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D2F5ED2088DBB900D21B20 /* BP1STManualHeaderView.xib */; };
 		01D2F5F92088E63F00D21B20 /* NSAttributedString+BPMarkColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5F82088E63F00D21B20 /* NSAttributedString+BPMarkColor.m */; };
 		01D2F5FC2088E72800D21B20 /* NSString+BPMarkColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5FB2088E72800D21B20 /* NSString+BPMarkColor.m */; };
 		01D2F5FF2088EB1A00D21B20 /* BPMultiLevelCatalogueModelDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5FE2088EB1A00D21B20 /* BPMultiLevelCatalogueModelDataSource.m */; };
@@ -574,6 +574,17 @@
 		0105063A201B3C69000085C1 /* BPCommentsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCommentsTableViewCell.m; sourceTree = "<group>"; };
 		0105063C201B3C84000085C1 /* BPCommentsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCommentsModel.h; sourceTree = "<group>"; };
 		0105063D201B3C84000085C1 /* BPCommentsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCommentsModel.m; sourceTree = "<group>"; };
+		010964FA208AC90E003B3380 /* BPS1STManualInsideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPS1STManualInsideTableViewCell.xib; sourceTree = "<group>"; };
+		010964FB208AC90E003B3380 /* BP1STManualHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP1STManualHeaderView.h; sourceTree = "<group>"; };
+		010964FC208AC90E003B3380 /* BPS1STManualInsideTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPS1STManualInsideTableViewCell.m; sourceTree = "<group>"; };
+		010964FD208AC90E003B3380 /* BP1STManualHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BP1STManualHeaderView.m; sourceTree = "<group>"; };
+		010964FE208AC90F003B3380 /* BP1STManualInsideHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP1STManualInsideHeaderView.h; sourceTree = "<group>"; };
+		010964FF208AC90F003B3380 /* BP1STManualInsideHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BP1STManualInsideHeaderView.xib; sourceTree = "<group>"; };
+		01096500208AC90F003B3380 /* BPS1STManualInsideTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPS1STManualInsideTableViewCell.h; sourceTree = "<group>"; };
+		01096501208AC90F003B3380 /* BP1STManualHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BP1STManualHeadCell.m; sourceTree = "<group>"; };
+		01096502208AC90F003B3380 /* BP1STManualInsideHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BP1STManualInsideHeaderView.m; sourceTree = "<group>"; };
+		01096503208AC90F003B3380 /* BP1STManualHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BP1STManualHeaderView.xib; sourceTree = "<group>"; };
+		01096504208AC90F003B3380 /* BP1STManualHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP1STManualHeadCell.h; sourceTree = "<group>"; };
 		010DB63E1FDD4D400099E66F /* UINavigationBar+BPAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+BPAwesome.m"; sourceTree = "<group>"; };
 		010DB63F1FDD4D400099E66F /* UINavigationBar+BPAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+BPAwesome.h"; sourceTree = "<group>"; };
 		010DB6411FDD4D400099E66F /* UILabel+BPAutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BPAutoSize.h"; sourceTree = "<group>"; };
@@ -1376,17 +1387,6 @@
 		01D2F5D52088DB1C00D21B20 /* BP1STManualHeightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BP1STManualHeightViewController.m; sourceTree = "<group>"; };
 		01D2F5E02088DB9B00D21B20 /* BP1STManualHeightHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP1STManualHeightHelper.h; sourceTree = "<group>"; };
 		01D2F5E12088DB9C00D21B20 /* BP1STManualHeightHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BP1STManualHeightHelper.m; sourceTree = "<group>"; };
-		01D2F5E42088DBB900D21B20 /* BPS1STManualInsideTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPS1STManualInsideTableViewCell.h; sourceTree = "<group>"; };
-		01D2F5E52088DBB900D21B20 /* BP1STManualInsideHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BP1STManualInsideHeaderView.m; sourceTree = "<group>"; };
-		01D2F5E62088DBB900D21B20 /* BP1STManualHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BP1STManualHeaderView.m; sourceTree = "<group>"; };
-		01D2F5E72088DBB900D21B20 /* BP1STManualHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP1STManualHeadCell.h; sourceTree = "<group>"; };
-		01D2F5E82088DBB900D21B20 /* BP1STManualInsideHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BP1STManualInsideHeaderView.xib; sourceTree = "<group>"; };
-		01D2F5E92088DBB900D21B20 /* BPS1STManualInsideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPS1STManualInsideTableViewCell.xib; sourceTree = "<group>"; };
-		01D2F5EA2088DBB900D21B20 /* BPS1STManualInsideTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPS1STManualInsideTableViewCell.m; sourceTree = "<group>"; };
-		01D2F5EB2088DBB900D21B20 /* BP1STManualHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BP1STManualHeadCell.m; sourceTree = "<group>"; };
-		01D2F5EC2088DBB900D21B20 /* BP1STManualHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP1STManualHeaderView.h; sourceTree = "<group>"; };
-		01D2F5ED2088DBB900D21B20 /* BP1STManualHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BP1STManualHeaderView.xib; sourceTree = "<group>"; };
-		01D2F5EE2088DBB900D21B20 /* BP1STManualInsideHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BP1STManualInsideHeaderView.h; sourceTree = "<group>"; };
 		01D2F5F72088E63F00D21B20 /* NSAttributedString+BPMarkColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+BPMarkColor.h"; sourceTree = "<group>"; };
 		01D2F5F82088E63F00D21B20 /* NSAttributedString+BPMarkColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+BPMarkColor.m"; sourceTree = "<group>"; };
 		01D2F5FA2088E72800D21B20 /* NSString+BPMarkColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BPMarkColor.h"; sourceTree = "<group>"; };
@@ -2273,6 +2273,24 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		010964F9208AC908003B3380 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01096504208AC90F003B3380 /* BP1STManualHeadCell.h */,
+				01096501208AC90F003B3380 /* BP1STManualHeadCell.m */,
+				010964FB208AC90E003B3380 /* BP1STManualHeaderView.h */,
+				010964FD208AC90E003B3380 /* BP1STManualHeaderView.m */,
+				01096503208AC90F003B3380 /* BP1STManualHeaderView.xib */,
+				010964FE208AC90F003B3380 /* BP1STManualInsideHeaderView.h */,
+				01096502208AC90F003B3380 /* BP1STManualInsideHeaderView.m */,
+				010964FF208AC90F003B3380 /* BP1STManualInsideHeaderView.xib */,
+				01096500208AC90F003B3380 /* BPS1STManualInsideTableViewCell.h */,
+				010964FC208AC90E003B3380 /* BPS1STManualInsideTableViewCell.m */,
+				010964FA208AC90E003B3380 /* BPS1STManualInsideTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		010DB63D1FDD4D400099E66F /* UINavigationBar */ = {
@@ -5898,7 +5916,7 @@
 		01D2F5BE2088DAE700D21B20 /* 1ST */ = {
 			isa = PBXGroup;
 			children = (
-				01D2F5E32088DBB900D21B20 /* Views */,
+				010964F9208AC908003B3380 /* Views */,
 				01D2F5D32088DB1C00D21B20 /* Controllers */,
 				01D2F5C12088DB1B00D21B20 /* Models */,
 				01D2F5C62088DB1C00D21B20 /* ViewModels */,
@@ -5947,25 +5965,6 @@
 				01D2F5D52088DB1C00D21B20 /* BP1STManualHeightViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		01D2F5E32088DBB900D21B20 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				01D2F5E72088DBB900D21B20 /* BP1STManualHeadCell.h */,
-				01D2F5EB2088DBB900D21B20 /* BP1STManualHeadCell.m */,
-				01D2F5EC2088DBB900D21B20 /* BP1STManualHeaderView.h */,
-				01D2F5E62088DBB900D21B20 /* BP1STManualHeaderView.m */,
-				01D2F5ED2088DBB900D21B20 /* BP1STManualHeaderView.xib */,
-				01D2F5EE2088DBB900D21B20 /* BP1STManualInsideHeaderView.h */,
-				01D2F5E52088DBB900D21B20 /* BP1STManualInsideHeaderView.m */,
-				01D2F5E82088DBB900D21B20 /* BP1STManualInsideHeaderView.xib */,
-				01D2F5E42088DBB900D21B20 /* BPS1STManualInsideTableViewCell.h */,
-				01D2F5EA2088DBB900D21B20 /* BPS1STManualInsideTableViewCell.m */,
-				01D2F5E92088DBB900D21B20 /* BPS1STManualInsideTableViewCell.xib */,
-			);
-			name = Views;
-			path = ../../../../../../../../../../Desktop/SearchResultPhrase/Views;
 			sourceTree = "<group>";
 		};
 		01D2F5F62088E61E00D21B20 /* NSAttributedString */ = {
@@ -6674,25 +6673,25 @@
 				010FBD2620601D9E00BC9EC4 /* palette.jpeg in Resources */,
 				017907E3200144F200E5C360 /* bookcatalogue.toc in Resources */,
 				014ED0DE1FF0135000D2926C /* launchImage@2x.png in Resources */,
-				01D2F5F22088DBBA00D21B20 /* BPS1STManualInsideTableViewCell.xib in Resources */,
+				0109650B208AC910003B3380 /* BP1STManualHeaderView.xib in Resources */,
 				014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */,
 				01A597A82085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.xib in Resources */,
 				0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */,
 				01A1921E2004E61F005EE4CD /* BPCollectionViewCell.xib in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
-				01D2F5F52088DBBA00D21B20 /* BP1STManualHeaderView.xib in Resources */,
 				0184BF831FD6DB2C00CB9AAD /* BPTest_XibViewController.xib in Resources */,
 				01D2F5B12088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib in Resources */,
 				0137C756207B658400F6B6CE /* BPAutoLayoutXIBViewController.xib in Resources */,
+				01096505208AC910003B3380 /* BPS1STManualInsideTableViewCell.xib in Resources */,
 				01352FE31FD2DDA20011D65C /* FeatureCatalog.plist in Resources */,
 				0137C761207C952700F6B6CE /* BPTextCompositionViewController.xib in Resources */,
-				01D2F5F12088DBBA00D21B20 /* BP1STManualInsideHeaderView.xib in Resources */,
 				01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */,
 				014ED0DD1FF0135000D2926C /* launchImage@3x.png in Resources */,
 				0195EAA2201373E700DC59A1 /* BPXibViewController.xib in Resources */,
 				01A597AA2085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.xib in Resources */,
 				01A1921F2004E61F005EE4CD /* BPCollectionReusableFootView.xib in Resources */,
 				01A192222004E61F005EE4CD /* BPCollectionReusableHeadView.xib in Resources */,
+				01096508208AC910003B3380 /* BP1STManualInsideHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6794,7 +6793,6 @@
 				010DB7451FDD4D450099E66F /* UIImage+BPAlpha.m in Sources */,
 				01DF31E51FDD3B0300B8A955 /* NSDecimalNumber+BPExtensions.m in Sources */,
 				010DB7211FDD4D450099E66F /* UIWebView+BPBlocks.m in Sources */,
-				01D2F5EF2088DBBA00D21B20 /* BP1STManualInsideHeaderView.m in Sources */,
 				0179BC3F20316EFD0061CD84 /* BPDesignPatternsNotificationViewControllerA.m in Sources */,
 				018C44CC2009DF5600CF43D7 /* BPCardPageFlowView.m in Sources */,
 				014ED0411FEFF0A300D2926C /* BPBackButton.m in Sources */,
@@ -6840,7 +6838,6 @@
 				0105063B201B3C69000085C1 /* BPCommentsTableViewCell.m in Sources */,
 				010DB7911FDD4D640099E66F /* UIView+BPShake.m in Sources */,
 				01BCB33E1FB55921009EF64E /* BPBaseServerAPI.m in Sources */,
-				01D2F5F02088DBBA00D21B20 /* BP1STManualHeaderView.m in Sources */,
 				01027B531FDEE0380003F0FE /* BPNaviTableViewControllerThree.m in Sources */,
 				01352FF51FD2E1AA0011D65C /* BPNaviProperyViewController.m in Sources */,
 				010DB7271FDD4D450099E66F /* UIColor+BPGradient.m in Sources */,
@@ -6864,6 +6861,7 @@
 				01A192262004E61F005EE4CD /* BPGroupTableViewController.m in Sources */,
 				010DB7291FDD4D450099E66F /* UISplitViewController+BPQuickAccess.m in Sources */,
 				01D22BE11FDD814000BCC4AD /* CALayer+BPAdd.m in Sources */,
+				0109650A208AC910003B3380 /* BP1STManualInsideHeaderView.m in Sources */,
 				0149953A1FB4A3D600077866 /* BPRootTabBarController.m in Sources */,
 				01F372FC206545E0007B1498 /* BPDesignPatternsSingleClass.m in Sources */,
 				018972CE1FC4824100D6DF5B /* BPCalendarCollectionHeadView.m in Sources */,
@@ -6949,6 +6947,7 @@
 				01E1DC26202ECDB100529ADB /* BPVolumeQueueHelper.m in Sources */,
 				0137C751207B656B00F6B6CE /* BPAutoLayoutCodeViewController.m in Sources */,
 				01D22BD51FDD814000BCC4AD /* CALayer+BPAddForFrame.m in Sources */,
+				01096506208AC910003B3380 /* BPS1STManualInsideTableViewCell.m in Sources */,
 				019AA91820205BE80090B038 /* CADisplayLink+BPAdd.m in Sources */,
 				01DF32721FDD3BB100B8A955 /* NSDate+BPnternetDateTime.m in Sources */,
 				01A191D42004E1E7005EE4CD /* BPSegmentedControlController.m in Sources */,
@@ -6995,6 +6994,7 @@
 				01027B4D1FDEDFE40003F0FE /* BPNaviTableViewControllerOne.m in Sources */,
 				016DADC720582FB100AA95EC /* NSArray+BPSafeAccess.m in Sources */,
 				017A9A431FDD2B8C00CDA599 /* NSNumber+BPDecimalNumber.m in Sources */,
+				01096509208AC910003B3380 /* BP1STManualHeadCell.m in Sources */,
 				018972BF1FC4802400D6DF5B /* BPBaseCollectionReusableView.m in Sources */,
 				011A7731201F256F00D97E11 /* BPVolumeWaverViewController.m in Sources */,
 				010DB73B1FDD4D450099E66F /* UIImage+BPBlur.m in Sources */,
@@ -7048,7 +7048,6 @@
 				010DB74B1FDD4D450099E66F /* UIApplication+BPNetworkActivityIndicator.m in Sources */,
 				017906FE20011D4100E5C360 /* BPDataManager.m in Sources */,
 				010DB7B01FDD4D6F0099E66F /* UIButton+BPBackgroundColor.m in Sources */,
-				01D2F5F32088DBBA00D21B20 /* BPS1STManualInsideTableViewCell.m in Sources */,
 				01B726961FF7E45B00648674 /* BPAlgorithmController.m in Sources */,
 				01E6B1922001FE970008C18C /* SchoolModel.m in Sources */,
 				01DF31ED1FDD3B1600B8A955 /* NSURL+BPParam.m in Sources */,
@@ -7058,7 +7057,6 @@
 				01A597AC2085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.m in Sources */,
 				0160718A204D3530009C66A2 /* PHAsset+BPAdd.m in Sources */,
 				0137C760207C952700F6B6CE /* BPTextCompositionViewController.m in Sources */,
-				01D2F5F42088DBBA00D21B20 /* BP1STManualHeadCell.m in Sources */,
 				010DB7AD1FDD4D6F0099E66F /* UIButton+BPTouchAreaInsets.m in Sources */,
 				01A597AB2085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.m in Sources */,
 				01DF31CB1FDD3A9100B8A955 /* NSNotificationCenter+BPMainThread.m in Sources */,
@@ -7263,6 +7261,7 @@
 				01A191B92004E1AA005EE4CD /* BPImageViewController.m in Sources */,
 				01D22BC91FDD814000BCC4AD /* UILabel+BPAddForFrame.m in Sources */,
 				017907DD200140EF00E5C360 /* BPRuntimeViewController.m in Sources */,
+				01096507208AC910003B3380 /* BP1STManualHeaderView.m in Sources */,
 				01DF32741FDD3BB100B8A955 /* NSDate+BPZeroDate.m in Sources */,
 				01BCB3301FB54A99009EF64E /* BPBaseModel.m in Sources */,
 				0179BC4620317D410061CD84 /* BPNSDateViewController.m in Sources */,

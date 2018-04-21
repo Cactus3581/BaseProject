@@ -437,7 +437,7 @@ static NSThread *_voiceWaveThread = nil;
 - (void)dealloc {
     [_displayLink invalidate];
     _displayLink = nil;
-    BPLog(@"KSVolumeWaverView_dealloc");
+    BPLog(@"BPVolumeWaverView_dealloc");
 }
 
 @end

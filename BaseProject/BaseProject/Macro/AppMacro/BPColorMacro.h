@@ -63,6 +63,10 @@
 #define kDarkGrayColor [UIColor darkGrayColor]
 #endif
 
+#ifndef kDarkTextColor
+#define kDarkTextColor [UIColor darkTextColor]
+#endif
+
 #ifndef kGrayColor
 #define kGrayColor [UIColor grayColor]
 #endif
