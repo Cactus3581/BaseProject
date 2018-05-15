@@ -68,10 +68,10 @@ static NSString *urlstrimage1 = @"http://120.25.226.186:32812/resources/images/m
 
 
 /*
-        NSURLSessionDataTask 发送 GET 请求:
-        发送 GET 请求的步骤非常简单，只需要两步就可以完成：
-            1.使用 NSURLSession 对象创建 Task
-            2.执行 Task
+NSURLSessionDataTask 发送 GET 请求:
+发送 GET 请求的步骤非常简单，只需要两步就可以完成：
+    1.使用 NSURLSession 对象创建 Task
+    2.执行 Task
  
 */
 - (void)setDataTask_get

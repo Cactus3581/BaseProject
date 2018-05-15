@@ -45,7 +45,7 @@
     pageFlowView.delegate = self;
     pageFlowView.dataSource = self;
     pageFlowView.minimumPageAlpha = 0.1;
-    pageFlowView.isCarousel = NO;
+    pageFlowView.isCarousel = YES;
     pageFlowView.orientation = BPCardPageFlowViewOrientationHorizontal;
     pageFlowView.isOpenAutoScroll = YES;
     

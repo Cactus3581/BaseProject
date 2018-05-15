@@ -15,4 +15,6 @@
 - (void)set2ndModel:(BPCellAutoLayoutHeightModel *)model indexPath:(NSIndexPath *)indexPath;
 - (void)set3rdModel:(BPCellAutoLayoutHeightModel *)model indexPath:(NSIndexPath *)indexPath;
 
++ (CGFloat)height3rdWithModel:(BPCellAutoLayoutHeightModel *)model;
+
 @end

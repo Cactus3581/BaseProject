@@ -54,7 +54,7 @@
     _scrollWithAnimaitonWhenClicked = YES;
     _clickedAnimationDuration = 0.3;
     _bottomLineColor = [UIColor redColor];
-    _bottomLineWidth = 2.0f;
+    _bottomLineHeight = 2.0f;
     _bottomLineSpacingFromTitleBottom = 10.0f;
     _backEllipseColor = [UIColor yellowColor];
     _backEllipseSize = CGSizeZero;
@@ -110,7 +110,6 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-//    BPLog(@"layoutSubviews");
     _mainView.frame = self.bounds;
     if (!_lastIndexPath) {
         _lastIndexPath = [NSIndexPath indexPathForItem:MIN(_defaultIndex, _titles.count - 1) inSection:0];
@@ -232,8 +231,12 @@
     CGFloat x = [self bp_interpolationFromValue:_fromModel.cellFrame.origin.x toValue:_toModel.cellFrame.origin.x ratio:ratio - (int)ratio];
     CGFloat y = CGRectGetMaxY(_fromModel.cellFrame) + _bottomLineSpacingFromTitleBottom;
     CGFloat width = [self bp_interpolationFromValue:_fromModel.cellFrame.size.width toValue:_toModel.cellFrame.size.width ratio:ratio - (int)ratio];
-    CGFloat height = _bottomLineWidth;
-    _bottomLine.frame = CGRectMake(x, y, width, height);
+    CGFloat height = _bottomLineHeight;
+    if (self.bottomLineWidth > 0) {
+        _bottomLine.frame = CGRectMake(x + (width - self.bottomLineWidth) / 2.0, y, self.bottomLineWidth, height);
+    }else {
+        _bottomLine.frame = CGRectMake(x, y, width, height);
+    }
 }
 
 /**插值backEllipse*/
@@ -275,7 +278,7 @@
     if ((int)ratio == ratio) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:ratio inSection:0];
         _lastIndexPath = indexPath;
-//        [_mainView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+        //        [_mainView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
         _autoScrollAnimationEable = YES;
         [self bp_setMainViewContentOffsetWithIndex:ratio];
     }
@@ -298,7 +301,11 @@
     if (!_bottomLineEable || !_data.count) return;
     BPFlowCatergoryViewCellModel *model = _data[indexPath.item];
     [UIView animateWithDuration:_clickedAnimationDuration animations:^{
-        _bottomLine.frame = CGRectMake(model.cellFrame.origin.x, _bottomLine.y, model.cellSize.width, _bottomLine.height);
+        if (self.bottomLineWidth > 0) {
+            _bottomLine.frame = CGRectMake(model.cellFrame.origin.x + (model.cellSize.width - self.bottomLineWidth) / 2.0, _bottomLine.y, self.bottomLineWidth, _bottomLine.height);
+        }else {
+            _bottomLine.frame = CGRectMake(model.cellFrame.origin.x, _bottomLine.y, model.cellSize.width, _bottomLine.height);
+        }
     }];
 }
 
@@ -378,6 +385,5 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     [self bp_updateWhenScrollViewDidScroll];
 }
-
 
 @end

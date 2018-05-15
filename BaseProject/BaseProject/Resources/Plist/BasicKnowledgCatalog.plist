@@ -517,6 +517,14 @@
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
+					<dict>
+						<key>title</key>
+						<string>Tag</string>
+						<key>fileName</key>
+						<string>BPTagCollectionViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
 				</array>
 			</dict>
 			<dict>

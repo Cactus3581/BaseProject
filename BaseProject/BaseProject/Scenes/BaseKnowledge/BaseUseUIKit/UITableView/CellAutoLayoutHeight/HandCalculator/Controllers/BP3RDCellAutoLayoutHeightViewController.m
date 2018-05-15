@@ -17,7 +17,8 @@
 @interface BP3RDCellAutoLayoutHeightViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,weak) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *array;
-
+@property (nonatomic,assign) CGFloat heightTime;
+@property (nonatomic,assign) CGFloat estimatedHeightTime;
 @end
 
 @implementation BP3RDCellAutoLayoutHeightViewController
@@ -36,6 +37,7 @@
     if (!_tableView) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView = tableView;
+        _tableView.estimatedRowHeight = 0.0f;
         _tableView.backgroundColor = kWhiteColor;
         [_tableView registerNib:[UINib nibWithNibName:@"BPCellAutoLayoutHeightHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"BPCellAutoLayoutHeightHeaderView"];
         [_tableView registerNib:[UINib nibWithNibName:@"BPCellAutoLayoutHeightTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"BPCellAutoLayoutHeightTableViewCell"];
@@ -79,8 +81,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BPLog(@"self.heightTime = %.2f",++self.heightTime);
     BPCellAutoLayoutHeightModel *model = self.array[indexPath.row];
-    return model.cell3rdHeight;
+    CGFloat height = [BPCellAutoLayoutHeightTableViewCell height3rdWithModel:model];
+//    return model.cell3rdHeight;
+    return height;
 }
 
 #pragma mark -懒加载

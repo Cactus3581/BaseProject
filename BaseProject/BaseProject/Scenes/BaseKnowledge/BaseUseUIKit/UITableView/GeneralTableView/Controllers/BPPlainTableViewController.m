@@ -20,10 +20,10 @@ static NSString *cell_identifier = @"cell";
 static NSString *header_identifier = @"header";
 static NSString *footer_identifier = @"footer";
 
-static CGFloat headerH = 30;
-static CGFloat footerH = 30;
-static CGFloat section_headerH = 30;
-static CGFloat section_footerH = 30;
+static CGFloat headerH = 100;
+static CGFloat footerH = 100;
+static CGFloat section_headerH = 80;
+static CGFloat section_footerH = 60;
 static CGFloat cellH = 50;
 
 @interface BPPlainTableViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -57,11 +57,11 @@ static CGFloat cellH = 50;
 
 #pragma mark - tabeview delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 7;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -69,7 +69,7 @@ static CGFloat cellH = 50;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cell_identifier];
     }
-    cell.textLabel.text = @"我是cell";
+    cell.textLabel.text = [NSString stringWithFormat:@"我是第%ld区 第%ld个cell",indexPath.section,indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = kYellowColor;
     return cell;
@@ -79,45 +79,44 @@ static CGFloat cellH = 50;
     return cellH;
 }
 
-//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-//    //UIView *footerView = [[[NSBundle mainBundle] loadNibNamed:placedFooterView_identifier owner:self options:nil] lastObject];
-//    UILabel *footerView = [[UILabel alloc] initWithFrame:CGRectZero];
-//    footerView.backgroundColor = kGreenColor;
-//    footerView.text = @"我是footer";
-//    return footerView;
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-////    return CGFLOAT_MIN;
-//        return section_footerH;
-//}
-//
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    //UIView  *headerView = [[[NSBundle mainBundle] loadNibNamed:calendarFooter_identifier owner:self options:nil] lastObject];
-//    UILabel *headerView = [[UILabel alloc] initWithFrame:CGRectZero];
-//    headerView.backgroundColor = kRedColor;
-//    headerView.text = @"我是header";
-//    return headerView;
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-////    return CGFLOAT_MIN;
-//    return section_headerH;
-//}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    //UIView  *headerView = [[[NSBundle mainBundle] loadNibNamed:calendarFooter_identifier owner:self options:nil] lastObject];
+    UILabel *headerView = [[UILabel alloc] initWithFrame:CGRectZero];
+    headerView.backgroundColor = kRedColor;
+    headerView.text = [NSString stringWithFormat:@"我是Section Header:第%ld区",section];
+    return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    //    return CGFLOAT_MIN;
+    return section_headerH;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    //UIView *footerView = [[[NSBundle mainBundle] loadNibNamed:placedFooterView_identifier owner:self options:nil] lastObject];
+    UILabel *footerView = [[UILabel alloc] initWithFrame:CGRectZero];
+    footerView.backgroundColor = kWhiteColor;
+    footerView.text = [NSString stringWithFormat:@"我是Section Footer:第%ld区",section];
+    return footerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    return CGFLOAT_MIN;
+        return section_footerH;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 }
 
-//FIXME: Plain 悬停无解
-//去掉UItableview headerview黏性(sticky) 去掉header的浮动效果
+//FIXME: Plain :去掉UItableview headerview黏性(sticky) 去掉header的浮动效果
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-
-}
-
-#pragma mark - view Transition methods
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    
+    CGFloat sectionHeaderHeight = section_headerH;
+    if (scrollView.contentOffset.y <= sectionHeaderHeight&&scrollView.contentOffset.y >= 0) {
+        scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+    } else if (scrollView.contentOffset.y >= sectionHeaderHeight) {
+        scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+    }
 }
 
 #pragma mark - lazy load methods
@@ -132,7 +131,7 @@ static CGFloat cellH = 50;
          headerView.backgroundColor = kGreenColor;
          headerView.text = @"我是tableHeader";
          UILabel *footerView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, footerH)];
-         footerView.backgroundColor = kGreenColor;
+         footerView.backgroundColor = kWhiteColor;
          footerView.text = @"我是tablefooter";
          _tableView.tableHeaderView = headerView;
          _tableView.tableFooterView = footerView;
@@ -156,7 +155,7 @@ static CGFloat cellH = 50;
 
 #pragma mark - dealloc
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
 }
 
 - (void)didReceiveMemoryWarning {

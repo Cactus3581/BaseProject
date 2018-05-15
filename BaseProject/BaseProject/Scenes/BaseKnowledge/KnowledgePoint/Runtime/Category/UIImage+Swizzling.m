@@ -32,7 +32,7 @@
     UIImage *image = [self imageWithName:name];
     
     if (image == nil) {
-        BPLog(@"加载空的图片");
+        //BPLog(@"加载空的图片");
     }
     
     return image;

@@ -63,7 +63,7 @@
             BPSimpleTableController *vc = [[classVc alloc] init];
             [vc setLeftBarButtonTitle:model.title];
             //[vc setLeftBarButtonTitle:BPLocalizedString(bp_naviItem_backTitle)];
-            vc.dataArray = model.subVc_array;
+            vc.dataArray = BPValidateArray(model.subVc_array);
             vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }else {

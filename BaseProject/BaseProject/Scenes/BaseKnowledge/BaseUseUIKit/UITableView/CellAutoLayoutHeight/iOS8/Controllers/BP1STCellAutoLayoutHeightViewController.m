@@ -53,7 +53,7 @@
 //        }else {
 //            self.automaticallyAdjustsScrollViewInsets = NO;
 //        }
-        //iOS11下不想使用Self-Sizing的话，可以通过以下方式关闭：（前言中提到的问题也是通过这种方式解决的）
+        //iOS11下默认开启自动算高。不想使用Self-Sizing的话，可以通过以下方式关闭：
         //_tableView.estimatedRowHeight = 0;
         //_tableView.estimatedSectionHeaderHeight = 0;
         //_tableView.estimatedSectionFooterHeight = 0;

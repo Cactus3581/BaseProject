@@ -106,8 +106,11 @@
 @property (nonatomic, assign) BOOL bottomLineEable;
 /**下方横线颜色，默认红色*/
 @property (nonatomic, strong) UIColor *bottomLineColor;
-/**下方横线宽度，默认2.0f*/
+/**下方横线高度，默认2.0f*/
+@property (nonatomic, assign) CGFloat bottomLineHeight;
+/**下方横线宽度，默认跟字符串一样宽*/
 @property (nonatomic, assign) CGFloat bottomLineWidth;
+
 /**下方横线距离item底部的距离，默认10.0f*/
 @property (nonatomic, assign) CGFloat bottomLineSpacingFromTitleBottom;
 
@@ -129,3 +132,4 @@
 - (void)bp_realoadData;
 
 @end
+

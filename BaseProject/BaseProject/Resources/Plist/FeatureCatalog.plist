@@ -47,6 +47,14 @@
 	</dict>
 	<dict>
 		<key>title</key>
+		<string>标签</string>
+		<key>fileName</key>
+		<string>BPTagViewController</string>
+		<key>briefIntro</key>
+		<string>标签</string>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>日历Calendar</string>
 		<key>fileName</key>
 		<string>BPCalendarController</string>

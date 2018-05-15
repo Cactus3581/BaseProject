@@ -17,7 +17,8 @@
 @interface BP2NDCellAutoLayoutHeightViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,weak) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *array;
-
+@property (nonatomic,assign) CGFloat heightTime;
+@property (nonatomic,assign) CGFloat estimatedHeightTime;
 @end
 
 @implementation BP2NDCellAutoLayoutHeightViewController
@@ -79,6 +80,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BPLog(@"self.heightTime = %.2f",++self.heightTime);
     static BPCellAutoLayoutHeightTableViewCell *cell;
     static NSString *identifier = @"BPCellAutoLayoutHeightTableViewCell";
     static dispatch_once_t onceToken;
@@ -88,12 +90,15 @@
     });
     BPCellAutoLayoutHeightModel *model = self.array[indexPath.row];
     [cell set2ndModel:model indexPath:indexPath];
+    [cell updateConstraints];
+    [cell updateFocusIfNeeded];
     // 根据当前数据，计算Cell的高度，注意+1是contentview和cell之间的分割线高度
-    model.cell2ndHeight = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height +1.0f;
+    model.cell2ndHeight = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + 1.0f;
     return model.cell2ndHeight;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BPLog(@"estimatedHeightTime = %.2f",++self.estimatedHeightTime);
     return 112.0f;
 }
 

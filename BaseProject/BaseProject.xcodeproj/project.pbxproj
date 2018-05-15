@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0100541B20A2E47200F43089 /* BPHorizontalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0100541A20A2E47200F43089 /* BPHorizontalCollectionViewController.m */; };
 		01027B4D1FDEDFE40003F0FE /* BPNaviTableViewControllerOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 01027B4C1FDEDFE30003F0FE /* BPNaviTableViewControllerOne.m */; };
 		01027B501FDEE02B0003F0FE /* BPNaviTableViewControllerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 01027B4F1FDEE02B0003F0FE /* BPNaviTableViewControllerTwo.m */; };
 		01027B531FDEE0380003F0FE /* BPNaviTableViewControllerThree.m in Sources */ = {isa = PBXBuildFile; fileRef = 01027B521FDEE0380003F0FE /* BPNaviTableViewControllerThree.m */; };
@@ -315,6 +316,11 @@
 		0195EAA8201373E700DC59A1 /* BPMasonrySkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0195EA9B201373E700DC59A1 /* BPMasonrySkillViewController.m */; };
 		0195EAA9201373E700DC59A1 /* BPMasonrySkillView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0195EA9E201373E700DC59A1 /* BPMasonrySkillView.m */; };
 		019AA91820205BE80090B038 /* CADisplayLink+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 019AA91720205BE80090B038 /* CADisplayLink+BPAdd.m */; };
+		019B0EE020937B6700D105D1 /* BPTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019B0EDF20937B6700D105D1 /* BPTagViewController.m */; };
+		019B0EE620937CD500D105D1 /* BPTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 019B0EE520937CD500D105D1 /* BPTagCollectionView.m */; };
+		019B0EE920937D2C00D105D1 /* BPTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 019B0EE820937D2C00D105D1 /* BPTagCell.m */; };
+		019B0EEC20937D6E00D105D1 /* BPTagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 019B0EEB20937D6E00D105D1 /* BPTagModel.m */; };
+		019B0EEF2093845800D105D1 /* BPCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 019B0EEE2093845800D105D1 /* BPCollectionViewFlowLayout.m */; };
 		01A191AA2004E139005EE4CD /* BPLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A191A92004E139005EE4CD /* BPLabelViewController.m */; };
 		01A191AD2004E155005EE4CD /* BPButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A191AC2004E155005EE4CD /* BPButtonViewController.m */; };
 		01A191B02004E165005EE4CD /* BPTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A191AF2004E165005EE4CD /* BPTextFieldViewController.m */; };
@@ -541,6 +547,22 @@
 		01F3730C20654974007B1498 /* BPDesignPatternsNotificationViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F3730B20654974007B1498 /* BPDesignPatternsNotificationViewControllerB.m */; };
 		01F3730F20654A22007B1498 /* BPDesignPatternsBlockViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F3730E20654A22007B1498 /* BPDesignPatternsBlockViewControllerB.m */; };
 		01F37316206552DB007B1498 /* BPGestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F37315206552DB007B1498 /* BPGestureRecognizerViewController.m */; };
+		01F750A9209F216F00C1F24C /* BPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F750A7209F216F00C1F24C /* BPTableViewCell.m */; };
+		01F750AA209F216F00C1F24C /* BPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F750A8209F216F00C1F24C /* BPTableViewCell.xib */; };
+		01FD5E6520A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5E3C20A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.m */; };
+		01FD5E6820A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01FD5E4120A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.xib */; };
+		01FD5E6920A1989C00D9CD75 /* KSHeritageDictionaryListContainerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5E4620A1989C00D9CD75 /* KSHeritageDictionaryListContainerCollectionViewCell.m */; };
+		01FD5E6A20A1989C00D9CD75 /* KSHeritageDictionaryListContainerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01FD5E4820A1989C00D9CD75 /* KSHeritageDictionaryListContainerCollectionViewCell.xib */; };
+		01FD5E6B20A1989C00D9CD75 /* KSHeritageDictionaryListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01FD5E4A20A1989C00D9CD75 /* KSHeritageDictionaryListView.xib */; };
+		01FD5E6C20A1989C00D9CD75 /* KSHeritageDictionaryListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5E4D20A1989C00D9CD75 /* KSHeritageDictionaryListView.m */; };
+		01FD5E6D20A1989C00D9CD75 /* KSHeritageDictionaryListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01FD5E4E20A1989C00D9CD75 /* KSHeritageDictionaryListTableViewCell.xib */; };
+		01FD5E6E20A1989C00D9CD75 /* KSHeritageDictionaryListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5E4F20A1989C00D9CD75 /* KSHeritageDictionaryListTableViewCell.m */; };
+		01FD5E6F20A1989C00D9CD75 /* KSHeritageDictionaryListTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5E5220A1989C00D9CD75 /* KSHeritageDictionaryListTagView.m */; };
+		01FD5E7020A1989C00D9CD75 /* KSHeritageDictionaryListTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5E5420A1989C00D9CD75 /* KSHeritageDictionaryListTagCollectionViewCell.m */; };
+		01FD5E7120A1989C00D9CD75 /* KSTagFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5E5520A1989C00D9CD75 /* KSTagFlowLayout.m */; };
+		01FD5E7220A1989C00D9CD75 /* KSHeritageDictionaryListTagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01FD5E5620A1989C00D9CD75 /* KSHeritageDictionaryListTagView.xib */; };
+		01FD5E7320A1989C00D9CD75 /* KSHeritageDictionaryListTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01FD5E5820A1989C00D9CD75 /* KSHeritageDictionaryListTagCollectionViewCell.xib */; };
+		01FD5E7B20A1998000D9CD75 /* KSHeritageDictionaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5E7A20A1998000D9CD75 /* KSHeritageDictionaryModel.m */; };
 		D3B433555DA690915B9FE756 /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAAF3753BBCECF75300EBB5 /* libPods-BaseProject.a */; };
 /* End PBXBuildFile section */
 
@@ -562,6 +584,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0100541920A2E47200F43089 /* BPHorizontalCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPHorizontalCollectionViewController.h; sourceTree = "<group>"; };
+		0100541A20A2E47200F43089 /* BPHorizontalCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPHorizontalCollectionViewController.m; sourceTree = "<group>"; };
 		01027B4B1FDEDFE30003F0FE /* BPNaviTableViewControllerOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPNaviTableViewControllerOne.h; sourceTree = "<group>"; };
 		01027B4C1FDEDFE30003F0FE /* BPNaviTableViewControllerOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPNaviTableViewControllerOne.m; sourceTree = "<group>"; };
 		01027B4E1FDEE02B0003F0FE /* BPNaviTableViewControllerTwo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNaviTableViewControllerTwo.h; sourceTree = "<group>"; };
@@ -1168,6 +1192,16 @@
 		0195EA9F201373E700DC59A1 /* BPMasonrySkillView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMasonrySkillView.h; sourceTree = "<group>"; };
 		019AA91620205BE80090B038 /* CADisplayLink+BPAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CADisplayLink+BPAdd.h"; sourceTree = "<group>"; };
 		019AA91720205BE80090B038 /* CADisplayLink+BPAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CADisplayLink+BPAdd.m"; sourceTree = "<group>"; };
+		019B0EDE20937B6700D105D1 /* BPTagViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTagViewController.h; sourceTree = "<group>"; };
+		019B0EDF20937B6700D105D1 /* BPTagViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTagViewController.m; sourceTree = "<group>"; };
+		019B0EE420937CD500D105D1 /* BPTagCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTagCollectionView.h; sourceTree = "<group>"; };
+		019B0EE520937CD500D105D1 /* BPTagCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTagCollectionView.m; sourceTree = "<group>"; };
+		019B0EE720937D2C00D105D1 /* BPTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTagCell.h; sourceTree = "<group>"; };
+		019B0EE820937D2C00D105D1 /* BPTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTagCell.m; sourceTree = "<group>"; };
+		019B0EEA20937D6E00D105D1 /* BPTagModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTagModel.h; sourceTree = "<group>"; };
+		019B0EEB20937D6E00D105D1 /* BPTagModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTagModel.m; sourceTree = "<group>"; };
+		019B0EED2093845800D105D1 /* BPCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		019B0EEE2093845800D105D1 /* BPCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		01A191A82004E139005EE4CD /* BPLabelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPLabelViewController.h; sourceTree = "<group>"; };
 		01A191A92004E139005EE4CD /* BPLabelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPLabelViewController.m; sourceTree = "<group>"; };
 		01A191AB2004E155005EE4CD /* BPButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPButtonViewController.h; sourceTree = "<group>"; };
@@ -1624,6 +1658,32 @@
 		01F3730E20654A22007B1498 /* BPDesignPatternsBlockViewControllerB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDesignPatternsBlockViewControllerB.m; sourceTree = "<group>"; };
 		01F37314206552DB007B1498 /* BPGestureRecognizerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPGestureRecognizerViewController.h; sourceTree = "<group>"; };
 		01F37315206552DB007B1498 /* BPGestureRecognizerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPGestureRecognizerViewController.m; sourceTree = "<group>"; };
+		01F750A6209F216F00C1F24C /* BPTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTableViewCell.h; sourceTree = "<group>"; };
+		01F750A7209F216F00C1F24C /* BPTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTableViewCell.m; sourceTree = "<group>"; };
+		01F750A8209F216F00C1F24C /* BPTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTableViewCell.xib; sourceTree = "<group>"; };
+		01FD5E3C20A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHeritageDictionaryListContainerViewController.m; sourceTree = "<group>"; };
+		01FD5E4020A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHeritageDictionaryListContainerViewController.h; sourceTree = "<group>"; };
+		01FD5E4120A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSHeritageDictionaryListContainerViewController.xib; sourceTree = "<group>"; };
+		01FD5E4620A1989C00D9CD75 /* KSHeritageDictionaryListContainerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHeritageDictionaryListContainerCollectionViewCell.m; sourceTree = "<group>"; };
+		01FD5E4720A1989C00D9CD75 /* KSHeritageDictionaryListContainerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHeritageDictionaryListContainerCollectionViewCell.h; sourceTree = "<group>"; };
+		01FD5E4820A1989C00D9CD75 /* KSHeritageDictionaryListContainerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSHeritageDictionaryListContainerCollectionViewCell.xib; sourceTree = "<group>"; };
+		01FD5E4A20A1989C00D9CD75 /* KSHeritageDictionaryListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSHeritageDictionaryListView.xib; sourceTree = "<group>"; };
+		01FD5E4B20A1989C00D9CD75 /* KSHeritageDictionaryListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHeritageDictionaryListView.h; sourceTree = "<group>"; };
+		01FD5E4C20A1989C00D9CD75 /* KSHeritageDictionaryListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHeritageDictionaryListTableViewCell.h; sourceTree = "<group>"; };
+		01FD5E4D20A1989C00D9CD75 /* KSHeritageDictionaryListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHeritageDictionaryListView.m; sourceTree = "<group>"; };
+		01FD5E4E20A1989C00D9CD75 /* KSHeritageDictionaryListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSHeritageDictionaryListTableViewCell.xib; sourceTree = "<group>"; };
+		01FD5E4F20A1989C00D9CD75 /* KSHeritageDictionaryListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHeritageDictionaryListTableViewCell.m; sourceTree = "<group>"; };
+		01FD5E5120A1989C00D9CD75 /* KSHeritageDictionaryListTagCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHeritageDictionaryListTagCollectionViewCell.h; sourceTree = "<group>"; };
+		01FD5E5220A1989C00D9CD75 /* KSHeritageDictionaryListTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHeritageDictionaryListTagView.m; sourceTree = "<group>"; };
+		01FD5E5320A1989C00D9CD75 /* KSTagFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSTagFlowLayout.h; sourceTree = "<group>"; };
+		01FD5E5420A1989C00D9CD75 /* KSHeritageDictionaryListTagCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSHeritageDictionaryListTagCollectionViewCell.m; sourceTree = "<group>"; };
+		01FD5E5520A1989C00D9CD75 /* KSTagFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSTagFlowLayout.m; sourceTree = "<group>"; };
+		01FD5E5620A1989C00D9CD75 /* KSHeritageDictionaryListTagView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSHeritageDictionaryListTagView.xib; sourceTree = "<group>"; };
+		01FD5E5720A1989C00D9CD75 /* KSHeritageDictionaryListTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHeritageDictionaryListTagView.h; sourceTree = "<group>"; };
+		01FD5E5820A1989C00D9CD75 /* KSHeritageDictionaryListTagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSHeritageDictionaryListTagCollectionViewCell.xib; sourceTree = "<group>"; };
+		01FD5E5F20A1989C00D9CD75 /* KSHeritageDictionaryMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSHeritageDictionaryMacro.h; sourceTree = "<group>"; };
+		01FD5E7920A1998000D9CD75 /* KSHeritageDictionaryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSHeritageDictionaryModel.h; sourceTree = "<group>"; };
+		01FD5E7A20A1998000D9CD75 /* KSHeritageDictionaryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSHeritageDictionaryModel.m; sourceTree = "<group>"; };
 		193772C00264BDAF63ADB7B3 /* Pods-BaseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.debug.xcconfig"; sourceTree = "<group>"; };
 		7BAAF3753BBCECF75300EBB5 /* libPods-BaseProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3E14031FDCFBD3612C5E10 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -1656,6 +1716,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0100541420A2E42D00F43089 /* CollectionView横向滑动 */ = {
+			isa = PBXGroup;
+			children = (
+				0100541520A2E43900F43089 /* Controllers */,
+				0100541620A2E43900F43089 /* Models */,
+				0100541820A2E43900F43089 /* ViewModels */,
+				0100541720A2E43900F43089 /* Views */,
+			);
+			path = "CollectionView横向滑动";
+			sourceTree = "<group>";
+		};
+		0100541520A2E43900F43089 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0100541920A2E47200F43089 /* BPHorizontalCollectionViewController.h */,
+				0100541A20A2E47200F43089 /* BPHorizontalCollectionViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0100541620A2E43900F43089 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0100541720A2E43900F43089 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0100541820A2E43900F43089 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		01027AD61FDED94C0003F0FE /* WeChat */ = {
 			isa = PBXGroup;
 			children = (
@@ -2665,6 +2766,8 @@
 		010FBC3F206018B500BC9EC4 /* ImprovingTips */ = {
 			isa = PBXGroup;
 			children = (
+				0100541420A2E42D00F43089 /* CollectionView横向滑动 */,
+				01F750A2209EDF7100C1F24C /* OtherProject */,
 				0137C73A207B3AA800F6B6CE /* Present */,
 				017F82C82063A87B00B656BA /* AddChildVC */,
 				010FBD1B20601D9E00BC9EC4 /* CollectionViewAnimation */,
@@ -2678,6 +2781,7 @@
 		010FBC4320601A0800BC9EC4 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				019B0ED920937B3C00D105D1 /* Tag */,
 				017F82C7206261AB00B656BA /* Drawer */,
 				01027AD91FDED98E0003F0FE /* Alert */,
 				01027ADC1FDED9C50003F0FE /* Animation */,
@@ -4954,6 +5058,55 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		019B0ED920937B3C00D105D1 /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				019B0EDA20937B4900D105D1 /* Controllers */,
+				019B0EDB20937B4900D105D1 /* Models */,
+				019B0EDD20937B4900D105D1 /* ViewModels */,
+				019B0EDC20937B4900D105D1 /* Views */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
+		019B0EDA20937B4900D105D1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				019B0EDE20937B6700D105D1 /* BPTagViewController.h */,
+				019B0EDF20937B6700D105D1 /* BPTagViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		019B0EDB20937B4900D105D1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				019B0EEA20937D6E00D105D1 /* BPTagModel.h */,
+				019B0EEB20937D6E00D105D1 /* BPTagModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		019B0EDC20937B4900D105D1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				019B0EE420937CD500D105D1 /* BPTagCollectionView.h */,
+				019B0EE520937CD500D105D1 /* BPTagCollectionView.m */,
+				019B0EE720937D2C00D105D1 /* BPTagCell.h */,
+				019B0EE820937D2C00D105D1 /* BPTagCell.m */,
+				019B0EED2093845800D105D1 /* BPCollectionViewFlowLayout.h */,
+				019B0EEE2093845800D105D1 /* BPCollectionViewFlowLayout.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		019B0EDD20937B4900D105D1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		01A191952004DF21005EE4CD /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -5147,8 +5300,8 @@
 		01A191E62004E61E005EE4CD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				01A191E72004E61E005EE4CD /* BPTagCollectionViewController.m */,
 				01A191E82004E61E005EE4CD /* BPTagCollectionViewController.h */,
+				01A191E72004E61E005EE4CD /* BPTagCollectionViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -5233,8 +5386,8 @@
 		01A192112004E61E005EE4CD /* GeneralTableView */ = {
 			isa = PBXGroup;
 			children = (
+				01F750A3209F211E00C1F24C /* Views */,
 				01A192122004E61E005EE4CD /* Controllers */,
-				01A192172004E61E005EE4CD /* Views */,
 			);
 			path = GeneralTableView;
 			sourceTree = "<group>";
@@ -5243,26 +5396,11 @@
 			isa = PBXGroup;
 			children = (
 				01A192132004E61E005EE4CD /* BPGroupTableViewController.h */,
-				01A192142004E61E005EE4CD /* BPPlainTableViewController.h */,
 				01A192152004E61E005EE4CD /* BPGroupTableViewController.m */,
+				01A192142004E61E005EE4CD /* BPPlainTableViewController.h */,
 				01A192162004E61E005EE4CD /* BPPlainTableViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		01A192172004E61E005EE4CD /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				01A192182004E61E005EE4CD /* Cell */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		01A192182004E61E005EE4CD /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		01A597992085CA29000C6237 /* DataSource */ = {
@@ -6530,6 +6668,126 @@
 			path = RemoteOperation;
 			sourceTree = "<group>";
 		};
+		01F750A2209EDF7100C1F24C /* OtherProject */ = {
+			isa = PBXGroup;
+			children = (
+				01FD5E3820A1989C00D9CD75 /* HeritageDictionaryList */,
+			);
+			path = OtherProject;
+			sourceTree = "<group>";
+		};
+		01F750A3209F211E00C1F24C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01F750A5209F214000C1F24C /* Code */,
+				01F750A4209F212E00C1F24C /* XIB */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01F750A4209F212E00C1F24C /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				01F750A6209F216F00C1F24C /* BPTableViewCell.h */,
+				01F750A7209F216F00C1F24C /* BPTableViewCell.m */,
+				01F750A8209F216F00C1F24C /* BPTableViewCell.xib */,
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
+		01F750A5209F214000C1F24C /* Code */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		01FD5E3820A1989C00D9CD75 /* HeritageDictionaryList */ = {
+			isa = PBXGroup;
+			children = (
+				01FD5E7820A1995500D9CD75 /* Model */,
+				01FD5E3920A1989C00D9CD75 /* Controllers */,
+				01FD5E4320A1989C00D9CD75 /* Views */,
+				01FD5E5D20A1989C00D9CD75 /* Helper */,
+			);
+			path = HeritageDictionaryList;
+			sourceTree = "<group>";
+		};
+		01FD5E3920A1989C00D9CD75 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01FD5E4020A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.h */,
+				01FD5E3C20A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.m */,
+				01FD5E4120A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01FD5E4320A1989C00D9CD75 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01FD5E4920A1989C00D9CD75 /* ListView */,
+				01FD5E5020A1989C00D9CD75 /* TagView */,
+				01FD5E4520A1989C00D9CD75 /* TopCategoryView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01FD5E4520A1989C00D9CD75 /* TopCategoryView */ = {
+			isa = PBXGroup;
+			children = (
+				01FD5E4720A1989C00D9CD75 /* KSHeritageDictionaryListContainerCollectionViewCell.h */,
+				01FD5E4620A1989C00D9CD75 /* KSHeritageDictionaryListContainerCollectionViewCell.m */,
+				01FD5E4820A1989C00D9CD75 /* KSHeritageDictionaryListContainerCollectionViewCell.xib */,
+			);
+			path = TopCategoryView;
+			sourceTree = "<group>";
+		};
+		01FD5E4920A1989C00D9CD75 /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				01FD5E4C20A1989C00D9CD75 /* KSHeritageDictionaryListTableViewCell.h */,
+				01FD5E4F20A1989C00D9CD75 /* KSHeritageDictionaryListTableViewCell.m */,
+				01FD5E4E20A1989C00D9CD75 /* KSHeritageDictionaryListTableViewCell.xib */,
+				01FD5E4B20A1989C00D9CD75 /* KSHeritageDictionaryListView.h */,
+				01FD5E4D20A1989C00D9CD75 /* KSHeritageDictionaryListView.m */,
+				01FD5E4A20A1989C00D9CD75 /* KSHeritageDictionaryListView.xib */,
+			);
+			path = ListView;
+			sourceTree = "<group>";
+		};
+		01FD5E5020A1989C00D9CD75 /* TagView */ = {
+			isa = PBXGroup;
+			children = (
+				01FD5E5120A1989C00D9CD75 /* KSHeritageDictionaryListTagCollectionViewCell.h */,
+				01FD5E5420A1989C00D9CD75 /* KSHeritageDictionaryListTagCollectionViewCell.m */,
+				01FD5E5820A1989C00D9CD75 /* KSHeritageDictionaryListTagCollectionViewCell.xib */,
+				01FD5E5720A1989C00D9CD75 /* KSHeritageDictionaryListTagView.h */,
+				01FD5E5220A1989C00D9CD75 /* KSHeritageDictionaryListTagView.m */,
+				01FD5E5620A1989C00D9CD75 /* KSHeritageDictionaryListTagView.xib */,
+				01FD5E5320A1989C00D9CD75 /* KSTagFlowLayout.h */,
+				01FD5E5520A1989C00D9CD75 /* KSTagFlowLayout.m */,
+			);
+			path = TagView;
+			sourceTree = "<group>";
+		};
+		01FD5E5D20A1989C00D9CD75 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				01FD5E5F20A1989C00D9CD75 /* KSHeritageDictionaryMacro.h */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		01FD5E7820A1995500D9CD75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01FD5E7920A1998000D9CD75 /* KSHeritageDictionaryModel.h */,
+				01FD5E7A20A1998000D9CD75 /* KSHeritageDictionaryModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4A3DA6562E1A89656B539CD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -6672,18 +6930,24 @@
 				0195EAA4201373E700DC59A1 /* BPXibView.xib in Resources */,
 				010FBD2620601D9E00BC9EC4 /* palette.jpeg in Resources */,
 				017907E3200144F200E5C360 /* bookcatalogue.toc in Resources */,
+				01FD5E6820A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.xib in Resources */,
 				014ED0DE1FF0135000D2926C /* launchImage@2x.png in Resources */,
 				0109650B208AC910003B3380 /* BP1STManualHeaderView.xib in Resources */,
 				014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */,
+				01FD5E6A20A1989C00D9CD75 /* KSHeritageDictionaryListContainerCollectionViewCell.xib in Resources */,
 				01A597A82085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.xib in Resources */,
 				0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */,
 				01A1921E2004E61F005EE4CD /* BPCollectionViewCell.xib in Resources */,
+				01FD5E6B20A1989C00D9CD75 /* KSHeritageDictionaryListView.xib in Resources */,
+				01FD5E7220A1989C00D9CD75 /* KSHeritageDictionaryListTagView.xib in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
 				0184BF831FD6DB2C00CB9AAD /* BPTest_XibViewController.xib in Resources */,
 				01D2F5B12088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib in Resources */,
 				0137C756207B658400F6B6CE /* BPAutoLayoutXIBViewController.xib in Resources */,
+				01F750AA209F216F00C1F24C /* BPTableViewCell.xib in Resources */,
 				01096505208AC910003B3380 /* BPS1STManualInsideTableViewCell.xib in Resources */,
 				01352FE31FD2DDA20011D65C /* FeatureCatalog.plist in Resources */,
+				01FD5E6D20A1989C00D9CD75 /* KSHeritageDictionaryListTableViewCell.xib in Resources */,
 				0137C761207C952700F6B6CE /* BPTextCompositionViewController.xib in Resources */,
 				01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */,
 				014ED0DD1FF0135000D2926C /* launchImage@3x.png in Resources */,
@@ -6691,6 +6955,7 @@
 				01A597AA2085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.xib in Resources */,
 				01A1921F2004E61F005EE4CD /* BPCollectionReusableFootView.xib in Resources */,
 				01A192222004E61F005EE4CD /* BPCollectionReusableHeadView.xib in Resources */,
+				01FD5E7320A1989C00D9CD75 /* KSHeritageDictionaryListTagCollectionViewCell.xib in Resources */,
 				01096508208AC910003B3380 /* BP1STManualInsideHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -6830,6 +7095,7 @@
 				01E672B720148C1D00FB22D4 /* BPViewPropertyController.m in Sources */,
 				01DF31C71FDD3A9100B8A955 /* NSUserDefaults+BPiCloudSync.m in Sources */,
 				018C451E200A5AD300CF43D7 /* YYFPSLabel.m in Sources */,
+				019B0EE620937CD500D105D1 /* BPTagCollectionView.m in Sources */,
 				01DF32591FDD3B9D00B8A955 /* NSData+BPzlib.m in Sources */,
 				01A191C22004E1BF005EE4CD /* BPWKWebViewController.m in Sources */,
 				01DF325D1FDD3B9D00B8A955 /* NSData+BPHash.m in Sources */,
@@ -6849,6 +7115,7 @@
 				01490C0E1FF548A50035492D /* BPOptimizeTableViewController.m in Sources */,
 				01A192192004E61F005EE4CD /* BPTagFlowLayout.m in Sources */,
 				010DB7421FDD4D450099E66F /* UIImage+BPColor.m in Sources */,
+				01F750A9209F216F00C1F24C /* BPTableViewCell.m in Sources */,
 				011B7DD1206906CB0071CB5D /* BPAppInfoTool.m in Sources */,
 				010DB7101FDD4D450099E66F /* UIImageView+BPAddition.m in Sources */,
 				010DB7131FDD4D450099E66F /* UIAlertView+BPBlock.m in Sources */,
@@ -6857,6 +7124,7 @@
 				01DF325F1FDD3B9D00B8A955 /* NSData+BPPCM.m in Sources */,
 				0173401D1FA9753F006192F0 /* BPBaseNavigationController.m in Sources */,
 				0168F3872035E66900D63D83 /* BPBaseKnowledgeViewModel.m in Sources */,
+				0100541B20A2E47200F43089 /* BPHorizontalCollectionViewController.m in Sources */,
 				010DB74E1FDD4D450099E66F /* UIBarButtonItem+BPAction.m in Sources */,
 				01A192262004E61F005EE4CD /* BPGroupTableViewController.m in Sources */,
 				010DB7291FDD4D450099E66F /* UISplitViewController+BPQuickAccess.m in Sources */,
@@ -6965,6 +7233,7 @@
 				01D22BCA1FDD814000BCC4AD /* NSObject+BPAdd.m in Sources */,
 				017906B12000F63B00E5C360 /* BPPopViewController.m in Sources */,
 				016760D720610F3900F82ACE /* BPSingleThreadTimer.m in Sources */,
+				01FD5E6920A1989C00D9CD75 /* KSHeritageDictionaryListContainerCollectionViewCell.m in Sources */,
 				010DB73D1FDD4D450099E66F /* UIImage+BPVector.m in Sources */,
 				01C0B6261FFC87AB005BB4A5 /* UIImage+Palette.m in Sources */,
 				010DB7201FDD4D450099E66F /* UIWebView+BPStyle.m in Sources */,
@@ -7024,11 +7293,13 @@
 				010DB7961FDD4D640099E66F /* UIView+BPDraggable.m in Sources */,
 				017A9A9C1FDD315A00CDA599 /* UIView+BPShadow.m in Sources */,
 				010DB7231FDD4D450099E66F /* UIWebView+BPCanvas.m in Sources */,
+				019B0EEC20937D6E00D105D1 /* BPTagModel.m in Sources */,
 				018C4504200A4F4000CF43D7 /* BP_THREE_TopSliderCatergoryViewController.m in Sources */,
 				0184BF861FD6E0EC00CB9AAD /* BPTestViewController.m in Sources */,
 				01A191C82004E1D0005EE4CD /* BPSearchBarViewController.m in Sources */,
 				0195EA84201373C100DC59A1 /* BPCoreAnimationVC.m in Sources */,
 				0187FC6B1FC33CDB004E839E /* BPSimpleTableViewCell.m in Sources */,
+				01FD5E6520A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.m in Sources */,
 				01DF31D81FDD3A9100B8A955 /* NSInvocation+BPBlock.m in Sources */,
 				01C9359F1FC337E100D98FD6 /* BPFeatureViewModel.m in Sources */,
 				01492F1F2052356D00B28F84 /* KSCellProgressModel.m in Sources */,
@@ -7043,10 +7314,12 @@
 				010DB74C1FDD4D450099E66F /* UIApplication+BPApplicationSize.m in Sources */,
 				0168F38D2035EC6C00D63D83 /* BPImprovingTipViewModel.m in Sources */,
 				01DF321E1FDD3B3000B8A955 /* NSString+BPSize.m in Sources */,
+				019B0EE020937B6700D105D1 /* BPTagViewController.m in Sources */,
 				01EAA0A62015F08C0084808D /* BPAutoresizingView.m in Sources */,
 				016DADCA20582FB100AA95EC /* NSNull+BPSafe.m in Sources */,
 				010DB74B1FDD4D450099E66F /* UIApplication+BPNetworkActivityIndicator.m in Sources */,
 				017906FE20011D4100E5C360 /* BPDataManager.m in Sources */,
+				01FD5E7120A1989C00D9CD75 /* KSTagFlowLayout.m in Sources */,
 				010DB7B01FDD4D6F0099E66F /* UIButton+BPBackgroundColor.m in Sources */,
 				01B726961FF7E45B00648674 /* BPAlgorithmController.m in Sources */,
 				01E6B1922001FE970008C18C /* SchoolModel.m in Sources */,
@@ -7060,6 +7333,7 @@
 				010DB7AD1FDD4D6F0099E66F /* UIButton+BPTouchAreaInsets.m in Sources */,
 				01A597AB2085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.m in Sources */,
 				01DF31CB1FDD3A9100B8A955 /* NSNotificationCenter+BPMainThread.m in Sources */,
+				01FD5E6E20A1989C00D9CD75 /* KSHeritageDictionaryListTableViewCell.m in Sources */,
 				0179BC42203176190061CD84 /* BPDesignPatternsBlockViewControllerA.m in Sources */,
 				01DF32191FDD3B3000B8A955 /* NSString+BPPinyin.m in Sources */,
 				01A191C52004E1CB005EE4CD /* BPWebViewController.m in Sources */,
@@ -7146,6 +7420,7 @@
 				01DF32181FDD3B3000B8A955 /* NSString+BPMIME.m in Sources */,
 				010DB7371FDD4D450099E66F /* UITextField+BPInputLimit.m in Sources */,
 				018972C71FC481BF00D6DF5B /* BPBaseCollectionViewCell.m in Sources */,
+				019B0EEF2093845800D105D1 /* BPCollectionViewFlowLayout.m in Sources */,
 				0179070420011D8100E5C360 /* BPNetRequestViewController.m in Sources */,
 				01DF325B1FDD3B9D00B8A955 /* NSData+BPBase64.m in Sources */,
 				01E672B12014898300FB22D4 /* BPLayerViewController.m in Sources */,
@@ -7173,6 +7448,7 @@
 				010DB74A1FDD4D450099E66F /* UIApplication+BPPermissions.m in Sources */,
 				01CCA7261FEEC82700E8DC06 /* BPUtilConstant.m in Sources */,
 				010DB7221FDD4D450099E66F /* UIWebVIew+BPSwipeGesture.m in Sources */,
+				01FD5E6C20A1989C00D9CD75 /* KSHeritageDictionaryListView.m in Sources */,
 				01DF32771FDD3BB100B8A955 /* NSDate+BPReporting.m in Sources */,
 				01DF31D21FDD3A9100B8A955 /* NSFileHandle+BPReadLine.m in Sources */,
 				018C44AF20093FD200CF43D7 /* BPSlideShowViewController.m in Sources */,
@@ -7212,6 +7488,7 @@
 				010DB7111FDD4D450099E66F /* UIImageView+BPGeometryConversion.m in Sources */,
 				010DB74D1FDD4D450099E66F /* UIApplication+BPKeyboardFrame.m in Sources */,
 				010DB7341FDD4D450099E66F /* UIResponder+BPChain.m in Sources */,
+				01FD5E6F20A1989C00D9CD75 /* KSHeritageDictionaryListTagView.m in Sources */,
 				01DF31C11FDD3A9100B8A955 /* NSDictionary+BPJSONString.m in Sources */,
 				01DF31D61FDD3A9100B8A955 /* NSDateFormatter+BPMake.m in Sources */,
 				01A597B32085CAF7000C6237 /* BP2NDCellAutoLayoutHeightViewController.m in Sources */,
@@ -7283,13 +7560,16 @@
 				01490C081FF548650035492D /* BPGCDViewController.m in Sources */,
 				01A191BF2004E1B9005EE4CD /* BPDatePickerController.m in Sources */,
 				01DF31C01FDD3A9100B8A955 /* NSDictionary+BPXML.m in Sources */,
+				01FD5E7020A1989C00D9CD75 /* KSHeritageDictionaryListTagCollectionViewCell.m in Sources */,
 				01DF31E61FDD3B0300B8A955 /* NSNumber+BPRound.m in Sources */,
 				010DB78C1FDD4D640099E66F /* UIView+BPFind.m in Sources */,
+				01FD5E7B20A1998000D9CD75 /* KSHeritageDictionaryModel.m in Sources */,
 				010DB7511FDD4D450099E66F /* UINavigationController+BPTransitions.m in Sources */,
 				018C44F5200A4AF700CF43D7 /* BPFlowCollectionView.m in Sources */,
 				010DB7401FDD4D450099E66F /* UIImage+BPRemoteSize.m in Sources */,
 				01790761200120CF00E5C360 /* NSObject+Log.m in Sources */,
 				010DB73C1FDD4D450099E66F /* UIImage+BPResize.m in Sources */,
+				019B0EE920937D2C00D105D1 /* BPTagCell.m in Sources */,
 				01790760200120CF00E5C360 /* UIImage+Swizzling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

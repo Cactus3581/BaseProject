@@ -17,15 +17,14 @@
 //addTarget uibutton 参数
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self test];
 }
 
 - (void)test {
-    UIButton * button = [UIButton buttonWithType:UIButtonTypeSystem];
-    
-    
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     //属性
     button.frame = CGRectMake(100, 300, 150, 100);
-    //    button.backgroundColor = [UIColor brownColor];
+    button.backgroundColor = [UIColor brownColor];
     
     //    (1)设置文字-title     :两种不同状态下，可以同时设置不同的
     
@@ -58,13 +57,15 @@
     //
     
     //    (6)设置背景图片
-    [button setBackgroundImage:[UIImage imageNamed:@"01.png"] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"nyc"] forState:UIControlStateNormal];
     
-    [button setBackgroundImage:[UIImage imageNamed:@"02.png"] forState:UIControlStateHighlighted];
+//    [button setBackgroundImage:[UIImage imageNamed:@"02.png"] forState:UIControlStateHighlighted];
     //    设置前景图片
     //    [button setImage:[UIImage imageNamed:@"01.png"] forState:UIControlStateNormal];
     //    [button setImage:[UIImage imageNamed:@"02.png"] forState:UIControlStateHighlighted];
     
+    [button setShowsTouchWhenHighlighted:YES];//网易云音乐的播放按钮的白色光晕
+        [button setAdjustsImageWhenHighlighted:NO];//去除高亮
     [self.view addSubview:button];
 }
 
@@ -75,9 +76,8 @@
     BPLog(@"title = %@",[bt titleForState:UIControlStateNormal]);
     //    获取高亮状态下的title
     BPLog(@"title = %@",[bt titleForState:UIControlStateHighlighted]);
-    
-    
 }
+
 -(void)btAction2:(UIButton *)bt{
     BPLog(@"down");
 }

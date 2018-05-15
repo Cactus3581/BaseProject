@@ -18,14 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    BPSubAddChildViewController *vc = [[BPSubAddChildViewController alloc] init];
-    [self addChildViewController:vc];
-    [self.view addSubview:vc.view];
-    [vc.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(100);
-        make.leading.trailing.bottom.equalTo(self.view);
-    }];
-    vc.view.backgroundColor = kGreenColor;
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     [button setTitle:@"add" forState:UIControlStateNormal];
@@ -36,6 +28,17 @@
         make.leading.trailing.equalTo(self.view);
         make.height.equalTo(@(44));
     }];
+    
+    BPSubAddChildViewController *vc = [[BPSubAddChildViewController alloc] init];
+    [self addChildViewController:vc];
+    [self.view addSubview:vc.view];
+//    [vc.view mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.view).offset(200);
+//        make.leading.trailing.bottom.equalTo(self.view);
+//    }];
+    vc.view.frame = CGRectMake(0, 200, self.view.bounds.size.width, 200);
+
+    vc.view.backgroundColor = kGreenColor;
 
     self.subVc = vc;
 }
@@ -61,11 +64,11 @@
 - (void)didClickHeadButtonAction:(UIButton *)button {
     BPSubAddChildViewController *vc1 = [[BPSubAddChildViewController alloc] init];
     vc1.view.backgroundColor = kBlueColor;
-    [self replaceController:self.subVc subViewController:vc1];
+    [self replaceController:self.subVc willDisplayController:vc1];
 }
 
 //切换各个标签内容
-- (void)replaceController:(UIViewController *)parentViewController subViewController:(UIViewController *)subViewController {
+- (void)replaceController:(UIViewController *)oldVC willDisplayController:(UIViewController *)newVC {
     /**
      *着重介绍一下它
      *  transitionFromViewController:toViewController:duration:options:animations:completion:
@@ -76,16 +79,21 @@
      *  animations              转换过程中得动画
      *  completion              转换完成
      */
-    
-    [self addChildViewController:subViewController];
-    [self transitionFromViewController:parentViewController toViewController:subViewController duration:2.0 options:UIViewAnimationOptionTransitionCrossDissolve animations:nil completion:^(BOOL finished) {
+    newVC.view.frame = CGRectMake(self.view.bounds.size.width, 200, self.view.bounds.size.width, 200);
+
+    [self addChildViewController:newVC];
+    [self transitionFromViewController:oldVC toViewController:newVC duration:4.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
+        newVC.view.frame = CGRectMake(0, 200, self.view.bounds.size.width, 200);
+        oldVC.view.frame = CGRectMake(-self.view.bounds.size.width, 200, self.view.bounds.size.width, 200);
+    } completion:^(BOOL finished) {
         if (finished) {
-            [subViewController didMoveToParentViewController:self];
-            [parentViewController willMoveToParentViewController:nil];
-            [parentViewController removeFromParentViewController];
+            [newVC didMoveToParentViewController:self];
+            [oldVC willMoveToParentViewController:nil];
+            [oldVC removeFromParentViewController];
         }
     }];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
