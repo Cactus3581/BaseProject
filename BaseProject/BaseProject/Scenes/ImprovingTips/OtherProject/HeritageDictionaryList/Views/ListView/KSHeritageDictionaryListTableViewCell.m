@@ -28,21 +28,6 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self configViews];
-    [self initGesture];
-}
-
-- (void)initGesture {
-    self.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGesCallback:)];
-    [self addGestureRecognizer:tap];
-}
-
-- (void)tapGesCallback:(UIGestureRecognizer *)gestureRecognizer {
-    [self enterDetailVC];
-}
-
-- (void)enterDetailVC {
- 
 }
 
 #pragma mark - 初始化赋值
@@ -84,8 +69,6 @@
 
 - (void)configViews {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.coverImageView.layer.cornerRadius = 3;
-    [self.coverImageView.layer setMasksToBounds:YES];
     self.titleLabel.textColor = kDarkTextColor;
     self.desclabel.textColor = kDarkTextColor;
     self.downLoadButton.adjustsImageWhenHighlighted = NO;
@@ -98,15 +81,6 @@
     self.desclabel.adjustsFontSizeToFitWidth = YES;
 }
 
-#pragma mark - KSHeritageDownloadViewControllerDelegate
-- (void)downloadFinishedWithSuccess:(BOOL)isSuccess {
-    if(isSuccess) {
-        [self configDownLoadButtonWithText:@"立即学习" titleColor:kDarkTextColor backgroundColor:kDarkTextColor];
-    } else {
-        [self configDownLoadButtonWithText:@"添加" titleColor:kGreenColor backgroundColor:[kGreenColor colorWithAlphaComponent:0.08]];
-    }
-}
-
 //写入数据库结果
 - (void)didReceiveWriteDBResultWithModel:(KSWordBookAuthorityDictionaryThirdCategoryModel *)model {
 
@@ -114,23 +88,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-}
-
-- (void)configHomePageViews {
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.coverImageView.layer.cornerRadius = 3;
-    self.lineView.hidden = YES;
-    self.coverImageViewWidthConstraint.constant = 84;
-    self.coverImageViewHeightConstraint.constant = 112;
-    self.coverImageViewLeftConstraint.constant = 0;
-    self.titleLabelTopConstraint.constant = 6;
-    self.desclabelTopConstraint.constant = 7;
-    self.downloadButtonWidthConstraint.constant = 90;
-    self.downloadButtonHeightConstraint.constant = 30;
-    self.downLoadButton.layer.cornerRadius = 30.0/2.0;
-    self.downLoadButton.titleLabel.font = [UIFont systemFontOfSize:13.0];
-    self.titleLabel.font = [UIFont systemFontOfSize:16];
-    self.desclabel.adjustsFontSizeToFitWidth = YES;
 }
 
 - (void)dealloc {

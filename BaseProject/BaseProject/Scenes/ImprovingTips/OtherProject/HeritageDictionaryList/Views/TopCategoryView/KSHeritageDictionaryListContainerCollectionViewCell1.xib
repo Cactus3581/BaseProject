@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="KSHeritageDictionaryListContainerCollectionViewCell1">
+            <rect key="frame" x="0.0" y="0.0" width="276" height="190"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="276" height="190"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVn-dC-wen" customClass="KSHeritageDictionaryListTagView">
+                        <rect key="frame" x="0.0" y="0.0" width="276" height="0.0"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" id="f8v-IG-smN"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dfw-cs-vwS" customClass="KSHeritageDictionaryListCollectionView">
+                        <rect key="frame" x="0.0" y="0.0" width="276" height="190"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Dfw-cs-vwS" firstAttribute="top" secondItem="LVn-dC-wen" secondAttribute="bottom" id="JAe-T4-0Z3"/>
+                <constraint firstItem="LVn-dC-wen" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UuF-b3-XXK"/>
+                <constraint firstAttribute="trailing" secondItem="Dfw-cs-vwS" secondAttribute="trailing" id="WUI-eC-UPL"/>
+                <constraint firstItem="LVn-dC-wen" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wbq-QY-sL6"/>
+                <constraint firstItem="Dfw-cs-vwS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="j85-xe-oiQ"/>
+                <constraint firstAttribute="bottom" secondItem="Dfw-cs-vwS" secondAttribute="bottom" id="mvD-AX-1FO"/>
+                <constraint firstAttribute="trailing" secondItem="LVn-dC-wen" secondAttribute="trailing" id="tbU-bv-nEl"/>
+            </constraints>
+            <size key="customSize" width="276" height="190"/>
+            <connections>
+                <outlet property="listView" destination="Dfw-cs-vwS" id="KMl-tO-Xdc"/>
+                <outlet property="tagView" destination="LVn-dC-wen" id="H81-5L-6lX"/>
+                <outlet property="tagViewHeightConstraint" destination="f8v-IG-smN" id="uiW-CG-hL1"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="122"/>
+        </collectionViewCell>
+    </objects>
+</document>

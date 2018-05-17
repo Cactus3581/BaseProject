@@ -1,23 +1,24 @@
 //
-//  KSHeritageDictionaryListContainerCollectionViewCell.m
+//  KSHeritageDictionaryListContainerCollectionViewCell1.m
 //  PowerWord7
 //
-//  Created by xiaruzhen on 2018/4/27.
+//  Created by xiaruzhen on 2018/5/14.
 //  Copyright © 2018年 Kingsoft. All rights reserved.
 //
 
-#import "KSHeritageDictionaryListContainerCollectionViewCell.h"
-#import "KSHeritageDictionaryListView.h"
+#import "KSHeritageDictionaryListContainerCollectionViewCell1.h"
 #import "KSHeritageDictionaryListTagView.h"
+#import "KSHeritageDictionaryListView.h"
+#import "KSHeritageDictionaryListCollectionView.h"
 
-@interface KSHeritageDictionaryListContainerCollectionViewCell()<KSHeritageDictionaryListTagViewDelegate>
-@property (weak, nonatomic) IBOutlet KSHeritageDictionaryListView *listView;
+@interface KSHeritageDictionaryListContainerCollectionViewCell1 ()<KSHeritageDictionaryListTagViewDelegate>
+@property (weak, nonatomic) IBOutlet KSHeritageDictionaryListCollectionView *listView;
 @property (weak, nonatomic) IBOutlet KSHeritageDictionaryListTagView *tagView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tagViewHeightConstraint;
 @property (nonatomic,strong) KSWordBookAuthorityDictionaryFirstCategoryModel *model;
 @end
 
-@implementation KSHeritageDictionaryListContainerCollectionViewCell
+@implementation KSHeritageDictionaryListContainerCollectionViewCell1
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -29,14 +30,14 @@
     _model = model;
     self.tagView.model = model;
     if (!model.sub.count) { //没有tag
-//        self.tagViewHeightConstraint.constant = 0.f;
+        self.tagViewHeightConstraint.constant = 0.f;
         if (model.thirdCategoryModel) {
             self.listView.array = model.thirdCategoryModel.data;
         }else {
-            
+            [self requestWithID:model.classId firstCategoryModel:model secondCategoryModel:nil];
         }
     }else {
-//        self.tagViewHeightConstraint.constant = model.tagHeight;
+        self.tagViewHeightConstraint.constant = model.tagHeight;
         [self handleListData];
     }
 }
@@ -52,8 +53,12 @@
     if (secondCategoryModel.thirdCategoryModel) {
         self.listView.array = secondCategoryModel.thirdCategoryModel.data;
     }else {
-        
+        [self requestWithID:secondCategoryModel.classId firstCategoryModel:self.model secondCategoryModel:secondCategoryModel];
     }
+}
+
+- (void)requestWithID:(NSString *)classID firstCategoryModel:(KSWordBookAuthorityDictionaryFirstCategoryModel *)firstCategoryModel secondCategoryModel:(KSWordBookAuthorityDictionarySecondCategoryModel *)secondCategoryModel {
+
 }
 
 #pragma tagView delegate
@@ -61,10 +66,10 @@
     if (self.model.sub.count) {
         if (self.model.tagHeight != height) {
             self.model.tagHeight = height;
-//            self.tagViewHeightConstraint.constant = height;
+            self.tagViewHeightConstraint.constant = height;
         }
     }else {
-//        self.tagViewHeightConstraint.constant = 0.f;
+        self.tagViewHeightConstraint.constant = 0.f;
     }
 }
 

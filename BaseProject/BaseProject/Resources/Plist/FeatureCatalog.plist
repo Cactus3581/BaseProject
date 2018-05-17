@@ -115,27 +115,46 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>颜色左右渐变 + 底部线条</string>
+				<string>AddChiledController</string>
 				<key>fileName</key>
-				<string>BP_ONE_TopSliderCatergoryViewController</string>
+				<string>BP_Four_TopSliderCatergoryViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>颜色变化 + 背后椭圆 + 设置默认index</string>
+				<string>CollectionView做的</string>
 				<key>fileName</key>
-				<string>BP_TWO_TopSliderCatergoryViewController</string>
+				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
 				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>颜色变化 + 文字缩放 + 模拟网络刷新</string>
-				<key>fileName</key>
-				<string>BP_THREE_TopSliderCatergoryViewController</string>
-				<key>briefIntro</key>
-				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>颜色左右渐变 + 底部线条</string>
+						<key>fileName</key>
+						<string>BP_ONE_TopSliderCatergoryViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>颜色变化 + 背后椭圆 + 设置默认index</string>
+						<key>fileName</key>
+						<string>BP_TWO_TopSliderCatergoryViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>颜色变化 + 文字缩放 + 模拟网络刷新</string>
+						<key>fileName</key>
+						<string>BP_THREE_TopSliderCatergoryViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 		</array>
 	</dict>

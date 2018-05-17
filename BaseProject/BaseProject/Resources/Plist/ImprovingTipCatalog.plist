@@ -96,5 +96,48 @@
 		<key>briefIntro</key>
 		<string></string>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>TableView相关测试</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>关于bounces和contentInset的矛盾</string>
+				<key>fileName</key>
+				<string>BPContentInsetTableViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>collectionview 分类工具-有tagview</string>
+		<key>fileName</key>
+		<string>BPTopCategoryCollectionViewController</string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>collectionview 分类工具-没有tagview</string>
+		<key>fileName</key>
+		<string>BPTopCategoryCollectionViewController1</string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>看这里：测试collectionview滑动</string>
+		<key>fileName</key>
+		<string>BPTestCollectionViewController</string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
 </array>
 </plist>
