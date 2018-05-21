@@ -97,7 +97,7 @@
     mainView.pagingEnabled = YES;
     mainView.scrollsToTop = NO;
     mainView.showsHorizontalScrollIndicator = NO;
-    [mainView registerNib:[UINib nibWithNibName:NSStringFromClass([BPTestCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:@"BPTestCollectionViewCell"];
+    [mainView registerClass:[BPTestCollectionViewCell class] forCellWithReuseIdentifier:@"BPTestCollectionViewCell"];
     [self.view addSubview:mainView];
     [mainView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);        

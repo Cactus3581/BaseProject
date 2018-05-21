@@ -24,6 +24,14 @@ static NSString * cellIdentifier = @"KSHeritageDictionaryListTagCollectionViewCe
     [self configSubViews];
 }
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self configSubViews];
+    }
+    return self;
+}
+
 //KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if(object == _collectionView && [keyPath isEqualToString:@"contentSize"]) {
