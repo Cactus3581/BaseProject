@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BPAppDelegate : UIResponder <UIApplicationDelegate>
+@property (strong, nonatomic) UITabBarController *rootTabbarViewController;
 
 @property (strong, nonatomic) UIWindow *window;// 获取window
 @property (strong, nonatomic) UINavigationController *selectedNavigationController;// 获取导航栏控制器

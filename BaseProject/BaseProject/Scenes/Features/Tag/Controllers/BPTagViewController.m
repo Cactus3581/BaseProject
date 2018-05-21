@@ -7,127 +7,75 @@
 //
 
 #import "BPTagViewController.h"
-#import "Masonry.h"
-
+#import "BPTagLabelView.h"
 #import "BPTagCollectionView.h"
-#import "BPTagCell.h"
-#import "BPTagModel.h"
 
-@interface BPTagViewController () <UICollectionViewDataSource,UIGestureRecognizerDelegate, LPSwitchTagDelegate,LPSwitchTagDelegate>
-
+@interface BPTagViewController ()<BPTagLabelViewDelegate,BPTagCollectionViewDelegate>
+@property (weak, nonatomic) BPTagLabelView *tagLabelView;
+@property (weak, nonatomic) BPTagCollectionView *tagCollectionView;
 @end
 
-@implementation BPTagViewController {
-    BPTagCollectionView *_tagCollectionView;
-    NSArray *_tagArray;
-}
+@implementation BPTagViewController
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"选择标签";
+        //self.title = @"选择标签";
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.translucent = NO;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    [self configTagLabelView];
+    [self configTagCollectionView];
 }
 
-- (void)loadView {
-    [super loadView];
-    
-    
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i < 10; i ++) {
-        BPTagModel *model = [[BPTagModel alloc] init];
-        model.name = [NSString stringWithFormat:@"Tag %li", i];
-        model.isChoose = NO;
-        [array addObject:model];
-    }
-    _tagArray = array.copy;
-    
-    
-    
-    _tagCollectionView = [[BPTagCollectionView alloc] init];
-    _tagCollectionView.tagArray = _tagArray;
-    _tagCollectionView.tagDelegate = self;
-    [self.view addSubview:_tagCollectionView];
-
-    [self.view updateConstraintsIfNeeded];
-    [self.view layoutIfNeeded];
+- (void)configTagCollectionView {
+    BPTagCollectionView *tagCollectionView = [[BPTagCollectionView alloc] init];
+    [self.view addSubview:tagCollectionView];
+    tagCollectionView.delegate = self;
+    tagCollectionView.backgroundColor = kLightGrayColor;
+    tagCollectionView.titlesArray = @[@"objective-c",@"swift",@"java",@"C++",@"python",@"php",@"html5",@"我是要成为全栈的人"];
+    [tagCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.equalTo(self.view);
+        make.top.equalTo((self.view)).offset(100);
+        make.height.mas_equalTo(tagCollectionView.cardHeight);
+    }];
+    self.tagCollectionView = tagCollectionView;
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-
-}
-- (void)updateViewConstraints {
-    [super updateViewConstraints];
-    _tagCollectionView.backgroundColor = [UIColor redColor];
-    [_tagCollectionView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top);
-        make.left.right.equalTo(self.view);
-        make.height.mas_equalTo(_tagCollectionView.contentSize.height);
+- (void)getHeight:(CGFloat)height {
+//    BPLog(@"self.collectionView.contentSize.height = %.2f ,%.2f",height,self.tagCollectionView.cardHeight);
+    [self.tagCollectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.height.mas_equalTo(self.tagCollectionView.cardHeight);
+        make.height.mas_equalTo(height);
     }];
 }
 
-#pragma mark - UICollectionViewDataSource
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _tagArray.count;
+- (void)tagCollectionView:(BPTagCollectionView *)tagCollectionView didSelectRowAtIndex:(NSInteger)index {
+    BPLog(@"点击了第%ld个",index);
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    BPTagCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[BPTagCell cellReuseIdentifier] forIndexPath:indexPath];
-    cell.type = BPTagCellTypeSelected1;
-    cell.model = _tagArray[indexPath.row];
-    return cell;
-}
-
-
-#pragma mark - UICollectionViewDelegateLeftAlignedLayout
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row < _tagArray.count) {
-        CGSize size = [((BPTagModel *)_tagArray[indexPath.row]).name sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}];
-        return CGSizeMake(size.width + 16, 30);
-    }
-    return CGSizeMake(100, 30);
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 12;
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 12;
-}
-
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
-    return UIEdgeInsetsMake(6, 12, 6, 12);
-}
-
-//旋转事件，需要重新计算cell高度
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        [_tagCollectionView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.view.mas_top);
-            make.left.right.equalTo(self.view);
-            make.height.mas_equalTo(_tagCollectionView.contentSize.height);
-        }];
-    } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+- (void)configTagLabelView {
+    BPTagLabelView *tagLabelView = [[BPTagLabelView alloc] init];
+    [self.view addSubview:tagLabelView];
+    tagLabelView.delegate = self;
+    tagLabelView.backgroundColor = kLightGrayColor;    
+    tagLabelView.titlesArray = @[@"objective-c",@"swift",@"java",@"C++",@"python",@"php",@"html5",@"我是要成为全栈的人"];
+    [tagLabelView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.equalTo(self.view);
+        make.top.equalTo((self.view)).offset(300);
     }];
+    self.tagLabelView = tagLabelView;
+}
+
+- (void)tagLabelView:(BPTagLabelView *)tagLabelView didSelectRowAtIndex:(NSInteger)index {
+    BPLog(@"点击了第%ld个",index);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
 
 @end

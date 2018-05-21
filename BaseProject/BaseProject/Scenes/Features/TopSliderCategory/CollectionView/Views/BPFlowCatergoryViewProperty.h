@@ -24,6 +24,8 @@
 @property (nonatomic, assign) CGFloat edgeSpacing;
 /**item字体，默认15*/
 @property (nonatomic, strong) UIFont *titleFont;
+/**选中的item字体，默认15*/
+@property (nonatomic, strong) UIFont *titleSelectFont;
 
 #pragma mark - titleColor
 /**是否开启文字颜色变化效果，默认YES*/

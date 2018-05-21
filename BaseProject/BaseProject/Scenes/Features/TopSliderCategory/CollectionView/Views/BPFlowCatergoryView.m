@@ -45,7 +45,8 @@
     return self;
 }
 
-- (void)awakeFromNib{
+- (void)awakeFromNib {
+    [super awakeFromNib];
     [self bp_initailizeProperty];
     [self bp_initializeUI];
 }
@@ -146,6 +147,11 @@
 - (void)setTitleFont:(UIFont *)titleFont{
     _titleFont = titleFont;
     _property.titleFont = titleFont;
+}
+
+- (void)setTitleSelectFont:(UIFont *)titleSelectFont {
+    _titleSelectFont = titleSelectFont;
+    _property.titleSelectFont = titleSelectFont;
 }
 
 - (void)setTitleColor:(UIColor *)titleColor{

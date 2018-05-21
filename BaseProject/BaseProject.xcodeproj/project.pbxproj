@@ -158,7 +158,28 @@
 		011B7DDA20693E5B0071CB5D /* UINavigation+BPFixSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD420693E5B0071CB5D /* UINavigation+BPFixSpace.m */; };
 		011B7DDB20693E5B0071CB5D /* NSObject+BPAddRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD520693E5B0071CB5D /* NSObject+BPAddRuntime.m */; };
 		011DCE862084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DCE852084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.m */; };
-		011F55A120304A50005F9C9E /* BPPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011F55A020304A50005F9C9E /* BPPhotoBrowserViewController.m */; };
+		011E8D4120B2EBBE00B04378 /* BPNetWorkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D3F20B2EBBE00B04378 /* BPNetWorkTool.m */; };
+		011E8D7920B2F7AA00B04378 /* BPCalendarDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D6920B2F7AA00B04378 /* BPCalendarDataSource.m */; };
+		011E8D7A20B2F7AA00B04378 /* BPCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D6A20B2F7AA00B04378 /* BPCalendar.m */; };
+		011E8D7B20B2F7AA00B04378 /* BPCalendarConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D6D20B2F7AA00B04378 /* BPCalendarConst.m */; };
+		011E8D7C20B2F7AA00B04378 /* BPCalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D7020B2F7AA00B04378 /* BPCalendarModel.m */; };
+		011E8D7D20B2F7AA00B04378 /* BPCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D7820B2F7AA00B04378 /* BPCalendarAppearance.m */; };
+		011E8D9720B2F7BA00B04378 /* BPPlanCalendarSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D8020B2F7B900B04378 /* BPPlanCalendarSectionFooterView.m */; };
+		011E8D9820B2F7BA00B04378 /* BPSectionPlacedFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011E8D8120B2F7B900B04378 /* BPSectionPlacedFooterView.xib */; };
+		011E8D9920B2F7BA00B04378 /* BPPlanCalendarSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011E8D8320B2F7B900B04378 /* BPPlanCalendarSectionFooterView.xib */; };
+		011E8D9A20B2F7BA00B04378 /* BPSectionPlacedFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D8520B2F7B900B04378 /* BPSectionPlacedFooterView.m */; };
+		011E8D9B20B2F7BA00B04378 /* BPPlanCalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011E8D8720B2F7B900B04378 /* BPPlanCalendarTableViewCell.xib */; };
+		011E8D9C20B2F7BA00B04378 /* BPPlanCalendarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D8820B2F7B900B04378 /* BPPlanCalendarTableViewCell.m */; };
+		011E8D9D20B2F7BA00B04378 /* BPPlanGeneralTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011E8D8920B2F7B900B04378 /* BPPlanGeneralTableViewCell.xib */; };
+		011E8D9E20B2F7BA00B04378 /* BPPlanGeneralTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D8C20B2F7B900B04378 /* BPPlanGeneralTableViewCell.m */; };
+		011E8D9F20B2F7BA00B04378 /* BPPlanCalendarConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D8E20B2F7BA00B04378 /* BPPlanCalendarConfig.m */; };
+		011E8DA020B2F7BA00B04378 /* BPPlanCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011E8D9220B2F7BA00B04378 /* BPPlanCalendarViewController.xib */; };
+		011E8DA120B2F7BA00B04378 /* BPPlanCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D9320B2F7BA00B04378 /* BPPlanCalendarViewController.m */; };
+		011E8DA220B2F7BA00B04378 /* BPPlanCalendarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D9620B2F7BA00B04378 /* BPPlanCalendarModel.m */; };
+		011E8DC020B2FB3300B04378 /* BPCalendarMonthSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8DB820B2FB3200B04378 /* BPCalendarMonthSectionView.m */; };
+		011E8DC120B2FB3300B04378 /* BPCalendarWeekCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8DBA20B2FB3200B04378 /* BPCalendarWeekCell.m */; };
+		011E8DC220B2FB3300B04378 /* BPCalendarDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8DBB20B2FB3200B04378 /* BPCalendarDayCell.m */; };
+		011E8DC320B2FB3300B04378 /* BPCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8DBE20B2FB3200B04378 /* BPCalendarView.m */; };
 		0126B5361FB4ACBB00E522CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0126B5351FB4ACBB00E522CF /* MapKit.framework */; };
 		012D18A220AC1F8C00C3E437 /* BPContentInsetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D18A120AC1F8C00C3E437 /* BPContentInsetTableViewController.m */; };
 		012D948620344AD100691E40 /* BPDesignPatternsKVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D948520344AD100691E40 /* BPDesignPatternsKVCViewController.m */; };
@@ -192,6 +213,11 @@
 		014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 014ED04F1FEFF9EE00D2926C /* Localizable.strings */; };
 		014ED0DD1FF0135000D2926C /* launchImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014ED0DB1FF0134F00D2926C /* launchImage@3x.png */; };
 		014ED0DE1FF0135000D2926C /* launchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014ED0DC1FF0135000D2926C /* launchImage@2x.png */; };
+		0153F12B20B2A4A7007C50C5 /* BPFriendsCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153F12A20B2A4A7007C50C5 /* BPFriendsCircleViewController.m */; };
+		0153F12E20B2A4CF007C50C5 /* BPChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153F12D20B2A4CF007C50C5 /* BPChatListViewController.m */; };
+		0153F13620B2A502007C50C5 /* BPChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153F13520B2A502007C50C5 /* BPChatDetailViewController.m */; };
+		0153F13B20B2A65A007C50C5 /* BPPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153F13A20B2A659007C50C5 /* BPPhotoBrowserViewController.m */; };
+		0153F14020B2A6A6007C50C5 /* BPWeChatRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153F13F20B2A6A6007C50C5 /* BPWeChatRootViewController.m */; };
 		0158A0501FDFD3570011AFE9 /* UILabel+BPInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */; };
 		0160718A204D3530009C66A2 /* PHAsset+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 01607189204D3530009C66A2 /* PHAsset+BPAdd.m */; };
 		0160718D204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160718C204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m */; };
@@ -270,15 +296,11 @@
 		0184BF821FD6DB2C00CB9AAD /* BPTest_XibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0184BF801FD6DB2C00CB9AAD /* BPTest_XibViewController.m */; };
 		0184BF831FD6DB2C00CB9AAD /* BPTest_XibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0184BF811FD6DB2C00CB9AAD /* BPTest_XibViewController.xib */; };
 		0184BF861FD6E0EC00CB9AAD /* BPTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0184BF851FD6E0EC00CB9AAD /* BPTestViewController.m */; };
-		018682681FC479700015A9D7 /* BPCalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018682671FC479700015A9D7 /* BPCalendarController.m */; };
 		0187FC6B1FC33CDB004E839E /* BPSimpleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0187FC6A1FC33CDB004E839E /* BPSimpleTableViewCell.m */; };
-		018972B11FC47CDD00D6DF5B /* BPCalenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018972B01FC47CDD00D6DF5B /* BPCalenderView.m */; };
 		018972B71FC47F6B00D6DF5B /* BPBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018972B61FC47F6B00D6DF5B /* BPBaseCollectionViewController.m */; };
 		018972BF1FC4802400D6DF5B /* BPBaseCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018972BE1FC4802400D6DF5B /* BPBaseCollectionReusableView.m */; };
 		018972C31FC4811400D6DF5B /* BPBaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018972C21FC4811400D6DF5B /* BPBaseCollectionView.m */; };
 		018972C71FC481BF00D6DF5B /* BPBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 018972C61FC481BF00D6DF5B /* BPBaseCollectionViewCell.m */; };
-		018972CA1FC481E500D6DF5B /* BPCalendarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 018972C91FC481E500D6DF5B /* BPCalendarCollectionCell.m */; };
-		018972CE1FC4824100D6DF5B /* BPCalendarCollectionHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018972CD1FC4824100D6DF5B /* BPCalendarCollectionHeadView.m */; };
 		018C449D20093F8900CF43D7 /* BPSliderShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018C449C20093F8800CF43D7 /* BPSliderShowView.m */; };
 		018C44AF20093FD200CF43D7 /* BPSlideShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 018C44AE20093FD200CF43D7 /* BPSlideShowViewController.m */; };
 		018C44CC2009DF5600CF43D7 /* BPCardPageFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018C44CB2009DF5600CF43D7 /* BPCardPageFlowView.m */; };
@@ -307,10 +329,6 @@
 		0195EAA9201373E700DC59A1 /* BPMasonrySkillView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0195EA9E201373E700DC59A1 /* BPMasonrySkillView.m */; };
 		019AA91820205BE80090B038 /* CADisplayLink+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 019AA91720205BE80090B038 /* CADisplayLink+BPAdd.m */; };
 		019B0EE020937B6700D105D1 /* BPTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019B0EDF20937B6700D105D1 /* BPTagViewController.m */; };
-		019B0EE620937CD500D105D1 /* BPTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 019B0EE520937CD500D105D1 /* BPTagCollectionView.m */; };
-		019B0EE920937D2C00D105D1 /* BPTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 019B0EE820937D2C00D105D1 /* BPTagCell.m */; };
-		019B0EEC20937D6E00D105D1 /* BPTagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 019B0EEB20937D6E00D105D1 /* BPTagModel.m */; };
-		019B0EEF2093845800D105D1 /* BPCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 019B0EEE2093845800D105D1 /* BPCollectionViewFlowLayout.m */; };
 		01A191AA2004E139005EE4CD /* BPLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A191A92004E139005EE4CD /* BPLabelViewController.m */; };
 		01A191AD2004E155005EE4CD /* BPButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A191AC2004E155005EE4CD /* BPButtonViewController.m */; };
 		01A191B02004E165005EE4CD /* BPTextFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A191AF2004E165005EE4CD /* BPTextFieldViewController.m */; };
@@ -356,7 +374,6 @@
 		01B726951FF7E45B00648674 /* BPAlgorithm.c in Sources */ = {isa = PBXBuildFile; fileRef = 01B726911FF7E45B00648674 /* BPAlgorithm.c */; };
 		01B726961FF7E45B00648674 /* BPAlgorithmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B726941FF7E45B00648674 /* BPAlgorithmController.m */; };
 		01BA9B4D20ADDD5500C781EC /* BPTestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BA9B4C20ADDD5500C781EC /* BPTestTableViewCell.m */; };
-		01BA9B5020ADE45400C781EC /* BPTagLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BA9B4F20ADE45400C781EC /* BPTagLabelView.m */; };
 		01BCB3301FB54A99009EF64E /* BPBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCB32F1FB54A99009EF64E /* BPBaseModel.m */; };
 		01BCB33E1FB55921009EF64E /* BPBaseServerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCB33C1FB55920009EF64E /* BPBaseServerAPI.m */; };
 		01BCB3441FB5598B009EF64E /* BPBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BCB3431FB5598B009EF64E /* BPBaseViewModel.m */; };
@@ -576,6 +593,10 @@
 		01F3730C20654974007B1498 /* BPDesignPatternsNotificationViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F3730B20654974007B1498 /* BPDesignPatternsNotificationViewControllerB.m */; };
 		01F3730F20654A22007B1498 /* BPDesignPatternsBlockViewControllerB.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F3730E20654A22007B1498 /* BPDesignPatternsBlockViewControllerB.m */; };
 		01F37316206552DB007B1498 /* BPGestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F37315206552DB007B1498 /* BPGestureRecognizerViewController.m */; };
+		01F5B0F620B2C9DA0026B8B4 /* BPTagLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F5B0F520B2C9DA0026B8B4 /* BPTagLabelView.m */; };
+		01F5B0FA20B2D2280026B8B4 /* BPTagCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F5B0F920B2D2280026B8B4 /* BPTagCollectionViewFlowLayout.m */; };
+		01F5B0FD20B2D28F0026B8B4 /* BPTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F5B0FC20B2D28F0026B8B4 /* BPTagCollectionView.m */; };
+		01F5B10020B2D2D70026B8B4 /* BPTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F5B0FF20B2D2D70026B8B4 /* BPTagCollectionViewCell.m */; };
 		01F750A9209F216F00C1F24C /* BPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F750A7209F216F00C1F24C /* BPTableViewCell.m */; };
 		01F750AA209F216F00C1F24C /* BPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01F750A8209F216F00C1F24C /* BPTableViewCell.xib */; };
 		01FD5E6520A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD5E3C20A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.m */; };
@@ -912,8 +933,45 @@
 		011B7DD820693E5B0071CB5D /* UINavigation+BPFixSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigation+BPFixSpace.h"; sourceTree = "<group>"; };
 		011DCE842084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BP1STCellAutoLayoutHeightViewController.h; sourceTree = "<group>"; };
 		011DCE852084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BP1STCellAutoLayoutHeightViewController.m; sourceTree = "<group>"; };
-		011F559F20304A50005F9C9E /* BPPhotoBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPhotoBrowserViewController.h; sourceTree = "<group>"; };
-		011F55A020304A50005F9C9E /* BPPhotoBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPhotoBrowserViewController.m; sourceTree = "<group>"; };
+		011E8D3F20B2EBBE00B04378 /* BPNetWorkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPNetWorkTool.m; sourceTree = "<group>"; };
+		011E8D4020B2EBBE00B04378 /* BPNetWorkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPNetWorkTool.h; sourceTree = "<group>"; };
+		011E8D6820B2F7AA00B04378 /* BPCalendarDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCalendarDataSource.h; sourceTree = "<group>"; };
+		011E8D6920B2F7AA00B04378 /* BPCalendarDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCalendarDataSource.m; sourceTree = "<group>"; };
+		011E8D6A20B2F7AA00B04378 /* BPCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCalendar.m; sourceTree = "<group>"; };
+		011E8D6C20B2F7AA00B04378 /* BPCalendarConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCalendarConst.h; sourceTree = "<group>"; };
+		011E8D6D20B2F7AA00B04378 /* BPCalendarConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCalendarConst.m; sourceTree = "<group>"; };
+		011E8D6F20B2F7AA00B04378 /* BPCalendarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCalendarModel.h; sourceTree = "<group>"; };
+		011E8D7020B2F7AA00B04378 /* BPCalendarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCalendarModel.m; sourceTree = "<group>"; };
+		011E8D7120B2F7AA00B04378 /* BPCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCalendar.h; sourceTree = "<group>"; };
+		011E8D7720B2F7AA00B04378 /* BPCalendarAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCalendarAppearance.h; sourceTree = "<group>"; };
+		011E8D7820B2F7AA00B04378 /* BPCalendarAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCalendarAppearance.m; sourceTree = "<group>"; };
+		011E8D8020B2F7B900B04378 /* BPPlanCalendarSectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPlanCalendarSectionFooterView.m; sourceTree = "<group>"; };
+		011E8D8120B2F7B900B04378 /* BPSectionPlacedFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPSectionPlacedFooterView.xib; sourceTree = "<group>"; };
+		011E8D8220B2F7B900B04378 /* BPSectionPlacedFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPSectionPlacedFooterView.h; sourceTree = "<group>"; };
+		011E8D8320B2F7B900B04378 /* BPPlanCalendarSectionFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPPlanCalendarSectionFooterView.xib; sourceTree = "<group>"; };
+		011E8D8420B2F7B900B04378 /* BPPlanCalendarSectionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPlanCalendarSectionFooterView.h; sourceTree = "<group>"; };
+		011E8D8520B2F7B900B04378 /* BPSectionPlacedFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPSectionPlacedFooterView.m; sourceTree = "<group>"; };
+		011E8D8720B2F7B900B04378 /* BPPlanCalendarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPPlanCalendarTableViewCell.xib; sourceTree = "<group>"; };
+		011E8D8820B2F7B900B04378 /* BPPlanCalendarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPlanCalendarTableViewCell.m; sourceTree = "<group>"; };
+		011E8D8920B2F7B900B04378 /* BPPlanGeneralTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPPlanGeneralTableViewCell.xib; sourceTree = "<group>"; };
+		011E8D8A20B2F7B900B04378 /* BPPlanGeneralTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPlanGeneralTableViewCell.h; sourceTree = "<group>"; };
+		011E8D8B20B2F7B900B04378 /* BPPlanCalendarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPlanCalendarTableViewCell.h; sourceTree = "<group>"; };
+		011E8D8C20B2F7B900B04378 /* BPPlanGeneralTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPlanGeneralTableViewCell.m; sourceTree = "<group>"; };
+		011E8D8E20B2F7BA00B04378 /* BPPlanCalendarConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPlanCalendarConfig.m; sourceTree = "<group>"; };
+		011E8D8F20B2F7BA00B04378 /* BPPlanCalendarConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPlanCalendarConfig.h; sourceTree = "<group>"; };
+		011E8D9120B2F7BA00B04378 /* BPPlanCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPlanCalendarViewController.h; sourceTree = "<group>"; };
+		011E8D9220B2F7BA00B04378 /* BPPlanCalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPPlanCalendarViewController.xib; sourceTree = "<group>"; };
+		011E8D9320B2F7BA00B04378 /* BPPlanCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPlanCalendarViewController.m; sourceTree = "<group>"; };
+		011E8D9520B2F7BA00B04378 /* BPPlanCalendarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPlanCalendarModel.h; sourceTree = "<group>"; };
+		011E8D9620B2F7BA00B04378 /* BPPlanCalendarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPlanCalendarModel.m; sourceTree = "<group>"; };
+		011E8DB720B2FB3200B04378 /* BPCalendarMonthSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCalendarMonthSectionView.h; sourceTree = "<group>"; };
+		011E8DB820B2FB3200B04378 /* BPCalendarMonthSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCalendarMonthSectionView.m; sourceTree = "<group>"; };
+		011E8DBA20B2FB3200B04378 /* BPCalendarWeekCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCalendarWeekCell.m; sourceTree = "<group>"; };
+		011E8DBB20B2FB3200B04378 /* BPCalendarDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCalendarDayCell.m; sourceTree = "<group>"; };
+		011E8DBC20B2FB3200B04378 /* BPCalendarWeekCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCalendarWeekCell.h; sourceTree = "<group>"; };
+		011E8DBD20B2FB3200B04378 /* BPCalendarDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCalendarDayCell.h; sourceTree = "<group>"; };
+		011E8DBE20B2FB3200B04378 /* BPCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCalendarView.m; sourceTree = "<group>"; };
+		011E8DBF20B2FB3200B04378 /* BPCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCalendarView.h; sourceTree = "<group>"; };
 		0126B5351FB4ACBB00E522CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		012D18A020AC1F8C00C3E437 /* BPContentInsetTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPContentInsetTableViewController.h; sourceTree = "<group>"; };
 		012D18A120AC1F8C00C3E437 /* BPContentInsetTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPContentInsetTableViewController.m; sourceTree = "<group>"; };
@@ -976,6 +1034,16 @@
 		014ED0D21FF00B5200D2926C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		014ED0DB1FF0134F00D2926C /* launchImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@3x.png"; sourceTree = "<group>"; };
 		014ED0DC1FF0135000D2926C /* launchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage@2x.png"; sourceTree = "<group>"; };
+		0153F12920B2A4A7007C50C5 /* BPFriendsCircleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPFriendsCircleViewController.h; sourceTree = "<group>"; };
+		0153F12A20B2A4A7007C50C5 /* BPFriendsCircleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPFriendsCircleViewController.m; sourceTree = "<group>"; };
+		0153F12C20B2A4CF007C50C5 /* BPChatListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPChatListViewController.h; sourceTree = "<group>"; };
+		0153F12D20B2A4CF007C50C5 /* BPChatListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPChatListViewController.m; sourceTree = "<group>"; };
+		0153F13420B2A502007C50C5 /* BPChatDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPChatDetailViewController.h; sourceTree = "<group>"; };
+		0153F13520B2A502007C50C5 /* BPChatDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPChatDetailViewController.m; sourceTree = "<group>"; };
+		0153F13920B2A659007C50C5 /* BPPhotoBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPhotoBrowserViewController.h; sourceTree = "<group>"; };
+		0153F13A20B2A659007C50C5 /* BPPhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPhotoBrowserViewController.m; sourceTree = "<group>"; };
+		0153F13E20B2A6A6007C50C5 /* BPWeChatRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPWeChatRootViewController.h; sourceTree = "<group>"; };
+		0153F13F20B2A6A6007C50C5 /* BPWeChatRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPWeChatRootViewController.m; sourceTree = "<group>"; };
 		0158A04E1FDFD3560011AFE9 /* UILabel+BPInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BPInterval.h"; sourceTree = "<group>"; };
 		0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BPInterval.m"; sourceTree = "<group>"; };
 		015F4F1A1FDD7D9B000C6355 /* BPAppInfoMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppInfoMacro.h; sourceTree = "<group>"; };
@@ -1131,12 +1199,8 @@
 		0184BF811FD6DB2C00CB9AAD /* BPTest_XibViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTest_XibViewController.xib; sourceTree = "<group>"; };
 		0184BF841FD6E0EC00CB9AAD /* BPTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTestViewController.h; sourceTree = "<group>"; };
 		0184BF851FD6E0EC00CB9AAD /* BPTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTestViewController.m; sourceTree = "<group>"; };
-		018682661FC479700015A9D7 /* BPCalendarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCalendarController.h; sourceTree = "<group>"; };
-		018682671FC479700015A9D7 /* BPCalendarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCalendarController.m; sourceTree = "<group>"; };
 		0187FC691FC33CDB004E839E /* BPSimpleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPSimpleTableViewCell.h; sourceTree = "<group>"; };
 		0187FC6A1FC33CDB004E839E /* BPSimpleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPSimpleTableViewCell.m; sourceTree = "<group>"; };
-		018972AF1FC47CDD00D6DF5B /* BPCalenderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCalenderView.h; sourceTree = "<group>"; };
-		018972B01FC47CDD00D6DF5B /* BPCalenderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCalenderView.m; sourceTree = "<group>"; };
 		018972B51FC47F6B00D6DF5B /* BPBaseCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseCollectionViewController.h; sourceTree = "<group>"; };
 		018972B61FC47F6B00D6DF5B /* BPBaseCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseCollectionViewController.m; sourceTree = "<group>"; };
 		018972BD1FC4802400D6DF5B /* BPBaseCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseCollectionReusableView.h; sourceTree = "<group>"; };
@@ -1145,10 +1209,6 @@
 		018972C21FC4811400D6DF5B /* BPBaseCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseCollectionView.m; sourceTree = "<group>"; };
 		018972C51FC481BF00D6DF5B /* BPBaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseCollectionViewCell.h; sourceTree = "<group>"; };
 		018972C61FC481BF00D6DF5B /* BPBaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseCollectionViewCell.m; sourceTree = "<group>"; };
-		018972C81FC481E500D6DF5B /* BPCalendarCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCalendarCollectionCell.h; sourceTree = "<group>"; };
-		018972C91FC481E500D6DF5B /* BPCalendarCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCalendarCollectionCell.m; sourceTree = "<group>"; };
-		018972CC1FC4824100D6DF5B /* BPCalendarCollectionHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCalendarCollectionHeadView.h; sourceTree = "<group>"; };
-		018972CD1FC4824100D6DF5B /* BPCalendarCollectionHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCalendarCollectionHeadView.m; sourceTree = "<group>"; };
 		018C449220093F5E00CF43D7 /* BPSliderShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPSliderShowView.h; sourceTree = "<group>"; };
 		018C449520093F5E00CF43D7 /* BPSlideShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPSlideShowViewController.h; sourceTree = "<group>"; };
 		018C449C20093F8800CF43D7 /* BPSliderShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPSliderShowView.m; sourceTree = "<group>"; };
@@ -1203,14 +1263,6 @@
 		019AA91720205BE80090B038 /* CADisplayLink+BPAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CADisplayLink+BPAdd.m"; sourceTree = "<group>"; };
 		019B0EDE20937B6700D105D1 /* BPTagViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTagViewController.h; sourceTree = "<group>"; };
 		019B0EDF20937B6700D105D1 /* BPTagViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTagViewController.m; sourceTree = "<group>"; };
-		019B0EE420937CD500D105D1 /* BPTagCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTagCollectionView.h; sourceTree = "<group>"; };
-		019B0EE520937CD500D105D1 /* BPTagCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTagCollectionView.m; sourceTree = "<group>"; };
-		019B0EE720937D2C00D105D1 /* BPTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTagCell.h; sourceTree = "<group>"; };
-		019B0EE820937D2C00D105D1 /* BPTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTagCell.m; sourceTree = "<group>"; };
-		019B0EEA20937D6E00D105D1 /* BPTagModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTagModel.h; sourceTree = "<group>"; };
-		019B0EEB20937D6E00D105D1 /* BPTagModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTagModel.m; sourceTree = "<group>"; };
-		019B0EED2093845800D105D1 /* BPCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		019B0EEE2093845800D105D1 /* BPCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		01A191A82004E139005EE4CD /* BPLabelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPLabelViewController.h; sourceTree = "<group>"; };
 		01A191A92004E139005EE4CD /* BPLabelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPLabelViewController.m; sourceTree = "<group>"; };
 		01A191AB2004E155005EE4CD /* BPButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPButtonViewController.h; sourceTree = "<group>"; };
@@ -1296,8 +1348,6 @@
 		01B726941FF7E45B00648674 /* BPAlgorithmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPAlgorithmController.m; sourceTree = "<group>"; };
 		01BA9B4B20ADDD5500C781EC /* BPTestTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTestTableViewCell.h; sourceTree = "<group>"; };
 		01BA9B4C20ADDD5500C781EC /* BPTestTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTestTableViewCell.m; sourceTree = "<group>"; };
-		01BA9B4E20ADE45300C781EC /* BPTagLabelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTagLabelView.h; sourceTree = "<group>"; };
-		01BA9B4F20ADE45400C781EC /* BPTagLabelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTagLabelView.m; sourceTree = "<group>"; };
 		01BCB32E1FB54A99009EF64E /* BPBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseModel.h; sourceTree = "<group>"; };
 		01BCB32F1FB54A99009EF64E /* BPBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseModel.m; sourceTree = "<group>"; };
 		01BCB33C1FB55920009EF64E /* BPBaseServerAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBaseServerAPI.m; sourceTree = "<group>"; };
@@ -1740,6 +1790,14 @@
 		01F3730E20654A22007B1498 /* BPDesignPatternsBlockViewControllerB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDesignPatternsBlockViewControllerB.m; sourceTree = "<group>"; };
 		01F37314206552DB007B1498 /* BPGestureRecognizerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPGestureRecognizerViewController.h; sourceTree = "<group>"; };
 		01F37315206552DB007B1498 /* BPGestureRecognizerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPGestureRecognizerViewController.m; sourceTree = "<group>"; };
+		01F5B0F420B2C9DA0026B8B4 /* BPTagLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPTagLabelView.h; sourceTree = "<group>"; };
+		01F5B0F520B2C9DA0026B8B4 /* BPTagLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPTagLabelView.m; sourceTree = "<group>"; };
+		01F5B0F820B2D2280026B8B4 /* BPTagCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTagCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		01F5B0F920B2D2280026B8B4 /* BPTagCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTagCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		01F5B0FB20B2D28F0026B8B4 /* BPTagCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTagCollectionView.h; sourceTree = "<group>"; };
+		01F5B0FC20B2D28F0026B8B4 /* BPTagCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTagCollectionView.m; sourceTree = "<group>"; };
+		01F5B0FE20B2D2D70026B8B4 /* BPTagCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTagCollectionViewCell.h; sourceTree = "<group>"; };
+		01F5B0FF20B2D2D70026B8B4 /* BPTagCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTagCollectionViewCell.m; sourceTree = "<group>"; };
 		01F750A6209F216F00C1F24C /* BPTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTableViewCell.h; sourceTree = "<group>"; };
 		01F750A7209F216F00C1F24C /* BPTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTableViewCell.m; sourceTree = "<group>"; };
 		01F750A8209F216F00C1F24C /* BPTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTableViewCell.xib; sourceTree = "<group>"; };
@@ -1839,17 +1897,6 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		01027AD61FDED94C0003F0FE /* WeChat */ = {
-			isa = PBXGroup;
-			children = (
-				01027B0E1FDEDB300003F0FE /* Controllers */,
-				01027B0F1FDEDB300003F0FE /* Models */,
-				01027B101FDEDB300003F0FE /* ViewModels */,
-				01027B0D1FDEDB300003F0FE /* Views */,
-			);
-			path = WeChat;
-			sourceTree = "<group>";
-		};
 		01027AD91FDED98E0003F0FE /* Alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -1937,17 +1984,6 @@
 			path = GaussianBlur;
 			sourceTree = "<group>";
 		};
-		01027AE61FDEDA670003F0FE /* PhotoBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				01027B061FDEDB220003F0FE /* Controllers */,
-				01027B071FDEDB220003F0FE /* Models */,
-				01027B081FDEDB220003F0FE /* ViewModels */,
-				01027B051FDEDB220003F0FE /* Views */,
-			);
-			path = PhotoBrowser;
-			sourceTree = "<group>";
-		};
 		01027AE71FDEDA740003F0FE /* Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -1990,17 +2026,6 @@
 			path = SlideImageShow;
 			sourceTree = "<group>";
 		};
-		01027AEB1FDEDAB10003F0FE /* TagView */ = {
-			isa = PBXGroup;
-			children = (
-				01027AF21FDEDAE10003F0FE /* Controllers */,
-				01027AF31FDEDAE10003F0FE /* Models */,
-				01027AF41FDEDAE20003F0FE /* ViewModels */,
-				01027AF11FDEDAE10003F0FE /* Views */,
-			);
-			path = TagView;
-			sourceTree = "<group>";
-		};
 		01027AEC1FDEDAC00003F0FE /* TopSliderCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -2008,34 +2033,6 @@
 				01F2CE4820AABE0D00F1D701 /* CollectionView */,
 			);
 			path = TopSliderCategory;
-			sourceTree = "<group>";
-		};
-		01027AF11FDEDAE10003F0FE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		01027AF21FDEDAE10003F0FE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		01027AF31FDEDAE10003F0FE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		01027AF41FDEDAE20003F0FE /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		01027AF91FDEDAEC0003F0FE /* Views */ = {
@@ -2116,64 +2113,6 @@
 			sourceTree = "<group>";
 		};
 		01027B041FDEDAFF0003F0FE /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		01027B051FDEDB220003F0FE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		01027B061FDEDB220003F0FE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				011F559F20304A50005F9C9E /* BPPhotoBrowserViewController.h */,
-				011F55A020304A50005F9C9E /* BPPhotoBrowserViewController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		01027B071FDEDB220003F0FE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		01027B081FDEDB220003F0FE /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		01027B0D1FDEDB300003F0FE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		01027B0E1FDEDB300003F0FE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		01027B0F1FDEDB300003F0FE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		01027B101FDEDB300003F0FE /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -2813,8 +2752,6 @@
 		010FBC4320601A0800BC9EC4 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				019B0ED920937B3C00D105D1 /* Tag */,
-				017F82C7206261AB00B656BA /* Drawer */,
 				01027AD91FDED98E0003F0FE /* Alert */,
 				01027ADC1FDED9C50003F0FE /* Animation */,
 				014995991FB4A5F400077866 /* Bar */,
@@ -2826,20 +2763,20 @@
 				01027ADF1FDEDA0E0003F0FE /* CodeScanner */,
 				01050631201B3C1B000085C1 /* Comments */,
 				01027AE11FDEDA250003F0FE /* DataBase */,
+				017F82C7206261AB00B656BA /* Drawer */,
 				01027AE21FDEDA2F0003F0FE /* EnlargeImage */,
 				01027AE31FDEDA410003F0FE /* GaussianBlur */,
-				01027AE61FDEDA670003F0FE /* PhotoBrowser */,
 				01027AE71FDEDA740003F0FE /* Player */,
 				014995941FB4A5F300077866 /* PopView */,
 				01027AE81FDEDA8D0003F0FE /* ReadBook */,
 				018C4511200A561800CF43D7 /* RoundedCorner */,
 				01027AE91FDEDA990003F0FE /* SecondaryMenu */,
 				01027AEA1FDEDAA50003F0FE /* SlideImageShow */,
-				01027AEB1FDEDAB10003F0FE /* TagView */,
+				019B0ED920937B3C00D105D1 /* Tag */,
 				01027AEC1FDEDAC00003F0FE /* TopSliderCategory */,
 				01027ADD1FDED9F80003F0FE /* Transition&Gesture */,
 				010FBE9A20602E5F00BC9EC4 /* Web&JS */,
-				01027AD61FDED94C0003F0FE /* WeChat */,
+				0153F11E20B2A43F007C50C5 /* WeChat */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -3223,6 +3160,169 @@
 				011DCE852084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		011E8D6420B2F78F00B04378 /* NormalCalendar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NormalCalendar;
+			sourceTree = "<group>";
+		};
+		011E8D6520B2F79D00B04378 /* PlanCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				011E8D6620B2F7AA00B04378 /* Calendar */,
+				011E8D9020B2F7BA00B04378 /* Controllers */,
+				011E8D9420B2F7BA00B04378 /* Models */,
+				011E8D8D20B2F7BA00B04378 /* NetRequest */,
+				011E8D7E20B2F7B900B04378 /* Views */,
+			);
+			path = PlanCalendar;
+			sourceTree = "<group>";
+		};
+		011E8D6620B2F7AA00B04378 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				011E8D7120B2F7AA00B04378 /* BPCalendar.h */,
+				011E8D6A20B2F7AA00B04378 /* BPCalendar.m */,
+				011E8D6B20B2F7AA00B04378 /* Const */,
+				011E8D6720B2F7AA00B04378 /* DataSource */,
+				011E8D6E20B2F7AA00B04378 /* Model */,
+				011E8D7620B2F7AA00B04378 /* Tool */,
+				011E8DB520B2FB3200B04378 /* Views */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		011E8D6720B2F7AA00B04378 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				011E8D6820B2F7AA00B04378 /* BPCalendarDataSource.h */,
+				011E8D6920B2F7AA00B04378 /* BPCalendarDataSource.m */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		011E8D6B20B2F7AA00B04378 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				011E8D6C20B2F7AA00B04378 /* BPCalendarConst.h */,
+				011E8D6D20B2F7AA00B04378 /* BPCalendarConst.m */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
+		011E8D6E20B2F7AA00B04378 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				011E8D6F20B2F7AA00B04378 /* BPCalendarModel.h */,
+				011E8D7020B2F7AA00B04378 /* BPCalendarModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		011E8D7620B2F7AA00B04378 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				011E8D7720B2F7AA00B04378 /* BPCalendarAppearance.h */,
+				011E8D7820B2F7AA00B04378 /* BPCalendarAppearance.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		011E8D7E20B2F7B900B04378 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				011E8D7F20B2F7B900B04378 /* TableViewHeaderFooterView */,
+				011E8D8620B2F7B900B04378 /* TableViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		011E8D7F20B2F7B900B04378 /* TableViewHeaderFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				011E8D8420B2F7B900B04378 /* BPPlanCalendarSectionFooterView.h */,
+				011E8D8020B2F7B900B04378 /* BPPlanCalendarSectionFooterView.m */,
+				011E8D8320B2F7B900B04378 /* BPPlanCalendarSectionFooterView.xib */,
+				011E8D8220B2F7B900B04378 /* BPSectionPlacedFooterView.h */,
+				011E8D8520B2F7B900B04378 /* BPSectionPlacedFooterView.m */,
+				011E8D8120B2F7B900B04378 /* BPSectionPlacedFooterView.xib */,
+			);
+			path = TableViewHeaderFooterView;
+			sourceTree = "<group>";
+		};
+		011E8D8620B2F7B900B04378 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				011E8D8B20B2F7B900B04378 /* BPPlanCalendarTableViewCell.h */,
+				011E8D8820B2F7B900B04378 /* BPPlanCalendarTableViewCell.m */,
+				011E8D8720B2F7B900B04378 /* BPPlanCalendarTableViewCell.xib */,
+				011E8D8A20B2F7B900B04378 /* BPPlanGeneralTableViewCell.h */,
+				011E8D8C20B2F7B900B04378 /* BPPlanGeneralTableViewCell.m */,
+				011E8D8920B2F7B900B04378 /* BPPlanGeneralTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		011E8D8D20B2F7BA00B04378 /* NetRequest */ = {
+			isa = PBXGroup;
+			children = (
+				011E8D8F20B2F7BA00B04378 /* BPPlanCalendarConfig.h */,
+				011E8D8E20B2F7BA00B04378 /* BPPlanCalendarConfig.m */,
+			);
+			path = NetRequest;
+			sourceTree = "<group>";
+		};
+		011E8D9020B2F7BA00B04378 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				011E8D9120B2F7BA00B04378 /* BPPlanCalendarViewController.h */,
+				011E8D9320B2F7BA00B04378 /* BPPlanCalendarViewController.m */,
+				011E8D9220B2F7BA00B04378 /* BPPlanCalendarViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		011E8D9420B2F7BA00B04378 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				011E8D9520B2F7BA00B04378 /* BPPlanCalendarModel.h */,
+				011E8D9620B2F7BA00B04378 /* BPPlanCalendarModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		011E8DB520B2FB3200B04378 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				011E8DB920B2FB3200B04378 /* Cells */,
+				011E8DBF20B2FB3200B04378 /* BPCalendarView.h */,
+				011E8DBE20B2FB3200B04378 /* BPCalendarView.m */,
+				011E8DB620B2FB3200B04378 /* SectionHeadView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		011E8DB620B2FB3200B04378 /* SectionHeadView */ = {
+			isa = PBXGroup;
+			children = (
+				011E8DB720B2FB3200B04378 /* BPCalendarMonthSectionView.h */,
+				011E8DB820B2FB3200B04378 /* BPCalendarMonthSectionView.m */,
+			);
+			path = SectionHeadView;
+			sourceTree = "<group>";
+		};
+		011E8DB920B2FB3200B04378 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				011E8DBD20B2FB3200B04378 /* BPCalendarDayCell.h */,
+				011E8DBB20B2FB3200B04378 /* BPCalendarDayCell.m */,
+				011E8DBC20B2FB3200B04378 /* BPCalendarWeekCell.h */,
+				011E8DBA20B2FB3200B04378 /* BPCalendarWeekCell.m */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		012D189E20AC1F4600C3E437 /* TableView */ = {
@@ -3616,6 +3716,175 @@
 				014ED03F1FEFF0A300D2926C /* BPImageButton.m */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		0153F11E20B2A43F007C50C5 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				0153F12F20B2A4E0007C50C5 /* ChatDetail */,
+				0153F11F20B2A448007C50C5 /* ChatList */,
+				0153F12020B2A46C007C50C5 /* FriendsCircle */,
+				0153F13720B2A659007C50C5 /* PhotoBrowser */,
+				0153F13C20B2A688007C50C5 /* WeChatRoot */,
+			);
+			path = WeChat;
+			sourceTree = "<group>";
+		};
+		0153F11F20B2A448007C50C5 /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				0153F12120B2A47E007C50C5 /* Controllers */,
+				0153F12220B2A47E007C50C5 /* Models */,
+				0153F12420B2A47F007C50C5 /* ViewModels */,
+				0153F12320B2A47E007C50C5 /* Views */,
+			);
+			path = ChatList;
+			sourceTree = "<group>";
+		};
+		0153F12020B2A46C007C50C5 /* FriendsCircle */ = {
+			isa = PBXGroup;
+			children = (
+				0153F12520B2A485007C50C5 /* Controllers */,
+				0153F12620B2A485007C50C5 /* Models */,
+				0153F12820B2A486007C50C5 /* ViewModels */,
+				0153F12720B2A485007C50C5 /* Views */,
+			);
+			path = FriendsCircle;
+			sourceTree = "<group>";
+		};
+		0153F12120B2A47E007C50C5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0153F12C20B2A4CF007C50C5 /* BPChatListViewController.h */,
+				0153F12D20B2A4CF007C50C5 /* BPChatListViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0153F12220B2A47E007C50C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0153F12320B2A47E007C50C5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0153F12420B2A47F007C50C5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0153F12520B2A485007C50C5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0153F12920B2A4A7007C50C5 /* BPFriendsCircleViewController.h */,
+				0153F12A20B2A4A7007C50C5 /* BPFriendsCircleViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0153F12620B2A485007C50C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0153F12720B2A485007C50C5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0153F12820B2A486007C50C5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0153F12F20B2A4E0007C50C5 /* ChatDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0153F13020B2A4E9007C50C5 /* Controllers */,
+				0153F13120B2A4E9007C50C5 /* Models */,
+				0153F13320B2A4E9007C50C5 /* ViewModels */,
+				0153F13220B2A4E9007C50C5 /* Views */,
+			);
+			path = ChatDetail;
+			sourceTree = "<group>";
+		};
+		0153F13020B2A4E9007C50C5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0153F13420B2A502007C50C5 /* BPChatDetailViewController.h */,
+				0153F13520B2A502007C50C5 /* BPChatDetailViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0153F13120B2A4E9007C50C5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0153F13220B2A4E9007C50C5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0153F13320B2A4E9007C50C5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0153F13720B2A659007C50C5 /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				0153F13820B2A659007C50C5 /* Controllers */,
+			);
+			path = PhotoBrowser;
+			sourceTree = "<group>";
+		};
+		0153F13820B2A659007C50C5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0153F13920B2A659007C50C5 /* BPPhotoBrowserViewController.h */,
+				0153F13A20B2A659007C50C5 /* BPPhotoBrowserViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0153F13C20B2A688007C50C5 /* WeChatRoot */ = {
+			isa = PBXGroup;
+			children = (
+				0153F13D20B2A698007C50C5 /* Controllers */,
+			);
+			path = WeChatRoot;
+			sourceTree = "<group>";
+		};
+		0153F13D20B2A698007C50C5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0153F13E20B2A6A6007C50C5 /* BPWeChatRootViewController.h */,
+				0153F13F20B2A6A6007C50C5 /* BPWeChatRootViewController.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		01607187204D34EE009C66A2 /* Photos */ = {
@@ -4266,6 +4535,8 @@
 		017A9A1E1FDD222800CDA599 /* NetTool */ = {
 			isa = PBXGroup;
 			children = (
+				011E8D4020B2EBBE00B04378 /* BPNetWorkTool.h */,
+				011E8D3F20B2EBBE00B04378 /* BPNetWorkTool.m */,
 				017A9A261FDD229B00CDA599 /* BPNetTool.h */,
 				017A9A271FDD229B00CDA599 /* BPNetTool.m */,
 			);
@@ -4328,10 +4599,10 @@
 		017A9A311FDD2A9A00CDA599 /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				017A9A321FDD2A9A00CDA599 /* BPZPositionCollectionHeadView.m */,
-				017A9A331FDD2A9A00CDA599 /* BPScaleCollectionViewFlowLayout.m */,
 				017A9A341FDD2A9A00CDA599 /* BPScaleCollectionViewFlowLayout.h */,
+				017A9A331FDD2A9A00CDA599 /* BPScaleCollectionViewFlowLayout.m */,
 				017A9A351FDD2A9A00CDA599 /* BPZPositionCollectionHeadView.h */,
+				017A9A321FDD2A9A00CDA599 /* BPZPositionCollectionHeadView.m */,
 			);
 			path = UICollectionView;
 			sourceTree = "<group>";
@@ -4696,46 +4967,10 @@
 		018682431FC43A390015A9D7 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				018972AB1FC47CB800D6DF5B /* Views */,
-				018682491FC43A460015A9D7 /* Controllers */,
-				0186824A1FC43A460015A9D7 /* Models */,
-				0186824B1FC43A460015A9D7 /* ViewModels */,
+				011E8D6520B2F79D00B04378 /* PlanCalendar */,
+				011E8D6420B2F78F00B04378 /* NormalCalendar */,
 			);
 			path = Calendar;
-			sourceTree = "<group>";
-		};
-		018682491FC43A460015A9D7 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				018682661FC479700015A9D7 /* BPCalendarController.h */,
-				018682671FC479700015A9D7 /* BPCalendarController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		0186824A1FC43A460015A9D7 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		0186824B1FC43A460015A9D7 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		018972AB1FC47CB800D6DF5B /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				018972CB1FC4822800D6DF5B /* HeadView */,
-				018972C41FC4817D00D6DF5B /* Cell */,
-				018972AF1FC47CDD00D6DF5B /* BPCalenderView.h */,
-				018972B01FC47CDD00D6DF5B /* BPCalenderView.m */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		018972B21FC47F2D00D6DF5B /* BaseCollection */ = {
@@ -4791,24 +5026,6 @@
 				018972C21FC4811400D6DF5B /* BPBaseCollectionView.m */,
 			);
 			path = CollectionView;
-			sourceTree = "<group>";
-		};
-		018972C41FC4817D00D6DF5B /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				018972C81FC481E500D6DF5B /* BPCalendarCollectionCell.h */,
-				018972C91FC481E500D6DF5B /* BPCalendarCollectionCell.m */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		018972CB1FC4822800D6DF5B /* HeadView */ = {
-			isa = PBXGroup;
-			children = (
-				018972CC1FC4824100D6DF5B /* BPCalendarCollectionHeadView.h */,
-				018972CD1FC4824100D6DF5B /* BPCalendarCollectionHeadView.m */,
-			);
-			path = HeadView;
 			sourceTree = "<group>";
 		};
 		018C448B20093F2000CF43D7 /* Normal */ = {
@@ -5111,8 +5328,6 @@
 			isa = PBXGroup;
 			children = (
 				019B0EDA20937B4900D105D1 /* Controllers */,
-				019B0EDB20937B4900D105D1 /* Models */,
-				019B0EDD20937B4900D105D1 /* ViewModels */,
 				019B0EDC20937B4900D105D1 /* Views */,
 			);
 			path = Tag;
@@ -5127,33 +5342,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		019B0EDB20937B4900D105D1 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				019B0EEA20937D6E00D105D1 /* BPTagModel.h */,
-				019B0EEB20937D6E00D105D1 /* BPTagModel.m */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		019B0EDC20937B4900D105D1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				019B0EE420937CD500D105D1 /* BPTagCollectionView.h */,
-				019B0EE520937CD500D105D1 /* BPTagCollectionView.m */,
-				019B0EE720937D2C00D105D1 /* BPTagCell.h */,
-				019B0EE820937D2C00D105D1 /* BPTagCell.m */,
-				019B0EED2093845800D105D1 /* BPCollectionViewFlowLayout.h */,
-				019B0EEE2093845800D105D1 /* BPCollectionViewFlowLayout.m */,
+				01F5B0F720B2D1AE0026B8B4 /* Collection */,
+				01F5B0F320B2C9D40026B8B4 /* Autolayout */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		019B0EDD20937B4900D105D1 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		01A191952004DF21005EE4CD /* UILabel */ = {
@@ -6717,8 +6912,6 @@
 			isa = PBXGroup;
 			children = (
 				01EF2C5120AD6E1800DF98FB /* Controllers */,
-				01EF2C5220AD6E1800DF98FB /* Models */,
-				01EF2C5420AD6E1900DF98FB /* ViewModels */,
 				01EF2C5320AD6E1800DF98FB /* Views */,
 			);
 			path = TestCollectionView;
@@ -6733,13 +6926,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		01EF2C5220AD6E1800DF98FB /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		01EF2C5320AD6E1800DF98FB /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -6747,17 +6933,8 @@
 				01EF2C5920AD6E8B00DF98FB /* BPTestCollectionViewCell.m */,
 				01BA9B4B20ADDD5500C781EC /* BPTestTableViewCell.h */,
 				01BA9B4C20ADDD5500C781EC /* BPTestTableViewCell.m */,
-				01BA9B4E20ADE45300C781EC /* BPTagLabelView.h */,
-				01BA9B4F20ADE45400C781EC /* BPTagLabelView.m */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		01EF2C5420AD6E1900DF98FB /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		01F21D011FEBFBB800381183 /* Helpers */ = {
@@ -6806,18 +6983,18 @@
 		01F2CE4A20AABE6500F1D701 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				01F2CE4B20AABE6500F1D701 /* BPFlowCatergoryView.m */,
-				01F2CE4C20AABE6500F1D701 /* BPFlowCollectionView.m */,
-				01F2CE4D20AABE6500F1D701 /* BPFlowCatergoryViewProperty.h */,
-				01F2CE4E20AABE6500F1D701 /* BPFlowCatergoryViewLayout.h */,
-				01F2CE4F20AABE6500F1D701 /* BPFlowCatergoryViewCellModel.m */,
-				01F2CE5020AABE6500F1D701 /* BPFlowCatergoryViewCell.m */,
 				01F2CE5120AABE6500F1D701 /* BPFlowCatergoryView.h */,
-				01F2CE5220AABE6500F1D701 /* BPFlowCollectionView.h */,
-				01F2CE5320AABE6500F1D701 /* BPFlowCatergoryViewCellModel.h */,
-				01F2CE5420AABE6500F1D701 /* BPFlowCatergoryViewLayout.m */,
-				01F2CE5520AABE6500F1D701 /* BPFlowCatergoryViewProperty.m */,
+				01F2CE4B20AABE6500F1D701 /* BPFlowCatergoryView.m */,
 				01F2CE5620AABE6500F1D701 /* BPFlowCatergoryViewCell.h */,
+				01F2CE5020AABE6500F1D701 /* BPFlowCatergoryViewCell.m */,
+				01F2CE5320AABE6500F1D701 /* BPFlowCatergoryViewCellModel.h */,
+				01F2CE4F20AABE6500F1D701 /* BPFlowCatergoryViewCellModel.m */,
+				01F2CE4E20AABE6500F1D701 /* BPFlowCatergoryViewLayout.h */,
+				01F2CE5420AABE6500F1D701 /* BPFlowCatergoryViewLayout.m */,
+				01F2CE4D20AABE6500F1D701 /* BPFlowCatergoryViewProperty.h */,
+				01F2CE5520AABE6500F1D701 /* BPFlowCatergoryViewProperty.m */,
+				01F2CE5220AABE6500F1D701 /* BPFlowCollectionView.h */,
+				01F2CE4C20AABE6500F1D701 /* BPFlowCollectionView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -6920,6 +7097,28 @@
 			children = (
 			);
 			path = RemoteOperation;
+			sourceTree = "<group>";
+		};
+		01F5B0F320B2C9D40026B8B4 /* Autolayout */ = {
+			isa = PBXGroup;
+			children = (
+				01F5B0F420B2C9DA0026B8B4 /* BPTagLabelView.h */,
+				01F5B0F520B2C9DA0026B8B4 /* BPTagLabelView.m */,
+			);
+			path = Autolayout;
+			sourceTree = "<group>";
+		};
+		01F5B0F720B2D1AE0026B8B4 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				01F5B0FB20B2D28F0026B8B4 /* BPTagCollectionView.h */,
+				01F5B0FC20B2D28F0026B8B4 /* BPTagCollectionView.m */,
+				01F5B0FE20B2D2D70026B8B4 /* BPTagCollectionViewCell.h */,
+				01F5B0FF20B2D2D70026B8B4 /* BPTagCollectionViewCell.m */,
+				01F5B0F820B2D2280026B8B4 /* BPTagCollectionViewFlowLayout.h */,
+				01F5B0F920B2D2280026B8B4 /* BPTagCollectionViewFlowLayout.m */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 		01F750A2209EDF7100C1F24C /* OtherProject */ = {
@@ -7198,17 +7397,22 @@
 			files = (
 				0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */,
 				01EF2C3320AD5AD100DF98FB /* KSHeritageDictionaryListContainerCollectionViewCell3.xib in Resources */,
+				011E8D9920B2F7BA00B04378 /* BPPlanCalendarSectionFooterView.xib in Resources */,
 				01EF2C4820AD5B1400DF98FB /* KSHeritageDictionaryListTestCell.xib in Resources */,
 				017907A52001249500E5C360 /* cycleBorder.png in Resources */,
+				011E8D9820B2F7BA00B04378 /* BPSectionPlacedFooterView.xib in Resources */,
+				011E8D9B20B2F7BA00B04378 /* BPPlanCalendarTableViewCell.xib in Resources */,
 				0195EAA4201373E700DC59A1 /* BPXibView.xib in Resources */,
 				010FBD2620601D9E00BC9EC4 /* palette.jpeg in Resources */,
 				017907E3200144F200E5C360 /* bookcatalogue.toc in Resources */,
 				01EF2C3D20AD5AEB00DF98FB /* KSHeritageDictionaryListContainerCollectionViewCell5.xib in Resources */,
+				011E8DA020B2F7BA00B04378 /* BPPlanCalendarViewController.xib in Resources */,
 				01FD5E6820A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.xib in Resources */,
 				014ED0DE1FF0135000D2926C /* launchImage@2x.png in Resources */,
 				01EF2C4A20AD5B1400DF98FB /* KSHeritageDictionaryListCollectionViewCell.xib in Resources */,
 				0109650B208AC910003B3380 /* BP1STManualHeaderView.xib in Resources */,
 				014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */,
+				011E8D9D20B2F7BA00B04378 /* BPPlanGeneralTableViewCell.xib in Resources */,
 				01FD5E6A20A1989C00D9CD75 /* KSHeritageDictionaryListContainerCollectionViewCell.xib in Resources */,
 				01A597A82085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.xib in Resources */,
 				0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */,
@@ -7332,6 +7536,7 @@
 				01D2F5D62088DB1C00D21B20 /* BPMultiLevelCatalogueModel.m in Sources */,
 				017A9AA01FDD316C00CDA599 /* UIViewController+BPRemoveSelfFromNavi.m in Sources */,
 				0149953D1FB4A3F900077866 /* BPRootNavigationController.m in Sources */,
+				011E8DC120B2FB3300B04378 /* BPCalendarWeekCell.m in Sources */,
 				018C449D20093F8900CF43D7 /* BPSliderShowView.m in Sources */,
 				010DB7451FDD4D450099E66F /* UIImage+BPAlpha.m in Sources */,
 				01DF31E51FDD3B0300B8A955 /* NSDecimalNumber+BPExtensions.m in Sources */,
@@ -7356,6 +7561,7 @@
 				01E672B02014898300FB22D4 /* BPShapeLayerViewController.m in Sources */,
 				010DB70A1FDD4D450099E66F /* UILabel+BPAutoSize.m in Sources */,
 				01E1DC29202ECE5700529ADB /* BPVolumeWaverView.m in Sources */,
+				0153F13B20B2A65A007C50C5 /* BPPhotoBrowserViewController.m in Sources */,
 				01C31F86200FA1CD0096C2E0 /* BPAnchorAnimationView.m in Sources */,
 				017A9A361FDD2A9A00CDA599 /* BPPaddingLabel.m in Sources */,
 				01DF31D31FDD3A9100B8A955 /* NSTimer+BPAddition.m in Sources */,
@@ -7368,6 +7574,7 @@
 				010DB70C1FDD4D450099E66F /* UIImageView+BPFaceAwareFill.m in Sources */,
 				010DB7941FDD4D640099E66F /* UIView+BPToast.m in Sources */,
 				01D22BCB1FDD814000BCC4AD /* UIColor+BPAdd.m in Sources */,
+				0153F12B20B2A4A7007C50C5 /* BPFriendsCircleViewController.m in Sources */,
 				01F2CE6820AABE6600F1D701 /* BP_TWO_TopSliderCatergoryViewController.m in Sources */,
 				01DF31C41FDD3A9100B8A955 /* NSHTTPCookieStorage+BPFreezeDry.m in Sources */,
 				010DB7431FDD4D450099E66F /* UIImage+BPAnimatedGIF.m in Sources */,
@@ -7375,18 +7582,21 @@
 				01EAA0A32015F06F0084808D /* BPAutoresizingViewController.m in Sources */,
 				01E672B720148C1D00FB22D4 /* BPViewPropertyController.m in Sources */,
 				01DF31C71FDD3A9100B8A955 /* NSUserDefaults+BPiCloudSync.m in Sources */,
+				011E8D7D20B2F7AA00B04378 /* BPCalendarAppearance.m in Sources */,
 				018C451E200A5AD300CF43D7 /* YYFPSLabel.m in Sources */,
-				019B0EE620937CD500D105D1 /* BPTagCollectionView.m in Sources */,
 				01DF32591FDD3B9D00B8A955 /* NSData+BPzlib.m in Sources */,
 				01A191C22004E1BF005EE4CD /* BPWKWebViewController.m in Sources */,
+				011E8DC020B2FB3300B04378 /* BPCalendarMonthSectionView.m in Sources */,
 				01DF325D1FDD3B9D00B8A955 /* NSData+BPHash.m in Sources */,
 				01F2CE6C20AABE6600F1D701 /* BP_THREE_TopSliderCatergoryViewController.m in Sources */,
 				0158A0501FDFD3570011AFE9 /* UILabel+BPInterval.m in Sources */,
+				011E8DA220B2F7BA00B04378 /* BPPlanCalendarModel.m in Sources */,
 				01DF31D71FDD3A9100B8A955 /* NSInvocation+BPBb.m in Sources */,
 				0105063B201B3C69000085C1 /* BPCommentsTableViewCell.m in Sources */,
 				010DB7911FDD4D640099E66F /* UIView+BPShake.m in Sources */,
 				01BCB33E1FB55921009EF64E /* BPBaseServerAPI.m in Sources */,
 				01027B531FDEE0380003F0FE /* BPNaviTableViewControllerThree.m in Sources */,
+				011E8D4120B2EBBE00B04378 /* BPNetWorkTool.m in Sources */,
 				01352FF51FD2E1AA0011D65C /* BPNaviProperyViewController.m in Sources */,
 				010DB7271FDD4D450099E66F /* UIColor+BPGradient.m in Sources */,
 				01DF31C81FDD3A9100B8A955 /* NSUserDefaults+BPSafeAccess.m in Sources */,
@@ -7416,7 +7626,6 @@
 				0149953A1FB4A3D600077866 /* BPRootTabBarController.m in Sources */,
 				01EF2C2420AD35F400DF98FB /* BPTopCategoryCollectionViewController.m in Sources */,
 				01F372FC206545E0007B1498 /* BPDesignPatternsSingleClass.m in Sources */,
-				018972CE1FC4824100D6DF5B /* BPCalendarCollectionHeadView.m in Sources */,
 				01EF2C3820AD5AD100DF98FB /* KSHeritageDictionaryListContainerCollectionViewCell2.m in Sources */,
 				0105063E201B3C84000085C1 /* BPCommentsModel.m in Sources */,
 				017A9A8D1FDD311D00CDA599 /* NSDate+BPExtension.m in Sources */,
@@ -7463,11 +7672,13 @@
 				011B7DDA20693E5B0071CB5D /* UINavigation+BPFixSpace.m in Sources */,
 				017A9A961FDD314C00CDA599 /* UIButton+BPImagePosition.m in Sources */,
 				010DB7181FDD4D450099E66F /* UINavigationItem+BPMargin.m in Sources */,
+				011E8D9720B2F7BA00B04378 /* BPPlanCalendarSectionFooterView.m in Sources */,
 				01D22BCC1FDD814000BCC4AD /* UIAlertView+BPAdd.m in Sources */,
 				010DB72D1FDD4D450099E66F /* UIBezierPath+BPSVGString.m in Sources */,
 				010FBD2420601D9E00BC9EC4 /* BPPaletteCell.m in Sources */,
 				0160718D204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m in Sources */,
 				01DF32451FDD3B3D00B8A955 /* NSObject+BPReflection.m in Sources */,
+				011E8D7C20B2F7AA00B04378 /* BPCalendarModel.m in Sources */,
 				01E672B22014898300FB22D4 /* BPGradientLayerViewController.m in Sources */,
 				01DF32201FDD3B3000B8A955 /* NSString+BPStringPages.m in Sources */,
 				01D22BE41FDD814000BCC4AD /* NSDictionary+BPAdd.m in Sources */,
@@ -7488,6 +7699,7 @@
 				010DB7391FDD4D450099E66F /* UITextField+BPBlocks.m in Sources */,
 				010DB7541FDD4D450099E66F /* UITableViewCell+BPNIB.m in Sources */,
 				01A191B02004E165005EE4CD /* BPTextFieldViewController.m in Sources */,
+				011E8D9A20B2F7BA00B04378 /* BPSectionPlacedFooterView.m in Sources */,
 				010DB75D1FDD4D450099E66F /* UIDevice+BPHardware.m in Sources */,
 				01A191D72004E1ED005EE4CD /* BPPageControlController.m in Sources */,
 				010DB7071FDD4D450099E66F /* UINavigationBar+BPAwesome.m in Sources */,
@@ -7496,10 +7708,12 @@
 				0179070D20011DC300E5C360 /* BPAboutCopyViewController.m in Sources */,
 				01D22BC61FDD814000BCC4AD /* YYLabel+BPAddForFrame.m in Sources */,
 				01C935B41FC3399F00D98FD6 /* BPSimpleTableController.m in Sources */,
+				01F5B10020B2D2D70026B8B4 /* BPTagCollectionViewCell.m in Sources */,
 				010DB7321FDD4D450099E66F /* UIScrollView+BPPages.m in Sources */,
 				01E1DC26202ECDB100529ADB /* BPVolumeQueueHelper.m in Sources */,
 				0137C751207B656B00F6B6CE /* BPAutoLayoutCodeViewController.m in Sources */,
 				01D22BD51FDD814000BCC4AD /* CALayer+BPAddForFrame.m in Sources */,
+				011E8DA120B2F7BA00B04378 /* BPPlanCalendarViewController.m in Sources */,
 				01096506208AC910003B3380 /* BPS1STManualInsideTableViewCell.m in Sources */,
 				019AA91820205BE80090B038 /* CADisplayLink+BPAdd.m in Sources */,
 				01DF32721FDD3BB100B8A955 /* NSDate+BPnternetDateTime.m in Sources */,
@@ -7536,7 +7750,6 @@
 				01F2CE8220AABF7000F1D701 /* DHCustomSlideView.m in Sources */,
 				01F2CE6A20AABE6600F1D701 /* UICollectionViewFlowLayout+BPFullItem.m in Sources */,
 				016DADC820582FB100AA95EC /* NSDictionary+BPSafe.m in Sources */,
-				018682681FC479700015A9D7 /* BPCalendarController.m in Sources */,
 				01D22BD31FDD814000BCC4AD /* UITableView+BPAdd.m in Sources */,
 				010DB7931FDD4D640099E66F /* UIView+BPConstraints.m in Sources */,
 				018972B71FC47F6B00D6DF5B /* BPBaseCollectionViewController.m in Sources */,
@@ -7557,6 +7770,7 @@
 				010DB73B1FDD4D450099E66F /* UIImage+BPBlur.m in Sources */,
 				01DF32211FDD3B3000B8A955 /* NSString+BPNormalRegex.m in Sources */,
 				010DB7091FDD4D450099E66F /* UILabel+BPAutomaticWriting.m in Sources */,
+				01F5B0FD20B2D28F0026B8B4 /* BPTagCollectionView.m in Sources */,
 				01D22BCE1FDD814000BCC4AD /* UIImage+BPAdd.m in Sources */,
 				01DF32231FDD3B3000B8A955 /* NSString+BPBase64.m in Sources */,
 				01A597A72085CA5C000C6237 /* BPCellAutoLayoutHeightModel.m in Sources */,
@@ -7572,6 +7786,7 @@
 				0195EA652013736A00DC59A1 /* BPDrawView_Layer.m in Sources */,
 				0195EAA6201373E700DC59A1 /* BPLayoutViewController.m in Sources */,
 				010DB7151FDD4D450099E66F /* UITextView+BPPinchZoom.m in Sources */,
+				0153F12E20B2A4CF007C50C5 /* BPChatListViewController.m in Sources */,
 				010DB71C1FDD4D450099E66F /* UIWebView+BPLoad.m in Sources */,
 				01D22BE01FDD814000BCC4AD /* UIBarButtonItem+BPAdd.m in Sources */,
 				010DB75E1FDD4D450099E66F /* UIDevice+BPPasscodeStatus.m in Sources */,
@@ -7580,7 +7795,6 @@
 				010DB7961FDD4D640099E66F /* UIView+BPDraggable.m in Sources */,
 				017A9A9C1FDD315A00CDA599 /* UIView+BPShadow.m in Sources */,
 				010DB7231FDD4D450099E66F /* UIWebView+BPCanvas.m in Sources */,
-				019B0EEC20937D6E00D105D1 /* BPTagModel.m in Sources */,
 				0184BF861FD6E0EC00CB9AAD /* BPTestViewController.m in Sources */,
 				01A191C82004E1D0005EE4CD /* BPSearchBarViewController.m in Sources */,
 				0195EA84201373C100DC59A1 /* BPCoreAnimationVC.m in Sources */,
@@ -7589,10 +7803,10 @@
 				01DF31D81FDD3A9100B8A955 /* NSInvocation+BPBlock.m in Sources */,
 				01C9359F1FC337E100D98FD6 /* BPFeatureViewModel.m in Sources */,
 				01492F1F2052356D00B28F84 /* KSCellProgressModel.m in Sources */,
-				01BA9B5020ADE45400C781EC /* BPTagLabelView.m in Sources */,
 				01DF321A1FDD3B3000B8A955 /* NSString+BPEmoji.m in Sources */,
 				017907D52001345300E5C360 /* BPCircleView.m in Sources */,
 				01E672BB2014B6F700FB22D4 /* BPBezierPathViewController.m in Sources */,
+				011E8D7A20B2F7AA00B04378 /* BPCalendar.m in Sources */,
 				01DF32151FDD3B3000B8A955 /* NSString+BPScore.m in Sources */,
 				0195EA642013736A00DC59A1 /* BPDrawRect_CG.m in Sources */,
 				01A1921C2004E61F005EE4CD /* BPCollectionViewController.m in Sources */,
@@ -7631,7 +7845,6 @@
 				01DF323E1FDD3B3D00B8A955 /* NSObject+BPAppInfo.m in Sources */,
 				01A191AD2004E155005EE4CD /* BPButtonViewController.m in Sources */,
 				01161F3C20308CB300FA3441 /* BPMan.m in Sources */,
-				011F55A120304A50005F9C9E /* BPPhotoBrowserViewController.m in Sources */,
 				011B7DDB20693E5B0071CB5D /* NSObject+BPAddRuntime.m in Sources */,
 				01C935A01FC337E100D98FD6 /* BPFeatureViewController.m in Sources */,
 				017A9A8F1FDD311D00CDA599 /* NSString+BPFilepath.m in Sources */,
@@ -7663,6 +7876,7 @@
 				010DB7301FDD4D450099E66F /* UIWindow+BPHierarchy.m in Sources */,
 				01A191E02004E1FF005EE4CD /* BPViewController.m in Sources */,
 				01D22BDE1FDD814000BCC4AD /* NSTimer+BPAdd.m in Sources */,
+				011E8DC220B2FB3300B04378 /* BPCalendarDayCell.m in Sources */,
 				010DB74F1FDD4D450099E66F /* UIBarButtonItem+BPBadge.m in Sources */,
 				01F2CE6B20AABE6600F1D701 /* BP_ONE_TopSliderCatergoryViewController.m in Sources */,
 				01D22BCD1FDD814000BCC4AD /* NSNumber+BPAdd.m in Sources */,
@@ -7715,7 +7929,6 @@
 				010DB7371FDD4D450099E66F /* UITextField+BPInputLimit.m in Sources */,
 				018972C71FC481BF00D6DF5B /* BPBaseCollectionViewCell.m in Sources */,
 				01BA9B4D20ADDD5500C781EC /* BPTestTableViewCell.m in Sources */,
-				019B0EEF2093845800D105D1 /* BPCollectionViewFlowLayout.m in Sources */,
 				0179070420011D8100E5C360 /* BPNetRequestViewController.m in Sources */,
 				01DF325B1FDD3B9D00B8A955 /* NSData+BPBase64.m in Sources */,
 				012D18A220AC1F8C00C3E437 /* BPContentInsetTableViewController.m in Sources */,
@@ -7723,7 +7936,9 @@
 				01F2CE6920AABE6600F1D701 /* BPTopSliderCategoryCollectionViewCell.m in Sources */,
 				01DF31C51FDD3A9100B8A955 /* NSRunLoop+BPPerformBlock.m in Sources */,
 				01F372F82065420E007B1498 /* BPDesignPatternsDelegateViewControllerB.m in Sources */,
+				0153F14020B2A6A6007C50C5 /* BPWeChatRootViewController.m in Sources */,
 				010DB7171FDD4D450099E66F /* UITextView+BPInputLimit.m in Sources */,
+				01F5B0F620B2C9DA0026B8B4 /* BPTagLabelView.m in Sources */,
 				01ADC1F61FB492C1009150F0 /* BPBaseTableViewCell.m in Sources */,
 				010FBD2320601D9E00BC9EC4 /* UIColor+Hex.m in Sources */,
 				010DB7971FDD4D640099E66F /* UIView+BPVisuals.m in Sources */,
@@ -7782,11 +7997,13 @@
 				01A191CB2004E1D5005EE4CD /* BPToolBarViewController.m in Sources */,
 				010DB76C1FDD4D560099E66F /* UIViewController+BPBlockSegue.m in Sources */,
 				01DF32141FDD3B3000B8A955 /* NSString+BPHash.m in Sources */,
-				018972CA1FC481E500D6DF5B /* BPCalendarCollectionCell.m in Sources */,
 				01DF31D11FDD3A9100B8A955 /* NSException+BPTrace.m in Sources */,
+				011E8D7920B2F7AA00B04378 /* BPCalendarDataSource.m in Sources */,
 				010DB7381FDD4D450099E66F /* UITextField+BPSelect.m in Sources */,
+				011E8DC320B2FB3300B04378 /* BPCalendarView.m in Sources */,
 				01A1921A2004E61F005EE4CD /* BPTagCollectionViewController.m in Sources */,
 				010DB7111FDD4D450099E66F /* UIImageView+BPGeometryConversion.m in Sources */,
+				011E8D9E20B2F7BA00B04378 /* BPPlanGeneralTableViewCell.m in Sources */,
 				010DB74D1FDD4D450099E66F /* UIApplication+BPKeyboardFrame.m in Sources */,
 				010DB7341FDD4D450099E66F /* UIResponder+BPChain.m in Sources */,
 				01FD5E6F20A1989C00D9CD75 /* KSHeritageDictionaryListTagView.m in Sources */,
@@ -7798,6 +8015,7 @@
 				01F2CE6420AABE6600F1D701 /* BPFlowCatergoryViewCellModel.m in Sources */,
 				01C0B6221FFC87AB005BB4A5 /* Palette.m in Sources */,
 				01D22BE31FDD814000BCC4AD /* UIActivityIndicatorView+BPAdd.m in Sources */,
+				011E8D9F20B2F7BA00B04378 /* BPPlanCalendarConfig.m in Sources */,
 				01DF32421FDD3B3D00B8A955 /* NSObject+BPBlocks.m in Sources */,
 				010DB73A1FDD4D450099E66F /* UIImage+BPOrientation.m in Sources */,
 				017A9A3F1FDD2B2200CDA599 /* UIButton+BPSubmitting.m in Sources */,
@@ -7831,7 +8049,6 @@
 				01C0B62D1FFC885C005BB4A5 /* BPGeneralTestViewController.m in Sources */,
 				01BCB3441FB5598B009EF64E /* BPBaseViewModel.m in Sources */,
 				01C935A71FC337E100D98FD6 /* BPImprovingTipViewController.m in Sources */,
-				018972B11FC47CDD00D6DF5B /* BPCalenderView.m in Sources */,
 				01DF31BE1FDD3A9100B8A955 /* NSDictionary+BPMerge.m in Sources */,
 				016DADC920582FB100AA95EC /* NSObject+BPKVO.m in Sources */,
 				01A191B92004E1AA005EE4CD /* BPImageViewController.m in Sources */,
@@ -7845,8 +8062,11 @@
 				010DB72C1FDD4D450099E66F /* UIBezierPath+BPLength.m in Sources */,
 				010DB7191FDD4D450099E66F /* UINavigationItem+BPLock.m in Sources */,
 				016760CF2060F94400F82ACE /* BPNSOperationViewController.m in Sources */,
+				01F5B0FA20B2D2280026B8B4 /* BPTagCollectionViewFlowLayout.m in Sources */,
 				01F3730F20654A22007B1498 /* BPDesignPatternsBlockViewControllerB.m in Sources */,
 				01E01327200CFEEB00374C53 /* BPPaletteTool.m in Sources */,
+				011E8D7B20B2F7AA00B04378 /* BPCalendarConst.m in Sources */,
+				011E8D9C20B2F7BA00B04378 /* BPPlanCalendarTableViewCell.m in Sources */,
 				01490C141FF54A3E0035492D /* NSTimer+BPUnRetain.m in Sources */,
 				017906EF20011D1600E5C360 /* BPStaticConstViewController.m in Sources */,
 				010DB70F1FDD4D450099E66F /* UIImageView+BPReflect.m in Sources */,
@@ -7855,6 +8075,7 @@
 				01C0B6241FFC87AB005BB4A5 /* PaletteSwatch.m in Sources */,
 				01F37309206546A5007B1498 /* BPDesignPatternsTargetActionViewControllerB.m in Sources */,
 				01DF31D01FDD3A9100B8A955 /* NSArray+BPSafeAccess.m in Sources */,
+				0153F13620B2A502007C50C5 /* BPChatDetailViewController.m in Sources */,
 				0195EAA9201373E700DC59A1 /* BPMasonrySkillView.m in Sources */,
 				01490C081FF548650035492D /* BPGCDViewController.m in Sources */,
 				01F2CE8520AABF7000F1D701 /* DHSlideView.m in Sources */,
@@ -7869,7 +8090,6 @@
 				010DB7401FDD4D450099E66F /* UIImage+BPRemoteSize.m in Sources */,
 				01790761200120CF00E5C360 /* NSObject+Log.m in Sources */,
 				010DB73C1FDD4D450099E66F /* UIImage+BPResize.m in Sources */,
-				019B0EE920937D2C00D105D1 /* BPTagCell.m in Sources */,
 				01790760200120CF00E5C360 /* UIImage+Swizzling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

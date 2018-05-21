@@ -80,6 +80,8 @@
 @property (nonatomic, assign) CGFloat edgeSpacing;
 /**item字体，默认15*/
 @property (nonatomic, strong) UIFont *titleFont;
+/**选中的item字体，默认15*/
+@property (nonatomic, strong) UIFont *titleSelectFont;
 
 #pragma mark - titleColor
 
@@ -87,9 +89,9 @@
 @property (nonatomic, assign) BOOL titleColorChangeEable;
 /**是否开启文字颜色变化渐变，默认NO，如果设置该效果YES需要先保证titleColorChangeEable为YES*/
 @property (nonatomic, assign) BOOL titleColorChangeGradually;
-/**edge间距， 默认 白色*/
+/**item字体颜色，默认白色*/
 @property (nonatomic, strong) UIColor *titleColor;
-/**edge间距， 默认 红色*/
+/**选中的item字体颜色，默认红色*/
 @property (nonatomic, strong) UIColor *titleSelectColor;
 
 
@@ -110,7 +112,8 @@
 @property (nonatomic, assign) CGFloat bottomLineHeight;
 /**下方横线宽度，默认跟字符串一样宽*/
 @property (nonatomic, assign) CGFloat bottomLineWidth;
-
+/**下方横线,是否需要圆角，如果为YES，圆角为高度的一半*/
+@property (nonatomic, assign) BOOL bottomLineCornerRadius;
 /**下方横线距离item底部的距离，默认10.0f*/
 @property (nonatomic, assign) CGFloat bottomLineSpacingFromTitleBottom;
 
@@ -132,4 +135,3 @@
 - (void)bp_realoadData;
 
 @end
-

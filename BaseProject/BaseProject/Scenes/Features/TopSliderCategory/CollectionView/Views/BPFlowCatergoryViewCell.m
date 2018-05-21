@@ -96,7 +96,15 @@
         }else{
             _colorLabel.hidden = YES;
             _titleLabel.layer.mask = nil;
+            //渐变色
             _titleLabel.textColor = [UIColor bp_colorWithInterpolationFromValue:_property.titleColor toValue:_property.titleSelectColor ratio:_data.valueRatio];
+            //改变选中的字体
+            if (_property.titleSelectFont) {
+                _colorLabel.font = _titleLabel.font = _property.titleFont;
+            }
+            if (_data.valueRatio == 1) {
+                [self bp_interpolationFont];
+            }
             
         }
     }else{
@@ -112,7 +120,11 @@
     self.transform  = CGAffineTransformMakeScale(scale, scale);
 }
 
-
+- (void)bp_interpolationFont {
+    if (_property.titleSelectFont) {
+        _colorLabel.font = _titleLabel.font = _property.titleSelectFont;
+    }
+}
 
 /**
  *  插值公式

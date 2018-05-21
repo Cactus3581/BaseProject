@@ -1,9 +1,9 @@
 //
 //  KSHeritageDictionaryMacro.h
-//  PowerWord7
+//  BaseProject
 //
 //  Created by xiaruzhen on 2018/4/27.
-//  Copyright © 2018年 Kingsoft. All rights reserved.
+//  Copyright © 2018年 cactus. All rights reserved.
 //
 
 #import "KSHeritageDictionaryMacro.h"
@@ -41,6 +41,6 @@
 #define kLelts2WordCount            @"3411"
 #define kProgressBeginValue         0.01f
 
-#define kAddWordBookOperationQueueName @"com.kingsoft.newWordBookAdd"
+#define kAddWordBookOperationQueueName @"com.cactus.newWordBookAdd"
 
 #endif /* KSHeritageDictionaryMacro_h */

@@ -1,9 +1,9 @@
 //
 //  KSTagFlowLayout.m
-//  PowerWord7
+//  BaseProject
 //
 //  Created by xiaruzhen on 2018/4/25.
-//  Copyright © 2018年 Kingsoft. All rights reserved.
+//  Copyright © 2018年 cactus. All rights reserved.
 //
 
 #import "KSTagFlowLayout.h"

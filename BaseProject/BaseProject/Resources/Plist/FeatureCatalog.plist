@@ -57,9 +57,28 @@
 		<key>title</key>
 		<string>日历Calendar</string>
 		<key>fileName</key>
-		<string>BPCalendarController</string>
+		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
-		<string>日历Calendar</string>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>计划日历</string>
+				<key>fileName</key>
+				<string>BPPlanCalendarViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>正常日历</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -171,14 +190,6 @@
 		<string>添加圆角</string>
 		<key>fileName</key>
 		<string>BPAddRoundedCornerViewController</string>
-		<key>briefIntro</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>图片浏览器</string>
-		<key>fileName</key>
-		<string>BPPhotoBrowserViewController</string>
 		<key>briefIntro</key>
 		<string></string>
 	</dict>
@@ -506,6 +517,41 @@
 		<string></string>
 		<key>briefIntro</key>
 		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>微信</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>cell行高（朋友圈）</string>
+				<key>fileName</key>
+				<string>BPWeChatRootViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>聊天记录操作（tableView的运用）</string>
+				<key>fileName</key>
+				<string>BPWeChatRootViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>图片浏览器（collectionView的运用）</string>
+				<key>fileName</key>
+				<string>BPWeChatRootViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 </array>
 </plist>

@@ -14,8 +14,6 @@
 #import "YYFPSLabel.h"
 
 @interface BPAppDelegate ()
-@property (strong, nonatomic) UITabBarController *rootTabbarViewController;
-
 @end
 
 @implementation BPAppDelegate

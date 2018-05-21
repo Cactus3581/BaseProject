@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="WHW-F4-Czu" customClass="BPPlanCalendarSectionFooterView">
+            <rect key="frame" x="0.0" y="0.0" width="629" height="154"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="原计划" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5c3-Mh-UXn">
+                    <rect key="frame" x="15" y="0.0" width="46" height="154"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SE7-QG-BSR">
+                    <rect key="frame" x="0.0" y="0.0" width="629" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="iPW-LC-uas"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11-30 -- 12-10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkY-gh-8eD">
+                    <rect key="frame" x="517" y="68.5" width="97" height="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="SE7-QG-BSR" secondAttribute="trailing" id="1FI-Ni-BIF"/>
+                <constraint firstItem="rkY-gh-8eD" firstAttribute="centerY" secondItem="5c3-Mh-UXn" secondAttribute="centerY" id="2pk-Fh-jM9"/>
+                <constraint firstAttribute="trailing" secondItem="rkY-gh-8eD" secondAttribute="trailing" constant="15" id="Cr8-OL-uc9"/>
+                <constraint firstItem="SE7-QG-BSR" firstAttribute="leading" secondItem="WHW-F4-Czu" secondAttribute="leading" id="PF8-Ea-PQj"/>
+                <constraint firstItem="5c3-Mh-UXn" firstAttribute="top" secondItem="WHW-F4-Czu" secondAttribute="top" id="leC-Bb-jo2"/>
+                <constraint firstItem="SE7-QG-BSR" firstAttribute="top" secondItem="WHW-F4-Czu" secondAttribute="top" id="ni7-xJ-z8B"/>
+                <constraint firstAttribute="bottom" secondItem="5c3-Mh-UXn" secondAttribute="bottom" id="rLo-6j-4Xb"/>
+                <constraint firstItem="5c3-Mh-UXn" firstAttribute="leading" secondItem="WHW-F4-Czu" secondAttribute="leading" constant="15" id="xBk-dN-pI4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="lineView" destination="SE7-QG-BSR" id="whN-bh-xPD"/>
+                <outlet property="lineViewH" destination="iPW-LC-uas" id="AQL-CD-znc"/>
+                <outlet property="planLabel" destination="rkY-gh-8eD" id="BPm-E6-s6N"/>
+                <outlet property="titleLabel" destination="5c3-Mh-UXn" id="gcn-tD-QnM"/>
+            </connections>
+            <point key="canvasLocation" x="161.5" y="-283"/>
+        </view>
+    </objects>
+</document>
