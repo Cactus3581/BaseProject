@@ -11,16 +11,22 @@
 #ifndef BPColorMacro_h
 #define BPColorMacro_h
 
+
+
 #ifndef kRedColor
 #define kRedColor [UIColor redColor]
 #endif
 
-#ifndef kGreenColor
-#define kGreenColor [UIColor greenColor]
+#ifndef kOrangeColor
+#define kOrangeColor [UIColor orangeColor]
 #endif
 
 #ifndef kYellowColor
 #define kYellowColor [UIColor yellowColor]
+#endif
+
+#ifndef kGreenColor
+#define kGreenColor [UIColor greenColor]
 #endif
 
 #ifndef kBlueColor
@@ -29,10 +35,6 @@
 
 #ifndef kPurpleColor
 #define kPurpleColor [UIColor purpleColor]
-#endif
-
-#ifndef kOrangeColor
-#define kOrangeColor [UIColor orangeColor]
 #endif
 
 #ifndef kLightGrayColor
@@ -71,8 +73,28 @@
 #define kGrayColor [UIColor grayColor]
 #endif
 
-#ifndef kThemeColor
-#define kThemeColor (kHexColor(0x333333))
+#ifndef kLevelColor1
+#define kLevelColor1 kRedColor
+#endif
+
+#ifndef kLevelColor2
+#define kLevelColor2 kOrangeColor
+#endif
+
+#ifndef kLevelColor3
+#define kLevelColor3 kYellowColor
+#endif
+
+#ifndef kLevelColor4
+#define kLevelColor4 kGreenColor
+#endif
+
+#ifndef kLevelColor5
+#define kLevelColor5 kBlueColor
+#endif
+
+#ifndef kLevelColor6
+#define kLevelColor6 kPurpleColor
 #endif
 
 #endif /* BPColorMacro_h */

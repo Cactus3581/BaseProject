@@ -106,8 +106,8 @@
             DHCache *cache = (DHCache *)self.cache;
             if([cache totalVCCount] > self.maxCacheNumber){
                 [cache removeFirstObjectInCache];
-//                KSLog(@"cache 清除掉了第一个1！！！！！");
-//                KSLog(@"还剩几个：%@",@([cache totalVCCount]));
+//                BPLog(@"cache 清除掉了第一个1！！！！！");
+//                BPLog(@"还剩几个：%@",@([cache totalVCCount]));
             }
         }
         

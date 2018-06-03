@@ -8,39 +8,80 @@
 
 #import "BP2NDCellAutoLayoutHeightViewController.h"
 #import "BPCellAutoLayoutHeightTableViewCell.h"
-#import "BPCellAutoLayoutHeightHeaderView.h"
-#import "BPCellAutoLayoutHeightFooterView.h"
-#import "Masonry.h"
 #import "BPCellAutoLayoutHeightModel.h"
 #import "BPCellAutoLayoutHeightDataSource.h"
+
+static NSString *identifier = @"BPCellAutoLayoutHeightTableViewCell";
+static CGFloat cellHeight = 100;
 
 @interface BP2NDCellAutoLayoutHeightViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,weak) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *array;
-@property (nonatomic,assign) CGFloat heightTime;
-@property (nonatomic,assign) CGFloat estimatedHeightTime;
+@property (nonatomic,assign) NSInteger heightTime;
+@property (nonatomic,assign) NSInteger estimatedHeightTime;
 @end
 
 @implementation BP2NDCellAutoLayoutHeightViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.rightBarButtonTitle = @"reloaddata";
     [self configureTable];
 }
 
 - (void)configureTable {
+    self.tableView.estimatedRowHeight = 100;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
+    /*
+     此类下（systemLayoutSizeFittingSize）
+     开启预估
+     好处是：
+     1. heightforrow减少调用次数，提示效率
+     坏处：
+     1. 滚动条不稳定
+     2. reloaddata tableView自动滑动（虽然可以增加缓存的代码，可减少调用次数）
+     坏处：
+     */
+}
+
+- (void)rightBarButtonItemClickAction:(id)sender {
     [self.tableView reloadData];
 }
 
-//下划线 循环引用
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.array.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BPCellAutoLayoutHeightTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    BPCellAutoLayoutHeightModel *model = self.array[indexPath.row];
+    [cell set2ndModel:model indexPath:indexPath];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static BPCellAutoLayoutHeightTableViewCell *cell;
+    static dispatch_once_t onceToken;
+    //必须使用
+    dispatch_once(&onceToken, ^{
+        cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    });
+    BPCellAutoLayoutHeightModel *model = self.array[indexPath.row];
+    [cell set2ndModel:model indexPath:indexPath];
+    // 根据当前数据，计算Cell的高度，注意+1是contentview和cell之间的分割线高度
+    model.cell2ndHeight = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel;
+    return model.cell2ndHeight;
+}
+
+#pragma mark -懒加载
 - (UITableView *)tableView {
     if (!_tableView) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView = tableView;
         _tableView.backgroundColor = kWhiteColor;
-        [_tableView registerNib:[UINib nibWithNibName:@"BPCellAutoLayoutHeightHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"BPCellAutoLayoutHeightHeaderView"];
         [_tableView registerNib:[UINib nibWithNibName:@"BPCellAutoLayoutHeightTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"BPCellAutoLayoutHeightTableViewCell"];
-        [_tableView registerNib:[UINib nibWithNibName:@"BPCellAutoLayoutHeightFooterView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"BPCellAutoLayoutHeightFooterView"];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.delegate = self;
         _tableView.dataSource = self;
@@ -52,57 +93,6 @@
     return _tableView;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.array.count;
-}
-
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    BPCellAutoLayoutHeightHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"BPCellAutoLayoutHeightHeaderView"];
-//    return header;
-//}
-
-//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-//    BPCellAutoLayoutHeightFooterView *footer = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"BPCellAutoLayoutHeightFooterView"];
-//    return footer;
-//}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"BPCellAutoLayoutHeightTableViewCell";
-    BPCellAutoLayoutHeightTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    BPCellAutoLayoutHeightModel *model = self.array[indexPath.row];
-    [cell set2ndModel:model indexPath:indexPath];
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BPLog(@"self.heightTime = %.2f",++self.heightTime);
-    static BPCellAutoLayoutHeightTableViewCell *cell;
-    static NSString *identifier = @"BPCellAutoLayoutHeightTableViewCell";
-    static dispatch_once_t onceToken;
-    //必须使用
-    dispatch_once(&onceToken, ^{
-        cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    });
-    BPCellAutoLayoutHeightModel *model = self.array[indexPath.row];
-    [cell set2ndModel:model indexPath:indexPath];
-    [cell updateConstraints];
-    [cell updateFocusIfNeeded];
-    // 根据当前数据，计算Cell的高度，注意+1是contentview和cell之间的分割线高度
-    model.cell2ndHeight = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + 1.0f;
-    return model.cell2ndHeight;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BPLog(@"estimatedHeightTime = %.2f",++self.estimatedHeightTime);
-    return 112.0f;
-}
-
-#pragma mark -懒加载
 - (NSMutableArray *)array {
     if (!_array) {
         _array = [NSMutableArray arrayWithArray:[BPCellAutoLayoutHeightDataSource array]];

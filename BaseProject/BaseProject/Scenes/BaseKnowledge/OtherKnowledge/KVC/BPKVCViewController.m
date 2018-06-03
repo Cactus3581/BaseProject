@@ -54,7 +54,7 @@
 
         make.width.mas_equalTo(100);
         make.height.mas_equalTo(40);
-        make.left.mas_equalTo(kScreenWidth-100);
+        make.leading.mas_equalTo(kScreenWidth-100);
     }];
     
     //[self testKVC];

@@ -43,7 +43,7 @@
     [self.view addSubview:mainView];
     
     [mainView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self.view);
+        make.leading.trailing.bottom.equalTo(self.view);
         make.top.equalTo(self.view);
     }];
     if (kiOS11) {

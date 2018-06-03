@@ -43,7 +43,7 @@
     [mainView registerClass:[BPTopSliderCategoryCollectionViewCell class] forCellWithReuseIdentifier:@"BPTopSliderCategoryCollectionViewCell"];
     [self.view addSubview:mainView];
     [mainView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self.view);
+        make.leading.trailing.bottom.equalTo(self.view);
     }];
     //catergoryView
     BPFlowCatergoryView * catergoryView = [BPFlowCatergoryView new];
@@ -64,7 +64,7 @@
     catergoryView.defaultIndex = 1;
     [self.view addSubview:catergoryView];
     [catergoryView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.view);
+        make.leading.trailing.equalTo(self.view);
         make.top.equalTo(self.view.mas_top).offset(64);
         make.height.equalTo(@50);
         make.bottom.equalTo(mainView.mas_top);

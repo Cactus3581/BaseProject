@@ -153,7 +153,7 @@
     [_oldViewController endAppearanceTransition];
     _oldViewController = nil;
     _oldIndex = -1;
-//    KSLog(@"看看remove old 走了多少遍");
+//    BPLog(@"看看remove old 走了多少遍");
 }
 
 - (void)removeWill

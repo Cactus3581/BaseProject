@@ -15,6 +15,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.contentView.backgroundColor = kRedColor;
 }
 
 - (IBAction)footerAction:(id)sender {

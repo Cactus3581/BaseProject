@@ -78,7 +78,7 @@
     [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(30);
         make.top.equalTo(view).offset(-15);
-        make.right.equalTo(view.mas_right).offset(15);
+        make.trailing.equalTo(view.mas_trailing).offset(15);
     }];
     //    view.layer.masksToBounds = YES;
 }
@@ -139,13 +139,13 @@
     if (@available(iOS 11,*)) {
         [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.height.mas_equalTo(50);
-            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(-30);
+            make.trailing.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(-30);
             make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(-200);
         }];
     }else {
         [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.height.mas_equalTo(50);
-            make.right.equalTo(self.view).offset(-30);
+            make.trailing.equalTo(self.view).offset(-30);
             make.bottom.equalTo(self.view).offset(-200);
         }];
     }

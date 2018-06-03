@@ -7,8 +7,21 @@
 //
 
 #import "BPOptimizeTableViewController.h"
+#import "YYFPSLabel.h"
+#import "BPOptimizeTableViewCell.h"
 
-@interface BPOptimizeTableViewController ()
+/*
+ GPU优化
+ 1. 圆角：避免离屏渲染，GPU优化
+ 
+ CPU优化
+ 1. 行高计算
+ 
+ ps：
+ 1. UIBezierPath
+ 
+ */
+@interface BPOptimizeTableViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -16,22 +29,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    UITableView *tableView = [UITableView new];
+    tableView.rowHeight = widthRatio(120);
+    tableView.backgroundColor = [UIColor whiteColor];
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    tableView.frame = self.view.bounds;
+    [self.view addSubview:tableView];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [YYFPSLabel bp_addFPSLableOnWidnow];
+    });
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 200;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [BPOptimizeTableViewCell bp_cellWithTableView:tableView imageURL:[NSString stringWithFormat:@"https://oepjvpu5g.qnssl.com/avatar%zd.jpg", indexPath.row % 20]];
 }
-*/
 
 @end

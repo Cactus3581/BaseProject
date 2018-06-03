@@ -82,14 +82,6 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>朋友圈</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string>计算cell高度</string>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>PopView</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
@@ -405,7 +397,7 @@
 				<key>title</key>
 				<string>单行标签</string>
 				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
+				<string></string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -413,7 +405,7 @@
 				<key>title</key>
 				<string>多行标签</string>
 				<key>fileName</key>
-				<string>BPTestViewController</string>
+				<string></string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -421,7 +413,7 @@
 				<key>title</key>
 				<string>位置不固定圆形标签</string>
 				<key>fileName</key>
-				<string>BPTestViewController</string>
+				<string></string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -499,14 +491,6 @@
 		<string>缓存设计</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>评论</string>
-		<key>fileName</key>
-		<string>BPCommentsViewController</string>
 		<key>briefIntro</key>
 		<string></string>
 	</dict>

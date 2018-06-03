@@ -97,15 +97,7 @@
 				<array>
 					<dict>
 						<key>title</key>
-						<string>Autoresizing</string>
-						<key>fileName</key>
-						<string>BPAutoresizingViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>View及ViewController显示过程</string>
+						<string>UIView：布局方法，布局过程，渲染过程</string>
 						<key>fileName</key>
 						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
@@ -114,25 +106,117 @@
 						<array>
 							<dict>
 								<key>title</key>
-								<string>Layout过程</string>
+								<string>布局方法</string>
 								<key>fileName</key>
-								<string>BPLayoutViewController</string>
+								<string>BPSimpleTableController</string>
+								<key>briefIntro</key>
+								<string></string>
+								<key>subVc_array</key>
+								<array>
+									<dict>
+										<key>title</key>
+										<string>Frame布局</string>
+										<key>fileName</key>
+										<string>BPFrameLayoutViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>Autoresizing布局</string>
+										<key>fileName</key>
+										<string>BPAutoresizingViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>AutoLayout布局</string>
+										<key>fileName</key>
+										<string>BPSimpleTableController</string>
+										<key>briefIntro</key>
+										<string></string>
+										<key>subVc_array</key>
+										<array>
+											<dict>
+												<key>title</key>
+												<string>纯代码布局：系统、Masony、VFL</string>
+												<key>fileName</key>
+												<string>BPAutoLayoutCodeViewController</string>
+												<key>briefIntro</key>
+												<string></string>
+											</dict>
+											<dict>
+												<key>title</key>
+												<string>XIB布局：约束优先级的使用，抗压缩，active的使用</string>
+												<key>fileName</key>
+												<string>BPAutoLayoutXIBViewController</string>
+												<key>briefIntro</key>
+												<string></string>
+											</dict>
+										</array>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>布局过程：View及ViewController显示过程</string>
+								<key>fileName</key>
+								<string>BPSimpleTableController</string>
+								<key>briefIntro</key>
+								<string></string>
+								<key>subVc_array</key>
+								<array>
+									<dict>
+										<key>title</key>
+										<string>Frame布局过程</string>
+										<key>fileName</key>
+										<string>BPLayoutProcessViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>AutoLayout布局过程</string>
+										<key>fileName</key>
+										<string>BPSimpleTableController</string>
+										<key>briefIntro</key>
+										<string></string>
+										<key>subVc_array</key>
+										<array>
+											<dict>
+												<key>title</key>
+												<string>Masnory布局过程</string>
+												<key>fileName</key>
+												<string>BPMasonryAutoLayoutProcessViewController</string>
+												<key>briefIntro</key>
+												<string></string>
+											</dict>
+											<dict>
+												<key>title</key>
+												<string>XIB布局过程，XIB布局下的系统方法执行顺序</string>
+												<key>fileName</key>
+												<string>BPXIBAutoLayoutProcessViewController</string>
+												<key>briefIntro</key>
+												<string></string>
+											</dict>
+										</array>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>渲染过程，自定义画图</string>
+								<key>fileName</key>
+								<string>BPDrawViewController</string>
 								<key>briefIntro</key>
 								<string></string>
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>XIB布局下的系统方法执行顺序</string>
+								<string>Size：固有内容大小，计算size几种方法，抗压缩抗拉伸</string>
 								<key>fileName</key>
-								<string>BPXibViewController</string>
-								<key>briefIntro</key>
-								<string></string>
-							</dict>
-							<dict>
-								<key>title</key>
-								<string>Masonry使用技巧</string>
-								<key>fileName</key>
-								<string>BPMasonrySkillViewController</string>
+								<string>BPViewSizeController</string>
 								<key>briefIntro</key>
 								<string></string>
 							</dict>
@@ -140,15 +224,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>自定义画图</string>
-						<key>fileName</key>
-						<string>BPDrawViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>Layer属性、分类及View重要属性</string>
+						<string>Layer属性、子类及View仿射属性</string>
 						<key>fileName</key>
 						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
@@ -227,33 +303,6 @@
 								<string>核心动画</string>
 								<key>fileName</key>
 								<string>BPCoreAnimationVC</string>
-								<key>briefIntro</key>
-								<string></string>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>AutoLayout</string>
-						<key>fileName</key>
-						<string>BPSimpleTableController</string>
-						<key>briefIntro</key>
-						<string></string>
-						<key>subVc_array</key>
-						<array>
-							<dict>
-								<key>title</key>
-								<string>XIB自动布局</string>
-								<key>fileName</key>
-								<string>BPAutoLayoutXIBViewController</string>
-								<key>briefIntro</key>
-								<string>约束优先级的使用，抗压缩，active的使用</string>
-							</dict>
-							<dict>
-								<key>title</key>
-								<string>纯代码自动布局</string>
-								<key>fileName</key>
-								<string>BPAutoLayoutCodeViewController</string>
 								<key>briefIntro</key>
 								<string></string>
 							</dict>
@@ -450,7 +499,7 @@
 						<array>
 							<dict>
 								<key>title</key>
-								<string>第一种</string>
+								<string>iOS8cell自动计算</string>
 								<key>fileName</key>
 								<string>BP1STCellAutoLayoutHeightViewController</string>
 								<key>briefIntro</key>
@@ -458,7 +507,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>第二种</string>
+								<string>iOS6cell自动计算</string>
 								<key>fileName</key>
 								<string>BP2NDCellAutoLayoutHeightViewController</string>
 								<key>briefIntro</key>
@@ -466,7 +515,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>第三种</string>
+								<string>手动计算</string>
 								<key>fileName</key>
 								<string>BP3RDCellAutoLayoutHeightViewController</string>
 								<key>briefIntro</key>
@@ -474,7 +523,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>第四种</string>
+								<string>UIView的方法实现自动计算</string>
 								<key>fileName</key>
 								<string></string>
 								<key>briefIntro</key>
@@ -487,6 +536,22 @@
 						<string>多级目录</string>
 						<key>fileName</key>
 						<string>BP1STManualHeightViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>scroll实现tableView</string>
+						<key>fileName</key>
+						<string>BPCustomTableViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>TableView优化点</string>
+						<key>fileName</key>
+						<string>BPOptimizeTableViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -540,6 +605,14 @@
 				<string>UIButton</string>
 				<key>fileName</key>
 				<string>BPButtonViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UIImage</string>
+				<key>fileName</key>
+				<string>BPImageController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>

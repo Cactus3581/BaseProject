@@ -11,7 +11,7 @@
 
 @implementation BPCellAutoLayoutHeightModel
 
-//手算-1 在model里计算
+//手算-3 在model里计算
 - (CGFloat)cell3rdHeight {
     if (!_cell3rdHeight) {
         // 文字的最大尺寸(设置内容label的最大size，这样才可以计算label的实际高度，需要设置最大宽度，但是最大高度不需要设置，只需要设置为最大浮点值即可)，53为内容label到cell左边的距离

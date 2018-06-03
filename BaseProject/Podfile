@@ -35,4 +35,7 @@ target 'BaseProject' do
     #pod 'FreeStreamer'
     #pod 'YYKit'
 
+    pod 'lottie-ios'
+
+
 end

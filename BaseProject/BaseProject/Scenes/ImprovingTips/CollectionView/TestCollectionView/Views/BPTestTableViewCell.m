@@ -27,7 +27,7 @@
     [self.contentView addSubview:label];
     label.backgroundColor = kGreenColor;
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(50);
+        make.leading.equalTo(self.contentView).offset(50);
         make.centerY.equalTo(self.contentView);
     }];
     self.label = label;

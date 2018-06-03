@@ -164,37 +164,37 @@
     [self.view addSubview:transform_scaleRotation];
     
     [transform_makeRotation mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(btn_inset);
+        make.leading.equalTo(self.view).offset(btn_inset);
         make.bottom.equalTo(self.view).offset(btn_bottom*4);
     }];
     
     [transform_rotation mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(transform_makeRotation.mas_right).offset(btn_inset);
+        make.leading.equalTo(transform_makeRotation.mas_trailing).offset(btn_inset);
         make.bottom.equalTo(transform_makeRotation.mas_bottom);
     }];
     
     [transform_makeTranslationAction mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(transform_rotation.mas_right).offset(btn_inset);
+        make.leading.equalTo(transform_rotation.mas_trailing).offset(btn_inset);
         make.bottom.equalTo(transform_makeRotation.mas_bottom);
     }];
     
     [transform_translation mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(transform_makeTranslationAction.mas_right).offset(btn_inset);
+        make.leading.equalTo(transform_makeTranslationAction.mas_trailing).offset(btn_inset);
         make.bottom.equalTo(transform_makeRotation.mas_bottom);
     }];
     
     [transform_makeScale mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(transform_translation.mas_right).offset(btn_inset);
+        make.leading.equalTo(transform_translation.mas_trailing).offset(btn_inset);
         make.bottom.equalTo(transform_makeRotation.mas_bottom);
     }];
     
     [transform_scale mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(transform_makeScale.mas_right).offset(btn_inset);
+        make.leading.equalTo(transform_makeScale.mas_trailing).offset(btn_inset);
         make.bottom.equalTo(transform_makeRotation.mas_bottom);
     }];
     
     [transform_scaleRotation mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(transform_scale.mas_right).offset(btn_inset);
+        make.leading.equalTo(transform_scale.mas_trailing).offset(btn_inset);
         make.bottom.equalTo(transform_makeRotation.mas_bottom);
     }];
 }
@@ -208,7 +208,7 @@
     [self.view addSubview:mask_layer];
     
     [mask_layer mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(btn_inset);
+        make.leading.equalTo(self.view).offset(btn_inset);
         make.bottom.equalTo(self.view.mas_bottom).offset(btn_bottom *2);
     }];
 }
@@ -222,7 +222,7 @@
     [self.view addSubview:reset];
     
     [reset mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(btn_inset);
+        make.leading.equalTo(self.view).offset(btn_inset);
         make.bottom.equalTo(self.view.mas_bottom).offset(btn_bottom);
     }];
 }

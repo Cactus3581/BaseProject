@@ -126,7 +126,7 @@
     }];
     
     [_chooseImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.view);
+        make.leading.trailing.equalTo(self.view);
         make.height.mas_equalTo(100);
         make.top.equalTo(_chooseImageBtn).offset(50);
     }];

@@ -79,8 +79,8 @@
     [self.arrowPopView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.view);
         make.height.mas_equalTo(100);
-        make.left.equalTo(self.view).offset(10);
-        make.right.equalTo(self.view).offset(-10);
+        make.leading.equalTo(self.view).offset(10);
+        make.trailing.equalTo(self.view).offset(-10);
     }];
 }
 
@@ -146,13 +146,13 @@
     if (@available(iOS 11,*)) {
         [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.height.mas_equalTo(50);
-            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(-30);
+            make.trailing.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(-30);
             make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(-20);
         }];
     }else {
         [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.height.mas_equalTo(50);
-            make.right.equalTo(self.view).offset(-30);
+            make.trailing.equalTo(self.view).offset(-30);
             make.bottom.equalTo(self.view).offset(-20);
         }];
     }

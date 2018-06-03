@@ -20,7 +20,7 @@
     [self.view addSubview:self.sliderShowView];
 //    self.sliderShowView.frame = CGRectMake(0, 100, kScreenWidth, 200);
     [self.sliderShowView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.centerY.equalTo(self.view);
+        make.leading.trailing.centerY.equalTo(self.view);
         make.height.mas_equalTo(200);
     }];
     self.sliderShowView.imageArray = @[[UIColor redColor],[UIColor yellowColor],[UIColor blueColor],[UIColor greenColor],[UIColor purpleColor]];

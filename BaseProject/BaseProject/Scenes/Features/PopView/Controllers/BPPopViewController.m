@@ -59,7 +59,7 @@
     [self.view addSubview:self.taobaoView];
     [self.taobaoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@400);
-        make.left.right.equalTo(self.view);
+        make.leading.trailing.equalTo(self.view);
         make.top.equalTo(self.view.mas_bottom);
     }];
 }
@@ -124,13 +124,13 @@
     if (@available(iOS 11,*)) {
         [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.height.mas_equalTo(50);
-            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(-30);
+            make.trailing.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(-30);
             make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(-200);
         }];
     }else {
         [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.height.mas_equalTo(50);
-            make.right.equalTo(self.view).offset(-30);
+            make.trailing.equalTo(self.view).offset(-30);
             make.bottom.equalTo(self.view).offset(-200);
         }];
     }

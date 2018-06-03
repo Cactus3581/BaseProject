@@ -188,52 +188,52 @@
     [self.view addSubview:button10];
     
     [button1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(btn_inset);
+        make.leading.equalTo(self.view).offset(btn_inset);
         make.bottom.equalTo(self.view).offset(btn_bottom*4);
     }];
     
     [button2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(button1.mas_right).offset(btn_inset);
+        make.leading.equalTo(button1.mas_trailing).offset(btn_inset);
         make.bottom.equalTo(button1.mas_bottom);
     }];
     
     [button3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(button2.mas_right).offset(btn_inset);
+        make.leading.equalTo(button2.mas_trailing).offset(btn_inset);
         make.bottom.equalTo(button1.mas_bottom);
     }];
     
     [button4 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(button3.mas_right).offset(btn_inset);
+        make.leading.equalTo(button3.mas_trailing).offset(btn_inset);
         make.bottom.equalTo(button1.mas_bottom);
     }];
     
     [button5 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(button4.mas_right).offset(btn_inset);
+        make.leading.equalTo(button4.mas_trailing).offset(btn_inset);
         make.bottom.equalTo(button1.mas_bottom);
     }];
     
     [button6 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(btn_inset);
+        make.leading.equalTo(self.view).offset(btn_inset);
         make.bottom.equalTo(self.view).offset(btn_bottom*2);
     }];
     
     [button7 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(button6.mas_right).offset(btn_inset);
+        make.leading.equalTo(button6.mas_trailing).offset(btn_inset);
         make.bottom.equalTo(button6.mas_bottom);
     }];
     
     [button8 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(button7.mas_right).offset(btn_inset);
+        make.leading.equalTo(button7.mas_trailing).offset(btn_inset);
         make.bottom.equalTo(button6.mas_bottom);
     }];
     
     [button9 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(button8.mas_right).offset(btn_inset);
+        make.leading.equalTo(button8.mas_trailing).offset(btn_inset);
         make.bottom.equalTo(button6.mas_bottom);
     }];
     
     [button10 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(btn_inset);
+        make.leading.equalTo(self.view).offset(btn_inset);
         make.bottom.equalTo(self.view);
     }];
 }

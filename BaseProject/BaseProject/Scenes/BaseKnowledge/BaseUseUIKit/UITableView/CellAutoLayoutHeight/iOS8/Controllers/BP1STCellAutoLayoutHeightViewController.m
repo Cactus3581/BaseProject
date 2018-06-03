@@ -15,51 +15,108 @@
 #import "BPCellAutoLayoutHeightDataSource.h"
 #import "YYFPSLabel.h"
 
+// 如果使用预估 可以减少heightForRowAtIndexPath的调用次数。10个数据，关闭预估54，开启预估14，cell都是7次，开启预估跟不开启调用次数都一样
+
+static CGFloat cellHeight = 100;
+
 @interface BP1STCellAutoLayoutHeightViewController () <UITableViewDelegate,UITableViewDataSource,BPCellAutoLayoutHeightHeaderViewDelegate,BPCellAutoLayoutHeightFooterViewDelegate>
 @property (nonatomic,weak) UITableView *tableView;
 @property (nonatomic,strong) NSMutableArray *array;
-@property (nonatomic,strong) NSMutableDictionary *heightAtIndexPath;
-@property (nonatomic,assign) CGFloat sectionHeaderHeight;
-@property (nonatomic,assign) CGFloat sectionFooterHeight;
+@property (nonatomic,strong) NSMutableDictionary *heightAtIndexPath;//实现缓存的目的是：reloadtdada之后，发现页面自己滑动了
+@property (nonatomic,assign) NSInteger heightTime;
+@property (nonatomic,assign) NSInteger estimatedHeightTime;
+@property (nonatomic,assign) NSInteger cellforTime;
 @end
 
 @implementation BP1STCellAutoLayoutHeightViewController
 
+/*
+ 计算tableview的contentSize
+ 
+ 1. numberOfRowsInSection //一次性就调用完
+ 2. estimatedHeightForRowAtIndexPath//在加载的时候一次性就调用完了，后面不会再调，除非reloaddata
+ 3. heightForRowAtIndexPath滑动的时候，不断调用）
+
+ 创建显示的UIView（滑动的时候，不断调用）
+ cellForRowAtIndexPath
+ willDisplayCell
+ 
+ */
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.rightBarButtonTitle = @"reloaddata";
     [self configureTable];
 }
 
-- (void)configureTable {
+- (void)rightBarButtonItemClickAction:(id)sender {
     [self.tableView reloadData];
 }
 
-//下划线 循环引用
+#pragma mark - iOS 8自动计算（方法一代码）
+- (void)configureTable {
+    //PS：iOS8 系统中 rowHeight 的默认值已经设置成了 UITableViewAutomaticDimension，所以第二行代码可以省略。
+    self.tableView.estimatedRowHeight = 100;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    /*
+         if (kiOS11) {
+            _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+         }else {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+         }
+     */
+}
+
+#pragma mark - TableView 数据源方法
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.array.count;
+}
+
+#pragma mark -  iOS 8自动计算（方法二代码）
+#pragma mark - 返回高度
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BPLog(@"heightTime = %ld",++self.heightTime);//14 //28 //54
+    return UITableViewAutomaticDimension;
+}
+
+//在加载的时候一次性就调用完了，后面不会再调，除非reloaddata
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BPLog(@"estimatedHeightTime = %ld",++self.estimatedHeightTime); //40 40
+    NSNumber *height = [self.heightAtIndexPath objectForKey:indexPath];
+    if(height) {
+        return height.floatValue;
+    }
+    else {
+        return cellHeight;
+    }
+}
+
+#pragma mark -  生成UIView子类实例
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *identifier = @"BPCellAutoLayoutHeightTableViewCell";
+    BPCellAutoLayoutHeightTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    BPCellAutoLayoutHeightModel *model = self.array[indexPath.row];
+    [cell set1stModel:model indexPath:indexPath];
+    BPLog(@"cellforTime = %ld",++self.cellforTime);//7 //7 //7
+
+    return cell;
+}
+
+#pragma mark - 高度缓存：1. 为了防止重新计算，提高效率性能 2.刷新再点击状态栏，不能精确滚动到顶部
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSNumber *height = @(cell.frame.size.height);
+    [self.heightAtIndexPath setObject:height forKey:indexPath];
+}
+
+#pragma mark -懒加载
 - (UITableView *)tableView {
     if (!_tableView) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView = tableView;
         _tableView.backgroundColor = kWhiteColor;
-        //iOS 8自动计算（方法一代码）
-        _tableView.estimatedRowHeight = 80.0f;
-        _tableView.rowHeight = UITableViewAutomaticDimension;
-        _tableView.estimatedSectionHeaderHeight = 80.0f;
-        _tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
-        _tableView.estimatedSectionFooterHeight = 80.0f;
-        _tableView.sectionFooterHeight = UITableViewAutomaticDimension;
-        //禁止系统自动对scrollview调整contentInsets的。
-//        if (kiOS11) {
-//            _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//        }else {
-//            self.automaticallyAdjustsScrollViewInsets = NO;
-//        }
-        //iOS11下默认开启自动算高。不想使用Self-Sizing的话，可以通过以下方式关闭：
-        //_tableView.estimatedRowHeight = 0;
-        //_tableView.estimatedSectionHeaderHeight = 0;
-        //_tableView.estimatedSectionFooterHeight = 0;
-        [_tableView registerNib:[UINib nibWithNibName:@"BPCellAutoLayoutHeightHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"BPCellAutoLayoutHeightHeaderView"];
         [_tableView registerNib:[UINib nibWithNibName:@"BPCellAutoLayoutHeightTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"BPCellAutoLayoutHeightTableViewCell"];
-        [_tableView registerNib:[UINib nibWithNibName:@"BPCellAutoLayoutHeightFooterView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"BPCellAutoLayoutHeightFooterView"];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.delegate = self;
         _tableView.dataSource = self;
@@ -71,84 +128,7 @@
     return _tableView;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.array.count;
-}
-
-//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSNumber *height = [self.heightAtIndexPath objectForKey:indexPath];
-//    if(height) {
-//        return height.floatValue;
-//    }
-//    else {
-//        return 100;
-//    }
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section {
-//    return 80;
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForFooterInSection:(NSInteger)section {
-//    return 80;
-//}
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSNumber *height = @(cell.frame.size.height);
-    [self.heightAtIndexPath setObject:height forKey:indexPath];
-}
-
-- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
-    self.sectionHeaderHeight = view.frame.size.height;
-}
-
-- (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section {
-    self.sectionFooterHeight =  view.frame.size.height;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    BPCellAutoLayoutHeightHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"BPCellAutoLayoutHeightHeaderView"];
-    header.delegate = self;
-    return header;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    BPCellAutoLayoutHeightFooterView *footer = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"BPCellAutoLayoutHeightFooterView"];
-    footer.delegate = self;
-    return footer;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"BPCellAutoLayoutHeightTableViewCell";
-    BPCellAutoLayoutHeightTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    BPCellAutoLayoutHeightModel *model = self.array[indexPath.row];
-    [cell set1stModel:model indexPath:indexPath];
-    return cell;
-}
-
-- (void)headerViewAction:(BPCellAutoLayoutHeightHeaderView *)view {
-    [self.tableView reloadData];
-}
-
-- (void)footerViewAction:(BPCellAutoLayoutHeightFooterView *)view {
-    [self.tableView reloadData];
-}
-
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    CGFloat sectionHeaderHeight = self.sectionHeaderHeight + 1;
-//    if (scrollView.contentOffset.y<=sectionHeaderHeight&&scrollView.contentOffset.y>=0) {
-//        scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
-//    } else if (scrollView.contentOffset.y>=sectionHeaderHeight) {
-//        scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
-//    }
-//}
-
-#pragma mark -懒加载
+//数据源
 - (NSMutableArray *)array {
     if (!_array) {
         _array = [NSMutableArray arrayWithArray:[BPCellAutoLayoutHeightDataSource array]];
@@ -157,6 +137,7 @@
     return _array;
 }
 
+//缓存高度数据
 - (NSMutableDictionary *)heightAtIndexPath {
     if (!_heightAtIndexPath) {
         _heightAtIndexPath = [NSMutableDictionary dictionary];

@@ -19,6 +19,7 @@
 typedef NS_ENUM(NSUInteger, KTVHCDataNetworkSourceErrorReason)
 {
     KTVHCDataNetworkSourceErrorReasonNone,
+    KTVHCDataNetworkSourceErrorReasonStatusCode,
     KTVHCDataNetworkSourceErrorReasonContentType,
     KTVHCDataNetworkSourceErrorReasonContentRange,
     KTVHCDataNetworkSourceErrorReasonCacheSpace,
@@ -199,7 +200,6 @@ typedef NS_ENUM(NSUInteger, KTVHCDataNetworkSourceErrorReason)
     [self.writingHandle synchronizeFile];
     [self.writingHandle closeFile];
     self.writingHandle = nil;
-    self.unitItem.writing = NO;
     
     KTVHCLogDataNetworkSource(@"call close end");
     
@@ -240,10 +240,10 @@ typedef NS_ENUM(NSUInteger, KTVHCDataNetworkSourceErrorReason)
         return nil;
     }
     
-    NSData * data = [self.readingHandle readDataOfLength:MIN(self.downloadLength - self.downloadReadedLength, length)];
+    NSData * data = [self.readingHandle readDataOfLength:(NSUInteger)MIN(self.downloadLength - self.downloadReadedLength, length)];
     self.downloadReadedLength += data.length;
     
-    KTVHCLogDataNetworkSource(@"read data : %lu, %lld, %lld, %lld", data.length, self.downloadReadedLength, self.downloadLength, self.length);
+    KTVHCLogDataNetworkSource(@"read data : %lld, %lld, %lld, %lld", (long long)data.length, self.downloadReadedLength, self.downloadLength, self.length);
     
     if (self.downloadReadedLength >= self.length)
     {
@@ -303,6 +303,14 @@ typedef NS_ENUM(NSUInteger, KTVHCDataNetworkSourceErrorReason)
 
 
 #pragma mark - Handle Response
+
+- (BOOL)checkResponseStatusCode:(NSInteger)statusCode
+{
+    if (statusCode >= 400) {
+        return NO;
+    }
+    return YES;
+}
 
 static BOOL (^globalContentTypeFilterBlock)(NSString *, NSString *, NSArray <NSString *> *) = nil;
 
@@ -397,9 +405,9 @@ static BOOL (^globalContentTypeFilterBlock)(NSString *, NSString *, NSArray <NSS
     
     [[KTVHCDataUnitPool unitPool] unit:self.URLString updateResponseHeaderFields:response.allHeaderFields];
     
-    NSString * relativePath = [KTVHCPathTools relativePathForFileWithURLString:self.URLString offset:self.offset];
+    NSString * relativePath = [KTVHCPathTools relativePathForUnitItemFileWithURLString:self.URLString
+                                                                                offset:self.offset];
     self.unitItem = [KTVHCDataUnitItem unitItemWithOffset:self.offset relativePath:relativePath];
-    self.unitItem.writing = YES;
     
     [[KTVHCDataUnitPool unitPool] unit:self.URLString insertUnitItem:self.unitItem];
     
@@ -418,11 +426,10 @@ static BOOL (^globalContentTypeFilterBlock)(NSString *, NSString *, NSArray <NSS
     [self.writingHandle synchronizeFile];
     [self.writingHandle closeFile];
     self.writingHandle = nil;
-    self.unitItem.writing = NO;
     
     if (self.didClose)
     {
-        KTVHCLogDataNetworkSource(@"complete but did close, %@, %ld", self.URLString, error.code);
+        KTVHCLogDataNetworkSource(@"complete but did close, %@, %d", self.URLString, (int)error.code);
     }
     else
     {
@@ -431,36 +438,41 @@ static BOOL (^globalContentTypeFilterBlock)(NSString *, NSString *, NSArray <NSS
             self.error = error;
             if (self.error.code != NSURLErrorCancelled || self.errorCanceled)
             {
-                KTVHCLogDataNetworkSource(@"complete by error, %@, %ld",  self.URLString, error.code);
+                KTVHCLogDataNetworkSource(@"complete by error, %@, %d",  self.URLString, (int)error.code);
                 
                 if (self.errorCanceled)
                 {
-                    switch (self.errorReason) {
-                        case KTVHCDataNetworkSourceErrorReasonNone:
+                    NSError * resultError = nil;
+                    switch (self.errorReason)
+                    {
+                        case KTVHCDataNetworkSourceErrorReasonStatusCode:
                         {
-                            
+                            resultError = [KTVHCError errorForResponseUnavailable:self.URLString
+                                                                          request:self.request
+                                                                         response:self.errorResponse];
                         }
                             break;
                         case KTVHCDataNetworkSourceErrorReasonContentType:
                         case KTVHCDataNetworkSourceErrorReasonContentRange:
                         {
-                            NSError * obj = [KTVHCError errorForResponseUnavailable:self.URLString request:self.request response:self.errorResponse];
-                            if (obj) {
-                                self.error = obj;
-                            }
+                            resultError = [KTVHCError errorForUnsupportTheContent:self.URLString
+                                                                          request:self.request
+                                                                         response:self.errorResponse];
                         }
                             break;
                         case KTVHCDataNetworkSourceErrorReasonCacheSpace:
                         {
-                            NSError * obj = [KTVHCError errorForNotEnoughDiskSpace:self.totalContentLength
-                                                                           request:self.currentContentLength
-                                                                  totalCacheLength:[KTVHCDataStorage storage].totalCacheLength
-                                                                    maxCacheLength:[KTVHCDataStorage storage].maxCacheLength];
-                            if (obj) {
-                                self.error = obj;
-                            }
+                            resultError = [KTVHCError errorForNotEnoughDiskSpace:self.totalContentLength
+                                                                         request:self.currentContentLength
+                                                                totalCacheLength:[KTVHCDataStorage storage].totalCacheLength
+                                                                  maxCacheLength:[KTVHCDataStorage storage].maxCacheLength];
                         }
                             break;
+                        default:
+                            break;
+                    }
+                    if (resultError) {
+                        self.error = resultError;
                     }
                 }
                 
@@ -472,7 +484,7 @@ static BOOL (^globalContentTypeFilterBlock)(NSString *, NSString *, NSArray <NSS
             }
             else
             {
-                KTVHCLogDataNetworkSource(@"complete by cancel, %@, %ld",  self.URLString, error.code);
+                KTVHCLogDataNetworkSource(@"complete by cancel, %@, %d",  self.URLString, (int)error.code);
             }
         }
         else
@@ -501,7 +513,14 @@ static BOOL (^globalContentTypeFilterBlock)(NSString *, NSString *, NSArray <NSS
 
 - (BOOL)download:(KTVHCDownload *)download didReceiveResponse:(NSHTTPURLResponse *)response
 {
-    BOOL success = [self checkResponeContentType:response];
+    BOOL success = [self checkResponseStatusCode:response.statusCode];
+    if (!success)
+    {
+        [self handleResponseDomain:@"status code error" reason:KTVHCDataNetworkSourceErrorReasonStatusCode response:response];
+        return NO;
+    }
+    
+    success = [self checkResponeContentType:response];
     if (!success)
     {
         [self handleResponseDomain:@"content type error" reason:KTVHCDataNetworkSourceErrorReasonContentType response:response];
@@ -539,7 +558,7 @@ static BOOL (^globalContentTypeFilterBlock)(NSString *, NSString *, NSArray <NSS
     self.downloadLength += data.length;
     self.unitItem.length = self.downloadLength;
     
-    KTVHCLogDataNetworkSource(@"receive data, %lu, %llu, %llu", data.length, self.downloadLength, self.unitItem.length);
+    KTVHCLogDataNetworkSource(@"receive data, %lld, %llu, %llu", (long long)data.length, self.downloadLength, self.unitItem.length);
     
     [self callbackForHasAvailableData];
     [self.lock unlock];

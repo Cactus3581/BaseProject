@@ -40,11 +40,11 @@
         [self.contentView addSubview:_showPercentageLabel];
         
         [_showColorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self.contentView);
+            make.leading.trailing.equalTo(self.contentView);
             make.bottom.equalTo(_showPercentageLabel.mas_top);
         }];
         [_showPercentageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.left.right.equalTo(self.contentView);
+            make.bottom.leading.trailing.equalTo(self.contentView);
         }];
     }
     return self;

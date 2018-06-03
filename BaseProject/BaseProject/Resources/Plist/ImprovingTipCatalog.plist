@@ -27,6 +27,14 @@
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>嵌套tableview</string>
+				<key>fileName</key>
+				<string>KSPhraseCardViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
 		</array>
 	</dict>
 	<dict>

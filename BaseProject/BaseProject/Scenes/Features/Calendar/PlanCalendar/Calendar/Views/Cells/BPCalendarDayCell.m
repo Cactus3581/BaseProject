@@ -72,7 +72,7 @@
     }];
     
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self);
+        make.leading.trailing.equalTo(self);
         make.bottom.equalTo(self);
         make.height.mas_equalTo(kOnePixel);
     }];

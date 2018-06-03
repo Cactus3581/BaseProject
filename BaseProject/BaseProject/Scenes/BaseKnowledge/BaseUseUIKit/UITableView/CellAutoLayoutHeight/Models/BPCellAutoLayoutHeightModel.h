@@ -11,6 +11,7 @@
 @interface BPCellAutoLayoutHeightModel : NSObject
 @property (nonatomic,copy) NSString *headImage;
 @property (nonatomic,copy) NSString *name;
+@property (nonatomic,copy) NSString *desc;
 @property (nonatomic,copy) NSString *text;
 @property (nonatomic,copy) NSString *photoImage;
 

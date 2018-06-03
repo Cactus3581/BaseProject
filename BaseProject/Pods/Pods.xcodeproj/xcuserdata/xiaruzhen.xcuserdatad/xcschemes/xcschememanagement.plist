@@ -14,16 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>CocoaHTTPServer.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>CocoaLumberjack.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>FBRetainCycleDetector.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -40,6 +30,11 @@
 			<false/>
 		</dict>
 		<key>IQKeyboardManager.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>KTVCocoaHTTPServer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -150,6 +145,11 @@
 			<false/>
 		</dict>
 		<key>hpple.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>lottie-ios.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

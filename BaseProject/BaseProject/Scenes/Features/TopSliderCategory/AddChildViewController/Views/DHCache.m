@@ -69,7 +69,7 @@
         [vc removeFromParentViewController];
         [_dictionary removeObjectForKey:key];
         [_array removeObject:key];
-//        KSLog(@"删掉的key是:%@",key);
+//        BPLog(@"删掉的key是:%@",key);
     }
 }
 

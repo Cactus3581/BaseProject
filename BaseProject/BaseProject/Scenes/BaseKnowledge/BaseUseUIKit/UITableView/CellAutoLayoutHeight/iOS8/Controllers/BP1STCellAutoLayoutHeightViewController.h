@@ -8,6 +8,10 @@
 
 #import "BPBaseViewController.h"
 
+/*
+ iOS 8 系统自动cell高度
+*/
+
 @interface BP1STCellAutoLayoutHeightViewController : BPBaseViewController
 
 @end

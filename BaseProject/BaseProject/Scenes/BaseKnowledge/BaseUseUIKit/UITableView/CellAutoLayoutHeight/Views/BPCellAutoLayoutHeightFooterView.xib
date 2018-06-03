@@ -16,8 +16,8 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0A-cu-8om">
-                    <rect key="frame" x="50" y="0.0" width="275" height="667"/>
-                    <state key="normal" title="Button"/>
+                    <rect key="frame" x="50" y="50" width="275" height="567"/>
+                    <state key="normal" title="我是sectionFooter"/>
                     <connections>
                         <action selector="footerAction:" destination="1F6-re-Wpm" eventType="touchUpInside" id="HCm-RN-9KW"/>
                     </connections>
@@ -25,9 +25,9 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="C0A-cu-8om" secondAttribute="bottom" id="5nK-NU-YNT"/>
+                <constraint firstAttribute="bottom" secondItem="C0A-cu-8om" secondAttribute="bottom" constant="50" id="5nK-NU-YNT"/>
                 <constraint firstItem="C0A-cu-8om" firstAttribute="leading" secondItem="1F6-re-Wpm" secondAttribute="leading" constant="50" id="6wb-jO-IJK"/>
-                <constraint firstItem="C0A-cu-8om" firstAttribute="top" secondItem="1F6-re-Wpm" secondAttribute="top" id="C0p-sx-fhN"/>
+                <constraint firstItem="C0A-cu-8om" firstAttribute="top" secondItem="1F6-re-Wpm" secondAttribute="top" constant="50" id="C0p-sx-fhN"/>
                 <constraint firstAttribute="trailing" secondItem="C0A-cu-8om" secondAttribute="trailing" constant="50" id="U0p-Fc-VQl"/>
             </constraints>
             <connections>

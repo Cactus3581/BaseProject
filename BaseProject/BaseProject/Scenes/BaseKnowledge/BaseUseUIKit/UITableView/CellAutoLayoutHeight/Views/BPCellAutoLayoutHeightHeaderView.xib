@@ -16,8 +16,8 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXg-Zp-FkC">
-                    <rect key="frame" x="50" y="318.5" width="275" height="30"/>
-                    <state key="normal" title="我是header"/>
+                    <rect key="frame" x="50" y="30" width="275" height="607"/>
+                    <state key="normal" title="我是sectionHeader"/>
                     <connections>
                         <action selector="headerAction:" destination="Tyv-XZ-c6m" eventType="touchUpInside" id="QTZ-Aj-frj"/>
                     </connections>
@@ -25,9 +25,9 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="OXg-Zp-FkC" secondAttribute="bottom" constant="30" id="5Ic-JB-R5u"/>
                 <constraint firstItem="OXg-Zp-FkC" firstAttribute="leading" secondItem="Tyv-XZ-c6m" secondAttribute="leading" constant="50" id="8ue-Hf-Taa"/>
-                <constraint firstItem="OXg-Zp-FkC" firstAttribute="centerY" secondItem="Tyv-XZ-c6m" secondAttribute="centerY" id="Kx3-zh-Cfi"/>
-                <constraint firstItem="OXg-Zp-FkC" firstAttribute="centerX" secondItem="Tyv-XZ-c6m" secondAttribute="centerX" id="pAO-K0-SAB"/>
+                <constraint firstItem="OXg-Zp-FkC" firstAttribute="top" secondItem="Tyv-XZ-c6m" secondAttribute="top" constant="30" id="exI-Be-tDj"/>
                 <constraint firstAttribute="trailing" secondItem="OXg-Zp-FkC" secondAttribute="trailing" constant="50" id="uai-xE-Dht"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

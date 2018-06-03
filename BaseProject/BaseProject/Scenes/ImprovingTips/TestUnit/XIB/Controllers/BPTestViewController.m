@@ -38,13 +38,13 @@ static CGFloat cellH = 50;
     
     if (kiOS11) {
         [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self.view);
+            make.leading.trailing.equalTo(self.view);
             make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
             make.height.mas_equalTo(49);
         }];
     }else {
         [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.bottom.equalTo(self.view);
+            make.leading.trailing.bottom.equalTo(self.view);
             make.height.mas_equalTo(49);
         }];
     }
@@ -52,7 +52,7 @@ static CGFloat cellH = 50;
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.equalTo(self.view);
+        make.top.leading.trailing.equalTo(self.view);
         make.bottom.equalTo(self.bottomView.mas_top);
     }];
 }

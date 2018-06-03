@@ -54,8 +54,8 @@
     rightView.backgroundColor = [UIColor blueColor];
     
     [leftView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(0);
-        make.right.mas_equalTo(self.view).offset(0);
+        make.leading.mas_equalTo(0);
+        make.trailing.mas_equalTo(self.view).offset(0);
         make.top.mas_equalTo(scrollView).offset(0);
         make.height.mas_equalTo(100);
     }];
@@ -92,7 +92,7 @@
     scrollView.contentOffset = CGPointMake(0, 0.0);
     
     //    [self.sliderShowView mas_makeConstraints:^(MASConstraintMaker *make) {
-    //        make.center.left.right.equalTo(self.view);
+    //        make.center.leading.trailing.equalTo(self.view);
     //        make.height.mas_equalTo(100);
     //    }];
 }

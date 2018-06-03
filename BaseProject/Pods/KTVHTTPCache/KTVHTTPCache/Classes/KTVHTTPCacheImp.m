@@ -34,9 +34,20 @@
     [[KTVHCHTTPServer server] stop];
 }
 
-+ (NSString *)proxyURLStringWithOriginalURLString:(NSString *)urlString
++ (NSURL *)proxyURLWithOriginalURLString:(NSString *)URLString
 {
-    return [[KTVHCHTTPServer server] URLStringWithOriginalURLString:urlString];
+    NSString * completeFilePath = [[KTVHCDataStorage storage] completeFilePathWithURLString:URLString];
+    if (completeFilePath.length > 0)
+    {
+        return [NSURL fileURLWithPath:completeFilePath];
+    }
+    NSString * proxyURLString = [[KTVHCHTTPServer server] URLStringWithOriginalURLString:URLString];
+    return [NSURL URLWithString:proxyURLString];
+}
+
++ (NSString *)proxyURLStringWithOriginalURLString:(NSString *)URLString
+{
+    return [[KTVHCHTTPServer server] URLStringWithOriginalURLString:URLString];
 }
 
 
@@ -94,16 +105,6 @@
     [[KTVHCDataStorage storage] deleteCacheWithURLString:URLString];
 }
 
-+ (void)cacheMergeAllCache
-{
-    [[KTVHCDataStorage storage] mergeAllCache];
-}
-
-+ (void)cacheMergeCacheWtihURLString:(NSString *)URLString
-{
-    [[KTVHCDataStorage storage] mergeCacheWithURLString:URLString];
-}
-
 
 #pragma mark - Data Stroage Filters
 
@@ -117,6 +118,19 @@
                                                              NSArray <NSString *> *))contentTypeFilterBlock
 {
     [KTVHCDataNetworkSource setContentTypeFilterBlock:contentTypeFilterBlock];
+}
+
+
+#pragma mark - Accept Content Types
+
++ (void)cacheSetDefaultAcceptContextTypes:(NSArray <NSString *> *)defaultAcceptContextTypes
+{
+    [KTVHCDataRequest setDefaultAcceptContextTypes:defaultAcceptContextTypes];
+}
+
++ (NSArray <NSString *> *)cacheDefaultAcceptContextTypes
+{
+    return [KTVHCDataRequest defaultAcceptContextTypes];
 }
 
 

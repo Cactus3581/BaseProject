@@ -27,7 +27,16 @@
 + (void)proxyStart:(NSError **)error;
 + (void)proxyStop;
 
-+ (NSString *)proxyURLStringWithOriginalURLString:(NSString *)urlString;
+/**
+ *  If the content of the URLString is finish cache, return the File URL for the content.
+ *  Otherwise return the URL for local server.
+ */
++ (NSURL *)proxyURLWithOriginalURLString:(NSString *)URLString;
+
+/**
+ *  Return the URL string for local server.
+ */
++ (NSString *)proxyURLStringWithOriginalURLString:(NSString *)URLString;
 
 
 #pragma mark - Data Storage
@@ -75,6 +84,17 @@
 + (void)cacheSetContentTypeFilterForResponseVerify:(BOOL(^)(NSString * URLString,
                                                             NSString * contentType,
                                                             NSArray <NSString *> * defaultAcceptContentTypes))contentTypeFilterBlock;
+
+
+#pragma mark - Accept Content Types
+
+/**
+ *  Default Accept Context Types
+ *
+ *  If 'cacheSetContentTypeFilterForResponseVerify' is set, this method will be invalid.
+ */
++ (void)cacheSetDefaultAcceptContextTypes:(NSArray <NSString *> *)defaultAcceptContextTypes;
++ (NSArray <NSString *> *)cacheDefaultAcceptContextTypes;
 
 
 #pragma mark - Download

@@ -60,22 +60,22 @@
     
     [self.leftImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(self.scrollView);
-        make.left.equalTo(self.scrollView);
+        make.leading.equalTo(self.scrollView);
         make.height.equalTo(self.scrollView);
         make.width.equalTo(self.scrollView);
     }];
 
     [self.centerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(self.leftImageView);
-        make.left.equalTo(self.leftImageView.mas_right);
+        make.leading.equalTo(self.leftImageView.mas_trailing);
         make.height.width.equalTo(self.leftImageView);
     }];
 
     [self.rightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(self.leftImageView);
-        make.left.equalTo(self.centerImageView.mas_right);
+        make.leading.equalTo(self.centerImageView.mas_trailing);
         make.height.width.equalTo(self.leftImageView);
-        make.right.equalTo(self.scrollView);
+        make.trailing.equalTo(self.scrollView);
     }];
     
     [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {

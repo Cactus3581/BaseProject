@@ -9,13 +9,13 @@
 #import "BPTestCollectionViewCell.h"
 #import "BPTestTableViewCell.h"
 #import "KSHeritageDictionaryListTagView.h"
-#import "BPTagLabelView.h"
+#import "BPTagAutoLayoutView.h"
 
 static NSString *identifier = @"BPTestTableViewCell";
 
 @interface BPTestCollectionViewCell()<UITableViewDelegate,UITableViewDataSource,KSHeritageDictionaryListTagViewDelegate>
 //@property (weak, nonatomic) KSHeritageDictionaryListTagView *tagView;
-@property (weak, nonatomic) BPTagLabelView *tagLabelView;
+@property (weak, nonatomic) BPTagAutoLayoutView *tagLabelView;
 
 @property (weak, nonatomic) UITableView *tableView;
 @property (nonatomic,strong) KSWordBookAuthorityDictionaryFirstCategoryModel *model;
@@ -70,7 +70,7 @@ static NSString *identifier = @"BPTestTableViewCell";
 //    self.tagView.delegate = self;
 
     
-    BPTagLabelView *tagLabelView = [[BPTagLabelView alloc] init];
+    BPTagAutoLayoutView *tagLabelView = [[BPTagAutoLayoutView alloc] init];
 
     [self addSubview:tagLabelView];
     tagLabelView.titlesArray = @[@"我爱你",@"可是你并不知道",@"你是不是傻逼",@"嗯",@"别说话",@"滚犊子",@"我去你妈的，再见～"];

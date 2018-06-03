@@ -58,22 +58,22 @@
     
     [leftView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(scrollView);
-        make.left.equalTo(scrollView);
+        make.leading.equalTo(scrollView);
         make.height.equalTo(scrollView);
         make.width.mas_equalTo(scrollView);
     }];
     
     [centerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(scrollView);
-        make.left.equalTo(leftView.mas_right);
+        make.leading.equalTo(leftView.mas_trailing);
         make.height.width.equalTo(leftView);
     }];
 
     [rightView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(scrollView);
-        make.right.equalTo(scrollView.mas_right);
+        make.trailing.equalTo(scrollView.mas_trailing);
 
-        make.left.equalTo(centerView.mas_right);
+        make.leading.equalTo(centerView.mas_trailing);
         make.height.width.equalTo(leftView);
     }];
 

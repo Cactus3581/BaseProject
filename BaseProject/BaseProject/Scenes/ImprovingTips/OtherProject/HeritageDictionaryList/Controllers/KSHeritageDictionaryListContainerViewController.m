@@ -165,13 +165,13 @@
     catergoryView.holdLastIndexAfterUpdate = NO;/**刷新后是否保持在原来的index上，默认NO，表示刷新后回到第0个item*/
     
     [catergoryView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.view);
+        make.leading.trailing.equalTo(self.view);
         make.top.equalTo(self.view).offset(64);
         make.height.equalTo(@40);
     }];
     
     [mainView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self.view);
+        make.leading.trailing.bottom.equalTo(self.view);
         make.top.equalTo(catergoryView.mas_bottom);
     }];
     [catergoryView bp_realoadData];

@@ -97,7 +97,7 @@
         _baseWaverView.backgroundColor = kLightGrayColor;
         [self.view addSubview:_baseWaverView];
         [_baseWaverView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.top.equalTo(self.view);
+            make.leading.trailing.top.equalTo(self.view);
             make.height.equalTo(@60);
         }];
     }
@@ -111,8 +111,8 @@
         _voiceWaveView.backgroundColor = kLightGrayColor;
         [self.view addSubview:_voiceWaveView];
         [_voiceWaveView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self.view);
-            make.top.right.equalTo(self.baseWaverView);
+            make.leading.trailing.equalTo(self.view);
+            make.top.trailing.equalTo(self.baseWaverView);
             make.height.equalTo(@60);
         }];
     }
@@ -126,8 +126,8 @@
         _shapeLayerPathWaverView.backgroundColor = kLightGrayColor;
         [self.view addSubview:_shapeLayerPathWaverView];
         [_shapeLayerPathWaverView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self.view);
-            make.top.right.equalTo(self.voiceWaveView);
+            make.leading.trailing.equalTo(self.view);
+            make.top.trailing.equalTo(self.voiceWaveView);
             make.height.equalTo(@60);
         }];
     }
@@ -141,8 +141,8 @@
         _drawWaverView.backgroundColor = kLightGrayColor;
         [self.view addSubview:_drawWaverView];
         [_drawWaverView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self.view);
-            make.top.right.equalTo(self.shapeLayerPathWaverView);
+            make.leading.trailing.equalTo(self.view);
+            make.top.trailing.equalTo(self.shapeLayerPathWaverView);
             make.height.equalTo(@60);
         }];
     }

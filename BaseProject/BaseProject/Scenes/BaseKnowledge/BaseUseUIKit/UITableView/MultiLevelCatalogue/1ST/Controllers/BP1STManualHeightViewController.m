@@ -132,12 +132,12 @@ static NSInteger limitNumber = 2;
         [self handleData];
         //动画播放完成之后
         if(screen.width > screen.height){
-            NSLog(@"横屏");
+            BPLog(@"横屏");
         }else{
-            NSLog(@"竖屏");
+            BPLog(@"竖屏");
         }
     } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        NSLog(@"动画播放完之后处理");
+        BPLog(@"动画播放完之后处理");
     }];
 }
 

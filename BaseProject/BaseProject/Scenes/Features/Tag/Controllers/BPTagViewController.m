@@ -7,12 +7,16 @@
 //
 
 #import "BPTagViewController.h"
-#import "BPTagLabelView.h"
+#import "BPTagAutoLayoutView.h"
 #import "BPTagCollectionView.h"
+#import "BPTagFrameView.h"
+#import "UIView+BPAdd.h"
 
-@interface BPTagViewController ()<BPTagLabelViewDelegate,BPTagCollectionViewDelegate>
-@property (weak, nonatomic) BPTagLabelView *tagLabelView;
+@interface BPTagViewController ()<BPTagAutoLayoutViewDelegate,BPTagCollectionViewDelegate>
+@property (weak, nonatomic) BPTagAutoLayoutView *tagLabelView;
 @property (weak, nonatomic) BPTagCollectionView *tagCollectionView;
+@property (nonatomic,weak) BPTagFrameView *autoresizingView;
+
 @end
 
 @implementation BPTagViewController
@@ -29,6 +33,25 @@
     [super viewDidLoad];
     [self configTagLabelView];
     [self configTagCollectionView];
+    [self configTagFrameView];
+}
+
+- (void)configTagFrameView {
+    BPTagFrameView *autoresizingView = [[BPTagFrameView alloc] init];
+    _autoresizingView = autoresizingView;
+    [self.view addSubview:autoresizingView];
+    autoresizingView.backgroundColor = kLightGrayColor;
+    autoresizingView.titlesArray = @[@"objective-c",@"swift",@"java",@"C++",@"python",@"php",@"html5",@"我是要成为全栈的人"];
+    autoresizingView.bounds = CGRectMake(0, 0, kScreenWidth-50, autoresizingView.height);
+    autoresizingView.center = self.view.center;
+    //    [autoresizingView mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        autoresizingView.leading.trailing.equalTo(self.view);
+    //        make.top.equalTo((self.view)).offset(300);
+    //    }];
+    //    [self.view layoutIfNeeded];
+    //    [autoresizingView layoutIfNeeded];
+    //    BPLog(@"size = %@",NSStringFromCGSize(size));
+    
 }
 
 - (void)configTagCollectionView {
@@ -58,7 +81,7 @@
 }
 
 - (void)configTagLabelView {
-    BPTagLabelView *tagLabelView = [[BPTagLabelView alloc] init];
+    BPTagAutoLayoutView *tagLabelView = [[BPTagAutoLayoutView alloc] init];
     [self.view addSubview:tagLabelView];
     tagLabelView.delegate = self;
     tagLabelView.backgroundColor = kLightGrayColor;    
@@ -70,7 +93,7 @@
     self.tagLabelView = tagLabelView;
 }
 
-- (void)tagLabelView:(BPTagLabelView *)tagLabelView didSelectRowAtIndex:(NSInteger)index {
+- (void)tagLabelView:(BPTagAutoLayoutView *)tagLabelView didSelectRowAtIndex:(NSInteger)index {
     BPLog(@"点击了第%ld个",index);
 }
 

@@ -62,7 +62,7 @@
 #endif
 
 #ifndef kAppDelegate
-#define kAppDelegate        (BPAppDelegate *)[[UIApplication sharedApplication] delegate]
+#define kAppDelegate        ((BPAppDelegate *)[[UIApplication sharedApplication] delegate])
 #endif
 
 //APP版本号

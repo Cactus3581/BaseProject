@@ -8,6 +8,10 @@
 
 #import "BPBaseViewController.h"
 
+/*
+ iOS 6 系统自动cell高度
+ */
+
 @interface BP2NDCellAutoLayoutHeightViewController : BPBaseViewController
 
 @end

@@ -52,14 +52,14 @@ static CGFloat paletteViewHeight = 100.0f;
     if (kiOS11) {
         [self.paletteView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(paletteViewHeight);
-            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
-            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+            make.leading.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+            make.trailing.equalTo(self.view.mas_safeAreaLayoutGuideRight);
             make.bottom.equalTo(self.view.mas_bottom);
         }];
     }else {
         [self.paletteView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(paletteViewHeight);
-            make.left.right.equalTo(self.view);
+            make.leading.trailing.equalTo(self.view);
             make.bottom.equalTo(self.view.mas_bottom);
         }];
     }
@@ -106,13 +106,13 @@ static CGFloat paletteViewHeight = 100.0f;
     }];
     
     [_chooseImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.view);
+        make.leading.trailing.equalTo(self.view);
         make.height.mas_equalTo(100);
         make.top.equalTo(_chooseImageBtn).offset(50);
     }];
     
     [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.view);
+        make.leading.trailing.equalTo(self.view);
         make.bottom.equalTo(self.view);
         make.top.equalTo(_chooseImageView.mas_bottom).offset(50);
     }];

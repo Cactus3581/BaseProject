@@ -43,7 +43,7 @@ static NSString *cellIdentifier = @"BPBaseTableViewCell";
     songNameLabel.numberOfLines = 0;
     [self.contentView addSubview:songNameLabel];
     [songNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(widthRatio(10));
+        make.leading.equalTo(self).offset(widthRatio(10));
         make.top.equalTo(self).offset(widthRatio(2.5));
     }];
     
@@ -51,7 +51,7 @@ static NSString *cellIdentifier = @"BPBaseTableViewCell";
     _detailLabel = artistLabel;
     [self.contentView addSubview:artistLabel];
     [artistLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(songNameLabel);
+        make.leading.equalTo(songNameLabel);
         make.top.equalTo(songNameLabel.mas_bottom).offset(widthRatio(2.5));
     }];
     

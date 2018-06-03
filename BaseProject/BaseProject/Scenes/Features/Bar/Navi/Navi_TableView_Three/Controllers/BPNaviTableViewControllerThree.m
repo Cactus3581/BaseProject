@@ -52,8 +52,8 @@
     // 设置展示图片的约束
     [_scaleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(0);
-        make.left.equalTo(self.view.mas_left);
-        make.right.equalTo(self.view.mas_right);
+        make.leading.equalTo(self.view.mas_leading);
+        make.trailing.equalTo(self.view.mas_trailing);
         make.height.mas_equalTo(kHeardH);
     }];
     
