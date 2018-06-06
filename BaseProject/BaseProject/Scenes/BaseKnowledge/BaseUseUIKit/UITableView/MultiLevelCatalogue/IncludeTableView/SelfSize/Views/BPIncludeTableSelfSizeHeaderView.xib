@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="NPk-o6-Jc0" customClass="BPIncludeTableSelfSizeHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="533" height="186"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="1." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gn-9J-MND">
+                    <rect key="frame" x="10" y="25" width="20" height="20.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="2nB-6h-gWT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcH-1C-14o">
+                    <rect key="frame" x="30" y="25" width="493" height="161"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="FcH-1C-14o" firstAttribute="leading" secondItem="4Gn-9J-MND" secondAttribute="trailing" id="1kt-Nz-pZP"/>
+                <constraint firstAttribute="trailing" secondItem="FcH-1C-14o" secondAttribute="trailing" constant="10" id="CHH-Xu-R9z"/>
+                <constraint firstItem="FcH-1C-14o" firstAttribute="top" secondItem="NPk-o6-Jc0" secondAttribute="top" constant="25" id="TOD-Hw-P3X"/>
+                <constraint firstItem="4Gn-9J-MND" firstAttribute="top" secondItem="NPk-o6-Jc0" secondAttribute="top" constant="25" id="pTw-ko-vhL"/>
+                <constraint firstAttribute="bottom" secondItem="FcH-1C-14o" secondAttribute="bottom" id="yOV-l4-4wG"/>
+                <constraint firstItem="4Gn-9J-MND" firstAttribute="leading" secondItem="NPk-o6-Jc0" secondAttribute="leading" constant="10" id="ylv-9z-L1p"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="numberConstraint" destination="pTw-ko-vhL" id="oZ8-fS-d0K"/>
+                <outlet property="numberLabel" destination="4Gn-9J-MND" id="gzA-Ix-1Ub"/>
+                <outlet property="textHeaderLabel" destination="FcH-1C-14o" id="Lmc-zR-MWn"/>
+                <outlet property="topConstaint" destination="TOD-Hw-P3X" id="DRi-5z-qao"/>
+            </connections>
+            <point key="canvasLocation" x="87.5" y="-187"/>
+        </view>
+    </objects>
+</document>
