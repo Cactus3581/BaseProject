@@ -9,16 +9,15 @@
 #import "BPIncludeTableManualHeightHelper.h"
 #import "BPMultiLevelCatalogueModel.h"
 #import "BPMultiLevelCatalogueModel+BPHeight.h"
-
 #import "MJExtension.h"
 
 static CGFloat smallCellV = 20.0f;//top=15 + middle=5
-static CGFloat smallHeadV = 9.0f;//top=10
+static CGFloat smallHeadV = 9.0f;//top=9
 static CGFloat bigHeadV = 25.0f;//top=25
 
-static CGFloat smallCellH = 75.0f;//35+15+10+15
-static CGFloat smallHeadH = 50.0f;//35+15
-static CGFloat bigHeadH = 50.0f;//15+20+15
+static CGFloat smallCellH = 65.0f;
+static CGFloat smallHeadH = 40.0f;
+static CGFloat bigHeadH = 40.0f;
 
 static CGFloat font = 15.0f;
 
@@ -38,11 +37,11 @@ static NSInteger limitNumber = 2;
 }
 
 + (void)handleData:(BPMultiLevelCatalogueModel *)data {
-    [data.array enumerateObjectsUsingBlock:^(BPMultiLevelCatalogueModel1st *model, NSUInteger idx, BOOL * _Nonnull stop) {
-        [model.array_1st enumerateObjectsUsingBlock:^(BPMultiLevelCatalogueModel2nd *model2, NSUInteger idx, BOOL * _Nonnull stop) {
+    [data.array enumerateObjectsUsingBlock:^(BPMultiLevelCatalogueModel1st *model, NSUInteger idx1, BOOL * _Nonnull stop) {
+        [model.array_1st enumerateObjectsUsingBlock:^(BPMultiLevelCatalogueModel2nd *model2, NSUInteger idx2, BOOL * _Nonnull stop) {
+            
             __block CGFloat smallHeight = 0.f;
-        
-            [model2.array_2nd enumerateObjectsUsingBlock:^(BPMultiLevelCatalogueModel3rd *model3, NSUInteger idx, BOOL * _Nonnull stop) {
+            [model2.array_2nd enumerateObjectsUsingBlock:^(BPMultiLevelCatalogueModel3rd *model3, NSUInteger idx3, BOOL * _Nonnull stop) {
                 model3.cellHeight = [BPIncludeTableManualHeightHelper getHeightWithString:BPValidateString(model3.title_3rd) font:[UIFont systemFontOfSize:font] width:kScreenWidth-smallCellH lineSpace:1 kern:0] + [BPIncludeTableManualHeightHelper getHeightWithString:BPValidateString(model3.brief_3rd) font:[UIFont systemFontOfSize:font] width:kScreenWidth-smallCellH lineSpace:4 kern:0];
                 if (model3.cellHeight > 0.01) {
                     model3.cellHeight += smallCellV;
@@ -68,9 +67,9 @@ static NSInteger limitNumber = 2;
             }
         }];
         NSString *title_1st  = BPValidateString(model.title_1st);
-        UIFont *textFont = [UIFont systemFontOfSize:font weight:UIFontWeightMedium];
+        UIFont *textFont = [UIFont fontOfSize:font weight:UIFontWeightMedium];
         model.headerHeight = [BPIncludeTableManualHeightHelper getHeightWithString:title_1st font:textFont width:kScreenWidth-bigHeadH lineSpace:1 kern:0];
-        if (model.headerHeight > 0.01 && idx > 0) {
+        if (model.headerHeight > 0.01 && idx1 > 0) {
             model.headerHeight += bigHeadV;
         }
     }];

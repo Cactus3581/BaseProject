@@ -11,42 +11,6 @@
 
 @implementation BPMultiLevelCatalogueModelDataSource
 
-+ (BPMultiLevelCatalogueModel *)getData {
-    BPMultiLevelCatalogueModel *dictionaryPhrase = [[BPMultiLevelCatalogueModel alloc] init];
-    
-    NSArray *array1 = @[@"all the go",@"as fra as it goes",@"as go",@"from the word go",@"get someone going",@"go figure!"];
-    NSArray *array2 = @[@"考虑到它的局限性(在找理由表扬某事物时)",@"与一般的相比"];
-    NSArray *array3 = @[@"to travel or move to a place that is away from where you are or where you live",@"There’s nothing more we can do here. Let’s go home "];
-    
-    NSArray *array4 = @[@"十英里路我们用了一个多小时。",@"这车开得太快了。"];
-
-    NSMutableArray *muArray1 = @[].mutableCopy;
-    [array1 enumerateObjectsUsingBlock:^(NSString *title, NSUInteger idx1, BOOL * _Nonnull stop) {
-        BPMultiLevelCatalogueModel1st *model = [[BPMultiLevelCatalogueModel1st alloc] init];
-        model.title_1st = title;
-        NSMutableArray *tagArray = @[].mutableCopy;
-        [array2 enumerateObjectsUsingBlock:^(NSString *title, NSUInteger idx2, BOOL * _Nonnull stop) {
-            BPMultiLevelCatalogueModel2nd *tagModel = [[BPMultiLevelCatalogueModel2nd alloc] init];
-            tagModel.title_2nd = title;
-            tagModel.title_2nd = title;
-            NSMutableArray *cellArray = @[].mutableCopy;
-            [array3 enumerateObjectsUsingBlock:^(NSString *title, NSUInteger idx3, BOOL * _Nonnull stop) {
-                BPMultiLevelCatalogueModel3rd *cellModel = [[BPMultiLevelCatalogueModel3rd alloc] init];
-                cellModel.title_3rd = title;
-                cellModel.brief_3rd = array4[idx3];
-                [cellArray addObject:cellModel];
-            }];
-            tagModel.array_2nd = cellArray;
-            [tagArray addObject:tagModel];
-        }];
-        model.array_1st = tagArray;
-        [muArray1 addObject:model];
-    }];
-    
-    dictionaryPhrase.array = muArray1.copy;
-    return dictionaryPhrase;
-}
-
 + (BPMultiLevelCatalogueModel *)handleData {
     NSDictionary *dic = @{
                           @"array":@[

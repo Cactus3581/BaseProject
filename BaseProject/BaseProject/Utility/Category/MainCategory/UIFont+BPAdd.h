@@ -46,6 +46,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable UIFont *)bp_loadFontFromData:(NSData *)data;
 + (BOOL)bp_unloadFontFromData:(UIFont *)font;
 
++ (UIFont *)fontOfSize:(CGFloat)fontSize weight:(UIFontWeight)weight;
+
 @end
 
 NS_ASSUME_NONNULL_END

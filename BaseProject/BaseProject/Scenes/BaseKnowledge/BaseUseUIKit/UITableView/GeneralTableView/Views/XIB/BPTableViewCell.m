@@ -18,7 +18,7 @@
     [super awakeFromNib];
     //self.selectionStyle = UITableViewCellSelectionStyleNone;//取消选中状态方法
     self.backgroundColor = kYellowColor;
-    self.contentView.backgroundColor = kPurpleColor;
+    self.contentView.backgroundColor = kYellowColor;
     self.backgroundView = [[UIView alloc] initWithFrame:self.contentView.bounds];
 
 }

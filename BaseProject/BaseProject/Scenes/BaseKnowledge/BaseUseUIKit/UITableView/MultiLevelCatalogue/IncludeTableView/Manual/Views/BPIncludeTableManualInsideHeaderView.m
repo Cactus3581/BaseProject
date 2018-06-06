@@ -1,18 +1,18 @@
 //
-//  KSPhraseCardInsideHeaderView.m
+//  BPIncludeTableManualInsideHeaderView.m
 //  PowerWord7
 //
 //  Created by xiaruzhen on 2018/4/11.
 //  Copyright © 2018年 Kingsoft. All rights reserved.
 //
 
-#import "KSPhraseCardInsideHeaderView.h"
+#import "BPIncludeTableManualInsideHeaderView.h"
 
-@interface KSPhraseCardInsideHeaderView()
+@interface BPIncludeTableManualInsideHeaderView()
 @property (weak, nonatomic) IBOutlet UILabel *textSectionLabel;
 @end
 
-@implementation KSPhraseCardInsideHeaderView
+@implementation BPIncludeTableManualInsideHeaderView
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -35,8 +35,8 @@
     return self;
 }
 
-- (void)setModel:(KSDictionarySubItemPhraseJx *)model section:(NSInteger)section {
-    NSString *str = BPValidateString(model.jx_cn_mean);
+- (void)setModel:(BPMultiLevelCatalogueModel2nd *)model section:(NSInteger)section {
+    NSString *str = BPValidateString(model.title_2nd);
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:str];
     [string addAttribute:NSForegroundColorAttributeName value:kLightGrayColor range:NSMakeRange(0, str.length)];
     [string addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(0, str.length)];

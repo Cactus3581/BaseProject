@@ -15,6 +15,7 @@
 #import "BPAppTool.h"
 #import "Masonry.h"
 #import "UIView+BPAdd.h"
+#import "UIFont+BPAdd.h"
 #endif
 
 

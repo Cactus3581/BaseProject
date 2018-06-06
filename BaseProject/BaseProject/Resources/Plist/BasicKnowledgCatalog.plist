@@ -561,7 +561,7 @@
 										<key>title</key>
 										<string>手动计算</string>
 										<key>fileName</key>
-										<string>BP2NDCellAutoLayoutHeightViewController</string>
+										<string>BPIncludeTableManualController</string>
 										<key>briefIntro</key>
 										<string></string>
 									</dict>

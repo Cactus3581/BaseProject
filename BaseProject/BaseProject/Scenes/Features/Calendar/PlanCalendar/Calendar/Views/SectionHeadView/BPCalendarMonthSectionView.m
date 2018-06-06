@@ -37,13 +37,7 @@
     UILabel *label = [[UILabel alloc] init];
     label.textColor = kBlackColor;
     label.textAlignment = NSTextAlignmentCenter;
-    UIFont *textFont;
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.2) {
-        textFont = [UIFont systemFontOfSize:16];
-    } else {
-        textFont = [UIFont systemFontOfSize:16 weight:UIFontWeightHeavy];
-    }
-    label.font = textFont;
+    label.font = [UIFont fontOfSize:16 weight:UIFontWeightHeavy];
     self.label = label;
     [self addSubview:label];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {

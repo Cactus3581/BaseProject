@@ -253,19 +253,9 @@
 		0161D38020C29AED009D1B9C /* BPDrawView_Layer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161D37A20C29AED009D1B9C /* BPDrawView_Layer.m */; };
 		0161D38620C2A6D5009D1B9C /* BPIntrinsicContentSizeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161D38320C2A6D4009D1B9C /* BPIntrinsicContentSizeLabel.m */; };
 		0161D38720C2A6D5009D1B9C /* BPViewSizeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161D38420C2A6D4009D1B9C /* BPViewSizeController.m */; };
-		0161D39C20C2E109009D1B9C /* KSDictionaryPhrase+KSCardHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161D38B20C2E109009D1B9C /* KSDictionaryPhrase+KSCardHeight.m */; };
-		0161D39E20C2E109009D1B9C /* KSPhraseCardInsideHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161D39220C2E109009D1B9C /* KSPhraseCardInsideHeaderView.m */; };
-		0161D39F20C2E109009D1B9C /* KSPhraseCardHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161D39320C2E109009D1B9C /* KSPhraseCardHeaderView.m */; };
-		0161D3A020C2E109009D1B9C /* KSPhraseCardInsideHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0161D39520C2E109009D1B9C /* KSPhraseCardInsideHeaderView.xib */; };
-		0161D3A120C2E109009D1B9C /* KSPhraseCardInsideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0161D39620C2E109009D1B9C /* KSPhraseCardInsideTableViewCell.xib */; };
-		0161D3A220C2E109009D1B9C /* KSPhraseCardInsideTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161D39720C2E109009D1B9C /* KSPhraseCardInsideTableViewCell.m */; };
-		0161D3A320C2E109009D1B9C /* KSPhraseCardHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161D39820C2E109009D1B9C /* KSPhraseCardHeadCell.m */; };
-		0161D3A420C2E109009D1B9C /* KSPhraseCardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0161D39A20C2E109009D1B9C /* KSPhraseCardHeaderView.xib */; };
-		0161D3A820C2E139009D1B9C /* KSPhraseCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161D3A520C2E138009D1B9C /* KSPhraseCardViewController.m */; };
-		0161D3A920C2E139009D1B9C /* KSPhraseCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0161D3A720C2E139009D1B9C /* KSPhraseCardViewController.xib */; };
-		0161D3AC20C2E341009D1B9C /* KSDictionaryPhrase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161D3AB20C2E341009D1B9C /* KSDictionaryPhrase.m */; };
 		016760CF2060F94400F82ACE /* BPNSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016760CE2060F94400F82ACE /* BPNSOperationViewController.m */; };
 		016760D720610F3900F82ACE /* BPSingleThreadTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 016760D620610F3900F82ACE /* BPSingleThreadTimer.m */; };
+		0168850220C7F46A00069FF3 /* BPIncludeTableAutoLayoutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168850120C7F46A00069FF3 /* BPIncludeTableAutoLayoutController.m */; };
 		0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */; };
 		0168F3872035E66900D63D83 /* BPBaseKnowledgeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168F3862035E66900D63D83 /* BPBaseKnowledgeViewModel.m */; };
 		0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0168F3882035EC0B00D63D83 /* ImprovingTipCatalog.plist */; };
@@ -469,6 +459,14 @@
 		01D2F5B12088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D2F5B02088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib */; };
 		01D2F5F92088E63F00D21B20 /* NSAttributedString+BPMarkColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5F82088E63F00D21B20 /* NSAttributedString+BPMarkColor.m */; };
 		01D2F5FC2088E72800D21B20 /* NSString+BPMarkColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5FB2088E72800D21B20 /* NSString+BPMarkColor.m */; };
+		01D6FBA520C80ED900AD8A6E /* BPIncludeTableManualController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D6FBA420C80ED900AD8A6E /* BPIncludeTableManualController.m */; };
+		01D6FBB120C80F7E00AD8A6E /* BPIncludeTableManualHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D6FBA620C80F7A00AD8A6E /* BPIncludeTableManualHeaderView.xib */; };
+		01D6FBB220C80F7E00AD8A6E /* BPIncludeTableManualInsideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D6FBA720C80F7A00AD8A6E /* BPIncludeTableManualInsideTableViewCell.xib */; };
+		01D6FBB320C80F7E00AD8A6E /* BPIncludeTableManualHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D6FBA820C80F7B00AD8A6E /* BPIncludeTableManualHeaderView.m */; };
+		01D6FBB420C80F7E00AD8A6E /* BPIncludeTableManualInsideHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D6FBAB20C80F7C00AD8A6E /* BPIncludeTableManualInsideHeaderView.m */; };
+		01D6FBB520C80F7E00AD8A6E /* BPIncludeTableManualInsideTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D6FBAC20C80F7D00AD8A6E /* BPIncludeTableManualInsideTableViewCell.m */; };
+		01D6FBB620C80F7E00AD8A6E /* BPIncludeTableManualHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D6FBAE20C80F7D00AD8A6E /* BPIncludeTableManualHeadCell.m */; };
+		01D6FBB720C80F7E00AD8A6E /* BPIncludeTableManualInsideHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D6FBB020C80F7E00AD8A6E /* BPIncludeTableManualInsideHeaderView.xib */; };
 		01DF316E1FDD3A0900B8A955 /* CAShapeLayer+BPUIBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF31611FDD3A0800B8A955 /* CAShapeLayer+BPUIBezierPath.m */; };
 		01DF316F1FDD3A0900B8A955 /* CALayer+BPBorderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF31641FDD3A0800B8A955 /* CALayer+BPBorderColor.m */; };
 		01DF31701FDD3A0900B8A955 /* CAMediaTimingFunction+BPAdditionalEquations.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF31671FDD3A0800B8A955 /* CAMediaTimingFunction+BPAdditionalEquations.m */; };
@@ -1136,28 +1134,12 @@
 		0161D38320C2A6D4009D1B9C /* BPIntrinsicContentSizeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPIntrinsicContentSizeLabel.m; sourceTree = "<group>"; };
 		0161D38420C2A6D4009D1B9C /* BPViewSizeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPViewSizeController.m; sourceTree = "<group>"; };
 		0161D38520C2A6D4009D1B9C /* BPIntrinsicContentSizeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPIntrinsicContentSizeLabel.h; sourceTree = "<group>"; };
-		0161D38B20C2E109009D1B9C /* KSDictionaryPhrase+KSCardHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KSDictionaryPhrase+KSCardHeight.m"; sourceTree = "<group>"; };
-		0161D38E20C2E109009D1B9C /* KSDictionaryPhrase+KSCardHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KSDictionaryPhrase+KSCardHeight.h"; sourceTree = "<group>"; };
-		0161D39120C2E109009D1B9C /* KSPhraseCardInsideTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPhraseCardInsideTableViewCell.h; sourceTree = "<group>"; };
-		0161D39220C2E109009D1B9C /* KSPhraseCardInsideHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPhraseCardInsideHeaderView.m; sourceTree = "<group>"; };
-		0161D39320C2E109009D1B9C /* KSPhraseCardHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPhraseCardHeaderView.m; sourceTree = "<group>"; };
-		0161D39420C2E109009D1B9C /* KSPhraseCardHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPhraseCardHeadCell.h; sourceTree = "<group>"; };
-		0161D39520C2E109009D1B9C /* KSPhraseCardInsideHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSPhraseCardInsideHeaderView.xib; sourceTree = "<group>"; };
-		0161D39620C2E109009D1B9C /* KSPhraseCardInsideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSPhraseCardInsideTableViewCell.xib; sourceTree = "<group>"; };
-		0161D39720C2E109009D1B9C /* KSPhraseCardInsideTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPhraseCardInsideTableViewCell.m; sourceTree = "<group>"; };
-		0161D39820C2E109009D1B9C /* KSPhraseCardHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPhraseCardHeadCell.m; sourceTree = "<group>"; };
-		0161D39920C2E109009D1B9C /* KSPhraseCardHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPhraseCardHeaderView.h; sourceTree = "<group>"; };
-		0161D39A20C2E109009D1B9C /* KSPhraseCardHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSPhraseCardHeaderView.xib; sourceTree = "<group>"; };
-		0161D39B20C2E109009D1B9C /* KSPhraseCardInsideHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPhraseCardInsideHeaderView.h; sourceTree = "<group>"; };
-		0161D3A520C2E138009D1B9C /* KSPhraseCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSPhraseCardViewController.m; sourceTree = "<group>"; };
-		0161D3A620C2E138009D1B9C /* KSPhraseCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSPhraseCardViewController.h; sourceTree = "<group>"; };
-		0161D3A720C2E139009D1B9C /* KSPhraseCardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSPhraseCardViewController.xib; sourceTree = "<group>"; };
-		0161D3AA20C2E340009D1B9C /* KSDictionaryPhrase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSDictionaryPhrase.h; sourceTree = "<group>"; };
-		0161D3AB20C2E341009D1B9C /* KSDictionaryPhrase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSDictionaryPhrase.m; sourceTree = "<group>"; };
 		016760CD2060F94400F82ACE /* BPNSOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNSOperationViewController.h; sourceTree = "<group>"; };
 		016760CE2060F94400F82ACE /* BPNSOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNSOperationViewController.m; sourceTree = "<group>"; };
 		016760D320610EB200F82ACE /* BPSingleThreadTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPSingleThreadTimer.h; sourceTree = "<group>"; };
 		016760D620610F3900F82ACE /* BPSingleThreadTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPSingleThreadTimer.m; sourceTree = "<group>"; };
+		0168850020C7F46A00069FF3 /* BPIncludeTableAutoLayoutController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPIncludeTableAutoLayoutController.h; sourceTree = "<group>"; };
+		0168850120C7F46A00069FF3 /* BPIncludeTableAutoLayoutController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPIncludeTableAutoLayoutController.m; sourceTree = "<group>"; };
 		0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BasicKnowledgCatalog.plist; sourceTree = "<group>"; };
 		0168F3852035E66900D63D83 /* BPBaseKnowledgeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseKnowledgeViewModel.h; sourceTree = "<group>"; };
 		0168F3862035E66900D63D83 /* BPBaseKnowledgeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseKnowledgeViewModel.m; sourceTree = "<group>"; };
@@ -1561,6 +1543,19 @@
 		01D2F5FB2088E72800D21B20 /* NSString+BPMarkColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BPMarkColor.m"; sourceTree = "<group>"; };
 		01D509E01FDD900400A8B1B4 /* BPAppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppMacro.h; sourceTree = "<group>"; };
 		01D509E21FDD909C00A8B1B4 /* BPAppTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppTool.h; sourceTree = "<group>"; };
+		01D6FBA320C80ED900AD8A6E /* BPIncludeTableManualController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPIncludeTableManualController.h; sourceTree = "<group>"; };
+		01D6FBA420C80ED900AD8A6E /* BPIncludeTableManualController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPIncludeTableManualController.m; sourceTree = "<group>"; };
+		01D6FBA620C80F7A00AD8A6E /* BPIncludeTableManualHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPIncludeTableManualHeaderView.xib; sourceTree = "<group>"; };
+		01D6FBA720C80F7A00AD8A6E /* BPIncludeTableManualInsideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPIncludeTableManualInsideTableViewCell.xib; sourceTree = "<group>"; };
+		01D6FBA820C80F7B00AD8A6E /* BPIncludeTableManualHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPIncludeTableManualHeaderView.m; sourceTree = "<group>"; };
+		01D6FBA920C80F7B00AD8A6E /* BPIncludeTableManualInsideTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPIncludeTableManualInsideTableViewCell.h; sourceTree = "<group>"; };
+		01D6FBAA20C80F7C00AD8A6E /* BPIncludeTableManualInsideHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPIncludeTableManualInsideHeaderView.h; sourceTree = "<group>"; };
+		01D6FBAB20C80F7C00AD8A6E /* BPIncludeTableManualInsideHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPIncludeTableManualInsideHeaderView.m; sourceTree = "<group>"; };
+		01D6FBAC20C80F7D00AD8A6E /* BPIncludeTableManualInsideTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPIncludeTableManualInsideTableViewCell.m; sourceTree = "<group>"; };
+		01D6FBAD20C80F7D00AD8A6E /* BPIncludeTableManualHeadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPIncludeTableManualHeadCell.h; sourceTree = "<group>"; };
+		01D6FBAE20C80F7D00AD8A6E /* BPIncludeTableManualHeadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPIncludeTableManualHeadCell.m; sourceTree = "<group>"; };
+		01D6FBAF20C80F7D00AD8A6E /* BPIncludeTableManualHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPIncludeTableManualHeaderView.h; sourceTree = "<group>"; };
+		01D6FBB020C80F7E00AD8A6E /* BPIncludeTableManualInsideHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPIncludeTableManualInsideHeaderView.xib; sourceTree = "<group>"; };
 		01DF31581FDD38EA00B8A955 /* BPUIKitCatergory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPUIKitCatergory.h; sourceTree = "<group>"; };
 		01DF31591FDD390700B8A955 /* BPFoundationCatergory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPFoundationCatergory.h; sourceTree = "<group>"; };
 		01DF315A1FDD392100B8A955 /* BPQuartzCoreCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPQuartzCoreCategory.h; sourceTree = "<group>"; };
@@ -3764,7 +3759,6 @@
 			children = (
 				013ED91020C7DD9E00A83E7F /* Controllers */,
 				013ED91120C7DD9F00A83E7F /* Models */,
-				013ED91320C7DD9F00A83E7F /* ViewModels */,
 				013ED91220C7DD9F00A83E7F /* Views */,
 			);
 			path = Manual;
@@ -3813,6 +3807,10 @@
 		013ED91020C7DD9E00A83E7F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0168850020C7F46A00069FF3 /* BPIncludeTableAutoLayoutController.h */,
+				0168850120C7F46A00069FF3 /* BPIncludeTableAutoLayoutController.m */,
+				01D6FBA320C80ED900AD8A6E /* BPIncludeTableManualController.h */,
+				01D6FBA420C80ED900AD8A6E /* BPIncludeTableManualController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -3829,15 +3827,19 @@
 		013ED91220C7DD9F00A83E7F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				01D6FBAD20C80F7D00AD8A6E /* BPIncludeTableManualHeadCell.h */,
+				01D6FBAE20C80F7D00AD8A6E /* BPIncludeTableManualHeadCell.m */,
+				01D6FBAF20C80F7D00AD8A6E /* BPIncludeTableManualHeaderView.h */,
+				01D6FBA820C80F7B00AD8A6E /* BPIncludeTableManualHeaderView.m */,
+				01D6FBA620C80F7A00AD8A6E /* BPIncludeTableManualHeaderView.xib */,
+				01D6FBAA20C80F7C00AD8A6E /* BPIncludeTableManualInsideHeaderView.h */,
+				01D6FBAB20C80F7C00AD8A6E /* BPIncludeTableManualInsideHeaderView.m */,
+				01D6FBB020C80F7E00AD8A6E /* BPIncludeTableManualInsideHeaderView.xib */,
+				01D6FBA920C80F7B00AD8A6E /* BPIncludeTableManualInsideTableViewCell.h */,
+				01D6FBAC20C80F7D00AD8A6E /* BPIncludeTableManualInsideTableViewCell.m */,
+				01D6FBA720C80F7A00AD8A6E /* BPIncludeTableManualInsideTableViewCell.xib */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		013ED91320C7DD9F00A83E7F /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		013ED91720C7DE0300A83E7F /* Views */ = {
@@ -4280,55 +4282,6 @@
 				0161D38420C2A6D4009D1B9C /* BPViewSizeController.m */,
 			);
 			path = ViewSize;
-			sourceTree = "<group>";
-		};
-		0161D38820C2E109009D1B9C /* SearchResultPhrase */ = {
-			isa = PBXGroup;
-			children = (
-				0161D38A20C2E109009D1B9C /* Models */,
-				0161D38F20C2E109009D1B9C /* Controllers */,
-				0161D39020C2E109009D1B9C /* Views */,
-			);
-			path = SearchResultPhrase;
-			sourceTree = "<group>";
-		};
-		0161D38A20C2E109009D1B9C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				0161D3AA20C2E340009D1B9C /* KSDictionaryPhrase.h */,
-				0161D3AB20C2E341009D1B9C /* KSDictionaryPhrase.m */,
-				0161D38E20C2E109009D1B9C /* KSDictionaryPhrase+KSCardHeight.h */,
-				0161D38B20C2E109009D1B9C /* KSDictionaryPhrase+KSCardHeight.m */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		0161D38F20C2E109009D1B9C /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				0161D3A620C2E138009D1B9C /* KSPhraseCardViewController.h */,
-				0161D3A520C2E138009D1B9C /* KSPhraseCardViewController.m */,
-				0161D3A720C2E139009D1B9C /* KSPhraseCardViewController.xib */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		0161D39020C2E109009D1B9C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				0161D39420C2E109009D1B9C /* KSPhraseCardHeadCell.h */,
-				0161D39820C2E109009D1B9C /* KSPhraseCardHeadCell.m */,
-				0161D39920C2E109009D1B9C /* KSPhraseCardHeaderView.h */,
-				0161D39320C2E109009D1B9C /* KSPhraseCardHeaderView.m */,
-				0161D39A20C2E109009D1B9C /* KSPhraseCardHeaderView.xib */,
-				0161D39B20C2E109009D1B9C /* KSPhraseCardInsideHeaderView.h */,
-				0161D39220C2E109009D1B9C /* KSPhraseCardInsideHeaderView.m */,
-				0161D39520C2E109009D1B9C /* KSPhraseCardInsideHeaderView.xib */,
-				0161D39120C2E109009D1B9C /* KSPhraseCardInsideTableViewCell.h */,
-				0161D39720C2E109009D1B9C /* KSPhraseCardInsideTableViewCell.m */,
-				0161D39620C2E109009D1B9C /* KSPhraseCardInsideTableViewCell.xib */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		016760C62060F6D700F82ACE /* Cache */ = {
@@ -7359,7 +7312,6 @@
 		01F750A2209EDF7100C1F24C /* OtherProject */ = {
 			isa = PBXGroup;
 			children = (
-				0161D38820C2E109009D1B9C /* SearchResultPhrase */,
 				01FD5E3820A1989C00D9CD75 /* HeritageDictionaryList */,
 			);
 			path = OtherProject;
@@ -7631,8 +7583,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0161D3A020C2E109009D1B9C /* KSPhraseCardInsideHeaderView.xib in Resources */,
 				0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */,
+				01D6FBB720C80F7E00AD8A6E /* BPIncludeTableManualInsideHeaderView.xib in Resources */,
 				013519B520BC1E100010AEC2 /* BPXIBAutoLayoutProcessView.xib in Resources */,
 				01EF2C3320AD5AD100DF98FB /* KSHeritageDictionaryListContainerCollectionViewCell3.xib in Resources */,
 				011E8D9920B2F7BA00B04378 /* BPPlanCalendarSectionFooterView.xib in Resources */,
@@ -7657,28 +7609,27 @@
 				01A597A82085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.xib in Resources */,
 				013ED92F20C7DE0400A83E7F /* BPIncludeTableSelfSizeInsideHeaderView.xib in Resources */,
 				0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */,
+				01D6FBB220C80F7E00AD8A6E /* BPIncludeTableManualInsideTableViewCell.xib in Resources */,
 				01EF2C3920AD5AD100DF98FB /* KSHeritageDictionaryListContainerCollectionViewCell1.xib in Resources */,
 				01A1921E2004E61F005EE4CD /* BPCollectionViewCell.xib in Resources */,
 				01FD5E6B20A1989C00D9CD75 /* KSHeritageDictionaryListView.xib in Resources */,
 				01FD5E7220A1989C00D9CD75 /* KSHeritageDictionaryListTagView.xib in Resources */,
-				0161D3A120C2E109009D1B9C /* KSPhraseCardInsideTableViewCell.xib in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
 				0184BF831FD6DB2C00CB9AAD /* BPTest_XibViewController.xib in Resources */,
 				01EF2C3720AD5AD100DF98FB /* KSHeritageDictionaryListContainerCollectionViewCell4.xib in Resources */,
-				0161D3A420C2E109009D1B9C /* KSPhraseCardHeaderView.xib in Resources */,
 				01D2F5B12088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib in Resources */,
 				01EF2C3620AD5AD100DF98FB /* KSHeritageDictionaryListContainerCollectionViewCell2.xib in Resources */,
 				01F750AA209F216F00C1F24C /* BPTableViewCell.xib in Resources */,
 				01352FE31FD2DDA20011D65C /* FeatureCatalog.plist in Resources */,
 				013ED93020C7DE0400A83E7F /* BPIncludeTableSelfSizeInsideTableViewCell.xib in Resources */,
 				01FD5E6D20A1989C00D9CD75 /* KSHeritageDictionaryListTableViewCell.xib in Resources */,
-				0161D3A920C2E139009D1B9C /* KSPhraseCardViewController.xib in Resources */,
 				0137C761207C952700F6B6CE /* BPTextCompositionViewController.xib in Resources */,
 				01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */,
 				014ED0DD1FF0135000D2926C /* launchImage@3x.png in Resources */,
 				01A597AA2085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.xib in Resources */,
 				013ED90820C7DB3C00A83E7F /* BPIncludeTableSystemLayoutInsideTableViewCell.xib in Resources */,
 				01A1921F2004E61F005EE4CD /* BPCollectionReusableFootView.xib in Resources */,
+				01D6FBB120C80F7E00AD8A6E /* BPIncludeTableManualHeaderView.xib in Resources */,
 				01A192222004E61F005EE4CD /* BPCollectionReusableHeadView.xib in Resources */,
 				013ED90D20C7DB3C00A83E7F /* BPIncludeTableSystemLayoutInsideHeaderView.xib in Resources */,
 				01FD5E7320A1989C00D9CD75 /* KSHeritageDictionaryListTagCollectionViewCell.xib in Resources */,
@@ -7793,6 +7744,7 @@
 				0179070920011D9E00E5C360 /* BPBlockViewController.m in Sources */,
 				01F2CE8320AABF7000F1D701 /* DHScrollTabbarView.m in Sources */,
 				010DB7441FDD4D450099E66F /* UIImage+BPBetterFace.m in Sources */,
+				01D6FBA520C80ED900AD8A6E /* BPIncludeTableManualController.m in Sources */,
 				010DB75A1FDD4D450099E66F /* UIFont+BPTTF.m in Sources */,
 				01DF31C61FDD3A9100B8A955 /* NSURLConnection+BPSelfSigned.m in Sources */,
 				010DB7531FDD4D450099E66F /* UISearchBar+BPBlocks.m in Sources */,
@@ -7817,6 +7769,7 @@
 				010DB7941FDD4D640099E66F /* UIView+BPToast.m in Sources */,
 				01D22BCB1FDD814000BCC4AD /* UIColor+BPAdd.m in Sources */,
 				0153F12B20B2A4A7007C50C5 /* BPFriendsCircleViewController.m in Sources */,
+				01D6FBB320C80F7E00AD8A6E /* BPIncludeTableManualHeaderView.m in Sources */,
 				01F2CE6820AABE6600F1D701 /* BP_TWO_TopSliderCatergoryViewController.m in Sources */,
 				013519B220BC1E100010AEC2 /* BPMasonryAutoLayoutProcessView.m in Sources */,
 				01DF31C41FDD3A9100B8A955 /* NSHTTPCookieStorage+BPFreezeDry.m in Sources */,
@@ -7830,12 +7783,12 @@
 				01A191C22004E1BF005EE4CD /* BPWKWebViewController.m in Sources */,
 				011E8DC020B2FB3300B04378 /* BPCalendarMonthSectionView.m in Sources */,
 				01DF325D1FDD3B9D00B8A955 /* NSData+BPHash.m in Sources */,
+				01D6FBB520C80F7E00AD8A6E /* BPIncludeTableManualInsideTableViewCell.m in Sources */,
 				01F2CE6C20AABE6600F1D701 /* BP_THREE_TopSliderCatergoryViewController.m in Sources */,
 				0158A0501FDFD3570011AFE9 /* UILabel+BPInterval.m in Sources */,
 				011E8DA220B2F7BA00B04378 /* BPPlanCalendarModel.m in Sources */,
 				01DF31D71FDD3A9100B8A955 /* NSInvocation+BPBb.m in Sources */,
 				0161D37F20C29AED009D1B9C /* BPDrawRect_CG.m in Sources */,
-				0161D39C20C2E109009D1B9C /* KSDictionaryPhrase+KSCardHeight.m in Sources */,
 				010DB7911FDD4D640099E66F /* UIView+BPShake.m in Sources */,
 				01BCB33E1FB55921009EF64E /* BPBaseServerAPI.m in Sources */,
 				01027B531FDEE0380003F0FE /* BPNaviTableViewControllerThree.m in Sources */,
@@ -7859,7 +7812,6 @@
 				0161D37B20C29AED009D1B9C /* BPDrawLayer_CG.m in Sources */,
 				01D22BE61FDD814000BCC4AD /* NSMutableDictionary+BPAdd.m in Sources */,
 				01DF325F1FDD3B9D00B8A955 /* NSData+BPPCM.m in Sources */,
-				0161D3A820C2E139009D1B9C /* KSPhraseCardViewController.m in Sources */,
 				0173401D1FA9753F006192F0 /* BPBaseNavigationController.m in Sources */,
 				0168F3872035E66900D63D83 /* BPBaseKnowledgeViewModel.m in Sources */,
 				0100541B20A2E47200F43089 /* BPHorizontalCollectionViewController.m in Sources */,
@@ -7908,7 +7860,6 @@
 				01161F4520308FBA00FA3441 /* BPNSNumberViewController.m in Sources */,
 				0184BF821FD6DB2C00CB9AAD /* BPTest_XibViewController.m in Sources */,
 				01D22BD11FDD814000BCC4AD /* NSArray+BPAdd.m in Sources */,
-				0161D39F20C2E109009D1B9C /* KSPhraseCardHeaderView.m in Sources */,
 				0135198120BC1D5D0010AEC2 /* BPAutoresizingViewB.m in Sources */,
 				017A9A471FDD2B9A00CDA599 /* UIView+BPScreenshot.m in Sources */,
 				01C0B6661FFCC65F005BB4A5 /* PaletteColorModel.m in Sources */,
@@ -8050,7 +8001,6 @@
 				01FD5E6520A1989C00D9CD75 /* KSHeritageDictionaryListContainerViewController.m in Sources */,
 				01DF31D81FDD3A9100B8A955 /* NSInvocation+BPBlock.m in Sources */,
 				01C9359F1FC337E100D98FD6 /* BPFeatureViewModel.m in Sources */,
-				0161D3AC20C2E341009D1B9C /* KSDictionaryPhrase.m in Sources */,
 				01492F1F2052356D00B28F84 /* KSCellProgressModel.m in Sources */,
 				01DF321A1FDD3B3000B8A955 /* NSString+BPEmoji.m in Sources */,
 				017907D52001345300E5C360 /* BPCircleView.m in Sources */,
@@ -8060,7 +8010,6 @@
 				01A1921C2004E61F005EE4CD /* BPCollectionViewController.m in Sources */,
 				01A192272004E61F005EE4CD /* BPPlainTableViewController.m in Sources */,
 				010DB78E1FDD4D640099E66F /* UIView+BPBlockGesture.m in Sources */,
-				0161D3A320C2E109009D1B9C /* KSPhraseCardHeadCell.m in Sources */,
 				010DB74C1FDD4D450099E66F /* UIApplication+BPApplicationSize.m in Sources */,
 				0168F38D2035EC6C00D63D83 /* BPImprovingTipViewModel.m in Sources */,
 				01DF321E1FDD3B3000B8A955 /* NSString+BPSize.m in Sources */,
@@ -8076,11 +8025,9 @@
 				010DB72B1FDD4D450099E66F /* UIBezierPath+BPThroughPointsBezier.m in Sources */,
 				010DB7951FDD4D640099E66F /* UIView+BPRecursion.m in Sources */,
 				01F3347020BC3E5C0049B5D7 /* BPLayoutProcessView.m in Sources */,
-				0161D39E20C2E109009D1B9C /* KSPhraseCardInsideHeaderView.m in Sources */,
 				010FBD2520601D9E00BC9EC4 /* BPPaletteView.m in Sources */,
 				013ED90F20C7DB3C00A83E7F /* BPIncludeTableSystemLayoutController.m in Sources */,
 				01A597AC2085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.m in Sources */,
-				0161D3A220C2E109009D1B9C /* KSPhraseCardInsideTableViewCell.m in Sources */,
 				0160718A204D3530009C66A2 /* PHAsset+BPAdd.m in Sources */,
 				0137C760207C952700F6B6CE /* BPTextCompositionViewController.m in Sources */,
 				010DB7AD1FDD4D6F0099E66F /* UIButton+BPTouchAreaInsets.m in Sources */,
@@ -8135,6 +8082,7 @@
 				01F2CE6B20AABE6600F1D701 /* BP_ONE_TopSliderCatergoryViewController.m in Sources */,
 				01D22BCD1FDD814000BCC4AD /* NSNumber+BPAdd.m in Sources */,
 				018C4514200A564100CF43D7 /* BPAddRoundedCornerViewController.m in Sources */,
+				01D6FBB420C80F7E00AD8A6E /* BPIncludeTableManualInsideHeaderView.m in Sources */,
 				010DB7481FDD4D450099E66F /* UIImage+BPSuperCompress.m in Sources */,
 				01C31F76200FA1720096C2E0 /* BPAnchorPopViewController.m in Sources */,
 				01DF31D41FDD3A9100B8A955 /* NSTimer+BPBlocks.m in Sources */,
@@ -8252,6 +8200,7 @@
 				010DB7471FDD4D450099E66F /* UIImage+BPRoundedCorner.m in Sources */,
 				01D22BDA1FDD814000BCC4AD /* UIView+BPAdd.m in Sources */,
 				01A191CB2004E1D5005EE4CD /* BPToolBarViewController.m in Sources */,
+				0168850220C7F46A00069FF3 /* BPIncludeTableAutoLayoutController.m in Sources */,
 				010DB76C1FDD4D560099E66F /* UIViewController+BPBlockSegue.m in Sources */,
 				01DF32141FDD3B3000B8A955 /* NSString+BPHash.m in Sources */,
 				01DF31D11FDD3A9100B8A955 /* NSException+BPTrace.m in Sources */,
@@ -8314,6 +8263,7 @@
 				01D22BC91FDD814000BCC4AD /* UILabel+BPAddForFrame.m in Sources */,
 				017907DD200140EF00E5C360 /* BPRuntimeViewController.m in Sources */,
 				01DF32741FDD3BB100B8A955 /* NSDate+BPZeroDate.m in Sources */,
+				01D6FBB620C80F7E00AD8A6E /* BPIncludeTableManualHeadCell.m in Sources */,
 				01BCB3301FB54A99009EF64E /* BPBaseModel.m in Sources */,
 				0179BC4620317D410061CD84 /* BPNSDateViewController.m in Sources */,
 				01DF31D51FDD3A9100B8A955 /* NSBundle+BPAppIcon.m in Sources */,
@@ -8621,7 +8571,7 @@
 				01733FF81FA974FC006192F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		01733FF91FA974FC006192F0 /* Build configuration list for PBXNativeTarget "BaseProject" */ = {
 			isa = XCConfigurationList;
@@ -8630,7 +8580,7 @@
 				01733FFB1FA974FC006192F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		01733FFC1FA974FC006192F0 /* Build configuration list for PBXNativeTarget "BaseProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -8639,7 +8589,7 @@
 				01733FFE1FA974FC006192F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		01733FFF1FA974FC006192F0 /* Build configuration list for PBXNativeTarget "BaseProjectUITests" */ = {
 			isa = XCConfigurationList;
@@ -8648,7 +8598,7 @@
 				017340011FA974FC006192F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

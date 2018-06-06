@@ -223,13 +223,13 @@
             backView.tag = kViewTagBase + i;
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, item.width, height)];
             
-            if(_selectedIndex == i && self.shouldChangeFontWhenSelected){
-                label.font = [UIFont systemFontOfSize:_tabItemNormalFontSize+0 weight:_itemsLabelNeedBold ? UIFontWeightMedium:UIFontWeightRegular];
+            if(_selectedIndex == i && self.shouldChangeFontWhenSelected) {
+                label.font = [UIFont fontOfSize:_tabItemNormalFontSize+0 weight:_itemsLabelNeedBold ? UIFontWeightMedium:UIFontWeightRegular];
                 CGAffineTransform  transform;
                 transform=CGAffineTransformScale(label.transform, 1.1, 1.1);
                 label.transform=transform;
             }else{
-                label.font = [UIFont systemFontOfSize:_tabItemNormalFontSize weight:_itemsLabelNeedBold ? UIFontWeightMedium:UIFontWeightRegular];
+                label.font = [UIFont fontOfSize:_tabItemNormalFontSize weight:_itemsLabelNeedBold ? UIFontWeightMedium:UIFontWeightRegular];
             }
             
             if(self.subTitleArray.count > 0){
@@ -268,7 +268,7 @@
             if(self.shouldHideTrackView){
                 backView.backgroundColor = _selectedIndex == i? kWhiteColor : kWhiteColor;
                 UILabel *selectLabel = [[UILabel alloc] initWithFrame:CGRectMake((item.width - CGRectGetWidth(label.bounds))/2.0f, height - 18, CGRectGetWidth(label.bounds), 18)];
-                selectLabel.font = [UIFont systemFontOfSize:_tabItemNormalFontSize/2 weight:_itemsLabelNeedBold ? UIFontWeightMedium:UIFontWeightRegular];
+                selectLabel.font = [UIFont fontOfSize:_tabItemNormalFontSize/2 weight:_itemsLabelNeedBold ? UIFontWeightMedium:UIFontWeightRegular];
                 selectLabel.textColor = [_tabItemSelectedColor colorWithAlphaComponent:0.5];
                 selectLabel.textAlignment = NSTextAlignmentCenter;
                 selectLabel.tag = kSelectedLabelTagBase + i;
@@ -341,7 +341,7 @@
             
             if(self.trackViewWidthEqualToTextLength) {
                 NSString *titleString = label.text;
-                CGSize size = [titleString boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, label.height) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:self.tabItemNormalFontSize weight:_itemsLabelNeedBold ? UIFontWeightMedium:UIFontWeightRegular]} context:nil].size;
+                CGSize size = [titleString boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, label.height) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : [UIFont fontOfSize:self.tabItemNormalFontSize weight:_itemsLabelNeedBold ? UIFontWeightMedium:UIFontWeightRegular]} context:nil].size;
                 if (self.trackViewWidth > 0){
                     _trackView.frame = CGRectMake(trackRect.origin.x+(CGRectGetWidth(trackRect)-self.trackViewWidth)/2.0, _trackView.frame.origin.y, self.trackViewWidth, CGRectGetHeight(_trackView.bounds));
                 }else if(self.shouldTrackViewAutoScroll){
@@ -381,7 +381,7 @@
     CGRect fromRect = [_scrollView convertRect:fromLabel.bounds fromView:fromLabel];
     CGFloat fromWidth = fromLabel.frame.size.width;
     
-    CGSize fromSize = [fromLabel.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, fromLabel.height) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:self.tabItemNormalFontSize weight:_itemsLabelNeedBold ? UIFontWeightMedium:UIFontWeightRegular]} context:nil].size;
+    CGSize fromSize = [fromLabel.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, fromLabel.height) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : [UIFont fontOfSize:self.tabItemNormalFontSize weight:_itemsLabelNeedBold ? UIFontWeightMedium:UIFontWeightRegular]} context:nil].size;
     if (self.trackViewWidth > 0) {
         fromSize.width = self.trackViewWidth;
     }
@@ -393,7 +393,7 @@
         trackViewWidth = self.trackViewWidth;
     }
     if (toLabel) {
-         CGSize toSize = [toLabel.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, toLabel.height) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:self.tabItemNormalFontSize+2 weight:_itemsLabelNeedBold ? UIFontWeightMedium:UIFontWeightRegular]} context:nil].size;
+         CGSize toSize = [toLabel.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, toLabel.height) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : [UIFont fontOfSize:self.tabItemNormalFontSize+2 weight:_itemsLabelNeedBold ? UIFontWeightMedium:UIFontWeightRegular]} context:nil].size;
         
         CGRect toRect = [_scrollView convertRect:toLabel.bounds fromView:toLabel];
         toWidth = toRect.size.width;
@@ -486,7 +486,7 @@
         
         if(self.trackViewWidthEqualToTextLength) {
             NSString *titleString = toLabel.text;
-            CGSize size = [titleString boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, toLabel.height) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:self.tabItemNormalFontSize weight:_itemsLabelNeedBold ? UIFontWeightMedium:UIFontWeightRegular]} context:nil].size;
+            CGSize size = [titleString boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, toLabel.height) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : [UIFont fontOfSize:self.tabItemNormalFontSize weight:_itemsLabelNeedBold ? UIFontWeightMedium:UIFontWeightRegular]} context:nil].size;
             [UIView animateWithDuration:0.3 animations:^{
                 if (self.trackViewWidth > 0){
                     _trackView.frame = CGRectMake(trackRect.origin.x+(CGRectGetWidth(trackRect)-self.trackViewWidth)/2.0, _trackView.frame.origin.y, self.trackViewWidth, CGRectGetHeight(_trackView.bounds));

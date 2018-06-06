@@ -48,7 +48,7 @@
 
     [title_1st_attributedString addAttribute:NSForegroundColorAttributeName value:kBlackColor range:NSMakeRange(0, title_1st.length)];
     [number_name_attributedString addAttribute:NSForegroundColorAttributeName value:kGrayColor range:NSMakeRange(0, number.length)];
-    UIFont *textFont = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
+    UIFont *textFont = [UIFont fontOfSize:15 weight:UIFontWeightMedium];
     [title_1st_attributedString addAttribute:NSFontAttributeName value:textFont range:NSMakeRange(0, title_1st.length)];
     [number_name_attributedString addAttribute:NSFontAttributeName value:textFont range:NSMakeRange(0, number.length)];
 

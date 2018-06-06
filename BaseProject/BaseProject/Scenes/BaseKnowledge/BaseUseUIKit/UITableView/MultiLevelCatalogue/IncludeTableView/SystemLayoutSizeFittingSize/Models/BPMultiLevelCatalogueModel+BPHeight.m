@@ -13,7 +13,7 @@
 static const char *headerHeightKey = "headerHeight";
 static const char *cellHeightKey = "cellHeight";
 
-@implementation BPMultiLevelCatalogueModel3rd (KSCardHeight)
+@implementation BPMultiLevelCatalogueModel3rd (BPCardHeight)
 
 - (CGFloat)cellHeight {
     NSNumber *height = objc_getAssociatedObject(self, cellHeightKey);
@@ -26,7 +26,7 @@ static const char *cellHeightKey = "cellHeight";
 
 @end
 
-@implementation BPMultiLevelCatalogueModel2nd (KSCardHeight)
+@implementation BPMultiLevelCatalogueModel2nd (BPCardHeight)
 
 - (CGFloat)headerHeight {
     NSNumber *height = objc_getAssociatedObject(self, headerHeightKey);
@@ -48,7 +48,7 @@ static const char *cellHeightKey = "cellHeight";
 
 @end
 
-@implementation BPMultiLevelCatalogueModel1st (KSCardHeight)
+@implementation BPMultiLevelCatalogueModel1st (BPCardHeight)
 
 - (CGFloat)headerHeight {
     NSNumber *height = objc_getAssociatedObject(self, headerHeightKey);
@@ -70,6 +70,6 @@ static const char *cellHeightKey = "cellHeight";
 
 @end
 
-@implementation BPMultiLevelCatalogueModel (KSCardHeight)
+@implementation BPMultiLevelCatalogueModel (BPCardHeight)
 
 @end

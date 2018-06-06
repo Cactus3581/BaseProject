@@ -12,6 +12,5 @@
 @interface BPMultiLevelCatalogueModelDataSource : NSObject
 
 + (BPMultiLevelCatalogueModel *)handleData;
-+ (BPMultiLevelCatalogueModel *)getData;
 
 @end

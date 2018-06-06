@@ -8,21 +8,19 @@
 
 #import "BPMultiLevelCatalogueModel.h"
 
-@interface BPMultiLevelCatalogueModel3rd (KSCardHeight)
-@property (nonatomic, assign) CGFloat cellHeight;
+@interface BPMultiLevelCatalogueModel (BPCardHeight)
+
 @end
 
-@interface BPMultiLevelCatalogueModel2nd (KSCardHeight)
+@interface BPMultiLevelCatalogueModel1st (BPCardHeight)
 @property (nonatomic, assign) CGFloat headerHeight;
-@property (nonatomic, assign) CGFloat cellHeight;
 @end
 
-@interface BPMultiLevelCatalogueModel1st (KSCardHeight)
+@interface BPMultiLevelCatalogueModel2nd (BPCardHeight)
+@property (nonatomic, assign) CGFloat cellHeight;//(section+cell)
 @property (nonatomic, assign) CGFloat headerHeight;
+@end
+
+@interface BPMultiLevelCatalogueModel3rd (BPCardHeight)
 @property (nonatomic, assign) CGFloat cellHeight;
 @end
-
-@interface BPMultiLevelCatalogueModel (KSCardHeight)
-
-@end
-

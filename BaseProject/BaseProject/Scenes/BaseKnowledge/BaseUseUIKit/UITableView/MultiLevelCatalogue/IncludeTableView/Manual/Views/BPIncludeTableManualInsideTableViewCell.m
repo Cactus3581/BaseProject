@@ -1,20 +1,20 @@
 //
-//  KSPhraseCardInsideTableViewCell.m
+//  BPIncludeTableManualInsideTableViewCell.m
 //  PowerWord7
 //
 //  Created by xiaruzhen on 2018/4/11.
 //  Copyright © 2018年 Kingsoft. All rights reserved.
 //
 
-#import "KSPhraseCardInsideTableViewCell.h"
+#import "BPIncludeTableManualInsideTableViewCell.h"
 
-@interface KSPhraseCardInsideTableViewCell()
+@interface BPIncludeTableManualInsideTableViewCell()
 @property (weak, nonatomic) IBOutlet UILabel *numbertagLabel;
 @property (weak, nonatomic) IBOutlet UILabel *englishLabel;
 @property (weak, nonatomic) IBOutlet UILabel *chineseLabel;
 @end
 
-@implementation KSPhraseCardInsideTableViewCell
+@implementation BPIncludeTableManualInsideTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -29,26 +29,17 @@
     _numbertagLabel.textColor = kGrayColor;
     _englishLabel.backgroundColor = kLevelColor1;
     _chineseLabel.backgroundColor = kLevelColor1;
-    _chineseLabel.preferredMaxLayoutWidth = self.width-65;
-    _englishLabel.preferredMaxLayoutWidth = self.width-65;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    _chineseLabel.preferredMaxLayoutWidth = self.width-65;
-    _englishLabel.preferredMaxLayoutWidth = self.width-65;
-}
 
-- (void)setModel:(KSDictionarySubItemPhraseJxLj *)model indexPath:(NSIndexPath *)indexPath {
-    NSString *lj_ly = BPValidateString(model.lj_ly);
-    NSString *lj_ls = BPValidateString(model.lj_ls);
+- (void)setModel:(BPMultiLevelCatalogueModel3rd *)model indexPath:(NSIndexPath *)indexPath {
+    NSString *title_3rd = BPValidateString(model.title_3rd);
+    NSString *brief_3rd = BPValidateString(model.brief_3rd);
     _numbertagLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row + 1];
     _numbertagLabel.adjustsFontSizeToFitWidth = YES;
-    _englishLabel.attributedText = [self configAttributedText:lj_ly lineSpace:1 textColor:kGrayColor];
-    _chineseLabel.attributedText = [self configAttributedText:lj_ls lineSpace:4 textColor:kGrayColor];
+    _englishLabel.attributedText = [self configAttributedText:title_3rd lineSpace:1 textColor:kGrayColor];
+    _chineseLabel.attributedText = [self configAttributedText:brief_3rd lineSpace:4 textColor:kGrayColor];
     [self.chineseLabel sizeToFit];
-    //BPLog(@"englishLabel = %.2f,= %.2f",self.englishLabel.height,[self.englishLabel sizeThatFits:CGSizeMake(310, MAXFLOAT)].height);
-    //BPLog(@"chineseLabel = %.2f,= %.2f",self.chineseLabel.height,[self.chineseLabel sizeThatFits:CGSizeMake(310, MAXFLOAT)].height);
 }
 
 - (NSMutableAttributedString *)configAttributedText:(NSString *)text lineSpace:(CGFloat)lineSpace textColor:(UIColor *)textColor{

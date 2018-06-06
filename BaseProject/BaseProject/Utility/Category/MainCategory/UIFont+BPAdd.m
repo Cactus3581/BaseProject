@@ -134,4 +134,14 @@ BPSYNTH_DUMMY_CLASS(UIFont_BPAdd)
     return suc;
 }
 
++ (UIFont *)fontOfSize:(CGFloat)fontSize weight:(UIFontWeight)weight {
+    UIFont *font= nil;
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.2) {
+        font = [UIFont systemFontOfSize:fontSize];
+    } else {
+        font = [UIFont systemFontOfSize:fontSize weight:weight];
+    }
+    return font;
+}
+
 @end

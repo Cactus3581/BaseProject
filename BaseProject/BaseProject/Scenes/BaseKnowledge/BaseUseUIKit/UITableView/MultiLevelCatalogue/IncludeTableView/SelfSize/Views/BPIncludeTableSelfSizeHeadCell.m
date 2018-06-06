@@ -57,12 +57,12 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         //刷新完成
+        BPLog(@"setModel3 = %.2f,%d",self.tableView.contentSize.height,indexPath.row);
 
-//        [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-//            make.height.mas_equalTo(self.tableView.contentSize.height);
-//        }];
-//        [self.contentView layoutIfNeeded];
-
+        [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(self.tableView.contentSize.height);
+        }];
+        [self.contentView layoutIfNeeded];
     });
 }
 
@@ -91,7 +91,6 @@
 
     [self.contentView addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(self.contentView);
         make.top.with.with.left.with.right.mas_equalTo(self.contentView);
         make.bottom.equalTo(self.contentView).priorityLow();
         make.height.mas_equalTo(self.tableView.contentSize.height);
