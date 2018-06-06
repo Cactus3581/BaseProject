@@ -80,6 +80,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSelfSizeHeaderView";
     BPMultiLevelCatalogueModel1st *model1 = BPValidateArrayObjAtIdx(self.arraySource, indexPath.section);
     BPMultiLevelCatalogueModel2nd *model2 = BPValidateArrayObjAtIdx(model1.array_1st, indexPath.row);
     [cell setModel:model2 indexPath:indexPath showAll:YES];
+//    [cell intrinsicContentSize];
     return cell;
 }
 
@@ -91,14 +92,6 @@ static NSString *headerIdentifier = @"BPIncludeTableSelfSizeHeaderView";
     BPMultiLevelCatalogueModel1st *sectionModel = BPValidateArrayObjAtIdx(self.arraySource,section);
     [header setModel:sectionModel section:section];
     return header;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewAutomaticDimension;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return UITableViewAutomaticDimension;
 }
 
 // 设置footer高度

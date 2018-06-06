@@ -38,43 +38,48 @@
     [super layoutSubviews];
 }
 
+//- (CGSize)intrinsicContentSize {
+//    CGSize size = [super intrinsicContentSize];
+//    return CGSizeMake(size.width, self.tableView.size.height);
+//}
+//
+//- (CGSize)sizeThatFits:(CGSize)size {
+//    [super sizeThatFits:size];
+//    return CGSizeMake(size.width, self.tableView.size.height);
+//}
 
 - (void)setModel:(BPMultiLevelCatalogueModel2nd *)model indexPath:(NSIndexPath *)indexPath showAll:(BOOL)showAll {
     _model = model;
     [self.arraySource removeAllObjects];
     self.arraySource = model.array_2nd.mutableCopy;
     [self.tableView reloadData];
-    BPLog(@"setModel1 = %.2f,%d",self.tableView.contentSize.height,indexPath.row);
-    [self.tableView layoutIfNeeded];
+    [self.tableView layoutIfNeeded];//刷新完成
     [self.contentView layoutIfNeeded];
-    [self layoutIfNeeded];
-    BPLog(@"setModel2 = %.2f,%d",self.tableView.contentSize.height,indexPath.row);
-
+//    [self invalidateIntrinsicContentSize];
+    BPLog(@"setModel = %.2f,%d",self.tableView.contentSize.height,indexPath.row);
     [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(self.tableView.contentSize.height);
     }];
-
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        //刷新完成
-        BPLog(@"setModel3 = %.2f,%d",self.tableView.contentSize.height,indexPath.row);
-
-        [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(self.tableView.contentSize.height);
-        }];
-        [self.contentView layoutIfNeeded];
-    });
+//    [self.tableView layoutIfNeeded];//刷新完成
+//    [self.contentView layoutIfNeeded];
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        BPLog(@"setModel3 = %.2f,%d",self.tableView.contentSize.height,indexPath.row);
+//        [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.height.mas_equalTo(self.tableView.contentSize.height);
+//        }];
+//    });
 }
 
 #pragma mark -初始化Tableview及delagate
 - (void)configTableView {
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     _tableView = tableView;
+    [self.contentView addSubview:self.tableView];
     UIView *backView = [[UIView alloc] init];
     backView.backgroundColor = kLevelColor3;
     self.backgroundView = backView;
     self.contentView.backgroundColor = kLevelColor3;
-    _tableView.backgroundColor = kLevelColor3;
+    _tableView.backgroundColor = kLevelColor6;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.delegate = self;
@@ -86,12 +91,11 @@
     _tableView.estimatedRowHeight = 80;
     _tableView.rowHeight = UITableViewAutomaticDimension;
     
-    _tableView.estimatedSectionFooterHeight = CGFLOAT_MIN;
+    _tableView.estimatedSectionFooterHeight = 0;
     _tableView.sectionFooterHeight = 0;
 
-    [self.contentView addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.with.with.left.with.right.mas_equalTo(self.contentView);
+        make.top.leading.trailing.equalTo(self.contentView);
         make.bottom.equalTo(self.contentView).priorityLow();
         make.height.mas_equalTo(self.tableView.contentSize.height);
     }];
@@ -129,14 +133,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return CGFLOAT_MIN;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewAutomaticDimension;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return UITableViewAutomaticDimension;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

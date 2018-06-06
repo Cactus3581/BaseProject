@@ -130,7 +130,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutHeaderView";
     });
     BPMultiLevelCatalogueModel1st *sectionModel = BPValidateArrayObjAtIdx(self.arraySource,section);
     [header setModel:sectionModel section:section];
-    NSInteger height = ceil([header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);
+    NSInteger height = ceil([header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel);
     return height;
 }
 

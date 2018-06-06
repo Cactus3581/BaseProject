@@ -42,9 +42,11 @@ static NSInteger limitNumber = 2;
             
             __block CGFloat smallHeight = 0.f;
             [model2.array_2nd enumerateObjectsUsingBlock:^(BPMultiLevelCatalogueModel3rd *model3, NSUInteger idx3, BOOL * _Nonnull stop) {
-                model3.cellHeight = [BPIncludeTableManualHeightHelper getHeightWithString:BPValidateString(model3.title_3rd) font:[UIFont systemFontOfSize:font] width:kScreenWidth-smallCellH lineSpace:1 kern:0] + [BPIncludeTableManualHeightHelper getHeightWithString:BPValidateString(model3.brief_3rd) font:[UIFont systemFontOfSize:font] width:kScreenWidth-smallCellH lineSpace:4 kern:0];
+                model3.cellHeight = [BPIncludeTableManualHeightHelper getHeightWithString:BPValidateString(model3.title_3rd) font:[UIFont systemFontOfSize:font] width:kScreenWidth-smallCellH lineSpace:1 kern:0] + [BPIncludeTableManualHeightHelper getHeightWithString:BPValidateString(model3.brief_3rd) font:[UIFont systemFontOfSize:font] width:kScreenWidth-smallCellH lineSpace:4 kern:0] + kOnePixel;
                 if (model3.cellHeight > 0.01) {
                     model3.cellHeight += smallCellV;
+                    model3.cellHeight = ceil(model3.cellHeight);
+
                 }
                 /* 暂时用不到,如果用到了需要接口加个是否需要limit的参数，比如+ (void)handleData:(BPMultiLevelCatalogueModel *)data limit:(BOOL)limit
                  if (limit) {
@@ -60,10 +62,12 @@ static NSInteger limitNumber = 2;
             model2.headerHeight = [BPIncludeTableManualHeightHelper getHeightWithString:BPValidateString(model2.title_2nd) font:[UIFont systemFontOfSize:font] width:kScreenWidth-smallHeadH lineSpace:4 kern:0];
             if (model2.headerHeight > 0.01) {
                 model2.headerHeight += smallHeadV;
+                model2.headerHeight = ceil(model2.headerHeight);
             }
-            smallHeight += model2.headerHeight;
+            smallHeight += model2.headerHeight + kOnePixel;
             if (smallHeight > 0.01) {
                 model2.cellHeight = smallHeight;
+                 model2.cellHeight = ceil(model2.cellHeight);
             }
         }];
         NSString *title_1st  = BPValidateString(model.title_1st);
@@ -71,6 +75,7 @@ static NSInteger limitNumber = 2;
         model.headerHeight = [BPIncludeTableManualHeightHelper getHeightWithString:title_1st font:textFont width:kScreenWidth-bigHeadH lineSpace:1 kern:0];
         if (model.headerHeight > 0.01 && idx1 > 0) {
             model.headerHeight += bigHeadV;
+            model.headerHeight = ceil(model.headerHeight);
         }
     }];
 }
