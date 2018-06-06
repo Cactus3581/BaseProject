@@ -36,7 +36,6 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    BPLog(@"%.2f",self.height);
 }
 
 - (void)setModel:(KSDictionarySubItemPhrase *)model section:(NSInteger)section {
@@ -59,13 +58,13 @@
     _numberLabel.attributedText = number_name_attributedString;
     _numberLabel.adjustsFontSizeToFitWidth = YES;
     _textHeaderLabel.attributedText = cizu_name_attributedString;
-//    if (section == 0) {
-//        _topConstaint.constant = 0.f;
-//        _numberConstraint.constant = 0.f;
-//    }else {
-//        _topConstaint.constant = 25.f;
-//        _numberConstraint.constant = 25.f;
-//    }
+    if (section == 0) {
+        _topConstaint.constant = 0.f;
+        _numberConstraint.constant = 0.f;
+    }else {
+        _topConstaint.constant = 25.f;
+        _numberConstraint.constant = 25.f;
+    }
 }
 
 @end

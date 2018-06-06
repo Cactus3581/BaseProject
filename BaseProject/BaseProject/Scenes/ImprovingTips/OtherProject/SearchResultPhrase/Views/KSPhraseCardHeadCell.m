@@ -38,7 +38,6 @@ static NSInteger limitNumber = 2;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    BPLog(@"%.2f",self.contentView.height);
 }
 
 
@@ -49,25 +48,21 @@ static NSInteger limitNumber = 2;
     self.arraySource = model.lj.mutableCopy;
     [self.tableView reloadData];
     [self.tableView layoutIfNeeded];
-    [self layoutIfNeeded];
+//    [self.contentView layoutIfNeeded];
+//    [self layoutIfNeeded];
 
-    [self.contentView layoutIfNeeded];
+//    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.height.mas_equalTo(self.tableView.contentSize.height);
+//    }];
 
-    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(self.tableView.contentSize.height);
-    }];
-
-    BPLog(@"heightcell.tableView.height = %.2f",self.tableView.contentSize.height);
     
-//    [self.tableView reloadData];
     dispatch_async(dispatch_get_main_queue(), ^{
         //刷新完成
-        BPLog(@"tableViewcell.tableView.height = %.2f",self.tableView.contentSize.height);
 
-        [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(self.tableView.contentSize.height);
-        }];
-        [self.contentView layoutIfNeeded];
+//        [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.height.mas_equalTo(self.tableView.contentSize.height);
+//        }];
+//        [self.contentView layoutIfNeeded];
 
     });
 }
@@ -82,8 +77,8 @@ static NSInteger limitNumber = 2;
 
     self.contentView.backgroundColor = kLevelColor3;
 
-    [_tableView registerNib:[UINib nibWithNibName:@"KSPhraseCardInsideHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"KSPhraseCardInsideHeaderView"];
-    [_tableView registerNib:[UINib nibWithNibName:@"KSPhraseCardInsideTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"KSPhraseCardInsideTableViewCell"];
+//    [_tableView registerNib:[UINib nibWithNibName:@"KSPhraseCardInsideHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"KSPhraseCardInsideHeaderView"];
+//    [_tableView registerNib:[UINib nibWithNibName:@"KSPhraseCardInsideTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"KSPhraseCardInsideTableViewCell"];
     _tableView.backgroundColor = kLevelColor3;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;
@@ -92,36 +87,30 @@ static NSInteger limitNumber = 2;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
-    _tableView.estimatedRowHeight = 50;
+    _tableView.estimatedSectionHeaderHeight = 30;
+    _tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
+    
+    _tableView.estimatedRowHeight = 80;
     _tableView.rowHeight = UITableViewAutomaticDimension;
 
-    _tableView.estimatedSectionHeaderHeight = 50;
-    _tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
-
+//    _tableView.estimatedRowHeight = 0;
+//    _tableView.rowHeight = 0;
+//
+//    _tableView.estimatedSectionHeaderHeight = 0;
+//    _tableView.sectionHeaderHeight = 0;
+    
     _tableView.estimatedSectionFooterHeight = 0;
     _tableView.sectionFooterHeight = 0;
 
     [self.contentView addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.contentView);
-//        make.leading.trailing.top.equalTo(self.contentView);
-
-        make.height.mas_equalTo(self.tableView.contentSize.height);
+//        make.top.with.with.left.with.right.mas_equalTo(self.contentView);
+//
+//        make.bottom.equalTo(self.contentView).priorityLow();
+//        make.height.mas_equalTo(self.tableView.contentSize.height);
     }];
-    
-    [self.tableView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:NULL];
 }
-
-//KVO
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if(object == self.tableView && [keyPath isEqualToString:@"contentSize"]) {
-        BPLog(@"11cell.tableView.height = %.2f",self.tableView.contentSize.height);
-        [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-//            make.height.mas_equalTo(self.tableView.contentSize.height);
-        }];
-    }
-}
-
 
 #pragma mark - TableView delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -138,14 +127,27 @@ static NSInteger limitNumber = 2;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    KSPhraseCardInsideHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"KSPhraseCardInsideHeaderView"];
+//    KSPhraseCardInsideHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"KSPhraseCardInsideHeaderView"];
+    
+    static NSString *identifier = @"KSPhraseCardInsideHeaderView";
+    KSPhraseCardInsideHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
+    if (!header) {
+        header = [[[NSBundle mainBundle] loadNibNamed:@"KSPhraseCardInsideHeaderView" owner:nil options:nil] firstObject];
+    }
+    
     [header setModel:_model section:section];
     return header;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"KSPhraseCardInsideTableViewCell";
-    KSPhraseCardInsideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+//    KSPhraseCardInsideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    KSPhraseCardInsideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+
+    if (!cell) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"KSPhraseCardInsideTableViewCell" owner:nil options:nil] firstObject];
+    }
+
     KSDictionarySubItemPhraseJxLj *model = BPValidateArrayObjAtIdx(self.arraySource,indexPath.row);
     cell.wordExchangeArray = self.wordExchangeArray;
     [cell setModel:model indexPath:indexPath];
@@ -157,14 +159,35 @@ static NSInteger limitNumber = 2;
     return CGFLOAT_MIN;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//    return _model.headerHeight;
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static KSPhraseCardInsideTableViewCell *cell;
+    static dispatch_once_t onceToken;
+    //必须使用
+    dispatch_once(&onceToken, ^{
+//        cell = [tableView dequeueReusableCellWithIdentifier:@"KSPhraseCardInsideTableViewCell" forIndexPath:indexPath];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"KSPhraseCardInsideTableViewCell" owner:nil options:nil] firstObject];
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    KSDictionarySubItemPhraseJxLj *model = BPValidateArrayObjAtIdx(self.arraySource,indexPath.section);
-//    return model.cellHeight;
-//}
+    });
+    KSDictionarySubItemPhraseJxLj *model = BPValidateArrayObjAtIdx(self.arraySource,indexPath.row);
+    cell.wordExchangeArray = self.wordExchangeArray;
+    [cell setModel:model indexPath:indexPath];
+    NSInteger height = ceil([cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel);
+    return height;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    static KSPhraseCardInsideHeaderView *header;
+    static dispatch_once_t onceToken;
+    //必须使用
+    dispatch_once(&onceToken, ^{
+//        header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"KSPhraseCardInsideHeaderView"];
+        header = [[[NSBundle mainBundle] loadNibNamed:@"KSPhraseCardInsideHeaderView" owner:nil options:nil] firstObject];
+
+    });
+    [header setModel:_model section:section];
+    NSInteger height = ceil([header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);
+    return height;
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

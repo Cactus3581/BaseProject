@@ -100,7 +100,6 @@ static CGFloat cellHeight = 100;
     BPCellAutoLayoutHeightModel *model = self.array[indexPath.row];
     [cell set1stModel:model indexPath:indexPath];
     BPLog(@"cellforTime = %ld",++self.cellforTime);//7 //7 //7
-
     return cell;
 }
 

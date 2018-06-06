@@ -29,11 +29,14 @@
     _numbertagLabel.textColor = kGrayColor;
     _englishLabel.backgroundColor = kLevelColor1;
     _chineseLabel.backgroundColor = kLevelColor1;
+    _chineseLabel.preferredMaxLayoutWidth = self.width-65;
+    _englishLabel.preferredMaxLayoutWidth = self.width-65;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    BPLog(@"%.2f",self.contentView.height);
+    _chineseLabel.preferredMaxLayoutWidth = self.width-65;
+    _englishLabel.preferredMaxLayoutWidth = self.width-65;
 }
 
 - (void)setModel:(KSDictionarySubItemPhraseJxLj *)model indexPath:(NSIndexPath *)indexPath {
@@ -43,6 +46,9 @@
     _numbertagLabel.adjustsFontSizeToFitWidth = YES;
     _englishLabel.attributedText = [self configAttributedText:lj_ly lineSpace:1 textColor:kGrayColor];
     _chineseLabel.attributedText = [self configAttributedText:lj_ls lineSpace:4 textColor:kGrayColor];
+    [self.chineseLabel sizeToFit];
+    //BPLog(@"englishLabel = %.2f,= %.2f",self.englishLabel.height,[self.englishLabel sizeThatFits:CGSizeMake(310, MAXFLOAT)].height);
+    //BPLog(@"chineseLabel = %.2f,= %.2f",self.chineseLabel.height,[self.chineseLabel sizeThatFits:CGSizeMake(310, MAXFLOAT)].height);
 }
 
 - (NSMutableAttributedString *)configAttributedText:(NSString *)text lineSpace:(CGFloat)lineSpace textColor:(UIColor *)textColor{

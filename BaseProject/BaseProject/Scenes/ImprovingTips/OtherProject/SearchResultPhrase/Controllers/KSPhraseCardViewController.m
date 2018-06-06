@@ -78,11 +78,19 @@ static NSInteger limitNumber = 2;
 - (void)configTableView {
     self.tableView.backgroundColor = kLevelColor5;
     
-    _tableView.estimatedRowHeight = 50;
-    _tableView.rowHeight = UITableViewAutomaticDimension;
-    
     _tableView.estimatedSectionHeaderHeight = 50;
     _tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
+    
+    _tableView.estimatedRowHeight = 190;
+    _tableView.rowHeight = UITableViewAutomaticDimension;
+
+
+    
+//    _tableView.estimatedRowHeight = 0;
+//    _tableView.rowHeight = 0;
+//
+//    _tableView.estimatedSectionHeaderHeight = 0;
+//    _tableView.sectionHeaderHeight = 0;
     
     _tableView.estimatedSectionFooterHeight = 0;
     _tableView.sectionFooterHeight = 0;
@@ -144,21 +152,33 @@ static NSInteger limitNumber = 2;
     static dispatch_once_t onceToken;
     //必须使用
     dispatch_once(&onceToken, ^{
-        cell = [tableView dequeueReusableCellWithIdentifier:@"KSPhraseCardHeadCell"];
+//        cell = [tableView dequeueReusableCellWithIdentifier:@"KSPhraseCardHeadCell"];
+        cell = [[KSPhraseCardHeadCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"KSPhraseCardHeadCell"];
+
     });
     KSDictionarySubItemPhrase *model1 = BPValidateArrayObjAtIdx(self.arraySource, indexPath.section);
     KSDictionarySubItemPhraseJx *model2 = BPValidateArrayObjAtIdx(model1.jx, indexPath.row);
     cell.wordExchangeArray = self.wordExchangeArray;
     [cell setModel:model2 indexPath:indexPath showAll:self.isShowAll];
     // 根据当前数据，计算Cell的高度，注意+1是contentview和cell之间的分割线高度
-    return [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel;
+    NSInteger height = ceil([cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel + cell.tableView.contentSize.height);
+    return height;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//    KSDictionarySubItemPhrase *sectionModel = BPValidateArrayObjAtIdx(self.arraySource,section);
-//    self.sectionHeight = sectionModel.headerHeight;
-//    return sectionModel.headerHeight;
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    static KSPhraseCardHeaderView *header;
+    static dispatch_once_t onceToken;
+    //必须使用
+    dispatch_once(&onceToken, ^{
+        header = [[[NSBundle mainBundle] loadNibNamed:@"KSPhraseCardHeaderView" owner:nil options:nil] firstObject];
+
+//        header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"KSPhraseCardHeadCell"];
+    });
+    KSDictionarySubItemPhrase *sectionModel = BPValidateArrayObjAtIdx(self.arraySource,section);
+    [header setModel:sectionModel section:section];
+    NSInteger height = ceil([header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);
+    return height;
+}
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    KSDictionarySubItemPhrase *sectionModel = BPValidateArrayObjAtIdx(self.arraySource,indexPath.section);

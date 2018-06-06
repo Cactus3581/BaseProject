@@ -4199,19 +4199,11 @@
 		0161D38820C2E109009D1B9C /* SearchResultPhrase */ = {
 			isa = PBXGroup;
 			children = (
-				0161D38920C2E109009D1B9C /* ViewModels */,
 				0161D38A20C2E109009D1B9C /* Models */,
 				0161D38F20C2E109009D1B9C /* Controllers */,
 				0161D39020C2E109009D1B9C /* Views */,
 			);
 			path = SearchResultPhrase;
-			sourceTree = "<group>";
-		};
-		0161D38920C2E109009D1B9C /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		0161D38A20C2E109009D1B9C /* Models */ = {
@@ -6519,7 +6511,6 @@
 				010964F9208AC908003B3380 /* Views */,
 				01D2F5D32088DB1C00D21B20 /* Controllers */,
 				01D2F5C12088DB1B00D21B20 /* Models */,
-				01D2F5C62088DB1C00D21B20 /* ViewModels */,
 			);
 			path = 1ST;
 			sourceTree = "<group>";
@@ -6549,13 +6540,6 @@
 				01D2F5FE2088EB1A00D21B20 /* BPMultiLevelCatalogueModelDataSource.m */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		01D2F5C62088DB1C00D21B20 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		01D2F5D32088DB1C00D21B20 /* Controllers */ = {

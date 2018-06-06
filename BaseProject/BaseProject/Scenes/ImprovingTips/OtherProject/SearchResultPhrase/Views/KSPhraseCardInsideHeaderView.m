@@ -23,7 +23,6 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    BPLog(@"%.2f",self.height);
 }
 
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier {

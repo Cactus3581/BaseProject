@@ -490,7 +490,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>Cell自适应高度</string>
+						<string>Cell自适应高度（一般用法）</string>
 						<key>fileName</key>
 						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
@@ -533,7 +533,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>多级目录</string>
+						<string>Cell自适应高度：多级目录、嵌套scroll及子类、折叠</string>
 						<key>fileName</key>
 						<string>BP1STManualHeightViewController</string>
 						<key>briefIntro</key>

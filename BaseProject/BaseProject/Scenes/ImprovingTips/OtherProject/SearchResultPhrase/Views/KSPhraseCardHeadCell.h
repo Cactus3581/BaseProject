@@ -11,6 +11,7 @@
 
 @interface KSPhraseCardHeadCell : UITableViewCell
 @property (weak, nonatomic)  UITableView *tableView;
+
 @property (nonatomic,strong) NSArray *wordExchangeArray;
 - (void)setModel:(KSDictionarySubItemPhraseJx *)model indexPath:(NSIndexPath *)indexPath showAll:(BOOL)showAll;
 @end
