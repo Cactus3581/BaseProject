@@ -29,8 +29,8 @@
     _numbertagLabel.textColor = kGrayColor;
     _englishLabel.backgroundColor = kLevelColor1;
     _chineseLabel.backgroundColor = kLevelColor1;
-    _chineseLabel.preferredMaxLayoutWidth = self.width-65;
-    _englishLabel.preferredMaxLayoutWidth = self.width-65;
+    _chineseLabel.preferredMaxLayoutWidth = 375-65;
+    _englishLabel.preferredMaxLayoutWidth = 375-65;
 }
 
 - (void)layoutSubviews {

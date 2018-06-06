@@ -38,17 +38,13 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutInsideHeaderView
     [self configTableView];
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-}
-
 - (void)setModel:(BPMultiLevelCatalogueModel2nd *)model indexPath:(NSIndexPath *)indexPath showAll:(BOOL)showAll {
     _model = model;
     _isShowAll = showAll;
     [self.arraySource removeAllObjects];
     self.arraySource = model.array_2nd.mutableCopy;
     [self.tableView reloadData];
-//    [self.tableView layoutIfNeeded];
+    [self.tableView layoutIfNeeded];
     [self.contentView layoutIfNeeded];
 }
 

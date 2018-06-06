@@ -45,8 +45,6 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutHeaderView";
 - (void)configTableView {
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     _tableView = tableView;
-    [self.tableView registerNib:[UINib nibWithNibName:headerIdentifier bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:headerIdentifier];
-    [self.tableView registerClass:[BPIncludeTableSystemLayoutHeadCell class] forCellReuseIdentifier:cellIdentifier];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -75,11 +73,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutHeaderView";
 
 #pragma mark - TableView delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    if (self.isShowAll) {
-        return BPValidateArray(self.arraySource).count;
-    }else {
-        return BPValidateArray(self.arraySource).count > limitNumber ?  limitNumber : BPValidateArray(self.arraySource).count;
-    }
+    return BPValidateArray(self.arraySource).count;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -100,7 +94,6 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutHeaderView";
     BPMultiLevelCatalogueModel1st *model1 = BPValidateArrayObjAtIdx(self.arraySource, indexPath.section);
     BPMultiLevelCatalogueModel2nd *model2 = BPValidateArrayObjAtIdx(model1.array_1st, indexPath.row);
     [cell setModel:model2 indexPath:indexPath showAll:self.isShowAll];
-    
     return cell;
 }
 
@@ -125,7 +118,6 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutHeaderView";
     BPMultiLevelCatalogueModel2nd *model2 = BPValidateArrayObjAtIdx(model1.array_1st, indexPath.row);
     [cell setModel:model2 indexPath:indexPath showAll:self.isShowAll];
     // 根据当前数据，计算Cell的高度，注意+1是contentview和cell之间的分割线高度
-    BPLog(@"contentView = %.2f,%.2f,%@",[cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height,cell.tableView.contentSize.height,indexPath);
     NSInteger height = ceil([cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel + cell.tableView.contentSize.height);
     return height;
 }

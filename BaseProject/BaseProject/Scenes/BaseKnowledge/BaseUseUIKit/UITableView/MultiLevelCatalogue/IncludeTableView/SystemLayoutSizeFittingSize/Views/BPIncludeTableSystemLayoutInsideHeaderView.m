@@ -19,7 +19,7 @@
     UIView *backView = [[UIView alloc] init];
     backView.backgroundColor = kLevelColor1;
     self.backgroundView = backView;
-    _textSectionLabel.preferredMaxLayoutWidth = self.width-40;
+    _textSectionLabel.preferredMaxLayoutWidth = 375-40;
 
 }
 

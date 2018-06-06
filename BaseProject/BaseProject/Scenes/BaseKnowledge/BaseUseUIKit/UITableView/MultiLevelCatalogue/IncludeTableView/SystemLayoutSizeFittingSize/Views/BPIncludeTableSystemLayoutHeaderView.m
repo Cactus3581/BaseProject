@@ -23,7 +23,7 @@
         UIView *backView = [[UIView alloc] init];
         backView.backgroundColor = kLevelColor4;
         self.backgroundView = backView;
-        _textHeaderLabel.preferredMaxLayoutWidth = self.width-40;
+        _textHeaderLabel.preferredMaxLayoutWidth = 375-40;
     }
     return self;
 }
