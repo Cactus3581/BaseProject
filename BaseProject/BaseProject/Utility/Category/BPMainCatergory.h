@@ -1,5 +1,5 @@
 //
-//  BPCatergory.h
+//  BPMainCatergory.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 16/5/27.

@@ -47,4 +47,19 @@
  *  @return 反转后字符串
  */
 + (NSString *)_reverseString:(NSString *)strSrc;
+
+/**
+ *  @brief 计算文字的大小
+ *
+ *  @param font   字体(默认为系统字体)
+ *  @param width  宽度
+ *  @param lineSpace  行间距
+ *  @param kern  字间距
+ */
+- (CGFloat)heightWithFont:(UIFont *)font width:(CGFloat)width lineSpace:(CGFloat)lineSpace kern:(CGFloat)kern;
+
+- (CGFloat)heightWithFont:(UIFont *)font width:(CGFloat)width;
+
+- (CGFloat)heightWithFont:(UIFont *)font width:(CGFloat)width lineSpace:(CGFloat)lineSpace;
+
 @end

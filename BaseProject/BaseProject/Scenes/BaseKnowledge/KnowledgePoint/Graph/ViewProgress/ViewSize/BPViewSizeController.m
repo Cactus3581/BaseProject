@@ -66,7 +66,7 @@
     self.textView.text = @"天地玄黄 宇宙洪荒 日月盈昃 辰宿列张 寒来暑往 秋收冬藏 闰余成岁 律吕调阳";
 
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.view.mas_trailing);
+        make.leading.equalTo(self.view.mas_leading);
         make.top.equalTo(self.view.mas_top).offset(100);
         make.width.equalTo(self.view.mas_width);
     }];
@@ -91,9 +91,9 @@
     [self.view layoutIfNeeded];
     CGSize size;
 //    毕竟此时cell还未布局完成啊，直接读取cell.frame.size肯定是不行的。systemLayoutSizeFittingSize:方法正是用于处理这个问题的。
-//    CGSize size = [self.bgView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-//    CGSize size = [self.bgView sizeThatFits:CGSizeMake(kScreenWidth-20, 0)];
-    size = [self.bgView intrinsicContentSize];//ok //但是开发者不会直接使用
+//    size = [self.bgView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+//    size = [self.bgView sizeThatFits:CGSizeMake(kScreenWidth-20, 0)];
+    //    size = [self.bgView intrinsicContentSize];// NO
     BPLog(@"%@",NSStringFromCGRect(self.bgView.frame));//  直接打印，打印不出来；
 }
 

@@ -68,8 +68,8 @@
         // 文字的最大尺寸(设置内容label的最大size，这样才可以计算label的实际高度，需要设置最大宽度，但是最大高度不需要设置，只需要设置为最大浮点值即可)，53为内容label到cell左边的距离
         CGSize maxSize = CGSizeMake(kScreenWidth - (15+20+15+15), MAXFLOAT);
         // 计算内容label的高度
-        CGFloat nameTextH = [BPCellAutoLayoutHeightTableViewCell getHeightWithString:model.name font:[UIFont systemFontOfSize:17] width:maxSize.width lineSpace:0 kern:0];
-        CGFloat textTextH = [BPCellAutoLayoutHeightTableViewCell getHeightWithString:model.text font:[UIFont systemFontOfSize:17] width:maxSize.width lineSpace:0 kern:0];
+        CGFloat nameTextH = [model.name heightWithFont:[UIFont systemFontOfSize:17] width:maxSize.width];
+        CGFloat textTextH = [model.text heightWithFont:[UIFont systemFontOfSize:17] width:maxSize.width];
         UIImage *image = [UIImage imageNamed:model.photoImage];
         CGFloat imageH = image.size.height;
         model.cell3rdHeight = 10 + nameTextH + 10 + textTextH + 10 + imageH + 1;
@@ -84,21 +84,6 @@
     [cell layoutIfNeeded];
     CGRect frame = cell.contentView.frame;
     return frame.size.height;
-}
-
-+ (CGFloat )getHeightWithString:(NSString *)string font:(UIFont *)font width:(CGFloat)width lineSpace:(CGFloat)lineSpace kern:(CGFloat)kern {
-    if (!BPValidateString(string).length) {
-        return 0;
-    }
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.lineSpacing = lineSpace;//设置行间距
-    NSDictionary *attriDict = @{
-                                NSParagraphStyleAttributeName:paragraphStyle,
-                                //NSKernAttributeName:@(kern),//字间距
-                                NSFontAttributeName:font
-                                };
-    CGSize size = [string boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attriDict context:nil].size;
-    return ceilf(size.height);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

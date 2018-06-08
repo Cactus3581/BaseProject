@@ -11,7 +11,9 @@
 #ifndef BPColorMacro_h
 #define BPColorMacro_h
 
-
+#ifndef kThemeColor
+#define kThemeColor kRGB(71,71,71) // 色号 #474747
+#endif
 
 #ifndef kRedColor
 #define kRedColor [UIColor redColor]

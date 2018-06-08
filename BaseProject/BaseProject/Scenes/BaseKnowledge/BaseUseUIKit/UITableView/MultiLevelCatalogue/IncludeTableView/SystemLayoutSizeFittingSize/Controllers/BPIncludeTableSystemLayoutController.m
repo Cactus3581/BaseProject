@@ -16,6 +16,8 @@
 
 #import "NSObject+YYModel.h"
 #import "MJExtension.h"
+#import "UITableView+FDTemplateLayoutCell.h"
+
 
 static NSInteger limitNumber = 2;
 @interface BPIncludeTableSystemLayoutController ()<UITableViewDelegate,UITableViewDataSource>
@@ -25,7 +27,7 @@ static NSInteger limitNumber = 2;
 @property (nonatomic,assign) BOOL isShowAll;
 @end
 
-static NSString *cellIdentifier = @"BPIncludeTableSystemLayoutHeadCell.h";
+static NSString *cellIdentifier = @"BPIncludeTableSystemLayoutHeadCell";
 static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutHeaderView";
 
 @implementation BPIncludeTableSystemLayoutController
@@ -52,23 +54,27 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutHeaderView";
     
     self.tableView.backgroundColor = kLevelColor5;
     
-//    _tableView.estimatedSectionHeaderHeight = 50;
-//    _tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
-//
-//    _tableView.estimatedRowHeight = 190;
-//    _tableView.rowHeight = UITableViewAutomaticDimension;
+    _tableView.estimatedSectionHeaderHeight = 50;
+    _tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
+
+    _tableView.estimatedRowHeight = 190;
+    _tableView.rowHeight = UITableViewAutomaticDimension;
     
-    _tableView.estimatedRowHeight = 0;
-    _tableView.rowHeight = 0;
-    _tableView.estimatedSectionHeaderHeight = 0;
-    _tableView.sectionHeaderHeight = 0;
+    _tableView.estimatedSectionFooterHeight = CGFLOAT_MIN;
+    _tableView.sectionFooterHeight = UITableViewAutomaticDimension;
     
-    _tableView.estimatedSectionFooterHeight = 0;
-    _tableView.sectionFooterHeight = 0;
+//    _tableView.estimatedRowHeight = 0;
+//    _tableView.rowHeight = 0;
+//    _tableView.estimatedSectionHeaderHeight = 0;
+//    _tableView.sectionHeaderHeight = 0;    
+//    _tableView.estimatedSectionFooterHeight = 0;
+//    _tableView.sectionFooterHeight = 0;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    //fd template layout cell需要注册
+    //[self.tableView registerClass:[BPIncludeTableSystemLayoutHeadCell class] forCellReuseIdentifier:cellIdentifier];
 }
 
 #pragma mark - TableView delegate
@@ -117,9 +123,13 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutHeaderView";
     BPMultiLevelCatalogueModel1st *model1 = BPValidateArrayObjAtIdx(self.arraySource, indexPath.section);
     BPMultiLevelCatalogueModel2nd *model2 = BPValidateArrayObjAtIdx(model1.array_1st, indexPath.row);
     [cell setModel:model2 indexPath:indexPath showAll:self.isShowAll];
-    // 根据当前数据，计算Cell的高度，注意+1是contentview和cell之间的分割线高度
-    NSInteger height = ceil([cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel + cell.tableView.contentSize.height);
+    //根据当前数据，计算Cell的高度，注意+1是contentview和cell之间的分割线高度
+//    NSInteger height = ceil([cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel + cell.tableView.contentSize.height);
+    NSInteger height = ceil([cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel);
     return height;
+    //return [tableView fd_heightForCellWithIdentifier:cellIdentifier cacheByIndexPath:indexPath configuration:^(id cell) {
+//        [cell setModel:model2 indexPath:indexPath showAll:self.isShowAll];
+//    }];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -130,7 +140,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutHeaderView";
     });
     BPMultiLevelCatalogueModel1st *sectionModel = BPValidateArrayObjAtIdx(self.arraySource,section);
     [header setModel:sectionModel section:section];
-    NSInteger height = ceil([header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel);
+    NSInteger height = ceil([header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);
     return height;
 }
 

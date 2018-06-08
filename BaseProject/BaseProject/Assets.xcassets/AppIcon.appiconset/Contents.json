@@ -99,13 +99,13 @@
     {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "appicon-17.png",
+      "filename" : "appicon-16.png",
       "scale" : "2x"
     },
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "appicon-16.png",
+      "filename" : "appicon-17.png",
       "scale" : "1x"
     }
   ],

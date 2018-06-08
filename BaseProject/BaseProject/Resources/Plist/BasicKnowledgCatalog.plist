@@ -4,14 +4,6 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string>swift简单语法</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string>学习下swift</string>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>重点知识点集合</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
@@ -443,6 +435,33 @@
 				<string>BPNetRequestViewController</string>
 				<key>briefIntro</key>
 				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>继承</string>
+				<key>fileName</key>
+				<string>BPSimpleTableController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>NSObject继承</string>
+						<key>fileName</key>
+						<string>BPInheritObjectController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>UIView继承</string>
+						<key>fileName</key>
+						<string>BPInheritViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 		</array>
 	</dict>
@@ -1057,6 +1076,14 @@
 				<string></string>
 			</dict>
 		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>swift学习</string>
+		<key>fileName</key>
+		<string></string>
+		<key>briefIntro</key>
+		<string>学习swift</string>
 	</dict>
 </array>
 </plist>

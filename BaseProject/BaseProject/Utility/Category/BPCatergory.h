@@ -12,5 +12,6 @@
 #import "BPUIKitCatergory.h"
 #import "BPFoundationCatergory.h"
 #import "BPQuartzCoreCategory.h"
+#import "BPMainCatergory.h"
 
 #endif /* BPCatergory_h */

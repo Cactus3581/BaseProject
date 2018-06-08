@@ -14,8 +14,7 @@
 #import "BPAppMacro.h"
 #import "BPAppTool.h"
 #import "Masonry.h"
-#import "UIView+BPAdd.h"
-#import "UIFont+BPAdd.h"
+#import "BPUtilityCategory.h"
 #endif
 
 
