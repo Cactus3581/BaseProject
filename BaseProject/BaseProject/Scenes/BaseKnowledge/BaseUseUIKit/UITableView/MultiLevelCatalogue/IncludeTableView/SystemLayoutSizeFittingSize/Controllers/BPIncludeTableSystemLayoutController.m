@@ -37,6 +37,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutHeaderView";
     self.isShowAll = YES;
     [self handleData];
     [self configTableView];
+    [self addFPSLabel];
 }
 
 - (void)handleData {
@@ -114,34 +115,47 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutHeaderView";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static BPIncludeTableSystemLayoutHeadCell *cell;
-    static dispatch_once_t onceToken;
-    //必须使用
-    dispatch_once(&onceToken, ^{
-        cell = [[BPIncludeTableSystemLayoutHeadCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    });
-    BPMultiLevelCatalogueModel1st *model1 = BPValidateArrayObjAtIdx(self.arraySource, indexPath.section);
-    BPMultiLevelCatalogueModel2nd *model2 = BPValidateArrayObjAtIdx(model1.array_1st, indexPath.row);
-    [cell setModel:model2 indexPath:indexPath showAll:self.isShowAll];
-    //根据当前数据，计算Cell的高度，注意+1是contentview和cell之间的分割线高度
-//    NSInteger height = ceil([cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel + cell.tableView.contentSize.height);
-    NSInteger height = ceil([cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel);
-    return height;
+    
+    BPMultiLevelCatalogueModel1st *sectionModel = BPValidateArrayObjAtIdx(self.arraySource,indexPath.section);
+    BPMultiLevelCatalogueModel2nd *model = BPValidateArrayObjAtIdx(sectionModel.array_1st, indexPath.row);
+    if (model.cellHeight) {
+        return model.cellHeight;
+    } {
+        static BPIncludeTableSystemLayoutHeadCell *cell;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            cell = [[BPIncludeTableSystemLayoutHeadCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        });
+        BPMultiLevelCatalogueModel1st *model1 = BPValidateArrayObjAtIdx(self.arraySource, indexPath.section);
+        BPMultiLevelCatalogueModel2nd *model2 = BPValidateArrayObjAtIdx(model1.array_1st, indexPath.row);
+        [cell setModel:model2 indexPath:indexPath showAll:self.isShowAll];
+        //根据当前数据，计算Cell的高度，注意+1是contentview和cell之间的分割线高度
+        //    NSInteger height = ceil([cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel + cell.tableView.contentSize.height);
+        NSInteger height = ceil([cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel);
+        model.cellHeight = height;
+        return height;
+    }
     //return [tableView fd_heightForCellWithIdentifier:cellIdentifier cacheByIndexPath:indexPath configuration:^(id cell) {
-//        [cell setModel:model2 indexPath:indexPath showAll:self.isShowAll];
-//    }];
+    //        [cell setModel:model2 indexPath:indexPath showAll:self.isShowAll];
+    //    }];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    static BPIncludeTableSystemLayoutHeaderView *header;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        header = [[[NSBundle mainBundle] loadNibNamed:headerIdentifier owner:nil options:nil] firstObject];
-    });
     BPMultiLevelCatalogueModel1st *sectionModel = BPValidateArrayObjAtIdx(self.arraySource,section);
-    [header setModel:sectionModel section:section];
-    NSInteger height = ceil([header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);
-    return height;
+    if (sectionModel.headerHeight) {
+        return sectionModel.headerHeight;
+    }else {
+        static BPIncludeTableSystemLayoutHeaderView *header;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            header = [[[NSBundle mainBundle] loadNibNamed:headerIdentifier owner:nil options:nil] firstObject];
+        });
+        BPMultiLevelCatalogueModel1st *sectionModel = BPValidateArrayObjAtIdx(self.arraySource,section);
+        [header setModel:sectionModel section:section];
+        NSInteger height = ceil([header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel);
+        sectionModel.headerHeight = height;
+        return height;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {

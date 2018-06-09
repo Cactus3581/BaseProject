@@ -47,6 +47,7 @@ static CGFloat cellHeight = 100;
     [super viewDidLoad];
     self.rightBarButtonTitle = @"reloaddata";
     [self configureTable];
+    [self addFPSLabel];
 }
 
 - (void)rightBarButtonItemClickAction:(id)sender {
@@ -131,7 +132,6 @@ static CGFloat cellHeight = 100;
 - (NSMutableArray *)array {
     if (!_array) {
         _array = [NSMutableArray arrayWithArray:[BPCellAutoLayoutHeightDataSource array]];
-        [YYFPSLabel bp_addFPSLableOnWidnow];
     }
     return _array;
 }

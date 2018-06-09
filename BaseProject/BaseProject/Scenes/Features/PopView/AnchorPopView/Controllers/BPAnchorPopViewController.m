@@ -141,8 +141,8 @@
     if (@available(iOS 11,*)) {
         [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.height.mas_equalTo(50);
-            make.trailing.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(-30);
-            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(-200);
+            make.trailing.equalTo(self.view).offset(-30);
+            make.bottom.equalTo(self.view).offset(-200);
         }];
     }else {
         [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {

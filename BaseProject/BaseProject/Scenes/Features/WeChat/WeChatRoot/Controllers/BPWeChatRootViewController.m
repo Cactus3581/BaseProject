@@ -105,7 +105,7 @@
     if (!_backButton) {
         UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _backButton = backButton;
-        _backButton.backgroundColor = kPurpleColor;
+        _backButton.backgroundColor = kThemeColor;
         [_backButton setTitle:@"back" forState:UIControlStateNormal];
         _backButton.titleLabel.font  = BPFont(16);
         [_backButton setTitleColor:kWhiteColor forState:UIControlStateNormal];

@@ -45,7 +45,7 @@ static NSInteger limitNumber = 2;
                 model3.cellHeight = [model3.title_3rd heightWithFont:[UIFont systemFontOfSize:font] width:kScreenWidth-smallCellH lineSpace:1]  + [model3.brief_3rd heightWithFont:[UIFont systemFontOfSize:font] width:kScreenWidth-smallCellH lineSpace:4];
                 if (model3.cellHeight > 0.01) {
                     model3.cellHeight += smallCellV;
-                    model3.cellHeight = ceil(model3.cellHeight);
+                    model3.cellHeight = ceil(model3.cellHeight+kOnePixel);
 
                 }
                 /* 暂时用不到,如果用到了需要接口加个是否需要limit的参数，比如+ (void)handleData:(BPMultiLevelCatalogueModel *)data limit:(BOOL)limit
@@ -64,10 +64,10 @@ static NSInteger limitNumber = 2;
                 model2.headerHeight += smallHeadV;
                 model2.headerHeight = ceil(model2.headerHeight);
             }
-            smallHeight += model2.headerHeight + kOnePixel;
+            smallHeight += model2.headerHeight;
             if (smallHeight > 0.01) {
                 model2.cellHeight = smallHeight;
-                 model2.cellHeight = ceil(model2.cellHeight);
+                 model2.cellHeight = ceil(model2.cellHeight + kOnePixel);
             }
         }];
         NSString *title_1st  = BPValidateString(model.title_1st);

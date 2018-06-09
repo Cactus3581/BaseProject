@@ -40,16 +40,18 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutInsideHeaderView
 }
 
 - (void)setModel:(BPMultiLevelCatalogueModel2nd *)model indexPath:(NSIndexPath *)indexPath showAll:(BOOL)showAll {
-    _model = model;
-    _isShowAll = showAll;
-    [self.arraySource removeAllObjects];
-    self.arraySource = model.array_2nd.mutableCopy;
-    [self.tableView reloadData];
-    [self.tableView layoutIfNeeded];
-    [self.contentView layoutIfNeeded];
-    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(self.tableView.contentSize.height);
-    }];
+    if (_model != model) {
+        _model = model;
+        _isShowAll = showAll;
+        [self.arraySource removeAllObjects];
+        self.arraySource = model.array_2nd.mutableCopy;
+        [self.tableView reloadData];
+        [self.tableView layoutIfNeeded];
+        [self.contentView layoutIfNeeded];
+        [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(self.tableView.contentSize.height);
+        }];
+    }
 }
 
 #pragma mark -初始化Tableview及delagate
@@ -109,15 +111,22 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutInsideHeaderView
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static BPIncludeTableSystemLayoutInsideTableViewCell *cell;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        cell = [[[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil] firstObject];
-    });
     BPMultiLevelCatalogueModel3rd *model = BPValidateArrayObjAtIdx(self.arraySource,indexPath.row);
-    [cell setModel:model indexPath:indexPath];
-    NSInteger height = ceil([cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel);
-    return height;
+    if (model.cellHeight) {
+        return model.cellHeight;
+    }else {
+        static BPIncludeTableSystemLayoutInsideTableViewCell *cell;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            cell = [[[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil] firstObject];
+        });
+        BPMultiLevelCatalogueModel3rd *model = BPValidateArrayObjAtIdx(self.arraySource,indexPath.row);
+        [cell setModel:model indexPath:indexPath];
+        NSInteger height = ceil([cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel);
+        model.cellHeight = height;
+        return height;
+    }
+
     /*
     return [tableView fd_heightForCellWithIdentifier:cellIdentifier cacheByIndexPath:indexPath configuration:^(id cell) {
         [cell setModel:model indexPath:indexPath];
@@ -136,14 +145,19 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutInsideHeaderView
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    static BPIncludeTableSystemLayoutInsideHeaderView *header;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        header = [[[NSBundle mainBundle] loadNibNamed:headerIdentifier owner:nil options:nil] firstObject];
-    });
-    [header setModel:_model section:section];
-    NSInteger height = ceil([header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height);
-    return height;
+    if (_model.headerHeight) {
+        return _model.headerHeight;
+    }else {
+        static BPIncludeTableSystemLayoutInsideHeaderView *header;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            header = [[[NSBundle mainBundle] loadNibNamed:headerIdentifier owner:nil options:nil] firstObject];
+        });
+        [header setModel:_model section:section];
+        NSInteger height = ceil([header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel);
+        _model.headerHeight = height;
+        return height;
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

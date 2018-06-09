@@ -52,8 +52,8 @@ static CGFloat paletteViewHeight = 100.0f;
     if (kiOS11) {
         [self.paletteView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(paletteViewHeight);
-            make.leading.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
-            make.trailing.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+            make.leading.equalTo(self.view);
+            make.trailing.equalTo(self.view);
             make.bottom.equalTo(self.view.mas_bottom);
         }];
     }else {

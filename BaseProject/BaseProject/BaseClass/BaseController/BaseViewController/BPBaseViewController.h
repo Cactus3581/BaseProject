@@ -46,4 +46,8 @@
 - (void)configBarDefaulyStyle;
 
 - (void)naviBarHidden:(BOOL)hidden animated:(BOOL)animated;
+
+- (void)addFPSLabel;
+- (void)removeFPSLabel;
+
 @end

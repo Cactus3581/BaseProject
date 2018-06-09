@@ -13,7 +13,7 @@
         <scene sceneID="QR4-Cl-aXg">
             <objects>
                 <viewController storyboardIdentifier="LaunchScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QJB-8J-aru" sceneMemberID="viewController">
-                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchImage6.png" id="dsR-Pr-S1e">
+                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchImage7.png" id="dsR-Pr-S1e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -25,6 +25,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launchImage6.png" width="375" height="667"/>
+        <image name="launchImage7.png" width="375" height="667"/>
     </resources>
 </document>

@@ -23,7 +23,7 @@
 @end
 
 static NSInteger limitNumber = 2;
-static NSString *cellIdentifier = @"BPIncludeTableManualHeadCell.h";
+static NSString *cellIdentifier = @"BPIncludeTableManualHeadCell";
 static NSString *headerIdentifier = @"BPIncludeTableManualHeaderView";
 
 @implementation BPIncludeTableManualController
@@ -39,6 +39,7 @@ static NSString *headerIdentifier = @"BPIncludeTableManualHeaderView";
     [super viewDidLoad];
     [self handleData];
     [self configTableView];
+    [self addFPSLabel];
 }
 
 - (void)handleData {
@@ -57,18 +58,21 @@ static NSString *headerIdentifier = @"BPIncludeTableManualHeaderView";
     
     self.tableView.backgroundColor = kLevelColor5;
     
-    _tableView.estimatedSectionHeaderHeight = 0;
+    _tableView.estimatedSectionHeaderHeight = 50;
     _tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
     
-    _tableView.estimatedRowHeight = 0;
+    _tableView.estimatedRowHeight = 190;
     _tableView.rowHeight = UITableViewAutomaticDimension;
     
-    _tableView.estimatedSectionFooterHeight = 0;
+    _tableView.estimatedSectionFooterHeight = CGFLOAT_MIN;
     _tableView.sectionFooterHeight = 0;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    //self.tableView.bounces = NO;
+    //self.tableView.scrollEnabled = NO;
 }
 
 #pragma mark - TableView delegate
@@ -128,15 +132,6 @@ static NSString *headerIdentifier = @"BPIncludeTableManualHeaderView";
     return CGFLOAT_MIN;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    CGFloat sectionHeaderHeight = self.sectionHeight + 1;
-//    if (scrollView.contentOffset.y<=sectionHeaderHeight&&scrollView.contentOffset.y>=0) {
-//        scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
-//    } else if (scrollView.contentOffset.y>=sectionHeaderHeight) {
-//        scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
-//    }
-}
-
 - (CGFloat)cardViewHeightWithMaxWidth:(CGFloat)maxWidth {
     [self.view layoutIfNeeded];
     return self.tableView.contentSize.height;
@@ -153,8 +148,18 @@ static NSString *headerIdentifier = @"BPIncludeTableManualHeaderView";
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        //计算旋转之后的宽度并赋值
+        CGSize screen = [UIScreen mainScreen].bounds.size;
+        //界面处理逻辑
         [self handleData];
+        //动画播放完成之后
+        if(screen.width > screen.height){
+            BPLog(@"横屏");
+        }else{
+            BPLog(@"竖屏");
+        }
     } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        BPLog(@"动画播放完之后处理");
     }];
 }
 

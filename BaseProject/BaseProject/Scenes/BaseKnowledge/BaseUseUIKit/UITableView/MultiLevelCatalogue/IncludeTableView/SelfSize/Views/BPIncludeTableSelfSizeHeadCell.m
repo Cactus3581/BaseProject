@@ -17,6 +17,9 @@
 @property (nonatomic,strong) BPMultiLevelCatalogueModel2nd *model;
 @end
 
+static NSString *cellIdentifier = @"BPIncludeTableSelfSizeInsideTableViewCell";
+static NSString *headerIdentifier = @"BPIncludeTableSelfSizeInsideHeaderView";
+
 @implementation BPIncludeTableSelfSizeHeadCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -49,25 +52,27 @@
 //}
 
 - (void)setModel:(BPMultiLevelCatalogueModel2nd *)model indexPath:(NSIndexPath *)indexPath showAll:(BOOL)showAll {
-    _model = model;
-    [self.arraySource removeAllObjects];
-    self.arraySource = model.array_2nd.mutableCopy;
-    [self.tableView reloadData];
-    [self.tableView layoutIfNeeded];//刷新完成
-    [self.contentView layoutIfNeeded];
-//    [self invalidateIntrinsicContentSize];
-    BPLog(@"setModel = %.2f,%d",self.tableView.contentSize.height,indexPath.row);
-    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(self.tableView.contentSize.height);
-    }];
-//    [self.tableView layoutIfNeeded];//刷新完成
-//    [self.contentView layoutIfNeeded];
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        BPLog(@"setModel3 = %.2f,%d",self.tableView.contentSize.height,indexPath.row);
-//        [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-//            make.height.mas_equalTo(self.tableView.contentSize.height);
-//        }];
-//    });
+//    if (_model != model) {
+        _model = model;
+        [self.arraySource removeAllObjects];
+        self.arraySource = model.array_2nd.mutableCopy;
+        [self.tableView reloadData];
+        [self.tableView layoutIfNeeded];//刷新完成
+        [self.contentView layoutIfNeeded];
+        //    [self invalidateIntrinsicContentSize];
+        BPLog(@"setModel = %.2f,%d",self.tableView.contentSize.height,indexPath.row);
+        [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(self.tableView.contentSize.height);
+        }];
+        //    [self.tableView layoutIfNeeded];//刷新完成
+        //    [self.contentView layoutIfNeeded];
+        //    dispatch_async(dispatch_get_main_queue(), ^{
+        //        BPLog(@"setModel3 = %.2f,%d",self.tableView.contentSize.height,indexPath.row);
+        //        [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+        //            make.height.mas_equalTo(self.tableView.contentSize.height);
+        //        }];
+        //    });
+//    }
 }
 
 #pragma mark -初始化Tableview及delagate
@@ -111,20 +116,18 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    static NSString *identifier = @"BPIncludeTableSelfSizeInsideHeaderView";
-    BPIncludeTableSelfSizeInsideHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
+    BPIncludeTableSelfSizeInsideHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerIdentifier];
     if (!header) {
-        header = [[[NSBundle mainBundle] loadNibNamed:@"BPIncludeTableSelfSizeInsideHeaderView" owner:nil options:nil] firstObject];
+        header = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([BPIncludeTableSelfSizeInsideHeaderView class]) owner:nil options:nil] firstObject];
     }
     [header setModel:_model section:section];
     return header;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"BPIncludeTableSelfSizeInsideTableViewCell";
-    BPIncludeTableSelfSizeInsideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    BPIncludeTableSelfSizeInsideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"BPIncludeTableSelfSizeInsideTableViewCell" owner:nil options:nil] firstObject];
+        cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([BPIncludeTableSelfSizeInsideTableViewCell class]) owner:nil options:nil] firstObject];
     }
     BPMultiLevelCatalogueModel3rd *model = BPValidateArrayObjAtIdx(self.arraySource,indexPath.row);
     [cell setModel:model indexPath:indexPath];

@@ -20,6 +20,9 @@
 
 static NSInteger limitNumber = 2;
 
+static NSString *cellIdentifier = @"BPIncludeTableManualInsideTableViewCell";
+static NSString *headerIdentifier = @"BPIncludeTableManualInsideHeaderView";
+
 @implementation BPIncludeTableManualHeadCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -38,10 +41,12 @@ static NSInteger limitNumber = 2;
 }
 
 - (void)setModel:(BPMultiLevelCatalogueModel2nd *)model indexPath:(NSIndexPath *)indexPath showAll:(BOOL)showAll {
-    _model = model;
-    [self.arraySource removeAllObjects];
-    self.arraySource = model.array_2nd.mutableCopy;
-    [self.tableView reloadData];
+    if (_model != model) {
+        _model = model;
+        [self.arraySource removeAllObjects];
+        self.arraySource = model.array_2nd.mutableCopy;
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark -初始化Tableview及delagate
@@ -67,6 +72,15 @@ static NSInteger limitNumber = 2;
     _tableView.estimatedSectionFooterHeight = 0;
     _tableView.sectionFooterHeight = 0;
 
+    _tableView.estimatedSectionHeaderHeight = 30;
+    _tableView.sectionHeaderHeight = UITableViewAutomaticDimension;
+
+    _tableView.estimatedRowHeight = 190;
+    _tableView.rowHeight = UITableViewAutomaticDimension;
+
+    _tableView.estimatedSectionFooterHeight = CGFLOAT_MIN;
+    _tableView.sectionFooterHeight = UITableViewAutomaticDimension;
+    
     [self.contentView addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.contentView);
@@ -89,21 +103,14 @@ static NSInteger limitNumber = 2;
     return BPValidateArray(self.arraySource).count;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    static NSString *identifier = @"BPIncludeTableManualInsideHeaderView";
-    BPIncludeTableManualInsideHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:identifier];
-    if (!header) {
-        header = [[[NSBundle mainBundle] loadNibNamed:@"BPIncludeTableManualInsideHeaderView" owner:nil options:nil] firstObject];
-    }
-    [header setModel:_model section:section];
-    return header;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BPMultiLevelCatalogueModel3rd *model = BPValidateArrayObjAtIdx(self.arraySource,indexPath.row);
+    return model.cellHeight;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"BPIncludeTableManualInsideTableViewCell";
-    BPIncludeTableManualInsideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    BPIncludeTableManualInsideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"BPIncludeTableManualInsideTableViewCell" owner:nil options:nil] firstObject];
+        cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([BPIncludeTableManualInsideTableViewCell class]) owner:self options:nil] lastObject];
     }
     BPMultiLevelCatalogueModel3rd *model = BPValidateArrayObjAtIdx(self.arraySource,indexPath.row);
     [cell setModel:model indexPath:indexPath];
@@ -118,18 +125,13 @@ static NSInteger limitNumber = 2;
     return _model.headerHeight;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BPMultiLevelCatalogueModel3rd *model = BPValidateArrayObjAtIdx(self.arraySource,indexPath.row);
-    return model.cellHeight;
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    CGFloat sectionHeaderHeight = 1000;
-//    if (scrollView.contentOffset.y<=sectionHeaderHeight&&scrollView.contentOffset.y>=0) {
-//        scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
-//    } else if (scrollView.contentOffset.y>=sectionHeaderHeight) {
-//        scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
-//    }
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    BPIncludeTableManualInsideHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerIdentifier];
+    if (!header) {
+        header = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([BPIncludeTableManualInsideHeaderView class]) owner:nil options:nil] firstObject];
+    }
+    [header setModel:_model section:section];
+    return header;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

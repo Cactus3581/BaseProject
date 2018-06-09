@@ -39,7 +39,6 @@
     [self.view addSubview:self.tableView];
     if (kiOS11) {
         [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-            //make.edges.equalTo(self.view.mas_safeAreaLayoutGuide);
             make.edges.equalTo(self.view);
         }];
     }else {

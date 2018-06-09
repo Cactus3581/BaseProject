@@ -19,4 +19,6 @@
 
 + (void)bp_addFPSLableOnWidnow;
 
++ (void)bp_removeFPSLableOnWidnow;
+
 @end

@@ -18,56 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self configureImageView];//image 切割
-//    [self layoutTaobao];//淘宝购物车动画
-//    [self configureButton];
-}
-
-#pragma mark image 切割
-- (void)configureImageView {
-    UIImageView *view = [[UIImageView alloc]init];
-    [self.view addSubview:view];
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-        make.size.mas_equalTo(32);
-    }];
-    UIImage *image;
-    image = [[UIImage imageNamed:@"close"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 15, 15) resizingMode:UIImageResizingModeStretch];
-    image = [[UIImage imageNamed:@"user"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
-    view.image =  image;
-    view.backgroundColor = kGreenColor;
-    
-    UIImageView *view1 = [[UIImageView alloc]init];
-    [self.view addSubview:view1];
-    [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(view.mas_bottom).offset(30);
-        make.centerX.equalTo(view);
-        make.size.equalTo(view);
-    }];
-    
-    UIImage *image1;
-    //    image1 = [[UIImage imageNamed:@"user"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) resizingMode:UIImageResizingModeStretch];
-    image1 = [UIImage imageNamed:@"close"];
-    //    image = [[UIImage imageNamed:@"user"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
-    view1.image =  image1;
-    view1.backgroundColor = kGreenColor;
-    
-}
-
-#pragma mark - button详细及淘宝动画
-- (void)layoutTaobao {
-    [self.view addSubview:self.taobaoView];
-    [self.taobaoView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@400);
-        make.leading.trailing.equalTo(self.view);
-        make.top.equalTo(self.view.mas_bottom);
-    }];
+    [self configureButton];
 }
 
 - (UIView *)taobaoView {
     if (!_taobaoView) {
-        _taobaoView = [[UIView alloc]init];
+        _taobaoView = [[UIView alloc] init];
+        [self.view addSubview:_taobaoView];
         _taobaoView.backgroundColor = kPurpleColor;
+        [_taobaoView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@400);
+            make.leading.trailing.equalTo(self.view);
+            make.top.equalTo(self.view.mas_bottom);
+        }];
     }
     return _taobaoView;
 }
@@ -124,8 +87,8 @@
     if (@available(iOS 11,*)) {
         [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.height.mas_equalTo(50);
-            make.trailing.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(-30);
-            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(-200);
+            make.trailing.equalTo(self.view.mas_trailing).offset(-30);
+            make.bottom.equalTo(self.view).offset(-200);
         }];
     }else {
         [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -139,11 +102,10 @@
 - (void)btnLong:(UILongPressGestureRecognizer*)gestureRecognizer{
     if ([gestureRecognizer state] == UIGestureRecognizerStateBegan) {
         BPLog(@"长按事件");
-        self.navigationController.navigationBarHidden = YES;
+        self.taobaoView.backgroundColor = kPurpleColor;
+        [self.view layoutIfNeeded];
         [self.taobaoView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.view.mas_bottom).offset((-(CGRectGetHeight(self.taobaoView.bounds))));
-            //make.height.mas_equalTo(400);
-            
         }];
         
         [UIView animateWithDuration:0.25 animations:^{

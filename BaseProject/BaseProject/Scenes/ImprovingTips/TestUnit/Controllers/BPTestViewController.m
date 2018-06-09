@@ -1,18 +1,18 @@
 //
-//  BPTestAutoLayoutViewController.m
+//  BPTestViewController.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2018/1/6.
-//  Copyright © 2018年 cactus. All rights reserved.
+//  Created by xiaruzhen on 2017/12/5.
+//  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "BPTestAutoLayoutViewController.h"
+#import "BPTestViewController.h"
 
-@interface BPTestAutoLayoutViewController ()<UIGestureRecognizerDelegate>
+@interface BPTestViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
-@implementation BPTestAutoLayoutViewController
+@implementation BPTestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -139,8 +139,8 @@
     if (@available(iOS 11,*)) {
         [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.height.mas_equalTo(50);
-            make.trailing.equalTo(self.view.mas_safeAreaLayoutGuideRight).offset(-30);
-            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom).offset(-200);
+            make.trailing.equalTo(self.view).offset(-30);
+            make.bottom.equalTo(self.view).offset(-200);
         }];
     }else {
         [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -10,6 +10,7 @@
 
 @interface BPIncludeTableSelfSizeInsideHeaderView()
 @property (weak, nonatomic) IBOutlet UILabel *textSectionLabel;
+@property (nonatomic,strong) BPMultiLevelCatalogueModel2nd *model;
 @end
 
 @implementation BPIncludeTableSelfSizeInsideHeaderView
@@ -36,14 +37,18 @@
 }
 
 - (void)setModel:(BPMultiLevelCatalogueModel2nd *)model section:(NSInteger)section {
-    NSString *str = BPValidateString(model.title_2nd);
-    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:str];
-    [string addAttribute:NSForegroundColorAttributeName value:kLightGrayColor range:NSMakeRange(0, str.length)];
-    [string addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(0, str.length)];
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.lineSpacing = 4;
-    [string addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, str.length)];
-    _textSectionLabel.attributedText = string;
+    if (_model != model) {
+        _model = model;
+        NSString *str = BPValidateString(model.title_2nd);
+        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:str];
+        [string addAttribute:NSForegroundColorAttributeName value:kLightGrayColor range:NSMakeRange(0, str.length)];
+        [string addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(0, str.length)];
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        paragraphStyle.lineSpacing = 4;
+        [string addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, str.length)];
+        _textSectionLabel.attributedText = string;
+    }
+
 }
 
 @end

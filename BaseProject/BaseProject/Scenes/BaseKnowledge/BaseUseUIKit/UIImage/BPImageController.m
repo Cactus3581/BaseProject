@@ -17,8 +17,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self test];
+    [self configureImageView];//image 切割
+}
+
+#pragma mark image 切割
+- (void)configureImageView {
+    UIImageView *view = [[UIImageView alloc]init];
+    [self.view addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.size.mas_equalTo(32);
+    }];
+    UIImage *image;
+    image = [[UIImage imageNamed:@"close"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 15, 15) resizingMode:UIImageResizingModeStretch];
+    image = [[UIImage imageNamed:@"user"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
+    view.image =  image;
+    view.backgroundColor = kGreenColor;
+    
+    UIImageView *view1 = [[UIImageView alloc]init];
+    [self.view addSubview:view1];
+    [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(view.mas_bottom).offset(30);
+        make.centerX.equalTo(view);
+        make.size.equalTo(view);
+    }];
+    
+    UIImage *image1;
+    //    image1 = [[UIImage imageNamed:@"user"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) resizingMode:UIImageResizingModeStretch];
+    image1 = [UIImage imageNamed:@"close"];
+    //    image = [[UIImage imageNamed:@"user"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
+    view1.image =  image1;
+    view1.backgroundColor = kGreenColor;
+    
 }
 
 - (void)test {

@@ -4,54 +4,38 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string>Bar</string>
+		<string>微信</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
-		<string>导航栏基本属性及动画/自定义Tabbar</string>
+		<string></string>
 		<key>subVc_array</key>
 		<array>
 			<dict>
 				<key>title</key>
-				<string>NaviBar基本属性</string>
+				<string>cell行高（朋友圈）</string>
 				<key>fileName</key>
-				<string>BPNaviProperyViewController</string>
-				<key>briefIntro</key>
-				<string>导航栏基本属性及动画/自定义Tabbar</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>tableView与navi动画-1</string>
-				<key>fileName</key>
-				<string>BPNaviTableViewControllerOne</string>
-				<key>briefIntro</key>
-				<string>计算cell高度</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>tableView与navi动画-2</string>
-				<key>fileName</key>
-				<string>BPNaviTableViewControllerTwo</string>
+				<string>BPWeChatRootViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>tableView与navi动画-3</string>
+				<string>聊天记录操作（tableView的运用）</string>
 				<key>fileName</key>
-				<string>BPNaviTableViewControllerThree</string>
+				<string>BPWeChatRootViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>图片浏览器（collectionView的运用）</string>
+				<key>fileName</key>
+				<string>BPWeChatRootViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
 		</array>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>标签</string>
-		<key>fileName</key>
-		<string>BPTagViewController</string>
-		<key>briefIntro</key>
-		<string>标签</string>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -91,7 +75,7 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>image切割</string>
+				<string>由底部到上的PopView</string>
 				<key>fileName</key>
 				<string>BPPopViewController</string>
 				<key>briefIntro</key>
@@ -179,14 +163,6 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>添加圆角</string>
-		<key>fileName</key>
-		<string>BPAddRoundedCornerViewController</string>
-		<key>briefIntro</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>图片放大器</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
@@ -195,7 +171,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>动画集合</string>
+		<string>常用业务场景下的动画集合</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
@@ -206,7 +182,7 @@
 				<key>title</key>
 				<string>系统卡片动画</string>
 				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
+				<string></string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -262,33 +238,6 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>自定义转场动画及手势</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>XIB</string>
-				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>纯代码</string>
-				<key>fileName</key>
-				<string>BPTestViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>二级菜单</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
@@ -302,25 +251,6 @@
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
 		<string>卡片上(下)拉，背景图高斯模糊效果</string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>XIB</string>
-				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>纯代码</string>
-				<key>fileName</key>
-				<string>BPTestViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -337,25 +267,6 @@
 		<string></string>
 		<key>briefIntro</key>
 		<string></string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>XIB</string>
-				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>纯代码</string>
-				<key>fileName</key>
-				<string>BPTestViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -386,7 +297,15 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>动态添加标签</string>
+		<string>标签</string>
+		<key>fileName</key>
+		<string>BPTagViewController</string>
+		<key>briefIntro</key>
+		<string>标签</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>动态输入添加标签</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
@@ -429,14 +348,6 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>数据库多表关联</string>
-		<key>fileName</key>
-		<string>BPDatabaseViewController</string>
-		<key>briefIntro</key>
-		<string>数据库多表关联</string>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>图表</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
@@ -448,7 +359,7 @@
 				<key>title</key>
 				<string>折线图</string>
 				<key>fileName</key>
-				<string>BPTest_XibViewController</string>
+				<string></string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -456,7 +367,7 @@
 				<key>title</key>
 				<string>曲线图</string>
 				<key>fileName</key>
-				<string>BPTestViewController</string>
+				<string></string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -464,7 +375,7 @@
 				<key>title</key>
 				<string>柱状图</string>
 				<key>fileName</key>
-				<string>BPTestViewController</string>
+				<string></string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -477,65 +388,6 @@
 		<string></string>
 		<key>briefIntro</key>
 		<string></string>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>web桥接</string>
-		<key>fileName</key>
-		<string></string>
-		<key>briefIntro</key>
-		<string>js与native交互</string>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>缓存设计</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>Cell进度</string>
-		<key>fileName</key>
-		<string></string>
-		<key>briefIntro</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>微信</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>cell行高（朋友圈）</string>
-				<key>fileName</key>
-				<string>BPWeChatRootViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>聊天记录操作（tableView的运用）</string>
-				<key>fileName</key>
-				<string>BPWeChatRootViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>图片浏览器（collectionView的运用）</string>
-				<key>fileName</key>
-				<string>BPWeChatRootViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
 	</dict>
 </array>
 </plist>

@@ -23,7 +23,7 @@
 @property (nonatomic,strong) BPMultiLevelCatalogueModel *data;//显示的数据
 @end
 
-static NSString *cellIdentifier = @"BPIncludeTableSelfSizeHeadCell.h";
+static NSString *cellIdentifier = @"BPIncludeTableSelfSizeHeadCell";
 static NSString *headerIdentifier = @"BPIncludeTableSelfSizeHeaderView";
 
 @implementation BPIncludeTableSelfSizeController
@@ -32,6 +32,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSelfSizeHeaderView";
     [super viewDidLoad];
     [self handleData];
     [self configTableView];
+    [self addFPSLabel];
 }
 
 - (void)handleData {

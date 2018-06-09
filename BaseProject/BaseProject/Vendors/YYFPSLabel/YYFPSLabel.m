@@ -11,6 +11,8 @@
 
 #define kSize CGSizeMake(55, 20)
 
+static YYFPSLabel *label;
+
 @implementation YYFPSLabel {
     CADisplayLink *_link;
     NSUInteger _count;
@@ -81,11 +83,15 @@
 + (void)bp_addFPSLableOnWidnow {
 #ifdef DEBUG
     YYFPSLabel *fpsLabel = [YYFPSLabel new];
+    label = fpsLabel;
     UIWindow *window = [[UIApplication sharedApplication].delegate window];
     fpsLabel.frame = CGRectMake(5, CGRectGetHeight(window.frame) - 80, 60, 20);
     [window addSubview:fpsLabel];
 #endif
 }
 
-@end
++ (void)bp_removeFPSLableOnWidnow {
+    [label removeFromSuperview];
+}
 
+@end

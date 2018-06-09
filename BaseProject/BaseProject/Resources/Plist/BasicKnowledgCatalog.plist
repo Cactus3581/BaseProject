@@ -66,9 +66,28 @@
 				<key>title</key>
 				<string>TableView优化点</string>
 				<key>fileName</key>
-				<string>BPOptimizeTableViewController</string>
+				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
 				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>完整的优化</string>
+						<key>fileName</key>
+						<string>BPOptimizeTableViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>添加圆角</string>
+						<key>fileName</key>
+						<string>BPAddRoundedCornerViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>title</key>
@@ -298,6 +317,14 @@
 								<key>briefIntro</key>
 								<string></string>
 							</dict>
+							<dict>
+								<key>title</key>
+								<string>自定义转场动画及手势</string>
+								<key>fileName</key>
+								<string>BPSimpleTableController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
 						</array>
 					</dict>
 				</array>
@@ -331,7 +358,7 @@
 						<key>title</key>
 						<string>AFN</string>
 						<key>fileName</key>
-						<string>BPTest_XibViewController</string>
+						<string></string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -339,7 +366,7 @@
 						<key>title</key>
 						<string>SDWebImage</string>
 						<key>fileName</key>
-						<string>BPTest_XibViewController</string>
+						<string></string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -347,7 +374,7 @@
 						<key>title</key>
 						<string>YTK</string>
 						<key>fileName</key>
-						<string>BPTest_XibViewController</string>
+						<string></string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -355,7 +382,7 @@
 						<key>title</key>
 						<string>MJRefresh</string>
 						<key>fileName</key>
-						<string>BPTest_XibViewController</string>
+						<string></string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -363,7 +390,7 @@
 						<key>title</key>
 						<string>YYKit</string>
 						<key>fileName</key>
-						<string>BPTest_XibViewController</string>
+						<string></string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -408,9 +435,36 @@
 				<key>title</key>
 				<string>数据持久化</string>
 				<key>fileName</key>
-				<string>BPDataPersistenceVC</string>
+				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
 				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>iOS自有的</string>
+						<key>fileName</key>
+						<string>BPDataPersistenceVC</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>数据库多表关联</string>
+						<key>fileName</key>
+						<string>BPDatabaseViewController</string>
+						<key>briefIntro</key>
+						<string>数据库多表关联</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>缓存设计：NSCache</string>
+						<key>fileName</key>
+						<string></string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>title</key>
@@ -703,9 +757,17 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>TableView优化点</string>
+						<string>TableView优化点（去重点知识目录查找）</string>
 						<key>fileName</key>
-						<string>BPOptimizeTableViewController</string>
+						<string></string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>Cell下载进度及秒杀倒计时</string>
+						<key>fileName</key>
+						<string></string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -830,23 +892,23 @@
 				<key>title</key>
 				<string>UIWebView</string>
 				<key>fileName</key>
-				<string>BPWebViewController</string>
+				<string>BPWebViewController：桥接，js与native交互等</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>UISlider</string>
+				<string>UIToolBar</string>
 				<key>fileName</key>
-				<string>BPSliderViewController</string>
+				<string>BPToolBarViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>UISlider</string>
+				<string>UIWKWebView</string>
 				<key>fileName</key>
-				<string>BPSliderViewController</string>
+				<string>BPWKWebViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -897,6 +959,84 @@
 				<string>BPDatePickerController</string>
 				<key>briefIntro</key>
 				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UINavigationController</string>
+				<key>fileName</key>
+				<string>BPSimpleTableController</string>
+				<key>briefIntro</key>
+				<string>导航栏基本属性及动画</string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>NaviBar基本属性</string>
+						<key>fileName</key>
+						<string>BPNaviProperyViewController</string>
+						<key>briefIntro</key>
+						<string>导航栏基本属性及动画</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>自定义Bar</string>
+						<key>fileName</key>
+						<string></string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>tableView与navi动画-1</string>
+						<key>fileName</key>
+						<string>BPNaviTableViewControllerOne</string>
+						<key>briefIntro</key>
+						<string>计算cell高度</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>tableView与navi动画-2</string>
+						<key>fileName</key>
+						<string>BPNaviTableViewControllerTwo</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>tableView与navi动画-3</string>
+						<key>fileName</key>
+						<string>BPNaviTableViewControllerThree</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UITabBarController</string>
+				<key>fileName</key>
+				<string>BPSimpleTableController</string>
+				<key>briefIntro</key>
+				<string>协议方法/自定义Tabbar</string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>自定义Tabbar</string>
+						<key>fileName</key>
+						<string></string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>代理使用及配置主题颜色</string>
+						<key>fileName</key>
+						<string></string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 		</array>
 	</dict>
@@ -1084,6 +1224,41 @@
 		<string></string>
 		<key>briefIntro</key>
 		<string>学习swift</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>三大事件</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>触摸事件</string>
+				<key>fileName</key>
+				<string> </string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>远程事件</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>加速计事件</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 </array>
 </plist>

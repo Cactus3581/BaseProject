@@ -9,6 +9,7 @@
 #import "BPBaseViewController.h"
 #import "UIBarButtonItem+BPCreate.h"
 #import "UIButton+BPImagePosition.h"
+#import "YYFPSLabel.h"
 
 @interface BPBaseViewController ()<UINavigationControllerDelegate>
 @property(nonatomic,strong) UIButton *leftBarButton;
@@ -212,6 +213,20 @@ static CGFloat titleInset = 20.0f;
 #pragma mark - 隐藏navibar及恢复默认样式
 - (void)naviBarHidden:(BOOL)hidden animated:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:hidden animated:animated];//无法提供手势滑动pop效果，但是有系统自动的动画效果。
+//    [self.navigationController.navigationBar setHidden:YES];//区别
+}
+
+- (void)addFPSLabel {
+    [YYFPSLabel bp_addFPSLableOnWidnow];
+}
+
+- (void)removeFPSLabel {
+    [YYFPSLabel bp_removeFPSLableOnWidnow];
+}
+
+- (void)dealloc {
+    [self removeFPSLabel];
+    BPLog(@"i am vc 释放了");
 }
 
 @end

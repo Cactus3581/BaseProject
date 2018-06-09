@@ -11,7 +11,6 @@
 #import <Bugly/Bugly.h>
 #import "BPBaseViewController.h"
 #import "BPBaseNavigationController.h"
-#import "YYFPSLabel.h"
 
 @interface BPAppDelegate ()
 
@@ -23,7 +22,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.rootTabbarViewController = [[BPRootTabBarController alloc]init];
     self.window.rootViewController = self.rootTabbarViewController;
-    //[YYFPSLabel bp_addFPSLableOnWidnow];
     //[self configLaunchImage]; // 代码启动图片（在info里把launch key删除，防止展示两次）
     [self configSDKS];
     return YES;
