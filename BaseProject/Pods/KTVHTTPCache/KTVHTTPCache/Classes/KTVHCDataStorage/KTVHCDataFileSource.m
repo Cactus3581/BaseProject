@@ -10,75 +10,25 @@
 #import "KTVHCDataCallback.h"
 #import "KTVHCLog.h"
 
+@interface KTVHCDataFileSource () <NSLocking>
 
-@interface KTVHCDataFileSource ()
-
-
-#pragma mark - Protocol
-
-@property (nonatomic, copy) NSString * filePath;
-
-@property (nonatomic, assign) long long offset;
-@property (nonatomic, assign) long long length;
-
-@property (nonatomic, assign) BOOL didClose;
-@property (nonatomic, assign) BOOL didCallPrepare;
-@property (nonatomic, assign) BOOL didFinishRead;
-
-
-#pragma mark - Setter
-
-@property (nonatomic, assign) long long startOffset;
-@property (nonatomic, assign) long long needReadLength;
-
-@property (nonatomic, weak) id <KTVHCDataFileSourceDelegate> delegate;
-@property (nonatomic, strong) dispatch_queue_t delegateQueue;
-
-
-#pragma mark - File
-
-@property (nonatomic, strong) NSLock * lock;
+@property (nonatomic, strong) NSLock * coreLock;
 @property (nonatomic, strong) NSFileHandle * readingHandle;
-@property (nonatomic, assign) long long fileReadedLength;
-
+@property (nonatomic, assign) long long readedLength;
 
 @end
 
-
 @implementation KTVHCDataFileSource
 
-
-+ (instancetype)sourceWithFilePath:(NSString *)filePath
-                            offset:(long long)offset
-                            length:(long long)length
-                       startOffset:(long long)startOffset
-                    needReadLength:(long long)needReadLength
-{
-    return [[self alloc] initWithFilePath:filePath
-                                   offset:offset
-                                     length:length
-                              startOffset:startOffset
-                             needReadLength:needReadLength];
-}
-
-- (instancetype)initWithFilePath:(NSString *)filePath
-                          offset:(long long)offset
-                          length:(long long)length
-                     startOffset:(long long)startOffset
-                  needReadLength:(long long)needReadLength
+- (instancetype)initWithPath:(NSString *)path range:(KTVHCRange)range readRange:(KTVHCRange)readRange
 {
     if (self = [super init])
     {
         KTVHCLogAlloc(self);
-        
-        self.filePath = filePath;
-        self.offset = offset;
-        self.length = length;
-        self.startOffset = startOffset;
-        self.needReadLength = needReadLength;
-        self.lock = [[NSLock alloc] init];
-        
-        KTVHCLogDataFileSource(@"did setup, %lld, %lld, %lld, %lld", self.offset, self.length, self.startOffset, self.needReadLength);
+        _path = path;
+        _range = range;
+        _readRange = readRange;
+        KTVHCLogDataFileSource(@"%p, Create file source\npath : %@\nrange : %@\nreadRange : %@", self, path, KTVHCStringFromRange(range), KTVHCStringFromRange(readRange));
     }
     return self;
 }
@@ -88,87 +38,98 @@
     KTVHCLogDealloc(self);
 }
 
-
-- (void)setDelegate:(id <KTVHCDataFileSourceDelegate>)delegate delegateQueue:(dispatch_queue_t)delegateQueue
-{
-    self.delegate = delegate;
-    self.delegateQueue = delegateQueue;
-}
-
 - (void)prepare
 {
-    if (self.didCallPrepare) {
+    [self lock];
+    if (self.didPrepared)
+    {
+        [self unlock];
         return;
     }
-    self.didCallPrepare = YES;
-    
-    KTVHCLogDataFileSource(@"call prepare");
-    
-    self.readingHandle = [NSFileHandle fileHandleForReadingAtPath:self.filePath];
-    
-    @try {
-        [self.readingHandle seekToFileOffset:self.startOffset];
-    } @catch (NSException *exception) {
-        KTVHCLogDataSourcer(@"seek file exception, %@, %@, %@, %lld, %lld, %lld, %lld",
-                            exception.name,
-                            exception.reason,
-                            exception.userInfo,
-                            self.length,
-                            self.offset,
-                            self.startOffset,
-                            self.needReadLength);
+    KTVHCLogDataFileSource(@"%p, Call prepare", self);
+    self.readingHandle = [NSFileHandle fileHandleForReadingAtPath:self.path];
+    @try
+    {
+        [self.readingHandle seekToFileOffset:self.readRange.start];
     }
-    
-    if ([self.delegate respondsToSelector:@selector(fileSourceDidFinishPrepare:)]) {
+    @catch (NSException * exception)
+    {
+        KTVHCLogDataFileSource(@"%p, Seek file exception\nname : %@\nreason : %@\nuserInfo : %@", self, exception.name, exception.reason, exception.userInfo);
+    }
+    _didPrepared = YES;
+    if ([self.delegate respondsToSelector:@selector(fileSourceDidPrepared:)])
+    {
+        KTVHCLogDataFileSource(@"%p, Callback for prepared - Begin", self);
         [KTVHCDataCallback callbackWithQueue:self.delegateQueue block:^{
-            [self.delegate fileSourceDidFinishPrepare:self];
+            KTVHCLogDataFileSource(@"%p, Callback for prepared - End", self);
+            [self.delegate fileSourceDidPrepared:self];
         }];
     }
+    [self unlock];
 }
 
 - (void)close
 {
-    if (self.didClose) {
+    [self lock];
+    if (self.didClosed)
+    {
+        [self unlock];
         return;
     }
-    
-    [self.lock lock];
-    self.didClose = YES;
-    
-    KTVHCLogDataFileSource(@"call close");
-    
+    _didClosed = YES;
+    KTVHCLogDataFileSource(@"%p, Call close", self);
     [self.readingHandle closeFile];
     self.readingHandle = nil;
-    [self.lock unlock];
+    [self unlock];
 }
 
 - (NSData *)readDataOfLength:(NSUInteger)length
 {
-    if (self.didClose) {
-        return nil;
-    }
-    if (self.didFinishRead) {
-        return nil;
-    }
-    
-    [self.lock lock];
-    NSData * data = [self.readingHandle readDataOfLength:(NSUInteger)MIN(self.needReadLength - self.fileReadedLength, length)];
-    self.fileReadedLength += data.length;
-    
-    KTVHCLogDataFileSource(@"read data : %lld, %lld, %lld", (long long)data.length, self.fileReadedLength, self.needReadLength);
-    
-    if (self.fileReadedLength >= self.needReadLength)
+    [self lock];
+    if (self.didClosed)
     {
-        KTVHCLogDataFileSource(@"read data finished");
-        
+        [self unlock];
+        return nil;
+    }
+    if (self.didFinished)
+    {
+        [self unlock];
+        return nil;
+    }
+    long long readLength = KTVHCRangeGetLength(self.readRange);
+    length = (NSUInteger)MIN(readLength - self.readedLength, length);
+    NSData * data = [self.readingHandle readDataOfLength:length];
+    self.readedLength += data.length;
+    KTVHCLogDataFileSource(@"%p, Read data : %lld, %lld, %lld", self, (long long)data.length, self.readedLength, readLength);
+    if (self.readedLength >= readLength)
+    {
+        KTVHCLogDataFileSource(@"%p, Read data did finished", self);
         [self.readingHandle closeFile];
         self.readingHandle = nil;
-        
-        self.didFinishRead = YES;
+        _didFinished = YES;
     }
-    [self.lock unlock];
+    [self unlock];
     return data;
 }
 
+- (void)setDelegate:(id<KTVHCDataFileSourceDelegate>)delegate delegateQueue:(dispatch_queue_t)delegateQueue
+{
+    _delegate = delegate;
+    _delegateQueue = delegateQueue;
+}
+
+- (void)lock
+{
+    if (!self.coreLock)
+    {
+        self.coreLock = [[NSLock alloc] init];
+    }
+    [self.coreLock lock];
+}
+
+- (void)unlock
+{
+    [self.coreLock unlock];
+}
 
 @end

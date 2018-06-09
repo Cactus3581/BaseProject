@@ -10,6 +10,7 @@
 #import "BPAppMacro.h"
 #import <AFNetworkReachabilityManager.h>
 #import <AFNetworking.h>
+#import "BPNetRequestParameter.h"
 
 static BPCacheTool *netCacheTool;
 __attribute__((constructor))

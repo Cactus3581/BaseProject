@@ -7,16 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KTVHCRange.h"
 
 @protocol KTVHCDataSourceProtocol <NSObject>
 
-@property (nonatomic, copy, readonly) NSString * filePath;
+- (KTVHCRange)range;
 
-@property (nonatomic, assign, readonly) long long offset;
-@property (nonatomic, assign, readonly) long long length;
-
-@property (nonatomic, assign, readonly) BOOL didClose;
-@property (nonatomic, assign, readonly) BOOL didFinishRead;
+- (BOOL)didPrepared;
+- (BOOL)didFinished;
+- (BOOL)didClosed;
 
 - (void)prepare;
 - (void)close;

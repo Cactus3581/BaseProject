@@ -142,5 +142,15 @@
 			</dict>
 		</array>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>动态跳转</string>
+		<key>fileName</key>
+		<string>BPDynamicJumpViewController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>dynamicJumpString</key>
+		<string>{&quot;i am key&quot;:&quot;i am value&quot;}</string>
+	</dict>
 </array>
 </plist>

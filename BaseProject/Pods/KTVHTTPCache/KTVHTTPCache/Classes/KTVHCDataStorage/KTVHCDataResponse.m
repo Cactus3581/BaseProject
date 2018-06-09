@@ -7,58 +7,27 @@
 //
 
 #import "KTVHCDataResponse.h"
-#import "KTVHCDataPrivate.h"
 #import "KTVHCLog.h"
-
-
-@interface KTVHCDataResponse ()
-
-
-@property (nonatomic, copy) NSString * contentType;
-
-@property (nonatomic, assign) long long currentContentLength;
-@property (nonatomic, assign) long long totalContentLength;
-
-@property (nonatomic, copy) NSDictionary * headerFields;
-@property (nonatomic, copy) NSDictionary * headerFieldsWithoutRangeAndLength;
-
-
-@end
-
 
 @implementation KTVHCDataResponse
 
-
-+ (instancetype)responseWithCurrentContentLength:(long long)currentContentLength
-                              totalContentLength:(long long)totalContentLength
-                                    headerFields:(NSDictionary *)headerFields
-               headerFieldsWithoutRangeAndLength:(NSDictionary *)headerFieldsWithoutRangeAndLength
-{
-    return [[self alloc] initWithCurrentContentLength:currentContentLength
-                                   totalContentLength:totalContentLength
-                                         headerFields:headerFields
-                    headerFieldsWithoutRangeAndLength:headerFieldsWithoutRangeAndLength];
-}
-
-- (instancetype)initWithCurrentContentLength:(long long)currentContentLength
-                              totalContentLength:(long long)totalContentLength
-                                    headerFields:(NSDictionary *)headerFields
-                headerFieldsWithoutRangeAndLength:(NSDictionary *)headerFieldsWithoutRangeAndLength
+- (instancetype)initWithURL:(NSURL *)URL headers:(NSDictionary *)headers
 {
     if (self = [super init])
     {
         KTVHCLogAlloc(self);
-        
-        self.currentContentLength = currentContentLength;
-        self.totalContentLength = totalContentLength;
-        self.headerFields = headerFields;
-        self.headerFieldsWithoutRangeAndLength = headerFieldsWithoutRangeAndLength;
-        self.contentType = [self.headerFields objectForKey:@"Content-Type"];
-        if (!self.contentType) {
-            self.contentType = [self.headerFields objectForKey:@"content-type"];
+        _URL = URL;
+        _headers = headers;
+        NSMutableDictionary * headersWithoutRangeAndLength = [headers mutableCopy];
+        for (NSString * key in [self withoutHeaderKeys])
+        {
+            [headersWithoutRangeAndLength removeObjectForKey:key];
         }
-        
-        KTVHCLogDataResponse(@"did setup\n%@\n%@\n%@\n%lld, %lld", self.contentType, self.headerFields, self.headerFieldsWithoutRangeAndLength, self.currentContentLength, self.totalContentLength);
+        _headersWithoutRangeAndLength = [headersWithoutRangeAndLength copy];
+        _contentType = [self headerValueWithKey:@"Content-Type"];
+        _currentLength = [self headerValueWithKey:@"Content-Length"].longLongValue;
+        _range = KTVHCRangeWithResponseHeaderValue([self headerValueWithKey:@"Content-Range"], &_totalLength);
+        KTVHCLogDataResponse(@"%p Create data response\nURL : %@\nHeaders : %@\nheadersWithoutRangeAndLength : %@\ncontentType : %@\ntotalLength : %lld\ncurrentLength : %lld", self, self.URL, self.headers, self.headersWithoutRangeAndLength, self.contentType, self.totalLength, self.currentLength);
     }
     return self;
 }
@@ -68,5 +37,38 @@
     KTVHCLogDealloc(self);
 }
 
+- (NSString *)headerValueWithKey:(NSString *)key
+{
+    NSString * value = [self.headers objectForKey:key];
+    if (!value)
+    {
+        value = [self.headers objectForKey:[key lowercaseString]];
+    }
+    return value;
+}
+
+- (NSArray <NSString *> *)withoutHeaderKeys
+{
+    static NSArray * obj = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        obj = @[@"Content-Length",
+                @"content-length",
+                @"Content-Range",
+                @"content-range"];
+    });
+    return obj;
+}
+
+- (KTVHCDataResponse *)responseWithRange:(KTVHCRange)range
+{
+    if (!KTVHCEqualRanges(self.range, range))
+    {
+        NSDictionary * headers = KTVHCRangeFillToResponseHeaders(range, self.headers, self.totalLength);
+        KTVHCDataResponse * obj = [[KTVHCDataResponse alloc] initWithURL:self.URL headers:headers];
+        return obj;
+    }
+    return self;
+}
 
 @end

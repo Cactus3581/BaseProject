@@ -9,20 +9,13 @@
 #import "KTVHTTPCacheImp.h"
 #import "KTVHCHTTPServer.h"
 #import "KTVHCDataStorage.h"
-#import "KTVHCDataNetworkSource.h"
 #import "KTVHCDownload.h"
 #import "KTVHCURLTools.h"
 #import "KTVHCLog.h"
 
 @implementation KTVHTTPCache
 
-
 #pragma mark - HTTP Server
-
-+ (BOOL)proxyIsRunning
-{
-    return [KTVHCHTTPServer server].running;
-}
 
 + (void)proxyStart:(NSError * __autoreleasing *)error
 {
@@ -34,40 +27,47 @@
     [[KTVHCHTTPServer server] stop];
 }
 
-+ (NSURL *)proxyURLWithOriginalURLString:(NSString *)URLString
++ (BOOL)proxyIsRunning
 {
-    NSString * completeFilePath = [[KTVHCDataStorage storage] completeFilePathWithURLString:URLString];
-    if (completeFilePath.length > 0)
-    {
-        return [NSURL fileURLWithPath:completeFilePath];
-    }
-    NSString * proxyURLString = [[KTVHCHTTPServer server] URLStringWithOriginalURLString:URLString];
-    return [NSURL URLWithString:proxyURLString];
+    return [KTVHCHTTPServer server].running;
+}
+
++ (NSURL *)proxyURLWithOriginalURL:(NSURL *)URL
+{
+    URL = [[KTVHCHTTPServer server] URLWithOriginalURL:URL];
+    return URL;
 }
 
 + (NSString *)proxyURLStringWithOriginalURLString:(NSString *)URLString
 {
-    return [[KTVHCHTTPServer server] URLStringWithOriginalURLString:URLString];
+    NSURL * URL = [NSURL URLWithString:URLString];
+    URL = [[KTVHCHTTPServer server] URLWithOriginalURL:URL];
+    return URL.absoluteString;
 }
-
 
 #pragma mark - Data Storage
 
-+ (KTVHCDataReader *)cacheConcurrentReaderWithRequest:(KTVHCDataRequest *)request
++ (NSURL *)cacheCompleteFileURLIfExistedWithURL:(NSURL *)URL
 {
-    return [[KTVHCDataStorage storage] concurrentReaderWithRequest:request];
+    URL = [[KTVHCDataStorage storage] completeFileURLIfExistedWithURL:URL];
+    return URL;
 }
 
-+ (KTVHCDataReader *)cacheSerialReaderWithRequest:(KTVHCDataRequest *)request
++ (NSString *)cacheCompleteFilePathIfExistedWithURLString:(NSString *)URLString
 {
-    return [[KTVHCDataStorage storage] serialReaderWithRequest:request];
+    NSURL * URL = [NSURL URLWithString:URLString];
+    URL = [[KTVHCDataStorage storage] completeFileURLIfExistedWithURL:URL];
+    return URL.path;
 }
 
-+ (void)cacheSerialReaderWithRequest:(KTVHCDataRequest *)request
-                   completionHandler:(void(^)(KTVHCDataReader *))completionHandler
++ (KTVHCDataReader *)cacheReaderWithRequest:(KTVHCDataRequest *)request
 {
-    [[KTVHCDataStorage storage] serialReaderWithRequest:request
-                                      completionHandler:completionHandler];
+    return [[KTVHCDataStorage storage] readerWithRequest:request];
+}
+
++ (KTVHCDataLoader *)cacheLoaderWithRequest:(KTVHCDataRequest *)request
+{
+    return [[KTVHCDataStorage storage] loaderWithRequest:request];
 }
 
 + (void)cacheSetMaxCacheLength:(long long)maxCacheLength
@@ -85,77 +85,91 @@
     return [[KTVHCDataStorage storage] totalCacheLength];
 }
 
-+ (NSArray <KTVHCDataCacheItem *> *)cacheFetchAllCacheItem
++ (KTVHCDataCacheItem *)cacheCacheItemWithURL:(NSURL *)URL
 {
-    return [[KTVHCDataStorage storage] fetchAllCacheItem];
+    return [[KTVHCDataStorage storage] cacheItemWithURL:URL];
 }
 
-+ (KTVHCDataCacheItem *)cacheFetchCacheItemWithURLString:(NSString *)URLString
++ (KTVHCDataCacheItem *)cacheCacheItemWithURLString:(NSString *)URLString
 {
-    return [[KTVHCDataStorage storage] fetchCacheItemWithURLString:URLString];
+    NSURL * URL = [NSURL URLWithString:URLString];
+    return [[KTVHCDataStorage storage] cacheItemWithURL:URL];
 }
 
-+ (void)cacheDeleteAllCache
++ (NSArray<KTVHCDataCacheItem *> *)cacheAllCacheItems
 {
-    [[KTVHCDataStorage storage] deleteAllCache];
+    return [[KTVHCDataStorage storage] allCacheItems];
+}
+
++ (void)cacheDeleteCacheWithURL:(NSURL *)URL
+{
+    [[KTVHCDataStorage storage] deleteCacheWithURL:URL];
 }
 
 + (void)cacheDeleteCacheWithURLString:(NSString *)URLString
 {
-    [[KTVHCDataStorage storage] deleteCacheWithURLString:URLString];
+    NSURL * URL = [NSURL URLWithString:URLString];
+    [[KTVHCDataStorage storage] deleteCacheWithURL:URL];
 }
 
-
-#pragma mark - Data Stroage Filters
-
-+ (void)cacheSetURLFilterForArchive:(NSString *(^)(NSString *))URLFilterBlock
++ (void)cacheDeleteAllCaches
 {
-    [KTVHCURLTools URLTools].archiveURLFilterBlock = URLFilterBlock;
+    [[KTVHCDataStorage storage] deleteAllCaches];
 }
 
-+ (void)cacheSetContentTypeFilterForResponseVerify:(BOOL (^)(NSString *,
-                                                             NSString *,
-                                                             NSArray <NSString *> *))contentTypeFilterBlock
+#pragma mark - Token
+
++ (void)tokenSetURLFilter:(NSURL * (^)(NSURL * URL))URLFilter
 {
-    [KTVHCDataNetworkSource setContentTypeFilterBlock:contentTypeFilterBlock];
+    [KTVHCURLTools URLTools].URLFilter = URLFilter;
 }
-
-
-#pragma mark - Accept Content Types
-
-+ (void)cacheSetDefaultAcceptContextTypes:(NSArray <NSString *> *)defaultAcceptContextTypes
-{
-    [KTVHCDataRequest setDefaultAcceptContextTypes:defaultAcceptContextTypes];
-}
-
-+ (NSArray <NSString *> *)cacheDefaultAcceptContextTypes
-{
-    return [KTVHCDataRequest defaultAcceptContextTypes];
-}
-
 
 #pragma mark - Download
-
-+ (NSTimeInterval)downloadTimeoutInterval
-{
-    return [KTVHCDownload download].timeoutInterval;
-}
 
 + (void)downloadSetTimeoutInterval:(NSTimeInterval)timeoutInterval
 {
     [KTVHCDownload download].timeoutInterval = timeoutInterval;
 }
 
-+ (NSDictionary <NSString *, NSString *> *)downloadCommonHeaderFields
++ (NSTimeInterval)downloadTimeoutInterval
 {
-    return [KTVHCDownload download].commonHeaderFields;
+    return [KTVHCDownload download].timeoutInterval;
 }
 
-+ (void)downloadSetCommonHeaderFields:(NSDictionary <NSString *, NSString *> *)commonHeaderFields
++ (void)downloadSetWhitelistHeaderKeys:(NSArray <NSString *> *)whitelistHeaderKeys
 {
-    [KTVHCDownload download].commonHeaderFields = commonHeaderFields;
+    [KTVHCDownload download].whitelistHeaderKeys = whitelistHeaderKeys;
 }
 
++ (NSArray <NSString *> *)downloadWhitelistHeaderKeys
+{
+    return [KTVHCDownload download].whitelistHeaderKeys;
+}
+
++ (void)downloadSetAdditionalHeaders:(NSDictionary <NSString *, NSString *> *)additionalHeaders
+{
+    [KTVHCDownload download].additionalHeaders = additionalHeaders;
+}
+
++ (NSDictionary <NSString *, NSString *> *)downloadAdditionalHeaders
+{
+    return [KTVHCDownload download].additionalHeaders;
+}
+
++ (void)downloadSetAcceptContentTypes:(NSArray <NSString *> *)acceptContentTypes
+{
+    [KTVHCDownload download].acceptContentTypes = acceptContentTypes;
+}
+
++ (NSArray <NSString *> *)downloadAcceptContentTypes
+{
+    return [KTVHCDownload download].acceptContentTypes;
+}
+
++ (void)downloadSetUnsupportContentTypeFilter:(BOOL(^)(NSURL * URL, NSString * contentType))contentTypeFilter
+{
+    [KTVHCDownload download].unsupportContentTypeFilter = contentTypeFilter;
+}
 
 #pragma mark - Log
 
@@ -167,14 +181,14 @@
     }
 }
 
-+ (BOOL)logConsoleLogEnable
-{
-    return [KTVHCLog log].consoleLogEnable;
-}
-
 + (void)logSetConsoleLogEnable:(BOOL)consoleLogEnable
 {
     [KTVHCLog log].consoleLogEnable = consoleLogEnable;
+}
+
++ (BOOL)logConsoleLogEnable
+{
+    return [KTVHCLog log].consoleLogEnable;
 }
 
 + (BOOL)logRecordLogEnable
@@ -182,14 +196,14 @@
     return [KTVHCLog log].recordLogEnable;
 }
 
-+ (void)logSetRecordLogEnable:(BOOL)recordLogEnable
-{
-    [KTVHCLog log].recordLogEnable = recordLogEnable;
-}
-
 + (NSString *)logRecordLogFilePath
 {
     return [KTVHCLog log].recordLogFilePath;
+}
+
++ (void)logSetRecordLogEnable:(BOOL)recordLogEnable
+{
+    [KTVHCLog log].recordLogEnable = recordLogEnable;
 }
 
 + (void)logDeleteRecordLog
@@ -197,15 +211,14 @@
     [[KTVHCLog log] deleteRecordLog];
 }
 
-+ (NSError *)logLastError
-{
-    return [[KTVHCLog log] lastError];
-}
-
 + (NSArray<NSError *> *)logAllErrors
 {
     return [[KTVHCLog log] allErrors];
 }
 
++ (NSError *)logLastError
+{
+    return [[KTVHCLog log] lastError];
+}
 
 @end

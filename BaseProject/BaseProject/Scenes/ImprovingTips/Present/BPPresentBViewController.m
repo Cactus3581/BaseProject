@@ -36,14 +36,12 @@
 - (void)push {
     BPPresentCViewController *vc = [[BPPresentCViewController alloc] init];
     if (self.navigationController) {
-        BPAppDelegate *delegate = (BPAppDelegate *)[UIApplication sharedApplication].delegate;
-        UINavigationController *navc = delegate.selectedNavigationController;
+        UINavigationController *navc = kAppDelegate.selectedNavigationController;
         if ([navc isEqual:self.navigationController]) {
             [self.navigationController pushViewController:vc animated:YES];
         }
     }else {
-        BPAppDelegate *delegate = (BPAppDelegate *)[UIApplication sharedApplication].delegate;
-        UINavigationController *navc = delegate.selectedNavigationController;
+        UINavigationController *navc = kAppDelegate.selectedNavigationController;
         if ([navc isEqual:self.navigationController]) {
             [self.navigationController pushViewController:vc animated:YES];
         }

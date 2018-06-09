@@ -61,6 +61,7 @@
             vc.hidesBottomBarWhenPushed = YES;
             //vc.navigationItem.title = model.title;
             [vc setLeftBarButtonTitle:model.title];
+            vc.dynamicJumpString = model.dynamicJumpString;
             [self.navigationController pushViewController:vc animated:YES];
         }
     }

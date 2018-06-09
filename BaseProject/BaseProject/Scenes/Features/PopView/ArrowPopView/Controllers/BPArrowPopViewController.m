@@ -11,7 +11,7 @@
 #import "Masonry.h"
 #import "BPPopCollectionViewCell.h"
 
-@interface BPArrowPopViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UIGestureRecognizerDelegate,BPPopCollectionViewCellDelegate,UIPopoverPresentationControllerDelegate>
+@interface BPArrowPopViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UIGestureRecognizerDelegate,BPPopCollectionViewCellDelegate>
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (nonatomic,strong) BPArrowPopView *arrowPopView;
@@ -21,60 +21,60 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self configCollectionView];
-    [self configureButton];
+    self.rightBarButtonTitle = @"绘制箭头popView";
+    [self configCollectionView];
 }
 
-#pragma mark - 系统方法
-- (void)system:(UIView *)sender {
-    UIPopoverController;//废弃
-    //UIPopoverPresentationController
-    BPArrowPopViewController * testVC = [BPArrowPopViewController new];
-    // 设置大小
-    testVC.preferredContentSize = CGSizeMake(300, 400);
-    // 设置 Sytle
-    testVC.modalPresentationStyle = UIModalPresentationPopover;
-    testVC.view.backgroundColor = kRedColor;
-    testVC.popoverPresentationController.backgroundColor = kRedColor;
-
-
-    // 需要通过 sourceView 来判断位置的
-    testVC.popoverPresentationController.sourceView = sender;//确定位置，确定参照视图
-    // 指定箭头所指区域的矩形框范围（位置和尺寸）,以sourceView的左上角为坐标原点
-    // 这个可以 通过 Point 或  Size 调试位置
-    testVC.popoverPresentationController.sourceRect = sender.bounds;//弹框大小
-    // 箭头方向
-    testVC.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
-    // 设置代理
-    testVC.popoverPresentationController.delegate = self;
-    [self presentViewController:testVC animated:YES completion:nil];
+- (void)rightBarButtonItemClickAction:(id)sender {
+    [self showPopView:sender];
 }
 
-#pragma mark --  实现代理方法
-//默认返回的是覆盖整个屏幕，需设置成UIModalPresentationNone。
-- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller{
-    return UIModalPresentationNone;
-}
-
-//点击蒙版是否消失，默认为yes；
--(BOOL)popoverPresentationControllerShouldDismissPopover:(UIPopoverPresentationController *)popoverPresentationController{
-    return YES;
-}
-
-//弹框消失时调用的方法
--(void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController{
-    BPLog(@"弹框已经消失");
-}
-
-#pragma mark -cell - delegate
+#pragma mark - cell delegate
 - (void)nextAction:(NSIndexPath *)indexpath {
-//    [self showPopView:nil];
 //    BPPopCollectionViewCell *cell = (BPPopCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexpath];
 }
 
-#pragma mark - 自定义popView
+- (void)configCollectionView {
+    [self.view addSubview:self.collectionView];
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+}
+
+- (UICollectionView *)collectionView {
+    if (!_collectionView) {
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        flowLayout.itemSize = CGSizeMake(kScreenWidth, 50);
+        flowLayout.minimumInteritemSpacing = 0;
+        flowLayout.minimumLineSpacing = 0;
+        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+        _collectionView = collectionView;
+        _collectionView.backgroundColor = kWhiteColor;
+        _collectionView.dataSource = self;
+        _collectionView.delegate = self;
+        [_collectionView registerClass:[BPPopCollectionViewCell class] forCellWithReuseIdentifier:@"BPPopCollectionViewCell"];
+    }
+    return _collectionView;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 30;
+}
+
+//每个UICollectionView展示的内容
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    BPPopCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BPPopCollectionViewCell" forIndexPath:indexPath];
+    cell.delegate = self;
+    cell.path = indexPath;
+    return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+#pragma mark - 自定义绘制箭头popView
 - (void)showPopView:(UIView *)view {
-    [self.arrowPopView setBackgroundColor:kOrangeColor];
     [self.view addSubview:self.arrowPopView ];
     [self.arrowPopView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.view);
@@ -87,7 +87,6 @@
 - (BPArrowPopView *)arrowPopView {
     if (!_arrowPopView) {
         _arrowPopView = [[BPArrowPopView alloc]init];
-        
         [_arrowPopView setBackgroundColor:kOrangeColor];
     }
     return _arrowPopView;
@@ -98,112 +97,6 @@
     [self.arrowPopView removeFromSuperview];
 }
 
-- (void)configureButton {
-    self.view.backgroundColor = kGreenColor;
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
-    rightButton.backgroundColor = kRedColor;
-    rightButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    rightButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    [rightButton setTitle:@"Show" forState:UIControlStateNormal];
-    [rightButton setTitleColor:kPurpleColor forState:UIControlStateNormal];
-    rightButton.titleLabel.font = [UIFont systemFontOfSize:17.0f];
-    [rightButton.titleLabel setAdjustsFontSizeToFitWidth:YES];
-    [rightButton addTarget:self action:@selector(buttonAct:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:rightButton];
-    [[rightButton layer] setCornerRadius:25.0f];
-    rightButton.showsTouchWhenHighlighted = YES;    
-    [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(50);
-        make.trailing.equalTo(self.view).offset(-30);
-        make.bottom.equalTo(self.view).offset(-100);
-    }];
-}
-
-- (void)buttonAct:(UIButton *)bt {
-//    [self showPopView:bt];
-    [self system:bt];
-}
-
-- (void)configCollectionView {
-    [self.view addSubview:self.collectionView];
-    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
-    [self.collectionView reloadData];
-}
-
-- (UICollectionView *)collectionView {
-    if (!_collectionView) {
-        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.minimumInteritemSpacing = 10;
-        flowLayout.minimumLineSpacing = 20;
-        flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
-        flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        if (kiOS9) {
-            flowLayout.sectionHeadersPinToVisibleBounds = YES;//悬停
-            flowLayout.sectionFootersPinToVisibleBounds = YES;
-        }
-        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-        _collectionView = collectionView;
-        _collectionView.dataSource = self;
-        _collectionView.delegate = self;
-        _collectionView.bounces = YES;
-        _collectionView.alwaysBounceVertical = YES;
-        _collectionView.showsVerticalScrollIndicator = YES;
-        _collectionView.backgroundColor = kLightGrayColor;
-        [_collectionView registerClass:[BPPopCollectionViewCell class] forCellWithReuseIdentifier:@"BPPopCollectionViewCell"];
-    }
-    return _collectionView;
-}
-
-//定义展示的UICollectionViewCell的个数
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
-}
-
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 30;
-}
-
-//每个UICollectionView展示的内容
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    BPPopCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BPPopCollectionViewCell" forIndexPath:indexPath];
-    cell.delegate = self;
-    cell.path = indexPath;
-    return cell;
-}
-
-//设定Cell尺寸，定义某个Cell的尺寸
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(kScreenWidth, 50);
-}
-
-//设定Cell间距，设定指定区内Cell的最小间距
--(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 0;
-}
-
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    [self.collectionView reloadData];
-}
-
-//设定行间距，设定指定区内Cell的最小行距
--(CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 10;
-}
-
-//设定区内边距，设定指定区的内边距
--(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(10, 10, 10, 10);
-}
-
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
-
--(BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

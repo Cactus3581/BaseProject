@@ -8,62 +8,43 @@
 
 #import <Foundation/Foundation.h>
 #import "KTVHCDataSourceProtocol.h"
+#import "KTVHCDataRequest.h"
+#import "KTVHCDataResponse.h"
 
 @class KTVHCDataNetworkSource;
 
-
-static long long const KTVHCDataNetworkSourceLengthMaxVaule = -1;
-
-
 @protocol KTVHCDataNetworkSourceDelegate <NSObject>
 
-@optional
+- (void)networkSourceDidPrepared:(KTVHCDataNetworkSource *)networkSource;
 - (void)networkSourceHasAvailableData:(KTVHCDataNetworkSource *)networkSource;
-- (void)networkSourceDidFinishPrepare:(KTVHCDataNetworkSource *)networkSource;
-- (void)networkSourceDidFinishDownload:(KTVHCDataNetworkSource *)networkSource;
-- (void)networkSource:(KTVHCDataNetworkSource *)networkSource didFailure:(NSError *)error;
+- (void)networkSourceDidFinishedDownload:(KTVHCDataNetworkSource *)networkSource;
+- (void)networkSource:(KTVHCDataNetworkSource *)networkSource didFailed:(NSError *)error;
 
 @end
 
-
 @interface KTVHCDataNetworkSource : NSObject <KTVHCDataSourceProtocol>
-
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 
-+ (instancetype)sourceWithURLString:(NSString *)URLString
-                       headerFields:(NSDictionary *)headerFields
-           acceptContentTypePrefixs:(NSArray <NSString *> *)acceptContentTypePrefixs
-                             offset:(long long)offset
-                             length:(long long)length;
+- (instancetype)initWithRequest:(KTVHCDataRequest *)reqeust;
 
-@property (nonatomic, copy, readonly) NSString * URLString;
+@property (nonatomic, strong, readonly) KTVHCDataRequest * request;
+@property (nonatomic, strong, readonly) KTVHCDataResponse * response;
+@property (nonatomic, assign, readonly) KTVHCRange range;
 
-@property (nonatomic, copy, readonly) NSDictionary * requestHeaderFields;
-@property (nonatomic, copy, readonly) NSDictionary * responseHeaderFields;
+@property (nonatomic, assign, readonly) BOOL didPrepared;
+@property (nonatomic, assign, readonly) BOOL didFinished;
+@property (nonatomic, assign, readonly) BOOL didClosed;
 
-@property (nonatomic, strong, readonly) NSError * error;
+- (void)prepare;
+- (void)close;
 
-@property (nonatomic, assign, readonly) BOOL didFinishPrepare;
-@property (nonatomic, assign, readonly) BOOL didFinishDownload;
+- (NSData *)readDataOfLength:(NSUInteger)length;
 
-@property (nonatomic, assign, readonly) long long totalContentLength;
-
-
-#pragma mark - Delegate
-
-@property (nonatomic, weak, readonly) id <KTVHCDataNetworkSourceDelegate> delegate;
+@property (nonatomic, weak, readonly) id<KTVHCDataNetworkSourceDelegate> delegate;
 @property (nonatomic, strong, readonly) dispatch_queue_t delegateQueue;
 
-- (void)setDelegate:(id <KTVHCDataNetworkSourceDelegate>)delegate delegateQueue:(dispatch_queue_t)delegateQueue;
-
-
-#pragma mark - Class
-
-+ (void)setContentTypeFilterBlock:(BOOL(^)(NSString * URLString,
-                                           NSString * contentType,
-                                           NSArray <NSString *> * defaultAcceptContentTypes))contentTypeFilterBlock;
-
+- (void)setDelegate:(id<KTVHCDataNetworkSourceDelegate>)delegate delegateQueue:(dispatch_queue_t)delegateQueue;
 
 @end

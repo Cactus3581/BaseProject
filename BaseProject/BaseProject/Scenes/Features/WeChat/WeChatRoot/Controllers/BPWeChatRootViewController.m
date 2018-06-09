@@ -32,8 +32,8 @@
     self.rootTabbarViewController = [[UITabBarController alloc]init];
     [self configChildViewController];
     BPAppDelegate *delegate = (BPAppDelegate *)[UIApplication sharedApplication].delegate;
-    UIWindow *window = delegate.window;
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;//可能是alert的window
+    UIWindow *window = kAppDelegate.window;
+    UIWindow *keyWindow = kKeyWindow;//可能是alert的window
     self.window = window;
     [self restoreRootViewController:self.rootTabbarViewController];
 }
@@ -124,11 +124,10 @@
 }
 
 - (void)backButtonItemClickAction {
-    BPAppDelegate *delegate = (BPAppDelegate *)[UIApplication sharedApplication].delegate;
-    UIWindow *window = delegate.window;
+    UIWindow *window = kAppDelegate.window;
     UIViewController *vc = window.rootViewController;
     [vc removeFromParentViewController];
-    window.rootViewController = delegate.rootTabbarViewController;
+    window.rootViewController = kAppDelegate.rootTabbarViewController;
     [self.navigationController popViewControllerAnimated:NO];
 }
 

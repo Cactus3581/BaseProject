@@ -8,53 +8,34 @@
 
 #import "KTVHCHTTPResponse.h"
 #import "KTVHCHTTPConnection.h"
+#import "KTVHCHTTPRequest.h"
 #import "KTVHCDataStorage.h"
 #import "KTVHCLog.h"
 
-
 @interface KTVHCHTTPResponse () <KTVHCDataReaderDelegate>
 
-
 @property (nonatomic, weak) KTVHCHTTPConnection * connection;
+@property (nonatomic, strong) KTVHCHTTPRequest * request;
 @property (nonatomic, strong) KTVHCDataRequest * dataRequest;
 @property (nonatomic, strong) KTVHCDataReader * reader;
-
 @property (nonatomic, assign) BOOL waitingResponseHeader;
-
 
 @end
 
-
 @implementation KTVHCHTTPResponse
 
-
-+ (instancetype)responseWithConnection:(KTVHCHTTPConnection *)connection dataRequest:(KTVHCDataRequest *)dataRequest
-{
-    return [[self alloc] initWithConnection:connection dataRequest:dataRequest];
-}
-
-- (instancetype)initWithConnection:(KTVHCHTTPConnection *)connection dataRequest:(KTVHCDataRequest *)dataRequest
+- (instancetype)initWithConnection:(KTVHCHTTPConnection *)connection request:(KTVHCHTTPRequest *)request
 {
     if (self = [super init])
     {
         KTVHCLogAlloc(self);
-        
         self.connection = connection;
-        self.dataRequest = dataRequest;
-        
-        KTVHCLogHTTPResponse(@"data request\n%@\n%@", self.dataRequest.URLString, self.dataRequest.headerFields);
-        
-#if 1
-        self.reader = [[KTVHCDataStorage storage] concurrentReaderWithRequest:self.dataRequest];
+        self.request = request;
+        KTVHCDataRequest * dataRequest = [[KTVHCDataRequest alloc] initWithURL:self.request.URL headers:self.request.headers];
+        self.reader = [[KTVHCDataStorage storage] readerWithRequest:dataRequest];
         self.reader.delegate = self;
         [self.reader prepare];
-#else
-        [[KTVHCDataStorage storage] serialReaderWithRequest:self.dataRequest completionHandler:^(KTVHCDataReader * reader) {
-            self.reader = reader;
-            self.reader.delegate = self;
-            [self.reader prepare];
-        }];
-#endif
+        KTVHCLogHTTPResponse(@"%p, Create response\nrequest : %@", self, self.request);
     }
     return self;
 }
@@ -62,23 +43,18 @@
 - (void)dealloc
 {
     [self.reader close];
-    
     KTVHCLogDealloc(self);
 }
-
 
 #pragma mark - HTTPResponse
 
 - (NSData *)readDataOfLength:(NSUInteger)length
 {
     NSData * data = [self.reader readDataOfLength:length];
-    
-    KTVHCLogHTTPResponse(@"read data length, %lld, %@", (long long)data.length, self.dataRequest.URLString);
-    
-    if (self.reader.didFinishRead) {
-        
-        KTVHCLogHTTPResponse(@"read data finished, %@", self.dataRequest.URLString);
-        
+    KTVHCLogHTTPResponse(@"%p, Read data : %lld", self, (long long)data.length);
+    if (self.reader.didFinished)
+    {
+        KTVHCLogHTTPResponse(@"%p, Read data did finished", self);
         [self.reader close];
         [self.connection responseDidAbort:self];
     }
@@ -87,83 +63,70 @@
 
 - (BOOL)delayResponseHeaders
 {
-    BOOL waiting = !self.reader.didFinishPrepare;
+    BOOL waiting = !self.reader.didPrepared;
     self.waitingResponseHeader = waiting;
-    
-    KTVHCLogHTTPResponse(@"delay response, %d", self.waitingResponseHeader);
-    
+    KTVHCLogHTTPResponse(@"%p, Delay response : %d", self, self.waitingResponseHeader);
     return waiting;
 }
 
 - (UInt64)contentLength
 {
-    KTVHCLogHTTPResponse(@"conetnt length, %lld", self.reader.response.totalContentLength);
-    
-    return self.reader.response.totalContentLength;
+    KTVHCLogHTTPResponse(@"%p, Conetnt length : %lld", self, self.reader.response.totalLength);
+    return self.reader.response.totalLength;
 }
 
 - (NSDictionary *)httpHeaders
 {
-    KTVHCLogHTTPResponse(@"header fields\n%@", self.reader.response.headerFieldsWithoutRangeAndLength);
-    
-    return self.reader.response.headerFieldsWithoutRangeAndLength;
+    KTVHCLogHTTPResponse(@"%p, Header\n%@", self, self.reader.response.headersWithoutRangeAndLength);
+    return self.reader.response.headersWithoutRangeAndLength;
 }
 
 - (UInt64)offset
 {
-    KTVHCLogHTTPResponse(@"offset, %lld", self.reader.readOffset);
-    
+    KTVHCLogHTTPResponse(@"%p, Offset : %lld", self, self.reader.readOffset);
     return self.reader.readOffset;
 }
 
 - (void)setOffset:(UInt64)offset
 {
-    KTVHCLogHTTPResponse(@"set offset, %lld, %lld", offset, self.reader.readOffset);
+    KTVHCLogHTTPResponse(@"%p, Set offset : %lld, %lld", self, offset, self.reader.readOffset);
 }
 
 - (BOOL)isDone
 {
-    KTVHCLogHTTPResponse(@"check done, %d", self.reader.didFinishRead);
-    
-    return self.reader.didFinishRead;
+    KTVHCLogHTTPResponse(@"%p, Check done : %d", self, self.reader.didFinished);
+    return self.reader.didFinished;
 }
 
 - (void)connectionDidClose
 {
-    KTVHCLogHTTPResponse(@"connection did close, %lld, %lld", self.reader.response.currentContentLength, self.reader.readOffset);
-    
+    KTVHCLogHTTPResponse(@"%p, Connection did closed : %lld, %lld", self, self.reader.response.currentLength, self.reader.readOffset);
     [self.reader close];
 }
 
-
 #pragma mark - KTVHCDataReaderDelegate
 
-- (void)readerHasAvailableData:(KTVHCDataReader *)reader
+- (void)readerDidPrepared:(KTVHCDataReader *)reader
 {
-    KTVHCLogHTTPResponse(@"has available data, %@", self.dataRequest.URLString);
-    
-    [self.connection responseHasAvailableData:self];
-}
-
-- (void)readerDidFinishPrepare:(KTVHCDataReader *)reader
-{
-    KTVHCLogHTTPResponse(@"prepare finished, %@", self.dataRequest.URLString);
-    
-    if (self.reader.didFinishPrepare && self.waitingResponseHeader == YES) {
-        
-        KTVHCLogHTTPResponse(@"prepare finished call, %@", self.dataRequest.URLString);
-        
+    KTVHCLogHTTPResponse(@"%p, Prepared", self);
+    if (self.reader.didPrepared && self.waitingResponseHeader == YES)
+    {
+        KTVHCLogHTTPResponse(@"%p, Call connection did prepared", self);
         [self.connection responseHasAvailableData:self];
     }
 }
 
-- (void)reader:(KTVHCDataReader *)reader didFailure:(NSError *)error
+- (void)readerHasAvailableData:(KTVHCDataReader *)reader
 {
-    KTVHCLogHTTPResponse(@"failure, %d, %@", (int)error.code, self.dataRequest.URLString);
-    
+    KTVHCLogHTTPResponse(@"%p, Has available data", self);
+    [self.connection responseHasAvailableData:self];
+}
+
+- (void)reader:(KTVHCDataReader *)reader didFailed:(NSError *)error
+{
+    KTVHCLogHTTPResponse(@"%p, Failed\nError : %@", self, error);
     [self.reader close];
     [self.connection responseDidAbort:self];
 }
-
 
 @end

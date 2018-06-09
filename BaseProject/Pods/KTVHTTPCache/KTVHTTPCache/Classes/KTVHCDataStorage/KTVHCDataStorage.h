@@ -8,43 +8,49 @@
 
 #import <Foundation/Foundation.h>
 #import "KTVHCDataReader.h"
+#import "KTVHCDataLoader.h"
 #import "KTVHCDataRequest.h"
 #import "KTVHCDataResponse.h"
 #import "KTVHCDataCacheItem.h"
 
 @interface KTVHCDataStorage : NSObject
 
-
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 
 + (instancetype)storage;
 
+/**
+ *  Return file path if the content did finished cache.
+ */
+- (NSURL *)completeFileURLIfExistedWithURL:(NSURL *)URL;
 
-#pragma mark - File
+/**
+ *  Reader for certain request.
+ */
+- (KTVHCDataReader *)readerWithRequest:(KTVHCDataRequest *)request;
 
-- (NSString *)completeFilePathWithURLString:(NSString *)URLString;
+/**
+ *  Loader for certain request.
+ */
+- (KTVHCDataLoader *)loaderWithRequest:(KTVHCDataRequest *)request;
 
+/**
+ *  Get cache item.
+ */
+- (KTVHCDataCacheItem *)cacheItemWithURL:(NSURL *)URL;
+- (NSArray <KTVHCDataCacheItem *> *)allCacheItems;
 
-#pragma mark - Data Reader
-
-- (KTVHCDataReader *)concurrentReaderWithRequest:(KTVHCDataRequest *)request;
-
-- (KTVHCDataReader *)serialReaderWithRequest:(KTVHCDataRequest *)request;
-- (void)serialReaderWithRequest:(KTVHCDataRequest *)request completionHandler:(void(^)(KTVHCDataReader *))completionHandler;
-
-
-#pragma mark - Cache Control
-
-@property (nonatomic, assign) long long maxCacheLength;     // default is 500m.
-
+/**
+ *  Get cache length.
+ */
+@property (nonatomic, assign) long long maxCacheLength;     // Default is 500M.
 - (long long)totalCacheLength;
 
-- (NSArray <KTVHCDataCacheItem *> *)fetchAllCacheItem;
-- (KTVHCDataCacheItem *)fetchCacheItemWithURLString:(NSString *)URLString;
-
-- (void)deleteAllCache;
-- (void)deleteCacheWithURLString:(NSString *)URLString;
-
+/**
+ *  Delete cache.
+ */
+- (void)deleteCacheWithURL:(NSURL *)URL;
+- (void)deleteAllCaches;
 
 @end

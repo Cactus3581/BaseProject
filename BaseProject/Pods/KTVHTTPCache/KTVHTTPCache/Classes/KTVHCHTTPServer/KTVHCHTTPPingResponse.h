@@ -1,5 +1,5 @@
 //
-//  KTVHCHTTPResponsePing.h
+//  KTVHCHTTPPingResponse.h
 //  KTVHTTPCache
 //
 //  Created by Single on 2017/10/23.
@@ -12,17 +12,13 @@
 
 @class KTVHCHTTPConnection;
 
+KTVHTTPCACHE_EXTERN NSString * const KTVHCHTTPPingResponseResponseValue;
 
-KTVHTTPCACHE_EXTERN NSString * const KTVHCHTTPResponsePingTokenString;
-
-
-@interface KTVHCHTTPResponsePing : NSObject <HTTPResponse>
-
+@interface KTVHCHTTPPingResponse : NSObject <HTTPResponse>
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 
 + (instancetype)responseWithConnection:(KTVHCHTTPConnection *)connection;
-
 
 @end

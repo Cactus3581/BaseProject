@@ -8,26 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface KTVHCPathTools : NSObject
 
++ (NSString *)logPath;
++ (NSString *)archivePath;
 
-+ (NSString *)absolutePathForLog;
-+ (NSString *)absolutePathForArchiver;
++ (NSString *)directoryPathWithURL:(NSURL *)URL;
++ (NSString *)completeFilePathWithURL:(NSURL *)URL;
++ (NSString *)unitItemPathWithURL:(NSURL *)URL offset:(long long)offset;
 
-+ (NSString *)absolutePathWithRelativePath:(NSString *)relativePath;
-+ (NSString *)absolutePathForDirectoryWithURLString:(NSString *)URLString;
-+ (NSString *)absolutePathForCompleteFileWithURLString:(NSString *)URLString;
-+ (NSString *)relativePathForCompleteFileWithURLString:(NSString *)URLString;
-+ (NSString *)relativePathForUnitItemFileWithURLString:(NSString *)URLString offset:(long long)offset;
++ (BOOL)isRelativePath:(NSString *)path;
++ (BOOL)isAbsolutePath:(NSString *)path;
 
-+ (void)createFileIfNeeded:(NSString *)filePath;
-+ (void)createFolderIfNeeded:(NSString *)folderPath;
++ (NSString *)relativePathWithAbsoultePath:(NSString *)path;
++ (NSString *)absoultePathWithRelativePath:(NSString *)path;
 
-+ (NSError *)deleteFileAtPath:(NSString *)filePath;
-+ (NSError *)deleteFolderAtPath:(NSString *)folderPath;
++ (void)createFileAtPath:(NSString *)path;
++ (void)createDirectoryAtPath:(NSString *)path;
 
-+ (long long)sizeOfItemAtFilePath:(NSString *)filePath;
++ (NSError *)deleteFileAtPath:(NSString *)path;
++ (NSError *)deleteDirectoryAtPath:(NSString *)path;
 
++ (long long)sizeOfItemAtPath:(NSString *)path;
 
 @end

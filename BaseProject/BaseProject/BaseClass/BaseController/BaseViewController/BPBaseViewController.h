@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BPDynamicJumpHelper.h"
 
-@interface BPBaseViewController : UIViewController
+@interface BPBaseViewController : UIViewController <BPDynamicJumpHelperProtocol>
 /**
  自定义导航栏:left
  */
@@ -48,6 +49,12 @@
 - (void)naviBarHidden:(BOOL)hidden animated:(BOOL)animated;
 
 - (void)addFPSLabel;
+
 - (void)removeFPSLabel;
 
+#pragma mark - 动态跳转
+@property(nonatomic,strong) NSDictionary *dynamicJumpDict;
+@property (nonatomic,copy)  NSString *dynamicJumpString;//动态跳转数据
+@property(nonatomic,readonly,assign) BOOL needDynamicJump;
+- (void)handleDynamicJumpData;
 @end

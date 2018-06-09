@@ -9,18 +9,15 @@
 #import "KTVHCHTTPConnection.h"
 #import "KTVHCHTTPRequest.h"
 #import "KTVHCHTTPResponse.h"
-#import "KTVHCHTTPResponsePing.h"
+#import "KTVHCHTTPPingResponse.h"
 #import "KTVHCHTTPURL.h"
-#import "KTVHCDataRequest.h"
 #import "KTVHCLog.h"
-
 
 @implementation KTVHCHTTPConnection
 
-
-+ (NSString *)responsePingTokenString
++ (NSString *)pingResponseValue
 {
-    return KTVHCHTTPResponsePingTokenString;
+    return KTVHCHTTPPingResponseResponseValue;
 }
 
 - (id)initWithAsyncSocket:(GCDAsyncSocket *)newSocket configuration:(HTTPConfig *)aConfig
@@ -37,35 +34,25 @@
     KTVHCLogDealloc(self);
 }
 
-
 - (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path
 {
-    KTVHCLogHTTPConnection(@"receive request, %@, %@", method, path);
-    
-    KTVHCHTTPURL * URL = [KTVHCHTTPURL URLWithServerURIString:path];
-    
+    KTVHCLogHTTPConnection(@"%p, Receive request\nmethod : %@\npath : %@\nURL : %@", self, method, path, request.url);
+    KTVHCHTTPURL * URL = [[KTVHCHTTPURL alloc] initWithProxyURL:request.url];
     switch (URL.type)
     {
+        case KTVHCHTTPURLTypeUnknown:
+            return nil;
         case KTVHCHTTPURLTypePing:
         {
-            KTVHCHTTPResponsePing * currentResponse = [KTVHCHTTPResponsePing responseWithConnection:self];
-            
+            KTVHCHTTPPingResponse * currentResponse = [KTVHCHTTPPingResponse responseWithConnection:self];
             return currentResponse;
         }
         case KTVHCHTTPURLTypeContent:
         {
-            KTVHCHTTPRequest * currentRequest = [KTVHCHTTPRequest requestWithOriginalURLString:URL.originalURLString];
-            
-            currentRequest.isHeaderComplete = request.isHeaderComplete;
-            currentRequest.allHTTPHeaderFields = request.allHeaderFields;
-            currentRequest.URL = request.url;
+            KTVHCHTTPRequest * currentRequest = [[KTVHCHTTPRequest alloc] initWithURL:URL.URL headers:request.allHeaderFields];
             currentRequest.method = request.method;
-            currentRequest.statusCode = request.statusCode;
             currentRequest.version = request.version;
-            
-            KTVHCDataRequest * dataRequest = [currentRequest dataRequest];
-            KTVHCHTTPResponse * currentResponse = [KTVHCHTTPResponse responseWithConnection:self dataRequest:dataRequest];
-            
+            KTVHCHTTPResponse * currentResponse = [[KTVHCHTTPResponse alloc] initWithConnection:self request:currentRequest];
             return currentResponse;
         }
     }

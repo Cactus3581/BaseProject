@@ -7,52 +7,23 @@
 //
 
 #import "KTVHCDataRequest.h"
-#import "KTVHCDataPrivate.h"
 #import "KTVHCLog.h"
-
-
-NSString * const KTVHCDataContentTypeVideo = @"video/";
-NSString * const KTVHCDataContentTypeAudio = @"audio/";
-NSString * const KTVHCDataContentTypeApplicationMPEG4 = @"application/mp4";
-NSString * const KTVHCDataContentTypeApplicationOctetStream = @"application/octet-stream";
-NSString * const KTVHCDataContentTypeBinaryOctetStream = @"binary/octet-stream";
-
-
-@interface KTVHCDataRequest ()
-
-
-@property (nonatomic, copy) NSString * URLString;
-@property (nonatomic, copy) NSDictionary * headerFields;
-
-@property (nonatomic, assign) long long rangeMin;
-@property (nonatomic, assign) long long rangeMax;
-
-
-@end
-
 
 @implementation KTVHCDataRequest
 
-
-+ (instancetype)requestWithURLString:(NSString *)URLString headerFields:(NSDictionary *)headerFields
-{
-    return [[self alloc] initWithURLString:URLString headerFields:headerFields];
-}
-
-- (instancetype)initWithURLString:(NSString *)URLString headerFields:(NSDictionary *)headerFields
+- (instancetype)initWithURL:(NSURL *)URL headers:(NSDictionary *)headers
 {
     if (self = [super init])
     {
         KTVHCLogAlloc(self);
-        
-        self.rangeMin = KTVHCDataRequestRangeMinVaule;
-        self.rangeMax = KTVHCDataRequestRangeMaxVaule;
-        self.URLString = URLString;
-        self.headerFields = headerFields;
-        self.acceptContentTypes = [KTVHCDataRequest defaultAcceptContextTypes];
-        [self setupRange];
-        
-        KTVHCLogDataRequest(@"did setup\n%@\nrange, %lld, %lld\n%@", self.URLString, self.rangeMin, self.rangeMax, self.headerFields);
+        _URL = URL;
+        if (![headers objectForKey:@"Range"]) {
+            _headers = KTVHCRangeFillToRequestHeaders(KTVHCRangeFull(), headers);
+        } else {
+            _headers = headers;
+        }
+        _range = KTVHCRangeWithRequestHeaderValue([_headers objectForKey:@"Range"]);
+        KTVHCLogDataRequest(@"%p Create data request\nURL : %@\nHeaders : %@\nRange : %@", self, self.URL, self.headers, KTVHCStringFromRange(self.range));
     }
     return self;
 }
@@ -62,56 +33,21 @@ NSString * const KTVHCDataContentTypeBinaryOctetStream = @"binary/octet-stream";
     KTVHCLogDealloc(self);
 }
 
-
-- (void)setupRange
+- (KTVHCDataRequest *)requestWithRange:(KTVHCRange)range
 {
-    NSString * rangeString = [self.headerFields objectForKey:@"Range"];
-    if (rangeString.length > 0 && [rangeString hasPrefix:@"bytes="])
+    if (!KTVHCEqualRanges(self.range, range))
     {
-        rangeString = [rangeString stringByReplacingOccurrencesOfString:@"bytes=" withString:@""];
-        NSArray <NSString *> * rangeArray = [rangeString componentsSeparatedByString:@"-"];
-        
-        if (rangeArray.count == 2)
-        {
-            if (rangeArray.firstObject.length > 0) {
-                self.rangeMin = rangeArray.firstObject.longLongValue;
-            }
-            if (rangeArray.lastObject.length > 0) {
-                self.rangeMax = rangeArray.lastObject.longLongValue;
-            }
-        }
+        NSDictionary * headers = KTVHCRangeFillToRequestHeaders(range, self.headers);
+        KTVHCDataRequest * obj = [[KTVHCDataRequest alloc] initWithURL:self.URL headers:headers];
+        return obj;
     }
+    return self;
 }
 
-- (void)updateRangeMaxIfNeeded:(long long)ensureTotalContentLength
+- (KTVHCDataRequest *)requestWithTotalLength:(long long)totalLength
 {
-    if (self.rangeMax == KTVHCDataRequestRangeMaxVaule && ensureTotalContentLength > 0) {
-        self.rangeMax = ensureTotalContentLength - 1;
-    }
+    KTVHCRange range = KTVHCRangeWithEnsureLength(self.range, totalLength);
+    return [self requestWithRange:range];
 }
-
-
-#pragma mark - Class
-
-static NSArray <NSString *> * defaultAcceptContextTypes = nil;
-
-+ (void)setDefaultAcceptContextTypes:(NSArray <NSString *> *)defaultAcceptContextTypes
-{
-    defaultAcceptContextTypes = defaultAcceptContextTypes;
-}
-
-+ (NSArray <NSString *> *)defaultAcceptContextTypes
-{
-    if (!defaultAcceptContextTypes)
-    {
-        defaultAcceptContextTypes = @[KTVHCDataContentTypeVideo,
-                                      KTVHCDataContentTypeAudio,
-                                      KTVHCDataContentTypeApplicationMPEG4,
-                                      KTVHCDataContentTypeApplicationOctetStream,
-                                      KTVHCDataContentTypeBinaryOctetStream];
-    }
-    return defaultAcceptContextTypes;
-}
-
 
 @end

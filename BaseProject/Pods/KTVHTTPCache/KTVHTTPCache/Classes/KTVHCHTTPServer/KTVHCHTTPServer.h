@@ -8,9 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface KTVHCHTTPServer : NSObject
-
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
@@ -22,7 +20,6 @@
 - (void)start:(NSError **)error;
 - (void)stop;
 
-- (NSString *)URLStringWithOriginalURLString:(NSString *)URLString;
-
+- (NSURL *)URLWithOriginalURL:(NSURL *)URL;
 
 @end

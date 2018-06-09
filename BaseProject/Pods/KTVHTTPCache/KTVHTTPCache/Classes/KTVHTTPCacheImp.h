@@ -9,124 +9,123 @@
 #import <Foundation/Foundation.h>
 
 @class KTVHCDataReader;
+@class KTVHCDataLoader;
 @class KTVHCDataRequest;
 @class KTVHCDataCacheItem;
 
-
 @interface KTVHTTPCache : NSObject
-
-
-+ (instancetype)new NS_UNAVAILABLE;
-- (instancetype)init NS_UNAVAILABLE;
-
 
 #pragma mark - HTTP Server
 
-+ (BOOL)proxyIsRunning;
-
+/**
+ *  Start & Stop HTTP Server.
+ */
 + (void)proxyStart:(NSError **)error;
 + (void)proxyStop;
 
-/**
- *  If the content of the URLString is finish cache, return the File URL for the content.
- *  Otherwise return the URL for local server.
- */
-+ (NSURL *)proxyURLWithOriginalURLString:(NSString *)URLString;
++ (BOOL)proxyIsRunning;
 
 /**
  *  Return the URL string for local server.
  */
++ (NSURL *)proxyURLWithOriginalURL:(NSURL *)URL;
 + (NSString *)proxyURLStringWithOriginalURLString:(NSString *)URLString;
-
 
 #pragma mark - Data Storage
 
 /**
- *  Data Reader
+ *  If the content of the URL is finish cached, return the file path for the content. Otherwise return nil.
  */
-+ (KTVHCDataReader *)cacheConcurrentReaderWithRequest:(KTVHCDataRequest *)request;
-
-+ (KTVHCDataReader *)cacheSerialReaderWithRequest:(KTVHCDataRequest *)request;
-+ (void)cacheSerialReaderWithRequest:(KTVHCDataRequest *)request
-                   completionHandler:(void(^)(KTVHCDataReader *))completionHandler;
++ (NSURL *)cacheCompleteFileURLIfExistedWithURL:(NSURL *)URL;
++ (NSString *)cacheCompleteFilePathIfExistedWithURLString:(NSString *)URLString;
 
 /**
- *  Cache Control
+ *  Data Reader.
+ */
++ (KTVHCDataReader *)cacheReaderWithRequest:(KTVHCDataRequest *)request;
+
+/**
+ *  Data Loader.
+ */
++ (KTVHCDataLoader *)cacheLoaderWithRequest:(KTVHCDataRequest *)request;
+
+/**
+ *  Cache State.
  */
 + (void)cacheSetMaxCacheLength:(long long)maxCacheLength;
 + (long long)cacheMaxCacheLength;
-
 + (long long)cacheTotalCacheLength;
 
-+ (NSArray <KTVHCDataCacheItem *> *)cacheFetchAllCacheItem;
-+ (KTVHCDataCacheItem *)cacheFetchCacheItemWithURLString:(NSString *)URLString;
-
-+ (void)cacheDeleteAllCache;
-+ (void)cacheDeleteCacheWithURLString:(NSString *)URLString;
-
-
-#pragma mark - Data Stroage Filters
+/**
+ *  Cache Item.
+ */
++ (KTVHCDataCacheItem *)cacheCacheItemWithURL:(NSURL *)URL;
++ (KTVHCDataCacheItem *)cacheCacheItemWithURLString:(NSString *)URLString;
++ (NSArray <KTVHCDataCacheItem *> *)cacheAllCacheItems;
 
 /**
- *  URL Filter
+ *  Delete Cache.
+ */
++ (void)cacheDeleteCacheWithURL:(NSURL *)URL;
++ (void)cacheDeleteCacheWithURLString:(NSString *)URLString;
++ (void)cacheDeleteAllCaches;
+
+#pragma mark - Token
+
+/**
+ *  URL Filter.
  *
  *  High frequency call. Make it simple.
  */
-+ (void)cacheSetURLFilterForArchive:(NSString *(^)(NSString * originalURLString))URLFilterBlock;
-
-/**
- *  Content-Type Filter
- *
- *  Used to verify the HTTP Response Content-Type.
- *  The return value of block to decide whether to continue to load resources.
- *  The defaultAcceptContentTypes is copy from acceptContentTypes of the KTVHCDataRequest.
- */
-+ (void)cacheSetContentTypeFilterForResponseVerify:(BOOL(^)(NSString * URLString,
-                                                            NSString * contentType,
-                                                            NSArray <NSString *> * defaultAcceptContentTypes))contentTypeFilterBlock;
-
-
-#pragma mark - Accept Content Types
-
-/**
- *  Default Accept Context Types
- *
- *  If 'cacheSetContentTypeFilterForResponseVerify' is set, this method will be invalid.
- */
-+ (void)cacheSetDefaultAcceptContextTypes:(NSArray <NSString *> *)defaultAcceptContextTypes;
-+ (NSArray <NSString *> *)cacheDefaultAcceptContextTypes;
-
++ (void)tokenSetURLFilter:(NSURL * (^)(NSURL * URL))URLFilter;
 
 #pragma mark - Download
 
-+ (NSTimeInterval)downloadTimeoutInterval;
 + (void)downloadSetTimeoutInterval:(NSTimeInterval)timeoutInterval;
++ (NSTimeInterval)downloadTimeoutInterval;
 
 /**
- *  Common Header Fields.
+ *  Whitelist Header Fields.
  */
-+ (NSDictionary <NSString *, NSString *> *)downloadCommonHeaderFields;
-+ (void)downloadSetCommonHeaderFields:(NSDictionary <NSString *, NSString *> *)commonHeaderFields;
++ (void)downloadSetWhitelistHeaderKeys:(NSArray <NSString *> *)whitelistHeaderKeys;
++ (NSArray <NSString *> *)downloadWhitelistHeaderKeys;
 
+/**
+ *  Additional Header Fields.
+ */
++ (void)downloadSetAdditionalHeaders:(NSDictionary <NSString *, NSString *> *)additionalHeaders;
++ (NSDictionary <NSString *, NSString *> *)downloadAdditionalHeaders;
+
+/**
+ *  Default values: 'video/x', 'audio/x', 'application/mp4', 'application/octet-stream', 'binary/octet-stream'
+ */
++ (void)downloadSetAcceptContentTypes:(NSArray <NSString *> *)acceptContentTypes;
++ (NSArray <NSString *> *)downloadAcceptContentTypes;
+
+/**
+ *  If the receive response's Content-Type not included in acceptContentTypes, this method will be called.
+ *  The return value of block to decide whether to continue to load resources. Otherwise the HTTP task will be rejected.
+ */
++ (void)downloadSetUnsupportContentTypeFilter:(BOOL(^)(NSURL * URL, NSString * contentType))contentTypeFilter;
 
 #pragma mark - Log
 
 /**
- *  Console & Record
+ *  Console & Record.
  */
 + (void)logAddLog:(NSString *)log;
 
 /**
- *  DEBUG & RELEASE : default is NO.
+ *  DEBUG & RELEASE : Default is NO.
  */
-+ (BOOL)logConsoleLogEnable;
 + (void)logSetConsoleLogEnable:(BOOL)consoleLogEnable;
++ (BOOL)logConsoleLogEnable;
 
 /**
- *  DEBUG & RELEASE : default is NO.
+ *  DEBUG & RELEASE : Default is NO.
  */
-+ (BOOL)logRecordLogEnable;
 + (void)logSetRecordLogEnable:(BOOL)recordLogEnable;
++ (BOOL)logRecordLogEnable;
 
 + (NSString *)logRecordLogFilePath;      // nullable
 + (void)logDeleteRecordLog;
@@ -134,8 +133,7 @@
 /**
  *  Error
  */
-+ (NSError *)logLastError;
 + (NSArray <NSError *> *)logAllErrors;
-
++ (NSError *)logLastError;
 
 @end

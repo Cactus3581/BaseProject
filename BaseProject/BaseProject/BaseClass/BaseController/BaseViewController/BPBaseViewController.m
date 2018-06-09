@@ -29,7 +29,7 @@ static CGFloat titleInset = 20.0f;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
+    [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -224,6 +224,24 @@ static CGFloat titleInset = 20.0f;
 
 - (void)removeFPSLabel {
     [YYFPSLabel bp_removeFPSLableOnWidnow];
+}
+
+#pragma mark - 动态跳转A
+- (BOOL)needDynamicJump {
+    self.dynamicJumpDict = BPFromJSON(self.dynamicJumpString);
+    if (BPValidateDict(self.dynamicJumpDict).allKeys.count) {
+        return YES;
+    }
+    return NO;
+}
+
+- (void)handleDynamicJumpData {
+    
+}
+
+#pragma mark - 动态跳转B
+- (void)loadWithData:(NSDictionary *)dict {
+    //必须实现
 }
 
 - (void)dealloc {

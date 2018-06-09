@@ -31,6 +31,7 @@ typedef NS_ENUM(NSInteger, BPImportance) {
 @property (nonatomic,strong)  NSArray *subVc_array;
 
 //以下是非必需的字段
+@property (nonatomic,copy)  NSString *dynamicJumpString;//动态跳转数据
 @property (nonatomic,copy)  NSString *briefIntro; // 简短说明
 @property (nonatomic,copy)  NSString *planIntro; //进度补充说明
 @property (nonatomic,assign)  BPCompletePerformance completePerformance; //完成情况

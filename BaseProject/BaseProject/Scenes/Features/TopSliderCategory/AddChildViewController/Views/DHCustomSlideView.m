@@ -52,9 +52,8 @@
     _slideView.dataSource = self;
     _slideView.baseViewController = _baseViewController;
     [self addSubview:_slideView];
-    BPAppDelegate *delegate = (BPAppDelegate *)[UIApplication sharedApplication].delegate;
-    if ([delegate.selectedNavigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        [_slideView.pan requireGestureRecognizerToFail:delegate.selectedNavigationController.interactivePopGestureRecognizer];
+    if ([kAppDelegate.selectedNavigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        [_slideView.pan requireGestureRecognizerToFail:kAppDelegate.selectedNavigationController.interactivePopGestureRecognizer];
     }
 }
 

@@ -20,11 +20,14 @@
 }
 
 - (void)initSubView {
+    self.contentView.backgroundColor = kThemeColor;
     self.button  = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.button.backgroundColor = kWhiteColor;
     [self.contentView addSubview:self.button];
     [self.button setTitle:@"showView" forState:UIControlStateNormal];
+    [self.button setTitleColor:kExplicitColor forState:UIControlStateNormal];
     [self.button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.trailing.equalTo(self.contentView);
+        make.trailing.equalTo(self.contentView).mas_offset(-50);
         make.centerY.equalTo(self.contentView);
     }];
     [self.button addTarget:self action:@selector(showPopView) forControlEvents:UIControlEventTouchUpInside];

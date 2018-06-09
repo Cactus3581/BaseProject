@@ -218,6 +218,10 @@
 		014ED0411FEFF0A300D2926C /* BPBackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 014ED03D1FEFF0A300D2926C /* BPBackButton.m */; };
 		014ED0421FEFF0A300D2926C /* BPImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 014ED03F1FEFF0A300D2926C /* BPImageButton.m */; };
 		014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 014ED04F1FEFF9EE00D2926C /* Localizable.strings */; };
+		015120F720CBD8A000B33A76 /* BPPopoverPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015120F620CBD8A000B33A76 /* BPPopoverPresentationController.m */; };
+		015120FB20CBE9F000B33A76 /* BPDynamicJumpHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 015120FA20CBE9F000B33A76 /* BPDynamicJumpHelper.m */; };
+		015120FF20CBF04100B33A76 /* BPDynamicJumpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015120FE20CBF04100B33A76 /* BPDynamicJumpViewController.m */; };
+		0151210220CBFA9400B33A76 /* BPNetRequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0151210120CBFA9400B33A76 /* BPNetRequestParameter.m */; };
 		0153F12B20B2A4A7007C50C5 /* BPFriendsCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153F12A20B2A4A7007C50C5 /* BPFriendsCircleViewController.m */; };
 		0153F12E20B2A4CF007C50C5 /* BPChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153F12D20B2A4CF007C50C5 /* BPChatListViewController.m */; };
 		0153F13620B2A502007C50C5 /* BPChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153F13520B2A502007C50C5 /* BPChatDetailViewController.m */; };
@@ -1062,6 +1066,14 @@
 		014ED04E1FEFF9EE00D2926C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		014ED0501FEFF9F000D2926C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		014ED0D21FF00B5200D2926C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		015120F520CBD8A000B33A76 /* BPPopoverPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPopoverPresentationController.h; sourceTree = "<group>"; };
+		015120F620CBD8A000B33A76 /* BPPopoverPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPopoverPresentationController.m; sourceTree = "<group>"; };
+		015120F920CBE9F000B33A76 /* BPDynamicJumpHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDynamicJumpHelper.h; sourceTree = "<group>"; };
+		015120FA20CBE9F000B33A76 /* BPDynamicJumpHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDynamicJumpHelper.m; sourceTree = "<group>"; };
+		015120FD20CBF04100B33A76 /* BPDynamicJumpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDynamicJumpViewController.h; sourceTree = "<group>"; };
+		015120FE20CBF04100B33A76 /* BPDynamicJumpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDynamicJumpViewController.m; sourceTree = "<group>"; };
+		0151210020CBFA9400B33A76 /* BPNetRequestParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNetRequestParameter.h; sourceTree = "<group>"; };
+		0151210120CBFA9400B33A76 /* BPNetRequestParameter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNetRequestParameter.m; sourceTree = "<group>"; };
 		0153F12920B2A4A7007C50C5 /* BPFriendsCircleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPFriendsCircleViewController.h; sourceTree = "<group>"; };
 		0153F12A20B2A4A7007C50C5 /* BPFriendsCircleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPFriendsCircleViewController.m; sourceTree = "<group>"; };
 		0153F12C20B2A4CF007C50C5 /* BPChatListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPChatListViewController.h; sourceTree = "<group>"; };
@@ -2617,6 +2629,7 @@
 		010FBC3F206018B500BC9EC4 /* ImprovingTips */ = {
 			isa = PBXGroup;
 			children = (
+				015120FC20CBF03100B33A76 /* DynamicJump */,
 				01F750A2209EDF7100C1F24C /* OtherProject */,
 				01EF2C1C20AD352700DF98FB /* CollectionView */,
 				012D189E20AC1F4600C3E437 /* TableView */,
@@ -3728,6 +3741,7 @@
 		014995941FB4A5F300077866 /* PopView */ = {
 			isa = PBXGroup;
 			children = (
+				015120F420CBD88D00B33A76 /* PopoverPresentationController */,
 				015120F320CBCEFD00B33A76 /* NormalPopView */,
 				01C31F68200FA12B0096C2E0 /* ArrowPopView */,
 				01C31F67200FA1130096C2E0 /* AnchorPopView */,
@@ -3755,6 +3769,33 @@
 				017906B02000F63B00E5C360 /* BPPopViewController.m */,
 			);
 			path = NormalPopView;
+			sourceTree = "<group>";
+		};
+		015120F420CBD88D00B33A76 /* PopoverPresentationController */ = {
+			isa = PBXGroup;
+			children = (
+				015120F520CBD8A000B33A76 /* BPPopoverPresentationController.h */,
+				015120F620CBD8A000B33A76 /* BPPopoverPresentationController.m */,
+			);
+			path = PopoverPresentationController;
+			sourceTree = "<group>";
+		};
+		015120F820CBE9D900B33A76 /* DynamicJumpHelper */ = {
+			isa = PBXGroup;
+			children = (
+				015120F920CBE9F000B33A76 /* BPDynamicJumpHelper.h */,
+				015120FA20CBE9F000B33A76 /* BPDynamicJumpHelper.m */,
+			);
+			path = DynamicJumpHelper;
+			sourceTree = "<group>";
+		};
+		015120FC20CBF03100B33A76 /* DynamicJump */ = {
+			isa = PBXGroup;
+			children = (
+				015120FD20CBF04100B33A76 /* BPDynamicJumpViewController.h */,
+				015120FE20CBF04100B33A76 /* BPDynamicJumpViewController.m */,
+			);
+			path = DynamicJump;
 			sourceTree = "<group>";
 		};
 		0153F11E20B2A43F007C50C5 /* WeChat */ = {
@@ -5165,6 +5206,8 @@
 				011E8D3F20B2EBBE00B04378 /* BPNetWorkTool.m */,
 				017A9A261FDD229B00CDA599 /* BPNetTool.h */,
 				017A9A271FDD229B00CDA599 /* BPNetTool.m */,
+				0151210020CBFA9400B33A76 /* BPNetRequestParameter.h */,
+				0151210120CBFA9400B33A76 /* BPNetRequestParameter.m */,
 			);
 			path = NetTool;
 			sourceTree = "<group>";
@@ -7291,6 +7334,7 @@
 		01F21D011FEBFBB800381183 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				015120F820CBE9D900B33A76 /* DynamicJumpHelper */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -7942,6 +7986,7 @@
 				01C0B6661FFCC65F005BB4A5 /* PaletteColorModel.m in Sources */,
 				01DF31E31FDD3B0300B8A955 /* NSNumber+BPRomanNumerals.m in Sources */,
 				013519B620BC1E100010AEC2 /* BPXIBAutoLayoutProcessView.m in Sources */,
+				015120FF20CBF04100B33A76 /* BPDynamicJumpViewController.m in Sources */,
 				01DF323D1FDD3B3D00B8A955 /* NSObject+BPAddProperty.m in Sources */,
 				01F0DDE120CA20D8005082C7 /* BPInheritViewController.m in Sources */,
 				01733FE01FA974FB006192F0 /* main.m in Sources */,
@@ -8178,6 +8223,7 @@
 				01DF32161FDD3B3000B8A955 /* NSString+BPXMLDictionary.m in Sources */,
 				010DB76E1FDD4D560099E66F /* UIViewController+BPRecursiveDescription.m in Sources */,
 				015805B720CAE5D000D0EF7C /* KSHeritageDictionaryListTableViewCell.m in Sources */,
+				015120FB20CBE9F000B33A76 /* BPDynamicJumpHelper.m in Sources */,
 				01F2CE6520AABE6600F1D701 /* BPFlowCatergoryViewCell.m in Sources */,
 				010DB7AB1FDD4D6F0099E66F /* UIButton+BPBadge.m in Sources */,
 				01DF31BD1FDD3A9100B8A955 /* NSDictionary+BPSafeAccess.m in Sources */,
@@ -8226,6 +8272,7 @@
 				0158052B20CADED000D0EF7C /* FMDBTools.m in Sources */,
 				010FBD2320601D9E00BC9EC4 /* UIColor+Hex.m in Sources */,
 				010DB7971FDD4D640099E66F /* UIView+BPVisuals.m in Sources */,
+				0151210220CBFA9400B33A76 /* BPNetRequestParameter.m in Sources */,
 				0161D38020C29AED009D1B9C /* BPDrawView_Layer.m in Sources */,
 				0137C743207B4A6000F6B6CE /* BPPresentCViewController.m in Sources */,
 				01D22BD91FDD814000BCC4AD /* UIScreen+BPAdd.m in Sources */,
@@ -8294,6 +8341,7 @@
 				01DF31C11FDD3A9100B8A955 /* NSDictionary+BPJSONString.m in Sources */,
 				01DF31D61FDD3A9100B8A955 /* NSDateFormatter+BPMake.m in Sources */,
 				01A597B32085CAF7000C6237 /* BP2NDCellAutoLayoutHeightViewController.m in Sources */,
+				015120F720CBD8A000B33A76 /* BPPopoverPresentationController.m in Sources */,
 				01C935BD1FC33A6B00D98FD6 /* BPSimpleViewModel.m in Sources */,
 				01DF32441FDD3B3D00B8A955 /* NSObject+BPEasyCopy.m in Sources */,
 				0158052E20CADED000D0EF7C /* DataBaseModel.m in Sources */,

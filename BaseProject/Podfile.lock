@@ -25,20 +25,20 @@ PODS:
   - IQKeyboardManager (6.0.3)
   - KTVCocoaHTTPServer (1.0.0):
     - CocoaAsyncSocket
-  - KTVHTTPCache (1.0.4):
+  - KTVHTTPCache (1.1.3):
     - KTVCocoaHTTPServer
   - lottie-ios (2.5.0)
   - Masonry (1.1.0)
-  - MJExtension (3.0.13)
+  - MJExtension (3.0.15)
   - MJRefresh (3.1.15.3)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
   - Reachability (3.2)
   - SAMKeychain (1.5.3)
-  - SDWebImage (4.3.3):
-    - SDWebImage/Core (= 4.3.3)
-  - SDWebImage/Core (4.3.3)
-  - SSZipArchive (2.1.2)
+  - SDWebImage (4.4.1):
+    - SDWebImage/Core (= 4.4.1)
+  - SDWebImage/Core (4.4.1)
+  - SSZipArchive (2.1.3)
   - UITableView+FDTemplateLayoutCell (1.6)
   - YTKNetwork (2.0.4):
     - AFNetworking (~> 3.0)
@@ -98,16 +98,16 @@ SPEC CHECKSUMS:
   hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
   IQKeyboardManager: c390e612f4b98c8fd748016470138537dc163ead
   KTVCocoaHTTPServer: df8d7b861e603ff8037e9b2138aca2563a6b768d
-  KTVHTTPCache: 158a79650b704ebc49a48a2a10def3b584c18d2d
+  KTVHTTPCache: 6c2be425693f494279d7e84eadbfc54c56bcc6e4
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJExtension: 3f039575db1b135a20699ad298713b26acec1528
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
-  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  SSZipArchive: d4009d2ce5520a421f231fd97028cc0e2667eed8
+  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  SSZipArchive: 51a800ebb77f95a8329b6ced1faaff394b47f509
   UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   YYAsyncLayer: df6b01ebc695c5f6b4c15dd5c23fa3e081eb25c0
@@ -120,6 +120,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: e129eafde7f0eaba20514fa3ed71799b6e9aa1a8
+PODFILE CHECKSUM: ddda59ca7804c1397003fa51f44213414efd12ab
 
 COCOAPODS: 1.3.1

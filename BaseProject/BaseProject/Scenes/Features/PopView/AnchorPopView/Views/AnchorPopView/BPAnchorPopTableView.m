@@ -27,7 +27,7 @@
     [self addSubview:self.tableView];
     self.backgroundColor = kClearColor;
     self.tableView.backgroundColor = kClearColor;
-    
+    self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
     }];
@@ -55,12 +55,21 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        UIView *backgroundView = [[UIView alloc] init];
+        backgroundView.backgroundColor = kThemeColor;
+        backgroundView.alpha = 0.8;
+        cell.backgroundView = backgroundView;
+        UIView *line = [[UIView alloc] init];
+        line.backgroundColor = kWhiteColor;
+        [cell.contentView addSubview:line];
+        [line mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.leading.trailing.bottom.equalTo(cell.contentView);
+            make.height.mas_equalTo(kOnePixel);
+        }];
     }
-    cell.textLabel.text = @"看到拉萨的卡上的卡萨里的卡索拉的卡拉斯的卡拉斯的卡索拉的";
+    cell.textLabel.text = @"i am cell";
     cell.textLabel.font = [UIFont systemFontOfSize:12];
-    cell.backgroundColor = kClearColor;
     return cell;
 }
 
 @end
-

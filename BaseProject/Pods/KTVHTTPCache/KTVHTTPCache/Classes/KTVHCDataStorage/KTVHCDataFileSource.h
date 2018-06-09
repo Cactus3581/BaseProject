@@ -11,37 +11,35 @@
 
 @class KTVHCDataFileSource;
 
-
 @protocol KTVHCDataFileSourceDelegate <NSObject>
 
-@optional
-- (void)fileSourceDidFinishPrepare:(KTVHCDataFileSource *)fileSource;
+- (void)fileSourceDidPrepared:(KTVHCDataFileSource *)fileSource;
 
 @end
 
-
 @interface KTVHCDataFileSource : NSObject <KTVHCDataSourceProtocol>
-
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
 
-+ (instancetype)sourceWithFilePath:(NSString *)filePath
-                            offset:(long long)offset
-                            length:(long long)length
-                       startOffset:(long long)startOffset
-                    needReadLength:(long long)needReadLength;
+- (instancetype)initWithPath:(NSString *)path range:(KTVHCRange)range readRange:(KTVHCRange)readRange;
 
-@property (nonatomic, assign, readonly) long long startOffset;
-@property (nonatomic, assign, readonly) long long needReadLength;
+@property (nonatomic, copy, readonly) NSString * path;
+@property (nonatomic, assign, readonly) KTVHCRange range;
+@property (nonatomic, assign, readonly) KTVHCRange readRange;
 
+@property (nonatomic, assign, readonly) BOOL didPrepared;
+@property (nonatomic, assign, readonly) BOOL didFinished;
+@property (nonatomic, assign, readonly) BOOL didClosed;
 
-#pragma mark - Delegate
+- (void)prepare;
+- (void)close;
 
-@property (nonatomic, weak, readonly) id <KTVHCDataFileSourceDelegate> delegate;
+- (NSData *)readDataOfLength:(NSUInteger)length;
+
+@property (nonatomic, weak, readonly) id<KTVHCDataFileSourceDelegate> delegate;
 @property (nonatomic, strong, readonly) dispatch_queue_t delegateQueue;
 
-- (void)setDelegate:(id <KTVHCDataFileSourceDelegate>)delegate delegateQueue:(dispatch_queue_t)delegateQueue;
-
+- (void)setDelegate:(id<KTVHCDataFileSourceDelegate>)delegate delegateQueue:(dispatch_queue_t)delegateQueue;
 
 @end

@@ -7,23 +7,20 @@
 //
 
 #import "KTVHCLog.h"
-#import <UIKit/UIKit.h>
 #import "KTVHCPathTools.h"
 
+#import <UIKit/UIKit.h>
 
 @interface KTVHCLog ()
 
 @property (nonatomic, strong) NSLock * lock;
 @property (nonatomic, strong) NSFileHandle * writingHandle;
-@property (nonatomic, assign) BOOL createLogAndFileHandleToken;
-
 @property (nonatomic, strong) NSMutableArray <NSError *> * internalErrors;
+@property (nonatomic, assign) BOOL createLogAndFileHandleToken;
 
 @end
 
-
 @implementation KTVHCLog
-
 
 + (instancetype)log
 {
@@ -50,10 +47,12 @@
 
 - (void)addRecordLog:(NSString *)log
 {
-    if (!self.consoleLogEnable) {
+    if (!self.consoleLogEnable)
+    {
         return;
     }
-    if (!self.recordLogEnable) {
+    if (!self.recordLogEnable)
+    {
         return;
     }
     if (log.length <= 0) {
@@ -64,53 +63,42 @@
         [self createLogAndFileHandle];
         self.createLogAndFileHandleToken = YES;
     }
-    if (!self.writingHandle) {
+    if (!self.writingHandle)
+    {
         return;
     }
-    
     [self.lock lock];
-    
     log = [NSString stringWithFormat:@"%@  %@\n", [NSDate date], log];
     NSData * data = [log dataUsingEncoding:NSUTF8StringEncoding];
     [self.writingHandle writeData:data];
-    
     [self.lock unlock];
 }
 
 - (void)deleteRecordLog
 {
     [self.lock lock];
-    
-    [KTVHCPathTools deleteFileAtPath:[KTVHCPathTools absolutePathForLog]];
-
+    [KTVHCPathTools deleteFileAtPath:[KTVHCPathTools logPath]];
     [self.lock unlock];
 }
 
 - (void)createLogAndFileHandle
 {
     [self.lock lock];
-    
-    [KTVHCPathTools createFileIfNeeded:[KTVHCPathTools absolutePathForLog]];
-    self.writingHandle = [NSFileHandle fileHandleForWritingAtPath:[KTVHCPathTools absolutePathForLog]];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(applicationWillTerminate:)
-                                                 name:UIApplicationWillTerminateNotification
-                                               object:nil];
-    
+    [KTVHCPathTools createFileAtPath:[KTVHCPathTools logPath]];
+    self.writingHandle = [NSFileHandle fileHandleForWritingAtPath:[KTVHCPathTools logPath]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate:) name:UIApplicationWillTerminateNotification object:nil];
     [self.lock unlock];
 }
 
 - (NSString *)recordLogFilePath
 {
     NSString * path = nil;
-    
     [self.lock lock];
-    
-    long long logFileSize = [KTVHCPathTools sizeOfItemAtFilePath:[KTVHCPathTools absolutePathForLog]];
-    if (logFileSize > 0) {
-        path = [KTVHCPathTools absolutePathForLog];
+    long long logFileSize = [KTVHCPathTools sizeOfItemAtPath:[KTVHCPathTools logPath]];
+    if (logFileSize > 0)
+    {
+        path = [KTVHCPathTools logPath];
     }
-    
     [self.lock unlock];
     return path;
 }
@@ -141,21 +129,15 @@
     }
 }
 
-
 #pragma mark - UIApplicationWillTerminateNotification
 
 - (void)applicationWillTerminate:(NSNotification *)notification
 {
     [self.lock lock];
-    
     [self.writingHandle closeFile];
     self.writingHandle = nil;
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIApplicationWillTerminateNotification
-                                                  object:nil];
-    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillTerminateNotification object:nil];
     [self.lock unlock];
 }
-
 
 @end

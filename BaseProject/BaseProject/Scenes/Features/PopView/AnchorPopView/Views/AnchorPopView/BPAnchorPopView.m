@@ -59,7 +59,7 @@
         }];
     }
     
-    self.transform = CGAffineTransformMakeScale(0.1, 0.1);
+    self.transform = CGAffineTransformMakeScale(0.0, 0.0);
     [self layoutIfNeeded];
     [UIView animateWithDuration:0.25 animations:^{
         self.transform = CGAffineTransformIdentity;
@@ -84,7 +84,7 @@
 - (void)removePopView {
     [self layoutIfNeeded];
     [UIView animateWithDuration:0.25 animations:^{
-        self.transform = CGAffineTransformMakeScale(0.1, 0.1);
+        self.transform = CGAffineTransformMakeScale(0.01, 0.01);
         [self layoutIfNeeded];
     } completion:^(BOOL finished) {
         [self removeFromSuperview];

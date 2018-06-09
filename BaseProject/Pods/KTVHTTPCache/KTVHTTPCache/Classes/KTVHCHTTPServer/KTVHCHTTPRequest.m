@@ -7,36 +7,18 @@
 //
 
 #import "KTVHCHTTPRequest.h"
-#import "KTVHCDataRequest.h"
 #import "KTVHCLog.h"
-
-
-@interface KTVHCHTTPRequest ()
-
-
-@property (nonatomic, copy) NSString * originalURLString;
-
-
-@end
-
 
 @implementation KTVHCHTTPRequest
 
-
-+ (instancetype)requestWithOriginalURLString:(NSString *)originalURLString
-{
-    return [[self alloc] initWithOriginalURLString:originalURLString];
-}
-
-- (instancetype)initWithOriginalURLString:(NSString *)originalURLString
+- (instancetype)initWithURL:(NSURL *)URL headers:(NSDictionary *)headers
 {
     if (self = [super init])
     {
         KTVHCLogAlloc(self);
-        
-        self.originalURLString = originalURLString;
-        
-        KTVHCLogHTTPRequest(@"original url, %@", self.originalURLString);
+        _URL = URL;
+        _headers = headers;
+        KTVHCLogHTTPRequest(@"%p, Create reqeust\nURL : %@\nHeaders : %@", self, self.URL, self.headers);
     }
     return self;
 }
@@ -45,14 +27,5 @@
 {
     KTVHCLogDealloc(self);
 }
-
-
-- (KTVHCDataRequest *)dataRequest
-{
-    KTVHCDataRequest * dataRequest = [KTVHCDataRequest requestWithURLString:self.originalURLString
-                                                               headerFields:self.allHTTPHeaderFields];
-    return dataRequest;
-}
-
 
 @end
