@@ -22,7 +22,7 @@
 
 - (void)testContentMode {
     //contentMode 是UIView的属性，不只是用于UIImageView；
-    UIImageView *exampleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Yosemite02"]];
+    UIImageView *exampleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_autoLayoutHeight02"]];
     [self.view addSubview:exampleImageView];
     [exampleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(100);
@@ -32,7 +32,7 @@
     exampleImageView.backgroundColor = kLightGrayColor;
     
     self.rightBarButtonTitle = @"切换mode";
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Yosemite02"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_autoLayoutHeight02"]];
     [self.view addSubview:imageView];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(100);

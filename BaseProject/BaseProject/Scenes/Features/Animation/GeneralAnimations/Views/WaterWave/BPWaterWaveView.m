@@ -33,7 +33,7 @@
 #pragma mark - 圆环图片赋值
 /*
 - (void)drawRect:(CGRect)rect {
-    UIImage *cycleImage = [UIImage imageNamed:@"cycleBorder.png"];
+    UIImage *cycleImage = [UIImage imageNamed:@"waterWave_cycleBorder"];
     [cycleImage drawInRect:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
 }
  */

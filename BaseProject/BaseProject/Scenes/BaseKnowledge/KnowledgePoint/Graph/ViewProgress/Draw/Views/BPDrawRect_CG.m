@@ -109,7 +109,7 @@
 #pragma mark - 画图片
 -(void)drawPictureWithctx:(CGContextRef)ctx Rect:(CGRect)rect {
     /*图片*/
-    UIImage *image = [UIImage imageNamed:@"layerTest"];
+    UIImage *image = [UIImage imageNamed:@"jobs_youth"];
     [image drawInRect:CGRectMake(kScreenWidth-50, 30, 40, 50)];//在坐标中画出图片
 }
 

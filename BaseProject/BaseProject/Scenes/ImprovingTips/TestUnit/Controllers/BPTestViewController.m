@@ -83,78 +83,10 @@
     //    view.layer.masksToBounds = YES;
 }
 
-#pragma mark - button详细
-- (void)configureButton {
-    self.view.backgroundColor = [UIColor greenColor];
-    //UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeSystem];//蓝色字体
-    //UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];//感叹号
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
-    rightButton.backgroundColor = [UIColor redColor];
-    
-    // 只有在title时设置对其方式。无用：rightButton.titleLabel.textAlignment = NSTextAlignmentRight;
-    rightButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    //但是问题又出来，此时文字会紧贴到做边框，我们可以设置    使文字距离做边框保持10个像素的距离。
-    //rightButton.contentEdgeInsets = UIEdgeInsetsMake(0,10, 0, 0);
-    
-    
-    /*
-     setBackgroundImage:跟button一样大
-     setImage:也会被拉伸
-     */
-    //    [rightButton setBackgroundImage:[UIImage imageNamed:@"headImage"] forState:UIControlStateNormal];
-    //    [rightButton setImage:[UIImage imageNamed:@"headImage"] forState:UIControlStateNormal];
-    //    [rightButton setImage:[UIImage imageNamed:@"headimage1"] forState:UIControlStateSelected];
-    //    [rightButton setImage:[UIImage imageNamed:@"headimage2"] forState:UIControlStateHighlighted];
-    
-    //rightButton.imageView.layer.masksToBounds = YES;//无用
-    rightButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    
-    [rightButton setTitle:@"push" forState:UIControlStateNormal];
-    
-    /*
-     设置UIButton上字体的颜色设置UIButton上字体的颜色，不是用：
-     [btn.titleLabel setTextColor:[UIColorblackColor]];
-     btn.titleLabel.textColor=[UIColor redColor];
-     而是用：
-     */
-    [rightButton setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
-    rightButton.titleLabel.font = [UIFont systemFontOfSize:17.0f];
-    
-    [rightButton.titleLabel setAdjustsFontSizeToFitWidth:YES];
-    //[rightButton.titleLabel sizeToFit];//无用
-    
-    [rightButton addTarget:self action:@selector(buttonAct:) forControlEvents:UIControlEventTouchUpInside];
-    //    rightButton.backgroundColor = [UIColor greenColor];
-    [self.view addSubview:rightButton];
-    [[rightButton layer] setCornerRadius:25.0f];
-    
-    rightButton.showsTouchWhenHighlighted = YES;
-    
-    //button长按事件
-    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(btnLong:)];
-    longPress.minimumPressDuration = 0.8; //定义按的时间
-    [rightButton addGestureRecognizer:longPress];
-    
-    
-    if (@available(iOS 11,*)) {
-        [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.height.mas_equalTo(50);
-            make.trailing.equalTo(self.view).offset(-30);
-            make.bottom.equalTo(self.view).offset(-200);
-        }];
-    }else {
-        [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.width.height.mas_equalTo(50);
-            make.trailing.equalTo(self.view).offset(-30);
-            make.bottom.equalTo(self.view).offset(-200);
-        }];
-    }
-}
-
 #pragma mark - view hidden lauout 依赖
 - (void)configureLayout {
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
-    [rightButton setBackgroundImage:[UIImage imageNamed:@"headImage"] forState:UIControlStateNormal];
+    [rightButton setBackgroundImage:[UIImage imageNamed:@"transitionWithType01"] forState:UIControlStateNormal];
     [rightButton setTitle:@"push" forState:UIControlStateNormal];
     [rightButton setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
     rightButton.titleLabel.font = [UIFont systemFontOfSize:27.0f];
@@ -173,7 +105,7 @@
     }];
     
     UIButton *bottomButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
-    [bottomButton setBackgroundImage:[UIImage imageNamed:@"headImage"] forState:UIControlStateNormal];
+    [bottomButton setBackgroundImage:[UIImage imageNamed:@"transitionWithType01"] forState:UIControlStateNormal];
     [bottomButton setTitle:@"push" forState:UIControlStateNormal];
     [bottomButton setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
     bottomButton.titleLabel.font = [UIFont systemFontOfSize:27.0f];

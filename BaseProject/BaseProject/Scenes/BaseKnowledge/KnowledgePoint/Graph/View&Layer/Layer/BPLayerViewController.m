@@ -89,7 +89,7 @@
     //第一种 maskLayer
     CALayer *maskLayer = [CALayer layer];
     maskLayer.frame = self.testLayer.bounds;
-    UIImage *maskImage = [UIImage imageNamed:@"maskImage"];
+    UIImage *maskImage = [UIImage imageNamed:@"chatMessageBkg"];
     maskLayer.contents = (__bridge id)maskImage.CGImage;
     self.testLayer.mask = maskLayer;
 }
@@ -106,7 +106,7 @@
 - (void)creatLayer {
     self.testLayer =[CALayer layer] ;
     self.testLayer.frame = CGRectMake(50, 64, 200, 200);
-    UIImage *maskImage1 = [UIImage imageNamed:@"layerTest"];
+    UIImage *maskImage1 = [UIImage imageNamed:@"jobs_youth"];
     self.testLayer.contents = (__bridge id)maskImage1.CGImage;
     self.testLayer.shouldRasterize = YES;
     [self.view.layer addSublayer:self.testLayer];

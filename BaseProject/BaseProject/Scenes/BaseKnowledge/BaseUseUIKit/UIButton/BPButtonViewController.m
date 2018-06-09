@@ -20,6 +20,76 @@
     [self test];
 }
 
+- (void)configureButton {
+    self.view.backgroundColor = kGreenColor;
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
+    rightButton.backgroundColor = kRedColor;
+    
+    // 只有在title时设置对其方式。无用：rightButton.titleLabel.textAlignment = NSTextAlignmentRight;
+    rightButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    //但是问题又出来，此时文字会紧贴到做边框，我们可以设置    使文字距离做边框保持10个像素的距离。
+    //rightButton.contentEdgeInsets = UIEdgeInsetsMake(0,10, 0, 0);
+    
+    
+    /*
+     setBackgroundImage:跟button一样大
+     setImage:也会被拉伸
+     */
+    //    [rightButton setBackgroundImage:[UIImage imageNamed:@"transitionWithType01"] forState:UIControlStateNormal];
+    //    [rightButton setImage:[UIImage imageNamed:@"transitionWithType01"] forState:UIControlStateNormal];
+    //    [rightButton setImage:[UIImage imageNamed:@"transitionWithType02"] forState:UIControlStateSelected];
+    //    [rightButton setImage:[UIImage imageNamed:@"transitionWithType03"] forState:UIControlStateHighlighted];
+    
+    //rightButton.imageView.layer.masksToBounds = YES;//无用
+    rightButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    
+    [rightButton setTitle:@"push" forState:UIControlStateNormal];
+    
+    /*
+     设置UIButton上字体的颜色设置UIButton上字体的颜色，不是用：
+     [btn.titleLabel setTextColor:[UIColorblackColor]];
+     btn.titleLabel.textColor=kRedColor;
+     而是用：
+     */
+    [rightButton setTitleColor:kPurpleColor forState:UIControlStateNormal];
+    rightButton.titleLabel.font = [UIFont systemFontOfSize:17.0f];
+    
+    [rightButton.titleLabel setAdjustsFontSizeToFitWidth:YES];
+    //[rightButton.titleLabel sizeToFit];//无用
+    
+    //    rightButton.backgroundColor = kGreenColor;
+    [self.view addSubview:rightButton];
+    [[rightButton layer] setCornerRadius:25.0f];
+    
+    rightButton.showsTouchWhenHighlighted = YES;
+    
+    //button长按事件
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(btnLong:)];
+    longPress.minimumPressDuration = 0.8; //定义按的时间
+    [rightButton addGestureRecognizer:longPress];
+    
+    
+    if (@available(iOS 11,*)) {
+        [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(50);
+            make.trailing.equalTo(self.view.mas_trailing).offset(-30);
+            make.bottom.equalTo(self.view).offset(-200);
+        }];
+    }else {
+        [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.height.mas_equalTo(50);
+            make.trailing.equalTo(self.view).offset(-30);
+            make.bottom.equalTo(self.view).offset(-200);
+        }];
+    }
+}
+
+- (void)btnLong:(UILongPressGestureRecognizer*)gestureRecognizer{
+    if ([gestureRecognizer state] == UIGestureRecognizerStateBegan) {
+        BPLog(@"长按事件");
+    }
+}
+
 - (void)test {
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     //属性
@@ -57,7 +127,7 @@
     //
     
     //    (6)设置背景图片
-    [button setBackgroundImage:[UIImage imageNamed:@"nyc"] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"navi_scale"] forState:UIControlStateNormal];
     
 //    [button setBackgroundImage:[UIImage imageNamed:@"02.png"] forState:UIControlStateHighlighted];
     //    设置前景图片

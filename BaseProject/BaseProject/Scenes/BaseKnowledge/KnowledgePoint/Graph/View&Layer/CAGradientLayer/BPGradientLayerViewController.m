@@ -127,7 +127,7 @@
     self.view.backgroundColor = kWhiteColor;
     self.test_layer =[CALayer layer] ;
     self.test_layer.frame = CGRectMake(50, 100, 200, 200);
-    UIImage *maskImage1 = [UIImage imageNamed:@"layerTest"];
+    UIImage *maskImage1 = [UIImage imageNamed:@"jobs_youth"];
     self.test_layer.contents = (__bridge id)maskImage1.CGImage;
     self.test_layer.shouldRasterize = YES;
     [self.view.layer addSublayer:self.test_layer];
@@ -151,7 +151,7 @@
 #pragma mark - 创建gradientLayer png覆盖图层
 - (void)creatgradientLayer_three {
     //初始化imageView
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"layerTest"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"jobs_youth"]];
     imageView.frame = CGRectMake(0, 0, 200, 200);
     imageView.center = self.view.center;
     [self.view addSubview:imageView];

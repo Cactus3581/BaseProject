@@ -108,7 +108,7 @@
 
 - (UIImageView *)arrowImageView {
     if (!_arrowImageView) {
-        UIImage *bumbleImage = [UIImage imageNamed:@"arrow"];
+        UIImage *bumbleImage = [UIImage imageNamed:@"popview_anchor_arrow"];
         _arrowImageView = [[UIImageView alloc]init];
         _arrowImageView.contentMode = UIViewContentModeScaleAspectFill;
         _arrowImageView.image = [bumbleImage stretchableImageWithLeftCapWidth:floorf(bumbleImage.size.width/2) topCapHeight:floorf(bumbleImage.size.height/2)];

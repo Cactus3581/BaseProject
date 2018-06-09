@@ -11,8 +11,12 @@
 #ifndef BPColorMacro_h
 #define BPColorMacro_h
 
-#ifndef kThemeColor
+#ifndef kThemeColor // 主题色
 #define kThemeColor kRGB(71,71,71) // 色号 #474747
+#endif
+
+#ifndef kExplicitColor // 显式颜色
+#define kExplicitColor kRGB(227,88,73) // 色号 #E35849
 #endif
 
 #ifndef kRedColor

@@ -26,9 +26,9 @@
     [bt setTitle:@"我要反馈" forState:UIControlStateNormal];
     bt.titleLabel.backgroundColor = kGreenColor;
     bt.imageView.backgroundColor = kLightGrayColor;
-    [bt setImage:[UIImage imageNamed:@"circle_money"] forState:UIControlStateNormal];
+    [bt setImage:[UIImage imageNamed:@"system_feedback"] forState:UIControlStateNormal];
     CGSize strSize = [@"我要反馈" sizeWithFont:bt.titleLabel.font];
-    UIImage *image = [UIImage imageNamed:@"circle_money"];
+    UIImage *image = [UIImage imageNamed:@"system_feedback"];
     CGFloat imageWidth = image.size.width; //20
     CGFloat titleWidth = strSize.width;//54
     //100-74 = 26;
@@ -68,7 +68,7 @@
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 300, 100)];
     imageView.center = self.view.center;
 
-    imageView.image = [UIImage imageNamed:@"layerTest"];
+    imageView.image = [UIImage imageNamed:@"jobs_youth"];
     imageView.backgroundColor = kRedColor;
     //imageView.layer.backgroundColor = kRedColor.CGColor;
     //imageView.contentMode = UIViewContentModeScaleAspectFit;//这个可以考虑

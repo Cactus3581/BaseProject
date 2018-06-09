@@ -158,7 +158,7 @@
     [self.view.layer addSublayer:replicatorLayer];
     
     CALayer *layer = [CALayer layer];
-    UIImage *image = [UIImage imageNamed:@"layerTest"];
+    UIImage *image = [UIImage imageNamed:@"jobs_youth"];
     layer.contents = (__bridge id)image.CGImage;
     layer.backgroundColor = kGreenColor.CGColor;
     layer.bounds = CGRectMake(0, 0, 100, 100);

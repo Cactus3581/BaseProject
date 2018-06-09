@@ -162,7 +162,7 @@
 - (void)arcLoading {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 100.0f)];
     view.center = CGPointMake(kScreenWidth/2.0, 50+84+layer_width+layer_width);
-    UIImage *image = [UIImage imageNamed:@"layerTest"];
+    UIImage *image = [UIImage imageNamed:@"jobs_youth"];
     view.layer.contents = (__bridge id _Nullable)(image.CGImage);
     view.layer.contentsGravity = kCAGravityCenter;
     view.layer.contentsScale = [UIScreen mainScreen].scale;

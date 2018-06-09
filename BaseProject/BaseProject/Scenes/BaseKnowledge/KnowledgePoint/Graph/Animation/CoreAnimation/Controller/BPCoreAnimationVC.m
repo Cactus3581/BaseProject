@@ -42,7 +42,7 @@ typedef enum :NSUInteger{
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kWhiteColor;
-    [self.view addSubview:self.testView];
+//    [self.view addSubview:self.testView];
 //    [self.view addSubview:self.imageview];
 
 //    [self opacityAniamtion];
@@ -65,7 +65,7 @@ typedef enum :NSUInteger{
 //    [self addBgImageWithImageName:@"transitionWithType02.jpg"];
 
     _subtype = 0;
-//    [self transitionAnimation_2];
+    [self transitionAnimation_2];
     
     //[self springAnimation];
 
@@ -266,7 +266,7 @@ typedef enum :NSUInteger{
     //设置动画结束的位置
     //animation.endProgress = 0.8;
     
-    UIImage *image = [UIImage imageNamed:@"maskImage"];
+    UIImage *image = [UIImage imageNamed:@"chatMessageBkg"];
     
     [UIView animateWithDuration:1.0f animations:^{
         self.imageview.image = image;
@@ -462,7 +462,7 @@ typedef enum :NSUInteger{
         _testView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
         _testView.center = CGPointMake(kScreenWidth/2, kScreenHeight/2);
         _testView.backgroundColor = kGreenColor;
-        UIImage *image = [UIImage imageNamed:@"layerTest"];
+        UIImage *image = [UIImage imageNamed:@"jobs_youth"];
         _testView.layer.contents = (__bridge id)image.CGImage;
         
     }
@@ -475,7 +475,7 @@ typedef enum :NSUInteger{
         _imageview.center = CGPointMake(kScreenWidth/2, kScreenHeight/2-200);
         
         _imageview.backgroundColor = kGreenColor;
-        UIImage *image = [UIImage imageNamed:@"layerTest"];
+        UIImage *image = [UIImage imageNamed:@"jobs_youth"];
         _imageview.image = image;
     }
     return _imageview;

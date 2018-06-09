@@ -69,7 +69,7 @@
 
 #pragma mark - mask属性
 - (void)maskView {
-    UIImage *maskImage = [UIImage imageNamed:@"maskImage"];
+    UIImage *maskImage = [UIImage imageNamed:@"chatMessageBkg"];
 
     //mask的坐标系是根据对象view的
     //第一种 maskLayer
@@ -206,7 +206,7 @@
 - (void)creatView {
     self.testView = [[UIView alloc]initWithFrame:CGRectMake(10, 100, 300, 100)];
     self.testView.backgroundColor = kRedColor;
-    UIImage *maskImage1 = [UIImage imageNamed:@"layerTest"];
+    UIImage *maskImage1 = [UIImage imageNamed:@"jobs_youth"];
     self.testView.layer.contents = (__bridge id)maskImage1.CGImage;
     [self.view addSubview:self.testView];
     

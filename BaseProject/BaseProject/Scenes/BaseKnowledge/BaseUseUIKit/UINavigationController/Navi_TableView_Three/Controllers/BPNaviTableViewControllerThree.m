@@ -78,7 +78,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    cell.imageView.image = [UIImage imageNamed:@"nyc"];
+    cell.imageView.image = [UIImage imageNamed:@"navi_scale"];
     return cell;
 }
 
@@ -89,7 +89,7 @@
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([UITableViewHeaderFooterView class])];
-    UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nyc"]];
+    UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navi_scale"]];
     imageview.frame = header.bounds;
     [header addSubview:imageview];
     return header;
@@ -156,7 +156,7 @@
     //右边设置按钮
     UIButton *shartBtn = [[UIButton alloc]init];
     shartBtn.frame = CGRectMake(kScreenWidth-44, 20, 44, 44);
-    [shartBtn setImage:[UIImage imageNamed:@"setting"] forState:UIControlStateNormal];
+    [shartBtn setImage:[UIImage imageNamed:@"navi_setting"] forState:UIControlStateNormal];
     
     [self.view addSubview:backBtn];
     [self.view addSubview:shartBtn];
@@ -183,7 +183,7 @@
 -(void)setNavigationSubView{
     // 毛玻璃背景
     UIImageView *bgImgView = [[UIImageView alloc] initWithFrame:_navigationView.bounds];
-    //    bgImgView.image = [UIImage imageNamed:@"nyc"];
+    //    bgImgView.image = [UIImage imageNamed:@"navi_scale"];
     [_navigationView addSubview:bgImgView];
     
     /**  毛玻璃特效类型
@@ -244,7 +244,7 @@
         _scaleImageView = [[UIImageView alloc] init];
         _scaleImageView.contentMode = UIViewContentModeScaleAspectFill;
         _scaleImageView.clipsToBounds = YES;
-        _scaleImageView.image = [UIImage imageNamed:@"nyc"];
+        _scaleImageView.image = [UIImage imageNamed:@"navi_scale"];
     }
     return _scaleImageView;
 }

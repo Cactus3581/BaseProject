@@ -30,8 +30,8 @@
         make.size.mas_equalTo(32);
     }];
     UIImage *image;
-    image = [[UIImage imageNamed:@"close"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 15, 15) resizingMode:UIImageResizingModeStretch];
-    image = [[UIImage imageNamed:@"user"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
+    image = [[UIImage imageNamed:@"cactus_ rect_steady"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 15, 15, 15) resizingMode:UIImageResizingModeStretch];
+    image = [[UIImage imageNamed:@"cactus_ rect_steady"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
     view.image =  image;
     view.backgroundColor = kGreenColor;
     
@@ -44,9 +44,9 @@
     }];
     
     UIImage *image1;
-    //    image1 = [[UIImage imageNamed:@"user"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) resizingMode:UIImageResizingModeStretch];
-    image1 = [UIImage imageNamed:@"close"];
-    //    image = [[UIImage imageNamed:@"user"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
+    //    image1 = [[UIImage imageNamed:@"cactus_ rect_steady"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) resizingMode:UIImageResizingModeStretch];
+    image1 = [UIImage imageNamed:@"cactus_ rect_steady"];
+    //    image = [[UIImage imageNamed:@"cactus_ rect_steady"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
     view1.image =  image1;
     view1.backgroundColor = kGreenColor;
     

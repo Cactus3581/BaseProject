@@ -112,7 +112,7 @@
      UIImageRenderingModeAlwaysOriginal,     //  始终绘制图片原始状态，不受tintColor影响
      UIImageRenderingModeAlwaysTemplate,     //始终根据Tint Color绘制图片，忽略图片的颜色信息。
      */
-    UIImage *backImage = [UIImage imageNamed:@"naviBar"];
+    UIImage *backImage = [UIImage imageNamed:@"naviBarBackGroundImage"];
     //[self.navigationController.navigationBar setBackgroundImage:backImage forBarMetrics:UIBarMetricsDefault];
     
     //导航栏透明
@@ -204,10 +204,10 @@
      //视图的x和y无效
      
      */
-    //self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"naviBar"]];
+    //self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"naviBarBackGroundImage"]];
     
     //添加按钮
-    UIImage *navi_item_image = [UIImage imageNamed:@"rest"];
+    UIImage *navi_item_image = [UIImage imageNamed:@"cactus_ round_steady"];
     //style:UIBarButtonItemStylePlain;UIBarButtonItemStyleDone
     UIBarButtonItem* item1 = [[UIBarButtonItem alloc] initWithTitle:@"item1" style:UIBarButtonItemStylePlain target:nil action:nil];
     //style:UIBarButtonItemStylePlain;UIBarButtonItemStyleDone
@@ -252,7 +252,7 @@ iOS7之后都是从屏幕原点开始布局的，但是有时，我们也会遇�
     
 #pragma mark - 3. extendedLayoutIncludesOpaqueBars:默认值NO，这个属性指定了当Bar使用了不透明图片时，视图是否延伸至Bar所在区域； 但是Bar的默认属性是透明的。也就是说只有在不透明下才有用；因此，如果我们自定义了navBar背景图片，view会从导航栏下面开始布局。
     //如果我们自定义了nav bar背景图片，view会从导航栏下面开始布局。
-    //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"naviBar"] forBarMetrics:UIBarMetricsDefault];
+    //[self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"naviBarBackGroundImage"] forBarMetrics:UIBarMetricsDefault];
     
     //默认值NO，只有在不透明下才有用。那么问题来了，怎么让translucent=NO的时候，view也能从（0，0）开始布局呢？苹果也考虑到了这种需求，提供了extendedLayoutIncludesOpaqueBars 这个属性，当YES的时候，view从（0，0）布局
     //self.extendedLayoutIncludesOpaqueBars = YES;

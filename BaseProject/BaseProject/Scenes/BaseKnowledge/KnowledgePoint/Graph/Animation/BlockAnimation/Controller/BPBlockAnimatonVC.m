@@ -100,7 +100,7 @@
     UIViewAnimationOptions option = UIViewAnimationOptionCurveLinear | UIViewAnimationOptionTransitionFlipFromLeft;
     
     [UIView transitionWithView:self.imageview duration:10.0 options:option animations:^{
-        UIImage *image = [UIImage imageNamed:@"maskImage"];
+        UIImage *image = [UIImage imageNamed:@"chatMessageBkg"];
         self.imageview.image = image;
     } completion:^(BOOL finished) {
         
@@ -151,7 +151,7 @@
         _testView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
         _testView.center = CGPointMake(kScreenWidth/2, kScreenHeight/2);
         _testView.backgroundColor = kGreenColor;
-        UIImage *image = [UIImage imageNamed:@"layerTest"];
+        UIImage *image = [UIImage imageNamed:@"jobs_youth"];
         _testView.layer.contents = (__bridge id)image.CGImage;
     }
     return _testView;
@@ -162,7 +162,7 @@
         _imageview = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 200, 200)];
         _imageview.center = CGPointMake(kScreenWidth/2, kScreenHeight/2-200);
         _imageview.backgroundColor = kGreenColor;
-        UIImage *image = [UIImage imageNamed:@"layerTest"];
+        UIImage *image = [UIImage imageNamed:@"jobs_youth"];
         _imageview.image = image;
     }
     return _imageview;

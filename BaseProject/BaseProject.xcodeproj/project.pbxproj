@@ -323,7 +323,6 @@
 		01790761200120CF00E5C360 /* NSObject+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 01790759200120CF00E5C360 /* NSObject+Log.m */; };
 		01790762200120CF00E5C360 /* NSObject+Propery.m in Sources */ = {isa = PBXBuildFile; fileRef = 0179075C200120CF00E5C360 /* NSObject+Propery.m */; };
 		017907A42001249500E5C360 /* BPWaterWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 017907A22001249400E5C360 /* BPWaterWaveView.m */; };
-		017907A52001249500E5C360 /* cycleBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 017907A32001249500E5C360 /* cycleBorder.png */; };
 		017907CE2001336100E5C360 /* BPAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017907CD2001336100E5C360 /* BPAlertViewController.m */; };
 		017907D12001338000E5C360 /* BPAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 017907D02001338000E5C360 /* BPAlertView.m */; };
 		017907D52001345300E5C360 /* BPCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 017907D42001345300E5C360 /* BPCircleView.m */; };
@@ -1263,7 +1262,6 @@
 		0179075D200120CF00E5C360 /* NSObject+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Log.h"; sourceTree = "<group>"; };
 		017907A12001249400E5C360 /* BPWaterWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPWaterWaveView.h; sourceTree = "<group>"; };
 		017907A22001249400E5C360 /* BPWaterWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPWaterWaveView.m; sourceTree = "<group>"; };
-		017907A32001249500E5C360 /* cycleBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cycleBorder.png; sourceTree = "<group>"; };
 		017907CC2001336100E5C360 /* BPAlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAlertViewController.h; sourceTree = "<group>"; };
 		017907CD2001336100E5C360 /* BPAlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAlertViewController.m; sourceTree = "<group>"; };
 		017907CF2001338000E5C360 /* BPAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAlertView.h; sourceTree = "<group>"; };
@@ -5079,7 +5077,6 @@
 		017907A02001247B00E5C360 /* WaterWave */ = {
 			isa = PBXGroup;
 			children = (
-				017907A32001249500E5C360 /* cycleBorder.png */,
 				017907A12001249400E5C360 /* BPWaterWaveView.h */,
 				017907A22001249400E5C360 /* BPWaterWaveView.m */,
 			);
@@ -7674,7 +7671,6 @@
 				011E8D9920B2F7BA00B04378 /* BPPlanCalendarSectionFooterView.xib in Resources */,
 				013ED93120C7DE0400A83E7F /* BPIncludeTableSelfSizeHeaderView.xib in Resources */,
 				013ED90E20C7DB3C00A83E7F /* BPIncludeTableSystemLayoutHeaderView.xib in Resources */,
-				017907A52001249500E5C360 /* cycleBorder.png in Resources */,
 				011E8D9820B2F7BA00B04378 /* BPSectionPlacedFooterView.xib in Resources */,
 				015805AD20CAE5D000D0EF7C /* KSHeritageDictionaryListContainerCollectionViewCell4.xib in Resources */,
 				013519B320BC1E100010AEC2 /* BPXIBAutoLayoutProcessViewController.xib in Resources */,

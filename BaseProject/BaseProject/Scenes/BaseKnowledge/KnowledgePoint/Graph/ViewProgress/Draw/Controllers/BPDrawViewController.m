@@ -133,7 +133,7 @@
     // UIKit-1
     //使用UIKit进行绘制，因为UIKit只会对当前上下文栈顶的context操作，所以要把形参中的context设置为当前上下文
     UIGraphicsPushContext(ctx);
-    UIImage* image = [UIImage imageNamed:@"layerTest"];
+    UIImage* image = [UIImage imageNamed:@"jobs_youth"];
     //指定位置和大小绘制图片
     [image drawInRect:CGRectMake(140, 10,80 , 80)];
     UIGraphicsPopContext();
