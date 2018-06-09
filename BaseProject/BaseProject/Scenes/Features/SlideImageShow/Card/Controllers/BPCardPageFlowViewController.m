@@ -108,7 +108,7 @@
 - (UILabel *)indicateLabel {
     if (!_indicateLabel) {
         _indicateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 400, kScreenWidth, 16)];
-        _indicateLabel.textColor = [UIColor blueColor];
+        _indicateLabel.textColor = kBlueColor;
         _indicateLabel.font = [UIFont systemFontOfSize:16.0];
         _indicateLabel.textAlignment = NSTextAlignmentCenter;
         _indicateLabel.text = @"指示Label";

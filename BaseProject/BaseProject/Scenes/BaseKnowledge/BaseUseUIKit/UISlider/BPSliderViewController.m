@@ -19,7 +19,7 @@
 }
 - (void)configScrollView_2 {
     UIScrollView * scrollView = [[UIScrollView alloc] init];
-    scrollView.backgroundColor = [UIColor greenColor];
+    scrollView.backgroundColor = kGreenColor;
     scrollView.delegate = self;
     scrollView.pagingEnabled = NO;
     scrollView.clipsToBounds = YES;
@@ -42,16 +42,16 @@
     
     UIView *leftView = [[UIView alloc] init];
     [scrollView addSubview:leftView];
-    leftView.backgroundColor = [UIColor redColor];
+    leftView.backgroundColor = kRedColor;
     
     
     UIView *centerView = [[UIView alloc] init];
     [scrollView addSubview:centerView];
-    centerView.backgroundColor = [UIColor yellowColor];
+    centerView.backgroundColor = kYellowColor;
     
     UIView *rightView = [[UIView alloc] init];
     [scrollView addSubview:rightView];
-    rightView.backgroundColor = [UIColor blueColor];
+    rightView.backgroundColor = kBlueColor;
     
     [leftView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.mas_equalTo(0);
@@ -63,7 +63,7 @@
 
 - (void)configScrollView_1 {
     UIScrollView * scrollView = [[UIScrollView alloc] init];
-    scrollView.backgroundColor = [UIColor greenColor];
+    scrollView.backgroundColor = kGreenColor;
     scrollView.delegate = self;
     scrollView.pagingEnabled = NO;
     scrollView.clipsToBounds = YES;
@@ -88,7 +88,7 @@
     
     view.frame = CGRectMake(10, 10, 190, 50); // contentSize.width(200) + contentInset.left(30) + contentInset.right(30) = size.width(260)，但是可展示的size = 200；
     //当有contentInset的时候，开始显示的时候，显示的非inset的位置。
-    view.backgroundColor = [UIColor redColor];
+    view.backgroundColor = kRedColor;
     scrollView.contentOffset = CGPointMake(0, 0.0);
     
     //    [self.sliderShowView mas_makeConstraints:^(MASConstraintMaker *make) {

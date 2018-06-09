@@ -54,10 +54,10 @@
 - (void)bp_initailizeProperty{
     _scrollWithAnimaitonWhenClicked = YES;
     _clickedAnimationDuration = 0.3;
-    _bottomLineColor = [UIColor redColor];
+    _bottomLineColor = kRedColor;
     _bottomLineHeight = 2.0f;
     _bottomLineSpacingFromTitleBottom = 10.0f;
-    _backEllipseColor = [UIColor yellowColor];
+    _backEllipseColor = kYellowColor;
     _backEllipseSize = CGSizeZero;
 }
 

@@ -21,14 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = kWhiteColor;
     //主collectionView
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.minimumInteritemSpacing = layout.minimumLineSpacing = 0;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.fullItem = YES;
     UICollectionView *mainView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-    mainView.backgroundColor = [UIColor whiteColor];
+    mainView.backgroundColor = kWhiteColor;
     mainView.dataSource = self;
     mainView.delegate = self;
     mainView.pagingEnabled = YES;
@@ -44,14 +44,14 @@
     catergoryView.titles = self.titles;
     catergoryView.scrollView = mainView;
     catergoryView.delegate = self;
-    catergoryView.titleSelectColor = [UIColor purpleColor];
+    catergoryView.titleSelectColor = kPurpleColor;
     catergoryView.itemSpacing = 15;
     /**开启背后椭圆*/
     catergoryView.backEllipseEable = YES;
     catergoryView.scrollWithAnimaitonWhenClicked = NO;
     /**设置默认defaultIndex*/
     catergoryView.defaultIndex = 6;
-    catergoryView.backgroundColor = [UIColor grayColor];
+    catergoryView.backgroundColor = kGrayColor;
     [self.view addSubview:catergoryView];
     [catergoryView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.equalTo(self.view);
@@ -82,7 +82,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     BPTopSliderCategoryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BPTopSliderCategoryCollectionViewCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed:(arc4random() % 255) / 255.0f green:(arc4random() % 255) / 255.0f blue:(arc4random() % 255) / 255.0f alpha:1.0];
+    cell.backgroundColor = kRGBA((arc4random() % 255) / 255.0f,(arc4random() % 255) / 255.0f,(arc4random() % 255) / 255.0f,1.0);
     cell.title = _titles[indexPath.item];
     return cell;
 }

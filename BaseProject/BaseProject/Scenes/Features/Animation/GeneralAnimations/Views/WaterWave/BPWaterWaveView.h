@@ -11,8 +11,8 @@
 #define kWATERWAVE_DEFAULT_SPEED 0.1;
 #define kWATERWAVE_DEFAULT_PEAK  6.0
 #define kWATERWAVE_DEFAULT_PERIOD 1.2
-#define kFIRSTWAVE_DEFAULT_COLOR [UIColor colorWithRed:223/255.0 green:83/255.0 blue:64/255.0 alpha:0.5]
-#define kSECONDEWAVE_DEFAULT_COLOR [UIColor colorWithRed:236/255.0f green:90/255.0f blue:66/255.0f alpha:0.5]
+#define kFIRSTWAVE_DEFAULT_COLOR  kRGBA(223/255.0, 83/255.0, 64/255.0,0.5)
+#define kSECONDEWAVE_DEFAULT_COLOR kRGBA(236/255.0f,90/255.0f,66/255.0f,0.5)
 #define kExplain_Default_Font 16
 #define kExplain_Default_Color kGrayColor
 #define kComplete_Default_Font 20

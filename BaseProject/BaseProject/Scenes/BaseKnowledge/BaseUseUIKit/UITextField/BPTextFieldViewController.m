@@ -28,12 +28,12 @@
     [self.view addSubview:textField];
     
     //    2.配置属性
-        textField.backgroundColor = [UIColor clearColor];
+        textField.backgroundColor = kClearColor;
     //    (1)文字显示
     //       a.显示内容
         textField.text = @"Duang";
     //       b.设置文字颜色
-        textField.textColor = [UIColor darkGrayColor];
+        textField.textColor = kDarkGrayColor;
     //       c.对齐方式
         textField.textAlignment = 1;
     //       d.字体
@@ -54,7 +54,7 @@
 
     //      f.设置输入弹出视图（默认是键盘）
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 375, 300)];
-    view.backgroundColor = [UIColor redColor];
+    view.backgroundColor = kRedColor;
     
     textField.inputView = view;
     //      g.设置辅助输入视图
@@ -69,11 +69,11 @@
     textField.clearButtonMode = UITextFieldViewModeWhileEditing;
 //      c. 设置左视图
     UILabel *nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 75, 50)];
-    nameLabel.textColor = [UIColor darkTextColor];
+    nameLabel.textColor = kDarkTextColor;
     nameLabel.text = @"用户名:";
     nameLabel.textAlignment = 1;
-    nameLabel.backgroundColor = [UIColor grayColor];
-//    nameLabel.backgroundColor = [UIColor colorWithRed:76/255.0 green:98/255.0 blue:124/255.0 alpha:0.8];
+    nameLabel.backgroundColor = kGrayColor;
+//    nameLabel.backgroundColor = kRGBA(76/255.0,98/255.0,124/255.0,0.8);
 
     textField.leftView = nameLabel;
 //    d.左视图模式

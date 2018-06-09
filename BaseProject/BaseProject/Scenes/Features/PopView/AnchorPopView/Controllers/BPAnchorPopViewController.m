@@ -57,7 +57,7 @@
     self.view.backgroundColor = kGreenColor;
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
     rightButton.backgroundColor = kRedColor;
-    [rightButton setTitle:@"push" forState:UIControlStateNormal];
+    [rightButton setTitle:@"Show" forState:UIControlStateNormal];
     [rightButton setTitleColor:kPurpleColor forState:UIControlStateNormal];
     rightButton.titleLabel.font = [UIFont systemFontOfSize:17.0f];
     [rightButton.titleLabel setAdjustsFontSizeToFitWidth:YES];

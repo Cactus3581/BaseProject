@@ -16,8 +16,8 @@
     if (self) {
         _titleFont = [UIFont systemFontOfSize:15];
         _titleColorChangeEable = YES;
-        _titleColor = [UIColor whiteColor];
-        _titleSelectColor = [UIColor redColor];
+        _titleColor = kWhiteColor;
+        _titleSelectColor = kRedColor;
         _itemSpacing = 10;
         _edgeSpacing = 20;
         _scaleRatio = 1.1;

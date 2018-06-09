@@ -28,14 +28,14 @@
     [super viewDidLoad];
     //有导航控制器必须设置为NO
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = kWhiteColor;
     //主collectionView
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.minimumInteritemSpacing = layout.minimumLineSpacing = 0;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.fullItem = YES;
     UICollectionView *mainView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 50, self.view.width, self.view.height - 50) collectionViewLayout:layout];
-    mainView.backgroundColor = [UIColor whiteColor];
+    mainView.backgroundColor = kWhiteColor;
     mainView.dataSource = self;
     mainView.delegate = self;
     mainView.pagingEnabled = YES;
@@ -63,7 +63,7 @@
     catergoryView.bottomLineSpacingFromTitleBottom = 6;
     //禁用点击item滚动scrollView的动画
     catergoryView.scrollWithAnimaitonWhenClicked = NO;
-    catergoryView.backgroundColor = [UIColor grayColor];
+    catergoryView.backgroundColor = kGrayColor;
     catergoryView.titleColorChangeGradually = YES;
     catergoryView.backEllipseEable = YES;
     catergoryView.defaultIndex =15;
@@ -98,7 +98,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     BPTopSliderCategoryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BPTopSliderCategoryCollectionViewCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed:(arc4random() % 255) / 255.0f green:(arc4random() % 255) / 255.0f blue:(arc4random() % 255) / 255.0f alpha:1.0];
+    cell.backgroundColor = kRGBA((arc4random() % 255) / 255.0f,(arc4random() % 255) / 255.0f,(arc4random() % 255) / 255.0f,1.0);
     cell.title = _titles[indexPath.item];
     return cell;
 }

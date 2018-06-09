@@ -27,9 +27,9 @@
     //1，设置指定范围内的 字体大小
     [testStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(5, 30)];
     //2，设置指定范围内 字体颜色
-    [testStr addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(0, 10)];
+    [testStr addAttribute:NSForegroundColorAttributeName value:kBlueColor range:NSMakeRange(0, 10)];
     //3，设置字体所在区域的背景颜色
-    [testStr addAttribute:NSBackgroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(40, 30)];
+    [testStr addAttribute:NSBackgroundColorAttributeName value:kGreenColor range:NSMakeRange(40, 30)];
     //4，设置连体属性，取值为NSNumber 对象(整数)
     [testStr addAttribute:NSLigatureAttributeName value:@1 range:NSMakeRange(40, 30)];
     //5，设置指定范围内  字符间距
@@ -37,11 +37,11 @@
     //6，设置删除线
     [testStr addAttribute:NSStrikethroughStyleAttributeName value:@1 range:NSMakeRange(120, 20)];
     //7，设置删除线的颜色
-    [testStr addAttribute:NSStrikethroughColorAttributeName value:[UIColor redColor] range:NSMakeRange(120, 10)];
+    [testStr addAttribute:NSStrikethroughColorAttributeName value:kRedColor range:NSMakeRange(120, 10)];
     //8，设置下划线
     [testStr addAttribute:NSUnderlineStyleAttributeName value:@1 range:NSMakeRange(140, 20)];
     //9，设置下划线颜色
-    [testStr addAttribute:NSUnderlineColorAttributeName value:[UIColor greenColor] range:NSMakeRange(140, 10)];
+    [testStr addAttribute:NSUnderlineColorAttributeName value:kGreenColor range:NSMakeRange(140, 10)];
     //10，设置字体倾斜度，负值向左，正值向右
     [testStr addAttribute:NSObliquenessAttributeName value:@-0.5 range:NSMakeRange(160, 30)];
     //11，设置字体拉伸压缩，正值拉伸，负值压缩
@@ -55,10 +55,10 @@
     //14，设置笔画宽度，取值为 NSNumber 对象（整数），负值填充效果，正值中空效果
     [testStr addAttribute:NSStrokeWidthAttributeName value:@0.5 range:NSMakeRange(240, 30)];
     //15，填充部分颜色，不是字体颜色，取值为 UIColor 对象
-    [testStr addAttribute:NSStrokeColorAttributeName value:[UIColor blueColor] range:NSMakeRange(240, 30)];
+    [testStr addAttribute:NSStrokeColorAttributeName value:kBlueColor range:NSMakeRange(240, 30)];
     //16,设置阴影属性，取值为 NSShadow 对象
     NSShadow *shadow = [[NSShadow alloc] init];
-    shadow.shadowColor = [UIColor redColor]; //设置阴影的颜色
+    shadow.shadowColor = kRedColor; //设置阴影的颜色
     shadow.shadowOffset = CGSizeMake(2, 1);//设置阴影的偏移方向，x：左右，负左正右；y：上下，负上正下
     shadow.shadowBlurRadius = 5;
     [testStr addAttribute:NSShadowAttributeName value:shadow range:NSMakeRange(270, 30)];

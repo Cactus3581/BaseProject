@@ -93,7 +93,7 @@
 - (UIButton *)button {
     if (!_button) {
         _button = [UIButton buttonWithType:UIButtonTypeCustom];
-        _button.backgroundColor = [UIColor redColor];
+        _button.backgroundColor = kRedColor;
         [_button setTitle:@"next" forState:UIControlStateNormal];
         [_button addTarget:self action:@selector(showView) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -112,7 +112,7 @@
 - (BPXIBAutoLayoutProcessView *)xibview {
     if (!_xibview) {
         _xibview = [[[NSBundle mainBundle] loadNibNamed:@"BPXIBAutoLayoutProcessView" owner:self options:nil] firstObject];
-        _xibview.backgroundColor = [UIColor redColor];
+        _xibview.backgroundColor = kRedColor;
     }
     return _xibview;
 }

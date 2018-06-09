@@ -50,7 +50,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     BPCardPageFlowView *pageFlowView = [[BPCardPageFlowView alloc] initWithFrame:CGRectMake(0, 72, kScreenWidth, kScreenWidth * 9 / 16)];
-    pageFlowView.backgroundColor = [UIColor whiteColor];
+    pageFlowView.backgroundColor = kWhiteColor;
     pageFlowView.delegate = self;
     pageFlowView.dataSource = self;
     pageFlowView.minimumPageAlpha = 0.4;
@@ -126,7 +126,7 @@
 - (UILabel *)indicateLabel {
     if (_indicateLabel == nil) {
         _indicateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 400, kScreenWidth, 16)];
-        _indicateLabel.textColor = [UIColor blueColor];
+        _indicateLabel.textColor = kBlueColor;
         _indicateLabel.font = [UIFont systemFontOfSize:16.0];
         _indicateLabel.textAlignment = NSTextAlignmentCenter;
         _indicateLabel.text = @"指示Label";

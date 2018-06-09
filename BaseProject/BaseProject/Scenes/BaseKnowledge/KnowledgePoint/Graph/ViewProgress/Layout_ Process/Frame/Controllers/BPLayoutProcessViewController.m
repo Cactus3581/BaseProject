@@ -167,7 +167,7 @@ static CGFloat layoutProcessViewMetaValue = 20;
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
         UIScrollView * scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-        scrollView.backgroundColor = [UIColor greenColor];
+        scrollView.backgroundColor = kGreenColor;
         scrollView.pagingEnabled = NO;
         scrollView.clipsToBounds = YES;
         scrollView.bounces = NO;
@@ -180,7 +180,7 @@ static CGFloat layoutProcessViewMetaValue = 20;
         scrollView.contentSize = CGSizeMake(self.view.width, 1000);
         UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 1000)];
         [scrollView addSubview:leftView];
-        leftView.backgroundColor = [UIColor redColor];
+        leftView.backgroundColor = kRedColor;
         _scrollView = scrollView;
     }
     return _scrollView;

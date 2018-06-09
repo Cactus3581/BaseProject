@@ -219,7 +219,7 @@
         NSInteger i = 0;
         for (DHScrollTabbarItem *item in tabbarItems) {
             UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(x, 0, item.width, height)];
-            backView.backgroundColor = [UIColor clearColor];
+            backView.backgroundColor = kClearColor;
             backView.tag = kViewTagBase + i;
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, item.width, height)];
             

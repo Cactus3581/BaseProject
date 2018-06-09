@@ -18,11 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.rightBarButtonTitle = @"pop";
+    self.rightBarButtonTitle = @"showPopView";
 }
 
 - (void)rightBarButtonItemClickAction:(id)sender {
-    self.popView.backgroundColor = kPurpleColor;
+    self.popView.backgroundColor = kThemeColor;
     [self.view layoutIfNeeded];
     [self.popView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_bottom).offset((-(CGRectGetHeight(self.popView.bounds))));
@@ -37,7 +37,6 @@
     if (!_popView) {
         _popView = [[UIView alloc] init];
         [self.view addSubview:_popView];
-        _popView.backgroundColor = kPurpleColor;
         [_popView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.equalTo(@400);
             make.leading.trailing.equalTo(self.view);
@@ -46,8 +45,6 @@
     }
     return _popView;
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

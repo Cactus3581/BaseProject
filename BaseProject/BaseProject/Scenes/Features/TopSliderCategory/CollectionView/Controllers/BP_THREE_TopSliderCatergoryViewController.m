@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = kWhiteColor;
     //主collectionView
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.minimumInteritemSpacing = layout.minimumLineSpacing = 0;
@@ -34,7 +34,7 @@
     layout.fullItem = YES;
     UICollectionView *mainView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
     _mainView = mainView;
-    mainView.backgroundColor = [UIColor whiteColor];
+    mainView.backgroundColor = kWhiteColor;
     mainView.dataSource = self;
     mainView.delegate = self;
     mainView.pagingEnabled = YES;
@@ -52,7 +52,7 @@
     catergoryView.scrollView = mainView;
     catergoryView.itemSpacing = 30;
     catergoryView.delegate = self;
-    catergoryView.backgroundColor = [UIColor grayColor];
+    catergoryView.backgroundColor = kGrayColor;
     //刷新后保持原来的index
     catergoryView.holdLastIndexAfterUpdate = YES;
     //开启缩放
@@ -117,7 +117,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     BPTopSliderCategoryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BPTopSliderCategoryCollectionViewCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed:(arc4random() % 255) / 255.0f green:(arc4random() % 255) / 255.0f blue:(arc4random() % 255) / 255.0f alpha:1.0];
+    cell.backgroundColor = kRGBA((arc4random() % 255) / 255.0f,(arc4random() % 255) / 255.0f,(arc4random() % 255) / 255.0f,1.0);
     cell.title = _titles[indexPath.item];
     return cell;
 }

@@ -47,7 +47,7 @@
     
     /*
      设置UIButton上字体的颜色设置UIButton上字体的颜色，不是用：
-     [btn.titleLabel setTextColor:[UIColorblackColor]];
+     [btn.titleLabel setTextColor:kBlackColor];
      btn.titleLabel.textColor=kRedColor;
      而是用：
      */
@@ -94,7 +94,7 @@
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
     //属性
     button.frame = CGRectMake(100, 300, 150, 100);
-    button.backgroundColor = [UIColor brownColor];
+    button.backgroundColor = kBrownColor;
     
     //    (1)设置文字-title     :两种不同状态下，可以同时设置不同的
     
@@ -116,19 +116,18 @@
     //    [button removeTarget:self action:@selector(buttonAction2:) forControlEvents:UIControlEventTouchDown];
     
     //    (4)设置title的颜色
-    //    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    //    [button setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
+    //    [button setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    //    [button setTitleColor:kBlueColor forState:UIControlStateHighlighted];
     
     //    (5)设置tite阴影颜色
-    //    [button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateNormal];
+    //    [button setTitleShadowColor:kBlackColor forState:UIControlStateNormal];
     //    //设置阴影大小。
     ////    button.titleShadowOffset = CGSizeMake(5, 5);
-    //    [button setTitleShadowColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    //    [button setTitleShadowColor:kBlackColor forState:UIControlStateHighlighted];
     //
     
     //    (6)设置背景图片
     [button setBackgroundImage:[UIImage imageNamed:@"navi_scale"] forState:UIControlStateNormal];
-    
 //    [button setBackgroundImage:[UIImage imageNamed:@"02.png"] forState:UIControlStateHighlighted];
     //    设置前景图片
     //    [button setImage:[UIImage imageNamed:@"01.png"] forState:UIControlStateNormal];

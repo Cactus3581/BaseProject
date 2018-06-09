@@ -20,21 +20,21 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self){
-        self.contentView.backgroundColor = [UIColor darkGrayColor];
+        self.contentView.backgroundColor = kDarkGrayColor;
         
         _showColorLabel = [[UILabel alloc]init];
-        _showColorLabel.textColor = [UIColor whiteColor];
+        _showColorLabel.textColor = kWhiteColor;
         _showColorLabel.textAlignment = NSTextAlignmentCenter;
 
-        _showColorLabel.shadowColor = [UIColor darkGrayColor];
+        _showColorLabel.shadowColor = kDarkGrayColor;
         _showColorLabel.shadowOffset = CGSizeMake(1.0f, 1.0f);
         _showColorLabel.font = [UIFont systemFontOfSize:16.0f];
         [self.contentView addSubview:_showColorLabel];
         
         _showPercentageLabel = [[UILabel alloc]init];
         _showPercentageLabel.textAlignment = NSTextAlignmentCenter;
-        _showPercentageLabel.textColor = [UIColor whiteColor];
-        _showPercentageLabel.shadowColor = [UIColor darkGrayColor];
+        _showPercentageLabel.textColor = kWhiteColor;
+        _showPercentageLabel.shadowColor = kDarkGrayColor;
         _showPercentageLabel.shadowOffset = CGSizeMake(1.0f, 1.0f);
         _showPercentageLabel.font = [UIFont systemFontOfSize:16.0f];
         [self.contentView addSubview:_showPercentageLabel];

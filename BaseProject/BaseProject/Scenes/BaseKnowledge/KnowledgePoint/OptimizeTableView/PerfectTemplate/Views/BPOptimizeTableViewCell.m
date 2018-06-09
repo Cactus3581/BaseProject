@@ -32,7 +32,7 @@
 }
 
 - (void)_bp_initailizeUI{
-    UIColor *backColor = [UIColor whiteColor];
+    UIColor *backColor = kWhiteColor;
     _backColor = backColor;
     self.contentView.backgroundColor = kYellowColor;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -54,7 +54,7 @@
         UILabel *label = [UILabel new];
         label.font = [UIFont systemFontOfSize:widthRatio(9)];
         label.text = @"我是测试";
-        label.backgroundColor = [UIColor blackColor];
+        label.backgroundColor = kBlackColor;
         label.textColor = kGreenColor;
         label.textAlignment = 1;
         label.layer.opaque = YES;
@@ -68,8 +68,8 @@
         UILabel *label = [UILabel new];
         label.font = [UIFont systemFontOfSize:widthRatio(14)];
         label.text = @"这是测试文字";
-        label.backgroundColor = [UIColor redColor];
-        label.textColor = [UIColor blackColor];
+        label.backgroundColor = kRedColor;
+        label.textColor = kBlackColor;
         label.textAlignment = 1;
         label.layer.masksToBounds = YES;
         label.layer.opaque = YES;
@@ -84,7 +84,7 @@
     for (int i = 0; i < 10; i ++) {
         UIView *littleCircle = [UIView new];
         littleCircle.layer.opaque = YES;
-        littleCircle.backgroundColor = [UIColor blueColor];
+        littleCircle.backgroundColor = kBlueColor;
         littleCircle.bounds = BPRectMake(0, 0, 15, 15);
         littleCircle.center = BPPointMake(110 + 7.5 + 20 * i, 30);
         [littleCircle bp_roundedCornerWithRadius:widthRatio(7.5) cornerColor:backColor];
@@ -111,9 +111,9 @@
 }
 
 - (void)_bp_colorWithSelectedorHighlighted:(BOOL)flag{
-    UIColor *color = flag ? [UIColor lightGrayColor] : _backColor;
+    UIColor *color = flag ? kLightGrayColor : _backColor;
     self.contentView.backgroundColor = color;
-    [_headerView bp_roundedCornerWithCornerRadii:BPSizeMake(40, 40) cornerColor:color corners:UIRectCornerAllCorners borderColor:[UIColor redColor] borderWidth:widthRatio(2)];
+    [_headerView bp_roundedCornerWithCornerRadii:BPSizeMake(40, 40) cornerColor:color corners:UIRectCornerAllCorners borderColor:kRedColor borderWidth:widthRatio(2)];
     [_aLabel bp_roundedCornerWithRadius:widthRatio(15) cornerColor:color corners:UIRectCornerTopLeft | UIRectCornerBottomRight];
     [_circles enumerateObjectsUsingBlock:^(UIView * _Nonnull littleCircle, NSUInteger idx, BOOL * _Nonnull stop) {
         [littleCircle bp_roundedCornerWithRadius:widthRatio(7.5) cornerColor:color];

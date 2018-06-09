@@ -41,7 +41,7 @@
         _indexLabel = [[UILabel alloc] init];
         _indexLabel.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.6];
         _indexLabel.font = [UIFont systemFontOfSize:16.0];
-        _indexLabel.textColor = [UIColor whiteColor];
+        _indexLabel.textColor = kWhiteColor;
     }
     return _indexLabel;
 }

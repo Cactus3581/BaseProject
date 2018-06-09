@@ -82,7 +82,7 @@
     unsigned int value = 0;
     BOOL flag = [[NSScanner scannerWithString:hexString] scanHexInt:&value];
     if(NO == flag)
-        return [UIColor clearColor];
+        return kClearColor;
     float r, g, b, a;
     a = (value & 0x000000FF) / 255.0;
     value = value >> 8;
@@ -105,7 +105,7 @@
     unsigned int value = 0;
     BOOL flag = [[NSScanner scannerWithString:hexString] scanHexInt:&value];
     if(NO == flag)
-        return [UIColor clearColor];
+        return kClearColor;
     float r, g, b, a;
     a = alpha;
     b = value & 0x0000FF;

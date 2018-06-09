@@ -34,8 +34,8 @@
     testVC.preferredContentSize = CGSizeMake(300, 400);
     // 设置 Sytle
     testVC.modalPresentationStyle = UIModalPresentationPopover;
-    testVC.view.backgroundColor = [UIColor redColor];
-    testVC.popoverPresentationController.backgroundColor = [UIColor redColor];
+    testVC.view.backgroundColor = kRedColor;
+    testVC.popoverPresentationController.backgroundColor = kRedColor;
 
 
     // 需要通过 sourceView 来判断位置的
@@ -104,7 +104,7 @@
     rightButton.backgroundColor = kRedColor;
     rightButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     rightButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    [rightButton setTitle:@"push" forState:UIControlStateNormal];
+    [rightButton setTitle:@"Show" forState:UIControlStateNormal];
     [rightButton setTitleColor:kPurpleColor forState:UIControlStateNormal];
     rightButton.titleLabel.font = [UIFont systemFontOfSize:17.0f];
     [rightButton.titleLabel setAdjustsFontSizeToFitWidth:YES];
@@ -115,7 +115,7 @@
     [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(50);
         make.trailing.equalTo(self.view).offset(-30);
-        make.bottom.equalTo(self.view).offset(-20);
+        make.bottom.equalTo(self.view).offset(-100);
     }];
 }
 
@@ -209,4 +209,3 @@
 }
 
 @end
-

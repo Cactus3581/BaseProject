@@ -23,13 +23,13 @@
         make.leading.trailing.centerY.equalTo(self.view);
         make.height.mas_equalTo(200);
     }];
-    self.sliderShowView.imageArray = @[[UIColor redColor],[UIColor yellowColor],[UIColor blueColor],[UIColor greenColor],[UIColor purpleColor]];
+    self.sliderShowView.imageArray = @[kRedColor,kYellowColor,kBlueColor,kGreenColor,kPurpleColor];
 }
 
 - (BPSliderShowView *)sliderShowView {
     if (!_sliderShowView) {
         _sliderShowView = [[BPSliderShowView alloc] init];
-        _sliderShowView.backgroundColor = [UIColor lightGrayColor];
+        _sliderShowView.backgroundColor = kLightGrayColor;
     }
     return _sliderShowView;
 }

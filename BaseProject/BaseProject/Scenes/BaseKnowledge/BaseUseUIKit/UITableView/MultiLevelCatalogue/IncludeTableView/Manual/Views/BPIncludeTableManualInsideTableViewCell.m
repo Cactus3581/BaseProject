@@ -53,9 +53,9 @@
     
     //设置字体所在区域的背景颜色
     /*
-    [str addAttribute:NSBackgroundColorAttributeName value:[UIColor greenColor] range:NSMakeRange(0, str.length)];
+    [str addAttribute:NSBackgroundColorAttributeName value:kGreenColor range:NSMakeRange(0, str.length)];
     填充部分颜色，不是字体颜色，取值为 UIColor 对象
-    [str addAttribute:NSStrokeColorAttributeName value:[UIColor blueColor] range:NSMakeRange(0, str.length)];
+    [str addAttribute:NSStrokeColorAttributeName value:kBlueColor range:NSMakeRange(0, str.length)];
     */
     
     NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];//设置文本段落排版格式，取值为 NSParagraphStyle 对象

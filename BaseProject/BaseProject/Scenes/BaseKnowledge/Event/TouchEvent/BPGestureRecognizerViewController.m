@@ -43,7 +43,7 @@
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
     //    2.配置属性
-    imageView.backgroundColor = [UIColor purpleColor];
+    imageView.backgroundColor = kPurpleColor;
     //    2.1设置图片
     //    创建UIImage对象
     imageView.image = [[UIImage alloc]initWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"h0"ofType:@"jpeg"]];

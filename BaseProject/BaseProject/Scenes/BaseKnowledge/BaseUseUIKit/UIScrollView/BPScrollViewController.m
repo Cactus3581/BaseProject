@@ -23,7 +23,7 @@
 
 - (void)configScrollView {
     UIScrollView * scrollView = [[UIScrollView alloc] init];
-    scrollView.backgroundColor = [UIColor greenColor];
+    scrollView.backgroundColor = kGreenColor;
     scrollView.delegate = self;
     scrollView.pagingEnabled = NO;
     scrollView.clipsToBounds = YES;
@@ -44,16 +44,16 @@
     
     UIView *leftView = [[UIView alloc] init];
     [scrollView addSubview:leftView];
-    leftView.backgroundColor = [UIColor redColor];
+    leftView.backgroundColor = kRedColor;
     
     
     UIView *centerView = [[UIView alloc] init];
     [scrollView addSubview:centerView];
-    centerView.backgroundColor = [UIColor yellowColor];
+    centerView.backgroundColor = kYellowColor;
     
     UIView *rightView = [[UIView alloc] init];
     [scrollView addSubview:rightView];
-    rightView.backgroundColor = [UIColor blueColor];
+    rightView.backgroundColor = kBlueColor;
     
     
     [leftView mas_makeConstraints:^(MASConstraintMaker *make) {

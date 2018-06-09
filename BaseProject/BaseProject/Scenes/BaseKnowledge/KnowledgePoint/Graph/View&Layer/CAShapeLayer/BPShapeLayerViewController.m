@@ -49,8 +49,8 @@
     [self.view.layer addSublayer:shapeLayer];
     //fillcolor没有动画；strokeColor有动画,这样只能在strokeColor上考虑动画了
     CABasicAnimation *anmation = [CABasicAnimation animationWithKeyPath:@"strokeColor"];
-    anmation.fromValue = (id)[UIColor redColor].CGColor;
-    anmation.toValue = (id)[UIColor greenColor].CGColor;
+    anmation.fromValue = (id)kRedColor.CGColor;
+    anmation.toValue = (id)kGreenColor.CGColor;
     anmation.duration = 2.5;
     anmation.repeatCount = MAXFLOAT;
     [shapeLayer addAnimation:anmation forKey:@""];
@@ -92,7 +92,7 @@
     gradientLayer.endPoint = CGPointMake(0.5, 1);
     NSMutableArray *colors = [NSMutableArray array];
     for (int hue  = 0; hue <= 360; hue++) {
-        UIColor *color =  [UIColor colorWithHue:hue / 360.0 saturation:1.0 brightness:1.0 alpha:1];
+        UIColor *color =  hsb(hue / 360.0,1.0,1.0);
         [colors addObject:(id)color.CGColor];
     }
     gradientLayer.colors = colors;
@@ -130,7 +130,7 @@
     gradientLayer.endPoint = CGPointMake(0.5, 1);
     NSMutableArray *colors = [NSMutableArray array];
     for (int hue  = 0; hue <= 360; hue++) {
-        UIColor *color =  [UIColor colorWithHue:hue / 360.0 saturation:1.0 brightness:1.0 alpha:1];
+        UIColor *color =  hsb(hue / 360.0,1.0,1.0);
         [colors addObject:(id)color.CGColor];
     }
     gradientLayer.colors = colors;

@@ -51,7 +51,7 @@
 #pragma mark - 边界之外能否响应
 - (void)configureViewOut {
     UIView *backView = [[UIView alloc]init];
-    backView.backgroundColor = [UIColor clearColor];
+    backView.backgroundColor = kClearColor;
     [self.view addSubview:backView];
     
     [backView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -60,7 +60,7 @@
     }];
     
     UIView *view = [[UIView alloc]init];
-    view.backgroundColor = [UIColor greenColor];
+    view.backgroundColor = kGreenColor;
     [backView addSubview:view];
     
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -69,9 +69,9 @@
     }];
     
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
-    rightButton.backgroundColor = [UIColor redColor];
+    rightButton.backgroundColor = kRedColor;
     [rightButton setTitle:@"push" forState:UIControlStateNormal];
-    [rightButton setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
+    [rightButton setTitleColor:kPurpleColor forState:UIControlStateNormal];
     rightButton.titleLabel.font = [UIFont systemFontOfSize:10.0f];
     [rightButton addTarget:self action:@selector(next:) forControlEvents:UIControlEventTouchUpInside];
     [backView addSubview:rightButton];
@@ -88,14 +88,14 @@
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
     [rightButton setBackgroundImage:[UIImage imageNamed:@"transitionWithType01"] forState:UIControlStateNormal];
     [rightButton setTitle:@"push" forState:UIControlStateNormal];
-    [rightButton setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
+    [rightButton setTitleColor:kPurpleColor forState:UIControlStateNormal];
     rightButton.titleLabel.font = [UIFont systemFontOfSize:27.0f];
     [rightButton.titleLabel setAdjustsFontSizeToFitWidth:YES];
     [rightButton.titleLabel sizeToFit];
     rightButton.imageView.layer.masksToBounds = YES;
     rightButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [rightButton addTarget:self action:@selector(buttonAct:) forControlEvents:UIControlEventTouchUpInside];
-    rightButton.backgroundColor = [UIColor greenColor];
+    rightButton.backgroundColor = kGreenColor;
     [self.view addSubview:rightButton];
     
     [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -107,14 +107,14 @@
     UIButton *bottomButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
     [bottomButton setBackgroundImage:[UIImage imageNamed:@"transitionWithType01"] forState:UIControlStateNormal];
     [bottomButton setTitle:@"push" forState:UIControlStateNormal];
-    [bottomButton setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
+    [bottomButton setTitleColor:kPurpleColor forState:UIControlStateNormal];
     bottomButton.titleLabel.font = [UIFont systemFontOfSize:27.0f];
     [bottomButton.titleLabel setAdjustsFontSizeToFitWidth:YES];
     [bottomButton.titleLabel sizeToFit];
     bottomButton.imageView.layer.masksToBounds = YES;
     bottomButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [bottomButton addTarget:self action:@selector(buttonAct:) forControlEvents:UIControlEventTouchUpInside];
-    bottomButton.backgroundColor = [UIColor greenColor];
+    bottomButton.backgroundColor = kGreenColor;
     [self.view addSubview:bottomButton];
     
     //rightButton.hidden = YES;

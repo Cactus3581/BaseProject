@@ -390,7 +390,7 @@
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
         UIScrollView * scrollView = [[UIScrollView alloc] init];
-        scrollView.backgroundColor = [UIColor greenColor];
+        scrollView.backgroundColor = kGreenColor;
         scrollView.pagingEnabled = NO;
         scrollView.clipsToBounds = YES;
         scrollView.bounces = NO;
@@ -403,7 +403,7 @@
         scrollView.contentSize = CGSizeMake(self.view.width, 1000);
         UIView *leftView = [[UIView alloc] init];
         [scrollView addSubview:leftView];
-        leftView.backgroundColor = [UIColor redColor];
+        leftView.backgroundColor = kRedColor;
         _scrollView = scrollView;
         [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.view);

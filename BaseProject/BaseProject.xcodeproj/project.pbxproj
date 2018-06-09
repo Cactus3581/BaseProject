@@ -3728,9 +3728,9 @@
 		014995941FB4A5F300077866 /* PopView */ = {
 			isa = PBXGroup;
 			children = (
+				015120F320CBCEFD00B33A76 /* NormalPopView */,
 				01C31F68200FA12B0096C2E0 /* ArrowPopView */,
 				01C31F67200FA1130096C2E0 /* AnchorPopView */,
-				017906AC2000F62100E5C360 /* Controllers */,
 			);
 			path = PopView;
 			sourceTree = "<group>";
@@ -3746,6 +3746,15 @@
 				01F0DDD620CA1CB8005082C7 /* BPPaddingButton.m */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		015120F320CBCEFD00B33A76 /* NormalPopView */ = {
+			isa = PBXGroup;
+			children = (
+				017906AF2000F63B00E5C360 /* BPPopViewController.h */,
+				017906B02000F63B00E5C360 /* BPPopViewController.m */,
+			);
+			path = NormalPopView;
 			sourceTree = "<group>";
 		};
 		0153F11E20B2A43F007C50C5 /* WeChat */ = {
@@ -4878,15 +4887,6 @@
 				01C9357E1FC3357900D98FD6 /* Image */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		017906AC2000F62100E5C360 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				017906AF2000F63B00E5C360 /* BPPopViewController.h */,
-				017906B02000F63B00E5C360 /* BPPopViewController.m */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		017906BF2000FBFC00E5C360 /* SimpleCollection */ = {

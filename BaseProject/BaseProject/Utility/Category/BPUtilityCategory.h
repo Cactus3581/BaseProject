@@ -12,5 +12,6 @@
 #import "UIView+BPAdd.h"
 #import "UIFont+BPAdd.h"
 #import "NSString+BPSize.h"
+#import "UIColor+BPAdd.h"
 
 #endif /* BPUtilityCategory_h */

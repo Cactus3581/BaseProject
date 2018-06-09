@@ -12,7 +12,7 @@
 #import "UIColor+BPAdd.h"
 #import "UIColor+Hex.h"
 
-#define kPaletteDefaultColor [UIColor blackColor]
+#define kPaletteDefaultColor kBlackColor
 @interface BPPaletteView ()
 @property (nonatomic,strong) UIImage *image;
 @property (nonatomic,strong) NSMutableArray *colorArray;

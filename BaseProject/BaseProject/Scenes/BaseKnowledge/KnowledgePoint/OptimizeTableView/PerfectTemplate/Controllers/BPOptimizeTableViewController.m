@@ -31,7 +31,7 @@
     [super viewDidLoad];
     UITableView *tableView = [UITableView new];
     tableView.rowHeight = widthRatio(120);
-    tableView.backgroundColor = [UIColor whiteColor];
+    tableView.backgroundColor = kWhiteColor;
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.frame = self.view.bounds;

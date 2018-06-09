@@ -39,13 +39,13 @@
 }
 
 - (void)bp_initializeUI{
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = kClearColor;
     UILabel *titleLabel = [UILabel new];
     _titleLabel = titleLabel;
     titleLabel.textAlignment = 1;
     [self.contentView addSubview:titleLabel];
     UILabel *colorLabel = [UILabel new];
-    colorLabel.textColor = [UIColor orangeColor];
+    colorLabel.textColor = kOrangeColor;
     _colorLabel = colorLabel;
     colorLabel.frame = self.bounds;
     colorLabel.textAlignment = 1;

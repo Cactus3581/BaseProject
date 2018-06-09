@@ -52,11 +52,6 @@
     //[self configNavigationBar];//navigationBar
     //[self configSubViews];      //由导航栏引起的零点坐标问题
     //[self configNewFeature];    // iOS 11 新特性
-    [self testBaseBar];
-}
-#pragma mark - 测试基类bar
-- (void)testBaseBar {
-    [self setLeftBarButtonTitle:@"返回"];
 }
 
 #pragma mark iOS 11 新特性

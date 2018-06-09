@@ -211,8 +211,8 @@
         _label = label;
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont systemFontOfSize:14.0];
-        label.textColor = [UIColor whiteColor];
-        label.backgroundColor = [UIColor lightGrayColor];
+        label.textColor = kWhiteColor;
+        label.backgroundColor = kLightGrayColor;
         label.numberOfLines = 0;
     }
     return _label;
@@ -224,8 +224,8 @@
         _label1 = label1;
         label1.textAlignment = NSTextAlignmentCenter;
         label1.font = [UIFont systemFontOfSize:14.0];
-        label1.textColor = [UIColor whiteColor];
-        label1.backgroundColor = [UIColor lightGrayColor];
+        label1.textColor = kWhiteColor;
+        label1.backgroundColor = kLightGrayColor;
         label1.numberOfLines = 0;
     }
     return _label1;
@@ -237,8 +237,8 @@
         _intrinsicContentSizeLabel = label;
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont systemFontOfSize:14.0];
-        label.textColor = [UIColor whiteColor];
-        label.backgroundColor = [UIColor lightGrayColor];
+        label.textColor = kWhiteColor;
+        label.backgroundColor = kLightGrayColor;
         label.numberOfLines = 0;
     }
     return _intrinsicContentSizeLabel;
@@ -248,8 +248,8 @@
     if (!_textView) {
         UITextView *textView = [[UITextView alloc] init];
         textView.font = [UIFont systemFontOfSize:18.0];
-        textView.textColor = [UIColor whiteColor];
-        textView.backgroundColor = [UIColor redColor];
+        textView.textColor = kWhiteColor;
+        textView.backgroundColor = kRedColor;
         _textView = textView;
     }
     return _textView;
@@ -258,7 +258,7 @@
 - (UIView *)bgView {
     if (!_bgView) {
         UIView *bgView = [[UIView alloc] init];
-        bgView.backgroundColor = [UIColor grayColor];
+        bgView.backgroundColor = kGrayColor;
         _bgView = bgView;
     }
     return _bgView;

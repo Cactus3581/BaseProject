@@ -41,8 +41,8 @@
 
 - (void)initialization{
     _autoScrollTimeInterval = 2.0;
-    self.otherPageControlColor = [UIColor grayColor];
-    self.curPageControlColor = [UIColor whiteColor];
+    self.otherPageControlColor = kGrayColor;
+    self.curPageControlColor = kWhiteColor;
     _showPageControl = YES;
     _hideWhenSinglePage = YES;
     _autoScroll = YES;

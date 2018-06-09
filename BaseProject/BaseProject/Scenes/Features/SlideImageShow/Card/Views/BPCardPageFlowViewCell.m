@@ -46,7 +46,7 @@
 - (UIView *)coverView {
     if (_coverView == nil) {
         _coverView = [[UIView alloc] init];
-        _coverView.backgroundColor = [UIColor blackColor];
+        _coverView.backgroundColor = kBlackColor;
     }
     return _coverView;
 }

@@ -52,8 +52,8 @@
     self.shapeLayer1 = [CAShapeLayer layer];
     self.shapeLayer1.lineCap       = kCALineCapButt;
     self.shapeLayer1.lineJoin      = kCALineJoinRound;
-    self.shapeLayer1.strokeColor   = [[UIColor clearColor] CGColor];
-    self.shapeLayer1.fillColor     = [[UIColor clearColor] CGColor];
+    self.shapeLayer1.strokeColor   = [kClearColor CGColor];
+    self.shapeLayer1.fillColor     = [kClearColor CGColor];
     [self.shapeLayer1 setLineWidth:3];
     self.shapeLayer1.strokeColor   =  kRedColor.CGColor;
     [self.layer addSublayer:self.shapeLayer1];
@@ -62,8 +62,8 @@
     self.shapeLayer2 = [CAShapeLayer layer];
     self.shapeLayer2.lineCap       = kCALineCapButt;
     self.shapeLayer2.lineJoin      = kCALineJoinRound;
-    self.shapeLayer2.strokeColor   = [[UIColor clearColor] CGColor];
-    self.shapeLayer2.fillColor     = [[UIColor clearColor] CGColor];
+    self.shapeLayer2.strokeColor   = [kClearColor CGColor];
+    self.shapeLayer2.fillColor     = [kClearColor CGColor];
     [self.shapeLayer2 setLineWidth:kOnePixel*3];
     self.shapeLayer2.strokeColor   =  kGreenColor.CGColor;
     //    [self.layer addSublayer:self.shapeLayer2];

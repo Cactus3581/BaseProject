@@ -60,9 +60,9 @@
 
 - (void)configImagePickerController:(UIImagePickerController *)imagePickerController {
 //    //设置导航栏背景颜色
-//    imagePickerController.navigationBar.barTintColor = [UIColor colorWithRed:20.f/255.0 green:24.0/255.0 blue:38.0/255.0 alpha:1];
+//    imagePickerController.navigationBar.barTintColor = kRGBA(20.f/255.0,24.0/255.0,38.0/255.0,1);
 //    //设置右侧取消按钮的字体颜色
-//    imagePickerController.navigationBar.tintColor = [UIColor whiteColor];
+//    imagePickerController.navigationBar.tintColor = kWhiteColor;
     
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"bp_naviItem_backImage"] style:UIBarButtonItemStylePlain target:self action:@selector(popViewController)];
     

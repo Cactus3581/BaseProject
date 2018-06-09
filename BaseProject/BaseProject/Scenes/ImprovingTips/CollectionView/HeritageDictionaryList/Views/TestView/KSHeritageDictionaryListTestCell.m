@@ -21,7 +21,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self configureCollectionView];
-    self.backgroundColor = [UIColor colorWithRed:(arc4random() % 255) / 255.0f green:(arc4random() % 255) / 255.0f blue:(arc4random() % 255) / 255.0f alpha:1.0];
+    self.backgroundColor = kRGBA((arc4random() % 255) / 255.0f,(arc4random() % 255) / 255.0f ,(arc4random() % 255) / 255.0f,1.0);
 }
 
 - (void)setModel:(KSWordBookAuthorityDictionaryFirstCategoryModel *)model indexPath:(NSIndexPath *)indexPath {
