@@ -18,6 +18,7 @@
     [newColor getRed:&red2 green:&green2 blue:&blue2 alpha:&alpha2];
     CGFloat p1 = percent;
     CGFloat p2 = 1.0 - percent;
+//    UIColor *midColor = kRGBA(red1 * p1 + red2 * p2,green1 * p1 + green2 * p2,blue1 *p1 + blue2 * p2,1.0);
     UIColor *midColor = kRGBA(red1 * p1 + red2 * p2,green1 * p1 + green2 * p2,blue1 *p1 + blue2 * p2,1.0);
     return midColor;
 }

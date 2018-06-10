@@ -41,6 +41,12 @@
     CGFloat x = kScreenWidth-rc.origin.x-targetViewW/2.0;
     CGFloat y = rc.origin.y;
     
+    /*
+     滑动列表，有个重用的问题：
+     解决方法：
+     首选：不依赖autolayout对象，用确定的值去判断
+     次选：遮罩，禁手势
+    */
     if (kScreenHeight <=  y + self.height + self.limitH + self.offset) {
         self.layer.anchorPoint = CGPointMake(1, 1);
         [self mas_remakeConstraints:^(MASConstraintMaker *make) {

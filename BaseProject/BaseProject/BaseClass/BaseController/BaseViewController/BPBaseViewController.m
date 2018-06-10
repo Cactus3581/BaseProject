@@ -246,6 +246,8 @@ static CGFloat titleInset = 20.0f;
 
 - (void)dealloc {
     [self removeFPSLabel];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
     BPLog(@"i am vc 释放了");
 }
 

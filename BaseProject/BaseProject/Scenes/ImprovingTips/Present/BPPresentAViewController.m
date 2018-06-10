@@ -17,20 +17,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = kGreenColor;
-    UIButton *backBtn = [[UIButton alloc]init];
-    backBtn.frame = CGRectMake(0, 120, 44, 44);
-    [backBtn setImage:[UIImage imageNamed:bp_naviItem_backImage] forState:UIControlStateNormal];
-    [backBtn addTarget:self action:@selector(presentAndPush) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:backBtn];
+    self.rightBarButtonTitle = @"present";
 }
 
-//模态->push
+- (void)rightBarButtonItemClickAction:(id)sender {
+    [self handleDynamicJumpData];
+}
+
+- (void)handleDynamicJumpData {
+    if (self.needDynamicJump) {
+        NSInteger type = [self.dynamicJumpDict[@"type"] integerValue];
+        switch (type) {
+            case 0:{
+                [self presentAndPush];//模态->push
+            }
+                break;
+                
+            case 1:{
+                [self present];
+            }
+                break;
+                
+            case 2:{
+                [self presentWithAnimation];
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
 
 - (void)presentAndPush {
     BPPresentBViewController *vc = [[BPPresentBViewController alloc] init];
     //在这个模态中视图的跳转就可以用这个刚创建的导航控制器完成了,表现在代码里则:self.navigationController是存在的.
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:vc];
+    //如果想让模态的页面有导航栏，那就必须presentViewController:navi，不能是vc
     //[self.navigationController presentViewController:navi animated:YES completion:nil];//包括这个及以下都可以
     [self presentViewController:navi animated:YES completion:nil];
 }

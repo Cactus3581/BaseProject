@@ -11,7 +11,7 @@
 
 @interface BPParentAddChildViewController ()
 @property (nonatomic,strong) BPSubAddChildViewController *subVc;
-
+@property (nonatomic,strong) NSMutableArray *array;
 @end
 
 @implementation BPParentAddChildViewController
@@ -41,6 +41,7 @@
     vc.view.backgroundColor = kGreenColor;
 
     self.subVc = vc;
+    [self.array addObject:self.subVc];
 }
 
 - (void)test {
@@ -63,8 +64,17 @@
 
 - (void)didClickHeadButtonAction:(UIButton *)button {
     BPSubAddChildViewController *vc1 = [[BPSubAddChildViewController alloc] init];
-    vc1.view.backgroundColor = kBlueColor;
-    [self replaceController:self.subVc willDisplayController:vc1];
+    vc1.view.backgroundColor = kRandomColor;
+    
+    [self replaceController:self.array.lastObject willDisplayController:vc1];
+    [self.array addObject:vc1];
+}
+
+- (NSMutableArray *)array {
+    if (!_array) {
+        _array = [NSMutableArray array];
+    }
+    return _array;
 }
 
 //切换各个标签内容
@@ -82,7 +92,7 @@
     newVC.view.frame = CGRectMake(self.view.bounds.size.width, 200, self.view.bounds.size.width, 200);
 
     [self addChildViewController:newVC];
-    [self transitionFromViewController:oldVC toViewController:newVC duration:4.0 options:UIViewAnimationOptionLayoutSubviews animations:^{
+    [self transitionFromViewController:oldVC toViewController:newVC duration:0.25 options:UIViewAnimationOptionLayoutSubviews animations:^{
         newVC.view.frame = CGRectMake(0, 200, self.view.bounds.size.width, 200);
         oldVC.view.frame = CGRectMake(-self.view.bounds.size.width, 200, self.view.bounds.size.width, 200);
     } completion:^(BOOL finished) {

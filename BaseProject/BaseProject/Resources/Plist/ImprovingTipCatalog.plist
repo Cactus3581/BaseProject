@@ -23,7 +23,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>仿微信获取照片</string>
+		<string>监听截图获取照片</string>
 		<key>fileName</key>
 		<string>BPWeiXinPhotoViewController</string>
 		<key>briefIntro</key>
@@ -49,9 +49,42 @@
 		<key>title</key>
 		<string>模态</string>
 		<key>fileName</key>
-		<string>BPPresentAViewController</string>
+		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
 		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>模态1</string>
+				<key>fileName</key>
+				<string>BPPresentAViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;0&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>模态2</string>
+				<key>fileName</key>
+				<string>BPPresentAViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;1&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>模态3</string>
+				<key>fileName</key>
+				<string>BPPresentAViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;2&quot;}</string>
+			</dict>
+		</array>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -61,16 +94,7 @@
 		<key>briefIntro</key>
 		<string></string>
 		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>顶部分类工具测试</string>
-				<key>fileName</key>
-				<string>KSHeritageDictionaryListContainerViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
+		<array/>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -110,33 +134,9 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>collectionview 水平整屏滑动</string>
-				<key>fileName</key>
-				<string>BPHorizontalCollectionViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>collectionview 分类工具-有tagview</string>
+				<string>collectionview 顶部分类工具</string>
 				<key>fileName</key>
 				<string>BPTopCategoryCollectionViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>collectionview 分类工具-没有tagview</string>
-				<key>fileName</key>
-				<string>BPTopCategoryCollectionViewController1</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>看这里：测试collectionview滑动</string>
-				<key>fileName</key>
-				<string>BPTestCollectionViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>

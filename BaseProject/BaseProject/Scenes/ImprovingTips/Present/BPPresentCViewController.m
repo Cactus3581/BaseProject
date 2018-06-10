@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"C";
+    self.view.backgroundColor = kExplicitColor;
+
 }
 
 - (void)didReceiveMemoryWarning {

@@ -252,8 +252,7 @@ NSURLSessionDataTask 发送 GET 请求:
             2.执行请求
 */
 
-- (void)setDownloadTask_2
-{
+- (void)setDownloadTask_2 {
     //确定请求路径
     NSURL *url = [NSURL URLWithString:urlstrimage1];
     //创建请求对象

@@ -60,7 +60,7 @@
 
 - (void)configImagePickerController:(UIImagePickerController *)imagePickerController {
 //    //设置导航栏背景颜色
-//    imagePickerController.navigationBar.barTintColor = kRGBA(20.f/255.0,24.0/255.0,38.0/255.0,1);
+//    imagePickerController.navigationBar.barTintColor = kRGB(20.f,24.0,38.0);
 //    //设置右侧取消按钮的字体颜色
 //    imagePickerController.navigationBar.tintColor = kWhiteColor;
     

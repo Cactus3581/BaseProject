@@ -82,7 +82,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     BPTopSliderCategoryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BPTopSliderCategoryCollectionViewCell" forIndexPath:indexPath];
-    cell.backgroundColor = kRGBA((arc4random() % 255) / 255.0f,(arc4random() % 255) / 255.0f,(arc4random() % 255) / 255.0f,1.0);
+    cell.backgroundColor = kRGB((arc4random() % 255),(arc4random() % 255),(arc4random() % 255));
     cell.title = _titles[indexPath.item];
     return cell;
 }

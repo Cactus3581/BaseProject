@@ -32,7 +32,7 @@ static CGFloat paletteViewHeight = 100.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self initUI];
+    //[self initUI];
     [self configImageView];
 }
 

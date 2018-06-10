@@ -83,7 +83,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>箭头PopView-图片/自定义画图</string>
+				<string>自定义绘制箭头PopView</string>
 				<key>fileName</key>
 				<string>BPArrowPopViewController</string>
 				<key>briefIntro</key>
@@ -93,9 +93,54 @@
 				<key>title</key>
 				<string>锚点</string>
 				<key>fileName</key>
-				<string>BPAnchorPopViewController</string>
+				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
 				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;&quot;:&quot;&quot;}</string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>测试锚点</string>
+						<key>fileName</key>
+						<string>BPAnchorPopViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;0&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>无列表锚点PopView</string>
+						<key>fileName</key>
+						<string>BPAnchorPopViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;1&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>列表锚点PopView</string>
+						<key>fileName</key>
+						<string>BPAnchorPopViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;2&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>动态设置锚点</string>
+						<key>fileName</key>
+						<string>BPAnchorPopViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;3&quot;}</string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>title</key>

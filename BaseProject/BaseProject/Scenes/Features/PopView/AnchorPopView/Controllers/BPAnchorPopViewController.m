@@ -21,9 +21,89 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self testAnchorPoint];//测试锚点
-//    [self configCollectionView];
-//    [self configureButton];
+    [self handleDynamicJumpData];
+}
+
+- (void)handleDynamicJumpData {
+    if (self.needDynamicJump) {
+        NSInteger type = [self.dynamicJumpDict[@"type"] integerValue];
+        switch (type) {
+            case 0:{
+                [self testAnchorPointAndAutoLayout];//测试锚点
+            }
+                break;
+                
+            case 1:{
+                [self configureButton];
+            }
+                break;
+                
+            case 2:{
+                [self configCollectionView];
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
+
+#pragma mark - 测试锚点
+- (void)testAnchorPointAndAutoLayout {
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightButton.backgroundColor = kThemeColor;
+    [rightButton setTitle:@"standard" forState:UIControlStateNormal];
+    [rightButton setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    [self.view addSubview:rightButton];
+    [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(80);
+        make.width.mas_equalTo(80);
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view);
+    }];
+    
+    UIButton *rightButton1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightButton1.layer.anchorPoint = CGPointMake(0, 0);
+    rightButton1.backgroundColor = kExplicitColor;
+    [rightButton1 setTitle:@"show" forState:UIControlStateNormal];
+    [rightButton1 setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    [self.view addSubview:rightButton1];
+
+    [rightButton1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(50);
+        make.width.mas_equalTo(50);
+        //重点测试点
+//        make.leading.equalTo(rightButton);
+//        make.top.equalTo(rightButton).offset(0);
+        
+        make.center.equalTo(rightButton);
+    }];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    [self.anchorPopView removePopView];
+}
+
+#pragma mark - 无列表锚点动画
+- (void)configureButton {
+    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
+    rightButton.backgroundColor = kThemeColor;
+    [rightButton setTitle:@"Show" forState:UIControlStateNormal];
+    [rightButton setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    [rightButton addTarget:self action:@selector(buttonAct:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:rightButton];
+    [[rightButton layer] setCornerRadius:25.0f];
+    [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.mas_equalTo(50);
+        make.trailing.equalTo(self.view).offset(-30);
+        make.centerY.equalTo(self.view);
+    }];
+}
+
+- (void)buttonAct:(UIButton *)bt {
+    [self showPopView:bt];
 }
 
 #pragma mark - 锚点动画 - 普通button
@@ -43,72 +123,12 @@
     return _anchorPopView;
 }
 
-#pragma mark - 锚点动画 - 列表 showPopView
-#pragma mark -cell - delegate
+#pragma mark - 列表 showPopView
 - (void)nextAction:(NSIndexPath *)indexpath {
     BPPopCollectionViewCell *cell = (BPPopCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexpath];
     [self.view addSubview:self.anchorPopView];
     self.anchorPopView.targetView = cell.button;
     [_anchorPopView showPopView];
-}
-
-#pragma mark - 测试锚点
-- (void)testAnchorPoint {
-    self.view.backgroundColor = kGreenColor;
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
-    rightButton.backgroundColor = kRedColor;
-    [rightButton setTitle:@"Show" forState:UIControlStateNormal];
-    [rightButton setTitleColor:kPurpleColor forState:UIControlStateNormal];
-    rightButton.titleLabel.font = [UIFont systemFontOfSize:17.0f];
-    [rightButton.titleLabel setAdjustsFontSizeToFitWidth:YES];
-    [self.view addSubview:rightButton];
-    rightButton.layer.anchorPoint = CGPointMake(1, 0);
-    [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(100);
-        make.width.mas_equalTo(100);
-        make.centerX.mas_equalTo(-180);
-        make.centerY.mas_equalTo(0);
-        //        make.centerX.mas_equalTo(10);
-        //        make.centerY.mas_equalTo(10);
-    }];
-    
-    UIButton *rightButton1 = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
-    rightButton1.backgroundColor = kPurpleColor;
-    [rightButton1 setTitle:@"standard" forState:UIControlStateNormal];
-    [rightButton1 setTitleColor:kPurpleColor forState:UIControlStateNormal];
-    rightButton1.titleLabel.font = [UIFont systemFontOfSize:17.0f];
-    [rightButton1.titleLabel setAdjustsFontSizeToFitWidth:YES];
-    [self.view addSubview:rightButton1];
-    [rightButton1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(100);
-        make.width.mas_equalTo(100);
-        make.centerX.equalTo(self.view);
-        make.centerY.equalTo(self.view).offset(20);
-    }];
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [super touchesBegan:touches withEvent:event];
-    [self.anchorPopView removePopView];
-}
-
-- (void)configureButton {
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
-    rightButton.backgroundColor = kThemeColor;
-    [rightButton setTitle:@"Show" forState:UIControlStateNormal];
-    [rightButton setTitleColor:kWhiteColor forState:UIControlStateNormal];
-    [rightButton addTarget:self action:@selector(buttonAct:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:rightButton];
-    [[rightButton layer] setCornerRadius:25.0f];
-    [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(50);
-        make.trailing.equalTo(self.view).offset(-30);
-        make.centerY.equalTo(self.view);
-    }];
-}
-
-- (void)buttonAct:(UIButton *)bt {
-    [self showPopView:bt];
 }
 
 - (void)configCollectionView {
@@ -154,4 +174,3 @@
 }
 
 @end
-

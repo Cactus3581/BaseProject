@@ -19,54 +19,50 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.view.backgroundColor = kLightGrayColor;
-    UIButton *backBtn = [[UIButton alloc]init];
-    backBtn.frame = CGRectMake(100, 220, 44, 44);
-    [backBtn setImage:[UIImage imageNamed:bp_naviItem_backImage] forState:UIControlStateNormal];
-    [backBtn addTarget:self action:@selector(dismissViewControllerAnimated) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:backBtn];
-    
-    UIButton *pushBtn = [[UIButton alloc]init];
-    pushBtn.frame = CGRectMake(150, 220, 44, 44);
-    [pushBtn setImage:[UIImage imageNamed:bp_naviItem_backImage] forState:UIControlStateNormal];
-    [pushBtn addTarget:self action:@selector(push) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:pushBtn];
-}
+    self.title = @"B";
+    self.view.backgroundColor = kThemeColor;
+    UIButton *popButton = [UIButton buttonWithType:UIButtonTypeCustom];
 
-- (void)push {
-    BPPresentCViewController *vc = [[BPPresentCViewController alloc] init];
-    if (self.navigationController) {
-        UINavigationController *navc = kAppDelegate.selectedNavigationController;
-        if ([navc isEqual:self.navigationController]) {
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-    }else {
-        UINavigationController *navc = kAppDelegate.selectedNavigationController;
-        if ([navc isEqual:self.navigationController]) {
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-        [self.navigationController pushViewController:vc animated:YES];
-        //[navc pushViewController:vc animated:YES];
-    }
+    [popButton setTitle:@"pop" forState:normal];
+    popButton.backgroundColor = kWhiteColor;
+    [popButton setTitleColor:kThemeColor forState:UIControlStateNormal];
+    [popButton addTarget:self action:@selector(dismissViewControllerAnimated) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:popButton];
+    [popButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+    }];
+    
+    UIButton *pushBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [pushBtn setTitle:@"push" forState:normal];
+    pushBtn.backgroundColor = kWhiteColor;
+    [pushBtn setTitleColor:kThemeColor forState:UIControlStateNormal];
+    [pushBtn addTarget:self action:@selector(pushViewController) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:pushBtn];
+    [pushBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(popButton.mas_bottom).offset(10);
+        make.centerX.equalTo(popButton);
+    }];
 }
 
 - (void)dismissViewControllerAnimated {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (void)pushViewController {
+    BPPresentCViewController *vc = [[BPPresentCViewController alloc] init];
+    [[UIApplication sharedApplication] delegate];
+    if (self.navigationController) {
+        [self.navigationController pushViewController:vc animated:YES];
+    }else {
+        UINavigationController *navc = kAppDelegate.selectedNavigationController;
+        [self dismissViewControllerAnimated:YES completion:^{
+            [navc pushViewController:vc animated:YES];
+        }];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

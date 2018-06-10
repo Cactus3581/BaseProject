@@ -73,7 +73,7 @@
     nameLabel.text = @"用户名:";
     nameLabel.textAlignment = 1;
     nameLabel.backgroundColor = kGrayColor;
-//    nameLabel.backgroundColor = kRGBA(76/255.0,98/255.0,124/255.0,0.8);
+//    nameLabel.backgroundColor = kRGBA(76,98,124,0.8);
 
     textField.leftView = nameLabel;
 //    d.左视图模式

@@ -42,8 +42,8 @@
     [self.view addSubview:autoresizingView];
     autoresizingView.backgroundColor = kLightGrayColor;
     autoresizingView.titlesArray = @[@"objective-c",@"swift",@"java",@"C++",@"python",@"php",@"html5",@"我是要成为全栈的人"];
-    autoresizingView.bounds = CGRectMake(0, 0, kScreenWidth-50, autoresizingView.height);
-    autoresizingView.center = self.view.center;
+    autoresizingView.bounds = CGRectMake(0, 0, kScreenWidth, autoresizingView.height);
+    autoresizingView.center = CGPointMake(self.view.centerX, self.view.height-200);
     //    [autoresizingView mas_makeConstraints:^(MASConstraintMaker *make) {
     //        autoresizingView.leading.trailing.equalTo(self.view);
     //        make.top.equalTo((self.view)).offset(300);
