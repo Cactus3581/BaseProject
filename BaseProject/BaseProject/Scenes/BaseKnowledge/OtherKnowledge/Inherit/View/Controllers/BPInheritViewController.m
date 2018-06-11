@@ -20,6 +20,11 @@
     [super viewDidLoad];
     [self initReferenceView];
     [self testPaddingButton];
+    [self.view layoutIfNeeded];
+    BPLog(@"%@",NSStringFromCGRect(self.referenceButton.frame));
+    BPLog(@"%@",NSStringFromCGRect(self.paddingButton.frame));
+    //    self.paddingButton.clipsToBounds = YES;
+    //    self.paddingButton.layer.masksToBounds = YES;
 }
 
 - (void)initReferenceView {
@@ -39,7 +44,7 @@
 - (void)testPaddingButton {
     UIView *backView = [[UIView alloc] init];
     [self.view addSubview:backView];
-    backView.backgroundColor = kRedColor;
+    backView.backgroundColor = kExplicitColor;
     
     BPPaddingButton *paddingButton = [BPPaddingButton buttonWithType:UIButtonTypeCustom];
     _paddingButton = paddingButton;
@@ -47,17 +52,17 @@
     [paddingButton setTitleColor:kWhiteColor forState:UIControlStateNormal];
     [self.view addSubview:paddingButton];
     [paddingButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view);
-        make.top.equalTo(self.referenceButton.mas_bottom).mas_offset(50);
-//        make.width.height.mas_equalTo(200);
+        make.centerX.equalTo(backView);
+        make.top.equalTo(backView);
+//        make.width.height.equalTo(backView);
     }];
     
     [paddingButton addTarget:self action:@selector((clickAction)) forControlEvents:UIControlEventTouchUpInside];
     
     [backView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view);
+        make.centerX.equalTo(_referenceButton);
         make.top.equalTo(self.referenceButton.mas_bottom).mas_offset(50);
-        make.width.height.mas_equalTo(200);
+        make.width.height.equalTo(_referenceButton);
     }];
 }
 

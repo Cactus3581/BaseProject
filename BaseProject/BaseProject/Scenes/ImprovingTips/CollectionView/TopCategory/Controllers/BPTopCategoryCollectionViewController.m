@@ -86,15 +86,25 @@ static NSString *identifier  = @"BPTopCategoryListContainerCollectionViewCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     BPTopCategoryListContainerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    BPTopCategoryFirstCategoryModel *model = self.cateogry[indexPath.row];
-    [cell setModel:model indexPath:indexPath];
+    //BPTopCategoryFirstCategoryModel *model = self.cateogry[indexPath.row];
+    //[cell setModel:model indexPath:indexPath];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath  {
+    BPTopCategoryFirstCategoryModel *model = self.cateogry[indexPath.row];
+    [(BPTopCategoryListContainerCollectionViewCell *)cell setModel:model indexPath:indexPath];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 - (void)configSubViews {
     //主collectionView
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.estimatedItemSize = CGSizeMake(0, 0);
+    //layout.estimatedItemSize = CGSizeMake(self.view.width, self.view.height);
+    //layout.itemSize = UICollectionViewFlowLayoutAutomaticSize;
     layout.minimumInteritemSpacing = layout.minimumLineSpacing = 0;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.fullItem = YES;
@@ -118,13 +128,6 @@ static NSString *identifier  = @"BPTopCategoryListContainerCollectionViewCell";
     NSMutableArray *itemArray = [NSMutableArray array];
     for (int i = 0; i < self.cateogry.count; i++) {
         BPTopCategoryFirstCategoryModel *model = self.cateogry[i];
-        if (i==0) {
-            model.tagHeight = 142;
-        }else if (i==1) {
-            model.tagHeight = 52;
-        }else if (i==2) {
-            model.tagHeight = 97;
-        }
         [itemArray addObject:model.name];
     }
     
@@ -196,5 +199,3 @@ static NSString *identifier  = @"BPTopCategoryListContainerCollectionViewCell";
 }
 
 @end
-
-

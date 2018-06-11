@@ -152,5 +152,13 @@
 		<key>dynamicJumpString</key>
 		<string>{&quot;i am key&quot;:&quot;i am value&quot;}</string>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>测试masksToBounds</string>
+		<key>fileName</key>
+		<string>BPMasksToBoundsViewController</string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
 </array>
 </plist>

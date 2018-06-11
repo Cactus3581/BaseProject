@@ -7,13 +7,19 @@
 //
 
 #import "BPIntrinsicContentSizeLabel.h"
+@interface BPIntrinsicContentSizeLabel()
+@property (nonatomic, assign) CGSize intervalSize;
+@end
 
 @implementation BPIntrinsicContentSizeLabel
 
 - (CGSize)intrinsicContentSize {
     CGSize size = [super intrinsicContentSize];
-    size.width += 20;
-    size.height += 20;
+    if (self.text && [self.text length] > 0) {
+        //        size.width += self.intervalSize.width;
+        //        size.height += self.intervalSize.height;
+        size.height+=20;
+    }
     return size;
 }
 

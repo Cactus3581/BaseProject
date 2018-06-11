@@ -49,9 +49,7 @@ static NSString *identifier  = @"BPTopCategoryListTableViewCell";
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.rowHeight = 165.f;
-    _tableView.estimatedRowHeight = 0.f;
-    _tableView.estimatedSectionHeaderHeight = 0.f;
-    _tableView.estimatedSectionFooterHeight = 0.f;
+    _tableView.estimatedRowHeight = 165.f;
     [self addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self);
@@ -68,9 +66,21 @@ static NSString *identifier  = @"BPTopCategoryListTableViewCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BPTopCategoryListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    BPTopCategoryThirdCategoryModel *thirdCategoryModel = self.array[indexPath.row];
-    [cell setModel:thirdCategoryModel indexPath:indexPath];
+//    BPTopCategoryThirdCategoryModel *thirdCategoryModel = self.array[indexPath.row];
+//    [cell setModel:thirdCategoryModel indexPath:indexPath];
     return cell;
 }
+
+-  (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    BPTopCategoryListTableViewCell *cell1 = (BPTopCategoryListTableViewCell *)cell;
+    BPTopCategoryThirdCategoryModel *thirdCategoryModel = self.array[indexPath.row];
+    [cell1 setModel:thirdCategoryModel indexPath:indexPath];
+    if (indexPath.row == self.array.count - 1) {
+//        cell1.hiddenLine = YES;
+    }else {
+//        cell1.hiddenLine = NO;
+    }
+}
+
 
 @end

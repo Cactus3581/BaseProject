@@ -225,11 +225,46 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>Size：固有内容大小，计算size几种方法，抗压缩抗拉伸</string>
+								<string>Size：计算size几种方法,固有内容大小，抗压缩抗拉伸</string>
 								<key>fileName</key>
-								<string>BPViewSizeController</string>
+								<string>BPSimpleTableController</string>
 								<key>briefIntro</key>
 								<string></string>
+								<key>subVc_array</key>
+								<array>
+									<dict>
+										<key>title</key>
+										<string>计算size几种方法</string>
+										<key>fileName</key>
+										<string>BPViewSizeController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>对齐矩形</string>
+										<key>fileName</key>
+										<string>BPAlignmentRectInsetsController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>固有内容大小</string>
+										<key>fileName</key>
+										<string></string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>抗压缩抗拉伸</string>
+										<key>fileName</key>
+										<string></string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+								</array>
 							</dict>
 						</array>
 					</dict>

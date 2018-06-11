@@ -142,6 +142,15 @@
 		011B7DD920693E5B0071CB5D /* UIBarButtonItem+BPCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD320693E5B0071CB5D /* UIBarButtonItem+BPCreate.m */; };
 		011B7DDA20693E5B0071CB5D /* UINavigation+BPFixSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD420693E5B0071CB5D /* UINavigation+BPFixSpace.m */; };
 		011B7DDB20693E5B0071CB5D /* NSObject+BPAddRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD520693E5B0071CB5D /* NSObject+BPAddRuntime.m */; };
+		011CD74F20CE190A00560EE6 /* BPMasksToBoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011CD74D20CE190A00560EE6 /* BPMasksToBoundsViewController.m */; };
+		011CD75020CE190A00560EE6 /* BPMasksToBoundsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011CD74E20CE190A00560EE6 /* BPMasksToBoundsViewController.xib */; };
+		011CD76020CE25DC00560EE6 /* BPAlignmentRectInsetsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 011CD75F20CE25DC00560EE6 /* BPAlignmentRectInsetsView.m */; };
+		011CD76320CE25EA00560EE6 /* BPAlignmentRectInsetsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 011CD76220CE25EA00560EE6 /* BPAlignmentRectInsetsLabel.m */; };
+		011CD77520CE4E2D00560EE6 /* BPAlignmentRectInsetsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011CD77420CE4E2D00560EE6 /* BPAlignmentRectInsetsView.xib */; };
+		011CD77B20CE520100560EE6 /* BPAlignmentRectInsetsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011CD77A20CE520100560EE6 /* BPAlignmentRectInsetsController.m */; };
+		011CD77E20CE53B100560EE6 /* BPAlignmentRectInsetsTemplateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 011CD77D20CE53B100560EE6 /* BPAlignmentRectInsetsTemplateView.m */; };
+		011CD78020CE53BA00560EE6 /* BPAlignmentRectInsetsTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011CD77F20CE53BA00560EE6 /* BPAlignmentRectInsetsTemplateView.xib */; };
+		011CD78620CE5D7500560EE6 /* BPIntrinsicContentSizeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011CD78520CE5D7500560EE6 /* BPIntrinsicContentSizeController.m */; };
 		011DCE862084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DCE852084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.m */; };
 		011E8D4120B2EBBE00B04378 /* BPNetWorkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D3F20B2EBBE00B04378 /* BPNetWorkTool.m */; };
 		011E8D7920B2F7AA00B04378 /* BPCalendarDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8D6920B2F7AA00B04378 /* BPCalendarDataSource.m */; };
@@ -907,6 +916,21 @@
 		011B7DD620693E5B0071CB5D /* UIBarButtonItem+BPCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BPCreate.h"; sourceTree = "<group>"; };
 		011B7DD720693E5B0071CB5D /* NSObject+BPAddRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPAddRuntime.h"; sourceTree = "<group>"; };
 		011B7DD820693E5B0071CB5D /* UINavigation+BPFixSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigation+BPFixSpace.h"; sourceTree = "<group>"; };
+		011CD74C20CE190A00560EE6 /* BPMasksToBoundsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMasksToBoundsViewController.h; sourceTree = "<group>"; };
+		011CD74D20CE190A00560EE6 /* BPMasksToBoundsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMasksToBoundsViewController.m; sourceTree = "<group>"; };
+		011CD74E20CE190A00560EE6 /* BPMasksToBoundsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPMasksToBoundsViewController.xib; sourceTree = "<group>"; };
+		011CD75E20CE25DC00560EE6 /* BPAlignmentRectInsetsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAlignmentRectInsetsView.h; sourceTree = "<group>"; };
+		011CD75F20CE25DC00560EE6 /* BPAlignmentRectInsetsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAlignmentRectInsetsView.m; sourceTree = "<group>"; };
+		011CD76120CE25EA00560EE6 /* BPAlignmentRectInsetsLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAlignmentRectInsetsLabel.h; sourceTree = "<group>"; };
+		011CD76220CE25EA00560EE6 /* BPAlignmentRectInsetsLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAlignmentRectInsetsLabel.m; sourceTree = "<group>"; };
+		011CD77420CE4E2D00560EE6 /* BPAlignmentRectInsetsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPAlignmentRectInsetsView.xib; sourceTree = "<group>"; };
+		011CD77920CE520100560EE6 /* BPAlignmentRectInsetsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAlignmentRectInsetsController.h; sourceTree = "<group>"; };
+		011CD77A20CE520100560EE6 /* BPAlignmentRectInsetsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAlignmentRectInsetsController.m; sourceTree = "<group>"; };
+		011CD77C20CE53B100560EE6 /* BPAlignmentRectInsetsTemplateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAlignmentRectInsetsTemplateView.h; sourceTree = "<group>"; };
+		011CD77D20CE53B100560EE6 /* BPAlignmentRectInsetsTemplateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAlignmentRectInsetsTemplateView.m; sourceTree = "<group>"; };
+		011CD77F20CE53BA00560EE6 /* BPAlignmentRectInsetsTemplateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPAlignmentRectInsetsTemplateView.xib; sourceTree = "<group>"; };
+		011CD78420CE5D7500560EE6 /* BPIntrinsicContentSizeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPIntrinsicContentSizeController.h; sourceTree = "<group>"; };
+		011CD78520CE5D7500560EE6 /* BPIntrinsicContentSizeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPIntrinsicContentSizeController.m; sourceTree = "<group>"; };
 		011DCE842084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BP1STCellAutoLayoutHeightViewController.h; sourceTree = "<group>"; };
 		011DCE852084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BP1STCellAutoLayoutHeightViewController.m; sourceTree = "<group>"; };
 		011E8D3F20B2EBBE00B04378 /* BPNetWorkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPNetWorkTool.m; sourceTree = "<group>"; };
@@ -2571,6 +2595,7 @@
 		010FBC3F206018B500BC9EC4 /* ImprovingTips */ = {
 			isa = PBXGroup;
 			children = (
+				011CD74B20CE18E600560EE6 /* MasksToBounds */,
 				015120FC20CBF03100B33A76 /* DynamicJump */,
 				01F750A2209EDF7100C1F24C /* OtherProject */,
 				01EF2C1C20AD352700DF98FB /* CollectionView */,
@@ -2878,6 +2903,101 @@
 				011B7DD820693E5B0071CB5D /* UINavigation+BPFixSpace.h */,
 			);
 			path = NaviSpace;
+			sourceTree = "<group>";
+		};
+		011CD74B20CE18E600560EE6 /* MasksToBounds */ = {
+			isa = PBXGroup;
+			children = (
+				011CD74C20CE190A00560EE6 /* BPMasksToBoundsViewController.h */,
+				011CD74D20CE190A00560EE6 /* BPMasksToBoundsViewController.m */,
+				011CD74E20CE190A00560EE6 /* BPMasksToBoundsViewController.xib */,
+			);
+			path = MasksToBounds;
+			sourceTree = "<group>";
+		};
+		011CD75520CE258B00560EE6 /* AlignmentRectInsets */ = {
+			isa = PBXGroup;
+			children = (
+				011CD75620CE259600560EE6 /* Controllers */,
+				011CD75720CE259600560EE6 /* Views */,
+			);
+			path = AlignmentRectInsets;
+			sourceTree = "<group>";
+		};
+		011CD75620CE259600560EE6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				011CD77920CE520100560EE6 /* BPAlignmentRectInsetsController.h */,
+				011CD77A20CE520100560EE6 /* BPAlignmentRectInsetsController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		011CD75720CE259600560EE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				011CD75E20CE25DC00560EE6 /* BPAlignmentRectInsetsView.h */,
+				011CD75F20CE25DC00560EE6 /* BPAlignmentRectInsetsView.m */,
+				011CD77420CE4E2D00560EE6 /* BPAlignmentRectInsetsView.xib */,
+				011CD77C20CE53B100560EE6 /* BPAlignmentRectInsetsTemplateView.h */,
+				011CD77D20CE53B100560EE6 /* BPAlignmentRectInsetsTemplateView.m */,
+				011CD77F20CE53BA00560EE6 /* BPAlignmentRectInsetsTemplateView.xib */,
+				011CD76120CE25EA00560EE6 /* BPAlignmentRectInsetsLabel.h */,
+				011CD76220CE25EA00560EE6 /* BPAlignmentRectInsetsLabel.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		011CD75820CE25A400560EE6 /* IntrinsicContentSize */ = {
+			isa = PBXGroup;
+			children = (
+				011CD75920CE25AD00560EE6 /* Controllers */,
+				011CD75A20CE25AD00560EE6 /* Views */,
+			);
+			path = IntrinsicContentSize;
+			sourceTree = "<group>";
+		};
+		011CD75920CE25AD00560EE6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				011CD78420CE5D7500560EE6 /* BPIntrinsicContentSizeController.h */,
+				011CD78520CE5D7500560EE6 /* BPIntrinsicContentSizeController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		011CD75A20CE25AD00560EE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0161D38520C2A6D4009D1B9C /* BPIntrinsicContentSizeLabel.h */,
+				0161D38320C2A6D4009D1B9C /* BPIntrinsicContentSizeLabel.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		011CD78120CE5D0C00560EE6 /* CalculateSize */ = {
+			isa = PBXGroup;
+			children = (
+				011CD78220CE5D1D00560EE6 /* Controllers */,
+				011CD78320CE5D1D00560EE6 /* Views */,
+			);
+			path = CalculateSize;
+			sourceTree = "<group>";
+		};
+		011CD78220CE5D1D00560EE6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0161D38220C2A6D4009D1B9C /* BPViewSizeController.h */,
+				0161D38420C2A6D4009D1B9C /* BPViewSizeController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		011CD78320CE5D1D00560EE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		011DCE7E2084F0BF0045C035 /* CellAutoLayoutHeight */ = {
@@ -4461,10 +4581,9 @@
 		0161D38120C2A6D4009D1B9C /* ViewSize */ = {
 			isa = PBXGroup;
 			children = (
-				0161D38520C2A6D4009D1B9C /* BPIntrinsicContentSizeLabel.h */,
-				0161D38320C2A6D4009D1B9C /* BPIntrinsicContentSizeLabel.m */,
-				0161D38220C2A6D4009D1B9C /* BPViewSizeController.h */,
-				0161D38420C2A6D4009D1B9C /* BPViewSizeController.m */,
+				011CD78120CE5D0C00560EE6 /* CalculateSize */,
+				011CD75820CE25A400560EE6 /* IntrinsicContentSize */,
+				011CD75520CE258B00560EE6 /* AlignmentRectInsets */,
 			);
 			path = ViewSize;
 			sourceTree = "<group>";
@@ -7018,8 +7137,6 @@
 			isa = PBXGroup;
 			children = (
 				01F0DDDB20CA20C4005082C7 /* Controllers */,
-				01F0DDDC20CA20C5005082C7 /* Models */,
-				01F0DDDE20CA20C5005082C7 /* ViewModels */,
 				01F0DDDD20CA20C5005082C7 /* Views */,
 			);
 			path = View;
@@ -7034,25 +7151,11 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		01F0DDDC20CA20C5005082C7 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		01F0DDDD20CA20C5005082C7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		01F0DDDE20CA20C5005082C7 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		01F0DDE220CA20EF005082C7 /* Controllers */ = {
@@ -7471,7 +7574,9 @@
 				013519B320BC1E100010AEC2 /* BPXIBAutoLayoutProcessViewController.xib in Resources */,
 				011E8D9B20B2F7BA00B04378 /* BPPlanCalendarTableViewCell.xib in Resources */,
 				015805B420CAE5D000D0EF7C /* BPTopCategoryListView.xib in Resources */,
+				011CD78020CE53BA00560EE6 /* BPAlignmentRectInsetsTemplateView.xib in Resources */,
 				010FBD2620601D9E00BC9EC4 /* palette.jpeg in Resources */,
+				011CD77520CE4E2D00560EE6 /* BPAlignmentRectInsetsView.xib in Resources */,
 				017907E3200144F200E5C360 /* bookcatalogue.toc in Resources */,
 				011E8DA020B2F7BA00B04378 /* BPPlanCalendarViewController.xib in Resources */,
 				015805B620CAE5D000D0EF7C /* BPTopCategoryListTableViewCell.xib in Resources */,
@@ -7486,6 +7591,7 @@
 				01A1921E2004E61F005EE4CD /* BPCollectionViewCell.xib in Resources */,
 				01E1BCDE20CA67330063D87A /* launchImage7@3x.png in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
+				011CD75020CE190A00560EE6 /* BPMasksToBoundsViewController.xib in Resources */,
 				01D2F5B12088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib in Resources */,
 				01F750AA209F216F00C1F24C /* BPTableViewCell.xib in Resources */,
 				01352FE31FD2DDA20011D65C /* FeatureCatalog.plist in Resources */,
@@ -7634,6 +7740,7 @@
 				010DB70C1FDD4D450099E66F /* UIImageView+BPFaceAwareFill.m in Sources */,
 				010DB7941FDD4D640099E66F /* UIView+BPToast.m in Sources */,
 				01D22BCB1FDD814000BCC4AD /* UIColor+BPAdd.m in Sources */,
+				011CD77E20CE53B100560EE6 /* BPAlignmentRectInsetsTemplateView.m in Sources */,
 				0153F12B20B2A4A7007C50C5 /* BPFriendsCircleViewController.m in Sources */,
 				01D6FBB320C80F7E00AD8A6E /* BPIncludeTableManualHeaderView.m in Sources */,
 				01F2CE6820AABE6600F1D701 /* BP_TWO_TopSliderCatergoryViewController.m in Sources */,
@@ -7780,12 +7887,14 @@
 				01F5B10020B2D2D70026B8B4 /* BPTagCollectionViewCell.m in Sources */,
 				010DB7321FDD4D450099E66F /* UIScrollView+BPPages.m in Sources */,
 				01E1DC26202ECDB100529ADB /* BPVolumeQueueHelper.m in Sources */,
+				011CD76020CE25DC00560EE6 /* BPAlignmentRectInsetsView.m in Sources */,
 				01D22BD51FDD814000BCC4AD /* CALayer+BPAddForFrame.m in Sources */,
 				011E8DA120B2F7BA00B04378 /* BPPlanCalendarViewController.m in Sources */,
 				019AA91820205BE80090B038 /* CADisplayLink+BPAdd.m in Sources */,
 				015804FC20CADE0000D0EF7C /* BPNaviTableViewControllerThree.m in Sources */,
 				01DF32721FDD3BB100B8A955 /* NSDate+BPnternetDateTime.m in Sources */,
 				01A191D42004E1E7005EE4CD /* BPSegmentedControlController.m in Sources */,
+				011CD74F20CE190A00560EE6 /* BPMasksToBoundsViewController.m in Sources */,
 				017A9A371FDD2A9A00CDA599 /* BPZPositionCollectionHeadView.m in Sources */,
 				017907D12001338000E5C360 /* BPAlertView.m in Sources */,
 				010DB7141FDD4D450099E66F /* UITextView+BPSelect.m in Sources */,
@@ -7814,6 +7923,7 @@
 				0137C73D207B3AD200F6B6CE /* BPPresentAViewController.m in Sources */,
 				01DF325A1FDD3B9D00B8A955 /* NSData+BPEncrypt.m in Sources */,
 				0137C740207B3ADF00F6B6CE /* BPPresentBViewController.m in Sources */,
+				011CD76320CE25EA00560EE6 /* BPAlignmentRectInsetsLabel.m in Sources */,
 				01DF32751FDD3BB100B8A955 /* NSDate+BPFormatter.m in Sources */,
 				010DB7351FDD4D450099E66F /* UITextField+BPShake.m in Sources */,
 				010DB7261FDD4D450099E66F /* UIColor+BPHEX.m in Sources */,
@@ -8109,6 +8219,7 @@
 				01DF325E1FDD3B9D00B8A955 /* NSData+BPAPNSToken.m in Sources */,
 				01DF31CE1FDD3A9100B8A955 /* NSURLRequest+BPParamsFromDictionary.m in Sources */,
 				010DB72A1FDD4D450099E66F /* UIBezierPath+BPBasicShapes.m in Sources */,
+				011CD78620CE5D7500560EE6 /* BPIntrinsicContentSizeController.m in Sources */,
 				010DB7901FDD4D640099E66F /* UIView+BPFrame.m in Sources */,
 				01DF321F1FDD3B3000B8A955 /* NSString+BPMatcher.m in Sources */,
 				01D22BD61FDD814000BCC4AD /* UIDevice+BPAdd.m in Sources */,
@@ -8135,6 +8246,7 @@
 				011E8D9C20B2F7BA00B04378 /* BPPlanCalendarTableViewCell.m in Sources */,
 				01490C141FF54A3E0035492D /* NSTimer+BPUnRetain.m in Sources */,
 				017906EF20011D1600E5C360 /* BPStaticConstViewController.m in Sources */,
+				011CD77B20CE520100560EE6 /* BPAlignmentRectInsetsController.m in Sources */,
 				013ED93320C7DE0400A83E7F /* BPIncludeTableSelfSizeHeaderView.m in Sources */,
 				010DB70F1FDD4D450099E66F /* UIImageView+BPReflect.m in Sources */,
 				011664BB20179DF200B60453 /* BPBlockAPI.m in Sources */,

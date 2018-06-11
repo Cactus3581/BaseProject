@@ -29,14 +29,14 @@
     _model = model;
     self.tagView.model = model;
     if (!model.sub.count) { //没有tag
-//        self.tagViewHeightConstraint.constant = 0.f;
+        self.tagViewHeightConstraint.constant = 0.f;
         if (model.thirdCategoryModel) {
             self.listView.array = model.thirdCategoryModel.data;
         }else {
             
         }
     }else {
-//        self.tagViewHeightConstraint.constant = model.tagHeight;
+        self.tagViewHeightConstraint.constant = model.tagHeight;
         [self handleListData];
     }
 }
@@ -61,10 +61,10 @@
     if (self.model.sub.count) {
         if (self.model.tagHeight != height) {
             self.model.tagHeight = height;
-//            self.tagViewHeightConstraint.constant = height;
+            self.tagViewHeightConstraint.constant = height;
         }
     }else {
-//        self.tagViewHeightConstraint.constant = 0.f;
+        self.tagViewHeightConstraint.constant = 0.f;
     }
 }
 
