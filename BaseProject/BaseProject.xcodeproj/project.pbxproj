@@ -292,6 +292,7 @@
 		0168F3872035E66900D63D83 /* BPBaseKnowledgeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168F3862035E66900D63D83 /* BPBaseKnowledgeViewModel.m */; };
 		0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0168F3882035EC0B00D63D83 /* ImprovingTipCatalog.plist */; };
 		0168F38D2035EC6C00D63D83 /* BPImprovingTipViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168F38C2035EC6C00D63D83 /* BPImprovingTipViewModel.m */; };
+		0169C01E20D00438001E51C3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0169C01D20D00438001E51C3 /* README.md */; };
 		016DADC720582FB100AA95EC /* NSArray+BPSafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC020582FAE00AA95EC /* NSArray+BPSafeAccess.m */; };
 		016DADC820582FB100AA95EC /* NSDictionary+BPSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC120582FAF00AA95EC /* NSDictionary+BPSafe.m */; };
 		016DADC920582FB100AA95EC /* NSObject+BPKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC220582FAF00AA95EC /* NSObject+BPKVO.m */; };
@@ -1204,6 +1205,7 @@
 		0168F3882035EC0B00D63D83 /* ImprovingTipCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ImprovingTipCatalog.plist; sourceTree = "<group>"; };
 		0168F38B2035EC6C00D63D83 /* BPImprovingTipViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPImprovingTipViewModel.h; sourceTree = "<group>"; };
 		0168F38C2035EC6C00D63D83 /* BPImprovingTipViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPImprovingTipViewModel.m; sourceTree = "<group>"; };
+		0169C01D20D00438001E51C3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		016DADBD20582FAD00AA95EC /* NSDictionary+BPSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BPSafe.h"; sourceTree = "<group>"; };
 		016DADBE20582FAD00AA95EC /* NSArray+BPSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BPSafe.h"; sourceTree = "<group>"; };
 		016DADBF20582FAE00AA95EC /* NSNull+BPSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+BPSafe.h"; sourceTree = "<group>"; };
@@ -4681,6 +4683,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		0169C01C20D00423001E51C3 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				0169C01D20D00438001E51C3 /* README.md */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
 		016DADBB20582F7F00AA95EC /* Special */ = {
 			isa = PBXGroup;
 			children = (
@@ -4878,6 +4888,7 @@
 		0173401B1FA9753F006192F0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0169C01C20D00423001E51C3 /* Log */,
 				017907E1200144EC00E5C360 /* File */,
 				01C9357F1FC3358000D98FD6 /* Plist */,
 				01C9357E1FC3357900D98FD6 /* Image */,
@@ -7736,6 +7747,7 @@
 				01A1921F2004E61F005EE4CD /* BPCollectionReusableFootView.xib in Resources */,
 				01D6FBB120C80F7E00AD8A6E /* BPIncludeTableManualHeaderView.xib in Resources */,
 				01A192222004E61F005EE4CD /* BPCollectionReusableHeadView.xib in Resources */,
+				0169C01E20D00438001E51C3 /* README.md in Resources */,
 				015805BC20CAE5D000D0EF7C /* BPTopCategoryListTagCollectionViewCell.xib in Resources */,
 				013ED90D20C7DB3C00A83E7F /* BPIncludeTableSystemLayoutInsideHeaderView.xib in Resources */,
 			);
