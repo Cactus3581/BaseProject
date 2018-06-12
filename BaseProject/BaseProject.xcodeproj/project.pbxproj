@@ -586,6 +586,15 @@
 		01E672B720148C1D00FB22D4 /* BPViewPropertyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E672B620148C1D00FB22D4 /* BPViewPropertyController.m */; };
 		01E672BB2014B6F700FB22D4 /* BPBezierPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E672BA2014B6F700FB22D4 /* BPBezierPathViewController.m */; };
 		01E672BF2014E9ED00FB22D4 /* BPImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E672BE2014E9ED00FB22D4 /* BPImageController.m */; };
+		01EB475320CE9A1E00195E88 /* BPNestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EB475220CE9A1E00195E88 /* BPNestViewController.m */; };
+		01EB475820CE9B8400195E88 /* BPNestHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EB475620CE9B8400195E88 /* BPNestHeadTableViewCell.m */; };
+		01EB475920CE9B8400195E88 /* BPNestHeadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01EB475720CE9B8400195E88 /* BPNestHeadTableViewCell.xib */; };
+		01EB475D20CE9BBD00195E88 /* BPNestBottomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EB475B20CE9BBD00195E88 /* BPNestBottomTableViewCell.m */; };
+		01EB476120CEA9B400195E88 /* BPNestBottomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EB476020CEA9B400195E88 /* BPNestBottomCollectionViewCell.m */; };
+		01EB476720CEB21400195E88 /* BPNestBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EB476620CEB21400195E88 /* BPNestBaseTableView.m */; };
+		01EB476A20CEBBDB00195E88 /* BPFlowMainCatergoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EB476920CEBBDB00195E88 /* BPFlowMainCatergoryView.m */; };
+		01EB477120CEC19300195E88 /* BPNestCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EB477020CEC19300195E88 /* BPNestCardViewController.m */; };
+		01EB477420CEC3A900195E88 /* BPTestNestCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EB477320CEC3A900195E88 /* BPTestNestCardViewController.m */; };
 		01EF2C2420AD35F400DF98FB /* BPTopCategoryCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EF2C2320AD35F400DF98FB /* BPTopCategoryCollectionViewController.m */; };
 		01F0DDD720CA1CB8005082C7 /* BPPaddingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F0DDD620CA1CB8005082C7 /* BPPaddingButton.m */; };
 		01F0DDE120CA20D8005082C7 /* BPInheritViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F0DDE020CA20D8005082C7 /* BPInheritViewController.m */; };
@@ -1782,6 +1791,23 @@
 		01E672BA2014B6F700FB22D4 /* BPBezierPathViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBezierPathViewController.m; sourceTree = "<group>"; };
 		01E672BD2014E9ED00FB22D4 /* BPImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPImageController.h; sourceTree = "<group>"; };
 		01E672BE2014E9ED00FB22D4 /* BPImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPImageController.m; sourceTree = "<group>"; };
+		01EB475120CE9A1E00195E88 /* BPNestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNestViewController.h; sourceTree = "<group>"; };
+		01EB475220CE9A1E00195E88 /* BPNestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNestViewController.m; sourceTree = "<group>"; };
+		01EB475520CE9B8400195E88 /* BPNestHeadTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNestHeadTableViewCell.h; sourceTree = "<group>"; };
+		01EB475620CE9B8400195E88 /* BPNestHeadTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNestHeadTableViewCell.m; sourceTree = "<group>"; };
+		01EB475720CE9B8400195E88 /* BPNestHeadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPNestHeadTableViewCell.xib; sourceTree = "<group>"; };
+		01EB475A20CE9BBD00195E88 /* BPNestBottomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNestBottomTableViewCell.h; sourceTree = "<group>"; };
+		01EB475B20CE9BBD00195E88 /* BPNestBottomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNestBottomTableViewCell.m; sourceTree = "<group>"; };
+		01EB475F20CEA9B400195E88 /* BPNestBottomCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNestBottomCollectionViewCell.h; sourceTree = "<group>"; };
+		01EB476020CEA9B400195E88 /* BPNestBottomCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNestBottomCollectionViewCell.m; sourceTree = "<group>"; };
+		01EB476520CEB21400195E88 /* BPNestBaseTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNestBaseTableView.h; sourceTree = "<group>"; };
+		01EB476620CEB21400195E88 /* BPNestBaseTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNestBaseTableView.m; sourceTree = "<group>"; };
+		01EB476820CEBBDB00195E88 /* BPFlowMainCatergoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPFlowMainCatergoryView.h; sourceTree = "<group>"; };
+		01EB476920CEBBDB00195E88 /* BPFlowMainCatergoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPFlowMainCatergoryView.m; sourceTree = "<group>"; };
+		01EB476F20CEC19300195E88 /* BPNestCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNestCardViewController.h; sourceTree = "<group>"; };
+		01EB477020CEC19300195E88 /* BPNestCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNestCardViewController.m; sourceTree = "<group>"; };
+		01EB477220CEC3A900195E88 /* BPTestNestCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTestNestCardViewController.h; sourceTree = "<group>"; };
+		01EB477320CEC3A900195E88 /* BPTestNestCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTestNestCardViewController.m; sourceTree = "<group>"; };
 		01EC5F201FA9A78200838BE2 /* BaseProject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseProject-Prefix.pch"; sourceTree = "<group>"; };
 		01EF2C2220AD35F400DF98FB /* BPTopCategoryCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTopCategoryCollectionViewController.h; sourceTree = "<group>"; };
 		01EF2C2320AD35F400DF98FB /* BPTopCategoryCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTopCategoryCollectionViewController.m; sourceTree = "<group>"; };
@@ -2595,6 +2621,7 @@
 		010FBC3F206018B500BC9EC4 /* ImprovingTips */ = {
 			isa = PBXGroup;
 			children = (
+				01EB476C20CEC16F00195E88 /* NestCard */,
 				011CD74B20CE18E600560EE6 /* MasksToBounds */,
 				015120FC20CBF03100B33A76 /* DynamicJump */,
 				01F750A2209EDF7100C1F24C /* OtherProject */,
@@ -4354,8 +4381,8 @@
 		0158054820CAE02800D0EF7C /* RoundedCorner */ = {
 			isa = PBXGroup;
 			children = (
-				0158054920CAE02800D0EF7C /* BPAddRoundedCornerViewController.m */,
 				0158054A20CAE02800D0EF7C /* BPAddRoundedCornerViewController.h */,
+				0158054920CAE02800D0EF7C /* BPAddRoundedCornerViewController.m */,
 			);
 			path = RoundedCorner;
 			sourceTree = "<group>";
@@ -6052,6 +6079,7 @@
 		01A192002004E61E005EE4CD /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
+				01EB474C20CE9A0100195E88 /* Nest */,
 				0158050020CADE2300D0EF7C /* CellProgress */,
 				011E8DC420B3180900B04378 /* CustomTableView */,
 				011DCE7E2084F0BF0045C035 /* CellAutoLayoutHeight */,
@@ -6147,6 +6175,34 @@
 				01A597BA2085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01AC49EF20CF6F5F005A14B6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				01F2CE5120AABE6500F1D701 /* BPFlowCatergoryView.h */,
+				01F2CE4B20AABE6500F1D701 /* BPFlowCatergoryView.m */,
+				01F2CE5620AABE6500F1D701 /* BPFlowCatergoryViewCell.h */,
+				01F2CE5020AABE6500F1D701 /* BPFlowCatergoryViewCell.m */,
+				01F2CE5320AABE6500F1D701 /* BPFlowCatergoryViewCellModel.h */,
+				01F2CE4F20AABE6500F1D701 /* BPFlowCatergoryViewCellModel.m */,
+				01F2CE4E20AABE6500F1D701 /* BPFlowCatergoryViewLayout.h */,
+				01F2CE5420AABE6500F1D701 /* BPFlowCatergoryViewLayout.m */,
+				01F2CE4D20AABE6500F1D701 /* BPFlowCatergoryViewProperty.h */,
+				01F2CE5520AABE6500F1D701 /* BPFlowCatergoryViewProperty.m */,
+				01F2CE5220AABE6500F1D701 /* BPFlowCollectionView.h */,
+				01F2CE4C20AABE6500F1D701 /* BPFlowCollectionView.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		01AC49F020CF6F80005A14B6 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				01EB476820CEBBDB00195E88 /* BPFlowMainCatergoryView.h */,
+				01EB476920CEBBDB00195E88 /* BPFlowMainCatergoryView.m */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		01ADC1E71FB490FC009150F0 /* BaseScroll */ = {
@@ -7070,6 +7126,91 @@
 			path = UIImage;
 			sourceTree = "<group>";
 		};
+		01EB474C20CE9A0100195E88 /* Nest */ = {
+			isa = PBXGroup;
+			children = (
+				01EB474D20CE9A0C00195E88 /* Controllers */,
+				01EB474E20CE9A0D00195E88 /* Models */,
+				01EB475020CE9A0E00195E88 /* ViewModels */,
+				01EB474F20CE9A0D00195E88 /* Views */,
+			);
+			path = Nest;
+			sourceTree = "<group>";
+		};
+		01EB474D20CE9A0C00195E88 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01EB475120CE9A1E00195E88 /* BPNestViewController.h */,
+				01EB475220CE9A1E00195E88 /* BPNestViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01EB474E20CE9A0D00195E88 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01EB474F20CE9A0D00195E88 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01EB475420CE9B6A00195E88 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01EB475020CE9A0E00195E88 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		01EB475420CE9B6A00195E88 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				01EB475520CE9B8400195E88 /* BPNestHeadTableViewCell.h */,
+				01EB475620CE9B8400195E88 /* BPNestHeadTableViewCell.m */,
+				01EB475720CE9B8400195E88 /* BPNestHeadTableViewCell.xib */,
+				01EB475A20CE9BBD00195E88 /* BPNestBottomTableViewCell.h */,
+				01EB475B20CE9BBD00195E88 /* BPNestBottomTableViewCell.m */,
+				01EB475F20CEA9B400195E88 /* BPNestBottomCollectionViewCell.h */,
+				01EB476020CEA9B400195E88 /* BPNestBottomCollectionViewCell.m */,
+				01EB476520CEB21400195E88 /* BPNestBaseTableView.h */,
+				01EB476620CEB21400195E88 /* BPNestBaseTableView.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		01EB476C20CEC16F00195E88 /* NestCard */ = {
+			isa = PBXGroup;
+			children = (
+				01EB476D20CEC18200195E88 /* Controllers */,
+				01EB476E20CEC18200195E88 /* Views */,
+			);
+			path = NestCard;
+			sourceTree = "<group>";
+		};
+		01EB476D20CEC18200195E88 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01EB476F20CEC19300195E88 /* BPNestCardViewController.h */,
+				01EB477020CEC19300195E88 /* BPNestCardViewController.m */,
+				01EB477220CEC3A900195E88 /* BPTestNestCardViewController.h */,
+				01EB477320CEC3A900195E88 /* BPTestNestCardViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01EB476E20CEC18200195E88 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		01EC5F211FA9AAB100838BE2 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -7218,7 +7359,7 @@
 			isa = PBXGroup;
 			children = (
 				01F2CE5720AABE6600F1D701 /* Controllers */,
-				01F2CE4A20AABE6500F1D701 /* Views */,
+				01F2CE4A20AABE6500F1D701 /* FlowCatergory */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -7232,23 +7373,13 @@
 			path = AddChildViewController;
 			sourceTree = "<group>";
 		};
-		01F2CE4A20AABE6500F1D701 /* Views */ = {
+		01F2CE4A20AABE6500F1D701 /* FlowCatergory */ = {
 			isa = PBXGroup;
 			children = (
-				01F2CE5120AABE6500F1D701 /* BPFlowCatergoryView.h */,
-				01F2CE4B20AABE6500F1D701 /* BPFlowCatergoryView.m */,
-				01F2CE5620AABE6500F1D701 /* BPFlowCatergoryViewCell.h */,
-				01F2CE5020AABE6500F1D701 /* BPFlowCatergoryViewCell.m */,
-				01F2CE5320AABE6500F1D701 /* BPFlowCatergoryViewCellModel.h */,
-				01F2CE4F20AABE6500F1D701 /* BPFlowCatergoryViewCellModel.m */,
-				01F2CE4E20AABE6500F1D701 /* BPFlowCatergoryViewLayout.h */,
-				01F2CE5420AABE6500F1D701 /* BPFlowCatergoryViewLayout.m */,
-				01F2CE4D20AABE6500F1D701 /* BPFlowCatergoryViewProperty.h */,
-				01F2CE5520AABE6500F1D701 /* BPFlowCatergoryViewProperty.m */,
-				01F2CE5220AABE6500F1D701 /* BPFlowCollectionView.h */,
-				01F2CE4C20AABE6500F1D701 /* BPFlowCollectionView.m */,
+				01AC49EF20CF6F5F005A14B6 /* Base */,
+				01AC49F020CF6F80005A14B6 /* Custom */,
 			);
-			path = Views;
+			path = FlowCatergory;
 			sourceTree = "<group>";
 		};
 		01F2CE5720AABE6600F1D701 /* Controllers */ = {
@@ -7564,6 +7695,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */,
+				01EB475920CE9B8400195E88 /* BPNestHeadTableViewCell.xib in Resources */,
 				01D6FBB720C80F7E00AD8A6E /* BPIncludeTableManualInsideHeaderView.xib in Resources */,
 				013519B520BC1E100010AEC2 /* BPXIBAutoLayoutProcessView.xib in Resources */,
 				01E1BCDD20CA67330063D87A /* launchImage7@2x.png in Resources */,
@@ -7705,6 +7837,7 @@
 				011E8DC120B2FB3300B04378 /* BPCalendarWeekCell.m in Sources */,
 				018C449D20093F8900CF43D7 /* BPSliderShowView.m in Sources */,
 				010DB7451FDD4D450099E66F /* UIImage+BPAlpha.m in Sources */,
+				01EB476120CEA9B400195E88 /* BPNestBottomCollectionViewCell.m in Sources */,
 				01DF31E51FDD3B0300B8A955 /* NSDecimalNumber+BPExtensions.m in Sources */,
 				010DB7211FDD4D450099E66F /* UIWebView+BPBlocks.m in Sources */,
 				0158050D20CADE2300D0EF7C /* KSCellProgressModel.m in Sources */,
@@ -7907,6 +8040,7 @@
 				01D22BE21FDD814000BCC4AD /* UIImageView+BPAdd.m in Sources */,
 				013ED92D20C7DE0400A83E7F /* BPIncludeTableSelfSizeInsideTableViewCell.m in Sources */,
 				01C31F73200FA1620096C2E0 /* BPArrowPopViewController.m in Sources */,
+				01EB477120CEC19300195E88 /* BPNestCardViewController.m in Sources */,
 				0158052F20CADED000D0EF7C /* ClassModel.m in Sources */,
 				014ED0421FEFF0A300D2926C /* BPImageButton.m in Sources */,
 				01F0DDE820CA20F8005082C7 /* BPInheritObjectController.m in Sources */,
@@ -7955,6 +8089,7 @@
 				013ED90B20C7DB3C00A83E7F /* BPIncludeTableSystemLayoutInsideTableViewCell.m in Sources */,
 				01D22BCE1FDD814000BCC4AD /* UIImage+BPAdd.m in Sources */,
 				01DF32231FDD3B3000B8A955 /* NSString+BPBase64.m in Sources */,
+				01EB475D20CE9BBD00195E88 /* BPNestBottomTableViewCell.m in Sources */,
 				01A597A72085CA5C000C6237 /* BPCellAutoLayoutHeightModel.m in Sources */,
 				01A597A92085CA5C000C6237 /* BPCellAutoLayoutHeightFooterView.m in Sources */,
 				01DF321B1FDD3B3000B8A955 /* NSString+BPContains.m in Sources */,
@@ -8016,6 +8151,7 @@
 				0179BC42203176190061CD84 /* BPDesignPatternsBlockViewControllerA.m in Sources */,
 				015804FD20CADE0000D0EF7C /* BPNaviTableViewControllerOne.m in Sources */,
 				01DF32191FDD3B3000B8A955 /* NSString+BPPinyin.m in Sources */,
+				01EB476720CEB21400195E88 /* BPNestBaseTableView.m in Sources */,
 				01A191C52004E1CB005EE4CD /* BPWebViewController.m in Sources */,
 				01A191DA2004E1F3005EE4CD /* BPSliderViewController.m in Sources */,
 				01161F392030895E00FA3441 /* BPPerson.m in Sources */,
@@ -8043,10 +8179,12 @@
 				017907CE2001336100E5C360 /* BPAlertViewController.m in Sources */,
 				017F82CE2063A8B800B656BA /* BPSubAddChildViewController.m in Sources */,
 				01D6FBC120C832E300AD8A6E /* BPMultiLevelCatalogueModel.m in Sources */,
+				01EB475320CE9A1E00195E88 /* BPNestViewController.m in Sources */,
 				01DF323F1FDD3B3D00B8A955 /* NSObject+BPRuntime.m in Sources */,
 				01D22BD71FDD814000BCC4AD /* UITextField+BPAdd.m in Sources */,
 				01D22BE81FDD814000BCC4AD /* UIControl+BPAdd.m in Sources */,
 				01C0B6231FFC87AB005BB4A5 /* PaletteTarget.m in Sources */,
+				01EB476A20CEBBDB00195E88 /* BPFlowMainCatergoryView.m in Sources */,
 				010DB71D1FDD4D450099E66F /* UIWebView+BPJavaScript.m in Sources */,
 				01DF316F1FDD3A0900B8A955 /* CALayer+BPBorderColor.m in Sources */,
 				0161D38620C2A6D5009D1B9C /* BPIntrinsicContentSizeLabel.m in Sources */,
@@ -8111,6 +8249,7 @@
 				01F2CE6920AABE6600F1D701 /* BPTopSliderCategoryCollectionViewCell.m in Sources */,
 				01DF31C51FDD3A9100B8A955 /* NSRunLoop+BPPerformBlock.m in Sources */,
 				01F372F82065420E007B1498 /* BPDesignPatternsDelegateViewControllerB.m in Sources */,
+				01EB475820CE9B8400195E88 /* BPNestHeadTableViewCell.m in Sources */,
 				0153F14020B2A6A6007C50C5 /* BPWeChatRootViewController.m in Sources */,
 				010DB7171FDD4D450099E66F /* UITextView+BPInputLimit.m in Sources */,
 				01F5B0F620B2C9DA0026B8B4 /* BPTagAutoLayoutView.m in Sources */,
@@ -8178,6 +8317,7 @@
 				01A1921A2004E61F005EE4CD /* BPTagCollectionViewController.m in Sources */,
 				010DB7111FDD4D450099E66F /* UIImageView+BPGeometryConversion.m in Sources */,
 				011E8D9E20B2F7BA00B04378 /* BPPlanGeneralTableViewCell.m in Sources */,
+				01EB477420CEC3A900195E88 /* BPTestNestCardViewController.m in Sources */,
 				01F0DDD720CA1CB8005082C7 /* BPPaddingButton.m in Sources */,
 				010DB74D1FDD4D450099E66F /* UIApplication+BPKeyboardFrame.m in Sources */,
 				010DB7341FDD4D450099E66F /* UIResponder+BPChain.m in Sources */,
