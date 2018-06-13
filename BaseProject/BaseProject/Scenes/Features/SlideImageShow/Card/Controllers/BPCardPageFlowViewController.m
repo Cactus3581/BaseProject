@@ -98,7 +98,7 @@
     if (_imageArray == nil) {
         _imageArray = [NSMutableArray array];
         for (int index = 0; index < 5; index++) {
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"Yosemite%02d",index]];
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"cell_autoLayoutHeight%02d",index]];
             [_imageArray addObject:image];
         }
     }

@@ -60,7 +60,7 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
     _currentPageIndex = 0;
     
     _minimumPageAlpha = 1.0;
-    _autoTime = 5.0;
+    _autoTime = 2.0;
     
     self.visibleRange = NSMakeRange(0, 0);
     
