@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class BPSliderShowView;
+@protocol BPSliderShowViewDelegate <NSObject>
+@optional
+
+//点击的是是第几张图片/也可以理解显示的第几张图片
+- (void)sliderShowView:(BPSliderShowView *)sliderShowView didSelectItemAtIndex:(NSInteger)index;
+//将要显示第几张图片
+- (void)sliderShowView:(BPSliderShowView *)sliderShowView willDisplayItemAtIndex:(NSInteger)index;
+//已经完全显示第几张图片
+- (void)sliderShowView:(BPSliderShowView *)sliderShowView didEndDisplayingItemAtIndex:(NSInteger)index;
+@end
+
 @interface BPSliderShowView : UIView
 
 /** 数据源 */
@@ -36,5 +48,7 @@
 
 /** 是否自动滚动,默认Yes */
 @property (nonatomic,assign) BOOL autoScroll;
+
+@property (nonatomic,weak) id<BPSliderShowViewDelegate> delegate;
 
 @end

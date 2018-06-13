@@ -169,11 +169,11 @@
 }
 
 - (void)leftBarButtonItemClickAction:(id)sender {
-    [self removeSunViews];
+    [self removeSubViews];
     [super leftBarButtonItemClickAction:sender];
 }
 
-- (void)removeSunViews {
+- (void)removeSubViews {
     [_voiceWaveView removeFromSuperview];
     _voiceWaveView = nil;
     [_baseWaverView removeFromSuperview];
@@ -189,7 +189,7 @@
 - (void)dealloc {
     [_timer invalidate];
     _timer = nil;
-    [self removeSunViews];
+    [self removeSubViews];
 }
 
 @end

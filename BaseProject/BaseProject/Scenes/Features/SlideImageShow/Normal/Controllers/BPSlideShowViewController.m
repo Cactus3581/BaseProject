@@ -10,26 +10,33 @@
 #import "BPSliderShowView.h"
 
 @interface BPSlideShowViewController ()
-@property (nonatomic,strong) BPSliderShowView *sliderShowView;
+@property (nonatomic,weak) BPSliderShowView *sliderShowView;
 @end
 
 @implementation BPSlideShowViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addSubview:self.sliderShowView];
-//    self.sliderShowView.frame = CGRectMake(0, 100, kScreenWidth, 200);
-    [self.sliderShowView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.trailing.centerY.equalTo(self.view);
-        make.height.mas_equalTo(200);
-    }];
-    self.sliderShowView.imageArray = @[kRedColor,kYellowColor,kBlueColor,kGreenColor,kPurpleColor];
+
+    self.sliderShowView.imageArray = @"";
+    self.sliderShowView.clickImageBlock = ^(NSInteger currentIndex) {
+        BPLog(@"currentIndex = %ld",currentIndex);
+    };
+
 }
 
 - (BPSliderShowView *)sliderShowView {
     if (!_sliderShowView) {
-        _sliderShowView = [[BPSliderShowView alloc] init];
-        _sliderShowView.backgroundColor = kLightGrayColor;
+        BPSliderShowView *sliderShowView = [[BPSliderShowView alloc] init];
+        _sliderShowView = sliderShowView;
+        [self.view addSubview:self.sliderShowView];
+        [self.sliderShowView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.leading.trailing.centerY.equalTo(self.view);
+            make.centerY.equalTo(self.view);
+            make.leading.equalTo(self.view).offset(50);
+            make.trailing.equalTo(self.view).offset(-50);
+            make.height.mas_equalTo(200);
+        }];
     }
     return _sliderShowView;
 }
