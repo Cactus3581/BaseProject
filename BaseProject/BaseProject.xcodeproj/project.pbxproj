@@ -349,6 +349,7 @@
 		017A9A9C1FDD315A00CDA599 /* UIView+BPShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 017A9A9A1FDD315A00CDA599 /* UIView+BPShadow.m */; };
 		017A9AA01FDD316C00CDA599 /* UIViewController+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 017A9A9F1FDD316C00CDA599 /* UIViewController+BPAdd.m */; };
 		017CF90820D2016100D9AA30 /* BPTestSliderShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 017CF90720D2016100D9AA30 /* BPTestSliderShowView.m */; };
+		017CF90C20D217F800D9AA30 /* BPInsideSliderShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 017CF90B20D217F800D9AA30 /* BPInsideSliderShowView.m */; };
 		017F82C620623EBA00B656BA /* BPDrawWaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F82C420623EB900B656BA /* BPDrawWaverView.m */; };
 		017F82CB2063A8AA00B656BA /* BPParentAddChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F82CA2063A8AA00B656BA /* BPParentAddChildViewController.m */; };
 		017F82CE2063A8B800B656BA /* BPSubAddChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F82CD2063A8B800B656BA /* BPSubAddChildViewController.m */; };
@@ -1321,6 +1322,8 @@
 		017A9A9F1FDD316C00CDA599 /* UIViewController+BPAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BPAdd.m"; sourceTree = "<group>"; };
 		017CF90620D2016100D9AA30 /* BPTestSliderShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTestSliderShowView.h; sourceTree = "<group>"; };
 		017CF90720D2016100D9AA30 /* BPTestSliderShowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTestSliderShowView.m; sourceTree = "<group>"; };
+		017CF90A20D217F800D9AA30 /* BPInsideSliderShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPInsideSliderShowView.h; sourceTree = "<group>"; };
+		017CF90B20D217F800D9AA30 /* BPInsideSliderShowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPInsideSliderShowView.m; sourceTree = "<group>"; };
 		017F82C420623EB900B656BA /* BPDrawWaverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawWaverView.m; sourceTree = "<group>"; };
 		017F82C520623EB900B656BA /* BPDrawWaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawWaverView.h; sourceTree = "<group>"; };
 		017F82C92063A8AA00B656BA /* BPParentAddChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPParentAddChildViewController.h; sourceTree = "<group>"; };
@@ -5545,15 +5548,6 @@
 			path = UIViewController;
 			sourceTree = "<group>";
 		};
-		017CF90920D2017C00D9AA30 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				017CF90620D2016100D9AA30 /* BPTestSliderShowView.h */,
-				017CF90720D2016100D9AA30 /* BPTestSliderShowView.m */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		017F82C320623EB900B656BA /* DrawRect */ = {
 			isa = PBXGroup;
 			children = (
@@ -5680,7 +5674,10 @@
 			children = (
 				018C449220093F5E00CF43D7 /* BPSliderShowView.h */,
 				018C449C20093F8800CF43D7 /* BPSliderShowView.m */,
-				017CF90920D2017C00D9AA30 /* Test */,
+				017CF90620D2016100D9AA30 /* BPTestSliderShowView.h */,
+				017CF90720D2016100D9AA30 /* BPTestSliderShowView.m */,
+				017CF90A20D217F800D9AA30 /* BPInsideSliderShowView.h */,
+				017CF90B20D217F800D9AA30 /* BPInsideSliderShowView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -7878,6 +7875,7 @@
 				01D6FBA520C80ED900AD8A6E /* BPIncludeTableManualController.m in Sources */,
 				010DB75A1FDD4D450099E66F /* UIFont+BPTTF.m in Sources */,
 				01DF31C61FDD3A9100B8A955 /* NSURLConnection+BPSelfSigned.m in Sources */,
+				017CF90C20D217F800D9AA30 /* BPInsideSliderShowView.m in Sources */,
 				010DB7531FDD4D450099E66F /* UISearchBar+BPBlocks.m in Sources */,
 				01DF321C1FDD3B3000B8A955 /* NSString+BPHTML.m in Sources */,
 				01D22BC71FDD814000BCC4AD /* NSDate+BPAdd.m in Sources */,
