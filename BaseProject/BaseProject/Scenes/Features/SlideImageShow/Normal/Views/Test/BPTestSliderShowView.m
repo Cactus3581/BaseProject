@@ -67,8 +67,8 @@ static CGFloat inset = 10;
 #pragma mark - view旋转
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGFloat imageSizeW = kScreenWidth - 4 * inset;
-    CGFloat scrollWidth = kScreenWidth - 2 * inset;
+    CGFloat imageSizeW = kScreenWidth - 2 * inset;
+    CGFloat scrollWidth = kScreenWidth ;
     self.scrollView.contentSize = CGSizeMake(scrollWidth * 3, 0); //可以不写，因为下面的子view决定了大小
     [self.scrollView setContentOffset:CGPointMake(scrollWidth, 0.0) animated:NO];
 }
@@ -116,8 +116,8 @@ static CGFloat inset = 10;
 }
 
 - (void)automaticScroll {
-    CGFloat imageSizeW = kScreenWidth - 4 * inset;
-    CGFloat scrollWidth = kScreenWidth - 2 * inset;
+    CGFloat imageSizeW = kScreenWidth - 2 * inset;
+    CGFloat scrollWidth = kScreenWidth ;
     if (BPValidateArray(self.imageArray).count <= 1) return;
     if(self.scrollView.scrollEnabled == NO) return;
     [self.scrollView setContentOffset:CGPointMake(scrollWidth*2, 0.0) animated:YES];
@@ -135,8 +135,8 @@ static CGFloat inset = 10;
     }else {
         BPLog(@"1 - 将开始拖拽");
     }
-    CGFloat imageSizeW = kScreenWidth - 4 * inset;
-    CGFloat scrollWidth = kScreenWidth - 2 * inset;
+    CGFloat imageSizeW = kScreenWidth - 2 * inset;
+    CGFloat scrollWidth = kScreenWidth ;
     CGFloat standardOffsetX = scrollWidth;
     if (scrollView.contentOffset.x < standardOffsetX) {
         [self willDisplayItemAtIndex:self.currentImageIndex-1];
@@ -196,8 +196,8 @@ static CGFloat inset = 10;
     if (!BPValidateArray(self.imageArray).count) {
         return;
     }
-    CGFloat imageSizeW = kScreenWidth - 4 * inset;
-    CGFloat scrollWidth = kScreenWidth - 2 * inset;
+    CGFloat imageSizeW = kScreenWidth - 2 * inset;
+    CGFloat scrollWidth = kScreenWidth ;
     CGPoint contentOffset = [self.scrollView contentOffset];
     if (contentOffset.x > scrollWidth) {
         //向左滑动+1
@@ -213,8 +213,8 @@ static CGFloat inset = 10;
 #pragma mark - reviseCenterContentOffset和reloadImageWithIndex 调用时机可调换：因为操作所需时间很短
 // 修正位置：（偷偷）始终把centerImageView放到正中间
 - (void)reviseCenterContentOffset {
-    CGFloat imageSizeW = kScreenWidth - 4 * inset;
-    CGFloat scrollWidth = kScreenWidth - 2 * inset;
+    CGFloat imageSizeW = kScreenWidth - 2 * inset;
+    CGFloat scrollWidth = kScreenWidth ;
     [self.scrollView setContentOffset:CGPointMake(scrollWidth, 0.0) animated:NO];
 }
 
@@ -384,8 +384,8 @@ static CGFloat inset = 10;
     //    CGFloat scrollWidth = kScreenWidth ;
     
 
-    CGFloat imageSizeW = kScreenWidth - 4 * inset;
-    CGFloat scrollWidth = kScreenWidth - 2 * inset;
+    CGFloat imageSizeW = kScreenWidth - 2 * inset;
+    CGFloat scrollWidth = kScreenWidth ;
     
     //设置偏移量
     self.scrollView.contentSize = CGSizeMake(scrollWidth * 3, 0); //可以不写，因为下面的子view决定了大小

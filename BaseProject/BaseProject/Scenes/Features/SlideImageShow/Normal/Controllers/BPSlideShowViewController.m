@@ -61,8 +61,10 @@
         _testSliderShowView = testSliderShowView;
         [self.view addSubview:_testSliderShowView];
         [_testSliderShowView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo(self.view).offset(10);
-            make.trailing.equalTo(self.view).offset(-10);
+//            make.leading.equalTo(self.view).offset(10);
+//            make.trailing.equalTo(self.view).offset(-10);
+            make.leading.equalTo(self.view);
+            make.trailing.equalTo(self.view);
             make.top.equalTo(self.sliderShowView.mas_bottom).offset(10);
             make.height.mas_equalTo(200);
         }];
