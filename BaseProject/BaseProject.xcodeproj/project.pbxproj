@@ -348,6 +348,7 @@
 		017A9A9B1FDD315A00CDA599 /* UIView+BPSafeArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 017A9A981FDD315900CDA599 /* UIView+BPSafeArea.m */; };
 		017A9A9C1FDD315A00CDA599 /* UIView+BPShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 017A9A9A1FDD315A00CDA599 /* UIView+BPShadow.m */; };
 		017A9AA01FDD316C00CDA599 /* UIViewController+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 017A9A9F1FDD316C00CDA599 /* UIViewController+BPAdd.m */; };
+		017CF90820D2016100D9AA30 /* BPTestSliderShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 017CF90720D2016100D9AA30 /* BPTestSliderShowView.m */; };
 		017F82C620623EBA00B656BA /* BPDrawWaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F82C420623EB900B656BA /* BPDrawWaverView.m */; };
 		017F82CB2063A8AA00B656BA /* BPParentAddChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F82CA2063A8AA00B656BA /* BPParentAddChildViewController.m */; };
 		017F82CE2063A8B800B656BA /* BPSubAddChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017F82CD2063A8B800B656BA /* BPSubAddChildViewController.m */; };
@@ -1318,6 +1319,8 @@
 		017A9A9A1FDD315A00CDA599 /* UIView+BPShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BPShadow.m"; sourceTree = "<group>"; };
 		017A9A9E1FDD316C00CDA599 /* UIViewController+BPAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BPAdd.h"; sourceTree = "<group>"; };
 		017A9A9F1FDD316C00CDA599 /* UIViewController+BPAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BPAdd.m"; sourceTree = "<group>"; };
+		017CF90620D2016100D9AA30 /* BPTestSliderShowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTestSliderShowView.h; sourceTree = "<group>"; };
+		017CF90720D2016100D9AA30 /* BPTestSliderShowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTestSliderShowView.m; sourceTree = "<group>"; };
 		017F82C420623EB900B656BA /* BPDrawWaverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawWaverView.m; sourceTree = "<group>"; };
 		017F82C520623EB900B656BA /* BPDrawWaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawWaverView.h; sourceTree = "<group>"; };
 		017F82C92063A8AA00B656BA /* BPParentAddChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPParentAddChildViewController.h; sourceTree = "<group>"; };
@@ -5542,6 +5545,15 @@
 			path = UIViewController;
 			sourceTree = "<group>";
 		};
+		017CF90920D2017C00D9AA30 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				017CF90620D2016100D9AA30 /* BPTestSliderShowView.h */,
+				017CF90720D2016100D9AA30 /* BPTestSliderShowView.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		017F82C320623EB900B656BA /* DrawRect */ = {
 			isa = PBXGroup;
 			children = (
@@ -5668,6 +5680,7 @@
 			children = (
 				018C449220093F5E00CF43D7 /* BPSliderShowView.h */,
 				018C449C20093F8800CF43D7 /* BPSliderShowView.m */,
+				017CF90920D2017C00D9AA30 /* Test */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -8387,6 +8400,7 @@
 				01D6FBB620C80F7E00AD8A6E /* BPIncludeTableManualHeadCell.m in Sources */,
 				01BCB3301FB54A99009EF64E /* BPBaseModel.m in Sources */,
 				0179BC4620317D410061CD84 /* BPNSDateViewController.m in Sources */,
+				017CF90820D2016100D9AA30 /* BPTestSliderShowView.m in Sources */,
 				01DF31D51FDD3A9100B8A955 /* NSBundle+BPAppIcon.m in Sources */,
 				010DB72C1FDD4D450099E66F /* UIBezierPath+BPLength.m in Sources */,
 				010DB7191FDD4D450099E66F /* UINavigationItem+BPLock.m in Sources */,

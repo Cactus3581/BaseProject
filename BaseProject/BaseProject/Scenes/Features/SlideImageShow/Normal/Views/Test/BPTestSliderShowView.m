@@ -1,17 +1,27 @@
 //
-//  BPSliderShowView.m
+//  BPTestSliderShowView.m
+//  BaseProject
+//
+//  Created by xiaruzhen on 2018/6/14.
+//  Copyright © 2018年 cactus. All rights reserved.
+//
+
+//
+//  BPTestSliderShowView.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/1/10.
 //  Copyright © 2018年 xiaruzhen. All rights reserved.
 //
 
-#import "BPSliderShowView.h"
+#import "BPTestSliderShowView.h"
 #import "UIView+BPAdd.h"
 #import "NSTimer+BPUnRetain.h"
 #import "UIImageView+WebCache.h"
 
-@interface BPSliderShowView ()<UIScrollViewDelegate>
+static CGFloat inset = 10;
+
+@interface BPTestSliderShowView ()<UIScrollViewDelegate>
 @property (nonatomic,strong) UIImageView *leftImageView;
 @property (nonatomic,strong) UIImageView *centerImageView;
 @property (nonatomic,strong) UIImageView *rightImageView;
@@ -21,7 +31,7 @@
 @property (nonatomic,strong) UIPageControl *pageControl;
 @end
 
-@implementation BPSliderShowView
+@implementation BPTestSliderShowView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -37,7 +47,7 @@
     self.backgroundColor = kWhiteColor;
     [self addSubview:self.scrollView];
     [self addSubview:self.pageControl];
-
+    
     [self.scrollView addSubview:self.leftImageView];
     [self.scrollView addSubview:self.centerImageView];
     [self.scrollView addSubview:self.rightImageView];
@@ -57,8 +67,14 @@
 #pragma mark - view旋转
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.scrollView.contentSize = CGSizeMake(self.width * 3, 0); //可以不写，因为下面的子view决定了大小
-    [self.scrollView setContentOffset:CGPointMake(self.width, 0.0) animated:NO];
+    CGFloat imageSizeW = kScreenWidth - 4 * inset;
+    CGFloat scrollWidth = kScreenWidth - 2 * inset;
+    self.scrollView.contentSize = CGSizeMake(scrollWidth * 3, 0); //可以不写，因为下面的子view决定了大小
+    [self.scrollView setContentOffset:CGPointMake(scrollWidth, 0.0) animated:NO];
+}
+
+- (void)updateConstraints {
+    [super updateConstraints];
 }
 
 #pragma mark - 数据源
@@ -100,9 +116,11 @@
 }
 
 - (void)automaticScroll {
+    CGFloat imageSizeW = kScreenWidth - 4 * inset;
+    CGFloat scrollWidth = kScreenWidth - 2 * inset;
     if (BPValidateArray(self.imageArray).count <= 1) return;
     if(self.scrollView.scrollEnabled == NO) return;
-    [self.scrollView setContentOffset:CGPointMake(self.width*2, 0.0) animated:YES];
+    [self.scrollView setContentOffset:CGPointMake(scrollWidth*2, 0.0) animated:YES];
     [self willDisplayItemAtIndex:self.currentImageIndex+1];
     //    [self reloadDataWithBlock:^{
     //        self.scrollView.contentOffset = CGPointMake(self.width*2, 0);
@@ -117,8 +135,9 @@
     }else {
         BPLog(@"1 - 将开始拖拽");
     }
-    
-    CGFloat standardOffsetX = self.width;
+    CGFloat imageSizeW = kScreenWidth - 4 * inset;
+    CGFloat scrollWidth = kScreenWidth - 2 * inset;
+    CGFloat standardOffsetX = scrollWidth;
     if (scrollView.contentOffset.x < standardOffsetX) {
         [self willDisplayItemAtIndex:self.currentImageIndex-1];
     }else if (scrollView.contentOffset.x < standardOffsetX) {
@@ -177,11 +196,13 @@
     if (!BPValidateArray(self.imageArray).count) {
         return;
     }
+    CGFloat imageSizeW = kScreenWidth - 4 * inset;
+    CGFloat scrollWidth = kScreenWidth - 2 * inset;
     CGPoint contentOffset = [self.scrollView contentOffset];
-    if (contentOffset.x > self.width) {
+    if (contentOffset.x > scrollWidth) {
         //向左滑动+1
         _currentImageIndex = (_currentImageIndex + 1) % self.imageArray.count;
-    } else if (contentOffset.x < self.width) {
+    } else if (contentOffset.x < scrollWidth) {
         //向右滑动-1
         _currentImageIndex = (_currentImageIndex - 1 + self.imageArray.count) % self.imageArray.count;
     }
@@ -192,7 +213,9 @@
 #pragma mark - reviseCenterContentOffset和reloadImageWithIndex 调用时机可调换：因为操作所需时间很短
 // 修正位置：（偷偷）始终把centerImageView放到正中间
 - (void)reviseCenterContentOffset {
-    [self.scrollView setContentOffset:CGPointMake(self.width, 0.0) animated:NO];
+    CGFloat imageSizeW = kScreenWidth - 4 * inset;
+    CGFloat scrollWidth = kScreenWidth - 2 * inset;
+    [self.scrollView setContentOffset:CGPointMake(scrollWidth, 0.0) animated:NO];
 }
 
 //图片赋值
@@ -208,11 +231,11 @@
     self.rightImageView.backgroundColor = self.imageArray[rightIndex];
     
     /*
-    [self.centerImageView sd_setImageWithURL:[NSURL URLWithString:KSValidateString(self.imageArray[currentImageIndex])] placeholderImage:self.placeHolderImage];
-    
-    [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:KSValidateString(self.imageArray[leftIndex])] placeholderImage:self.placeHolderImage];
-    
-    [self.rightImageView sd_setImageWithURL:[NSURL URLWithString:KSValidateString(self.imageArray[rightIndex])] placeholderImage:self.placeHolderImage];
+     [self.centerImageView sd_setImageWithURL:[NSURL URLWithString:KSValidateString(self.imageArray[currentImageIndex])] placeholderImage:self.placeHolderImage];
+     
+     [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:KSValidateString(self.imageArray[leftIndex])] placeholderImage:self.placeHolderImage];
+     
+     [self.rightImageView sd_setImageWithURL:[NSURL URLWithString:KSValidateString(self.imageArray[rightIndex])] placeholderImage:self.placeHolderImage];
      */
 }
 
@@ -290,7 +313,7 @@
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.delegate = self;
         _scrollView.pagingEnabled = YES;
-        _scrollView.clipsToBounds = YES;
+        _scrollView.clipsToBounds = NO;
         _scrollView.bounces = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;
@@ -323,7 +346,7 @@
         _rightImageView = [[UIImageView alloc] init];
         _rightImageView.contentMode = UIViewContentModeScaleToFill;
         _rightImageView.clipsToBounds = YES;
-
+        
     }
     return _rightImageView;
 }
@@ -341,9 +364,32 @@
 }
 
 - (void)initializeSubViewsFrame {
+    
+    //    CGFloat scrollWidth = imageSizeW+ inset*2;
+    //    CGFloat kScreenWidth = imageSizeW + inset*4;
+
+    //    CGFloat scrollWidth = kScreenWidth - inset*4 + inset*2;
+    
+    //    CGFloat scrollWidth = kScreenWidth - inset*2;
+
+
+//    self.viewWidth = kScreenWidth - self.imageShowHead*2 - self.imagePadding*2;
+    
+    
+    //    CGFloat scrollWidth = imageSizeW+ inset*2;
+    //    CGFloat kScreenWidth = imageSizeW + inset*2;
+    
+    //    CGFloat scrollWidth = kScreenWidth  + inset*2 - inset*2;
+    
+    //    CGFloat scrollWidth = kScreenWidth ;
+    
+
+    CGFloat imageSizeW = kScreenWidth - 4 * inset;
+    CGFloat scrollWidth = kScreenWidth - 2 * inset;
+    
     //设置偏移量
-    self.scrollView.contentSize = CGSizeMake(self.width * 3, 0); //可以不写，因为下面的子view决定了大小
-    [self.scrollView setContentOffset:CGPointMake(self.width, 0.0) animated:NO];
+    self.scrollView.contentSize = CGSizeMake(scrollWidth * 3, 0); //可以不写，因为下面的子view决定了大小
+    [self.scrollView setContentOffset:CGPointMake(scrollWidth, 0.0) animated:NO];
     self.scrollView.scrollEnabled = NO;
     
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -352,27 +398,27 @@
     
     [self.leftImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(self.scrollView);
-        make.leading.equalTo(self.scrollView);
+        make.leading.equalTo(self.scrollView).offset(inset);
         make.height.equalTo(self.scrollView);
-        make.width.equalTo(self.scrollView);
+        make.width.mas_equalTo(imageSizeW);
     }];
     
     [self.centerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(self.leftImageView);
-        make.leading.equalTo(self.leftImageView.mas_trailing);
+        make.leading.equalTo(self.leftImageView.mas_trailing).offset(inset*2);
         make.height.width.equalTo(self.leftImageView);
     }];
     
     [self.rightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(self.leftImageView);
-        make.leading.equalTo(self.centerImageView.mas_trailing);
+        make.leading.equalTo(self.centerImageView.mas_trailing).offset(inset*2);
         make.height.width.equalTo(self.leftImageView);
-        make.trailing.equalTo(self.scrollView);
+        make.trailing.equalTo(self.scrollView).offset(-10);
     }];
     
     [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.width.mas_equalTo(200);
-//        make.height.mas_equalTo(30);
+        //make.width.mas_equalTo(200);
+        //make.height.mas_equalTo(30);
         make.bottom.equalTo(self).offset(-10);
         make.centerX.equalTo(self);
     }];
@@ -402,3 +448,4 @@
 }
 
 @end
+
