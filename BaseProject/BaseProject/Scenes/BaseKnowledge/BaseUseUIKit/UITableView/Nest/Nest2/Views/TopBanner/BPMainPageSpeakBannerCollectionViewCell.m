@@ -24,7 +24,7 @@
 }
 
 - (void)initViews {
-    self.contentView.backgroundColor = [UIColor redColor];
+    self.contentView.backgroundColor = kWhiteColor;
     self.sliderShowView.imageArray = @[kRedColor,kYellowColor,kBlueColor];
     self.sliderShowView.clickImageBlock = ^(NSInteger currentIndex) {
 

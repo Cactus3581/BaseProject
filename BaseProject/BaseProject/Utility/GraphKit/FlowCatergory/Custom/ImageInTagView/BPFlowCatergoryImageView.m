@@ -124,7 +124,7 @@ static NSString *identifier  = @"cell";
     
     //catergoryView
     BPFlowCatergoryImageTagView * catergoryView = [[BPFlowCatergoryImageTagView alloc] init];
-    catergoryView.backgroundColor = [UIColor whiteColor];
+    catergoryView.backgroundColor = kWhiteColor;
     self.catergoryView = catergoryView;
     [self addSubview:catergoryView];
     

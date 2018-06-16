@@ -42,19 +42,19 @@
     self.contentView.backgroundColor = kRandomColor;
     UIImageView *coverImageView = [[UIImageView alloc] init];
     _coverImageView = coverImageView;
-    coverImageView.backgroundColor = [UIColor orangeColor];
-    [coverImageView bp_roundedCornerWithRadius:25 cornerColor:[UIColor darkTextColor]];
+    coverImageView.backgroundColor = kWhiteColor;
+    [coverImageView bp_roundedCornerWithRadius:25 cornerColor:kWhiteColor];
     coverImageView.contentMode = UIViewContentModeScaleAspectFill;
     coverImageView.clipsToBounds = YES;
     [self.contentView addSubview:coverImageView];
 
     UILabel *titleLabel = [UILabel new];
     _titleLabel = titleLabel;
-    _titleLabel.backgroundColor = [UIColor blueColor];
+    _titleLabel.backgroundColor = kWhiteColor;
     titleLabel.textAlignment = 1;
     [self.contentView addSubview:titleLabel];
     UILabel *colorLabel = [UILabel new];
-    colorLabel.textColor = [UIColor orangeColor];
+    colorLabel.textColor = kBlackColor;
     _colorLabel = colorLabel;
     colorLabel.textAlignment = 1;
     [self.contentView addSubview:colorLabel];

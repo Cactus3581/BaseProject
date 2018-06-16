@@ -23,10 +23,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    self.contentView.backgroundColor = [UIColor whiteColor];
+    self.contentView.backgroundColor = kWhiteColor;
     [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"cactus_theme"]];
-    self.coverImageView.backgroundColor = [UIColor whiteColor];
-    [self.coverImageView bp_roundedCornerWithRadius:10 cornerColor:[UIColor darkTextColor]];
+    self.coverImageView.backgroundColor = kWhiteColor;
+    [self.coverImageView bp_roundedCornerWithRadius:10 cornerColor:kWhiteColor];
     _coverImageView.contentMode = UIViewContentModeScaleAspectFill;
     _coverImageView.clipsToBounds = YES;
 }

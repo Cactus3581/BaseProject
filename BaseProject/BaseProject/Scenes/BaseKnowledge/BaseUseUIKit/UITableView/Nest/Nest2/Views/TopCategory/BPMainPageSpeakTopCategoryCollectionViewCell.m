@@ -21,10 +21,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.contentView.backgroundColor = [UIColor orangeColor];
+    self.contentView.backgroundColor = kWhiteColor;
     [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"cactus_theme"]];
-    self.coverImageView.backgroundColor = [UIColor orangeColor];
-    [self.coverImageView bp_roundedCornerWithRadius:10 cornerColor:[UIColor darkTextColor]];
+    self.coverImageView.backgroundColor = kWhiteColor;
+    [self.coverImageView bp_roundedCornerWithRadius:10 cornerColor:kWhiteColor];
     _coverImageView.contentMode = UIViewContentModeScaleAspectFill;
     _coverImageView.clipsToBounds = YES;
 }

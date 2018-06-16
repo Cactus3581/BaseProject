@@ -30,7 +30,7 @@
 }
 
 - (void)initViews {
-    self.contentView.backgroundColor = [UIColor blueColor];
+    self.contentView.backgroundColor = kWhiteColor;
     self.flowCatergoryView.backgroundColor = kWhiteColor;
     self.flowCatergoryView.titles = @[@"to be bester",@"to be bester",@"to be bester",@"to be bester",@"to be bester"];
 }

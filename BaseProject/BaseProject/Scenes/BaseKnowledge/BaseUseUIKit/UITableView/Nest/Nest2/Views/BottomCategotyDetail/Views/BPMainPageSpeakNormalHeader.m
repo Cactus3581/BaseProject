@@ -16,8 +16,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.contentView.backgroundColor = [UIColor greenColor];
-    self.titleLabel.backgroundColor = [UIColor yellowColor];
+    self.contentView.backgroundColor = kWhiteColor;
+    self.titleLabel.backgroundColor = kWhiteColor;
 }
 
 @end

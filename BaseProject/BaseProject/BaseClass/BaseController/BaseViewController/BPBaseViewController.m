@@ -142,13 +142,13 @@ static CGFloat titleInset = 20.0f;
         _leftBarButton.frame = CGRectMake(0, 0, bp_naviItem_width, bp_naviItem_height);
         _leftBarButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
         
-        
+
         /*
-        _leftBarButton.backgroundColor = [UIColor redColor];
-        _leftBarButton.imageView.backgroundColor = [UIColor greenColor];
-        _leftBarButton.titleLabel.backgroundColor = [UIColor blueColor];
-        _leftBarButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-        _leftBarButton.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+         _leftBarButton.backgroundColor = kRedColor;
+         _leftBarButton.imageView.backgroundColor = kGreenColor;
+         _leftBarButton.titleLabel.backgroundColor = kBlueColor;
+         _leftBarButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+         _leftBarButton.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
          */
     }
     return _leftBarButton;
