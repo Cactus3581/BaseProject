@@ -24,7 +24,7 @@
 
 //当视图控制器 需要view的时候，该方法调用 创建view并给self.view赋值。
 //当我们需要自定义视图控制器的view，我们需要重写loadView方法,进行自定义视图的创建，并给self.view赋值（注意：此时不能调用［super loadView］）。
--(void)loadView {
+- (void)loadView {
     // 将视图指定为当前视图控制器的view
     self.view = [[UIView alloc] init];
 }

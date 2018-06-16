@@ -38,9 +38,9 @@ static FMDatabase *sqlite = nil;
  create、drop、insert、update、delete等
  使用executeUpdate:方法执行更新
  // FMDB更新方法
- -(BOOL)executeUpdate:(NSString)sql, ...
- -(BOOL)executeUpdateWithFormat:(NSString)format, ...
- -(BOOL)executeUpdate:(NSString)sql withArgumentsInArray:(NSArray )arguments
+ - (BOOL)executeUpdate:(NSString)sql, ...
+ - (BOOL)executeUpdateWithFormat:(NSString)format, ...
+ - (BOOL)executeUpdate:(NSString)sql withArgumentsInArray:(NSArray )arguments
  
  */
 
@@ -428,7 +428,7 @@ static FMDatabase *sqlite = nil;
 
 
 
--(void)addData{
+- (void)addData{
     //    插入数据类型必须为NSObject 的子类
     //
     //    基本类型需要封装为对应的包装类

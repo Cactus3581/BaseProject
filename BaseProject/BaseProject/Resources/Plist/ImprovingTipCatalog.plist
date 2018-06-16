@@ -160,13 +160,5 @@
 		<key>briefIntro</key>
 		<string></string>
 	</dict>
-	<dict>
-		<key>title</key>
-		<string>卡tableview</string>
-		<key>fileName</key>
-		<string>BPNestCardViewController</string>
-		<key>briefIntro</key>
-		<string></string>
-	</dict>
 </array>
 </plist>

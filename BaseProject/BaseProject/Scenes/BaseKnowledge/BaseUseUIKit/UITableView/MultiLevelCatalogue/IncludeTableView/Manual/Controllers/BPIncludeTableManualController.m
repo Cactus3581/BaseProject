@@ -76,7 +76,7 @@ static NSString *headerIdentifier = @"BPIncludeTableManualHeaderView";
 }
 
 #pragma mark - TableView delegate
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 //    if (self.isShowAll) {
 //        return BPValidateArray(self.arraySource).count;
 //    }else {
@@ -85,7 +85,7 @@ static NSString *headerIdentifier = @"BPIncludeTableManualHeaderView";
     return BPValidateArray(self.arraySource).count;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     BPMultiLevelCatalogueModel1st *model = BPValidateArrayObjAtIdx(self.arraySource, section);
 //    if (self.isShowAll) {
 //        return BPValidateArray(model.array_1st).count;

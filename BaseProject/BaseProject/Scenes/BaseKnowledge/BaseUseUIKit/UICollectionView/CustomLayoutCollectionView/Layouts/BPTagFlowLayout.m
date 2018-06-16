@@ -23,7 +23,7 @@
     BPLog(@"%.2f",self.collectionViewContentSize.width);
 }
 
--(NSArray *)layoutAttributesForElementsInRect:(CGRect)rect{
+- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect{
     NSArray *attributes = [[super layoutAttributesForElementsInRect:rect] mutableCopy];
     
     BPLog(@"width = %.2f",self.collectionViewContentSize.width);

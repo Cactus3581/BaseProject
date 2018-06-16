@@ -190,7 +190,7 @@ static void _FixKeyLengths(CCAlgorithm algorithm, NSMutableData * keyData, NSMut
  *
  *  @return 转成UTF8 字符串
  */
--(NSString *)_UTF8String{
+- (NSString *)_UTF8String{
     return [[NSString alloc] initWithData:self encoding:NSUTF8StringEncoding];
 }
 

@@ -42,18 +42,18 @@
 @property (nonatomic,strong) BPPersonHealth *health;
 
 //初始化方法
--(instancetype)init;
+- (instancetype)init;
 
 //便利构造器
-+(BPPerson *)personWithName:(NSString*)name weight:(CGFloat)weight;
++ (BPPerson *)personWithName:(NSString*)name weight:(CGFloat)weight;
 
 //打招呼
--(void) sayHi;
+- (void) sayHi;
 
 //setter getter
--(void)setName:(NSString *)name;
+- (void)setName:(NSString *)name;
 
--(NSString *)name;
+- (NSString *)name;
 
 //按照姓名升序
 

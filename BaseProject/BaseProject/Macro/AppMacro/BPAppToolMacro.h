@@ -350,7 +350,7 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 
 /**懒加载*/
 #ifndef LAZY
-#define LAZY(class,name) -(class *)name { \
+#define LAZY(class,name) - (class *)name { \
     if (_##name == nil) { \
         _##name = [[class alloc] init]; \
     }\

@@ -59,7 +59,7 @@
 //在.m文件中同时实现getter和setter时候需要@synthesize phoneNumber = _phoneNumber.
 @synthesize phoneNumber = _phoneNumber;
 
--(instancetype)initWithName:(NSString *)name weight:(CGFloat)weight {
+- (instancetype)initWithName:(NSString *)name weight:(CGFloat)weight {
     self = [super init];
     if (self) {
         _name = name;
@@ -76,7 +76,7 @@
  +(当前类类型) 当前类名小写开头With各个参数;
  便利构造器内部就是封装了aclloc 和初始化方法（init）。
  */
-+(BPPerson *)personWithName:(NSString*)name weight:(CGFloat)weight {
++ (BPPerson *)personWithName:(NSString*)name weight:(CGFloat)weight {
     BPPerson *person = [[BPPerson alloc]initWithName:name weight:weight];
     return person;
 }
@@ -90,7 +90,7 @@
     return self;
 }
 
--(void)sayHi {
+- (void)sayHi {
     BPLog(@"name:%@ sex:%@ age: %ld,weight :%f",_name,_sex,_age,_weight);
 }
 
@@ -142,11 +142,11 @@
 
 #pragma mark - KVC
 //kvc 模式下：不用管 自己就会调用。触发使用
--(void)setValue:(id)value forUndefinedKey:(NSString *)key {
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
     BPLog(@"没有发现key:%@",key);
 }
 
--(id)valueForUndefinedKey:(NSString *)key {
+- (id)valueForUndefinedKey:(NSString *)key {
     BPLog(@"找不到key:%@",key);
     return nil;
 }

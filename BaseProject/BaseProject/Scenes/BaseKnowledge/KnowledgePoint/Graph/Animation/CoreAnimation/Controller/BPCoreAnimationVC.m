@@ -94,7 +94,7 @@ typedef enum :NSUInteger{
 /**
  *  透明度动画
  */
--(void)opacityAniamtion{
+- (void)opacityAniamtion{
     CABasicAnimation *anima = [CABasicAnimation animationWithKeyPath:@"opacity"];
     anima.fromValue = [NSNumber numberWithFloat:1.0f];
     anima.toValue = [NSNumber numberWithFloat:0.2f];
@@ -108,7 +108,7 @@ typedef enum :NSUInteger{
 /**
  *  缩放动画
  */
--(void)scaleAnimation{
+- (void)scaleAnimation{
     CABasicAnimation *anima = [CABasicAnimation animationWithKeyPath:@"transform.scale"];//同上
     anima.toValue = [NSNumber numberWithFloat:2.0f];
     anima.duration = 1.0f;
@@ -120,7 +120,7 @@ typedef enum :NSUInteger{
 /**
  *  旋转动画
  */
--(void)rotateAnimation{
+- (void)rotateAnimation{
     CABasicAnimation *anima = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];//绕着z轴为矢量，进行旋转(@"transform.rotation.z"==@@"transform.rotation")
     anima.toValue = [NSNumber numberWithFloat:3*M_PI];
     anima.duration = 1.0f;
@@ -129,7 +129,7 @@ typedef enum :NSUInteger{
 /**
  *  背景色变化动画
  */
--(void)backgroundAnimation{
+- (void)backgroundAnimation{
     CABasicAnimation *anima = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
     anima.toValue =(id) kGreenColor.CGColor;
     anima.duration = 1.0f;
@@ -137,7 +137,7 @@ typedef enum :NSUInteger{
 }
 
 #pragma mark - CAKeyframeAnimation-关键帧:路径、抖动
--(void)keyframeAnimation_values{
+- (void)keyframeAnimation_values{
     CAKeyframeAnimation *keyAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
     keyAnimation.duration = 3.0f;
     keyAnimation.beginTime = CACurrentMediaTime() + 1.0;
@@ -157,7 +157,7 @@ typedef enum :NSUInteger{
 /**
  *  path动画
  */
--(void)keyframeAnimation_path{
+- (void)keyframeAnimation_path{
     CAKeyframeAnimation *anima = [CAKeyframeAnimation animationWithKeyPath:@"position"];
     anima.beginTime = CACurrentMediaTime() + 1.0;
 
@@ -169,7 +169,7 @@ typedef enum :NSUInteger{
     [self.testView.layer addAnimation:anima forKey:@"pathAnimation"];
 }
 #pragma mark - CAAnimationGroup-组合动画:多个动画的结合
--(void)groupAnimation{
+- (void)groupAnimation{
     //位移动画
     CAKeyframeAnimation *anima1 = [CAKeyframeAnimation animationWithKeyPath:@"position"];
     NSValue *value0 = [NSValue valueWithCGPoint:CGPointMake(0, kScreenHeight/2-50)];
@@ -199,7 +199,7 @@ typedef enum :NSUInteger{
 
 
 #pragma mark - CATransition:转场动画:淡入淡出、推挤、解开、覆盖
--(void)transitionAnimation_1
+- (void)transitionAnimation_1
 {
     /*
      什么是转场动画？
@@ -404,7 +404,7 @@ typedef enum :NSUInteger{
 }
 
 #pragma 给View添加背景图
--(void)addBgImageWithImageName:(NSString *) imageName
+- (void)addBgImageWithImageName:(NSString *) imageName
 {
     
     //2_1

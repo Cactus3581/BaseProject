@@ -72,12 +72,12 @@
 }
 
 //点击蒙版是否消失，默认为yes；
--(BOOL)popoverPresentationControllerShouldDismissPopover:(UIPopoverPresentationController *)popoverPresentationController{
+- (BOOL)popoverPresentationControllerShouldDismissPopover:(UIPopoverPresentationController *)popoverPresentationController{
     return YES;
 }
 
 //弹框消失时调用的方法
--(void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController{
+- (void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController{
     BPLog(@"弹框已经消失");
 }
 

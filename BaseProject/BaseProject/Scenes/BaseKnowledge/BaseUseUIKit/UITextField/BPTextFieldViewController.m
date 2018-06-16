@@ -82,7 +82,7 @@
 }
 
 //当点击return键触发（代表着一个时机）
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     //通过tag值来获取UI控件对象 self.window的强大作用：让它下面的tag成为局部下的全局变量
     UITextField *tf2 = (UITextField *)[self.view viewWithTag:102];
     [tf2 becomeFirstResponder];

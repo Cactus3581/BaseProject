@@ -102,11 +102,11 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutInsideHeaderView
 }
 
 #pragma mark - TableView delegate
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return BPValidateArray(self.arraySource).count;
 }
 

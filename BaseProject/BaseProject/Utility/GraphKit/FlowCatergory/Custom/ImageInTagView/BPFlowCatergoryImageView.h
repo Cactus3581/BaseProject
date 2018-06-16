@@ -17,11 +17,12 @@
 - (void)flowCatergoryViewDidEndDecelerating:(BPFlowCatergoryImageView *)flowCatergoryView;
 @end
 
-
 @interface BPFlowCatergoryImageView : UIView
 @property (nonatomic, strong,readonly) NSMutableDictionary *vcCacheDic;
-
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, weak) id<BPFlowCatergoryImageViewDelegate>delegate;
+@property (nonatomic, assign) CGFloat tagViewHeight;
+
 - (void)reloadData;
+
 @end

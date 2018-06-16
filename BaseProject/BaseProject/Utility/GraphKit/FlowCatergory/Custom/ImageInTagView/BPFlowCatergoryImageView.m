@@ -31,13 +31,21 @@ static NSString *identifier  = @"cell";
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self configSubViews];
-    
+}
+
+- (void)setTagViewHeight:(CGFloat)tagViewHeight {
+    _tagViewHeight = tagViewHeight;
+    if (_catergoryView) {
+        [_catergoryView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(_tagViewHeight);
+        }];
+    }
 }
 
 - (void)setTitles:(NSArray *)titles {
     _titles = titles;
     if (_catergoryView) {
-        _catergoryView.titles = self.titles;//数据源titles，必须设置;
+        _catergoryView.titles = _titles;//数据源titles，必须设置;
     }
 }
 
@@ -80,30 +88,23 @@ static NSString *identifier  = @"cell";
     UIViewController *vc = self.vcCacheDic[[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
     if (vc) {
         [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-        vc.view.frame = cell.contentView.bounds;
+//        vc.view.frame = cell.contentView.bounds;
         [cell.contentView addSubview:vc.view];
-        //        [vc.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        //            make.edges.equalTo(cell.contentView);
-        //        }];
+        [vc.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(cell.contentView);
+        }];
     }else {
         if (_delegate && [_delegate respondsToSelector:@selector(flowCatergoryView:cellForItemAtIndexPath:)]) {
             UIViewController *childVC =  [_delegate flowCatergoryView:self cellForItemAtIndexPath:indexPath.row];
             [self.vcCacheDic setObject:childVC forKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
             [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-            childVC.view.frame = cell.contentView.bounds;
+//            childVC.view.frame = cell.contentView.bounds;
             [cell.contentView addSubview:childVC.view];
-            //            [vc.view mas_makeConstraints:^(MASConstraintMaker *make) {
-            //                make.edges.equalTo(cell.contentView);
-            //            }];
+            [vc.view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.equalTo(cell.contentView);
+            }];
         }
     }
-}
-
-- (NSMutableDictionary *)vcCacheDic {
-    if (!_vcCacheDic) {
-        _vcCacheDic = [NSMutableDictionary dictionary];
-    }
-    return _vcCacheDic;
 }
 
 - (void)configSubViews {
@@ -172,7 +173,7 @@ static NSString *identifier  = @"cell";
     [catergoryView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.equalTo(self);
         make.top.equalTo(self);
-        make.height.equalTo(@118);
+        make.height.mas_equalTo(40);
     }];
     
     [contentCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -193,8 +194,15 @@ static NSString *identifier  = @"cell";
     }
 }
 
+- (NSMutableDictionary *)vcCacheDic {
+    if (!_vcCacheDic) {
+        _vcCacheDic = [NSMutableDictionary dictionary];
+    }
+    return _vcCacheDic;
+}
+
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
 }
 
 @end

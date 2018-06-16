@@ -10,6 +10,7 @@
 #import "UIBarButtonItem+BPCreate.h"
 #import "UIButton+BPImagePosition.h"
 #import "YYFPSLabel.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
 
 @interface BPBaseViewController ()<UINavigationControllerDelegate>
 @property(nonatomic,strong) UIButton *leftBarButton;
@@ -208,7 +209,7 @@ static CGFloat titleInset = 20.0f;
 //}
 //
 //#pragma mark - 隐藏statusbar及恢复默认样式
-//-(BOOL)prefersStatusBarHidden {
+//- (BOOL)prefersStatusBarHidden {
 //    return YES;
 //}
 
@@ -244,10 +245,14 @@ static CGFloat titleInset = 20.0f;
     //必须实现
 }
 
+- (void)popDisabled {
+    self.fd_interactivePopDisabled = YES;
+    self.navigationController.fd_viewControllerBasedNavigationBarAppearanceEnabled = YES;
+}
+
 - (void)dealloc {
     [self removeFPSLabel];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
     BPLog(@"i am vc 释放了");
 }
 

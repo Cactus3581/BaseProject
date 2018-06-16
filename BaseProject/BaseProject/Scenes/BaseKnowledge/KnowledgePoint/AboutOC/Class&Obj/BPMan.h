@@ -15,6 +15,6 @@
 @interface BPMan : BPPerson
 
 //重写从父类继承过来的方法
--(void)sayHi;
+- (void)sayHi;
 
 @end

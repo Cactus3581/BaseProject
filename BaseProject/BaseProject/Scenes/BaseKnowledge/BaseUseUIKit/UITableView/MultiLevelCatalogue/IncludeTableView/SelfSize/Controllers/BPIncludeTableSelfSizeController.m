@@ -64,11 +64,11 @@ static NSString *headerIdentifier = @"BPIncludeTableSelfSizeHeaderView";
 }
 
 #pragma mark - TableView delegate
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return BPValidateArray(self.arraySource).count;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     BPMultiLevelCatalogueModel1st *model = BPValidateArrayObjAtIdx(self.arraySource, section);
     return BPValidateArray(model.array_1st).count;
 }

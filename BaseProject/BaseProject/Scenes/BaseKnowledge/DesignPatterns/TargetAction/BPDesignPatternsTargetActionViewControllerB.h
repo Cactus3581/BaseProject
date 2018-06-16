@@ -10,5 +10,5 @@
 
 @interface BPDesignPatternsTargetActionViewControllerB : BPBaseViewController
 //1.声明：获取方法，以及执行者
--(void)addTarget:(id)target action:(SEL)action;
+- (void)addTarget:(id)target action:(SEL)action;
 @end

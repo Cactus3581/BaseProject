@@ -19,7 +19,7 @@
 }
 
 //选择时机,通知代理执行协议中的方法。
--(void)viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     if (_delegate && [_delegate respondsToSelector:@selector(configDelegate)]) {
         NSString *str = [_delegate configDelegate];

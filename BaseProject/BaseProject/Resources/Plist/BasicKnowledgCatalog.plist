@@ -808,17 +808,17 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>卡View1</string>
+						<string>tableView 多个scroll子类多手势联动</string>
 						<key>fileName</key>
-						<string>BPNestViewController</string>
+						<string>BPTableViewNestGestureViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>卡View2</string>
+						<string>collectionView 多个scroll子类多手势联动</string>
 						<key>fileName</key>
-						<string>BPMainPageSpeakController</string>
+						<string>BPCollectionViewNestGestureViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -854,6 +854,14 @@
 						<string>Tag</string>
 						<key>fileName</key>
 						<string>BPTagCollectionViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>collectionView 多个scroll子类多手势联动</string>
+						<key>fileName</key>
+						<string>BPCollectionViewNestGestureViewController.m</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>

@@ -107,14 +107,14 @@
 }
 
 #pragma mark - 画图片
--(void)drawPictureWithctx:(CGContextRef)ctx Rect:(CGRect)rect {
+- (void)drawPictureWithctx:(CGContextRef)ctx Rect:(CGRect)rect {
     /*图片*/
     UIImage *image = [UIImage imageNamed:@"jobs_youth"];
     [image drawInRect:CGRectMake(kScreenWidth-50, 30, 40, 50)];//在坐标中画出图片
 }
 
 #pragma mark - 画文字
--(void)drawTextWithctx:(CGContextRef)ctx Rect:(CGRect)rect {
+- (void)drawTextWithctx:(CGContextRef)ctx Rect:(CGRect)rect {
     //文字样式
     UIFont *font = [UIFont systemFontOfSize:18];
     NSDictionary *dict = @{NSFontAttributeName:font,

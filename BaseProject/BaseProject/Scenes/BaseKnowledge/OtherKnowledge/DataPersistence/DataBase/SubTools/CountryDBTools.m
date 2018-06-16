@@ -114,7 +114,7 @@ static CountryDBTools *sharedManager=nil;
 /*
  无事务：单条sql，增删改查
  */
--(void)executeSQL:(NSString *)sqlStr actionType:(ST_DB_ActionType)actionType withBlock:(void(^)(BOOL bRet, FMResultSet *rs, NSString *msg))block {
+- (void)executeSQL:(NSString *)sqlStr actionType:(ST_DB_ActionType)actionType withBlock:(void(^)(BOOL bRet, FMResultSet *rs, NSString *msg))block {
     [self.dbQueue inDatabase:^(FMDatabase *db) {
         if (actionType == ST_DB_SELECT) {
             //查询语句 需要返回记录集
@@ -159,7 +159,7 @@ static CountryDBTools *sharedManager=nil;
 /*
  事务；单条sql；update(有没有必要？)
  */
--(void)executeUpdateTransactionSql:(NSString *)sql withBlock:(void(^)(BOOL bRet, NSString *msg, BOOL *bRollback))block {
+- (void)executeUpdateTransactionSql:(NSString *)sql withBlock:(void(^)(BOOL bRet, NSString *msg, BOOL *bRollback))block {
     __block BOOL bRet = NO;
     [self.dbQueue  inTransaction:^(FMDatabase *db, BOOL *rollback){
         bRet = [db executeUpdate:sql];
@@ -175,7 +175,7 @@ static CountryDBTools *sharedManager=nil;
 /*
  事务；sql数组；update
  */
--(void)executeUpdateTransactionSqlList:(NSArray *)sqlStrArr withBlock:(void(^)(BOOL bRet, NSString *msg, BOOL *bRollback))block {
+- (void)executeUpdateTransactionSqlList:(NSArray *)sqlStrArr withBlock:(void(^)(BOOL bRet, NSString *msg, BOOL *bRollback))block {
     __block BOOL bRet = NO;
     [self.dbQueue  inTransaction:^(FMDatabase *db, BOOL *rollback){
         for (NSString *sqlStr in sqlStrArr) {

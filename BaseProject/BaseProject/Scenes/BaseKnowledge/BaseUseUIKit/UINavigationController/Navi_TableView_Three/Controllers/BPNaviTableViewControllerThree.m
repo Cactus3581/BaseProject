@@ -180,7 +180,7 @@
 }
 
 // 注意:毛玻璃效果API是iOS8的,适配iOS8以下的请用其他方法
--(void)setNavigationSubView{
+- (void)setNavigationSubView{
     // 毛玻璃背景
     UIImageView *bgImgView = [[UIImageView alloc] initWithFrame:_navigationView.bounds];
     //    bgImgView.image = [UIImage imageNamed:@"navi_scale"];

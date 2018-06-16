@@ -89,12 +89,12 @@ static NSString *headerIdentifier = @"BPIncludeTableManualInsideHeaderView";
 
 #pragma mark - TableView delegate
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     //    return self.arraySource.count ? 1 : 0;
     return 1;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 //    if (self.isShowAll) {
 //        return BPValidateArray(self.arraySource).count;
 //    }else {

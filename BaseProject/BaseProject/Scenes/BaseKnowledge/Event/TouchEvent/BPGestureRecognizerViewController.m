@@ -37,8 +37,7 @@
 }
 
 //布局imageView
--(void)layoutImageView
-{
+- (void)layoutImageView {
     //    1.创建对象
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
@@ -61,8 +60,7 @@
     
 }
 //创建手势
--(void)creatrecognizers
-{
+- (void)creatrecognizers {
     //    七大手势
     //    1.轻拍手势
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
@@ -163,8 +161,7 @@
 
 #pragma mark - 手势触发事件
 //轻拍事件
--(void)tapAction:(UITapGestureRecognizer *)tap
-{
+- (void)tapAction:(UITapGestureRecognizer *)tap {
     BPLog(@"轻拍");
     //    图片的切换
     _index++;
@@ -175,8 +172,7 @@
 }
 
 //轻扫事件
--(void)swipeAction:(UISwipeGestureRecognizer *)swipe
-{
+- (void)swipeAction:(UISwipeGestureRecognizer *)swipe {
     ////    判断当前是左清扫 还是右清扫
     //    if ((swipe.direction^UISwipeGestureRecognizerDirectionRight) == UISwipeGestureRecognizerDirectionLeft) {
     //        BPLog(@"左轻扫");
@@ -193,8 +189,7 @@
             _index = 7 ;
         }
         _imageView.image = [UIImage imageNamed:_images[_index]];
-    }else if(swipe.direction == UISwipeGestureRecognizerDirectionLeft)
-    {
+    } else if(swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
         BPLog(@"左清扫下一张");
         _index++;
         if (_index ==8) {
@@ -205,8 +200,7 @@
 }
 
 // 长按事件
--(void)longPressAction:(UILongPressGestureRecognizer *)longPress
-{
+- (void)longPressAction:(UILongPressGestureRecognizer *)longPress {
     //    BPLog(@"长按");
     //    对于长按手势有开始和结束状态
     if (longPress.state == UIGestureRecognizerStateBegan) {
@@ -217,8 +211,7 @@
 }
 
 //平移事件
--(void)panAction:(UIPanGestureRecognizer *)pan
-{
+- (void)panAction:(UIPanGestureRecognizer *)pan {
     //    获取手势的位置
     CGPoint position = [pan translationInView:_imageView];
     //    通过transform 进行平移变换：它会自动帮我们实现的。
@@ -228,8 +221,7 @@
 }
 
 //捏合
--(void)pinchAction:(UIPinchGestureRecognizer *)pinch
-{
+- (void)pinchAction:(UIPinchGestureRecognizer *)pinch {
     //    BPLog(@"w");
     //    通过transform进行视图的捏合
     _imageView.transform = CGAffineTransformScale(_imageView.transform,pinch.scale ,pinch.scale );
@@ -238,23 +230,20 @@
 }
 
 //添加旋转事件
--(void)rotaAction:(UIRotationGestureRecognizer *)rota
-{
+- (void)rotaAction:(UIRotationGestureRecognizer *)rota {
     //    通过transform进行旋转变化
     _imageView.transform = CGAffineTransformRotate(_imageView.transform, rota.rotation);
     //    将旋转角度 置为零
     rota.rotation = 0 ;
 }
 
--(void)screenAction:(UIScreenEdgePanGestureRecognizer *)screen
-{
+- (void)screenAction:(UIScreenEdgePanGestureRecognizer *)screen {
     BPLog(@"d");
 }
 
 //屏幕边缘
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -332,7 +332,7 @@ int hist[32768];
 
 @implementation Palette
 
--(instancetype)initWithImage:(UIImage *)image{
+- (instancetype)initWithImage:(UIImage *)image {
     self = [super init];
     if (self){
         _image = image;

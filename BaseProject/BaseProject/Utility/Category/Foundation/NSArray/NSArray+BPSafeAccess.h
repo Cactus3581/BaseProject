@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 @interface NSArray (BPSafeAccess)
--(id)_objectWithIndex:(NSUInteger)index;
+- (id)_objectWithIndex:(NSUInteger)index;
 
 - (NSString*)_stringWithIndex:(NSUInteger)index;
 
@@ -58,27 +58,28 @@
 
 @interface NSMutableArray(BPSafeAccess)
 
--(void)_addObj:(id)i;
+- (void)_addObj:(id)i;
 
--(void)_addString:(NSString*)i;
+- (void)_addString:(NSString*)i;
 
--(void)_addBool:(BOOL)i;
+- (void)_addBool:(BOOL)i;
 
--(void)_addInt:(int)i;
+- (void)_addInt:(int)i;
 
--(void)_addInteger:(NSInteger)i;
+- (void)_addInteger:(NSInteger)i;
 
--(void)_addUnsignedInteger:(NSUInteger)i;
+- (void)_addUnsignedInteger:(NSUInteger)i;
 
--(void)_addCGFloat:(CGFloat)f;
+- (void)_addCGFloat:(CGFloat)f;
 
--(void)_addChar:(char)c;
+- (void)_addChar:(char)c;
 
--(void)_addFloat:(float)i;
+- (void)_addFloat:(float)i;
 
--(void)_addPoint:(CGPoint)o;
+- (void)_addPoint:(CGPoint)o;
 
--(void)_addSize:(CGSize)o;
+- (void)_addSize:(CGSize)o;
 
--(void)_addRect:(CGRect)o;
+- (void)_addRect:(CGRect)o;
+
 @end

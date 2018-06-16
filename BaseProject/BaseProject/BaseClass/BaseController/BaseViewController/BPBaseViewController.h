@@ -52,6 +52,9 @@
 
 - (void)removeFPSLabel;
 
+/**全屏pop手势关闭*/
+- (void)popDisabled;
+
 #pragma mark - 动态跳转
 @property(nonatomic,strong) NSDictionary *dynamicJumpDict;
 @property (nonatomic,copy)  NSString *dynamicJumpString;//动态跳转数据

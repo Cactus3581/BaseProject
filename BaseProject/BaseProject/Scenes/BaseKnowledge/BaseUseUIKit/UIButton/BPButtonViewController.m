@@ -139,7 +139,7 @@
 }
 
 //点击事件
--(void)btAction:(UIButton *)bt{
+- (void)btAction:(UIButton *)bt{
     BPLog(@"upInside");
     //    获取正常状态下的title
     BPLog(@"title = %@",[bt titleForState:UIControlStateNormal]);
@@ -147,7 +147,7 @@
     BPLog(@"title = %@",[bt titleForState:UIControlStateHighlighted]);
 }
 
--(void)btAction2:(UIButton *)bt{
+- (void)btAction2:(UIButton *)bt{
     BPLog(@"down");
 }
 

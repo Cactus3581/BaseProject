@@ -28,7 +28,7 @@ typedef enum ST_DB_ActionType
 /*
  无事务：单条sql，增删改查
  */
--(void)executeSQL:(NSString *)sqlStr actionType:(ST_DB_ActionType)actionType withBlock:(void(^)(BOOL bRet, FMResultSet *rs, NSString *msg))block;
+- (void)executeSQL:(NSString *)sqlStr actionType:(ST_DB_ActionType)actionType withBlock:(void(^)(BOOL bRet, FMResultSet *rs, NSString *msg))block;
 
 /*
  无事务；sql数组；update
@@ -38,12 +38,12 @@ typedef enum ST_DB_ActionType
 /*
  事务；单条sql；update
  */
--(void)executeUpdateTransactionSql:(NSString *)sql withBlock:(void(^)(BOOL bRet, NSString *msg, BOOL *bRollback))block;
+- (void)executeUpdateTransactionSql:(NSString *)sql withBlock:(void(^)(BOOL bRet, NSString *msg, BOOL *bRollback))block;
 
 /*
  事务；sql数组；update
  */
--(void)executeUpdateTransactionSqlList:(NSArray *)sqlStrArr withBlock:(void(^)(BOOL bRet, NSString *msg, BOOL *bRollback))block;
+- (void)executeUpdateTransactionSqlList:(NSArray *)sqlStrArr withBlock:(void(^)(BOOL bRet, NSString *msg, BOOL *bRollback))block;
 
 
 /*

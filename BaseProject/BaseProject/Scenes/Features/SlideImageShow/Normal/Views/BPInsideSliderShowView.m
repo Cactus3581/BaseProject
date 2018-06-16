@@ -12,7 +12,7 @@
 #import "UIImageView+WebCache.h"
 #import "UIView+BPRoundedCorner.h"
 
-static CGFloat inset = 30; //假设内部左右两个都为30
+static CGFloat inset = 15; //假设内部左右两个都为30
 
 @interface BPInsideSliderShowView ()<UIScrollViewDelegate>
 @property (nonatomic,strong) UIImageView *leftImageView;
