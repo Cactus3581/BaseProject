@@ -7,16 +7,16 @@
 //
 
 #import "BPNestBottomTableViewCell.h"
-#import "BPFlowCatergoryView.h"
+#import "BPFlowCatergoryTagView.h"
 #import "UICollectionViewFlowLayout+BPFullItem.h"
 #import "BPNestBottomCollectionViewCell.h"
 
 static NSString *identifier  = @"BPNestBottomCollectionViewCell";
 
 
-@interface BPNestBottomTableViewCell ()<UICollectionViewDataSource, UICollectionViewDelegate, BPFlowCatergoryViewDelegate>
+@interface BPNestBottomTableViewCell ()<UICollectionViewDataSource, UICollectionViewDelegate, BPFlowCatergoryTagViewDelegate>
 @property (nonatomic, weak) UICollectionView *mainView;
-@property (nonatomic, weak) BPFlowCatergoryView *catergoryView;
+@property (nonatomic, weak) BPFlowCatergoryTagView *catergoryView;
 @property (nonatomic, strong) NSArray *cateogry;
 @end
 
@@ -80,7 +80,7 @@ static NSString *identifier  = @"BPNestBottomCollectionViewCell";
     [self.contentView addSubview:mainView];
     
     //catergoryView
-    BPFlowCatergoryView * catergoryView = [[BPFlowCatergoryView alloc] init];
+    BPFlowCatergoryTagView * catergoryView = [[BPFlowCatergoryTagView alloc] init];
     catergoryView.backgroundColor = kWhiteColor;
     self.catergoryView = catergoryView;
     [self.contentView addSubview:catergoryView];

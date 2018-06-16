@@ -7,14 +7,14 @@
 //
 
 #import "BPFlowMainCatergoryView.h"
-#import "BPFlowCatergoryView.h"
+#import "BPFlowCatergoryTagView.h"
 #import "UICollectionViewFlowLayout+BPFullItem.h"
 
 static NSString *identifier  = @"cell";
 
-@interface BPFlowMainCatergoryView ()<UICollectionViewDataSource, UICollectionViewDelegate, BPFlowCatergoryViewDelegate>
+@interface BPFlowMainCatergoryView ()<UICollectionViewDataSource, UICollectionViewDelegate, BPFlowCatergoryTagViewDelegate>
 @property (nonatomic, weak) UICollectionView *contentCollectionView;
-@property (nonatomic, weak) BPFlowCatergoryView *catergoryView;
+@property (nonatomic, weak) BPFlowCatergoryTagView *catergoryView;
 @property (nonatomic, strong) NSMutableDictionary *vcCacheDic;
 @end
 
@@ -96,7 +96,7 @@ static NSString *identifier  = @"cell";
     [self addSubview:contentCollectionView];
     
     //catergoryView
-    BPFlowCatergoryView * catergoryView = [[BPFlowCatergoryView alloc] init];
+    BPFlowCatergoryTagView * catergoryView = [[BPFlowCatergoryTagView alloc] init];
     catergoryView.backgroundColor = kWhiteColor;
     self.catergoryView = catergoryView;
     [self addSubview:catergoryView];

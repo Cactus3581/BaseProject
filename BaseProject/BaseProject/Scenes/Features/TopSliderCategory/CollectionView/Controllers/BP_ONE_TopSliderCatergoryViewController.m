@@ -7,14 +7,13 @@
 //
 
 #import "BP_ONE_TopSliderCatergoryViewController.h"
-#import "BPFlowCatergoryView.h"
+#import "BPFlowCatergoryTagView.h"
+
+#import "BPTopSliderCategoryCollectionViewCell.h"
 #import "UIView+BPAdd.h"
 #import "UICollectionViewFlowLayout+BPFullItem.h"
-#import "Masonry/Masonry.h"
-#import "BPFlowCatergoryViewCell.h"
-#import "BPTopSliderCategoryCollectionViewCell.h"
 
-@interface BP_ONE_TopSliderCatergoryViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, BPFlowCatergoryViewDelegate>
+@interface BP_ONE_TopSliderCatergoryViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, BPFlowCatergoryTagViewDelegate>
 @property (nonatomic, strong) NSArray *titles;
 @end
 
@@ -47,7 +46,7 @@
     //        make.leading.trailing.bottom.equalTo(self.view);
     //    }];
     //catergoryView
-    BPFlowCatergoryView * catergoryView = [[BPFlowCatergoryView alloc] initWithFrame:CGRectMake(0, 64, self.view.width, 50)];
+    BPFlowCatergoryTagView * catergoryView = [[BPFlowCatergoryTagView alloc] initWithFrame:CGRectMake(0, 64, self.view.width, 50)];
     //必须设置titles数据源
     catergoryView.titles = self.titles;
     //必须设置关联的scrollview
@@ -87,7 +86,7 @@
 }
 
 /**监听item点击*/
-- (void)catergoryView:(BPFlowCatergoryView *)catergoryView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+- (void)catergoryView:(BPFlowCatergoryTagView *)catergoryView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     BPLog(@"点击了%zd个item", indexPath.item);
 }
 

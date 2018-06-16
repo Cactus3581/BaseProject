@@ -808,9 +808,17 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>卡View</string>
+						<string>卡View1</string>
 						<key>fileName</key>
 						<string>BPNestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>卡View2</string>
+						<key>fileName</key>
+						<string>BPMainPageSpeakController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>

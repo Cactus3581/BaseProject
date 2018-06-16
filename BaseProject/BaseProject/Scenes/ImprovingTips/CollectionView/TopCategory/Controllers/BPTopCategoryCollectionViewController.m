@@ -8,18 +8,17 @@
 
 #import "BPTopCategoryCollectionViewController.h"
 #import "BPTopCategoryModel.h"
-#import "BPFlowCatergoryView.h"
+#import "BPFlowCatergoryTagView.h"
 #import "UICollectionViewFlowLayout+BPFullItem.h"
-#import "BPFlowCatergoryViewCell.h"
 #import "BPTopCategoryListContainerCollectionViewCell.h"
 #import "BPTopCategoryMacro.h"
 
 static NSString *identifier  = @"BPTopCategoryListContainerCollectionViewCell";
 
 
-@interface BPTopCategoryCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, BPFlowCatergoryViewDelegate>
+@interface BPTopCategoryCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, BPFlowCatergoryTagViewDelegate>
 @property (nonatomic, weak) UICollectionView *mainView;
-@property (nonatomic, weak) BPFlowCatergoryView *catergoryView;
+@property (nonatomic, weak) BPFlowCatergoryTagView *catergoryView;
 @property (nonatomic, strong) NSArray *cateogry;
 @end
 
@@ -120,7 +119,7 @@ static NSString *identifier  = @"BPTopCategoryListContainerCollectionViewCell";
     [self.view addSubview:mainView];
     
     //catergoryView
-    BPFlowCatergoryView * catergoryView = [[BPFlowCatergoryView alloc] init];
+    BPFlowCatergoryTagView * catergoryView = [[BPFlowCatergoryTagView alloc] init];
     catergoryView.backgroundColor = kWhiteColor;
     self.catergoryView = catergoryView;
     [self.view addSubview:catergoryView];

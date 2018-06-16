@@ -1,5 +1,5 @@
 //
-//  BPNestBaseTableView.h
+//  BPNestLinkageBaseTableView.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/6/11.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BPNestBaseTableView : UITableView
+@interface BPNestLinkageBaseTableView : UITableView
 
 @end

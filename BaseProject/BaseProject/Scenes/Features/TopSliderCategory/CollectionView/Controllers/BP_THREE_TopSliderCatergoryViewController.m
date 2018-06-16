@@ -7,18 +7,15 @@
 //
 
 #import "BP_THREE_TopSliderCatergoryViewController.h"
-#import "BPFlowCatergoryView.h"
-#import "BPFlowCatergoryViewCell.h"
+#import "BPFlowCatergoryTagView.h"
 #import "UIView+BPAdd.h"
 #import "UIActivityIndicatorView+BPAdd.h"
-#import "Masonry/Masonry.h"
 #import "BPTopSliderCategoryCollectionViewCell.h"
 #import "UICollectionViewFlowLayout+BPFullItem.h"
-#import "BPTopSliderCategoryCollectionViewCell.h"
 
-@interface BP_THREE_TopSliderCatergoryViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, BPFlowCatergoryViewDelegate>
+@interface BP_THREE_TopSliderCatergoryViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, BPFlowCatergoryTagViewDelegate>
 @property (nonatomic, strong) NSArray *titles;
-@property (nonatomic, weak) BPFlowCatergoryView *catergoryView;
+@property (nonatomic, weak) BPFlowCatergoryTagView *catergoryView;
 @property (nonatomic, weak) UICollectionView *mainView;
 @end
 
@@ -46,7 +43,7 @@
         make.leading.trailing.bottom.equalTo(self.view);
     }];
     //catergoryView
-    BPFlowCatergoryView * catergoryView = [BPFlowCatergoryView new];
+    BPFlowCatergoryTagView * catergoryView = [BPFlowCatergoryTagView new];
     _catergoryView = catergoryView;
     catergoryView.titles = self.titles;
     catergoryView.scrollView = mainView;
@@ -106,7 +103,7 @@
 }
 
 /**监听item点击*/
-- (void)catergoryView:(BPFlowCatergoryView *)catergoryView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+- (void)catergoryView:(BPFlowCatergoryTagView *)catergoryView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     BPLog(@"点击了%zd个item", indexPath.item);
 }
 

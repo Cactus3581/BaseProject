@@ -10,6 +10,7 @@
 #import "UIView+BPAdd.h"
 #import "NSTimer+BPUnRetain.h"
 #import "UIImageView+WebCache.h"
+#import "UIView+BPRoundedCorner.h"
 
 static CGFloat inset = 30; //假设内部左右两个都为30
 
@@ -251,6 +252,12 @@ static CGFloat inset = 30; //假设内部左右两个都为30
 }
 
 #pragma mark -- Properties
+- (void)setRadius:(CGFloat)radius cornerColor:(UIColor *)color {
+    [_leftImageView bp_roundedCornerWithRadius:radius cornerColor:color];
+    [_centerImageView bp_roundedCornerWithRadius:radius cornerColor:color];
+    [_rightImageView bp_roundedCornerWithRadius:radius cornerColor:color];
+}
+
 - (void)setAutoScroll:(BOOL)autoScroll{
     _autoScroll = autoScroll;
     if (_autoScroll) {
@@ -313,7 +320,7 @@ static CGFloat inset = 30; //假设内部左右两个都为30
 - (UIImageView *)leftImageView {
     if (!_leftImageView) {
         _leftImageView = [[UIImageView alloc] init];
-        _leftImageView.contentMode = UIViewContentModeScaleToFill;
+        _leftImageView.contentMode = UIViewContentModeScaleAspectFill;
         _leftImageView.clipsToBounds = YES;
     }
     return _leftImageView;
@@ -322,7 +329,7 @@ static CGFloat inset = 30; //假设内部左右两个都为30
 - (UIImageView *)centerImageView {
     if (!_centerImageView) {
         _centerImageView = [[UIImageView alloc] init];
-        _centerImageView.contentMode = UIViewContentModeScaleToFill;
+        _centerImageView.contentMode = UIViewContentModeScaleAspectFill;
         _centerImageView.clipsToBounds = YES;
         _centerImageView.userInteractionEnabled = YES;
         [_centerImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(centerTapGes)]];
@@ -333,7 +340,7 @@ static CGFloat inset = 30; //假设内部左右两个都为30
 - (UIImageView *)rightImageView {
     if (!_rightImageView) {
         _rightImageView = [[UIImageView alloc] init];
-        _rightImageView.contentMode = UIViewContentModeScaleToFill;
+        _rightImageView.contentMode = UIViewContentModeScaleAspectFill;
         _rightImageView.clipsToBounds = YES;
         
     }

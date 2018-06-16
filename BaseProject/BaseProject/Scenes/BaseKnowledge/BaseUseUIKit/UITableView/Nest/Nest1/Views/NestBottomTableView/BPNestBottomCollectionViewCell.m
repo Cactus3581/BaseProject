@@ -7,10 +7,10 @@
 //
 
 #import "BPNestBottomCollectionViewCell.h"
-#import "BPNestBaseTableView.h"
+#import "BPNestLinkageBaseTableView.h"
 
 @interface BPNestBottomCollectionViewCell()<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic,weak) BPNestBaseTableView *tableView;
+@property (nonatomic,weak) BPNestLinkageBaseTableView *tableView;
 @property (strong, nonatomic) NSMutableArray *dataArray;
 @property (nonatomic,assign) BOOL isScroll;
 
@@ -58,7 +58,7 @@ static NSString *ide = @"UITableViewCell";
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    BPLog(@"contentOffset = %.2f",scrollView.contentOffset.y);
+//    BPLog(@"contentOffset = %.2f",scrollView.contentOffset.y);
     if (self.isScroll) {
         if (scrollView.contentOffset.y<=0) {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"scrollViewDidScroll2" object:nil];//到顶通知父视图改变状态
@@ -74,7 +74,7 @@ static NSString *ide = @"UITableViewCell";
 #pragma mark - TableView 属性相关
 - (UITableView *)tableView {
     if (!_tableView) {
-        BPNestBaseTableView *tableView= [[BPNestBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        BPNestLinkageBaseTableView *tableView= [[BPNestLinkageBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView = tableView;
         _tableView.delegate = (id)self;
         _tableView.dataSource = (id)self;

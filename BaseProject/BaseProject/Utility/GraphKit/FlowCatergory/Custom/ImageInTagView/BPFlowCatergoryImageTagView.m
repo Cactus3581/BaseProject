@@ -1,21 +1,19 @@
 //
-//  BPFlowCatergoryView.m
+//  BPFlowCatergoryImageTagView.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 15/12/17.
-//  Copyright © 2015年 cactus. All rights reserved.
+//  Created by xiaruzhen on 2018/6/15.
+//  Copyright © 2018年 cactus. All rights reserved.
 //
 
-#import "BPFlowCatergoryView.h"
+#import "BPFlowCatergoryImageTagView.h"
 #import "BPFlowCollectionView.h"
 #import "BPFlowCatergoryViewLayout.h"
 #import "BPFlowCatergoryViewCellModel.h"
-#import "BPFlowCatergoryViewCell.h"
-#import "NSString+BPAdd.h"
-#import "UIView+BPAdd.h"
 #import "BPFlowCatergoryViewProperty.h"
+#import "BPFlowCatergoryImageTagCell.h"
 
-@interface BPFlowCatergoryView ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface BPFlowCatergoryImageTagView ()<UICollectionViewDataSource, UICollectionViewDelegate>
 @property (nonatomic, weak) BPFlowCollectionView *mainView;
 @property (nonatomic, weak) UIView *bottomLine;
 @property (nonatomic, weak) CAShapeLayer *backEllipse;
@@ -27,7 +25,7 @@
 @property (nonatomic, weak) BPFlowCatergoryViewCellModel *toModel;
 @end
 
-@implementation BPFlowCatergoryView
+@implementation BPFlowCatergoryImageTagView
 
 - (void)dealloc{
     [_scrollView removeObserver:self forKeyPath:@"contentOffset"];
@@ -45,8 +43,7 @@
     return self;
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
+- (void)awakeFromNib{
     [self bp_initailizeProperty];
     [self bp_initializeUI];
 }
@@ -54,10 +51,10 @@
 - (void)bp_initailizeProperty{
     _scrollWithAnimaitonWhenClicked = YES;
     _clickedAnimationDuration = 0.3;
-    _bottomLineColor = kRedColor;
+    _bottomLineColor = [UIColor redColor];
     _bottomLineHeight = 2.0f;
     _bottomLineSpacingFromTitleBottom = 10.0f;
-    _backEllipseColor = kYellowColor;
+    _backEllipseColor = [UIColor yellowColor];
     _backEllipseSize = CGSizeZero;
 }
 
@@ -95,7 +92,7 @@
     mainView.backgroundColor = self.backgroundColor;
     mainView.showsHorizontalScrollIndicator = NO;
     mainView.scrollsToTop = NO;
-    [mainView registerClass:[BPFlowCatergoryViewCell class] forCellWithReuseIdentifier:@"BPFlowCatergoryViewCell"];
+    [mainView registerClass:[BPFlowCatergoryImageTagCell class] forCellWithReuseIdentifier:@"BPFlowCatergoryImageTagCell"];
     [self addSubview:mainView];
     CAShapeLayer * backEllipse = [CAShapeLayer new];
     _backEllipse = backEllipse;
@@ -243,6 +240,10 @@
     }else {
         _bottomLine.frame = CGRectMake(x, y, width, height);
     }
+    if (self.bottomLineCornerRadius) {
+        _bottomLine.layer.cornerRadius = _bottomLineHeight/2.0;
+        _bottomLine.layer.masksToBounds = YES;
+    }
 }
 
 /**插值backEllipse*/
@@ -262,7 +263,7 @@
     for (BPFlowCatergoryViewCellModel *model in _data) {
         model.ratio = ratio;
     }
-    for (BPFlowCatergoryViewCell *cell in _mainView.visibleCells) {
+    for (BPFlowCatergoryImageTagCell *cell in _mainView.visibleCells) {
         [cell bp_updateCell];
     }
 }
@@ -336,7 +337,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    BPFlowCatergoryViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BPFlowCatergoryViewCell" forIndexPath:indexPath];
+    BPFlowCatergoryImageTagCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BPFlowCatergoryImageTagCell" forIndexPath:indexPath];
     cell.property = _property;
     cell.data = _data[indexPath.row];
     return cell;
@@ -386,7 +387,6 @@
 }
 
 #pragma mark - KVO
-
 /**监听ScrollView的ContentOffset，一旦滚动就进行插值刷新*/
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
     [self bp_updateWhenScrollViewDidScroll];

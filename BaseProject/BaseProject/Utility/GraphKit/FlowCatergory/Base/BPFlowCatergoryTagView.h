@@ -1,27 +1,27 @@
 //
-//  BPFlowCatergoryView.h
+//  BPFlowCatergoryTagView.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 16/02/24.
 //  Copyright © 2016年 cactus. All rights reserved.
 //
 /**
- 一、是什么：BPFlowCatergoryView是一个轻量级的顶部分类视图控件，只需要通过简单的设置，你就可以快速集成该控件， 控件目前暂时有底部横条移动，椭圆背景移动，文字缩放，文字颜色变化，和文字颜色渐变五种效果，五种效果可以叠加使用也可以单一使用，具体效果请查看demo,
+ 一、是什么：BPFlowCatergoryTagView是一个轻量级的顶部分类视图控件，只需要通过简单的设置，你就可以快速集成该控件， 控件目前暂时有底部横条移动，椭圆背景移动，文字缩放，文字颜色变化，和文字颜色渐变五种效果，五种效果可以叠加使用也可以单一使用，具体效果请查看demo,
  */
 
 /**
  二、如何使用：
- 1、导入`BPFlowCatergoryView.h`头文件
+ 1、导入`BPFlowCatergoryTagView.h`头文件
  
  2、如果是当前控制器是被导航控制器管理，也就是说上方有导航栏，必须对当前控制器做如下设置：`self.automaticallyAdjustsScrollViewInsets = NO;`否则控件显示会有问题
  
- 3、初始化该控件，代码和stroyboard都可以，stroyboard的话，直接拖入一个View并修改Class为`BPFlowCatergoryView`即可;
+ 3、初始化该控件，代码和stroyboard都可以，stroyboard的话，直接拖入一个View并修改Class为`BPFlowCatergoryTagView`即可;
  
  4、设置数据源titles属性， 如果需要设置网络数据可以稍后刷新设置
  
  5、设置与该控件关联的ScrollView（必须）
  
- 6、配置相关的属性即可使用，可自定义的属性比较多，请自行去`BPFlowCatergoryView.h`中查看，更详请见地址中的demo
+ 6、配置相关的属性即可使用，可自定义的属性比较多，请自行去`BPFlowCatergoryTagView.h`中查看，更详请见地址中的demo
  */
 
 /**
@@ -33,9 +33,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class BPFlowCatergoryView;
+@class BPFlowCatergoryTagView;
 
-@protocol BPFlowCatergoryViewDelegate <NSObject>
+@protocol BPFlowCatergoryTagViewDelegate <NSObject>
 
 @optional
 /**
@@ -44,13 +44,13 @@
  *  @param catergoryView self
  *  @param indexPath     item的indexPath
  */
-- (void)catergoryView:(BPFlowCatergoryView *)catergoryView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+- (void)catergoryView:(BPFlowCatergoryTagView *)catergoryView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
 
 
-@interface BPFlowCatergoryView : UIView
+@interface BPFlowCatergoryTagView : UIView
 
 #pragma mark - basic
 
@@ -67,7 +67,7 @@
 @property (nonatomic, assign) BOOL scrollWithAnimaitonWhenClicked;
 
 /**代理，可监听item按钮点击*/
-@property (nonatomic, assign) id<BPFlowCatergoryViewDelegate> delegate;
+@property (nonatomic, assign) id<BPFlowCatergoryTagViewDelegate> delegate;
 
 /**设置初始化默认选中的index，默认0*/
 @property (nonatomic, assign) NSUInteger defaultIndex;

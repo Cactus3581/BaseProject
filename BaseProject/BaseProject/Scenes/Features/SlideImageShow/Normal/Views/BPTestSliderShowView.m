@@ -6,18 +6,11 @@
 //  Copyright © 2018年 cactus. All rights reserved.
 //
 
-//
-//  BPTestSliderShowView.m
-//  BaseProject
-//
-//  Created by xiaruzhen on 2018/1/10.
-//  Copyright © 2018年 xiaruzhen. All rights reserved.
-//
-
 #import "BPTestSliderShowView.h"
 #import "UIView+BPAdd.h"
 #import "NSTimer+BPUnRetain.h"
 #import "UIImageView+WebCache.h"
+#import "UIView+BPRoundedCorner.h"
 
 static CGFloat inset = 30; //假设内部左右两个都为30
 static CGFloat outset = 50; //假设外部左右两个都为0，决定此view的宽度
@@ -260,6 +253,13 @@ static CGFloat outset = 50; //假设外部左右两个都为0，决定此view的
 }
 
 #pragma mark -- Properties
+
+- (void)setRadius:(CGFloat)radius cornerColor:(UIColor *)color {
+    [_leftImageView bp_roundedCornerWithRadius:radius cornerColor:color];
+    [_centerImageView bp_roundedCornerWithRadius:radius cornerColor:color];
+    [_rightImageView bp_roundedCornerWithRadius:radius cornerColor:color];
+}
+
 - (void)setAutoScroll:(BOOL)autoScroll{
     _autoScroll = autoScroll;
     if (_autoScroll) {
@@ -322,7 +322,7 @@ static CGFloat outset = 50; //假设外部左右两个都为0，决定此view的
 - (UIImageView *)leftImageView {
     if (!_leftImageView) {
         _leftImageView = [[UIImageView alloc] init];
-        _leftImageView.contentMode = UIViewContentModeScaleToFill;
+        _leftImageView.contentMode = UIViewContentModeScaleAspectFill;
         _leftImageView.clipsToBounds = YES;
     }
     return _leftImageView;
@@ -331,7 +331,7 @@ static CGFloat outset = 50; //假设外部左右两个都为0，决定此view的
 - (UIImageView *)centerImageView {
     if (!_centerImageView) {
         _centerImageView = [[UIImageView alloc] init];
-        _centerImageView.contentMode = UIViewContentModeScaleToFill;
+        _centerImageView.contentMode = UIViewContentModeScaleAspectFill;
         _centerImageView.clipsToBounds = YES;
         _centerImageView.userInteractionEnabled = YES;
         [_centerImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(centerTapGes)]];
@@ -342,7 +342,7 @@ static CGFloat outset = 50; //假设外部左右两个都为0，决定此view的
 - (UIImageView *)rightImageView {
     if (!_rightImageView) {
         _rightImageView = [[UIImageView alloc] init];
-        _rightImageView.contentMode = UIViewContentModeScaleToFill;
+        _rightImageView.contentMode = UIViewContentModeScaleAspectFill;
         _rightImageView.clipsToBounds = YES;
         
     }

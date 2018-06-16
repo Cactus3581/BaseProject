@@ -12,11 +12,11 @@
 @implementation BPNetRequestParameter
 
 - (NSString *)uuid {
-    NSString * currentDeviceUUIDStr = [SAMKeychain passwordForService:@"com.kingsoft.powerwordBeta"account:@"PowerWord7"];
+    NSString * currentDeviceUUIDStr = [SAMKeychain passwordForService:@"com.cactus.BaseProject"account:@"BaseProject"];
     if (currentDeviceUUIDStr == nil || [currentDeviceUUIDStr isEqualToString:@""]) {
         NSUUID *currentDeviceUUID  = [UIDevice currentDevice].identifierForVendor;
         currentDeviceUUIDStr = currentDeviceUUID.UUIDString;
-        [SAMKeychain setPassword: currentDeviceUUIDStr forService:@"com.kingsoft.powerwordBeta"account:@"PowerWord7"];
+        [SAMKeychain setPassword: currentDeviceUUIDStr forService:@"com.cactus.BaseProject"account:@"BaseProject"];
     }
     return currentDeviceUUIDStr;
 }

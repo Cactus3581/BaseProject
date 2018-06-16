@@ -49,6 +49,9 @@
 /** 是否自动滚动,默认Yes */
 @property (nonatomic,assign) BOOL autoScroll;
 
+/** 圆角 */
+- (void)setRadius:(CGFloat)radius cornerColor:(UIColor *)color;
+
 @property (nonatomic,weak) id<BPInsideSliderShowViewDelegate> delegate;
 
 @end

@@ -69,8 +69,8 @@
         _insideSliderShowView = insideSliderShowView;
         [self.view addSubview:_insideSliderShowView];
         [_insideSliderShowView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo(self.view);
-            make.trailing.equalTo(self.view);
+            make.leading.equalTo(self.view).offset(0);
+            make.trailing.equalTo(self.view).offset(0);
             make.top.equalTo(self.sliderShowView.mas_bottom).offset(10);
             make.height.mas_equalTo(150);
         }];
