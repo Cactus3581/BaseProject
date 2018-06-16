@@ -26,7 +26,7 @@
 {
     return NSStringFromClass([self superclass]);
 }
--(NSDictionary *)_propertyDictionary
+- (NSDictionary *)_propertyDictionary
 {
     //创建可变字典
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
@@ -41,7 +41,7 @@
     free(props);
     return dict;
 }
-- (NSArray*)_propertyKeys
+- (NSArray *)_propertyKeys
 {
     return [[self class] _propertyKeys];
 }
@@ -134,7 +134,7 @@
     
     return array;
 }
--(NSArray*)_methodList{
+- (NSArray *)_methodList{
     u_int               count;
     NSMutableArray *methodList = [NSMutableArray array];
     Method *methods= class_copyMethodList([self class], &count);
@@ -147,7 +147,7 @@
     free(methods);
     return methodList;
 }
--(NSArray*)_methodListInfo{
+- (NSArray *)_methodListInfo{
     u_int               count;
     NSMutableArray *methodList = [NSMutableArray array];
     Method *methods= class_copyMethodList([self class], &count);
@@ -188,7 +188,7 @@
     free(methods);
     return methodList;
 }
-+(NSArray*)_methodList{
++ (NSArray *)_methodList{
     u_int               count;
     NSMutableArray *methodList = [NSMutableArray array];
     Method * methods= class_copyMethodList([self class], &count);
@@ -225,7 +225,7 @@
  *
  *  @return 协议列表信息
  */
--(NSDictionary *)_protocolList{
+- (NSDictionary *)_protocolList{
     return [[self class]_protocolList];
 }
 + (NSDictionary *)_protocolList
@@ -281,12 +281,12 @@
     return result.count ? [result copy] : nil;
 }
 
-- (BOOL)_hasPropertyForKey:(NSString*)key
+- (BOOL)_hasPropertyForKey:(NSString *)key
 {
     objc_property_t property = class_getProperty([self class], [key UTF8String]);
     return (BOOL)property;
 }
-- (BOOL)_hasIvarForKey:(NSString*)key
+- (BOOL)_hasIvarForKey:(NSString *)key
 {
     Ivar ivar = class_getInstanceVariable([self class], [key UTF8String]);
     return (BOOL)ivar;

@@ -9,7 +9,7 @@
 #import "UILabel+BPAutoSize.h"
 
 @implementation UILabel (BPAutoSize)
--(UILabel *)bp_resizeLabelHorizontal{
+- (UILabel *)bp_resizeLabelHorizontal{
     return [self bp_resizeLabelHorizontal:0];
 }
 

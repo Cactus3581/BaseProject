@@ -16,7 +16,7 @@
  *  @param cell      cell
  *  @param indexPath indexPath
  */
--(void)bp_applyiOS7SettingsStyleGrouping:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)bp_applyiOS7SettingsStyleGrouping:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([cell respondsToSelector:@selector(tintColor)]) {
         CGFloat cornerRadius = 5.f;
         cell.backgroundColor = UIColor.clearColor;

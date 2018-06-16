@@ -10,7 +10,7 @@
 
 @implementation UIImageView (BPAddition)
 
-+ (id)bp_imageViewWithImageNamed:(NSString*)imageName
++ (id)bp_imageViewWithImageNamed:(NSString *)imageName
 {
     return [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
 }
@@ -18,14 +18,14 @@
 {
     return [[UIImageView alloc] initWithFrame:frame];
 }
-+ (id)bp_imageViewWithStretchableImage:(NSString*)imageName Frame:(CGRect)frame
++ (id)bp_imageViewWithStretchableImage:(NSString *)imageName Frame:(CGRect)frame
 {
     UIImage *image =[UIImage imageNamed:imageName];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
     imageView.image = [image stretchableImageWithLeftCapWidth:image.size.width/2 topCapHeight:image.size.height/2];
     return imageView;
 }
-- (void)bp_setImageWithStretchableImage:(NSString*)imageName
+- (void)bp_setImageWithStretchableImage:(NSString *)imageName
 {
     UIImage *image =[UIImage imageNamed:imageName];
     self.image = [image stretchableImageWithLeftCapWidth:image.size.width/2 topCapHeight:image.size.height/2];

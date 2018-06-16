@@ -11,8 +11,8 @@
 
 @interface UIView (BPNib)
 + (UINib *)bp_loadNib;
-+ (UINib *)bp_loadNibNamed:(NSString*)nibName;
-+ (UINib *)bp_loadNibNamed:(NSString*)nibName bundle:(NSBundle *)bundle;
++ (UINib *)bp_loadNibNamed:(NSString *)nibName;
++ (UINib *)bp_loadNibNamed:(NSString *)nibName bundle:(NSBundle *)bundle;
 
 + (instancetype)bp_loadInstanceFromNib;
 + (instancetype)bp_loadInstanceFromNibWithName:(NSString *)nibName;

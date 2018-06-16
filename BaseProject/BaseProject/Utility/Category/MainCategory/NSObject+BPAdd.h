@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param keyPath 监听路径
  *  @param block   KVO回调block，obj为监听对象，oldVal为旧值，newVal为新值
  */
-- (void)bp_addObserverBlockForKeyPath:(NSString*)keyPath block:(void (^)(id obj, id oldVal, id newVal))block;
+- (void)bp_addObserverBlockForKeyPath:(NSString *)keyPath block:(void (^)(id obj, id oldVal, id newVal))block;
 
 /**
  *  提前移除指定KeyPath下的BlockKVO(一般无需使用，如果需要提前注销KVO才需要)

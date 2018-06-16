@@ -9,10 +9,10 @@
 #import "NSBundle+BPAppIcon.h"
 
 @implementation NSBundle (BPAppIcon)
-- (NSString*)_appIconPath {
-    NSString* iconFilename = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIconFile"] ;
-    NSString* iconBasename = [iconFilename stringByDeletingPathExtension] ;
-    NSString* iconExtension = [iconFilename pathExtension] ;
+- (NSString *)_appIconPath {
+    NSString * iconFilename = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIconFile"] ;
+    NSString * iconBasename = [iconFilename stringByDeletingPathExtension] ;
+    NSString * iconExtension = [iconFilename pathExtension] ;
     return [[NSBundle mainBundle] pathForResource:iconBasename
                                            ofType:iconExtension] ;
 }

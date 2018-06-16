@@ -14,6 +14,6 @@
  *
  *  @return 视图层级字符串
  */
--(NSString*)bp_recursiveDescription;
+- (NSString *)bp_recursiveDescription;
 
 @end

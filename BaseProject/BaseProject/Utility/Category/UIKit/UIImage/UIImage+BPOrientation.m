@@ -163,7 +163,7 @@
  *
  *  @return 弧度
  */
-+(CGFloat)bp_degreesToRadians:(CGFloat)degrees
++ (CGFloat)bp_degreesToRadians:(CGFloat)degrees
 {
     return degrees * M_PI / 180;
 }
@@ -174,7 +174,7 @@
  *
  *  @return 角度
  */
-+(CGFloat)bp_radiansToDegrees:(CGFloat)radians
++ (CGFloat)bp_radiansToDegrees:(CGFloat)radians
 {
     return radians * 180/M_PI;
 }

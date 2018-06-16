@@ -22,7 +22,7 @@ static const void *UIControlBPActionBlockArray = &UIControlBPActionBlockArray;
 
 
 @implementation UIControl (BPActionBlocks)
--(void)bp_handleControlEvents:(UIControlEvents)controlEvents withBlock:(UIControlBPActionBlock)actionBlock {
+- (void)bp_handleControlEvents:(UIControlEvents)controlEvents withBlock:(UIControlBPActionBlock)actionBlock {
     NSMutableArray *actionBlocksArray = [self bp_actionBlocksArray];
     
     UIControlBPActionBlockWrapper *blockActionWrapper = [[UIControlBPActionBlockWrapper alloc] init];

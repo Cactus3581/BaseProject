@@ -9,12 +9,12 @@
 
 @implementation NSURLRequest (BPParamsFromDictionary)
 
-+(NSURLRequest *)_requestGETWithURL:(NSURL *)url parameters:(NSDictionary *)params {
++ (NSURLRequest *)_requestGETWithURL:(NSURL *)url parameters:(NSDictionary *)params {
     //This code is ARC only.
     return [[NSURLRequest alloc] initWithURL:url parameters:params];
 }
 
--(id)initWithURL:(NSURL *)URL parameters:(NSDictionary *)params {
+- (id)initWithURL:(NSURL *)URL parameters:(NSDictionary *)params {
     if (params) {
         NSArray *queryStringComponents = [[self class] _queryStringComponentsFromKey:nil value:params];
         NSString *parameterString = [queryStringComponents componentsJoinedByString:@"&"];
@@ -31,7 +31,7 @@
     return self;
 }
 
-+(NSString *)_URLfromParameters:(NSDictionary *)params{
++ (NSString *)_URLfromParameters:(NSDictionary *)params{
     if (params) {
         NSArray *queryStringComponents = [[self class] _queryStringComponentsFromKey:nil value:params];
         NSString *parameterString = [queryStringComponents componentsJoinedByString:@"&"];
@@ -40,7 +40,7 @@
     return @"";
 }
 //These next three methods recursively break the dictionary down into its components.  Largely based on AFHTTPClient, but somewhat more readable and understandable (by me, anyway).
-+(NSArray *)_queryStringComponentsFromKey:(NSString *)key value:(id)value {
++ (NSArray *)_queryStringComponentsFromKey:(NSString *)key value:(id)value {
     NSMutableArray *queryStringComponents = [NSMutableArray arrayWithCapacity:2];
     if ([value isKindOfClass:[NSDictionary class]]) {
         [queryStringComponents addObjectsFromArray:[self _queryStringComponentsFromKey:key dictionaryValue:value]];
@@ -62,7 +62,7 @@
     return queryStringComponents;
 }
 
-+(NSArray *)_queryStringComponentsFromKey:(NSString *)key dictionaryValue:(NSDictionary *)dict{
++ (NSArray *)_queryStringComponentsFromKey:(NSString *)key dictionaryValue:(NSDictionary *)dict{
     NSMutableArray *queryStringComponents = [NSMutableArray arrayWithCapacity:2];
     [dict enumerateKeysAndObjectsUsingBlock:^(id nestedKey, id nestedValue, BOOL *stop) {
         NSArray *components = nil;
@@ -78,7 +78,7 @@
     return queryStringComponents;
 }
 
-+(NSArray *)_queryStringComponentsFromKey:(NSString *)key arrayValue:(NSArray *)array{
++ (NSArray *)_queryStringComponentsFromKey:(NSString *)key arrayValue:(NSArray *)array{
     NSMutableArray *queryStringComponents = [NSMutableArray arrayWithCapacity:2];
     [array enumerateObjectsUsingBlock:^(id nestedValue, NSUInteger index, BOOL *stop) {
         [queryStringComponents addObjectsFromArray:[self _queryStringComponentsFromKey:[NSString stringWithFormat:@"%@[]", key] value:nestedValue]];

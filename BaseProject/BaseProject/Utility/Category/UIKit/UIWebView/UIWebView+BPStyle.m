@@ -61,7 +61,7 @@
 /**
  *  @brief  网页透明
  */
--(void)bp_makeTransparent
+- (void)bp_makeTransparent
 {
     self.backgroundColor = kClearColor;
     self.opaque = NO;
@@ -69,7 +69,7 @@
 /**
  *  @brief  网页透明移除阴影
  */
--(void)bp_makeTransparentAndRemoveShadow
+- (void)bp_makeTransparentAndRemoveShadow
 {
     [self bp_makeTransparent];
     [self bp_shadowViewHidden:YES];

@@ -38,13 +38,13 @@
 // UIControlEventAllEvents           = 0xFFFFFFFF
 
 #define BP_UICONTROL_EVENT(methodName, eventName)                                \
--(void)methodName : (void (^)(void))eventBlock {                              \
+- (void)methodName : (void (^)(void))eventBlock {                              \
     objc_setAssociatedObject(self, @selector(methodName:), eventBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);\
     [self addTarget:self                                                        \
     action:@selector(methodName##Action:)                                       \
     forControlEvents:UIControlEvent##eventName];                                \
 }                                                                               \
--(void)methodName##Action:(id)sender {                                        \
+- (void)methodName##Action:(id)sender {                                        \
     void (^block)(void) = objc_getAssociatedObject(self, @selector(methodName:));  \
     if (block) {                                                                \
         block();                                                                \

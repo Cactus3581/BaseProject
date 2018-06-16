@@ -42,7 +42,7 @@ static char kAutomaticWritingEdgeInsetsKey;
     });
 }
 
--(void)bp_drawAutomaticWritingTextInRect:(CGRect)rect
+- (void)bp_drawAutomaticWritingTextInRect:(CGRect)rect
 {
     [self bp_drawAutomaticWritingTextInRect:UIEdgeInsetsInsetRect(rect, self.bp_edgeInsets)];
 }

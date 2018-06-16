@@ -56,7 +56,7 @@
  *
  *  @return 弧度
  */
-+(CGFloat)bp_degreesToRadians:(CGFloat)degrees;
++ (CGFloat)bp_degreesToRadians:(CGFloat)degrees;
 /**
  *  @brief  弧度转角度
  *
@@ -64,6 +64,6 @@
  *
  *  @return 角度
  */
-+(CGFloat)bp_radiansToDegrees:(CGFloat)radians;
++ (CGFloat)bp_radiansToDegrees:(CGFloat)radians;
 
 @end

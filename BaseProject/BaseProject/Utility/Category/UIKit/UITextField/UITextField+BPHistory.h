@@ -21,7 +21,7 @@
  *
  *  @return the history of it's input
  */
-- (NSArray*)bp_loadHistroy;
+- (NSArray *)bp_loadHistroy;
 
 /**
  *  save current input text

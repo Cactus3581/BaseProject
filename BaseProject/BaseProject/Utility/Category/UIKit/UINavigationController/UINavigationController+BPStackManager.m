@@ -16,7 +16,7 @@
  *
  *  @return viewcontroler对象
  */
-- (id)bp_findViewController:(NSString*)className
+- (id)bp_findViewController:(NSString *)className
 {
     for (UIViewController *viewController in self.viewControllers) {
         if ([viewController isKindOfClass:NSClassFromString(className)]) {
@@ -59,7 +59,7 @@
  *
  *  @return pop之后的viewcontrolers
  */
-- (NSArray *)bp_popToViewControllerWithClassName:(NSString*)className animated:(BOOL)animated;
+- (NSArray *)bp_popToViewControllerWithClassName:(NSString *)className animated:(BOOL)animated;
 {
     return [self popToViewController:[self bp_findViewController:className] animated:YES];
 }

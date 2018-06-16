@@ -49,7 +49,7 @@ static CIDetector * _bp_faceDetector;
     CIDetector* detector = _bp_faceDetector;
 
     // create an array containing all the detected faces from the detector
-    NSArray* features = [detector featuresInImage:image];
+    NSArray * features = [detector featuresInImage:image];
     
     // we'll iterate through every detected face. CIFaceFeature provides us
     // with the width for the entire face, and the coordinates of each eye

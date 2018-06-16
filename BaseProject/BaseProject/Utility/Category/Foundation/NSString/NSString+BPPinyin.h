@@ -10,11 +10,11 @@
 
 @interface NSString (BPPinyin)
 
-- (NSString*)_pinyinWithPhoneticSymbol;
-- (NSString*)_pinyin;
-- (NSArray*)_pinyinArray;
-- (NSString*)_pinyinWithoutBlank;
-- (NSArray*)_pinyinInitialsArray;
-- (NSString*)_pinyinInitialsString;
+- (NSString *)_pinyinWithPhoneticSymbol;
+- (NSString *)_pinyin;
+- (NSArray *)_pinyinArray;
+- (NSString *)_pinyinWithoutBlank;
+- (NSArray *)_pinyinInitialsArray;
+- (NSString *)_pinyinInitialsString;
 
 @end

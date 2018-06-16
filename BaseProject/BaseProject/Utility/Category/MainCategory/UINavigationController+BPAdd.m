@@ -15,7 +15,7 @@ BPSYNTH_DUMMY_CLASS(UINavigationController_BPAdd)
 
 @implementation UINavigationController (BPAdd)
 
-+(void)load{
++ (void)load{
     [self bp_swizzleInstanceMethod:@selector(pushViewController:animated:) with:@selector(_bp_pushViewController:animated:)];
 }
 

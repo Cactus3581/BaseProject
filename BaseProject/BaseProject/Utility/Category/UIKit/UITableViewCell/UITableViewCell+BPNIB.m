@@ -14,7 +14,7 @@
  *
  *  @return nib
  */
-+(UINib*)bp_nib{
++ (UINib*)bp_nib{
    return  [UINib nibWithNibName:NSStringFromClass([self class]) bundle:nil];
 }
 @end

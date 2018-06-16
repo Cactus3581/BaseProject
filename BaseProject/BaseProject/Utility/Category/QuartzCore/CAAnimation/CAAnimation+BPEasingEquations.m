@@ -465,7 +465,7 @@ static EasingFunction easeInOutBounce = ^CGFloat(CGFloat t, CGFloat b, CGFloat c
     [layer addAnimation:animation forKey:nil];
 }
 
-+ (CAKeyframeAnimation*)_animationWithKeyPath:(NSString*)keyPath
++ (CAKeyframeAnimation*)_animationWithKeyPath:(NSString *)keyPath
                                     duration:(CGFloat)duration
                                         from:(CGFloat)startValue
                                           to:(CGFloat)endValue

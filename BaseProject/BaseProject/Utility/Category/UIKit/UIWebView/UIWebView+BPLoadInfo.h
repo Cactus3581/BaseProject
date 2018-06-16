@@ -22,5 +22,5 @@ typedef void(^bp_webViewLoadChangeBlock)(UIWebView *webView,float progress,CGSiz
 @property (nonatomic, readonly) BPReadyState bp_readyState;
 @property (copy, nonatomic)     bp_webViewLoadChangeBlock bp_webViewLoadChangeBlock;
 
--(void)setBp_webViewLoadChangeBlock:(bp_webViewLoadChangeBlock)bp_webViewLoadChangeBlock;
+- (void)setBp_webViewLoadChangeBlock:(bp_webViewLoadChangeBlock)bp_webViewLoadChangeBlock;
 @end

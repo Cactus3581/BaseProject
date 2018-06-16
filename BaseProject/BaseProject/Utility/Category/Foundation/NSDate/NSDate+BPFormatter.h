@@ -10,24 +10,24 @@
 
 @interface NSDate (BPFormatter)
 
-+(NSDateFormatter *)_formatter;
-+(NSDateFormatter *)_formatterWithoutTime;
-+(NSDateFormatter *)_formatterWithoutDate;
++ (NSDateFormatter *)_formatter;
++ (NSDateFormatter *)_formatterWithoutTime;
++ (NSDateFormatter *)_formatterWithoutDate;
 
--(NSString *)_formatWithUTCTimeZone;
--(NSString *)_formatWithLocalTimeZone;
--(NSString *)_formatWithTimeZoneOffset:(NSTimeInterval)offset;
--(NSString *)_formatWithTimeZone:(NSTimeZone *)timezone;
+- (NSString *)_formatWithUTCTimeZone;
+- (NSString *)_formatWithLocalTimeZone;
+- (NSString *)_formatWithTimeZoneOffset:(NSTimeInterval)offset;
+- (NSString *)_formatWithTimeZone:(NSTimeZone *)timezone;
 
--(NSString *)_formatWithUTCTimeZoneWithoutTime;
--(NSString *)_formatWithLocalTimeZoneWithoutTime;
--(NSString *)_formatWithTimeZoneOffsetWithoutTime:(NSTimeInterval)offset;
--(NSString *)_formatWithTimeZoneWithoutTime:(NSTimeZone *)timezone;
+- (NSString *)_formatWithUTCTimeZoneWithoutTime;
+- (NSString *)_formatWithLocalTimeZoneWithoutTime;
+- (NSString *)_formatWithTimeZoneOffsetWithoutTime:(NSTimeInterval)offset;
+- (NSString *)_formatWithTimeZoneWithoutTime:(NSTimeZone *)timezone;
 
--(NSString *)_formatWithUTCWithoutDate;
--(NSString *)_formatWithLocalTimeWithoutDate;
--(NSString *)_formatWithTimeZoneOffsetWithoutDate:(NSTimeInterval)offset;
--(NSString *)_formatTimeWithTimeZone:(NSTimeZone *)timezone;
+- (NSString *)_formatWithUTCWithoutDate;
+- (NSString *)_formatWithLocalTimeWithoutDate;
+- (NSString *)_formatWithTimeZoneOffsetWithoutDate:(NSTimeInterval)offset;
+- (NSString *)_formatTimeWithTimeZone:(NSTimeZone *)timezone;
 
 
 + (NSString *)_currentDateStringWithFormat:(NSString *)format;

@@ -19,21 +19,21 @@ static uint __bp_loadedWebItems;
 
 #pragma mark - UIWebView+Blocks
 
-+(UIWebView *)bp_loadRequest:(NSURLRequest *)request
++ (UIWebView *)bp_loadRequest:(NSURLRequest *)request
                    loaded:(void (^)(UIWebView *webView))loadedBlock
                    failed:(void (^)(UIWebView *webView, NSError *error))failureBlock{
 
     return [self bp_loadRequest:request loaded:loadedBlock failed:failureBlock loadStarted:nil shouldLoad:nil];
 }
 
-+(UIWebView *)bp_loadHTMLString:(NSString *)htmlString
++ (UIWebView *)bp_loadHTMLString:(NSString *)htmlString
                       loaded:(void (^)(UIWebView *webView))loadedBlock
                       failed:(void (^)(UIWebView *webView, NSError *error))failureBlock{
     
     return [self bp_loadHTMLString:htmlString loaded:loadedBlock failed:failureBlock loadStarted:nil shouldLoad:nil];
 }
 
-+(UIWebView *)bp_loadHTMLString:(NSString *)htmlString
++ (UIWebView *)bp_loadHTMLString:(NSString *)htmlString
                       loaded:(void (^)(UIWebView *))loadedBlock
                       failed:(void (^)(UIWebView *, NSError *))failureBlock
                  loadStarted:(void (^)(UIWebView *webView))loadStartedBlock
@@ -51,7 +51,7 @@ static uint __bp_loadedWebItems;
     return webView;
 }
 
-+(UIWebView *)bp_loadRequest:(NSURLRequest *)request
++ (UIWebView *)bp_loadRequest:(NSURLRequest *)request
                    loaded:(void (^)(UIWebView *webView))loadedBlock
                    failed:(void (^)(UIWebView *webView, NSError *error))failureBlock
               loadStarted:(void (^)(UIWebView *webView))loadStartedBlock
@@ -72,7 +72,7 @@ static uint __bp_loadedWebItems;
 }
 
 #pragma mark - Private Static delegate
-+(void)webViewDidFinishLoad:(UIWebView *)webView{
++ (void)webViewDidFinishLoad:(UIWebView *)webView{
     __bp_loadedWebItems--;
     
     if(__bp_loadedBlock && (!TRUE_END_REPORT || __bp_loadedWebItems == 0)){
@@ -81,21 +81,21 @@ static uint __bp_loadedWebItems;
     }
 }
 
-+(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{    
++ (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{    
     __bp_loadedWebItems--;
     
     if(__bp_failureBlock)
         __bp_failureBlock(webView, error);
 }
 
-+(void)webViewDidStartLoad:(UIWebView *)webView{    
++ (void)webViewDidStartLoad:(UIWebView *)webView{    
     __bp_loadedWebItems++;
     
     if(__bp_loadStartedBlock && (!TRUE_END_REPORT || __bp_loadedWebItems > 0))
         __bp_loadStartedBlock(webView);
 }
 
-+(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
++ (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     if(__bp_shouldLoadBlock)
         return __bp_shouldLoadBlock(webView, request, navigationType);
     

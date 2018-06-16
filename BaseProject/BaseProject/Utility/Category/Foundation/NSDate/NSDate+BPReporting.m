@@ -15,7 +15,7 @@
 @end
 
 @implementation NSDate (BPReporting)
-+(NSCalendar*)_gregorianCalendar_factory{
++ (NSCalendar*)_gregorianCalendar_factory{
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
     NSCalendar *gregorianCalendar;
     if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f){
@@ -32,7 +32,7 @@
     
     return gregorianCalendar;
 }
-+(NSDateComponents*)_YMDComponentsFactor:(NSDate*)date withGregorianCalendar:(NSCalendar*)gregorianCalendar{
++ (NSDateComponents*)_YMDComponentsFactor:(NSDate*)date withGregorianCalendar:(NSCalendar*)gregorianCalendar{
     
     //    NSCalendar *gregorianCalendar = [[self class] _gregorianCalendar_factory];
     

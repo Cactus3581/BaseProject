@@ -10,7 +10,7 @@ typedef void (^UIViewControllerBPSegueBlock) (id sender, id destinationVC, UISto
 
 @interface UIViewController (BPBlockSegue)
 
--(void)bp_configureSegue:(NSString *)identifier withBlock:(UIViewControllerBPSegueBlock)block;
--(void)bp_performSegueWithIdentifier:(NSString *)identifier sender:(id)sender withBlock:(UIViewControllerBPSegueBlock)block;
+- (void)bp_configureSegue:(NSString *)identifier withBlock:(UIViewControllerBPSegueBlock)block;
+- (void)bp_performSegueWithIdentifier:(NSString *)identifier sender:(id)sender withBlock:(UIViewControllerBPSegueBlock)block;
 
 @end

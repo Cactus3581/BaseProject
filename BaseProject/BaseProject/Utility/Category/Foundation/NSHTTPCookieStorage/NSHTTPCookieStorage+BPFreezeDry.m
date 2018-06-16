@@ -28,11 +28,11 @@
  *  @brief  /Persists UIWebView cookies to disk
  */
 - (void)_saveCookie {
-    NSMutableArray* cookieData = [NSMutableArray new];
+    NSMutableArray *cookieData = [NSMutableArray new];
     
     NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     for (NSHTTPCookie* cookie in [cookieStorage cookies]) {
-        NSMutableDictionary* cookieDictionary = [NSMutableDictionary new];
+        NSMutableDictionary *cookieDictionary = [NSMutableDictionary new];
         cookieDictionary[NSHTTPCookieName] = cookie.name;
         cookieDictionary[NSHTTPCookieValue] = cookie.value;
         cookieDictionary[NSHTTPCookieDomain] = cookie.domain;
@@ -50,15 +50,15 @@
  *  @brief  /load UIWebView cookies from disk
  */
 - (void)_loadCookie {
-    NSMutableArray* cookies = [NSMutableArray arrayWithContentsOfFile:[self storagePath]];
+    NSMutableArray *cookies = [NSMutableArray arrayWithContentsOfFile:[self storagePath]];
     NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     
-    for (NSDictionary* cookieData in cookies) {
+    for (NSDictionary * cookieData in cookies) {
         [cookieStorage setCookie:[NSHTTPCookie cookieWithProperties:cookieData]];
     }
 }
 
-- (NSString*)storagePath {
+- (NSString *)storagePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     return [NSString stringWithFormat:@"%@/Cookies.data", paths[0]];
 }

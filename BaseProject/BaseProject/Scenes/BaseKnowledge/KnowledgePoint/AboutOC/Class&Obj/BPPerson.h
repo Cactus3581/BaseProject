@@ -45,7 +45,7 @@
 - (instancetype)init;
 
 //便利构造器
-+ (BPPerson *)personWithName:(NSString*)name weight:(CGFloat)weight;
++ (BPPerson *)personWithName:(NSString *)name weight:(CGFloat)weight;
 
 //打招呼
 - (void) sayHi;

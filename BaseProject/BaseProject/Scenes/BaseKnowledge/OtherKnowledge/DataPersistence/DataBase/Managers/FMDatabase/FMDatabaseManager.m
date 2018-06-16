@@ -97,9 +97,9 @@ static FMDatabase *sqlite = nil;
 执行更新的SQL语句，字符串里面的"?"，依次用后面的参数替代，必须是对象，不能是int等基本类型
 - (BOOL)executeUpdate:(NSString *)sql,... ;
  执行更新的SQL语句，可以使用字符串的格式化进行构建SQL语句
-- (BOOL)executeUpdateWithFormat:(NSString*)format,... ;
+- (BOOL)executeUpdateWithFormat:(NSString *)format,... ;
  执行更新的SQL语句，字符串中有"?"，依次用arguments的元素替代
-- (BOOL)executeUpdate:(NSString*)sql withArgumentsInArray:(NSArray *)arguments;
+- (BOOL)executeUpdate:(NSString *)sql withArgumentsInArray:(NSArray *)arguments;
 */
 
 //插入
@@ -226,9 +226,9 @@ static FMDatabase *sqlite = nil;
 /*
  
  // 全部查询
- - (FMResultSet *)executeQuery:(NSString*)sql, ...
+ - (FMResultSet *)executeQuery:(NSString *)sql, ...
  // 条件查询
- - (FMResultSet *)executeQueryWithFormat:(NSString*)format, ...
+ - (FMResultSet *)executeQueryWithFormat:(NSString *)format, ...
  - (FMResultSet *)executeQuery:(NSString *)sql withArgumentsInArray:(NSArray *)arguments
  
  */

@@ -24,7 +24,7 @@
  *  @param animations 动画块
  *  @param completion 动画结束回调
  */
-+(void)_animateWithDuration:(NSTimeInterval)duration
++ (void)_animateWithDuration:(NSTimeInterval)duration
                    animations:(nullable void (^)(void))animations
                    completion:(nullable void (^)(void))completion;
 

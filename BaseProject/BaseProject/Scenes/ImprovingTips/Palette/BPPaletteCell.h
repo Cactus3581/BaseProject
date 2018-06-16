@@ -11,6 +11,6 @@
 
 @interface BPPaletteCell : UICollectionViewCell
 
-- (void)configureData:(PaletteColorModel*)model andKey:(NSString*)modeKey;
+- (void)configureData:(PaletteColorModel*)model andKey:(NSString *)modeKey;
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation CAShapeLayer (BPUIBezierPath)
 
--(void)_updateWithBezierPath:(UIBezierPath *)path
+- (void)_updateWithBezierPath:(UIBezierPath *)path
 {
     self.path = [path CGPath];
     self.lineWidth = path.lineWidth;
@@ -35,7 +35,7 @@
     self.lineDashPhase = phase;
 }
 
--(UIBezierPath *)_bezierPath
+- (UIBezierPath *)_bezierPath
 {
     UIBezierPath * path = [UIBezierPath bezierPathWithCGPath:self.path];
     path.lineWidth = self.lineWidth;
@@ -59,7 +59,7 @@
 
 
 
-+(NSDictionary *)CGtoCALineCaps
++ (NSDictionary *)CGtoCALineCaps
 {
     return @{
              @(kCGLineCapSquare) :kCALineCapSquare,
@@ -68,7 +68,7 @@
              };
 }
 
-+(NSDictionary *)CGtoCALineJoins
++ (NSDictionary *)CGtoCALineJoins
 {
     return @{
              @(kCGLineJoinRound) : kCALineJoinRound,
@@ -77,7 +77,7 @@
              };
 }
 
-+(NSDictionary *)CAtoCGLineCaps
++ (NSDictionary *)CAtoCGLineCaps
 {
     return @{
              kCALineCapSquare : @(kCGLineCapSquare),
@@ -86,7 +86,7 @@
              };
 }
 
-+(NSDictionary *)CAtoCGLineJoins
++ (NSDictionary *)CAtoCGLineJoins
 {
     return @{
              kCALineJoinRound : @(kCGLineJoinRound),
@@ -95,22 +95,22 @@
              };
 }
 
-+(NSString *)lineCapFromCGLineCap:(CGLineCap)lineCap
++ (NSString *)lineCapFromCGLineCap:(CGLineCap)lineCap
 {
     return [self CGtoCALineCaps][@(lineCap)];
 }
 
-+(NSString *)lineJoinFromCGLineJoin:(CGLineJoin)lineJoin
++ (NSString *)lineJoinFromCGLineJoin:(CGLineJoin)lineJoin
 {
     return [self CGtoCALineJoins][@(lineJoin)];
 }
 
-+(CGLineCap)lineCapFromCALineCap:(NSString *)lineCap
++ (CGLineCap)lineCapFromCALineCap:(NSString *)lineCap
 {
     return [[self CAtoCGLineCaps][lineCap] intValue];
 }
 
-+(CGLineJoin)lineJoinFromCALineJoin:(NSString *)lineJoin
++ (CGLineJoin)lineJoinFromCALineJoin:(NSString *)lineJoin
 {
     return [[self CAtoCGLineJoins][lineJoin] intValue];
 }

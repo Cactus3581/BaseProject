@@ -14,7 +14,7 @@
 @interface NSURLConnectionDelegateWrapper : NSObject<NSURLConnectionDelegate,NSURLConnectionDataDelegate>
 
 + (NSURLConnectionDelegateWrapper*)wrapperWithHandler:(void (^)(NSURLResponse *, NSData *, NSError *))handler;
-+ (NSMutableArray*)wrappers;
++ (NSMutableArray *)wrappers;
 @property (nonatomic,strong) NSURLConnection* connection;
 
 @end
@@ -44,7 +44,7 @@
  *  Contains the wrappers that are currently in-use
  */
 + (NSMutableArray *)wrappers{
-    static NSMutableArray* _wrappers;
+    static NSMutableArray *_wrappers;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _wrappers = [NSMutableArray new];

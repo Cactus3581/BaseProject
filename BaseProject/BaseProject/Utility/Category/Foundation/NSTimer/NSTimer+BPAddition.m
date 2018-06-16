@@ -12,7 +12,7 @@
 /**
  *  @brief  暂停NSTimer
  */
--(void)_pauseTimer
+- (void)_pauseTimer
 {
     if (![self isValid]) {
         return ;
@@ -22,7 +22,7 @@
 /**
  *  @brief  开始NSTimer
  */
--(void)_resumeTimer
+- (void)_resumeTimer
 {
     if (![self isValid]) {
         return ;

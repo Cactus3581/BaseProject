@@ -9,7 +9,7 @@
 #import "UIView+BPConstraints.h"
 
 @implementation UIView (BPConstraints)
--(NSLayoutConstraint *)bp_constraintForAttribute:(NSLayoutAttribute)attribute {
+- (NSLayoutConstraint *)bp_constraintForAttribute:(NSLayoutAttribute)attribute {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"firstAttribute = %d && (firstItem = %@ || secondItem = %@)", attribute, self, self];
     NSArray *constraintArray = [self.superview constraints];
     

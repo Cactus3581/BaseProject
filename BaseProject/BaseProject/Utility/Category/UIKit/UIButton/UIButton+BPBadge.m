@@ -132,19 +132,19 @@ NSString const *bp_UIButton_badgeValueKey = @"bp_UIButton_badgeValueKey";
 }
 
 #pragma mark - getters/setters
--(UILabel*)bp_badge {
+- (UILabel*)bp_badge {
     return objc_getAssociatedObject(self, &bp_UIButton_badgeKey);
 }
--(void)setBp_badge:(UILabel *)badgeLabel
+- (void)setBp_badge:(UILabel *)badgeLabel
 {
     objc_setAssociatedObject(self, &bp_UIButton_badgeKey, badgeLabel, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 // Badge value to be display
--(NSString *)bp_badgeValue {
+- (NSString *)bp_badgeValue {
     return objc_getAssociatedObject(self, &bp_UIButton_badgeValueKey);
 }
--(void) setBp_badgeValue:(NSString *)badgeValue
+- (void) setBp_badgeValue:(NSString *)badgeValue
 {
     objc_setAssociatedObject(self, &bp_UIButton_badgeValueKey, badgeValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
@@ -167,10 +167,10 @@ NSString const *bp_UIButton_badgeValueKey = @"bp_UIButton_badgeValueKey";
 }
 
 // Badge background color
--(UIColor *)bp_badgeBGColor {
+- (UIColor *)bp_badgeBGColor {
     return objc_getAssociatedObject(self, &bp_UIButton_badgeBGColorKey);
 }
--(void)setBp_badgeBGColor:(UIColor *)badgeBGColor
+- (void)setBp_badgeBGColor:(UIColor *)badgeBGColor
 {
     objc_setAssociatedObject(self, &bp_UIButton_badgeBGColorKey, badgeBGColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.bp_badge) {
@@ -179,10 +179,10 @@ NSString const *bp_UIButton_badgeValueKey = @"bp_UIButton_badgeValueKey";
 }
 
 // Badge text color
--(UIColor *)bp_badgeTextColor {
+- (UIColor *)bp_badgeTextColor {
     return objc_getAssociatedObject(self, &bp_UIButton_badgeTextColorKey);
 }
--(void)setBp_badgeTextColor:(UIColor *)badgeTextColor
+- (void)setBp_badgeTextColor:(UIColor *)badgeTextColor
 {
     objc_setAssociatedObject(self, &bp_UIButton_badgeTextColorKey, badgeTextColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.bp_badge) {
@@ -191,10 +191,10 @@ NSString const *bp_UIButton_badgeValueKey = @"bp_UIButton_badgeValueKey";
 }
 
 // Badge font
--(UIFont *)bp_badgeFont {
+- (UIFont *)bp_badgeFont {
     return objc_getAssociatedObject(self, &bp_UIButton_badgeFontKey);
 }
--(void)setBp_badgeFont:(UIFont *)badgeFont
+- (void)setBp_badgeFont:(UIFont *)badgeFont
 {
     objc_setAssociatedObject(self, &bp_UIButton_badgeFontKey, badgeFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.bp_badge) {
@@ -203,11 +203,11 @@ NSString const *bp_UIButton_badgeValueKey = @"bp_UIButton_badgeValueKey";
 }
 
 // Padding value for the badge
--(CGFloat) bp_badgePadding {
+- (CGFloat) bp_badgePadding {
     NSNumber *number = objc_getAssociatedObject(self, &bp_UIButton_badgePaddingKey);
     return number.floatValue;
 }
--(void) setBp_badgePadding:(CGFloat)badgePadding
+- (void) setBp_badgePadding:(CGFloat)badgePadding
 {
     NSNumber *number = [NSNumber numberWithDouble:badgePadding];
     objc_setAssociatedObject(self, &bp_UIButton_badgePaddingKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -217,11 +217,11 @@ NSString const *bp_UIButton_badgeValueKey = @"bp_UIButton_badgeValueKey";
 }
 
 // Minimum size badge to small
--(CGFloat) bp_badgeMinSize {
+- (CGFloat) bp_badgeMinSize {
     NSNumber *number = objc_getAssociatedObject(self, &bp_UIButton_badgeMinSizeKey);
     return number.floatValue;
 }
--(void) setBp_badgeMinSize:(CGFloat)badgeMinSize
+- (void) setBp_badgeMinSize:(CGFloat)badgeMinSize
 {
     NSNumber *number = [NSNumber numberWithDouble:badgeMinSize];
     objc_setAssociatedObject(self, &bp_UIButton_badgeMinSizeKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -231,11 +231,11 @@ NSString const *bp_UIButton_badgeValueKey = @"bp_UIButton_badgeValueKey";
 }
 
 // Values for offseting the badge over the BarButtonItem you picked
--(CGFloat) bp_badgeOriginX {
+- (CGFloat) bp_badgeOriginX {
     NSNumber *number = objc_getAssociatedObject(self, &bp_UIButton_badgeOriginXKey);
     return number.floatValue;
 }
--(void) setBp_badgeOriginX:(CGFloat)badgeOriginX
+- (void) setBp_badgeOriginX:(CGFloat)badgeOriginX
 {
     NSNumber *number = [NSNumber numberWithDouble:badgeOriginX];
     objc_setAssociatedObject(self, &bp_UIButton_badgeOriginXKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -244,11 +244,11 @@ NSString const *bp_UIButton_badgeValueKey = @"bp_UIButton_badgeValueKey";
     }
 }
 
--(CGFloat) bp_badgeOriginY {
+- (CGFloat) bp_badgeOriginY {
     NSNumber *number = objc_getAssociatedObject(self, &bp_UIButton_badgeOriginYKey);
     return number.floatValue;
 }
--(void) setBp_badgeOriginY:(CGFloat)badgeOriginY
+- (void) setBp_badgeOriginY:(CGFloat)badgeOriginY
 {
     NSNumber *number = [NSNumber numberWithDouble:badgeOriginY];
     objc_setAssociatedObject(self, &bp_UIButton_badgeOriginYKey, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -258,7 +258,7 @@ NSString const *bp_UIButton_badgeValueKey = @"bp_UIButton_badgeValueKey";
 }
 
 // In case of numbers, remove the badge when reaching zero
--(BOOL) bp_shouldHideBadgeAtZero {
+- (BOOL) bp_shouldHideBadgeAtZero {
     NSNumber *number = objc_getAssociatedObject(self, &bp_UIButton_shouldHideBadgeAtZeroKey);
     return number.boolValue;
 }
@@ -269,7 +269,7 @@ NSString const *bp_UIButton_badgeValueKey = @"bp_UIButton_badgeValueKey";
 }
 
 // Badge has a bounce animation when value changes
--(BOOL) bp_shouldAnimateBadge {
+- (BOOL) bp_shouldAnimateBadge {
     NSNumber *number = objc_getAssociatedObject(self, &bp_UIButton_shouldAnimateBadgeKey);
     return number.boolValue;
 }

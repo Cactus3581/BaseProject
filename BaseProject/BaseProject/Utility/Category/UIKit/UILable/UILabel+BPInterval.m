@@ -12,7 +12,7 @@
 /**
  *  改变行间距
  */
-- (void)setText:(NSString*)text lineSpacing:(CGFloat)lineSpacing {
+- (void)setText:(NSString *)text lineSpacing:(CGFloat)lineSpacing {
     if (lineSpacing <= CGFLOAT_MIN || !BPValidateString(text).length) {
         self.text = kPlacedString;
         return;
@@ -36,7 +36,7 @@
 /**
  *  改变字间距
  */
-- (void)setText:(NSString*)text kernSpacing:(CGFloat)kernSpacing {
+- (void)setText:(NSString *)text kernSpacing:(CGFloat)kernSpacing {
     if (kernSpacing <= CGFLOAT_MIN || !BPValidateString(text).length) {
         self.text = kPlacedString;
         return;
@@ -56,7 +56,7 @@
 /**
  *  改变行间距和字间距
  */
-- (void)setText:(NSString*)text ineSpacing:(CGFloat)lineSpacing kernSpacing:(CGFloat)kernSpacing {
+- (void)setText:(NSString *)text ineSpacing:(CGFloat)lineSpacing kernSpacing:(CGFloat)kernSpacing {
     if (kernSpacing <= CGFLOAT_MIN ||lineSpacing <= CGFLOAT_MIN || !BPValidateString(text).length) {
         self.text = kPlacedString;
         return;

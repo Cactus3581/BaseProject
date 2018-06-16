@@ -48,7 +48,7 @@ int hist[32768];
 
 @implementation VBox
 
-- (instancetype)initWithLowerIndex:(NSInteger)lowerIndex upperIndex:(NSInteger)upperIndex colorArray:(NSMutableArray*)colorArray{
+- (instancetype)initWithLowerIndex:(NSInteger)lowerIndex upperIndex:(NSInteger)upperIndex colorArray:(NSMutableArray *)colorArray{
     self = [super init];
     if (self){
         
@@ -478,7 +478,7 @@ int hist[32768];
     }
 }
 
-- (NSArray*)generateAverageColors:(PriorityBoxArray*)array{
+- (NSArray *)generateAverageColors:(PriorityBoxArray*)array{
     NSMutableArray *swatchs = [[NSMutableArray alloc]init];
     NSMutableArray *vboxArray = [array getVBoxArray];
     for (VBox *vbox in vboxArray){

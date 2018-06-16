@@ -14,5 +14,5 @@
  *
  *  @return meta信息
  */
--(NSArray *)bp_getMetaData;
+- (NSArray *)bp_getMetaData;
 @end

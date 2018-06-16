@@ -9,7 +9,7 @@
 
 @implementation CALayer (BPBorderColor)
 
--(void)setBp_borderColor:(UIColor *)_borderColor{
+- (void)setBp_borderColor:(UIColor *)_borderColor{
     self.borderColor = _borderColor.CGColor;
 }
 

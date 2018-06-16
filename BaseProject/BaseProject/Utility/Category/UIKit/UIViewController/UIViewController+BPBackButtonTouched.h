@@ -17,6 +17,6 @@ typedef void (^BPBackButtonHandler)(UIViewController *vc);
  *
  *  @param backButtonHandler <#backButtonHandler description#>
  */
--(void)bp_backButtonTouched:(BPBackButtonHandler)backButtonHandler;
+- (void)bp_backButtonTouched:(BPBackButtonHandler)backButtonHandler;
 
 @end

@@ -46,7 +46,7 @@
  *     hsl[1] is Saturation [0...1]
  *     hsl[2] is Lightness [0...1]
  */
-- (NSArray*)getHsl{
+- (NSArray *)getHsl{
 
     float rf,gf,bf;
     
@@ -98,15 +98,15 @@ float constrain(float amount,float low,float high){
     return color  & ((1 << 8) - 1);
 }
 
-- (NSString*)getTitleTextColorString{
+- (NSString *)getTitleTextColorString{
     return @"TODO";
 }
 
-- (NSString*)getBodyTextColorString{
+- (NSString *)getBodyTextColorString{
     return @"TODO";
 }
 
-- (NSString*)getColorString{
+- (NSString *)getColorString{
     NSString *colorString = [NSString stringWithFormat:@"#%02lx%02lx%02lx",_red,_green,_blue];
     return colorString;
 }

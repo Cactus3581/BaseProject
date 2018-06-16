@@ -13,10 +13,10 @@ static void BPSVGApplier(void* info, const CGPathElement* element);
  *
  *  @return SVG
  */
-- (NSString*)bp_SVGString
+- (NSString *)bp_SVGString
 {
     CGPathRef path = [self CGPath];
-    NSMutableString* SVGString = [NSMutableString string];
+    NSMutableString * SVGString = [NSMutableString string];
     [SVGString appendString:@"<path id=\"temporaryID\" d=\""];
     CGPathApply(path, (__bridge_retained void*)SVGString, BPSVGApplier);
     NSString *lineCap;
@@ -38,7 +38,7 @@ static void BPSVGApplier(void* info, const CGPathElement* element);
 
 static void BPSVGApplier(void* info, const CGPathElement* element)
 {
-    NSMutableString* SVGString = (__bridge NSMutableString*) info;
+    NSMutableString * SVGString = (__bridge NSMutableString *) info;
     int nPoints;
     char elementKey;
     switch (element->type)
@@ -67,7 +67,7 @@ static void BPSVGApplier(void* info, const CGPathElement* element)
             SVGString = nil;
             return;
     }
-    NSString* nextElement = [NSString stringWithFormat:@" %c", elementKey];
+    NSString * nextElement = [NSString stringWithFormat:@" %c", elementKey];
     for (int i = 0; i < nPoints; i++) {
         nextElement = [nextElement stringByAppendingString:[NSString stringWithFormat:@" %i %i", (int)element->points[i].x, (int)element->points[i].y]];
     }

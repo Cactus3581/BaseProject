@@ -8,6 +8,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @interface NSBundle (BPAppIcon)
-- (NSString*)_appIconPath ;
+- (NSString *)_appIconPath ;
 - (UIImage*)_appIcon ;
 @end

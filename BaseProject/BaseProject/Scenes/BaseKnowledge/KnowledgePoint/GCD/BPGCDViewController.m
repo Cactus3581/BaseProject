@@ -560,9 +560,9 @@
  */
 - (void)gcd_signal_one {
     NSString *appIdKey = @"8781e4ef1c73ff20a180d3d7a42a8c04";
-    NSString* urlString_1 = @"http://api.openweathermap.org/data/2.5/weather";
-    NSString* urlString_2 = @"http://api.openweathermap.org/data/2.5/forecast/daily";
-    NSDictionary* dictionary =@{@"lat":@"40.04991291",
+    NSString * urlString_1 = @"http://api.openweathermap.org/data/2.5/weather";
+    NSString * urlString_2 = @"http://api.openweathermap.org/data/2.5/forecast/daily";
+    NSDictionary * dictionary =@{@"lat":@"40.04991291",
                                 @"lon":@"116.25626162",
                                 @"APPID" : appIdKey};
     

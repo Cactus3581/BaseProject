@@ -17,14 +17,14 @@ typedef void (^BPKVOBlock)(NSDictionary *change, void *context);
             context:(void *)context
           withBlock:(BPKVOBlock)block;
 
--(void)_removeBlockObserver:(NSObject *)observer
+- (void)_removeBlockObserver:(NSObject *)observer
                 forKeyPath:(NSString *)keyPath;
 
--(void)_addObserverForKeyPath:(NSString *)keyPath
+- (void)_addObserverForKeyPath:(NSString *)keyPath
                      options:(NSKeyValueObservingOptions)options
                      context:(void *)context
                    withBlock:(BPKVOBlock)block;
 
--(void)_removeBlockObserverForKeyPath:(NSString *)keyPath;
+- (void)_removeBlockObserverForKeyPath:(NSString *)keyPath;
 
 @end

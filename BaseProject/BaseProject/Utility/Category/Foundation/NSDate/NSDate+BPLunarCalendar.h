@@ -10,13 +10,13 @@
 @interface NSDate (BPLunarCalendar)
 + (NSCalendar *)_chineseCalendar;
 //例如 五月初一
-+ (NSString*)_currentMDDateString;
++ (NSString *)_currentMDDateString;
 //例如 乙未年五月初一
-+ (NSString*)_currentYMDDateString;
++ (NSString *)_currentYMDDateString;
 //例如 星期一
 + (NSString *)_currentWeek:(NSDate*)date;
 //例如 星期一
-+ (NSString *)_currentWeekWithDateString:(NSString*)datestring;
++ (NSString *)_currentWeekWithDateString:(NSString *)datestring;
 //例如 五月一
-+ (NSString*)_currentCapitalDateString;
++ (NSString *)_currentCapitalDateString;
 @end

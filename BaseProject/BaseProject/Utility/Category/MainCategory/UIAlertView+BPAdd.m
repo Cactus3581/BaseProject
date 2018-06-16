@@ -46,7 +46,7 @@ BPSYNTH_DUMMY_CLASS(UIAlertView_BPAdd)
 
 @implementation UIAlertView (BPAdd)
 
-+(void)bp_showAlertViewWith:(NSString *)title message:(NSString *)message leftButtonTitle:(NSString *)leftButtonTitle leftButtonClickedConfig:(dispatch_block_t)leftBlock rightButtonTitle:(NSString *)rightButtonTitle rightButtonClickedConfig:(dispatch_block_t)rightBlock{
++ (void)bp_showAlertViewWith:(NSString *)title message:(NSString *)message leftButtonTitle:(NSString *)leftButtonTitle leftButtonClickedConfig:(dispatch_block_t)leftBlock rightButtonTitle:(NSString *)rightButtonTitle rightButtonClickedConfig:(dispatch_block_t)rightBlock{
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:leftButtonTitle, rightButtonTitle, nil];
     _BPAlertDelegateObject *obj = [_BPAlertDelegateObject bp_initWithLeftBlock:leftBlock rightBlock:rightBlock];
     alertView.delegate = obj;

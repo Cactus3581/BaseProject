@@ -14,11 +14,11 @@
 {
     return [self bp_loadNibNamed:NSStringFromClass([self class])];
 }
-+ (UINib *)bp_loadNibNamed:(NSString*)nibName
++ (UINib *)bp_loadNibNamed:(NSString *)nibName
 {
     return [self bp_loadNibNamed:nibName bundle:[NSBundle mainBundle]];
 }
-+ (UINib *)bp_loadNibNamed:(NSString*)nibName bundle:(NSBundle *)bundle
++ (UINib *)bp_loadNibNamed:(NSString *)nibName bundle:(NSBundle *)bundle
 {
     return [UINib nibWithNibName:nibName bundle:bundle];
 }
@@ -37,7 +37,7 @@
 + (instancetype)bp_loadInstanceFromNibWithName:(NSString *)nibName owner:(id)owner bundle:(NSBundle *)bundle
 {
     UIView *result = nil;
-    NSArray* elements = [bundle loadNibNamed:nibName owner:owner options:nil];
+    NSArray * elements = [bundle loadNibNamed:nibName owner:owner options:nil];
     for (id object in elements)
     {
         if ([object isKindOfClass:[self class]])

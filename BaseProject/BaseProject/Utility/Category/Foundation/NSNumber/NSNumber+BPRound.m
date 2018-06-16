@@ -10,7 +10,7 @@
 
 @implementation NSNumber (BPRound)
 #pragma mark - Display
-- (NSString*)_toDisplayNumberWithDigit:(NSInteger)digit
+- (NSString *)_toDisplayNumberWithDigit:(NSInteger)digit
 {
     NSString *result = nil;
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -24,7 +24,7 @@
     
 }
 
-- (NSString*)_toDisplayPercentageWithDigit:(NSInteger)digit
+- (NSString *)_toDisplayPercentageWithDigit:(NSInteger)digit
 {
     NSString *result = nil;
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -44,7 +44,7 @@
  *
  *  @return 结果
  */
-- (NSNumber*)_doRoundWithDigit:(NSUInteger)digit
+- (NSNumber *)_doRoundWithDigit:(NSUInteger)digit
 {
     NSNumber *result = nil;
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -62,7 +62,7 @@
  *
  *  @return 结果
  */
-- (NSNumber*)_doCeilWithDigit:(NSUInteger)digit
+- (NSNumber *)_doCeilWithDigit:(NSUInteger)digit
 {
     NSNumber *result = nil;
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
@@ -79,7 +79,7 @@
  *
  *  @return 结果
  */
-- (NSNumber*)_doFloorWithDigit:(NSUInteger)digit
+- (NSNumber *)_doFloorWithDigit:(NSUInteger)digit
 {
     NSNumber *result = nil;
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];

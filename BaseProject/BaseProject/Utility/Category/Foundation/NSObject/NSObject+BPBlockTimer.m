@@ -11,7 +11,7 @@
 
 @implementation NSObject (BPBlockTimer)
 
--(void)_logTimeTakenToRunBlock:(void (^)(void)) block withPrefix:(NSString*) prefixString {
+- (void)_logTimeTakenToRunBlock:(void (^)(void)) block withPrefix:(NSString *) prefixString {
 	
 	double a = CFAbsoluteTimeGetCurrent();
 	block();

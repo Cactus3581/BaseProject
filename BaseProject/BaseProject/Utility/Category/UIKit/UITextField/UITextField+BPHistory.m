@@ -32,7 +32,7 @@ static char kTextFieldHistoryviewIdentifyKey;
 
 @implementation UITextField (BPHistory)
 
-- (NSString*)bp_identify {
+- (NSString *)bp_identify {
     return objc_getAssociatedObject(self, &kTextFieldIdentifyKey);
 }
 
@@ -56,13 +56,13 @@ static char kTextFieldHistoryviewIdentifyKey;
     return table;
 }
 
-- (NSArray*)bp_loadHistroy {
+- (NSArray *)bp_loadHistroy {
     if (self.bp_identify == nil) {
         return nil;
     }
 
     NSUserDefaults* def = [NSUserDefaults standardUserDefaults];
-    NSDictionary* dic = [def objectForKey:@"UITextField+BPHistory"];
+    NSDictionary * dic = [def objectForKey:@"UITextField+BPHistory"];
     
     if (dic != nil) {
         return [dic objectForKey:self.bp_identify];
@@ -77,16 +77,16 @@ static char kTextFieldHistoryviewIdentifyKey;
     }
     
     NSUserDefaults* def = [NSUserDefaults standardUserDefaults];
-    NSDictionary* dic = [def objectForKey:@"UITextField+BPHistory"];
-    NSArray* history = [dic objectForKey:self.bp_identify];
+    NSDictionary * dic = [def objectForKey:@"UITextField+BPHistory"];
+    NSArray * history = [dic objectForKey:self.bp_identify];
     
-    NSMutableArray* newHistory = [NSMutableArray arrayWithArray:history];
+    NSMutableArray *newHistory = [NSMutableArray arrayWithArray:history];
     
     __block BOOL haveSameRecord = false;
     __weak typeof(self) weakSelf = self;
     
     [newHistory enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if ([(NSString*)obj isEqualToString:weakSelf.text]) {
+        if ([(NSString *)obj isEqualToString:weakSelf.text]) {
             *stop = true;
             haveSameRecord = true;
         }
@@ -98,7 +98,7 @@ static char kTextFieldHistoryviewIdentifyKey;
     
     [newHistory addObject:self.text];
     
-    NSMutableDictionary* dic2 = [NSMutableDictionary dictionaryWithDictionary:dic];
+    NSMutableDictionary *dic2 = [NSMutableDictionary dictionaryWithDictionary:dic];
     [dic2 setObject:newHistory forKey:self.bp_identify];
     
     [def setObject:dic2 forKey:@"UITextField+BPHistory"];
@@ -107,7 +107,7 @@ static char kTextFieldHistoryviewIdentifyKey;
 }
 
 - (void) bp_showHistory; {
-    NSArray* history = [self bp_loadHistroy];
+    NSArray * history = [self bp_loadHistroy];
     
     if (self.bp_historyTableView.superview != nil || history == nil || history.count == 0) {
         return;

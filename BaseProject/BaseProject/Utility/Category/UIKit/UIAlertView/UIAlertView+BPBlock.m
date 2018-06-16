@@ -35,7 +35,7 @@ static NSString *UIAlertViewKey = @"UIAlertViewKey";
     va_list args;
     if (otherButtonTitles) {
         va_start(args, otherButtonTitles);
-        while ((other = va_arg(args, NSString*))) {
+        while ((other = va_arg(args, NSString *))) {
             [alert addButtonWithTitle:other];
         }
         va_end(args);

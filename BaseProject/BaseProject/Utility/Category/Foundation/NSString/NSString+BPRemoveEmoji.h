@@ -13,7 +13,7 @@
 ///移除所有emoji，以“”替换
 - (NSString *)_stringByRemovingEmoji;
 ///移除所有emoji，以string替换
-- (NSString *)_stringByReplaceingEmojiWithString:(NSString*)string;
+- (NSString *)_stringByReplaceingEmojiWithString:(NSString *)string;
 
 ///字符串是否包含emoji
 - (BOOL)_containsEmoji;
@@ -25,7 +25,7 @@
 - (NSArray<NSString *>*)_allEmojiRanges;
 
 ///所有emoji表情
-+ (NSString*)_allSystemEmoji;
++ (NSString *)_allSystemEmoji;
 @end
 
 @interface NSCharacterSet (BPEmojiCharacterSet)

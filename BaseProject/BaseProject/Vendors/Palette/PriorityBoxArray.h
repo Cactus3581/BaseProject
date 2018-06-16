@@ -23,6 +23,6 @@
 
 - (NSUInteger)count;
 
-- (NSMutableArray*)getVBoxArray;
+- (NSMutableArray *)getVBoxArray;
 
 @end

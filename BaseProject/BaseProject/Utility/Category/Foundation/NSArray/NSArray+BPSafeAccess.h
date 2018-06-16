@@ -12,15 +12,15 @@
 @interface NSArray (BPSafeAccess)
 - (id)_objectWithIndex:(NSUInteger)index;
 
-- (NSString*)_stringWithIndex:(NSUInteger)index;
+- (NSString *)_stringWithIndex:(NSUInteger)index;
 
-- (NSNumber*)_numberWithIndex:(NSUInteger)index;
+- (NSNumber *)_numberWithIndex:(NSUInteger)index;
 
 - (NSDecimalNumber *)_decimalNumberWithIndex:(NSUInteger)index;
 
-- (NSArray*)_arrayWithIndex:(NSUInteger)index;
+- (NSArray *)_arrayWithIndex:(NSUInteger)index;
 
-- (NSDictionary*)_dictionaryWithIndex:(NSUInteger)index;
+- (NSDictionary *)_dictionaryWithIndex:(NSUInteger)index;
 
 - (NSInteger)_integerWithIndex:(NSUInteger)index;
 
@@ -60,7 +60,7 @@
 
 - (void)_addObj:(id)i;
 
-- (void)_addString:(NSString*)i;
+- (void)_addString:(NSString *)i;
 
 - (void)_addBool:(BOOL)i;
 

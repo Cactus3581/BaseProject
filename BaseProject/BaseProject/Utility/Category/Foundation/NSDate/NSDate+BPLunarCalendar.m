@@ -28,7 +28,7 @@
         _chineseCalendar_sharedCalendar =[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierChinese];
     return _chineseCalendar_sharedCalendar;
 }
-+ (NSString*)_currentMDDateString{
++ (NSString *)_currentMDDateString{
     
     NSDate *date = [NSDate date];
     NSCalendar *chineseCalendar = [self _chineseCalendar];
@@ -40,7 +40,7 @@
     
     return [month stringByAppendingString:day];
 }
-+ (NSString*)_currentYMDDateString{
++ (NSString *)_currentYMDDateString{
     NSCalendar *chineseCalendar = [[self class] _chineseCalendar];
     NSDate *date = [NSDate date];
 
@@ -58,7 +58,7 @@
     return chineseCal_str;
 }
 
-+ (NSString *)_currentWeekWithDateString:(NSString*)datestring{
++ (NSString *)_currentWeekWithDateString:(NSString *)datestring{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
     NSDate *date = [formatter dateFromString:datestring];
@@ -74,7 +74,7 @@
     
     return weeks[week];
 }
-+ (NSString*)_currentCapitalDateString{
++ (NSString *)_currentCapitalDateString{
     NSCalendar *gregorian = [NSCalendar currentCalendar];
     NSDateComponents *comps = [gregorian components:(NSCalendarUnitMonth| NSCalendarUnitDay) fromDate:[NSDate date]];
     

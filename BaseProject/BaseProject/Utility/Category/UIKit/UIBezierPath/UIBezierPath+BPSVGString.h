@@ -14,5 +14,5 @@
  *
  *  @return SVG
  */
-- (NSString*)bp_SVGString;
+- (NSString *)bp_SVGString;
 @end

@@ -73,7 +73,7 @@
     return _vboxArray.count;
 }
 
-- (NSMutableArray*)getVBoxArray{
+- (NSMutableArray *)getVBoxArray{
     return _vboxArray;
 }
 @end

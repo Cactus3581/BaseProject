@@ -13,14 +13,14 @@
 
 @implementation UIView (BPVisuals)
 
--(void)bp_cornerRadius: (CGFloat)radius strokeSize: (CGFloat)size color: (UIColor *)color
+- (void)bp_cornerRadius: (CGFloat)radius strokeSize: (CGFloat)size color: (UIColor *)color
 {
     self.layer.cornerRadius = radius;
     self.layer.borderColor = color.CGColor;
     self.layer.borderWidth = size;
 }
 
--(void)bp_setRoundedCorners:(UIRectCorner)corners radius:(CGFloat)radius {
+- (void)bp_setRoundedCorners:(UIRectCorner)corners radius:(CGFloat)radius {
     CGRect rect = self.bounds;
     
     // Create the path
@@ -37,7 +37,7 @@
     self.layer.mask = maskLayer;
 }
 
--(void)bp_shadowWithColor: (UIColor *)color
+- (void)bp_shadowWithColor: (UIColor *)color
                 offset: (CGSize)offset 
                opacity: (CGFloat)opacity 
                 radius: (CGFloat)radius
@@ -49,7 +49,7 @@
     self.layer.shadowRadius = radius;
 }
 
--(void)bp_removeFromSuperviewWithFadeDuration: (NSTimeInterval)duration
+- (void)bp_removeFromSuperviewWithFadeDuration: (NSTimeInterval)duration
 {
     [UIView beginAnimations: nil context: NULL];
 	[UIView setAnimationBeginsFromCurrentState: YES];
@@ -61,7 +61,7 @@
 }
 
 
--(void)bp_addSubview: (UIView *)subview withTransition: (UIViewAnimationTransition)transition duration: (NSTimeInterval)duration
+- (void)bp_addSubview: (UIView *)subview withTransition: (UIViewAnimationTransition)transition duration: (NSTimeInterval)duration
 {
 	[UIView beginAnimations: nil context: NULL];
 	[UIView setAnimationDuration: duration];
@@ -71,7 +71,7 @@
 }
 
 
--(void)bp_removeFromSuperviewWithTransition: (UIViewAnimationTransition)transition duration: (NSTimeInterval)duration
+- (void)bp_removeFromSuperviewWithTransition: (UIViewAnimationTransition)transition duration: (NSTimeInterval)duration
 {
 	[UIView beginAnimations: nil context: NULL];
 	[UIView setAnimationDuration: duration];
@@ -81,7 +81,7 @@
 }
 
 
--(void)bp_rotateByAngle: (CGFloat)angle
+- (void)bp_rotateByAngle: (CGFloat)angle
             duration: (NSTimeInterval)duration 
          autoreverse: (BOOL)autoreverse
          repeatCount: (CGFloat)repeatCount
@@ -99,7 +99,7 @@
 }
 
 
--(void)bp_moveToPoint: (CGPoint)newPoint 
+- (void)bp_moveToPoint: (CGPoint)newPoint 
           duration: (NSTimeInterval)duration 
        autoreverse: (BOOL)autoreverse
        repeatCount: (CGFloat)repeatCount

@@ -25,75 +25,75 @@ static const void *k_bp_webViewLoadChangeBlock = &k_bp_webViewLoadChangeBlock;
 NSString *bp_completeRPCURLPath = @"/bpwebviewprogressproxy/complete";
 
 @implementation UIWebView (BPLoadStatus)
--(void)setBp_loadingCount:(NSUInteger)bp_loadingCount{
+- (void)setBp_loadingCount:(NSUInteger)bp_loadingCount{
     NSNumber *number = [[NSNumber alloc]initWithInteger:bp_loadingCount];
     objc_setAssociatedObject(self,k_bp_loadingCount, number, OBJC_ASSOCIATION_ASSIGN);
 }
 
--(NSUInteger)bp_loadingCount{
+- (NSUInteger)bp_loadingCount{
     return [objc_getAssociatedObject(self, k_bp_loadingCount) integerValue];
 }
 
--(void)setBp_maxLoadCount:(NSUInteger)bp_maxLoadCount{
+- (void)setBp_maxLoadCount:(NSUInteger)bp_maxLoadCount{
     NSNumber *number = [[NSNumber alloc]initWithInteger:bp_maxLoadCount];
     objc_setAssociatedObject(self,k_bp_maxLoadCount, number, OBJC_ASSOCIATION_ASSIGN);
 }
 
--(NSUInteger)bp_maxLoadCount{
+- (NSUInteger)bp_maxLoadCount{
     return [objc_getAssociatedObject(self, k_bp_maxLoadCount) integerValue];
 }
 
--(void)setBp_currentURL:(NSURL*)bp_currentURL{
+- (void)setBp_currentURL:(NSURL*)bp_currentURL{
     objc_setAssociatedObject(self,k_bp_currentURL, bp_currentURL, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
--(NSURL*)bp_currentURL{
+- (NSURL*)bp_currentURL{
     return objc_getAssociatedObject(self, k_bp_currentURL) ;
 }
 
--(void)setBp_interactive:(BOOL)bp_interactive{
+- (void)setBp_interactive:(BOOL)bp_interactive{
     NSNumber *number = [[NSNumber alloc]initWithBool:bp_interactive];
     objc_setAssociatedObject(self,k_bp_interactive, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
--(BOOL)bp_interactive{
+- (BOOL)bp_interactive{
     return [objc_getAssociatedObject(self, k_bp_interactive) boolValue];
 }
 
--(void)setBp_progress:(float)bp_progress{
+- (void)setBp_progress:(float)bp_progress{
     NSNumber *number = [[NSNumber alloc]initWithFloat:bp_progress];
     objc_setAssociatedObject(self,k_bp_progress, number, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
--(BOOL)bp_progress{
+- (BOOL)bp_progress{
     return [objc_getAssociatedObject(self, k_bp_progress) floatValue];
 }
 
--(void)setBp_contentSize:(CGSize)bp_contentSize{
+- (void)setBp_contentSize:(CGSize)bp_contentSize{
     objc_setAssociatedObject(self,k_bp_progress, NSStringFromCGSize(bp_contentSize), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
--(CGSize)bp_contentSize{
+- (CGSize)bp_contentSize{
     return CGSizeFromString(objc_getAssociatedObject(self, k_bp_progress));
 }
 
--(void)setBp_readyState:(BPReadyState)bp_readyState{
+- (void)setBp_readyState:(BPReadyState)bp_readyState{
     objc_setAssociatedObject(self,k_bp_readyState, @(bp_readyState), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
--(BPReadyState)bp_readyState{
+- (BPReadyState)bp_readyState{
     return (BPReadyState)[objc_getAssociatedObject(self, k_bp_readyState) integerValue];
 }
 
--(void)setBp_realDelegate:(id<UIWebViewDelegate>)bp_realDelegate{
+- (void)setBp_realDelegate:(id<UIWebViewDelegate>)bp_realDelegate{
     objc_setAssociatedObject(self,k_bp_realDelegate, bp_realDelegate, OBJC_ASSOCIATION_ASSIGN);
 }
 
--(id<UIWebViewDelegate>)bp_realDelegate{
+- (id<UIWebViewDelegate>)bp_realDelegate{
     return objc_getAssociatedObject(self, k_bp_realDelegate);
 }
 
--(void (^)(UIWebView *, float))bp_webViewLoadChangeBlock{
+- (void (^)(UIWebView *, float))bp_webViewLoadChangeBlock{
     return objc_getAssociatedObject(self, k_bp_webViewLoadChangeBlock);
 }
 
@@ -243,7 +243,7 @@ NSString *bp_completeRPCURLPath = @"/bpwebviewprogressproxy/complete";
     self.bp_readyState = BP_BPReadyState_uninitialized;
 }
 //会影响未包含头文件的webview
-//-(void)awakeFromNib{
+//- (void)awakeFromNib{
 //    [super awakeFromNib];
 //    [self bp_setDelegateIfNoDelegateSet];
 //}

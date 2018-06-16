@@ -61,7 +61,7 @@
  *  @return 反转后字符串
  */
 + (NSString *)_reverseString:(NSString *)strSrc {
-    NSMutableString* reverseString = [[NSMutableString alloc] init];
+    NSMutableString * reverseString = [[NSMutableString alloc] init];
     NSInteger charIndex = [strSrc length];
     while (charIndex > 0) {
         charIndex --;

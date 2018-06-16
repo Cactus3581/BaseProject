@@ -42,7 +42,7 @@ const NSInteger INDEX_WEIGHT_POP = 2;
 
 @property (nonatomic,strong) NSMutableArray *lightnessTargets;
 
-@property (nonatomic,strong) NSMutableArray* weights;
+@property (nonatomic,strong) NSMutableArray *weights;
 
 @property (nonatomic,assign) BOOL isExclusive; // default to true
 
@@ -195,12 +195,12 @@ const NSInteger INDEX_WEIGHT_POP = 2;
 }
 #pragma mark - utils
 
-- (NSString*)getTargetKey{
+- (NSString *)getTargetKey{
     return [PaletteTarget getTargetModeKey:_mode];
 }
 
 
-+ (NSString*)getTargetModeKey:(PaletteTargetMode)mode{
++ (NSString *)getTargetModeKey:(PaletteTargetMode)mode{
     NSString *key;
     switch (mode) {
         case LIGHT_VIBRANT_PALETTE:

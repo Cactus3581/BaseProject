@@ -43,8 +43,8 @@ typedef NS_OPTIONS(NSInteger,PaletteTargetMode) {
 
 - (void)normalizeWeights;
 
-- (NSString*)getTargetKey;
+- (NSString *)getTargetKey;
 
-+ (NSString*)getTargetModeKey:(PaletteTargetMode)mode;
++ (NSString *)getTargetModeKey:(PaletteTargetMode)mode;
 
 @end

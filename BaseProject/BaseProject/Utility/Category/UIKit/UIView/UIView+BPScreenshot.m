@@ -24,7 +24,7 @@
     UIImage *sendImage = [[UIImage alloc] initWithCGImage:imageRefRect];
     /******截取图片保存的位置，如果想要保存，请把return向后移动*********/
     NSData*data=UIImagePNGRepresentation(viewImage);
-    NSString*path=[NSHomeDirectory() stringByAppendingString:@"/documents/1.png"];
+    NSString *path=[NSHomeDirectory() stringByAppendingString:@"/documents/1.png"];
     [data writeToFile:path atomically:YES];
     
     BPLog(@"%@",path);

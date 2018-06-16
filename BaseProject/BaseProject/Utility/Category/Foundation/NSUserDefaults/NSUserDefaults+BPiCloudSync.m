@@ -13,7 +13,7 @@
 @implementation NSUserDefaults (BPiCloudSync)
 
 
--(void)_setValue:(id)value forKey:(NSString *)key iCloudSync:(BOOL)sync
+- (void)_setValue:(id)value forKey:(NSString *)key iCloudSync:(BOOL)sync
 {
     if (sync)
         [[NSUbiquitousKeyValueStore defaultStore] setValue:value forKey:key];
@@ -21,7 +21,7 @@
     [self setValue:value forKey:key];
 }
 
--(id)_valueForKey:(NSString *)key iCloudSync:(BOOL)sync
+- (id)_valueForKey:(NSString *)key iCloudSync:(BOOL)sync
 {
     if (sync)
     {
@@ -45,7 +45,7 @@
 
 
 
--(void)_setObject:(id)value forKey:(NSString *)defaultName iCloudSync:(BOOL)sync
+- (void)_setObject:(id)value forKey:(NSString *)defaultName iCloudSync:(BOOL)sync
 {
     if (sync)
         [[NSUbiquitousKeyValueStore defaultStore] setObject:value forKey:defaultName];
@@ -53,7 +53,7 @@
     [self setObject:value forKey:defaultName];
 }
 
--(id)_objectForKey:(NSString *)key iCloudSync:(BOOL)sync
+- (id)_objectForKey:(NSString *)key iCloudSync:(BOOL)sync
 {
     if (sync)
     {

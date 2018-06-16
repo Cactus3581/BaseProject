@@ -20,8 +20,8 @@ typedef enum {
 tokenType typeForCharacter (const unichar character);
 NSInteger precedenceForOperator (NSString *operator);
 NSInteger precedenceForOperatorChar (const unichar operator);
-NSArray* tokenizeEquation (NSString *equation, NSDictionary *numbers);
-NSArray* RPNFromTokens (NSArray *tokens);
+NSArray * tokenizeEquation (NSString *equation, NSDictionary *numbers);
+NSArray * RPNFromTokens (NSArray *tokens);
 
 static NSArray *operators;
 void initOperators(void);
@@ -138,7 +138,7 @@ NSInteger precedenceForOperatorChar (const unichar operator)
 }
 
 // split the equation into token (e.g. @[@"1", @"+", @"2", @"*", @"3"])
-NSArray* tokenizeEquation (NSString *equation, NSDictionary *numbers)
+NSArray * tokenizeEquation (NSString *equation, NSDictionary *numbers)
 {
     unichar equationChars[equation.length + 1], tempChars[equation.length + 1];
     
@@ -220,7 +220,7 @@ NSArray* tokenizeEquation (NSString *equation, NSDictionary *numbers)
 
 // change the tokens array into RPN (Reverse Polish notation) array
 // e.g. @[@"1", @"2", @"3", @"*", @"+"]
-NSArray* RPNFromTokens (NSArray *tokens)
+NSArray * RPNFromTokens (NSArray *tokens)
 {
     NSMutableArray *output = [@[] mutableCopy];
     NSMutableArray *operatorStack = [@[] mutableCopy];

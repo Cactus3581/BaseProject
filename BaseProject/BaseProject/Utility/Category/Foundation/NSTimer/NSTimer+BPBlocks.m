@@ -9,21 +9,21 @@
 
 @implementation NSTimer (BPBlocks)
 
-+(id)_scheduledTimerWithTimeInterval:(NSTimeInterval)inTimeInterval block:(void (^)(void))inBlock repeats:(BOOL)inRepeats
++ (id)_scheduledTimerWithTimeInterval:(NSTimeInterval)inTimeInterval block:(void (^)(void))inBlock repeats:(BOOL)inRepeats
 {
     void (^block)(void) = [inBlock copy];
     id ret = [self scheduledTimerWithTimeInterval:inTimeInterval target:self selector:@selector(_jdExecuteSimpleBlock:) userInfo:block repeats:inRepeats];
     return ret;
 }
 
-+(id)_timerWithTimeInterval:(NSTimeInterval)inTimeInterval block:(void (^)(void))inBlock repeats:(BOOL)inRepeats
++ (id)_timerWithTimeInterval:(NSTimeInterval)inTimeInterval block:(void (^)(void))inBlock repeats:(BOOL)inRepeats
 {
     void (^block)(void) = [inBlock copy];
     id ret = [self timerWithTimeInterval:inTimeInterval target:self selector:@selector(_jdExecuteSimpleBlock:) userInfo:block repeats:inRepeats];
     return ret;
 }
 
-+(void)_jdExecuteSimpleBlock:(NSTimer *)inTimer;
++ (void)_jdExecuteSimpleBlock:(NSTimer *)inTimer;
 {
     if([inTimer userInfo])
     {

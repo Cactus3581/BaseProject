@@ -14,7 +14,7 @@
     return [self objectForKey:key] != nil;
 }
 
-- (NSString*)_stringForKey:(id)key
+- (NSString *)_stringForKey:(id)key
 {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null])
@@ -22,7 +22,7 @@
         return nil;
     }
     if ([value isKindOfClass:[NSString class]]) {
-        return (NSString*)value;
+        return (NSString *)value;
     }
     if ([value isKindOfClass:[NSNumber class]]) {
        return [value stringValue];
@@ -31,16 +31,16 @@
     return nil;
 }
 
-- (NSNumber*)_numberForKey:(id)key
+- (NSNumber *)_numberForKey:(id)key
 {
     id value = [self objectForKey:key];
     if ([value isKindOfClass:[NSNumber class]]) {
-        return (NSNumber*)value;
+        return (NSNumber *)value;
     }
     if ([value isKindOfClass:[NSString class]]) {
         NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
         [f setNumberStyle:NSNumberFormatterDecimalStyle];
-        return [f numberFromString:(NSString*)value];
+        return [f numberFromString:(NSString *)value];
     }
     return nil;
 }
@@ -51,17 +51,17 @@
     if ([value isKindOfClass:[NSDecimalNumber class]]) {
         return value;
     } else if ([value isKindOfClass:[NSNumber class]]) {
-        NSNumber * number = (NSNumber*)value;
+        NSNumber * number = (NSNumber *)value;
         return [NSDecimalNumber decimalNumberWithDecimal:[number decimalValue]];
     } else if ([value isKindOfClass:[NSString class]]) {
-        NSString * str = (NSString*)value;
+        NSString * str = (NSString *)value;
         return [str isEqualToString:@""] ? nil : [NSDecimalNumber decimalNumberWithString:str];
     }
     return nil;
 }
 
 
-- (NSArray*)_arrayForKey:(id)key
+- (NSArray *)_arrayForKey:(id)key
 {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null])
@@ -75,7 +75,7 @@
     return nil;
 }
 
-- (NSDictionary*)_dictionaryForKey:(id)key
+- (NSDictionary *)_dictionaryForKey:(id)key
 {
     id value = [self objectForKey:key];
     if (value == nil || value == [NSNull null])
@@ -302,58 +302,58 @@
 
 #pragma --mark NSMutableDictionary setter
 @implementation NSMutableDictionary (BPSafeAccess)
--(void)_setObj:(id)i forKey:(NSString*)key{
+- (void)_setObj:(id)i forKey:(NSString *)key{
     if (i!=nil) {
         self[key] = i;
     }
 }
--(void)_setString:(NSString*)i forKey:(NSString*)key;
+- (void)_setString:(NSString *)i forKey:(NSString *)key;
 {
     [self setValue:i forKey:key];
 }
--(void)_setBool:(BOOL)i forKey:(NSString *)key
+- (void)_setBool:(BOOL)i forKey:(NSString *)key
 {
     self[key] = @(i);
 }
--(void)_setInt:(int)i forKey:(NSString *)key
+- (void)_setInt:(int)i forKey:(NSString *)key
 {
     self[key] = @(i);
 }
--(void)_setInteger:(NSInteger)i forKey:(NSString *)key
+- (void)_setInteger:(NSInteger)i forKey:(NSString *)key
 {
     self[key] = @(i);
 }
--(void)_setUnsignedInteger:(NSUInteger)i forKey:(NSString *)key
+- (void)_setUnsignedInteger:(NSUInteger)i forKey:(NSString *)key
 {
     self[key] = @(i);
 }
--(void)_setCGFloat:(CGFloat)f forKey:(NSString *)key
+- (void)_setCGFloat:(CGFloat)f forKey:(NSString *)key
 {
     self[key] = @(f);
 }
--(void)_setChar:(char)c forKey:(NSString *)key
+- (void)_setChar:(char)c forKey:(NSString *)key
 {
     self[key] = @(c);
 }
--(void)_setFloat:(float)i forKey:(NSString *)key
+- (void)_setFloat:(float)i forKey:(NSString *)key
 {
     self[key] = @(i);
 }
--(void)_setDouble:(double)i forKey:(NSString*)key{
+- (void)_setDouble:(double)i forKey:(NSString *)key{
     self[key] = @(i);
 }
--(void)_setLongLong:(long long)i forKey:(NSString*)key{
+- (void)_setLongLong:(long long)i forKey:(NSString *)key{
     self[key] = @(i);
 }
--(void)_setPoint:(CGPoint)o forKey:(NSString *)key
+- (void)_setPoint:(CGPoint)o forKey:(NSString *)key
 {
     self[key] = NSStringFromCGPoint(o);
 }
--(void)_setSize:(CGSize)o forKey:(NSString *)key
+- (void)_setSize:(CGSize)o forKey:(NSString *)key
 {
     self[key] = NSStringFromCGSize(o);
 }
--(void)_setRect:(CGRect)o forKey:(NSString *)key
+- (void)_setRect:(CGRect)o forKey:(NSString *)key
 {
     self[key] = NSStringFromCGRect(o);
 }

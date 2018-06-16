@@ -27,7 +27,7 @@
 + (void)bp_openAppURLForIdentifier:(NSInteger)identifier;
 + (void)bp_openAppReviewURLForIdentifier:(NSInteger)identifier;
 
-+ (BOOL)bp_containsITunesURLString:(NSString*)URLString;
-+ (NSInteger)bp_IDFromITunesURL:(NSString*)URLString;
++ (BOOL)bp_containsITunesURLString:(NSString *)URLString;
++ (NSInteger)bp_IDFromITunesURL:(NSString *)URLString;
 
 @end

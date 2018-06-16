@@ -41,7 +41,7 @@
  *
  *  @return pop之后的viewcontrolers
  */
-- (NSArray *)bp_popToViewControllerWithClassName:(NSString*)className animated:(BOOL)animated;
+- (NSArray *)bp_popToViewControllerWithClassName:(NSString *)className animated:(BOOL)animated;
 
 /**
  *  @brief  pop n层

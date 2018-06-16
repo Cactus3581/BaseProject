@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSObject (BPBlockTimer)
--(void)_logTimeTakenToRunBlock:(void (^)(void)) block withPrefix:(NSString*) prefixString;
+- (void)_logTimeTakenToRunBlock:(void (^)(void)) block withPrefix:(NSString *) prefixString;
 @end

@@ -168,7 +168,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     return ([self bp_isLaterThanDate:[NSDate date]]);
 }
 
--(BOOL)isInPast{
+- (BOOL)isInPast{
     return ([self bp_isEarlierThanDate:[NSDate date]]);
 }
 

@@ -14,14 +14,14 @@
  *
  *  @return 视图层级字符串
  */
--(NSString*)bp_recursiveDescription
+- (NSString *)bp_recursiveDescription
 {
     NSMutableString *description = [NSMutableString stringWithFormat:@"\n"];
     [self bp_addDescriptionToString:description indentLevel:0];
     return description;
 }
 
--(void)bp_addDescriptionToString:(NSMutableString*)string indentLevel:(NSInteger)indentLevel
+- (void)bp_addDescriptionToString:(NSMutableString *)string indentLevel:(NSInteger)indentLevel
 {
     NSString *padding = [@"" stringByPaddingToLength:indentLevel withString:@" " startingAtIndex:0];
     [string appendString:padding];

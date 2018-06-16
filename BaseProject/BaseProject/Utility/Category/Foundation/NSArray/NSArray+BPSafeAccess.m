@@ -17,14 +17,14 @@
     }
 }
 
-- (NSString*)_stringWithIndex:(NSUInteger)index {
+- (NSString *)_stringWithIndex:(NSUInteger)index {
     id value = [self _objectWithIndex:index];
     if (value == nil || value == [NSNull null] || [[value description] isEqualToString:@"<null>"])
     {
         return nil;
     }
     if ([value isKindOfClass:[NSString class]]) {
-        return (NSString*)value;
+        return (NSString *)value;
     }
     if ([value isKindOfClass:[NSNumber class]]) {
         return [value stringValue];
@@ -34,15 +34,15 @@
 }
 
 
-- (NSNumber*)_numberWithIndex:(NSUInteger)index {
+- (NSNumber *)_numberWithIndex:(NSUInteger)index {
     id value = [self _objectWithIndex:index];
     if ([value isKindOfClass:[NSNumber class]]) {
-        return (NSNumber*)value;
+        return (NSNumber *)value;
     }
     if ([value isKindOfClass:[NSString class]]) {
         NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
         [f setNumberStyle:NSNumberFormatterDecimalStyle];
-        return [f numberFromString:(NSString*)value];
+        return [f numberFromString:(NSString *)value];
     }
     return nil;
 }
@@ -53,16 +53,16 @@
     if ([value isKindOfClass:[NSDecimalNumber class]]) {
         return value;
     } else if ([value isKindOfClass:[NSNumber class]]) {
-        NSNumber * number = (NSNumber*)value;
+        NSNumber * number = (NSNumber *)value;
         return [NSDecimalNumber decimalNumberWithDecimal:[number decimalValue]];
     } else if ([value isKindOfClass:[NSString class]]) {
-        NSString * str = (NSString*)value;
+        NSString * str = (NSString *)value;
         return [str isEqualToString:@""] ? nil : [NSDecimalNumber decimalNumberWithString:str];
     }
     return nil;
 }
 
-- (NSArray*)_arrayWithIndex:(NSUInteger)index
+- (NSArray *)_arrayWithIndex:(NSUInteger)index
 {
     id value = [self _objectWithIndex:index];
     if (value == nil || value == [NSNull null])
@@ -77,7 +77,7 @@
 }
 
 
-- (NSDictionary*)_dictionaryWithIndex:(NSUInteger)index
+- (NSDictionary *)_dictionaryWithIndex:(NSUInteger)index
 {
     id value = [self _objectWithIndex:index];
     if (value == nil || value == [NSNull null])
@@ -305,7 +305,7 @@
     }
 }
 
-- (void)_addString:(NSString*)i {
+- (void)_addString:(NSString *)i {
     if (i!=nil) {
         [self addObject:i];
     }

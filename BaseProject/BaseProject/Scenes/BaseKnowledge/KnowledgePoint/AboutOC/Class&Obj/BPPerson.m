@@ -73,10 +73,10 @@
  2、便利构造器是一个类方法（以+开头）
  
  语法形式 :
- +(当前类类型) 当前类名小写开头With各个参数;
+ + (当前类类型) 当前类名小写开头With各个参数;
  便利构造器内部就是封装了aclloc 和初始化方法（init）。
  */
-+ (BPPerson *)personWithName:(NSString*)name weight:(CGFloat)weight {
++ (BPPerson *)personWithName:(NSString *)name weight:(CGFloat)weight {
     BPPerson *person = [[BPPerson alloc]initWithName:name weight:weight];
     return person;
 }

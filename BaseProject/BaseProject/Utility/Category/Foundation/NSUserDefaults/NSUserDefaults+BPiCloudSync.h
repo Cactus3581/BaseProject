@@ -11,12 +11,12 @@
 
 @interface NSUserDefaults (BPiCloudSync)
 
--(void)_setValue:(id)value  forKey:(NSString *)key iCloudSync:(BOOL)sync;
--(void)_setObject:(id)value forKey:(NSString *)key iCloudSync:(BOOL)sync;
+- (void)_setValue:(id)value  forKey:(NSString *)key iCloudSync:(BOOL)sync;
+- (void)_setObject:(id)value forKey:(NSString *)key iCloudSync:(BOOL)sync;
 
--(id)_valueForKey:(NSString *)key  iCloudSync:(BOOL)sync;
--(id)_objectForKey:(NSString *)key iCloudSync:(BOOL)sync;
+- (id)_valueForKey:(NSString *)key  iCloudSync:(BOOL)sync;
+- (id)_objectForKey:(NSString *)key iCloudSync:(BOOL)sync;
 
--(BOOL)_synchronizeAlsoiCloudSync:(BOOL)sync;
+- (BOOL)_synchronizeAlsoiCloudSync:(BOOL)sync;
 
 @end

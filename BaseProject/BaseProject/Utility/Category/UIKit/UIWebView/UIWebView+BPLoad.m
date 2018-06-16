@@ -14,7 +14,7 @@
  *
  *  @param URLString 网页地址
  */
-- (void)bp_loadURL:(NSString*)URLString{
+- (void)bp_loadURL:(NSString *)URLString{
     NSString *encodedUrl = (__bridge NSString *) CFURLCreateStringByAddingPercentEscapes (NULL, (__bridge CFStringRef) URLString, NULL, NULL,kCFStringEncodingUTF8);
     NSURL *url = [NSURL URLWithString:encodedUrl];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
@@ -25,10 +25,10 @@
  *
  *  @param htmlName webview名称
  */
-- (void)bp_loadLocalHtml:(NSString*)htmlName{
+- (void)bp_loadLocalHtml:(NSString *)htmlName{
     [self bp_loadLocalHtml:htmlName inBundle:[NSBundle mainBundle]];
 }
-- (void)bp_loadLocalHtml:(NSString*)htmlName inBundle:(NSBundle*)inBundle{
+- (void)bp_loadLocalHtml:(NSString *)htmlName inBundle:(NSBundle*)inBundle{
     NSString *filePath = [inBundle pathForResource:htmlName ofType:nil];
     NSURL *url = [NSURL fileURLWithPath:filePath];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

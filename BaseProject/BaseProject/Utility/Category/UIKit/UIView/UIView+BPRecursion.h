@@ -22,8 +22,8 @@ typedef void (^BPSuperviewBlock) (UIView* superview);
 - (UIView*)bp_findViewRecursively:(BOOL(^)(UIView* subview, BOOL* stop))recurse;
 
 
--(void)bp_runBlockOnAllSubviews:(BPSubviewBlock)block;
--(void)bp_runBlockOnAllSuperviews:(BPSuperviewBlock)block;
--(void)bp_enableAllControlsInViewHierarchy;
--(void)bp_disableAllControlsInViewHierarchy;
+- (void)bp_runBlockOnAllSubviews:(BPSubviewBlock)block;
+- (void)bp_runBlockOnAllSuperviews:(BPSuperviewBlock)block;
+- (void)bp_enableAllControlsInViewHierarchy;
+- (void)bp_disableAllControlsInViewHierarchy;
 @end

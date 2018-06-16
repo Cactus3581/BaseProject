@@ -10,11 +10,11 @@
 
 @implementation UIFont (BPDynamicFontControl)
 
-+(UIFont *)bp_preferredFontForTextStyle:(NSString *)style withFontName:(NSString *)fontName{
++ (UIFont *)bp_preferredFontForTextStyle:(NSString *)style withFontName:(NSString *)fontName{
     return [UIFont bp_preferredFontForTextStyle:style withFontName:fontName scale:1.0f];
 }
 
-+(UIFont *)bp_preferredFontForTextStyle:(NSString *)style withFontName:(NSString *)fontName scale:(CGFloat)scale{
++ (UIFont *)bp_preferredFontForTextStyle:(NSString *)style withFontName:(NSString *)fontName scale:(CGFloat)scale{
     
     
     UIFont * font = nil;
@@ -29,11 +29,11 @@
 
 }
 
--(UIFont *)bp_adjustFontForTextStyle:(NSString *)style{
+- (UIFont *)bp_adjustFontForTextStyle:(NSString *)style{
     return [self bp_adjustFontForTextStyle:style scale:1.0f];
 }
 
--(UIFont *)bp_adjustFontForTextStyle:(NSString *)style scale:(CGFloat)scale{
+- (UIFont *)bp_adjustFontForTextStyle:(NSString *)style scale:(CGFloat)scale{
     
     UIFontDescriptor * fontDescriptor = nil;
     

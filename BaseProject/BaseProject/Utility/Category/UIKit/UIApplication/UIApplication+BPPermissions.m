@@ -36,7 +36,7 @@ static char BPPermissionsLocationBlockFailurePropertyKey;
 
 
 #pragma mark - Check permissions
--(BPPermissionAccess)hasAccessToBluetoothLE {
+- (BPPermissionAccess)hasAccessToBluetoothLE {
     switch ([[[CBCentralManager alloc] init] state]) {
         case CBCentralManagerStateUnsupported:
             return BPPermissionAccessUnsupported;
@@ -52,7 +52,7 @@ static char BPPermissionsLocationBlockFailurePropertyKey;
     }
 }
 
--(BPPermissionAccess)hasAccessToCalendar {
+- (BPPermissionAccess)hasAccessToCalendar {
     switch ([EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent]) {
         case EKAuthorizationStatusAuthorized:
             return BPPermissionAccessGranted;
@@ -72,7 +72,7 @@ static char BPPermissionsLocationBlockFailurePropertyKey;
     }
 }
 
--(BPPermissionAccess)hasAccessToContacts {
+- (BPPermissionAccess)hasAccessToContacts {
     switch (ABAddressBookGetAuthorizationStatus()) {
         case kABAuthorizationStatusAuthorized:
             return BPPermissionAccessGranted;
@@ -92,7 +92,7 @@ static char BPPermissionsLocationBlockFailurePropertyKey;
     }
 }
 
--(BPPermissionAccess)hasAccessToLocation {
+- (BPPermissionAccess)hasAccessToLocation {
     switch ([CLLocationManager authorizationStatus]) {
         case kCLAuthorizationStatusAuthorized:
             return BPPermissionAccessGranted;
@@ -113,7 +113,7 @@ static char BPPermissionsLocationBlockFailurePropertyKey;
     return BPPermissionAccessUnknown;
 }
 
--(BPPermissionAccess)hasAccessToPhotos {
+- (BPPermissionAccess)hasAccessToPhotos {
     switch ([ALAssetsLibrary authorizationStatus]) {
         case ALAuthorizationStatusAuthorized:
             return BPPermissionAccessGranted;
@@ -133,7 +133,7 @@ static char BPPermissionsLocationBlockFailurePropertyKey;
     }
 }
 
--(BPPermissionAccess)hasAccessToReminders {
+- (BPPermissionAccess)hasAccessToReminders {
     switch ([EKEventStore authorizationStatusForEntityType:EKEntityTypeReminder]) {
         case EKAuthorizationStatusAuthorized:
             return BPPermissionAccessGranted;
@@ -156,7 +156,7 @@ static char BPPermissionsLocationBlockFailurePropertyKey;
 
 
 #pragma mark - Request permissions
--(void)bp_requestAccessToCalendarWithSuccess:(void(^)(void))accessGranted andFailure:(void(^)(void))accessDenied {
+- (void)bp_requestAccessToCalendarWithSuccess:(void(^)(void))accessGranted andFailure:(void(^)(void))accessDenied {
     EKEventStore *eventStore = [[EKEventStore alloc] init];
     [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -169,7 +169,7 @@ static char BPPermissionsLocationBlockFailurePropertyKey;
     }];
 }
 
--(void)bp_requestAccessToContactsWithSuccess:(void(^)(void))accessGranted andFailure:(void(^)(void))accessDenied {
+- (void)bp_requestAccessToContactsWithSuccess:(void(^)(void))accessGranted andFailure:(void(^)(void))accessDenied {
     ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
     if(addressBook) {
         ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
@@ -184,7 +184,7 @@ static char BPPermissionsLocationBlockFailurePropertyKey;
     }
 }
 
--(void)bp_requestAccessToMicrophoneWithSuccess:(void(^)(void))accessGranted andFailure:(void(^)(void))accessDenied {
+- (void)bp_requestAccessToMicrophoneWithSuccess:(void(^)(void))accessGranted andFailure:(void(^)(void))accessDenied {
     AVAudioSession *session = [[AVAudioSession alloc] init];
     [session requestRecordPermission:^(BOOL granted) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -197,7 +197,7 @@ static char BPPermissionsLocationBlockFailurePropertyKey;
     }];
 }
 
--(void)bp_requestAccessToMotionWithSuccess:(void(^)(void))accessGranted {
+- (void)bp_requestAccessToMotionWithSuccess:(void(^)(void))accessGranted {
     CMMotionActivityManager *motionManager = [[CMMotionActivityManager alloc] init];
     NSOperationQueue *motionQueue = [[NSOperationQueue alloc] init];
     [motionManager startActivityUpdatesToQueue:motionQueue withHandler:^(CMMotionActivity *activity) {
@@ -206,7 +206,7 @@ static char BPPermissionsLocationBlockFailurePropertyKey;
     }];
 }
 
--(void)bp_requestAccessToPhotosWithSuccess:(void(^)(void))accessGranted andFailure:(void(^)(void))accessDenied {
+- (void)bp_requestAccessToPhotosWithSuccess:(void(^)(void))accessGranted andFailure:(void(^)(void))accessDenied {
     ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
     [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAlbum usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
         accessGranted();
@@ -215,7 +215,7 @@ static char BPPermissionsLocationBlockFailurePropertyKey;
     }];
 }
 
--(void)bp_requestAccessToRemindersWithSuccess:(void(^)(void))accessGranted andFailure:(void(^)(void))accessDenied {
+- (void)bp_requestAccessToRemindersWithSuccess:(void(^)(void))accessGranted andFailure:(void(^)(void))accessDenied {
     EKEventStore *eventStore = [[EKEventStore alloc] init];
     [eventStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -231,12 +231,12 @@ static char BPPermissionsLocationBlockFailurePropertyKey;
 
 #pragma mark - Needs investigating
 /*
- -(void)requestAccessToBluetoothLEWithSuccess:(void(^)())accessGranted {
+ - (void)requestAccessToBluetoothLEWithSuccess:(void(^)())accessGranted {
  //REQUIRES DELEGATE - NEEDS RETHINKING
  }
  */
 
--(void)bp_requestAccessToLocationWithSuccess:(void(^)(void))accessGranted andFailure:(void(^)(void))accessDenied {
+- (void)bp_requestAccessToLocationWithSuccess:(void(^)(void))accessGranted andFailure:(void(^)(void))accessDenied {
     self.bp_permissionsLocationManager = [[CLLocationManager alloc] init];
     self.bp_permissionsLocationManager.delegate = self;
     
@@ -247,27 +247,27 @@ static char BPPermissionsLocationBlockFailurePropertyKey;
 
 
 #pragma mark - Location manager injection
--(CLLocationManager *)bp_permissionsLocationManager {
+- (CLLocationManager *)bp_permissionsLocationManager {
     return objc_getAssociatedObject(self, &BPPermissionsLocationManagerPropertyKey);
 }
 
--(void)setBp_permissionsLocationManager:(CLLocationManager *)manager {
+- (void)setBp_permissionsLocationManager:(CLLocationManager *)manager {
     objc_setAssociatedObject(self, &BPPermissionsLocationManagerPropertyKey, manager, OBJC_ASSOCIATION_RETAIN);
 }
 
--(BPLocationSuccessCallback)locationSuccessCallbackProperty {
+- (BPLocationSuccessCallback)locationSuccessCallbackProperty {
     return objc_getAssociatedObject(self, &BPPermissionsLocationBlockSuccessPropertyKey);
 }
 
--(void)setBp_locationSuccessCallbackProperty:(BPLocationSuccessCallback)locationCallbackProperty {
+- (void)setBp_locationSuccessCallbackProperty:(BPLocationSuccessCallback)locationCallbackProperty {
     objc_setAssociatedObject(self, &BPPermissionsLocationBlockSuccessPropertyKey, locationCallbackProperty, OBJC_ASSOCIATION_COPY);
 }
 
--(BPLocationFailureCallback)locationFailureCallbackProperty {
+- (BPLocationFailureCallback)locationFailureCallbackProperty {
     return objc_getAssociatedObject(self, &BPPermissionsLocationBlockFailurePropertyKey);
 }
 
--(void)setBp_locationFailureCallbackProperty:(BPLocationFailureCallback)locationFailureCallbackProperty {
+- (void)setBp_locationFailureCallbackProperty:(BPLocationFailureCallback)locationFailureCallbackProperty {
     objc_setAssociatedObject(self, &BPPermissionsLocationBlockFailurePropertyKey, locationFailureCallbackProperty, OBJC_ASSOCIATION_COPY);
 }
 

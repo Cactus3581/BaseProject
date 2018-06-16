@@ -42,7 +42,7 @@
 
 
 
--(unsigned long long)bp_sizeOfFolder:(NSString *)folderPath
+- (unsigned long long)bp_sizeOfFolder:(NSString *)folderPath
 {
     NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:folderPath error:nil];
     NSEnumerator *contentsEnumurator = [contents objectEnumerator];

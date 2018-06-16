@@ -72,7 +72,7 @@
 /**
  * hexString eg. #ffffffff
  */
-+ (UIColor *)colorWithHexStringWithAlpha:(NSString*)hexString {
++ (UIColor *)colorWithHexStringWithAlpha:(NSString *)hexString {
    	if ([hexString hasPrefix:@"0x"] || [hexString hasPrefix:@"0X"]) {
         hexString = [hexString substringFromIndex:2];
     } else if ([hexString hasPrefix:@"#"]) {

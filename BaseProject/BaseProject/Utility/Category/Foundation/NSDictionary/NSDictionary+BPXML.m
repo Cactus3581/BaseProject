@@ -17,11 +17,11 @@
    
     return [self  _XMLStringWithRootElement:nil declaration:nil];
 }
-- (NSString*)_XMLStringDefaultDeclarationWithRootElement:(NSString*)rootElement{
+- (NSString *)_XMLStringDefaultDeclarationWithRootElement:(NSString *)rootElement{
     return [self  _XMLStringWithRootElement:rootElement declaration:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>"];
 
 }
-- (NSString*)_XMLStringWithRootElement:(NSString*)rootElement declaration:(NSString*)declaration{
+- (NSString *)_XMLStringWithRootElement:(NSString *)rootElement declaration:(NSString *)declaration{
     NSMutableString *xml = [[NSMutableString alloc] initWithString:@""];
     if (declaration) {
         [xml appendString:declaration];

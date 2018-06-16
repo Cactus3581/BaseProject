@@ -16,7 +16,7 @@
  *
  *  @return imageview
  */
-+ (id)bp_imageViewWithImageNamed:(NSString*)imageName;
++ (id)bp_imageViewWithImageNamed:(NSString *)imageName;
 /**
  *  @brief  根据frame创建imageview
  *
@@ -26,7 +26,7 @@
  */
 + (id)bp_imageViewWithFrame:(CGRect)frame;
 
-+ (id)bp_imageViewWithStretchableImage:(NSString*)imageName Frame:(CGRect)frame;
++ (id)bp_imageViewWithStretchableImage:(NSString *)imageName Frame:(CGRect)frame;
 /**
  *  @brief  创建imageview动画
  *
@@ -35,8 +35,8 @@
  *
  *  @return imageview
  */
-+ (id)bp_imageViewWithImageArray:(NSArray*)imageArray duration:(NSTimeInterval)duration;
-- (void)bp_setImageWithStretchableImage:(NSString*)imageName;
++ (id)bp_imageViewWithImageArray:(NSArray *)imageArray duration:(NSTimeInterval)duration;
+- (void)bp_setImageWithStretchableImage:(NSString *)imageName;
 
 
 // 画水印

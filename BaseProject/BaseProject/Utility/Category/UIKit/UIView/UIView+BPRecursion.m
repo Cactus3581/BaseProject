@@ -32,7 +32,7 @@
 }
 
 
--(void)bp_runBlockOnAllSubviews:(BPSubviewBlock)block
+- (void)bp_runBlockOnAllSubviews:(BPSubviewBlock)block
 {
     block(self);
     for (UIView* view in [self subviews])
@@ -41,7 +41,7 @@
     }
 }
 
--(void)bp_runBlockOnAllSuperviews:(BPSuperviewBlock)block
+- (void)bp_runBlockOnAllSuperviews:(BPSuperviewBlock)block
 {
     block(self);
     if (self.superview)
@@ -50,7 +50,7 @@
     }
 }
 
--(void)bp_enableAllControlsInViewHierarchy
+- (void)bp_enableAllControlsInViewHierarchy
 {
     [self bp_runBlockOnAllSubviews:^(UIView *view) {
         
@@ -65,7 +65,7 @@
     }];
 }
 
--(void)bp_disableAllControlsInViewHierarchy
+- (void)bp_disableAllControlsInViewHierarchy
 {
     [self bp_runBlockOnAllSubviews:^(UIView *view) {
         

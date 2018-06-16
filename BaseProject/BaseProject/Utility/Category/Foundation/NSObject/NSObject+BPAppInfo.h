@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface NSObject (BPAppInfo)
--(NSString *)_version;
--(NSInteger)_build;
--(NSString *)_identifier;
--(NSString *)_currentLanguage;
--(NSString *)_deviceModel;
+- (NSString *)_version;
+- (NSInteger)_build;
+- (NSString *)_identifier;
+- (NSString *)_currentLanguage;
+- (NSString *)_deviceModel;
 @end

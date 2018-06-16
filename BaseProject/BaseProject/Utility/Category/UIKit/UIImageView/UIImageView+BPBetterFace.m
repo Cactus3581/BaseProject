@@ -65,7 +65,7 @@ char detectorKey;
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
--(CIDetector *)bp_detector{
+- (CIDetector *)bp_detector{
     return objc_getAssociatedObject(self, &detectorKey);
 }
 
@@ -90,7 +90,7 @@ char detectorKey;
                                                       options:opts];
         }
         
-        NSArray* features = [bp_detector featuresInImage:image];
+        NSArray * features = [bp_detector featuresInImage:image];
         
         if ([features count] == 0) {
             BFLog(@"no faces");
@@ -106,7 +106,7 @@ char detectorKey;
     });
 }
 
--(void)bp_markAfterFaceDetect:(NSArray *)features size:(CGSize)size{
+- (void)bp_markAfterFaceDetect:(NSArray *)features size:(CGSize)size{
     CGRect fixedRect = CGRectMake(MAXFLOAT, MAXFLOAT, 0, 0);
     CGFloat rightBorder = 0, bottomBorder = 0;
     for (CIFaceFeature *f in features){

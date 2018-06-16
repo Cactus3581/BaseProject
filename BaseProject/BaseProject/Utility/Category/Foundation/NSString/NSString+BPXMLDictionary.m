@@ -23,7 +23,7 @@
  *
  *  @return NSDictionary
  */
--(NSDictionary *)_XMLDictionary
+- (NSDictionary *)_XMLDictionary
 {
     //TURN THE STRING INTO DATA
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];

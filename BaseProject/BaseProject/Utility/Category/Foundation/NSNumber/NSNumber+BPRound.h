@@ -10,8 +10,8 @@
 
 @interface NSNumber (BPRound)
 /* 展示 */
-- (NSString*)_toDisplayNumberWithDigit:(NSInteger)digit;
-- (NSString*)_toDisplayPercentageWithDigit:(NSInteger)digit;
+- (NSString *)_toDisplayNumberWithDigit:(NSInteger)digit;
+- (NSString *)_toDisplayPercentageWithDigit:(NSInteger)digit;
 
 /*　四舍五入 */
 /**
@@ -21,7 +21,7 @@
  *
  *  @return 结果
  */
-- (NSNumber*)_doRoundWithDigit:(NSUInteger)digit;
+- (NSNumber *)_doRoundWithDigit:(NSUInteger)digit;
 /**
  *  @brief  取上整
  *
@@ -29,7 +29,7 @@
  *
  *  @return 结果
  */
-- (NSNumber*)_doCeilWithDigit:(NSUInteger)digit;
+- (NSNumber *)_doCeilWithDigit:(NSUInteger)digit;
 /**
  *  @brief  取下整
  *
@@ -37,5 +37,5 @@
  *
  *  @return 结果
  */
-- (NSNumber*)_doFloorWithDigit:(NSUInteger)digit;
+- (NSNumber *)_doFloorWithDigit:(NSUInteger)digit;
 @end
