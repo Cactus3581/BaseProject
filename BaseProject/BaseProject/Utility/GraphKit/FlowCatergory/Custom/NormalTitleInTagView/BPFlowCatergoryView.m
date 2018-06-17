@@ -16,6 +16,8 @@ static NSString *identifier  = @"cell";
 @property (nonatomic, weak) UICollectionView *contentCollectionView;
 @property (nonatomic, weak) BPFlowCatergoryTagView *catergoryView;
 @property (nonatomic, strong,readwrite) NSMutableDictionary *vcCacheDic;
+/**所管理滚动的scrollView或者其子类，一般使用collectionView, 必须设置*/
+@property (nonatomic, strong) UIScrollView *scrollView;
 @end
 
 @implementation BPFlowCatergoryView
@@ -50,9 +52,9 @@ static NSString *identifier  = @"cell";
     }
 }
 
-- (void)reloadData {
+- (void)bp_realoadData {
     [self.catergoryView bp_realoadData];
-    [self.contentCollectionView reloadData];
+    //[self.contentCollectionView reloadData];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -130,8 +132,7 @@ static NSString *identifier  = @"cell";
     self.catergoryView = catergoryView;
     [self addSubview:catergoryView];
     
-    /* 关于数据*/
-    //catergoryView.titles = self.titles;//数据源titles，必须设置
+
     catergoryView.defaultIndex = 0;//默认优先显示的下标
     
     /* 关于交互:滑动、点击 */

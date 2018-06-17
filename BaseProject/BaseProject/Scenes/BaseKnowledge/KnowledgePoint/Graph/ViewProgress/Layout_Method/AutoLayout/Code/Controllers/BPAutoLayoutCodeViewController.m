@@ -13,17 +13,6 @@
 #define SINGLE_LINE_ADJUST_OFFSET   ((1 / [UIScreen mainScreen].scale) / 2)
 
 
-// 关于static与const结合
-// 定义了一个对象类型为 NSString *,变量名为static_Const_str1，初值为@"static_Const_str1"的指针变量
-
-// 1. *static_Const_str1 不可改变，是常量；static_Const_str1可改变
-//指向字符串的指针，指针所指向的地址中所存的内容不能改变
-static const NSString *static_Const_str1 = @"static_Const_str1";//仅限本文件使用，字符串能被修改
-
-// 2. *static_Const_str2 可改变；static_Const_str2（指针或者说是地址）不可改变,是常量
-//指向字符串的指针，指针所指向的地址不能改变
-static  NSString * const static_Const_str2 = @"static_Const_str2";//字符串不能被修改
-
 @interface BPAutoLayoutCodeViewController ()
 @property (nonatomic,strong) UIView *testview;
 @property (nonatomic,strong) UILabel *testlabel;
@@ -44,6 +33,13 @@ static  NSString * const static_Const_str2 = @"static_Const_str2";//字符串不
 #pragma mark - 约束使用及属性
 - (void)contraint {
     
+    for (int i = 0; i<3; i++) {
+        UIView *view = [[UIView alloc] init];
+        [self.view addSubview:view];
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+        }];
+    }
 }
 
 #pragma mark - vfl语言使用
@@ -102,45 +98,15 @@ static  NSString * const static_Const_str2 = @"static_Const_str2";//字符串不
     //    }];
 }
 
-- (BPMasonryAutoLayoutProcessView *)masonryView
-{
+- (BPMasonryAutoLayoutProcessView *)masonryView {
     if (!_masonryView) {
         _masonryView = [[BPMasonryAutoLayoutProcessView alloc]init];
     }
     return _masonryView;
 }
 
+- (void)previous {
 
-
-
-- (void)previous
-{
-    BPLog(@"%p",static_Const_str1);
-    BPLog(@"%p",static_Const_str2);
-    
-    static_Const_str1 = @"change"; // 对象内容不可变，指针可以变，也就是说可以指向别的对象。这里指向了@"change"这个对象，static_Const_str1里存储的地址也就变了
-    BPLog(@"%p",static_Const_str1);
-    
-    // 下面这行会报错：对象内容可变，指针不可以变，也就是说static_Const_str2不可以指向别的对象了，只能指向@"static_Const_str2"这个对象
-    //    static_Const_str2 = @"change2";
-    //    BPLog(@"%p",static_Const_str2);
-    
-    
-    //    @"test_1"  和  @"test_2" 是两个不同的字符串，即两个对象；
-    //    test_1才是指针或者说是指针变量
-    
-    //test_1指向了第一个对象@"test_1"，指针变量里面存储的地址是@"test_1"的地址
-    NSString * test_1 = @"test_1";
-    BPLog(@"%p",test_1);
-    
-    //test_1指向了第二个对象@"test_2"，指针变量里面存储的地址也就变为了@"test_2"的地址
-    test_1 = @"test_2";
-    BPLog(@"%p",test_1);
-    
-    
-    //        extern NSString * const testStr2;
-    //        testStr2 = @"const_test2_change";
-    //        BPLog(@"%@", testStr2); //
     
     //    [self commonView];
     
@@ -190,8 +156,8 @@ static  NSString * const static_Const_str2 = @"static_Const_str2";//字符串不
         
     }];
 }
-- (void)testLabel
-{
+
+- (void)testLabel {
     _testlabel = [[UILabel alloc]init];
     //    _testlabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 100, 300, 30)];
     
@@ -204,8 +170,8 @@ static  NSString * const static_Const_str2 = @"static_Const_str2";//字符串不
         make.width.equalTo(@300);
     }];
 }
-- (void)commonView
-{
+
+- (void)commonView {
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 200)];
     view.backgroundColor = kRedColor;
     [self.view addSubview:view];
@@ -238,12 +204,10 @@ static  NSString * const static_Const_str2 = @"static_Const_str2";//字符串不
 }
 
 
-- (UIView *)testview
-{
+- (UIView *)testview {
     if (!_testview) {
         _testview = [[UIView alloc]init];
         _testview.backgroundColor = kRedColor;
-        
         [_testview mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(self.view);
             make.width.height.equalTo(@50);
@@ -257,4 +221,3 @@ static  NSString * const static_Const_str2 = @"static_Const_str2";//字符串不
 }
 
 @end
-

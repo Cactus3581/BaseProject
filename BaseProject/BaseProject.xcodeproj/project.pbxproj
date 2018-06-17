@@ -298,6 +298,9 @@
 		016DADC920582FB100AA95EC /* NSObject+BPKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC220582FAF00AA95EC /* NSObject+BPKVO.m */; };
 		016DADCA20582FB100AA95EC /* NSNull+BPSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC520582FB000AA95EC /* NSNull+BPSafe.m */; };
 		016DADCB20582FB100AA95EC /* NSArray+BPSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC620582FB000AA95EC /* NSArray+BPSafe.m */; };
+		016FCB6A20D61D380097F27E /* BPCardPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016FCB6920D61D380097F27E /* BPCardPageViewController.m */; };
+		016FCB6D20D61D4E0097F27E /* BPCardPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 016FCB6C20D61D4E0097F27E /* BPCardPageView.m */; };
+		016FCB7A20D642030097F27E /* BPScrollTargetContentOffsetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016FCB7920D642030097F27E /* BPScrollTargetContentOffsetViewController.m */; };
 		01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01733FD91FA974FB006192F0 /* Assets.xcassets */; };
 		01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01733FDB1FA974FB006192F0 /* LaunchScreen.storyboard */; };
 		01733FE01FA974FB006192F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01733FDF1FA974FB006192F0 /* main.m */; };
@@ -1235,6 +1238,12 @@
 		016DADC420582FB000AA95EC /* NSObject+BPKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPKVO.h"; sourceTree = "<group>"; };
 		016DADC520582FB000AA95EC /* NSNull+BPSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+BPSafe.m"; sourceTree = "<group>"; };
 		016DADC620582FB000AA95EC /* NSArray+BPSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BPSafe.m"; sourceTree = "<group>"; };
+		016FCB6820D61D380097F27E /* BPCardPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCardPageViewController.h; sourceTree = "<group>"; };
+		016FCB6920D61D380097F27E /* BPCardPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCardPageViewController.m; sourceTree = "<group>"; };
+		016FCB6B20D61D4E0097F27E /* BPCardPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCardPageView.h; sourceTree = "<group>"; };
+		016FCB6C20D61D4E0097F27E /* BPCardPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCardPageView.m; sourceTree = "<group>"; };
+		016FCB7820D642030097F27E /* BPScrollTargetContentOffsetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPScrollTargetContentOffsetViewController.h; sourceTree = "<group>"; };
+		016FCB7920D642030097F27E /* BPScrollTargetContentOffsetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPScrollTargetContentOffsetViewController.m; sourceTree = "<group>"; };
 		01733FCD1FA974FB006192F0 /* BaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01733FD91FA974FB006192F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01733FDC1FA974FB006192F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -2073,8 +2082,8 @@
 		01027AEA1FDEDAA50003F0FE /* SlideImageShow */ = {
 			isa = PBXGroup;
 			children = (
-				018C448C20093F3200CF43D7 /* Card */,
-				018C448B20093F2000CF43D7 /* Normal */,
+				016FCB6220D61C810097F27E /* BaseCollectionView */,
+				016FCB6120D61C6D0097F27E /* BaseScrollView */,
 			);
 			path = SlideImageShow;
 			sourceTree = "<group>";
@@ -4767,6 +4776,132 @@
 			path = AvoidCrash;
 			sourceTree = "<group>";
 		};
+		016FCB6120D61C6D0097F27E /* BaseScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				016FCB6320D61CDF0097F27E /* Card */,
+				018C448C20093F3200CF43D7 /* CardAnimation */,
+				018C448B20093F2000CF43D7 /* Normal */,
+			);
+			path = BaseScrollView;
+			sourceTree = "<group>";
+		};
+		016FCB6220D61C810097F27E /* BaseCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseCollectionView;
+			sourceTree = "<group>";
+		};
+		016FCB6320D61CDF0097F27E /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				016FCB6420D61CEB0097F27E /* Controllers */,
+				016FCB6620D61CEB0097F27E /* Views */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		016FCB6420D61CEB0097F27E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				016FCB6820D61D380097F27E /* BPCardPageViewController.h */,
+				016FCB6920D61D380097F27E /* BPCardPageViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		016FCB6620D61CEB0097F27E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				016FCB6B20D61D4E0097F27E /* BPCardPageView.h */,
+				016FCB6C20D61D4E0097F27E /* BPCardPageView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		016FCB6E20D641950097F27E /* TargetContentOffset */ = {
+			isa = PBXGroup;
+			children = (
+				016FCB7420D641D30097F27E /* Controllers */,
+				016FCB7520D641D30097F27E /* Models */,
+				016FCB7720D641D40097F27E /* ViewModels */,
+				016FCB7620D641D40097F27E /* Views */,
+			);
+			path = TargetContentOffset;
+			sourceTree = "<group>";
+		};
+		016FCB6F20D641B30097F27E /* BaseUse */ = {
+			isa = PBXGroup;
+			children = (
+				016FCB7020D641CE0097F27E /* Controllers */,
+				016FCB7120D641CF0097F27E /* Models */,
+				016FCB7320D641CF0097F27E /* ViewModels */,
+				016FCB7220D641CF0097F27E /* Views */,
+			);
+			path = BaseUse;
+			sourceTree = "<group>";
+		};
+		016FCB7020D641CE0097F27E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01F240A12006589800FA5174 /* BPScrollViewController.h */,
+				01F240A22006589800FA5174 /* BPScrollViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		016FCB7120D641CF0097F27E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		016FCB7220D641CF0097F27E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		016FCB7320D641CF0097F27E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		016FCB7420D641D30097F27E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				016FCB7820D642030097F27E /* BPScrollTargetContentOffsetViewController.h */,
+				016FCB7920D642030097F27E /* BPScrollTargetContentOffsetViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		016FCB7520D641D30097F27E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		016FCB7620D641D40097F27E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		016FCB7720D641D40097F27E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		01733FC41FA974FB006192F0 = {
 			isa = PBXGroup;
 			children = (
@@ -5014,8 +5149,8 @@
 		017906EC20011D1600E5C360 /* Modifier_Static&Const */ = {
 			isa = PBXGroup;
 			children = (
-				017906ED20011D1600E5C360 /* BPStaticConstViewController.m */,
 				017906EE20011D1600E5C360 /* BPStaticConstViewController.h */,
+				017906ED20011D1600E5C360 /* BPStaticConstViewController.m */,
 			);
 			path = "Modifier_Static&Const";
 			sourceTree = "<group>";
@@ -5877,14 +6012,14 @@
 			path = Normal;
 			sourceTree = "<group>";
 		};
-		018C448C20093F3200CF43D7 /* Card */ = {
+		018C448C20093F3200CF43D7 /* CardAnimation */ = {
 			isa = PBXGroup;
 			children = (
 				018C44D32009E70300CF43D7 /* Custom */,
 				018C44A320093F9400CF43D7 /* Controllers */,
 				018C449E20093F9400CF43D7 /* Views */,
 			);
-			path = Card;
+			path = CardAnimation;
 			sourceTree = "<group>";
 		};
 		018C448E20093F5E00CF43D7 /* Views */ = {
@@ -7557,8 +7692,8 @@
 		01F240A02006588A00FA5174 /* UIScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				01F240A12006589800FA5174 /* BPScrollViewController.h */,
-				01F240A22006589800FA5174 /* BPScrollViewController.m */,
+				016FCB6F20D641B30097F27E /* BaseUse */,
+				016FCB6E20D641950097F27E /* TargetContentOffset */,
 			);
 			path = UIScrollView;
 			sourceTree = "<group>";
@@ -8219,6 +8354,7 @@
 				010DB7391FDD4D450099E66F /* UITextField+BPBlocks.m in Sources */,
 				010DB7541FDD4D450099E66F /* UITableViewCell+BPNIB.m in Sources */,
 				013ED90A20C7DB3C00A83E7F /* BPIncludeTableSystemLayoutInsideHeaderView.m in Sources */,
+				016FCB6A20D61D380097F27E /* BPCardPageViewController.m in Sources */,
 				01A191B02004E165005EE4CD /* BPTextFieldViewController.m in Sources */,
 				011E8D9A20B2F7BA00B04378 /* BPSectionPlacedFooterView.m in Sources */,
 				010DB75D1FDD4D450099E66F /* UIDevice+BPHardware.m in Sources */,
@@ -8290,6 +8426,7 @@
 				010DB7581FDD4D450099E66F /* UIControl+BPActionBlocks.m in Sources */,
 				010DB7AF1FDD4D6F0099E66F /* UIButton+BPCountDown.m in Sources */,
 				01DF31CC1FDD3A9100B8A955 /* NSURLSession+BPSynchronousTask.m in Sources */,
+				016FCB6D20D61D4E0097F27E /* BPCardPageView.m in Sources */,
 				016DADC720582FB100AA95EC /* NSArray+BPSafeAccess.m in Sources */,
 				015804E520CACF6D00D0EF7C /* BPTestViewController.m in Sources */,
 				017A9A431FDD2B8C00CDA599 /* NSNumber+BPDecimalNumber.m in Sources */,
@@ -8585,6 +8722,7 @@
 				011CD78620CE5D7500560EE6 /* BPIntrinsicContentSizeController.m in Sources */,
 				010DB7901FDD4D640099E66F /* UIView+BPFrame.m in Sources */,
 				01DF321F1FDD3B3000B8A955 /* NSString+BPMatcher.m in Sources */,
+				016FCB7A20D642030097F27E /* BPScrollTargetContentOffsetViewController.m in Sources */,
 				01D22BD61FDD814000BCC4AD /* UIDevice+BPAdd.m in Sources */,
 				01BCB3441FB5598B009EF64E /* BPBaseViewModel.m in Sources */,
 				01C935A71FC337E100D98FD6 /* BPImprovingTipViewController.m in Sources */,

@@ -108,7 +108,7 @@
 				<array>
 					<dict>
 						<key>title</key>
-						<string>UIView：布局方法，布局过程，渲染过程</string>
+						<string>UIView：布局方法，布局过程，绘制过程</string>
 						<key>fileName</key>
 						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
@@ -217,7 +217,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>渲染过程，自定义画图</string>
+								<string>绘制过程，自定义画图</string>
 								<key>fileName</key>
 								<string>BPDrawViewController</string>
 								<key>briefIntro</key>
@@ -567,9 +567,28 @@
 				<key>title</key>
 				<string>UIScrollView</string>
 				<key>fileName</key>
-				<string>BPScrollViewController</string>
+				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
 				<string>ScrollView</string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>UIScrollView</string>
+						<key>fileName</key>
+						<string>BPScrollViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>TargetContentOffset</string>
+						<key>fileName</key>
+						<string>BPScrollTargetContentOffsetViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>title</key>
