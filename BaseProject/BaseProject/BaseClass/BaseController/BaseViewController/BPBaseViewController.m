@@ -219,6 +219,7 @@ static CGFloat titleInset = 20.0f;
 //    [self.navigationController.navigationBar setHidden:YES];//区别
 }
 
+#pragma mark - FPS
 - (void)addFPSLabel {
     [YYFPSLabel bp_addFPSLableOnWidnow];
 }
@@ -245,11 +246,23 @@ static CGFloat titleInset = 20.0f;
     //必须实现
 }
 
+#pragma mark -  左滑手势
 - (void)popDisabled {
     self.fd_interactivePopDisabled = YES;
     self.navigationController.fd_viewControllerBasedNavigationBarAppearanceEnabled = YES;
 }
 
+#pragma mark -  旋转操作
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    //    self.scrollView.contentOffset = CGPointMake(self.scrollView.frame.size.width * self.pageBeforeRotation, 0.0);
+}
+
+#pragma mark - 配置statusBar
+
+#pragma mark - dealloc
 - (void)dealloc {
     [self removeFPSLabel];
     [[NSNotificationCenter defaultCenter] removeObserver:self];

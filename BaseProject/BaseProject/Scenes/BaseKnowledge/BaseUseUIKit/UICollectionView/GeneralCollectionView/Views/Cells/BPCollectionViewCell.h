@@ -10,5 +10,4 @@
 
 @interface BPCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIView *aniamationBackView;
-
 @end

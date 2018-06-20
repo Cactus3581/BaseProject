@@ -9,7 +9,7 @@
 #import "BPScrollViewController.h"
 
 @interface BPScrollViewController ()<UIScrollViewDelegate>
-
+@property (weak, nonatomic) UIScrollView *scrollView;
 @end
 
 @implementation BPScrollViewController
@@ -23,6 +23,7 @@
 
 - (void)configScrollView {
     UIScrollView * scrollView = [[UIScrollView alloc] init];
+    _scrollView = scrollView;
     scrollView.backgroundColor = kGreenColor;
     scrollView.delegate = self;
     scrollView.pagingEnabled = NO;
@@ -78,6 +79,52 @@
     }];
 
 
+}
+
+#pragma mark - scrollView delegate
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    BPLog(@"1 - 将开始拖拽");
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    BPLog(@"2 - 在滚动着");
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    BPLog(@"3 - 将要结束拖拽");
+    NSLog(@"%s velocity: %@, targetContentOffset: %@", __PRETTY_FUNCTION__,
+          [NSValue valueWithCGPoint:velocity],
+          [NSValue valueWithCGPoint:*targetContentOffset]);
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    BPLog(@"4 - 已经结束拖拽");
+    if (decelerate == NO) {
+        BPLog(@"scrollView停止滚动，完全静止"); //不走这个log？
+    } else {
+        BPLog(@"4(end) - 用户停止拖拽，但是scrollView由于惯性，会继续滚动，并且减速");
+    }
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+    BPLog(@"6 - 开始减速");
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    BPLog(@"6 - 彻底停止滚动");
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    BPLog(@"非触摸拖拽 - 偏移动画完成时调用：彻底停止滚动");
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    int page = roundf(self.scrollView.contentOffset.x / self.scrollView.frame.size.width);
+    BPLog(@"page = %ld",page);
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+//    self.scrollView.contentOffset = CGPointMake(self.scrollView.frame.size.width * self.pageBeforeRotation, 0.0);
 }
 
 - (void)didReceiveMemoryWarning {

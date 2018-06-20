@@ -381,7 +381,7 @@
     [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.width.mas_equalTo(200);
 //        make.height.mas_equalTo(30);
-        make.bottom.equalTo(self).offset(-10);
+        make.bottom.equalTo(self).offset(0);
         make.centerX.equalTo(self);
     }];
 }

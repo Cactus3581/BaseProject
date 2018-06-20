@@ -119,7 +119,7 @@ static NSString *footer_nib_identifier = @"nib_footer";
 #pragma mark --UICollectionViewDelegateFlowLayout
 //设定Cell尺寸，定义某个Cell的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(kScreenWidth, cellH);
+    return CGSizeMake(self.view.width/2.0-1, cellH);
     
 //    if (((indexPath.row+1) % 3) == 0) {
 //        return CGSizeMake((kScreenWidth - (int)(kScreenWidth/3)*2),80);
@@ -139,6 +139,9 @@ static NSString *footer_nib_identifier = @"nib_footer";
 
 //设定区内边距，设定指定区的内边距
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    if (section ==0) {
+        return UIEdgeInsetsMake(0, 10, 0, 10);
+    }
     return UIEdgeInsetsMake(10, 10, 10, 10);
 }
 

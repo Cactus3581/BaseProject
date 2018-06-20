@@ -310,6 +310,10 @@
 		0173401D1FA9753F006192F0 /* BPBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0173400B1FA9753F006192F0 /* BPBaseNavigationController.m */; };
 		0173401E1FA9753F006192F0 /* BPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0173400E1FA9753F006192F0 /* BPBaseViewController.m */; };
 		0173401F1FA9753F006192F0 /* BPBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017340121FA9753F006192F0 /* BPBaseTabBarController.m */; };
+		01782AC420D684E50091939C /* BPScrollLazyLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01782AC320D684E50091939C /* BPScrollLazyLoadViewController.m */; };
+		01782AC720D685040091939C /* BPScrollLinkageParallaxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01782AC620D685040091939C /* BPScrollLinkageParallaxViewController.m */; };
+		01782ACA20D6851C0091939C /* BPScrollReuseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01782AC920D6851C0091939C /* BPScrollReuseViewController.m */; };
+		01782ACD20D6950C0091939C /* BPScrollReusableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01782ACC20D6950C0091939C /* BPScrollReusableViewController.m */; };
 		017906B12000F63B00E5C360 /* BPPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017906B02000F63B00E5C360 /* BPPopViewController.m */; };
 		017906E020011C7E00E5C360 /* BPKVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017906DE20011C7E00E5C360 /* BPKVCViewController.m */; };
 		017906E120011C7E00E5C360 /* BPKVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 017906DF20011C7E00E5C360 /* BPKVCModel.m */; };
@@ -1263,6 +1267,14 @@
 		0173400F1FA9753F006192F0 /* BPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBaseViewController.h; sourceTree = "<group>"; };
 		017340111FA9753F006192F0 /* BPBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBaseTabBarController.h; sourceTree = "<group>"; };
 		017340121FA9753F006192F0 /* BPBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBaseTabBarController.m; sourceTree = "<group>"; };
+		01782AC220D684E50091939C /* BPScrollLazyLoadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPScrollLazyLoadViewController.h; sourceTree = "<group>"; };
+		01782AC320D684E50091939C /* BPScrollLazyLoadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPScrollLazyLoadViewController.m; sourceTree = "<group>"; };
+		01782AC520D685040091939C /* BPScrollLinkageParallaxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPScrollLinkageParallaxViewController.h; sourceTree = "<group>"; };
+		01782AC620D685040091939C /* BPScrollLinkageParallaxViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPScrollLinkageParallaxViewController.m; sourceTree = "<group>"; };
+		01782AC820D6851C0091939C /* BPScrollReuseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPScrollReuseViewController.h; sourceTree = "<group>"; };
+		01782AC920D6851C0091939C /* BPScrollReuseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPScrollReuseViewController.m; sourceTree = "<group>"; };
+		01782ACB20D6950C0091939C /* BPScrollReusableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPScrollReusableViewController.h; sourceTree = "<group>"; };
+		01782ACC20D6950C0091939C /* BPScrollReusableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPScrollReusableViewController.m; sourceTree = "<group>"; };
 		017906AF2000F63B00E5C360 /* BPPopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPopViewController.h; sourceTree = "<group>"; };
 		017906B02000F63B00E5C360 /* BPPopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPopViewController.m; sourceTree = "<group>"; };
 		017906DC20011C7E00E5C360 /* BPKVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPKVCViewController.h; sourceTree = "<group>"; };
@@ -2838,6 +2850,27 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		011183C520DA8F820044AE1D /* NSValue */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NSValue;
+			sourceTree = "<group>";
+		};
+		011183C620DA8F8B0044AE1D /* NSEnum */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NSEnum;
+			sourceTree = "<group>";
+		};
+		011183C720DA94270044AE1D /* NSData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NSData;
+			sourceTree = "<group>";
+		};
 		01161F32203088D500FA3441 /* AboutOC */ = {
 			isa = PBXGroup;
 			children = (
@@ -2864,12 +2897,15 @@
 		01161F3D20308F4900FA3441 /* BaseUseData */ = {
 			isa = PBXGroup;
 			children = (
+				011183C720DA94270044AE1D /* NSData */,
+				01161F3F20308F7400FA3441 /* NSArray */,
 				0179BC4320317D310061CD84 /* NSDate */,
+				01161F4020308F8300FA3441 /* NSDictionary */,
+				011183C620DA8F8B0044AE1D /* NSEnum */,
+				01161F3E20308F6B00FA3441 /* NSNumber */,
 				01161F4220308F9400FA3441 /* NSSet */,
 				01161F4120308F8B00FA3441 /* NSString */,
-				01161F4020308F8300FA3441 /* NSDictionary */,
-				01161F3F20308F7400FA3441 /* NSArray */,
-				01161F3E20308F6B00FA3441 /* NSNumber */,
+				011183C520DA8F820044AE1D /* NSValue */,
 			);
 			path = BaseUseData;
 			sourceTree = "<group>";
@@ -5080,6 +5116,139 @@
 				01C9357E1FC3357900D98FD6 /* Image */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		01782AB220D6843A0091939C /* Paging */ = {
+			isa = PBXGroup;
+			children = (
+				016FCB6E20D641950097F27E /* TargetContentOffset */,
+			);
+			path = Paging;
+			sourceTree = "<group>";
+		};
+		01782AB320D6845A0091939C /* Reuse */ = {
+			isa = PBXGroup;
+			children = (
+				01782ABE20D684D20091939C /* Controllers */,
+				01782ABF20D684D20091939C /* Models */,
+				01782AC120D684D30091939C /* ViewModels */,
+				01782AC020D684D30091939C /* Views */,
+			);
+			path = Reuse;
+			sourceTree = "<group>";
+		};
+		01782AB420D684760091939C /* LinkageParallax */ = {
+			isa = PBXGroup;
+			children = (
+				01782ABA20D684CD0091939C /* Controllers */,
+				01782ABB20D684CD0091939C /* Models */,
+				01782ABD20D684CE0091939C /* ViewModels */,
+				01782ABC20D684CE0091939C /* Views */,
+			);
+			path = LinkageParallax;
+			sourceTree = "<group>";
+		};
+		01782AB520D684820091939C /* LazyLoad */ = {
+			isa = PBXGroup;
+			children = (
+				01782AB620D684C80091939C /* Controllers */,
+				01782AB720D684C90091939C /* Models */,
+				01782AB920D684CA0091939C /* ViewModels */,
+				01782AB820D684C90091939C /* Views */,
+			);
+			path = LazyLoad;
+			sourceTree = "<group>";
+		};
+		01782AB620D684C80091939C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01782AC220D684E50091939C /* BPScrollLazyLoadViewController.h */,
+				01782AC320D684E50091939C /* BPScrollLazyLoadViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01782AB720D684C90091939C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01782AB820D684C90091939C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01782AB920D684CA0091939C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		01782ABA20D684CD0091939C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01782AC520D685040091939C /* BPScrollLinkageParallaxViewController.h */,
+				01782AC620D685040091939C /* BPScrollLinkageParallaxViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01782ABB20D684CD0091939C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01782ABC20D684CE0091939C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01782ABD20D684CE0091939C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		01782ABE20D684D20091939C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01782AC820D6851C0091939C /* BPScrollReuseViewController.h */,
+				01782AC920D6851C0091939C /* BPScrollReuseViewController.m */,
+				01782ACB20D6950C0091939C /* BPScrollReusableViewController.h */,
+				01782ACC20D6950C0091939C /* BPScrollReusableViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01782ABF20D684D20091939C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01782AC020D684D30091939C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01782AC120D684D30091939C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		017906BF2000FBFC00E5C360 /* SimpleCollection */ = {
@@ -7692,8 +7861,11 @@
 		01F240A02006588A00FA5174 /* UIScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				01782AB520D684820091939C /* LazyLoad */,
+				01782AB420D684760091939C /* LinkageParallax */,
+				01782AB320D6845A0091939C /* Reuse */,
 				016FCB6F20D641B30097F27E /* BaseUse */,
-				016FCB6E20D641950097F27E /* TargetContentOffset */,
+				01782AB220D6843A0091939C /* Paging */,
 			);
 			path = UIScrollView;
 			sourceTree = "<group>";
@@ -8312,7 +8484,9 @@
 				010DB73F1FDD4D450099E66F /* UIImage+BPFXImage.m in Sources */,
 				0158050C20CADE2300D0EF7C /* KSCellProgressSimulateDownloader.m in Sources */,
 				01161F4520308FBA00FA3441 /* BPNSNumberViewController.m in Sources */,
+				01782AC420D684E50091939C /* BPScrollLazyLoadViewController.m in Sources */,
 				0158055620CAE09D00D0EF7C /* BPOptimizeTableViewController.m in Sources */,
+				01782ACA20D6851C0091939C /* BPScrollReuseViewController.m in Sources */,
 				01D22BD11FDD814000BCC4AD /* NSArray+BPAdd.m in Sources */,
 				0135198120BC1D5D0010AEC2 /* BPAutoresizingViewB.m in Sources */,
 				017A9A471FDD2B9A00CDA599 /* UIView+BPScreenshot.m in Sources */,
@@ -8432,6 +8606,7 @@
 				017A9A431FDD2B8C00CDA599 /* NSNumber+BPDecimalNumber.m in Sources */,
 				018972BF1FC4802400D6DF5B /* BPBaseCollectionReusableView.m in Sources */,
 				011A7731201F256F00D97E11 /* BPVolumeWaverViewController.m in Sources */,
+				01782AC720D685040091939C /* BPScrollLinkageParallaxViewController.m in Sources */,
 				010DB73B1FDD4D450099E66F /* UIImage+BPBlur.m in Sources */,
 				01DF32211FDD3B3000B8A955 /* NSString+BPNormalRegex.m in Sources */,
 				010DB7091FDD4D450099E66F /* UILabel+BPAutomaticWriting.m in Sources */,
@@ -8636,6 +8811,7 @@
 				010DB7221FDD4D450099E66F /* UIWebVIew+BPSwipeGesture.m in Sources */,
 				0158053120CADED000D0EF7C /* CountryDBTools.m in Sources */,
 				01DF32771FDD3BB100B8A955 /* NSDate+BPReporting.m in Sources */,
+				01782ACD20D6950C0091939C /* BPScrollReusableViewController.m in Sources */,
 				01DF31D21FDD3A9100B8A955 /* NSFileHandle+BPReadLine.m in Sources */,
 				018C44AF20093FD200CF43D7 /* BPSlideShowViewController.m in Sources */,
 				010DB70B1FDD4D450099E66F /* UILabel+BPAdjustableLabel.m in Sources */,

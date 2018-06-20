@@ -574,7 +574,7 @@
 				<array>
 					<dict>
 						<key>title</key>
-						<string>UIScrollView</string>
+						<string>UIScrollView：一般使用及拖拽代理</string>
 						<key>fileName</key>
 						<string>BPScrollViewController</string>
 						<key>briefIntro</key>
@@ -582,9 +582,71 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>TargetContentOffset</string>
+						<string>分页思路</string>
 						<key>fileName</key>
-						<string>BPScrollTargetContentOffsetViewController</string>
+						<string>BPSimpleTableController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>pagingEnabled(跳转到轮播图目录下查看)</string>
+								<key>fileName</key>
+								<string></string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>TargetContentOffset</string>
+								<key>fileName</key>
+								<string>BPScrollTargetContentOffsetViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>重用：仿tableView</string>
+						<key>fileName</key>
+						<string>BPScrollReuseViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>联动/视差滚动</string>
+						<key>fileName</key>
+						<string>BPSimpleTableController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>基本使用联动</string>
+								<key>fileName</key>
+								<string>BPScrollLinkageParallaxViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>scroll子类嵌套联动使用（跳转到TableView目录下查看）</string>
+								<key>fileName</key>
+								<string></string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>按需加载/图片加载逻辑/优化tableview</string>
+						<key>fileName</key>
+						<string>BPScrollLazyLoadViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -1170,6 +1232,30 @@
 			<dict>
 				<key>title</key>
 				<string>NSValue</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>NSDate</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>NSEnum</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>NSData</string>
 				<key>fileName</key>
 				<string></string>
 				<key>briefIntro</key>

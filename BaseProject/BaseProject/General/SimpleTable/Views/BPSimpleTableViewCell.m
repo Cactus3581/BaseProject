@@ -28,17 +28,27 @@ static NSString *cellIdentifier = @"BPSimpleTableViewCell";
 
 - (void)setModel:(BPSimpleModel *)model indexPath:(NSIndexPath *)indexPath {
     _model = model;
+    
     if (model.subVc_array.count) {
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }else {
         self.accessoryType = UITableViewCellAccessoryNone;
     }
+    
     if (indexPath) {
         self.textLabel.text = [NSString stringWithFormat:@"%ld. %@",indexPath.row+1,model.title];
     }else {
         self.textLabel.text = model.title;
     }
+    
+    if (model.fileName.length) {
+        self.textLabel.textColor = kBlackColor;
+    }else {
+        self.textLabel.textColor = kLightGrayColor;
+    }
+    
     //self.detailTextLabel.text = model.briefIntro;
+    
     
     switch (model.importance) {
         case BPImportanceRegular: {

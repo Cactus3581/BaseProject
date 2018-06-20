@@ -13,6 +13,8 @@
 @interface BPScrollTargetContentOffsetViewController ()<UIScrollViewDelegate>
 @property (weak, nonatomic) UIScrollView *scrollView;
 @property (weak, nonatomic) UIView *contentView;
+@property (weak, nonatomic) UIView *lineView;
+
 @end
 
 @implementation BPScrollTargetContentOffsetViewController
@@ -29,7 +31,6 @@
         _scrollView = scrollView;
         _scrollView.backgroundColor = kExplicitColor;
         _scrollView.delegate = self;
-        _scrollView.pagingEnabled = YES;
         _scrollView.bounces = YES;
         _scrollView.clipsToBounds = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
@@ -40,6 +41,7 @@
             make.height.mas_equalTo(100);
         }];
     }
+    [self.view bringSubviewToFront:self.lineView];
     return _scrollView;
 }
 
@@ -49,13 +51,27 @@
         _contentView = contentView;
         _contentView.backgroundColor = kExplicitColor;
         [self.scrollView addSubview:_contentView];
-
     }
     return _contentView;
 }
 
+- (UIView *)lineView {
+    if (!_lineView) {
+        UIView *lineView = [[UIView alloc] init];
+        _lineView = lineView;
+        _lineView.backgroundColor = kThemeColor;
+        [self.view addSubview:_lineView];
+        [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.centerX.equalTo(self.view);
+            make.width.mas_equalTo(kOnePixel);
+        }];
+    }
+    return _lineView;
+}
+
 - (void)setupPages {
-    int totalNum = 10;
+
+    int totalNum = 40;
     [self.view setNeedsLayout];
     [self.view layoutIfNeeded];
     CGFloat x = (kScreenWidth - BUBBLE_DIAMETER) / 2.0;
