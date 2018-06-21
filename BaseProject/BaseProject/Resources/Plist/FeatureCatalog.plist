@@ -340,17 +340,17 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>卡片滑动</string>
+				<string>卡片非轮播图滑动</string>
 				<key>fileName</key>
-				<string>BPCardPageFlowViewController</string>
+				<string>BPCardPageViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>卡片非轮播图</string>
+				<string>卡片轮播图滑动，带缩放动画</string>
 				<key>fileName</key>
-				<string>BPCardPageViewController</string>
+				<string>BPCardPageFlowViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>

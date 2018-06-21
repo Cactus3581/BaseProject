@@ -33,6 +33,7 @@
 
 #pragma mark - 创建布局及设置默认值
 - (void)initializeSubViews {
+    self.clipsToBounds = YES;
     self.padding = 20;
     self.imageInset = 10;
     
@@ -64,6 +65,14 @@
         make.width.mas_equalTo(scrollWidth);
     }];
     self.scrollView.contentSize = CGSizeMake(scrollWidth * self.imageArray.count, 0); //可以不写，因为下面的子view决定了大小
+    
+    UIImageView *imageView = BPValidateArrayObjAtIdx(self.imageViewArray,0);
+    if (imageView && imageView.superview) {
+        [imageView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(imageViewWidth);
+        }];
+    }
+
 }
 
 #pragma mark - 数据源
@@ -76,7 +85,7 @@
         return;
     }
     
-    CGFloat imageViewWidth = kScreenWidth-self.imageInset-self.padding-self.padding-self.imageInset;
+    CGFloat imageViewWidth = self.width-self.imageInset-self.padding-self.padding-self.imageInset;
     CGFloat scrollWidth = imageViewWidth + self.padding;
     
     for (int i = 0; i<imageArray.count; i++) {

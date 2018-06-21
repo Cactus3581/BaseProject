@@ -160,5 +160,13 @@
 		<key>briefIntro</key>
 		<string></string>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>SpriteKit</string>
+		<key>fileName</key>
+		<string></string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
 </array>
 </plist>

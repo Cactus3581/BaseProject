@@ -8,6 +8,10 @@
 
 #import "BPCardPageFlowViewCell.h"
 
+@interface BPCardPageFlowViewCell()
+
+@end
+
 @implementation BPCardPageFlowViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -32,7 +36,7 @@
         return;
     }
     self.mainImageView.frame = superViewBounds;
-    self.coverView.frame = self.bounds;
+    self.coverView.frame = superViewBounds;
 }
 
 - (UIImageView *)mainImageView {

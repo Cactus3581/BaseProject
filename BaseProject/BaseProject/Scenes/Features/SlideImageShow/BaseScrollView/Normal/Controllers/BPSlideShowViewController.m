@@ -10,6 +10,7 @@
 #import "BPSliderShowView.h"
 #import "BPInsideSliderShowView.h"
 #import "BPTestSliderShowView.h"
+#import "BPImagetUrlHelper.h"
 
 @interface BPSlideShowViewController ()
 @property (nonatomic,weak) BPSliderShowView *sliderShowView;

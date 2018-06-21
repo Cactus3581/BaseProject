@@ -9,16 +9,19 @@
 #import "BPCustomCardPageFlowViewController.h"
 #import "BPCardPageFlowView.h"
 #import "BPCustomCardPageFlowViewCell.h"
+#import "BPImagetUrlHelper.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIView+WebCache.h"
 
 @interface BPCustomCardPageFlowViewController ()<BPCardPageFlowViewDelegate, BPCardPageFlowViewDataSource>
 
 /**
  *  图片数组
  */
-@property (nonatomic, strong) NSMutableArray *imageArray;
+@property (nonatomic, strong) NSArray *imageArray;
 
 /**
- *  指示label
+ *  点击图片 展示index
  */
 @property (nonatomic, strong) UILabel *indicateLabel;
 
@@ -33,7 +36,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.rightBarButtonTitle = @"滚动到指定的页数";
+    self.view.backgroundColor = kThemeColor;
+    self.rightBarButtonTitle = @"randon index";
+    self.imageArray = [BPImagetUrlHelper getImageUrlSet];
     [self setupUI];
 }
 
@@ -46,11 +51,9 @@
 }
 
 - (void)setupUI {
-    
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
     BPCardPageFlowView *pageFlowView = [[BPCardPageFlowView alloc] initWithFrame:CGRectMake(0, 72, kScreenWidth, kScreenWidth * 9 / 16)];
-    pageFlowView.backgroundColor = kThemeColor;
+    pageFlowView.backgroundColor = kWhiteColor;
     pageFlowView.delegate = self;
     pageFlowView.dataSource = self;
     pageFlowView.minimumPageAlpha = 0.4;
@@ -74,7 +77,7 @@
     [self.view addSubview:self.indicateLabel];
 }
 
-#pragma mark --BPCardPageFlowView Delegate
+#pragma mark --BPCardPageFlowViewDelegate
 - (void)didSelectCell:(UIView *)subView withSubViewIndex:(NSInteger)subIndex {
     BPLog(@"点击了第%ld张图",(long)subIndex + 1);
     self.indicateLabel.text = [NSString stringWithFormat:@"点击了第%ld张图",(long)subIndex + 1];
@@ -84,52 +87,37 @@
     BPLog(@"BPCustomCardPageFlowViewController 滚动到了第%ld页",pageNumber);
 }
 
-#warning 假设产品需求左右中间页显示大小为 kScreenWidth - 50, (kScreenWidth - 50) * 9 / 16
+#warning 假设产品需求左右中间页显示大小为 Width - 50, (Width - 50) * 9 / 16
 - (CGSize)sizeForPageInFlowView:(BPCardPageFlowView *)flowView {
     return CGSizeMake(kScreenWidth - 50, (kScreenWidth - 50) * 9 / 16);
 }
 
-#pragma mark --BPCardPageFlowView Datasource
+#pragma mark --BPCardPageFlowViewDatasource
 - (NSInteger)numberOfPagesInFlowView:(BPCardPageFlowView *)flowView {
     return self.imageArray.count;
 }
 
-- (BPCustomCardPageFlowViewCell *)flowView:(BPCardPageFlowView *)flowView cellForPageAtIndex:(NSInteger)index {
-    BPCustomCardPageFlowViewCell *cell = (BPCustomCardPageFlowViewCell *)[flowView dequeueReusableCell];
-    if (!cell) {
-        cell = [[BPCustomCardPageFlowViewCell alloc] init];
-        cell.layer.cornerRadius = 4;
-        cell.layer.masksToBounds = YES;
+- (BPCardPageFlowViewCell *)flowView:(BPCardPageFlowView *)flowView cellForPageAtIndex:(NSInteger)index{
+    BPCustomCardPageFlowViewCell *bannerView = (BPCustomCardPageFlowViewCell *)[flowView dequeueReusableCell];
+    if (!bannerView) {
+        bannerView = [[BPCustomCardPageFlowViewCell alloc] init];
+        bannerView.layer.cornerRadius = 4;
+        bannerView.layer.masksToBounds = YES;
     }
-    
     //在这里下载网络图片
-    //[cell.mainImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:hostUrlsImg,imageDict[@"img"]]] placeholderImage:[UIImage imageNamed:@""]];
-    
-    cell.mainImageView.image = self.imageArray[index];
-    cell.indexLabel.text = [NSString stringWithFormat:@"第%ld张图",(long)index + 1];
-    return cell;
-}
-
-#pragma mark --懒加载
-- (NSMutableArray *)imageArray {
-    if (_imageArray == nil) {
-        _imageArray = [NSMutableArray array];
-        for (int index = 0; index < 5; index++) {
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"cell_autoLayoutHeight%02d",index]];
-            [_imageArray addObject:image];
-        }
-        
-    }
-    return _imageArray;
+    [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:self.imageArray[index]] placeholderImage:[UIImage imageNamed:@"cactus_explicit"]];
+//    bannerView.mainImageView.image = self.imageArray[index];
+    bannerView.indexLabel.text = [NSString stringWithFormat:@"第%ld张图",(long)index + 1];
+    return bannerView;
 }
 
 - (UILabel *)indicateLabel {
-    if (_indicateLabel == nil) {
+    if (!_indicateLabel) {
         _indicateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 400, kScreenWidth, 16)];
-        _indicateLabel.textColor = kBlueColor;
+        _indicateLabel.textColor = kExplicitColor;
         _indicateLabel.font = [UIFont systemFontOfSize:16.0];
         _indicateLabel.textAlignment = NSTextAlignmentCenter;
-        _indicateLabel.text = @"指示Label";
+        _indicateLabel.text = @"点击图片 展示index";
     }
     return _indicateLabel;
 }
@@ -141,11 +129,6 @@
             [self.pageFlowView reloadData];
         } completion:NULL];
     }
-}
-
-- (void)dealloc {
-    //在dealloc或者返回按钮里停止定时器
-    [self.pageFlowView stopTimer];
 }
 
 @end

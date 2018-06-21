@@ -8,17 +8,17 @@
 
 #import "BPCardPageViewController.h"
 #import "BPCardPageView.h"
+#import "BPImagetUrlHelper.h"
 
 @interface BPCardPageViewController ()
 @property (nonatomic,weak) BPCardPageView *sliderShowView;
-
 @end
 
 @implementation BPCardPageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.sliderShowView.imageArray = @[kRandomColor,kRandomColor,kRandomColor,kRandomColor,kRandomColor,kRandomColor,kRandomColor];
+    self.sliderShowView.imageArray = @[kRandomColor,kRandomColor];
     self.sliderShowView.clickImageBlock = ^(NSInteger currentIndex) {
         BPLog(@"currentIndex = %ld",currentIndex);
     };
@@ -38,6 +38,7 @@
     }
     return _sliderShowView;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

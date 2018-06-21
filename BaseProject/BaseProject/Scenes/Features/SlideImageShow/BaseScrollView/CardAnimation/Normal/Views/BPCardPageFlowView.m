@@ -7,8 +7,9 @@
 //
 
 #import "BPCardPageFlowView.h"
+#import "NSTimer+BPUnRetain.h"
 
-@interface BPCardPageFlowView ()
+@interface BPCardPageFlowView()
 
 @property (nonatomic, assign, readwrite) NSInteger currentPageIndex;
 
@@ -24,8 +25,11 @@
 
 @end
 
-static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
+//子控制器的类名
+static NSString *subviewClassName;
+
 @implementation BPCardPageFlowView
+
 
 #pragma mark -
 #pragma mark Override Methods
@@ -60,7 +64,7 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
     _currentPageIndex = 0;
     
     _minimumPageAlpha = 1.0;
-    _autoTime = 2.0;
+    _autoTime = 5.0;
     
     self.visibleRange = NSMakeRange(0, 0);
     
@@ -74,6 +78,9 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
     self.scrollView.clipsToBounds = NO;//关键代码
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.showsVerticalScrollIndicator = NO;
+    
+    subviewClassName = @"BPCardPageFlowViewCell";
+    
     [self addSubview:self.scrollView];
 }
 
@@ -85,18 +92,18 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
     _topBottomMargin = topBottomMargin * 0.5;
 }
 
-#pragma mark -
-#pragma mark Timer
 - (void)startTimer {
     if (self.orginPageCount > 1 && self.isOpenAutoScroll && self.isCarousel) {
-        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:self.autoTime target:self selector:@selector(autoNextPage) userInfo:nil repeats:YES];
-        self.timer = timer;
-        [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+        __weak typeof (self) weakSelf = self;
+        NSTimer *timer = [NSTimer bp_scheduledTimerWithTimeInterval:self.autoTime repeats:YES block:^(NSTimer *timer) {
+            [weakSelf autoNextPage];
+        }];
+        _timer = timer;
     }
 }
 
 - (void)stopTimer {
-    if (_timer) {
+    if (self.timer) {
         [self.timer invalidate];
         self.timer = nil;
     }
@@ -112,6 +119,7 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
 - (void)autoNextPage {
     self.page ++;
     switch (self.orientation) {
+            
         case BPCardPageFlowViewOrientationHorizontal:{
             [_scrollView setContentOffset:CGPointMake(self.page * _pageSize.width, 0) animated:YES];
             break;
@@ -121,39 +129,42 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
             [_scrollView setContentOffset:CGPointMake(0, self.page * _pageSize.height) animated:YES];
             break;
         }
+            
         default:
             break;
     }
 }
 
-- (void)queueReusableCell:(BPCardPageFlowViewCell *)cell {
+- (void)queueReusableCell:(BPCardPageFlowViewCell *)cell{
     [_reusableCells addObject:cell];
 }
 
-- (void)removeCellAtIndex:(NSInteger)index {
+- (void)removeCellAtIndex:(NSInteger)index{
     BPCardPageFlowViewCell *cell = [_cells objectAtIndex:index];
     if ((NSObject *)cell == [NSNull null]) {
         return;
     }
     
     [self queueReusableCell:cell];
+    
     if (cell.superview) {
         [cell removeFromSuperview];
     }
+    
     [_cells replaceObjectAtIndex:index withObject:[NSNull null]];
 }
 
-- (void)refreshVisibleCellAppearance {
+- (void)refreshVisibleCellAppearance{
     if (_minimumPageAlpha == 1.0 && self.leftRightMargin == 0 && self.topBottomMargin == 0) {
         return;//无需更新
     }
     switch (self.orientation) {
+            
         case BPCardPageFlowViewOrientationHorizontal:{
             CGFloat offset = _scrollView.contentOffset.x;
-            
             for (NSInteger i = self.visibleRange.location; i < self.visibleRange.location + _visibleRange.length; i++) {
                 BPCardPageFlowViewCell *cell = [_cells objectAtIndex:i];
-                cellIdentifier = NSStringFromClass([cell class]);
+                subviewClassName = NSStringFromClass([cell class]);
                 CGFloat origin = cell.frame.origin.x;
                 CGFloat delta = fabs(origin - offset);
                 CGRect originCellFrame = CGRectMake(_pageSize.width * i, 0, _pageSize.width, _pageSize.height);//如果没有缩小效果的情况下的本该的Frame
@@ -171,21 +182,19 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
             }
             break;
         }
+            
         case BPCardPageFlowViewOrientationVertical:{
             CGFloat offset = _scrollView.contentOffset.y;
             for (NSInteger i = self.visibleRange.location; i < self.visibleRange.location + _visibleRange.length; i++) {
                 BPCardPageFlowViewCell *cell = [_cells objectAtIndex:i];
-                cellIdentifier = NSStringFromClass([cell class]);
+                subviewClassName = NSStringFromClass([cell class]);
                 CGFloat origin = cell.frame.origin.y;
                 CGFloat delta = fabs(origin - offset);
                 CGRect originCellFrame = CGRectMake(0, _pageSize.height * i, _pageSize.width, _pageSize.height);//如果没有缩小效果的情况下的本该的Frame
-                
                 if (delta < _pageSize.height) {
                     cell.coverView.alpha = (delta / _pageSize.height) * _minimumPageAlpha;
-                    
                     CGFloat leftRightInset = self.leftRightMargin * delta / _pageSize.height;
                     CGFloat topBottomInset = self.topBottomMargin * delta / _pageSize.height;
-                    
                     cell.layer.transform = CATransform3DMakeScale((_pageSize.width-leftRightInset*2)/_pageSize.width,(_pageSize.height-topBottomInset*2) / _pageSize.height, 1.0);
                     cell.frame = UIEdgeInsetsInsetRect(originCellFrame, UIEdgeInsetsMake(topBottomInset, leftRightInset, topBottomInset, leftRightInset));
                     cell.mainImageView.frame = cell.bounds;
@@ -201,18 +210,15 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
     }
 }
 
-- (void)setPageAtIndex:(NSInteger)pageIndex {
+- (void)setPageAtIndex:(NSInteger)pageIndex{
     NSParameterAssert(pageIndex >= 0 && pageIndex < [_cells count]);
-    
     BPCardPageFlowViewCell *cell = [_cells objectAtIndex:pageIndex];
     if ((NSObject *)cell == [NSNull null]) {
         cell = [_dataSource flowView:self cellForPageAtIndex:pageIndex % self.orginPageCount];
         NSAssert(cell!=nil, @"datasource must not return nil");
         [_cells replaceObjectAtIndex:pageIndex withObject:cell];
-        
         cell.tag = pageIndex % self.orginPageCount;
         [cell setSubviewsWithSuperViewBounds:CGRectMake(0, 0, _pageSize.width, _pageSize.height)];
-        
         __weak __typeof(self) weakSelf = self;
         cell.didSelectCellBlock = ^(NSInteger tag, BPCardPageFlowViewCell *cell) {
             [weakSelf singleCellTapAction:tag withCell:cell];
@@ -234,12 +240,14 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
     }
 }
 
-- (void)setPagesAtContentOffset:(CGPoint)offset {
+
+- (void)setPagesAtContentOffset:(CGPoint)offset{
     //计算_visibleRange
     CGPoint startPoint = CGPointMake(offset.x - _scrollView.frame.origin.x, offset.y - _scrollView.frame.origin.y);
     CGPoint endPoint = CGPointMake(startPoint.x + self.bounds.size.width, startPoint.y + self.bounds.size.height);
     
     switch (self.orientation) {
+            
         case BPCardPageFlowViewOrientationHorizontal:{
             NSInteger startIndex = 0;
             for (int i =0; i < [_cells count]; i++) {
@@ -262,8 +270,8 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
             startIndex = MAX(startIndex - 1, 0);
             endIndex = MIN(endIndex + 1, [_cells count] - 1);
             
-            //            self.visibleRange.location = startIndex;
-            //            self.visibleRange.length = endIndex - startIndex + 1;
+            //self.visibleRange.location = startIndex;
+            //self.visibleRange.length = endIndex - startIndex + 1;
             self.visibleRange = NSMakeRange(startIndex, endIndex - startIndex + 1);
             for (NSInteger i = startIndex; i <= endIndex; i++) {
                 [self setPageAtIndex:i];
@@ -276,8 +284,10 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
             for (NSInteger i = endIndex + 1; i < [_cells count]; i ++) {
                 [self removeCellAtIndex:i];
             }
+            
             break;
         }
+            
         case BPCardPageFlowViewOrientationVertical:{
             NSInteger startIndex = 0;
             for (int i =0; i < [_cells count]; i++) {
@@ -314,8 +324,10 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
             for (NSInteger i = endIndex + 1; i < [_cells count]; i ++) {
                 [self removeCellAtIndex:i];
             }
+            
             break;
         }
+            
         default:
             break;
     }
@@ -329,7 +341,7 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
     
     //移除所有self.scrollView的子控件
     for (UIView *view in self.scrollView.subviews) {
-        if ([NSStringFromClass(view.class) isEqualToString:cellIdentifier] || [view isKindOfClass:[BPCardPageFlowViewCell class]]) {
+        if ([NSStringFromClass(view.class) isEqualToString:subviewClassName] || [view isKindOfClass:[BPCardPageFlowViewCell class]]) {
             [view removeFromSuperview];
         }
     }
@@ -338,6 +350,7 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
     
     if (_needsReload) {
         //如果需要重新加载数据，则需要清空相关数据全部重新加载
+        
         //重置pageCount
         if (_dataSource && [_dataSource respondsToSelector:@selector(numberOfPagesInFlowView:)]) {
             
@@ -347,7 +360,7 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
             //总页数
             if (self.isCarousel) {
                 _pageCount = self.orginPageCount == 1 ? 1: [_dataSource numberOfPagesInFlowView:self] * 3;
-            } else {
+            }else {
                 _pageCount = self.orginPageCount == 1 ? 1: [_dataSource numberOfPagesInFlowView:self];
             }
             
@@ -363,7 +376,7 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
         
         //重置pageWidth
         _pageSize = CGSizeMake(self.bounds.size.width - 4 * self.leftRightMargin,(self.bounds.size.width - 4 * self.leftRightMargin) * 9 /16);
-        if (self.delegate && [self.delegate respondsToSelector:@selector(sizeForPageInFlowView:)]) {
+        if (self.delegate && self.delegate && [self.delegate respondsToSelector:@selector(sizeForPageInFlowView:)]) {
             _pageSize = [self.delegate sizeForPageInFlowView:self];
         }
         
@@ -385,25 +398,21 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
                 _scrollView.center = theCenter;
                 
                 if (self.orginPageCount > 1) {
-                    
                     if (self.isCarousel) {
-                        
                         //滚到第二组
                         [_scrollView setContentOffset:CGPointMake(_pageSize.width * self.orginPageCount, 0) animated:NO];
-                        
                         self.page = self.orginPageCount;
-                        
                         //启动自动轮播
                         [self startTimer];
                         
-                    } else {
+                    }else {
                         //滚到开始
                         [_scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
                         self.page = self.orginPageCount;
                     }
                 }
-                
                 break;
+                
             case BPCardPageFlowViewOrientationVertical:{
                 _scrollView.frame = CGRectMake(0, 0, _pageSize.width, _pageSize.height);
                 _scrollView.contentSize = CGSizeMake(0 ,_pageSize.height * _pageCount);
@@ -411,7 +420,6 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
                 _scrollView.center = theCenter;
                 
                 if (self.orginPageCount > 1) {
-                    
                     if (self.isCarousel) {
                         //滚到第二组
                         [_scrollView setContentOffset:CGPointMake(0, _pageSize.height * self.orginPageCount) animated:NO];
@@ -431,10 +439,10 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
         }
         _needsReload = NO;
     }
-    
     [self setPagesAtContentOffset:_scrollView.contentOffset];//根据当前scrollView的offset设置cell
     [self refreshVisibleCellAppearance];//更新各个可见Cell的显示外貌
 }
+
 
 - (BPCardPageFlowViewCell *)dequeueReusableCell{
     BPCardPageFlowViewCell *cell = [_reusableCells lastObject];
@@ -452,6 +460,7 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
             self.page = pageNumber + self.orginPageCount;
             [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(startTimer) object:nil];
             [self performSelector:@selector(startTimer) withObject:nil afterDelay:0.5];
+            
         }else {
             self.page = pageNumber;
         }
@@ -489,18 +498,21 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
 #pragma mark -
 #pragma mark UIScrollView Delegate
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (self.orginPageCount == 0) {
         return;
     }
     NSInteger pageIndex;
     switch (self.orientation) {
+            
         case BPCardPageFlowViewOrientationHorizontal:
             pageIndex = (int)round(_scrollView.contentOffset.x / _pageSize.width) % self.orginPageCount;
             break;
+            
         case BPCardPageFlowViewOrientationVertical:
             pageIndex = (int)round(_scrollView.contentOffset.y / _pageSize.height) % self.orginPageCount;
             break;
+            
         default:
             break;
     }
@@ -508,6 +520,7 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
     if (self.isCarousel) {
         if (self.orginPageCount > 1) {
             switch (self.orientation) {
+                    
                 case BPCardPageFlowViewOrientationHorizontal: {
                     if (scrollView.contentOffset.x / _pageSize.width >= 2 * self.orginPageCount) {
                         [scrollView setContentOffset:CGPointMake(_pageSize.width * self.orginPageCount, 0) animated:NO];
@@ -520,17 +533,20 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
                     }
                 }
                     break;
+                    
                 case BPCardPageFlowViewOrientationVertical: {
                     if (scrollView.contentOffset.y / _pageSize.height >= 2 * self.orginPageCount) {
                         [scrollView setContentOffset:CGPointMake(0, _pageSize.height * self.orginPageCount) animated:NO];
                         self.page = self.orginPageCount;
                     }
+                    
                     if (scrollView.contentOffset.y / _pageSize.height <= self.orginPageCount - 1) {
                         [scrollView setContentOffset:CGPointMake(0, (2 * self.orginPageCount - 1) * _pageSize.height) animated:NO];
                         self.page = 2 * self.orginPageCount;
                     }
                 }
                     break;
+                    
                 default:
                     break;
             }
@@ -538,13 +554,15 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
             pageIndex = 0;
         }
     }
+    
     [self setPagesAtContentOffset:scrollView.contentOffset];
     [self refreshVisibleCellAppearance];
     
     if (self.pageControl && [self.pageControl respondsToSelector:@selector(setCurrentPage:)]) {
         [self.pageControl setCurrentPage:pageIndex];
     }
-    if ([_delegate respondsToSelector:@selector(didScrollToPage:inFlowView:)] && _currentPageIndex != pageIndex && pageIndex >= 0) {
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(didScrollToPage:inFlowView:)] && _currentPageIndex != pageIndex && pageIndex >= 0) {
         [_delegate didScrollToPage:pageIndex inFlowView:self];
     }
     _currentPageIndex = pageIndex;
@@ -564,7 +582,9 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
     
     if (self.orginPageCount > 1 && self.isOpenAutoScroll && self.isCarousel) {
+        
         switch (self.orientation) {
+                
             case BPCardPageFlowViewOrientationHorizontal: {
                 if (self.page == floor(_scrollView.contentOffset.x / _pageSize.width)) {
                     self.page = floor(_scrollView.contentOffset.x / _pageSize.width) + 1;
@@ -573,14 +593,16 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
                 }
             }
                 break;
-            case BPCardPageFlowViewOrientationVertical: {
+                
+            case BPCardPageFlowViewOrientationVertical:{
                 if (self.page == floor(_scrollView.contentOffset.y / _pageSize.height)) {
                     self.page = floor(_scrollView.contentOffset.y / _pageSize.height) + 1;
-                } else {
+                }else {
                     self.page = floor(_scrollView.contentOffset.y / _pageSize.height);
                 }
             }
                 break;
+                
             default:
                 break;
         }
@@ -589,9 +611,21 @@ static NSString *cellIdentifier = @"BPCardPageFlowViewCell";
 
 //点击了cell
 - (void)singleCellTapAction:(NSInteger)selectTag withCell:(BPCardPageFlowViewCell *)cell {
-    if ([self.delegate respondsToSelector:@selector(didSelectCell:withSubViewIndex:)]) {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectCell:withSubViewIndex:)]) {
         [self.delegate didSelectCell:cell withSubViewIndex:selectTag];
     }
+}
+
+//解决当父View释放时，当前视图因为被Timer强引用而不能释放的问题
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+    if (!newSuperview) {
+        [self stopTimer];
+    }
+}
+
+//解决当timer释放后 回调scrollViewDidScroll时访问野指针导致崩溃
+- (void)dealloc {
+    _scrollView.delegate = nil;
 }
 
 @end

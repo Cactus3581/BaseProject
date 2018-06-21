@@ -22,14 +22,14 @@
  
  问题:考虑到轮播图的数量不会太大,暂时未做重用处理;对设备性能影响不明显,后期版本会考虑添加重用标识模仿tableview的重用
  
- */
+*/
 
 typedef enum{
     BPCardPageFlowViewOrientationHorizontal = 0,
     BPCardPageFlowViewOrientationVertical
-} BPCardPageFlowViewOrientation;
+}BPCardPageFlowViewOrientation;
 
-@interface BPCardPageFlowView : UIView<UIScrollViewDelegate>
+@interface BPCardPageFlowView: UIView<UIScrollViewDelegate>
 
 /**
  *  默认为横向
@@ -45,15 +45,15 @@ typedef enum{
 @property (nonatomic,assign) NSInteger pageCount;
 
 @property (nonatomic,strong) NSMutableArray *cells;
-
 @property (nonatomic,assign) NSRange visibleRange;
+
 /**
  *  如果以后需要支持reuseIdentifier，这边就得使用字典类型了
  */
 @property (nonatomic,strong) NSMutableArray *reusableCells;
 
-@property (nonatomic,assign)  id <BPCardPageFlowViewDataSource> dataSource;
-@property (nonatomic,assign)  id <BPCardPageFlowViewDelegate>   delegate;
+@property (nonatomic,assign)   id <BPCardPageFlowViewDataSource> dataSource;
+@property (nonatomic,assign)   id <BPCardPageFlowViewDelegate>   delegate;
 
 /**
  *  指示器
@@ -113,14 +113,14 @@ typedef enum{
 /**
  *  获取可重复使用的Cell
  *
- *  @return <#return value description#>
+ *  @return BPCardPageFlowViewCell
  */
 - (BPCardPageFlowViewCell *)dequeueReusableCell;
 
 /**
  *  滚动到指定的页面
  *
- *  @param pageNumber <#pageNumber description#>
+ *  @param pageNumber pageNumber
  */
 - (void)scrollToPage:(NSUInteger)pageNumber;
 
@@ -139,6 +139,9 @@ typedef enum{
  */
 - (void)adjustCenterSubview;
 
+/** 占位图*/
+@property (nonatomic,strong) UIImage  *placeHolderImage;
+
 @end
 
 
@@ -148,17 +151,17 @@ typedef enum{
 /**
  *  当前显示cell的Size(中间页显示大小)
  *
- *  @param flowView <#flowView description#>
+ *  @param flowView flowView
  *
- *  @return <#return value description#>
+ *  @return CGSize
  */
 - (CGSize)sizeForPageInFlowView:(BPCardPageFlowView *)flowView;
 
 /**
  *  滚动到了某一列
  *
- *  @param pageNumber <#pageNumber description#>
- *  @param flowView   <#flowView description#>
+ *  @param pageNumber pageNumber
+ *  @param flowView   flowView
  */
 - (void)didScrollToPage:(NSInteger)pageNumber inFlowView:(BPCardPageFlowView *)flowView;
 
@@ -168,7 +171,6 @@ typedef enum{
  *  @param subView 点击的控件
  *  @param subIndex    点击控件的index
  *
- *  @return <#return value description#>
  */
 - (void)didSelectCell:(BPCardPageFlowViewCell *)subView withSubViewIndex:(NSInteger)subIndex;
 
@@ -180,21 +182,20 @@ typedef enum{
 /**
  *  返回显示View的个数
  *
- *  @param flowView <#flowView description#>
+ *  @param flowView flowView
  *
- *  @return <#return value description#>
+ *  @return numbers
  */
 - (NSInteger)numberOfPagesInFlowView:(BPCardPageFlowView *)flowView;
 
 /**
  *  给某一列设置属性
  *
- *  @param flowView <#flowView description#>
- *  @param index    <#index description#>
+ *  @param flowView flowView
+ *  @param index    index
  *
- *  @return <#return value description#>
+ *  @return cell
  */
 - (BPCardPageFlowViewCell *)flowView:(BPCardPageFlowView *)flowView cellForPageAtIndex:(NSInteger)index;
 
 @end
-

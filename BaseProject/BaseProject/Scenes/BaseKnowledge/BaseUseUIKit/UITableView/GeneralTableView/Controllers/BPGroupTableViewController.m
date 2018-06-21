@@ -265,8 +265,12 @@ static CGFloat cellH = 50;
         _tableView.rowHeight = 45;
         _tableView.sectionHeaderHeight = 45;
         _tableView.sectionFooterHeight = 45;
-        _tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);//分割线内边距//设置分割线的位置
 
+        //分割线位置及颜色
+        _tableView.separatorColor = kThemeColor;
+        _tableView.separatorInset = UIEdgeInsetsMake(0,0, 0, 0);// 设置端距，这里表示separator离左边和右边均0像素
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        
         //估算高度,默认0
         //warning: 注意不能是CGFLOAT_MIN
         _tableView.estimatedRowHeight = 0; //iOS11之前，默认为0，之后自动计算

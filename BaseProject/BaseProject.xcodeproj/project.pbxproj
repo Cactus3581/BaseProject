@@ -217,6 +217,7 @@
 		013ED93220C7DE0400A83E7F /* BPIncludeTableSelfSizeHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 013ED91F20C7DE0300A83E7F /* BPIncludeTableSelfSizeHeadCell.m */; };
 		013ED93320C7DE0400A83E7F /* BPIncludeTableSelfSizeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 013ED92020C7DE0300A83E7F /* BPIncludeTableSelfSizeHeaderView.m */; };
 		013ED93720C7DE0400A83E7F /* BPIncludeTableSelfSizeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013ED92C20C7DE0400A83E7F /* BPIncludeTableSelfSizeController.m */; };
+		0140A13820DBDBA700EF35E4 /* BPImagetUrlHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0140A13720DBDBA700EF35E4 /* BPImagetUrlHelper.m */; };
 		01490C081FF548650035492D /* BPGCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C071FF548650035492D /* BPGCDViewController.m */; };
 		01490C0B1FF548740035492D /* BPMemoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C0A1FF548740035492D /* BPMemoryViewController.m */; };
 		01490C111FF549250035492D /* BPWeakView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01490C101FF549250035492D /* BPWeakView.m */; };
@@ -1082,6 +1083,8 @@
 		013ED92220C7DE0300A83E7F /* BPIncludeTableSelfSizeInsideTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPIncludeTableSelfSizeInsideTableViewCell.h; sourceTree = "<group>"; };
 		013ED92B20C7DE0400A83E7F /* BPIncludeTableSelfSizeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPIncludeTableSelfSizeController.h; sourceTree = "<group>"; };
 		013ED92C20C7DE0400A83E7F /* BPIncludeTableSelfSizeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPIncludeTableSelfSizeController.m; sourceTree = "<group>"; };
+		0140A13620DBDBA700EF35E4 /* BPImagetUrlHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPImagetUrlHelper.h; sourceTree = "<group>"; };
+		0140A13720DBDBA700EF35E4 /* BPImagetUrlHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPImagetUrlHelper.m; sourceTree = "<group>"; };
 		01490C061FF548650035492D /* BPGCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPGCDViewController.h; sourceTree = "<group>"; };
 		01490C071FF548650035492D /* BPGCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPGCDViewController.m; sourceTree = "<group>"; };
 		01490C091FF548740035492D /* BPMemoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMemoryViewController.h; sourceTree = "<group>"; };
@@ -2695,14 +2698,15 @@
 		010FBC3F206018B500BC9EC4 /* ImprovingTips */ = {
 			isa = PBXGroup;
 			children = (
-				011CD74B20CE18E600560EE6 /* MasksToBounds */,
-				015120FC20CBF03100B33A76 /* DynamicJump */,
-				01F750A2209EDF7100C1F24C /* OtherProject */,
-				01EF2C1C20AD352700DF98FB /* CollectionView */,
-				012D189E20AC1F4600C3E437 /* TableView */,
-				0137C73A207B3AA800F6B6CE /* Present */,
 				017F82C82063A87B00B656BA /* AddChildVC */,
+				01EF2C1C20AD352700DF98FB /* CollectionView */,
+				015120FC20CBF03100B33A76 /* DynamicJump */,
+				011CD74B20CE18E600560EE6 /* MasksToBounds */,
+				01F750A2209EDF7100C1F24C /* OtherProject */,
 				010FBD1120601D9D00BC9EC4 /* Palette */,
+				0137C73A207B3AA800F6B6CE /* Present */,
+				011183C820DAA1C20044AE1D /* SpriteKit */,
+				012D189E20AC1F4600C3E437 /* TableView */,
 				0184BF7A1FD6DA8B00CB9AAD /* TestUnit */,
 				010FBCFD20601D3E00BC9EC4 /* WeiXinPhoto */,
 			);
@@ -2869,6 +2873,13 @@
 			children = (
 			);
 			path = NSData;
+			sourceTree = "<group>";
+		};
+		011183C820DAA1C20044AE1D /* SpriteKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SpriteKit;
 			sourceTree = "<group>";
 		};
 		01161F32203088D500FA3441 /* AboutOC */ = {
@@ -3807,6 +3818,24 @@
 				013ED92C20C7DE0400A83E7F /* BPIncludeTableSelfSizeController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0140A13220DBDB0A00EF35E4 /* ImageUrlSet */ = {
+			isa = PBXGroup;
+			children = (
+				0140A13620DBDBA700EF35E4 /* BPImagetUrlHelper.h */,
+				0140A13720DBDBA700EF35E4 /* BPImagetUrlHelper.m */,
+			);
+			path = ImageUrlSet;
+			sourceTree = "<group>";
+		};
+		0140A13920DBE8E400EF35E4 /* Normal */ = {
+			isa = PBXGroup;
+			children = (
+				018C44A320093F9400CF43D7 /* Controllers */,
+				018C449E20093F9400CF43D7 /* Views */,
+			);
+			path = Normal;
 			sourceTree = "<group>";
 		};
 		0143B5D92082516200524ABB /* MultiLevelCatalogue */ = {
@@ -4815,9 +4844,9 @@
 		016FCB6120D61C6D0097F27E /* BaseScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				018C448B20093F2000CF43D7 /* Normal */,
 				016FCB6320D61CDF0097F27E /* Card */,
 				018C448C20093F3200CF43D7 /* CardAnimation */,
-				018C448B20093F2000CF43D7 /* Normal */,
 			);
 			path = BaseScrollView;
 			sourceTree = "<group>";
@@ -6184,9 +6213,8 @@
 		018C448C20093F3200CF43D7 /* CardAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				0140A13920DBE8E400EF35E4 /* Normal */,
 				018C44D32009E70300CF43D7 /* Custom */,
-				018C44A320093F9400CF43D7 /* Controllers */,
-				018C449E20093F9400CF43D7 /* Views */,
 			);
 			path = CardAnimation;
 			sourceTree = "<group>";
@@ -7037,6 +7065,7 @@
 		01C9357E1FC3357900D98FD6 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				0140A13220DBDB0A00EF35E4 /* ImageUrlSet */,
 				01C935801FC3358B00D98FD6 /* launchImage */,
 			);
 			path = Image;
@@ -8371,6 +8400,7 @@
 				010DB7441FDD4D450099E66F /* UIImage+BPBetterFace.m in Sources */,
 				01D6FBA520C80ED900AD8A6E /* BPIncludeTableManualController.m in Sources */,
 				010DB75A1FDD4D450099E66F /* UIFont+BPTTF.m in Sources */,
+				0140A13820DBDBA700EF35E4 /* BPImagetUrlHelper.m in Sources */,
 				01DF31C61FDD3A9100B8A955 /* NSURLConnection+BPSelfSigned.m in Sources */,
 				017CF90C20D217F800D9AA30 /* BPInsideSliderShowView.m in Sources */,
 				010DB7531FDD4D450099E66F /* UISearchBar+BPBlocks.m in Sources */,

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-//可以根据自己的需要继承BPCardPageFlowViewCell
- 
+/*
+ 可以根据自己的需要继承BPCardPageFlowViewCell
+*/
+
 @interface BPCardPageFlowViewCell : UIView
 
 /**
@@ -27,7 +29,7 @@
 /**
  设置子控件frame,继承后要重写
  
- @param superViewBounds frame
+ @param superViewBounds superViewBounds
  */
 - (void)setSubviewsWithSuperViewBounds:(CGRect)superViewBounds;
 

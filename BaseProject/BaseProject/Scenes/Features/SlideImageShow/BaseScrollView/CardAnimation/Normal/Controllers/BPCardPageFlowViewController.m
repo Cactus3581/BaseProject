@@ -10,16 +10,19 @@
 #import "BPCardPageFlowView.h"
 #import "BPCardPageFlowViewCell.h"
 #import "BPCustomCardPageFlowViewController.h"
+#import "BPImagetUrlHelper.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIView+WebCache.h"
 
 @interface BPCardPageFlowViewController ()<BPCardPageFlowViewDelegate, BPCardPageFlowViewDataSource>
 
 /**
  *  图片数组
  */
-@property (nonatomic, strong) NSMutableArray *imageArray;
+@property (nonatomic, strong) NSArray *imageArray;
 
 /**
- *  指示label
+ *  点击图片 展示index
  */
 @property (nonatomic, strong) UILabel *indicateLabel;
 
@@ -29,7 +32,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.rightBarButtonTitle = @"自定义cell";
+    self.view.backgroundColor = kThemeColor;
+    self.rightBarButtonTitle = @"去自定义cell";
+    self.imageArray = [BPImagetUrlHelper getImageUrlSet];
     [self setupUI];
 }
 
@@ -41,11 +46,12 @@
 }
 
 - (void)setupUI {
+    self.automaticallyAdjustsScrollViewInsets = NO;
     BPCardPageFlowView *pageFlowView = [[BPCardPageFlowView alloc] initWithFrame:CGRectMake(0, 72, kScreenWidth, kScreenWidth * 9 / 16)];
     pageFlowView.delegate = self;
     pageFlowView.dataSource = self;
     pageFlowView.minimumPageAlpha = 0.1;
-    pageFlowView.isCarousel = YES;
+    pageFlowView.isCarousel = NO;
     pageFlowView.orientation = BPCardPageFlowViewOrientationHorizontal;
     pageFlowView.isOpenAutoScroll = YES;
     
@@ -60,26 +66,8 @@
     [self.view addSubview:self.indicateLabel];
 }
 
-#pragma mark BPCardPageFlowView Datasource
-- (NSInteger)numberOfPagesInFlowView:(BPCardPageFlowView *)flowView {
-    return self.imageArray.count;
-}
 
-- (BPCardPageFlowViewCell *)flowView:(BPCardPageFlowView *)flowView cellForPageAtIndex:(NSInteger)index{
-    BPCardPageFlowViewCell *cell = [flowView dequeueReusableCell];
-    if (!cell) {
-        cell = [[BPCardPageFlowViewCell alloc] init];
-        cell.tag = index;
-        cell.layer.cornerRadius = 4;
-        cell.layer.masksToBounds = YES;
-    }
-    //在这里下载网络图片
-    //  [cell.mainImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:hostUrlsImg,imageDict[@"img"]]] placeholderImage:[UIImage imageNamed:@""]];
-    cell.mainImageView.image = self.imageArray[index];
-    return cell;
-}
-
-#pragma mark BPCardPageFlowView Delegate
+#pragma mark BPCardPageFlowViewDelegate
 - (CGSize)sizeForPageInFlowView:(BPCardPageFlowView *)flowView {
     return CGSizeMake(kScreenWidth - 60, (kScreenWidth - 60) * 9 / 16);
 }
@@ -93,25 +81,32 @@
     BPLog(@"ViewController 滚动到了第%ld页",pageNumber);
 }
 
-#pragma mark --懒加载
-- (NSMutableArray *)imageArray {
-    if (_imageArray == nil) {
-        _imageArray = [NSMutableArray array];
-        for (int index = 0; index < 5; index++) {
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"cell_autoLayoutHeight%02d",index]];
-            [_imageArray addObject:image];
-        }
+#pragma mark BPCardPageFlowViewDatasource
+- (NSInteger)numberOfPagesInFlowView:(BPCardPageFlowView *)flowView {
+    return self.imageArray.count;
+}
+
+- (BPCardPageFlowViewCell *)flowView:(BPCardPageFlowView *)flowView cellForPageAtIndex:(NSInteger)index{
+    BPCardPageFlowViewCell *bannerView = [flowView dequeueReusableCell];
+    if (!bannerView) {
+        bannerView = [[BPCardPageFlowViewCell alloc] init];
+        bannerView.tag = index;
+        bannerView.layer.cornerRadius = 4;
+        bannerView.layer.masksToBounds = YES;
     }
-    return _imageArray;
+    //在这里下载网络图片
+    [bannerView.mainImageView sd_setImageWithURL:[NSURL URLWithString:self.imageArray[index]] placeholderImage:[UIImage imageNamed:@"cactus_explicit"]];
+    //bannerView.mainImageView.image = self.imageArray[index];
+    return bannerView;
 }
 
 - (UILabel *)indicateLabel {
     if (!_indicateLabel) {
         _indicateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 400, kScreenWidth, 16)];
-        _indicateLabel.textColor = kBlueColor;
+        _indicateLabel.textColor = kExplicitColor;
         _indicateLabel.font = [UIFont systemFontOfSize:16.0];
         _indicateLabel.textAlignment = NSTextAlignmentCenter;
-        _indicateLabel.text = @"指示Label";
+        _indicateLabel.text = @"点击图片 展示index";
     }
     return _indicateLabel;
 }
