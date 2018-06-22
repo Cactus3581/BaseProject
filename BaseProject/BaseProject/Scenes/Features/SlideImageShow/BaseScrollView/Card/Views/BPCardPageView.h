@@ -24,6 +24,7 @@
 
 @property (nonatomic, assign) CGFloat padding;
 @property (nonatomic, assign) CGFloat imageInset;
+@property (nonatomic, assign) CGFloat pageControlBottom;
 
 /** 数据源 */
 @property (nonatomic,strong) NSArray *imageArray;

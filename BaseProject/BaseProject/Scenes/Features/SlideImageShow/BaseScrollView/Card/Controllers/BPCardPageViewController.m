@@ -18,17 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.sliderShowView.imageArray = @[kRandomColor,kRandomColor];
+    self.sliderShowView.imageArray = [BPImagetUrlHelper getImageUrlSet];
+    [_sliderShowView setRadius:10 cornerColor:kWhiteColor];
     self.sliderShowView.clickImageBlock = ^(NSInteger currentIndex) {
         BPLog(@"currentIndex = %ld",currentIndex);
     };
-    
 }
 
 - (BPCardPageView *)sliderShowView {
     if (!_sliderShowView) {
         BPCardPageView *sliderShowView = [[BPCardPageView alloc] init];
         _sliderShowView = sliderShowView;
+        _sliderShowView.placeHolderImage = [UIImage imageNamed:@"reading_holder_image_left"];
+        _sliderShowView.backgroundColor = kWhiteColor;
         [self.view addSubview:_sliderShowView];
         [_sliderShowView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.leading.trailing.equalTo(self.view);

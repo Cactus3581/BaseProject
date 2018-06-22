@@ -13,11 +13,11 @@
 #import "UIView+BPRoundedCorner.h"
 
 @interface BPCardPageView ()<UIScrollViewDelegate>
+@property (nonatomic,weak) UIScrollView *scrollView;
+@property (nonatomic,weak) UIPageControl *pageControl;
 @property (nonatomic,strong) NSMutableArray *imageViewArray;
-@property (nonatomic,strong) UIScrollView *scrollView;
 @property (nonatomic,assign) NSUInteger currentImageIndex;
 @property (nonatomic,weak) NSTimer *timer;
-@property (nonatomic,strong) UIPageControl *pageControl;
 @end
 
 @implementation BPCardPageView
@@ -25,47 +25,43 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initializeSubViews];
         [self initialization];
+        self.scrollView.scrollEnabled = NO;
     }
     return self;
 }
 
-#pragma mark - 创建布局及设置默认值
-- (void)initializeSubViews {
-    self.clipsToBounds = YES;
-    self.padding = 20;
-    self.imageInset = 10;
-    
-    self.backgroundColor = kWhiteColor;
-    [self addSubview:self.scrollView];
-    [self addSubview:self.pageControl];
-    
-    [self initializeSubViewsFrame];
-    [self bringSubviewToFront:self.pageControl];
-}
-
+#pragma mark - 默认属性
 - (void)initialization {
+    self.clipsToBounds = YES;
+    self.backgroundColor = kWhiteColor;
+    _padding = 7;
+    _imageInset = 8;
+    _pageControlBottom = 0;
     _autoScroll = YES;
     _autoScrollTimeInterval = 3.0;
-    self.otherPageControlColor = kGrayColor;
-    self.curPageControlColor = kWhiteColor;
+    _otherPageControlColor = kLightGrayColor;
+    _curPageControlColor = kWhiteColor;
     _showPageControl = YES;
     _hideWhenSinglePage = YES;
 }
 
+- (void)updateConstraints {
+    [super updateConstraints];
+}
+
 #pragma mark - view旋转
 - (void)layoutSubviews {
+    
     [super layoutSubviews];
     // self.width = kScreenWidth = imageinset + padding + imageW + padding + imageinset
     //scrollW = imageW + padding;
-    CGFloat imageViewWidth = (self.width-self.imageInset-self.padding-self.padding-self.imageInset);
+    CGFloat imageViewWidth = self.width-self.imageInset-self.padding-self.padding-self.imageInset;
     CGFloat scrollWidth = imageViewWidth + self.padding;
-    [self.scrollView mas_updateConstraints:^(MASConstraintMaker *make) {
+    [_scrollView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(scrollWidth);
     }];
-    self.scrollView.contentSize = CGSizeMake(scrollWidth * self.imageArray.count, 0); //可以不写，因为下面的子view决定了大小
-    
+    _scrollView.contentSize = CGSizeMake(scrollWidth * self.imageArray.count, 0);//可以不写，因为下面的子view决定了大小
     UIImageView *imageView = BPValidateArrayObjAtIdx(self.imageViewArray,0);
     if (imageView && imageView.superview) {
         [imageView mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -73,39 +69,43 @@
         }];
     }
 
+    [super layoutSubviews];//  修正旋转问题
+    [_scrollView setContentOffset:CGPointMake(_currentImageIndex * _scrollView.width, 0.0) animated:NO]; //位移归位
 }
 
 #pragma mark - 数据源
 - (void)setImageArray:(NSArray *)imageArray {
     _imageArray = BPValidateArray(imageArray);
+    
+    [self invalidateTimer];
+    [_scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self.imageViewArray removeAllObjects];
+    
     self.currentImageIndex = 0;
+    
     if (!_imageArray.count) {
-        self.scrollView.scrollEnabled = NO;
+        _scrollView.scrollEnabled = NO;
         [self removeImage];
         return;
     }
     
     CGFloat imageViewWidth = self.width-self.imageInset-self.padding-self.padding-self.imageInset;
-    CGFloat scrollWidth = imageViewWidth + self.padding;
     
     for (int i = 0; i<imageArray.count; i++) {
-//        UIImageView *imageView = [[UIImageView alloc] initWithImage:imageArray[i]];
         UIImageView *imageView = [[UIImageView alloc] init];
-        imageView.backgroundColor = imageArray[i];
-
+        [imageView sd_setImageWithURL:[NSURL URLWithString:BPValidateString(imageArray[i])] placeholderImage:self.placeHolderImage];
         [self.imageViewArray addObject:imageView];
-        [self.scrollView addSubview:imageView];
+        [_scrollView addSubview:imageView];
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.clipsToBounds = YES;
         imageView.userInteractionEnabled = YES;
         [imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(centerTapGes)]];
         
-        
         if (i == 0) {
             [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.bottom.equalTo(self.scrollView);
-                make.leading.equalTo(self.scrollView);
-                make.height.equalTo(self.scrollView);
+                make.top.bottom.equalTo(_scrollView);
+                make.leading.equalTo(_scrollView);
+                make.height.equalTo(_scrollView);
                 make.width.mas_equalTo(imageViewWidth);
             }];
         }else {
@@ -120,14 +120,14 @@
         if (i == self.imageArray.count-1) {
             UIImageView *lastImageView = self.imageViewArray.lastObject;
             [lastImageView mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.trailing.equalTo(self.scrollView).offset(-self.padding);
+                make.trailing.equalTo(_scrollView).offset(-self.padding);
             }];
         }
     }
     
     self.pageControl.numberOfPages = _imageArray.count;//默认显示
     [self setHideWhenSinglePage:_hideWhenSinglePage];//当数据为一条时，是否显示pageControl
-    self.scrollView.scrollEnabled = YES;
+    _scrollView.scrollEnabled = YES;
     [self setAutoScroll:_autoScroll];//开始加载计时器
 }
 
@@ -162,14 +162,14 @@
 
 - (void)automaticScroll {
     if (BPValidateArray(self.imageArray).count <= 1) return;
-    if(self.scrollView.scrollEnabled == NO) return;
+    if(_scrollView.scrollEnabled == NO) return;
     if (self.currentImageIndex == self.imageArray.count-1) {
         self.currentImageIndex = 0;
-        [self.scrollView setContentOffset:CGPointMake(0, 0.0) animated:NO];
+        [_scrollView setContentOffset:CGPointMake(0, 0.0) animated:NO];
         self.pageControl.currentPage = self.currentImageIndex;
         [self willDisplayItemAtIndex:self.currentImageIndex];
     }else {
-        [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x+self.scrollView.width, 0.0) animated:YES];
+        [_scrollView setContentOffset:CGPointMake(_scrollView.contentOffset.x+_scrollView.width, 0.0) animated:YES];
         [self willDisplayItemAtIndex:self.currentImageIndex+1];
     }
 }
@@ -208,8 +208,8 @@
     if (!BPValidateArray(self.imageArray).count) {
         return;
     }
-    CGPoint contentOffset = [self.scrollView contentOffset];
-    _currentImageIndex = contentOffset.x / self.scrollView.width;
+    CGPoint contentOffset = [_scrollView contentOffset];
+    _currentImageIndex = contentOffset.x / _scrollView.width;
     self.pageControl.currentPage = self.currentImageIndex;
     [self didEndDisplayingItemAtIndex:self.currentImageIndex];
 }
@@ -238,10 +238,31 @@
 
 #pragma mark -- Properties
 
+- (void)setPadding:(CGFloat)padding {
+    _padding = padding;
+    [_scrollView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self).offset(_padding + self.imageInset);
+    }];
+}
+
+- (void)setImageInset:(CGFloat)imageInset {
+    _imageInset = imageInset;
+    [_scrollView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self).offset(self.padding + _imageInset);
+    }];
+}
+
+- (void)setPageControlBottom:(CGFloat)pageControlBottom {
+    _pageControlBottom = pageControlBottom;
+    [_pageControl mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self).offset(-_pageControlBottom);
+    }];
+}
+
 - (void)setRadius:(CGFloat)radius cornerColor:(UIColor *)color {
-//    [_leftImageView bp_roundedCornerWithRadius:radius cornerColor:color];
-//    [_centerImageView bp_roundedCornerWithRadius:radius cornerColor:color];
-//    [_rightImageView bp_roundedCornerWithRadius:radius cornerColor:color];
+    for (UIImageView *imageView in self.imageViewArray) {
+        [imageView bp_roundedCornerWithRadius:radius cornerColor:color];
+    }
 }
 
 - (void)setAutoScroll:(BOOL)autoScroll{
@@ -289,42 +310,43 @@
 #pragma mark - lazy methods
 - (UIScrollView *)scrollView {
     if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] init];
+        UIScrollView *scrollView = [[UIScrollView alloc] init];
+        _scrollView = scrollView;
         _scrollView.delegate = self;
         _scrollView.pagingEnabled = YES;
         _scrollView.bounces = YES;
         _scrollView.clipsToBounds = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;
+        [self addSubview:_scrollView];
+        [self bringSubviewToFront:self.pageControl];
+        [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.height.equalTo(self);
+            make.leading.equalTo(self).offset(self.padding+self.imageInset);
+        }];
     }
     return _scrollView;
 }
 
 - (UIPageControl *)pageControl {
     if (!_pageControl) {
-        _pageControl = [[UIPageControl alloc] init];
+        UIPageControl *pageControl = [[UIPageControl alloc] init];
+        _pageControl = pageControl;
         _pageControl.userInteractionEnabled = NO;
         _pageControl.currentPage = 0;
         _pageControl.numberOfPages = self.imageArray.count;
-        _pageControl.pageIndicatorTintColor = self.otherPageControlColor;
-        _pageControl.currentPageIndicatorTintColor = self.curPageControlColor;
+        _pageControl.pageIndicatorTintColor = _otherPageControlColor;
+        _pageControl.currentPageIndicatorTintColor = _curPageControlColor;
+        [self addSubview:_pageControl];
+        [_pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self).offset(-self.pageControlBottom);
+            make.centerX.equalTo(self);
+        }];
         //[_pageControl setValue:[UIImage imageNamed:@""] forKeyPath:@"_currentPageImage"];
         //[_pageControl setValue:[UIImage imageNamed:@""] forKeyPath:@"_pageImage"];
     }
+    [self bringSubviewToFront:_pageControl];
     return _pageControl;
-}
-
-- (void)initializeSubViewsFrame {
-    self.scrollView.scrollEnabled = NO;
-    [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.height.equalTo(self);
-        make.leading.equalTo(self).offset(self.padding+self.imageInset);
-    }];
-    
-    [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self).offset(-10);
-        make.centerX.equalTo(self);
-    }];
 }
 
 //解决当timer释放后 回调scrollViewDidScroll时访问野指针导致崩溃

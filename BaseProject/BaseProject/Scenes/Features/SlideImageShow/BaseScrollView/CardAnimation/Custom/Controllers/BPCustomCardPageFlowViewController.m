@@ -87,7 +87,7 @@
     BPLog(@"BPCustomCardPageFlowViewController 滚动到了第%ld页",pageNumber);
 }
 
-#warning 假设产品需求左右中间页显示大小为 Width - 50, (Width - 50) * 9 / 16
+#warning 假设产品需求左右中间页显示大小为 kScreenWidth - 50, (kScreenWidth - 50) * 9 / 16
 - (CGSize)sizeForPageInFlowView:(BPCardPageFlowView *)flowView {
     return CGSizeMake(kScreenWidth - 50, (kScreenWidth - 50) * 9 / 16);
 }

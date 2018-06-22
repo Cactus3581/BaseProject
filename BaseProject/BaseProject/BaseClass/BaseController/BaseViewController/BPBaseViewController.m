@@ -190,28 +190,19 @@ static CGFloat titleInset = 20.0f;
     self.navigationController.navigationBar.translucent = YES;
 }
 
-
-
 #pragma mark - 恢复默认样式
 - (void)recoverStyle {
     
 }
 
-//#pragma mark - 屏幕旋转
-//// 不自动旋转
-//- (BOOL)shouldAutorotate {
-//    return NO;
-//}
-//
-//// 竖屏显示
-//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-//    return UIInterfaceOrientationPortrait;
-//}
-//
-//#pragma mark - 隐藏statusbar及恢复默认样式
-//- (BOOL)prefersStatusBarHidden {
-//    return YES;
-//}
+#pragma mark -数据处理
+- (void)request {
+    
+}
+
+- (void)handleData {
+    
+}
 
 #pragma mark - 隐藏navibar及恢复默认样式
 - (void)naviBarHidden:(BOOL)hidden animated:(BOOL)animated {
@@ -246,21 +237,65 @@ static CGFloat titleInset = 20.0f;
     //必须实现
 }
 
-#pragma mark -  左滑手势
+#pragma mark -  手动开启关闭左滑手势
 - (void)popDisabled {
     self.fd_interactivePopDisabled = YES;
     self.navigationController.fd_viewControllerBasedNavigationBarAppearanceEnabled = YES;
 }
 
-#pragma mark -  旋转操作
+#pragma mark -  屏幕旋转操作
+/*
+
+// 自动旋转
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
+
+// 竖屏显示
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return YES;
+}
+
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 }
+*/
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     //    self.scrollView.contentOffset = CGPointMake(self.scrollView.frame.size.width * self.pageBeforeRotation, 0.0);
 }
 
-#pragma mark - 配置statusBar
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        //计算旋转之后的宽度并赋值
+        CGSize screen = [UIScreen mainScreen].bounds.size;
+        //界面处理逻辑
+        /*
+         */
+        
+        //动画播放完成之后
+        if(screen.width > screen.height){
+            BPLog(@"横屏");
+        }else{
+            BPLog(@"竖屏");
+        }
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        NSLog(@"动画播放完之后处理");
+    }];
+}
+
+#pragma mark - 隐藏statusbar及恢复默认样式
+//- (BOOL)prefersStatusBarHidden {
+//    return YES;
+//}
 
 #pragma mark - dealloc
 - (void)dealloc {

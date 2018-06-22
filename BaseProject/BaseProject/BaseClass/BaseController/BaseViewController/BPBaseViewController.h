@@ -60,4 +60,9 @@
 @property (nonatomic,copy)  NSString *dynamicJumpString;//动态跳转数据
 @property(nonatomic,readonly,assign) BOOL needDynamicJump;
 - (void)handleDynamicJumpData;
+
+#pragma mark -数据处理
+- (void)request;
+- (void)handleData;
+
 @end
