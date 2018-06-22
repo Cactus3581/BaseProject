@@ -427,6 +427,7 @@
 		01A192222004E61F005EE4CD /* BPCollectionReusableHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A191FB2004E61E005EE4CD /* BPCollectionReusableHeadView.xib */; };
 		01A192262004E61F005EE4CD /* BPGroupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A192152004E61E005EE4CD /* BPGroupTableViewController.m */; };
 		01A192272004E61F005EE4CD /* BPPlainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A192162004E61E005EE4CD /* BPPlainTableViewController.m */; };
+		01A461DA20DBFAAB002E440B /* BPTransformPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A461D920DBFAAB002E440B /* BPTransformPageControl.m */; };
 		01A597A72085CA5C000C6237 /* BPCellAutoLayoutHeightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A5979C2085CA5B000C6237 /* BPCellAutoLayoutHeightModel.m */; };
 		01A597A82085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A5979E2085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.xib */; };
 		01A597A92085CA5C000C6237 /* BPCellAutoLayoutHeightFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A597A12085CA5C000C6237 /* BPCellAutoLayoutHeightFooterView.m */; };
@@ -1494,6 +1495,8 @@
 		01A192142004E61E005EE4CD /* BPPlainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPlainTableViewController.h; sourceTree = "<group>"; };
 		01A192152004E61E005EE4CD /* BPGroupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGroupTableViewController.m; sourceTree = "<group>"; };
 		01A192162004E61E005EE4CD /* BPPlainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPlainTableViewController.m; sourceTree = "<group>"; };
+		01A461D820DBFAAB002E440B /* BPTransformPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTransformPageControl.h; sourceTree = "<group>"; };
+		01A461D920DBFAAB002E440B /* BPTransformPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTransformPageControl.m; sourceTree = "<group>"; };
 		01A5979B2085CA5B000C6237 /* BPCellAutoLayoutHeightModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCellAutoLayoutHeightModel.h; sourceTree = "<group>"; };
 		01A5979C2085CA5B000C6237 /* BPCellAutoLayoutHeightModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightModel.m; sourceTree = "<group>"; };
 		01A5979E2085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPCellAutoLayoutHeightHeaderView.xib; sourceTree = "<group>"; };
@@ -5599,6 +5602,7 @@
 		017A9A2D1FDD2A9A00CDA599 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				01A461D720DBFA6C002E440B /* UIPageControl */,
 				014ED0391FEFF0A300D2926C /* Button */,
 				017A9A2E1FDD2A9A00CDA599 /* UILabel */,
 				017A9A311FDD2A9A00CDA599 /* UICollectionView */,
@@ -6678,6 +6682,15 @@
 				01A192162004E61E005EE4CD /* BPPlainTableViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01A461D720DBFA6C002E440B /* UIPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				01A461D820DBFAAB002E440B /* BPTransformPageControl.h */,
+				01A461D920DBFAAB002E440B /* BPTransformPageControl.m */,
+			);
+			path = UIPageControl;
 			sourceTree = "<group>";
 		};
 		01A597992085CA29000C6237 /* DataSource */ = {
@@ -8471,6 +8484,7 @@
 				01DF325F1FDD3B9D00B8A955 /* NSData+BPPCM.m in Sources */,
 				0173401D1FA9753F006192F0 /* BPBaseNavigationController.m in Sources */,
 				0168F3872035E66900D63D83 /* BPBaseKnowledgeViewModel.m in Sources */,
+				01A461DA20DBFAAB002E440B /* BPTransformPageControl.m in Sources */,
 				010DB74E1FDD4D450099E66F /* UIBarButtonItem+BPAction.m in Sources */,
 				01A192262004E61F005EE4CD /* BPGroupTableViewController.m in Sources */,
 				0158053220CADED000D0EF7C /* BPDatabaseViewController.m in Sources */,

@@ -308,6 +308,8 @@
         _pageControl.numberOfPages = self.imageArray.count;
         _pageControl.pageIndicatorTintColor = self.otherPageControlColor;
         _pageControl.currentPageIndicatorTintColor = self.curPageControlColor;
+        //[_pageControl setValue:[UIImage imageNamed:@""] forKeyPath:@"_currentPageImage"];
+        //[_pageControl setValue:[UIImage imageNamed:@""] forKeyPath:@"_pageImage"];
     }
     return _pageControl;
 }
