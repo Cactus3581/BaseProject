@@ -4694,8 +4694,8 @@
 		0161D36B20C29AED009D1B9C /* Draw */ = {
 			isa = PBXGroup;
 			children = (
-				0161D36C20C29AED009D1B9C /* Layers */,
 				0161D36F20C29AED009D1B9C /* Controllers */,
+				0161D36C20C29AED009D1B9C /* Layers */,
 				0161D37220C29AED009D1B9C /* Views */,
 			);
 			path = Draw;
