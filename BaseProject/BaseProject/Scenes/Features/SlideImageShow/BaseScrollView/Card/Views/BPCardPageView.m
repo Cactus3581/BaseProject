@@ -73,15 +73,22 @@
     [_scrollView setContentOffset:CGPointMake(_currentImageIndex * _scrollView.width, 0.0) animated:NO]; //位移归位
 }
 
+- (void)resert {
+    [self invalidateTimer];
+    [self.imageViewArray removeAllObjects];
+    [_scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [_scrollView setContentOffset:CGPointZero animated:NO]; //位移归位
+    self.currentImageIndex = 0;
+    self.pageControl.numberOfPages = _imageArray.count;//默认显示
+    [self setHideWhenSinglePage:_hideWhenSinglePage];//当数据为一条时，是否显示pageControl
+    self.pageControl.currentPage = self.currentImageIndex;
+}
+
 #pragma mark - 数据源
 - (void)setImageArray:(NSArray *)imageArray {
     _imageArray = BPValidateArray(imageArray);
     
-    [self invalidateTimer];
-    [_scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [self.imageViewArray removeAllObjects];
-    
-    self.currentImageIndex = 0;
+    [self resert];//恢复
     
     if (!_imageArray.count) {
         _scrollView.scrollEnabled = NO;
@@ -90,7 +97,6 @@
     }
     
     CGFloat imageViewWidth = self.width-self.imageInset-self.padding-self.padding-self.imageInset;
-    
     for (int i = 0; i<imageArray.count; i++) {
         UIImageView *imageView = [[UIImageView alloc] init];
         [imageView sd_setImageWithURL:[NSURL URLWithString:BPValidateString(imageArray[i])] placeholderImage:self.placeHolderImage];
@@ -124,9 +130,6 @@
             }];
         }
     }
-    
-    self.pageControl.numberOfPages = _imageArray.count;//默认显示
-    [self setHideWhenSinglePage:_hideWhenSinglePage];//当数据为一条时，是否显示pageControl
     _scrollView.scrollEnabled = YES;
     [self setAutoScroll:_autoScroll];//开始加载计时器
 }
@@ -154,7 +157,7 @@
 }
 
 - (void)invalidateTimer {
-    if(_timer){
+    if(_timer) {
         [_timer invalidate];
         _timer = nil;
     }
@@ -165,7 +168,7 @@
     if(_scrollView.scrollEnabled == NO) return;
     if (self.currentImageIndex == self.imageArray.count-1) {
         self.currentImageIndex = 0;
-        [_scrollView setContentOffset:CGPointMake(0, 0.0) animated:NO];
+        [_scrollView setContentOffset:CGPointZero animated:YES];
         self.pageControl.currentPage = self.currentImageIndex;
         [self willDisplayItemAtIndex:self.currentImageIndex];
     }else {
