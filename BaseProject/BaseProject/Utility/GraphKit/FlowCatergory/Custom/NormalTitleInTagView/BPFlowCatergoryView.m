@@ -23,36 +23,48 @@ static NSString *identifier  = @"cell";
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self configSubViews];
+        [self initializeSubViews];
     }
     return self;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self configSubViews];
+    [self initializeSubViews];
 
 }
 
-- (void)setTagViewHeight:(CGFloat)tagViewHeight {
-    _tagViewHeight = tagViewHeight;
-    if (_catergoryView) {
-        [_catergoryView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(_tagViewHeight);
-        }];
-    }
-}
-
-- (void)setTitles:(NSArray *)titles {
-    _titles = titles;
-    if (_catergoryView) {
-        _catergoryView.titles = self.titles;//数据源titles，必须设置;
-    }
-}
-
-- (void)bp_realoadData {
-    [self.catergoryView bp_realoadData];
-    //[self.contentCollectionView reloadData];
+- (void)initializeSubViews {
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.minimumInteritemSpacing = layout.minimumLineSpacing = 0;
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    layout.fullItem = YES;
+    UICollectionView *contentCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    _contentCollectionView = contentCollectionView;
+    contentCollectionView.backgroundColor = kWhiteColor;
+    contentCollectionView.dataSource = self;
+    contentCollectionView.delegate = self;
+    contentCollectionView.pagingEnabled = YES;
+    contentCollectionView.scrollsToTop = NO;
+    contentCollectionView.showsHorizontalScrollIndicator = NO;
+    [contentCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:identifier];
+    [self addSubview:contentCollectionView];
+    BPFlowCatergoryTagView * catergoryView = [[BPFlowCatergoryTagView alloc] init];
+    catergoryView.backgroundColor = kWhiteColor;
+    _catergoryView = catergoryView;
+    [self addSubview:catergoryView];
+    catergoryView.scrollView = contentCollectionView;//必须设置关联的scrollview
+    catergoryView.delegate = self;//监听item按钮点击
+    [catergoryView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.equalTo(self);
+        make.top.equalTo(self);
+        make.height.mas_equalTo(40);
+    }];
+    
+    [contentCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.bottom.equalTo(self);
+        make.top.equalTo(catergoryView.mas_bottom);
+    }];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -108,80 +120,13 @@ static NSString *identifier  = @"cell";
     }
 }
 
-- (void)configSubViews {
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.minimumInteritemSpacing = layout.minimumLineSpacing = 0;
-    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    layout.fullItem = YES;
-    UICollectionView *contentCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-    self.contentCollectionView = contentCollectionView;
-    contentCollectionView.backgroundColor = kWhiteColor;
-    contentCollectionView.dataSource = self;
-    contentCollectionView.delegate = self;
-    contentCollectionView.pagingEnabled = YES;
-    contentCollectionView.scrollsToTop = NO;
-    contentCollectionView.showsHorizontalScrollIndicator = NO;
-    [contentCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:identifier];
-    [self addSubview:contentCollectionView];
-    
-    //catergoryView
-    BPFlowCatergoryTagView * catergoryView = [[BPFlowCatergoryTagView alloc] init];
-    catergoryView.backgroundColor = kWhiteColor;
-    self.catergoryView = catergoryView;
-    [self addSubview:catergoryView];
-    
-
-    catergoryView.defaultIndex = 0;//默认优先显示的下标
-    
-    /* 关于交互:滑动、点击 */
-    catergoryView.scrollView = contentCollectionView;//必须设置关联的scrollview
-    catergoryView.delegate = self;//监听item按钮点击
-    
-    /* 关于横线*/
-    catergoryView.bottomLineEable = YES;//开启底部线条
-    catergoryView.bottomLineHeight = 2.0f;//横线高度，默认2.0f
-    catergoryView.bottomLineWidth = 15.0f;//横线宽度
-    catergoryView.bottomLineColor = kThemeColor;//下方横线颜色
-    catergoryView.bottomLineSpacingFromTitleBottom = 6;//设置底部线条距离item底部的距离
-    
-    
-    /* 关于背景图:椭圆*/
-    catergoryView.backEllipseEable = NO;//是否开启背后的椭圆，默认NO
-    //catergoryView.backEllipseColor = kGreenColor;/**椭圆颜色，默认黄色*/
-    //catergoryView.backEllipseSize = CGSizeMake(10, 10);/**椭圆大小，默认CGSizeZero，表示椭圆大小随文字内容而定*/
-    
-    /* 关于缩放*/
-    catergoryView.scaleEnable = YES;//是否开启缩放， 默认NO
-    catergoryView.scaleRatio = 1.05f;//缩放比例， 默认1.1
-    
-    /* 关于cell 间距*/
-    catergoryView.itemSpacing = 35;//item间距，默认10
-    catergoryView.edgeSpacing = 25;//左右边缘间距，默认20
-    
-    /* 关于字体*/
-    catergoryView.titleColorChangeEable = YES;//是否开启文字颜色变化效果
-    catergoryView.titleColorChangeGradually = NO;//设置文字左右渐变
-    catergoryView.titleColor = kLightGrayColor;
-    catergoryView.titleSelectColor = kBlackColor;
-    catergoryView.titleFont = [UIFont systemFontOfSize:15];//item字体
-    
-    /* 关于动画*/
-    catergoryView.clickedAnimationDuration = 0.3;//点击item后各个控件（底部线条和椭圆）动画的时间，默认0.3秒，可设置为0*/
-    catergoryView.scrollWithAnimaitonWhenClicked = NO;//禁用点击item滚动scrollView的动画
-    catergoryView.holdLastIndexAfterUpdate = NO;/**刷新后是否保持在原来的index上，默认NO，表示刷新后回到第0个item*/
-    
-    [catergoryView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.trailing.equalTo(self);
-        make.top.equalTo(self);
-        make.height.mas_equalTo(40);
-    }];
-    
-    [contentCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.trailing.bottom.equalTo(self);
-        make.top.equalTo(catergoryView.mas_bottom);
-    }];
+#pragma mark - reloadData methods
+- (void)bp_realoadData {
+    [self.catergoryView bp_realoadData];
+    //[self.contentCollectionView reloadData];
 }
 
+#pragma mark - delegate methods
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (self.delegate && [self.delegate respondsToSelector:@selector(flowCatergoryViewDidScroll:)]) {
         [self.delegate flowCatergoryViewDidScroll:self];
@@ -194,6 +139,7 @@ static NSString *identifier  = @"cell";
     }
 }
 
+#pragma mark - lazy methods
 - (NSMutableDictionary *)vcCacheDic {
     if (!_vcCacheDic) {
         _vcCacheDic = [NSMutableDictionary dictionary];
@@ -201,8 +147,179 @@ static NSString *identifier  = @"cell";
     return _vcCacheDic;
 }
 
+#pragma mark - setter methods
+- (void)setTagViewHeight:(CGFloat)tagViewHeight {
+    if (_tagViewHeight != tagViewHeight) {
+        _tagViewHeight = tagViewHeight;
+        [_catergoryView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(_tagViewHeight);
+        }];
+    }
+}
+
+- (void)setTitles:(NSArray *)titles {
+    if (_titles != titles) {
+        _titles = titles;
+        _catergoryView.titles = _titles;//数据源titles，必须设置;
+    }
+}
+
+- (void)setClickedAnimationDuration:(NSTimeInterval)clickedAnimationDuration {
+    if (_clickedAnimationDuration != clickedAnimationDuration) {
+        _clickedAnimationDuration = clickedAnimationDuration;
+        self.catergoryView.clickedAnimationDuration = clickedAnimationDuration;
+    }
+}
+
+- (void)setScrollWithAnimaitonWhenClicked:(BOOL)scrollWithAnimaitonWhenClicked  {
+    if (_scrollWithAnimaitonWhenClicked != scrollWithAnimaitonWhenClicked) {
+        _scrollWithAnimaitonWhenClicked = scrollWithAnimaitonWhenClicked;
+        self.catergoryView.scrollWithAnimaitonWhenClicked = scrollWithAnimaitonWhenClicked;
+    }
+}
+
+- (void)setDefaultIndex:(NSUInteger)defaultIndex {
+    if (_defaultIndex != defaultIndex) {
+        _defaultIndex = defaultIndex;
+        _catergoryView.defaultIndex = defaultIndex;
+    }
+}
+
+- (void)setItemSpacing:(CGFloat)itemSpacing {
+    if (_itemSpacing != itemSpacing) {
+        _itemSpacing = itemSpacing;
+        _catergoryView.itemSpacing = itemSpacing;
+    }
+}
+
+- (void)setEdgeSpacing:(CGFloat)edgeSpacing {
+    if (_edgeSpacing != edgeSpacing) {
+        _edgeSpacing = edgeSpacing;
+        _catergoryView.edgeSpacing = edgeSpacing;
+    }
+}
+
+- (void)setTitleFont:(UIFont *)titleFont {
+    if (_titleFont != titleFont) {
+        _titleFont = titleFont;
+        _catergoryView.titleFont = titleFont;
+    }
+}
+
+- (void)setTitleSelectFont:(UIFont *)titleSelectFont {
+    if (_titleSelectFont != titleSelectFont) {
+        _titleSelectFont = titleSelectFont;
+        _catergoryView.titleSelectFont = titleSelectFont;
+    }
+}
+
+- (void)setTitleColorChangeEable:(BOOL)titleColorChangeEable {
+    if (_titleColorChangeEable != titleColorChangeEable) {
+        _titleColorChangeEable = titleColorChangeEable;
+        _catergoryView.titleColorChangeEable = titleColorChangeEable;
+    }
+}
+
+- (void)setTitleColorChangeGradually:(BOOL)titleColorChangeGradually {
+    if (_titleColorChangeGradually != titleColorChangeGradually) {
+        _titleColorChangeGradually = titleColorChangeGradually;
+        _catergoryView.titleColorChangeGradually = titleColorChangeGradually;
+    }
+}
+
+- (void)setTitleColor:(UIColor *)titleColor {
+    if (_titleColor != titleColor) {
+        _titleColor = titleColor;
+        _catergoryView.titleColor = titleColor;
+    }
+}
+
+- (void)setTitleSelectColor:(UIColor *)titleSelectColor {
+    if (_titleSelectColor != titleSelectColor) {
+        _titleSelectColor = titleSelectColor;
+        _catergoryView.titleSelectColor = titleSelectColor;
+    }
+}
+
+- (void)setScaleEnable:(BOOL)scaleEnable {
+    if (_scaleEnable != scaleEnable) {
+        _scaleEnable = scaleEnable;
+        _catergoryView.scaleEnable = scaleEnable;
+    }
+}
+
+- (void)setScaleRatio:(CGFloat)scaleRatio {
+    if (_scaleRatio != scaleRatio) {
+        _scaleRatio = scaleRatio;
+        _catergoryView.scaleRatio = scaleRatio;
+    }
+}
+
+- (void)setBottomLineEable:(BOOL)bottomLineEable {
+    if (_bottomLineEable != bottomLineEable) {
+        _bottomLineEable = bottomLineEable;
+        _catergoryView.bottomLineEable = bottomLineEable;
+    }
+}
+
+- (void)setBottomLineColor:(UIColor *)bottomLineColor {
+    if (_bottomLineColor != bottomLineColor) {
+        _bottomLineColor = bottomLineColor;
+        _catergoryView.bottomLineColor = bottomLineColor;
+    }
+}
+- (void)setBottomLineHeight:(CGFloat)bottomLineHeight {
+    if (_bottomLineHeight != bottomLineHeight) {
+        _bottomLineHeight = bottomLineHeight;
+        _catergoryView.bottomLineHeight = bottomLineHeight;
+    }
+}
+- (void)setBottomLineWidth:(CGFloat)bottomLineWidth {
+    if (_bottomLineWidth != bottomLineWidth) {
+        _bottomLineWidth = bottomLineWidth;
+        _catergoryView.bottomLineWidth = bottomLineWidth;
+    }
+}
+
+- (void)setBottomLineCornerRadius:(BOOL)bottomLineCornerRadius {
+    if (_bottomLineCornerRadius != bottomLineCornerRadius) {
+        _bottomLineCornerRadius = bottomLineCornerRadius;
+        _catergoryView.bottomLineCornerRadius = bottomLineCornerRadius;
+    }
+}
+- (void)setBottomLineSpacingFromTitleBottom:(CGFloat)bottomLineSpacingFromTitleBottom {
+    if (_bottomLineSpacingFromTitleBottom != bottomLineSpacingFromTitleBottom) {
+        _bottomLineSpacingFromTitleBottom = bottomLineSpacingFromTitleBottom;
+        _catergoryView.bottomLineSpacingFromTitleBottom = bottomLineSpacingFromTitleBottom;
+    }
+}
+
+- (void)setBackEllipseEable:(BOOL)backEllipseEable {
+    if (_backEllipseEable != backEllipseEable) {
+        _backEllipseEable = backEllipseEable;
+        _catergoryView.backEllipseEable = backEllipseEable;
+    }
+}
+
+- (void)setBackEllipseColor:(UIColor *)backEllipseColor {
+    if (_backEllipseColor != backEllipseColor) {
+        _backEllipseColor = backEllipseColor;
+        _catergoryView.backEllipseColor = backEllipseColor;
+    }
+}
+- (void)setBackEllipseSize:(CGSize)backEllipseSize {
+    _backEllipseSize = backEllipseSize;
+    _catergoryView.backEllipseSize = backEllipseSize;
+}
+
+- (void)setHoldLastIndexAfterUpdate:(BOOL)holdLastIndexAfterUpdate {
+    if (_holdLastIndexAfterUpdate != holdLastIndexAfterUpdate) {
+        _holdLastIndexAfterUpdate = holdLastIndexAfterUpdate;
+        _catergoryView.holdLastIndexAfterUpdate = holdLastIndexAfterUpdate;
+    }
+}
+
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
