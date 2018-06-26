@@ -29,6 +29,9 @@
     if (!_sliderShowView) {
         BPCardPageView *sliderShowView = [[BPCardPageView alloc] init];
         _sliderShowView = sliderShowView;
+        _sliderShowView.padding = 7;
+        _sliderShowView.imageInset = 8;
+
         _sliderShowView.placeHolderImage = [UIImage imageNamed:@"reading_holder_image_left"];
         _sliderShowView.backgroundColor = kWhiteColor;
         [self.view addSubview:_sliderShowView];

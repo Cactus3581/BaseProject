@@ -66,8 +66,7 @@ BPSYNTH_DUMMY_CLASS(UIDevice_BPAdd)
 }
 #endif
 
-- (BOOL)hasCamera
-{
+- (BOOL)hasCamera {
     __block BOOL can;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -132,7 +131,6 @@ BPSYNTH_DUMMY_CLASS(UIDevice_BPAdd)
         free(machine);
     });
     return modelInfo;
-    
 }
 
 - (NSString *)modelInfoName{

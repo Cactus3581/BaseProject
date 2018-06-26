@@ -45,31 +45,4 @@
     }
 }
 
-#pragma mark - 旋转
-//设置当前视图控制器 支持旋转的方向
-- (BOOL)shouldAutorotate{
-    return YES;
-}
-
-//设置当前视图控制器 支持旋转的方向
-- (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskAll;
-}
-
-#pragma mark - 被弃用的旋转 方法
-//屏幕将要旋转时 触发 之前一般用来 进行视频，音频的暂停操作。
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    BPLog(@"屏幕将要旋转");
-}
-
-//旋转动画 将要开始时 触发之前一般进行过渡动画的控制
-- (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    BPLog(@"将要开始旋转动画");
-}
-
-//旋转结束时 触发之前一般进行暂停视频,音频的重新播放。
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    BPLog(@"结束旋转");
-}
-
 @end

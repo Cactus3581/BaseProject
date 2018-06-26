@@ -13,8 +13,6 @@ BPSYNTH_DUMMY_CLASS(UIScreen_BPAdd)
 
 @implementation UIScreen (BPAdd)
 
-
-
 + (CGFloat)bp_screenScale {
     static CGFloat screenScale = 0.0;
     static dispatch_once_t onceToken;
@@ -58,4 +56,5 @@ BPSYNTH_DUMMY_CLASS(UIScreen_BPAdd)
     });
     return ratio;
 }
+
 @end

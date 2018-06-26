@@ -92,7 +92,7 @@
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
     BPLog(@"3 - 将要结束拖拽");
-    NSLog(@"%s velocity: %@, targetContentOffset: %@", __PRETTY_FUNCTION__,
+    BPLog(@"%s velocity: %@, targetContentOffset: %@", __PRETTY_FUNCTION__,
           [NSValue valueWithCGPoint:velocity],
           [NSValue valueWithCGPoint:*targetContentOffset]);
 }

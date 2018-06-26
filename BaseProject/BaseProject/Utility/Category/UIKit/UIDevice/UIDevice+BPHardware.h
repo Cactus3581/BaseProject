@@ -10,6 +10,7 @@
 
 
 @interface UIDevice (BPHardware)
+
 + (NSString *)bp_platform;
 + (NSString *)bp_platformString;
 
@@ -39,4 +40,5 @@
 + (long long)bp_freeDiskSpaceBytes;
 /// 获取手机硬盘总空间, 返回的是字节数
 + (long long)bp_totalDiskSpaceBytes;
+
 @end

@@ -20,11 +20,17 @@
 
 //程序准备就绪 将要运行时执行 我们一般用来进行 window创建 以及视图控件等等配置
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.rootTabbarViewController = [[BPRootTabBarController alloc]init];
-    self.window.rootViewController = self.rootTabbarViewController;
+
+    [self creatRootViewController];
     //[self configLaunchImage]; // 代码启动图片（在info里把launch key删除，防止展示两次）
+    //[self configStyleByAppearance]; //统一设置style
     [self configSDKS];
     return YES;
+}
+
+- (void)creatRootViewController {
+    self.rootTabbarViewController = [[BPRootTabBarController alloc]init];
+    self.window.rootViewController = self.rootTabbarViewController;
 }
 
 - (UIWindow *)window{
@@ -221,6 +227,22 @@
         return YES;
     }
     return NO;
+}
+
+#pragma mark - 屏幕旋转
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(nullable UIWindow *)window {
+    return UIInterfaceOrientationMaskAll;
+}
+
+#pragma mark - 统一设置 style
+- (void)configStyleByAppearance {
+    // 项目中所有的UIBarButtonItem统一设置
+    //iOS 11 之前 把系统的backButton的文字去掉，11之后不管用了
+    //[[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
+    
+    // 项目中所有的导航栏统一设置
+    [UINavigationBar appearance].tintColor = kThemeColor;
+    //[[UINavigationBar appearance] setBackgroundImage:backImage forBarMetrics:UIBarMetricsDefault];
 }
 
 @end

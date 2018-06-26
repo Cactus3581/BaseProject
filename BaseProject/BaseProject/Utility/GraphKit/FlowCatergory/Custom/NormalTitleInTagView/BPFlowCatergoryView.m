@@ -16,8 +16,6 @@ static NSString *identifier  = @"cell";
 @property (nonatomic, weak) UICollectionView *contentCollectionView;
 @property (nonatomic, weak) BPFlowCatergoryTagView *catergoryView;
 @property (nonatomic, strong,readwrite) NSMutableDictionary *vcCacheDic;
-/**所管理滚动的scrollView或者其子类，一般使用collectionView, 必须设置*/
-@property (nonatomic, strong) UIScrollView *scrollView;
 @end
 
 @implementation BPFlowCatergoryView

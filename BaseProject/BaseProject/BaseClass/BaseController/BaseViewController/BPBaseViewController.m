@@ -26,6 +26,7 @@ static CGFloat titleInset = 20.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kWhiteColor;
+    //[self setLayoutStyle];
     [self configBarButtomItem];
 }
 
@@ -35,11 +36,12 @@ static CGFloat titleInset = 20.0f;
 
 - (void)viewWillDisappear:(BOOL)animated {
     [self naviBarHidden:NO animated:animated];
+    [self recoverNavigationBarStyle];
+    [self recoverStatusStyle];
 }
 
 - (void)configBarButtomItem {
     if (self.navigationController && self.navigationController.viewControllers.count) {
-        [self configBarDefaulyStyle];
         [self configLeftBarButtomItem];
         [self configRightBarButtomItem];
     }
@@ -123,7 +125,6 @@ static CGFloat titleInset = 20.0f;
     // 子类重写 方法
 }
 
-#pragma mark - lazy load methods
 - (UIImage *)leftBarButtonImage {
     if (!_leftBarButtonImage) {
         _leftBarButtonImage = [[UIImage imageNamed:bp_naviItem_backImage] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -143,7 +144,6 @@ static CGFloat titleInset = 20.0f;
         _leftBarButton.frame = CGRectMake(0, 0, bp_naviItem_width, bp_naviItem_height);
         _leftBarButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
         
-
         /*
          _leftBarButton.backgroundColor = kRedColor;
          _leftBarButton.imageView.backgroundColor = kGreenColor;
@@ -168,30 +168,28 @@ static CGFloat titleInset = 20.0f;
     return _rightBarButton;
 }
 
-#pragma mark - config theme
-- (void)setTheme {
-    /*
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.extendedLayoutIncludesOpaqueBars = YES;
-    self.edgesForExtendedLayout = UIRectEdgeTop;
-    self.navigationController.navigationBar.translucent = NO;
-     */
-}
-
-- (void)configBarDefaulyStyle {
-    /*
-    [self.leftBarButton setTintColor:kWhiteColor];
-    [self.rightBarButton setTintColor:kWhiteColor];
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:kWhiteColor,NSFontAttributeName:BPFont(16)};
-    self.navigationController.navigationBar.barTintColor = kWhiteColor;
-    self.navigationController.navigationBar.tintColor = kWhiteColor;//影响返回按钮的颜色,因为返回按钮还是用的系统的
-     */
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    self.navigationController.navigationBar.translucent = YES;
+#pragma mark - config theme style
+- (void)setLayoutStyle {
+    //1. 所有view（包括scroll）坐标原点在导航栏下面,不影响导航栏的颜色及背景，即跟它没关系，只影响坐标原点；也不会设置scroll的偏移量
+    self.edgesForExtendedLayout = UIRectEdgeNone;//也可以是UIRectEdgeTop
+     
+    //2.不让scroll产生偏移，也就是说内容y同frame的y，这样好处理，特别是在多scroll环境下
+    if (kiOS11) {
+        //self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+     
+    //3. 让translucent = NO的时候，坐标从（0，0）开始布局；平时用不到，因为默认就是从（0，0）开始布局，一般跟translucent一块使用
+    self.extendedLayoutIncludesOpaqueBars = NO;
 }
 
 #pragma mark - 恢复默认样式
-- (void)recoverStyle {
+- (void)recoverNavigationBarStyle {
+    
+}
+
+- (void)recoverStatusStyle {
     
 }
 
@@ -207,7 +205,6 @@ static CGFloat titleInset = 20.0f;
 #pragma mark - 隐藏navibar及恢复默认样式
 - (void)naviBarHidden:(BOOL)hidden animated:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:hidden animated:animated];//无法提供手势滑动pop效果，但是有系统自动的动画效果。
-//    [self.navigationController.navigationBar setHidden:YES];//区别
 }
 
 #pragma mark - FPS
@@ -238,64 +235,37 @@ static CGFloat titleInset = 20.0f;
 }
 
 #pragma mark -  手动开启关闭左滑手势
-- (void)popDisabled {
-    self.fd_interactivePopDisabled = YES;
-    self.navigationController.fd_viewControllerBasedNavigationBarAppearanceEnabled = YES;
+- (void)popDisabled:(BOOL)disabled {
+    self.fd_interactivePopDisabled = disabled;
+    self.navigationController.fd_viewControllerBasedNavigationBarAppearanceEnabled = disabled;
 }
 
 #pragma mark -  屏幕旋转操作
-/*
-
-// 自动旋转
-- (BOOL)shouldAutorotate {
-    return YES;
+//强制转屏
+- (void)setInterfaceOrientation:(UIInterfaceOrientation)orientation {
+    if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+        SEL selector  = NSSelectorFromString(@"setOrientation:");
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+        [invocation setSelector:selector];
+        [invocation setTarget:[UIDevice currentDevice]];
+        // 从2开始是因为前两个参数已经被selector和target占用
+        [invocation setArgument:&orientation atIndex:2];
+        [invocation invoke];
+    }
 }
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskAll;
+#pragma mark - StatusBar
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
-// 竖屏显示
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationPortrait;
+- (BOOL)prefersStatusBarHidden {
+    return NO;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return YES;
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
+    return UIStatusBarAnimationNone;
 }
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-}
-*/
-
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    //    self.scrollView.contentOffset = CGPointMake(self.scrollView.frame.size.width * self.pageBeforeRotation, 0.0);
-}
-
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        //计算旋转之后的宽度并赋值
-        CGSize screen = [UIScreen mainScreen].bounds.size;
-        //界面处理逻辑
-        /*
-         */
-        
-        //动画播放完成之后
-        if(screen.width > screen.height){
-            BPLog(@"横屏");
-        }else{
-            BPLog(@"竖屏");
-        }
-    } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        NSLog(@"动画播放完之后处理");
-    }];
-}
-
-#pragma mark - 隐藏statusbar及恢复默认样式
-//- (BOOL)prefersStatusBarHidden {
-//    return YES;
-//}
 
 #pragma mark - dealloc
 - (void)dealloc {

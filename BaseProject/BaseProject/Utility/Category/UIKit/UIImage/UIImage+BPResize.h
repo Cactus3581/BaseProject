@@ -9,13 +9,11 @@
 @interface UIImage (BPResize)
 
 - (UIImage *)bp_croppedImage:(CGRect)bounds;
-- (UIImage *)bp_thumbnailImage:(NSInteger)thumbnailSize
-          transparentBorder:(NSUInteger)borderSize
-               cornerRadius:(NSUInteger)cornerRadius
-       interpolationQuality:(CGInterpolationQuality)quality;
-- (UIImage *)bp_resizedImage:(CGSize)newSize
-     interpolationQuality:(CGInterpolationQuality)quality;
-- (UIImage *)bp_resizedImageWithContentMode:(UIViewContentMode)contentMode
-                                  bounds:(CGSize)bounds
-                    interpolationQuality:(CGInterpolationQuality)quality;
+
+- (UIImage *)bp_thumbnailImage:(NSInteger)thumbnailSize transparentBorder:(NSUInteger)borderSize cornerRadius:(NSUInteger)cornerRadius interpolationQuality:(CGInterpolationQuality)quality;
+
+- (UIImage *)bp_resizedImage:(CGSize)newSize interpolationQuality:(CGInterpolationQuality)quality;
+
+- (UIImage *)bp_resizedImageWithContentMode:(UIViewContentMode)contentMode bounds:(CGSize)bounds interpolationQuality:(CGInterpolationQuality)quality;
+
 @end

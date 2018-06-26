@@ -40,11 +40,30 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>了解OC</string>
+				<string>OC的类和对象</string>
 				<key>fileName</key>
-				<string>BPClassObjectViewController</string>
+				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
 				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>类和对象</string>
+						<key>fileName</key>
+						<string>BPClassObjectViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>类方法和对象方法</string>
+						<key>fileName</key>
+						<string>BPClassObjecMethodtViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>title</key>
@@ -265,6 +284,14 @@
 										<string></string>
 									</dict>
 								</array>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>补充：如何获取正确的frame</string>
+								<key>fileName</key>
+								<string>BPGetFrameViewController</string>
+								<key>briefIntro</key>
+								<string></string>
 							</dict>
 						</array>
 					</dict>
@@ -1177,6 +1204,14 @@
 						<string></string>
 					</dict>
 				</array>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UIAppearance</string>
+				<key>fileName</key>
+				<string>BPAppearanceViewController</string>
+				<key>briefIntro</key>
+				<string>协议方法/自定义Tabbar</string>
 			</dict>
 		</array>
 	</dict>

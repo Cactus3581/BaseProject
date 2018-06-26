@@ -52,8 +52,8 @@
 
 - (void)removeFPSLabel;
 
-/**全屏pop手势关闭*/
-- (void)popDisabled;
+/**全屏pop手势关闭 ,默认NO，默认关闭*/
+- (void)popDisabled:(BOOL)disabled;
 
 #pragma mark - 动态跳转
 @property(nonatomic,strong) NSDictionary *dynamicJumpDict;
@@ -64,5 +64,8 @@
 #pragma mark -数据处理
 - (void)request;
 - (void)handleData;
+
+#pragma mark - 强制旋转屏幕
+- (void)setInterfaceOrientation:(UIInterfaceOrientation)orientation;
 
 @end

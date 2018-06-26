@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImageView (BPAdd)
+
 /**给切换image添加动画*/
 @property (nonatomic, assign) BOOL imageChangeWithAnimaiton;
 

@@ -102,6 +102,14 @@ static inline CGRect BPRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
 #define kScreenUniqueHeight XRZScreenUniqueSize().height
 #endif
 
+#ifndef SCREEN_MIN
+#define SCREEN_MIN MIN(kScreenHeight,kScreenWidth)
+#endif
+
+#ifndef SCREEN_MAX
+#define SCREEN_MAX MAX(kScreenHeight,kScreenWidth)
+#endif
+
 // 判断是否是iPhone X
 #ifndef iPhoneX
 #define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)

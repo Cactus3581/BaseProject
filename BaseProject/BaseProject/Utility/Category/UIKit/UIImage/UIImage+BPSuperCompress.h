@@ -41,6 +41,6 @@
  */
 + (CGSize)bp_scaleImage:(UIImage *) image withLength:(CGFloat) imageLength;
 
-
 + (UIImage*)bp_resizableHalfImage:(NSString *)name;
+
 @end

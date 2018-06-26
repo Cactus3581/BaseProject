@@ -52,11 +52,11 @@
     viewController.view.backgroundColor = kWhiteColor;
     BPRootNavigationController *navC = [[BPRootNavigationController alloc] initWithRootViewController:viewController];
     navC.title = title;
+    viewController.navigationItem.title = title;
     navC.tabBarItem.image = image;
     navC.tabBarItem.selectedImage = image;
 //    navC.tabBarItem.selectedImage = [[[UIImage imageNamed:image] imageWithTintColor:KSColor1] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //[navC.navigationBar setBackgroundImage:[UIImage imageNamed:@"commentary_num_bg"] forBarMetrics:UIBarMetricsDefault];
-    viewController.navigationItem.title = title;
     [self addChildViewController:navC];
 }
 

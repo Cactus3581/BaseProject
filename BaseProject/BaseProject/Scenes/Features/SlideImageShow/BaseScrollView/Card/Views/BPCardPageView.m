@@ -20,6 +20,13 @@
 @property (nonatomic,weak) NSTimer *timer;
 @end
 
+/*
+ 位置：暂不处理
+ 旋转：改变size（已处理），计时器停止工作（待处理）：旋转前：停止计时器；旋转后：开始计时器：方法1:vc传过来viewWillTransitionToSize；方法二 view内部监听通知
+ 代理：代理的存在性+正确性（已处理）
+ hitTest：（已处理）
+ */
+
 @implementation BPCardPageView
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -46,30 +53,16 @@
     _hideWhenSinglePage = YES;
 }
 
-- (void)updateConstraints {
-    [super updateConstraints];
-}
-
 #pragma mark - view旋转
 - (void)layoutSubviews {
-    
     [super layoutSubviews];
+    //[self invalidateTimer]; //旋转时，timer停止
+
     // self.width = kScreenWidth = imageinset + padding + imageW + padding + imageinset
     //scrollW = imageW + padding;
     CGFloat imageViewWidth = self.width-self.imageInset-self.padding-self.padding-self.imageInset;
     CGFloat scrollWidth = imageViewWidth + self.padding;
-    [_scrollView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(scrollWidth);
-    }];
     _scrollView.contentSize = CGSizeMake(scrollWidth * self.imageArray.count, 0);//可以不写，因为下面的子view决定了大小
-    UIImageView *imageView = BPValidateArrayObjAtIdx(self.imageViewArray,0);
-    if (imageView && imageView.superview) {
-        [imageView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.width.mas_equalTo(imageViewWidth);
-        }];
-    }
-
-    [super layoutSubviews];//  修正旋转问题
     [_scrollView setContentOffset:CGPointMake(_currentImageIndex * _scrollView.width, 0.0) animated:NO]; //位移归位
 }
 
@@ -96,7 +89,6 @@
         return;
     }
     
-    CGFloat imageViewWidth = self.width-self.imageInset-self.padding-self.padding-self.imageInset;
     for (int i = 0; i<imageArray.count; i++) {
         UIImageView *imageView = [[UIImageView alloc] init];
         [imageView sd_setImageWithURL:[NSURL URLWithString:BPValidateString(imageArray[i])] placeholderImage:self.placeHolderImage];
@@ -112,7 +104,7 @@
                 make.top.bottom.equalTo(_scrollView);
                 make.leading.equalTo(_scrollView);
                 make.height.equalTo(_scrollView);
-                make.width.mas_equalTo(imageViewWidth);
+                make.width.equalTo(self.scrollView).mas_offset(-self.padding);
             }];
         }else {
             UIImageView *lastImageView = self.imageViewArray[i-1];
@@ -172,7 +164,7 @@
         self.pageControl.currentPage = self.currentImageIndex;
         [self willDisplayItemAtIndex:self.currentImageIndex];
     }else {
-        [_scrollView setContentOffset:CGPointMake(_scrollView.contentOffset.x+_scrollView.width, 0.0) animated:YES];
+        [_scrollView setContentOffset:CGPointMake((self.currentImageIndex+1)*_scrollView.width, 0.0) animated:YES];
         [self willDisplayItemAtIndex:self.currentImageIndex+1];
     }
 }
@@ -182,10 +174,11 @@
     if (self.autoScroll) {
         [self invalidateTimer];
     }
-    CGFloat standardOffsetX = self.width;
-    if (scrollView.contentOffset.x < standardOffsetX) {
+    CGFloat standardOffsetX = scrollView.width * self.currentImageIndex;
+    CGFloat currentOffsetX = scrollView.contentOffset.x;
+    if (currentOffsetX < standardOffsetX) {
         [self willDisplayItemAtIndex:self.currentImageIndex-1];
-    }else if (scrollView.contentOffset.x < standardOffsetX) {
+    }else if (currentOffsetX > standardOffsetX) {
         [self willDisplayItemAtIndex:self.currentImageIndex+1];
     }else {
         BPLog(@"没有偏移");
@@ -245,6 +238,7 @@
     _padding = padding;
     [_scrollView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self).offset(_padding + self.imageInset);
+        make.trailing.equalTo(self).offset(- self.imageInset);
     }];
 }
 
@@ -252,6 +246,7 @@
     _imageInset = imageInset;
     [_scrollView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self).offset(self.padding + _imageInset);
+        make.trailing.equalTo(self).offset(-_imageInset);
     }];
 }
 
@@ -326,6 +321,7 @@
         [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.height.equalTo(self);
             make.leading.equalTo(self).offset(self.padding+self.imageInset);
+            make.trailing.equalTo(self).offset(-self.imageInset);
         }];
     }
     return _scrollView;
@@ -363,6 +359,42 @@
     if (!newSuperview) {
         [self invalidateTimer];
     }
+}
+
+#pragma mark---修改hitTest方法
+//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+//    UIView *view = [super hitTest:point withEvent:event];
+//    if ([view isEqual:self]){
+//        for (UIView *subview in _scrollView.subviews){
+//            CGPoint offset = CGPointMake(point.x - _scrollView.frame.origin.x + _scrollView.contentOffset.x - subview.frame.origin.x, point.y - _scrollView.frame.origin.y + _scrollView.contentOffset.y - subview.frame.origin.y);
+//
+//            if ((view = [subview hitTest:offset withEvent:event])){
+//                return view;
+//            }
+//        }
+//        return _scrollView;
+//    }
+//    return view;
+//}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    // 如果交互未打开，或者透明度小于0.05 或者 视图被隐藏
+    if (self.userInteractionEnabled == NO || self.alpha < 0.05 || self.hidden == YES) {
+        return nil;
+    }
+    // 如果touch的point在self的bounds内
+    if ([self pointInside:point withEvent:event]) {
+        CGPoint newPoint = CGPointZero;
+        newPoint.x = point.x - _scrollView.frame.origin.x + _scrollView.contentOffset.x;
+        newPoint.y = point.y - _scrollView.frame.origin.y + _scrollView.contentOffset.y;
+        // 如果touch的point在_scrollView的bounds内
+        if ([_scrollView pointInside:newPoint withEvent:event]) {
+            // 调用子视图的hitTest重复上面的步骤。找到了，返回hitTest view ,没找到返回有自身处理
+            return [_scrollView hitTest:newPoint withEvent:event];
+        }
+        return _scrollView;
+    }
+    return nil;
 }
 
 @end

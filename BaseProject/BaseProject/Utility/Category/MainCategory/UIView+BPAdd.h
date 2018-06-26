@@ -51,8 +51,10 @@ typedef void(^BPAddViewBlock)(CGRect frame);
 
 /**返回管理着该视图的控制器(包括管理该视图父视图级别的控制器)，可为nil*/
 @property (nullable, nonatomic, readonly) UIViewController *viewController;
+
 /**可视透明度，值由自身hidden和alpha以及父视图的hidden和alpha决定*/
 @property (nonatomic, readonly) CGFloat visibleAlpha;
+
 /**触摸屏幕时先结束编辑*/
 //@property (nonatomic, assign) BOOL endEditingBeforTouch;
 /**触摸时回调的block*/

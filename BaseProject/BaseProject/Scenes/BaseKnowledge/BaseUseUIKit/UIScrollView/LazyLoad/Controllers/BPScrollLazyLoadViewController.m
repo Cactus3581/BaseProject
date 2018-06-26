@@ -78,7 +78,7 @@
     [serializer.acceptableContentTypes setByAddingObject:@"text/html"];
     manager.responseSerializer = serializer;
     [manager GET:apiURL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"Request succeeded");
+        BPLog(@"Request succeeded");
         NSString *responseString = [[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding] stringByReplacingOccurrencesOfString:@"\\'" withString:@"'"];
         NSData *data = [responseString dataUsingEncoding:NSUTF8StringEncoding];
         NSError *error;
@@ -97,7 +97,7 @@
         }
         [self.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"Request falied");
+        BPLog(@"Request falied");
     }];
 }
 
@@ -140,7 +140,7 @@
     
     NSDictionary *obj = [self objectForRow:indexPath.row];
     NSURL *targetURL = [NSURL URLWithString:BPValidateString(obj[@"hoverURL"])];
-    //    NSLog(@"%@ %@", self.tableView.dragging ? @"dragging":@"", self.tableView.decelerating ? @"decelerating":@"");
+    //    BPLog(@"%@ %@", self.tableView.dragging ? @"dragging":@"", self.tableView.decelerating ? @"decelerating":@"");
     if (![[cell.photoView sd_imageURL] isEqual:targetURL]) {
         cell.photoView.alpha = 0.0;
         SDWebImageManager *manager = [SDWebImageManager sharedManager];
