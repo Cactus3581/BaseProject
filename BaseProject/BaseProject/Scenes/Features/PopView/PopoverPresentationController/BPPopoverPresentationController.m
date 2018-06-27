@@ -16,10 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configureButton];
+    [self initializeViews];
 }
 
-- (void)configureButton {
+- (void)initializeViews {
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
     rightButton.backgroundColor = kThemeColor;
     [rightButton setTitle:@"Show" forState:UIControlStateNormal];

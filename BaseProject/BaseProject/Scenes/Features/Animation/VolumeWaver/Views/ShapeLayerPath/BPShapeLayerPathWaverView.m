@@ -253,11 +253,11 @@ static NSThread *_voiceWaveThread = nil;
         }
     }
     [_lock unlock];
-    [self configDrawPath];
+    [self initializeDrawPath];
 }
 
 #pragma mark - drawRect方法
-- (void)configDrawPath {
+- (void)initializeDrawPath {
     //绘制渐变
     [_lock lock];
     if (_waveLinePathArray.count == _waveNumber && _waveNumber > 0) {

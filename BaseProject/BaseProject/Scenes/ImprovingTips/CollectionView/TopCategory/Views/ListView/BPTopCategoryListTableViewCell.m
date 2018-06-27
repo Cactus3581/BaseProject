@@ -27,7 +27,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self configViews];
+    [self initializeViews];
 }
 
 #pragma mark - 初始化赋值
@@ -67,7 +67,7 @@
     });
 }
 
-- (void)configViews {
+- (void)initializeViews {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.titleLabel.textColor = kDarkTextColor;
     self.desclabel.textColor = kDarkTextColor;

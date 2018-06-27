@@ -27,14 +27,14 @@ static NSString *headerIdentifier = @"BPIncludeTableSelfSizeInsideHeaderView";
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.arraySource = [NSMutableArray array];
-        [self configTableView];
+        [self initializeViews];
     }
     return self;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self configTableView];
+    [self initializeViews];
 }
 
 - (void)layoutSubviews {
@@ -76,7 +76,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSelfSizeInsideHeaderView";
 }
 
 #pragma mark -初始化Tableview及delagate
-- (void)configTableView {
+- (void)initializeViews {
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     _tableView = tableView;
     [self.contentView addSubview:self.tableView];

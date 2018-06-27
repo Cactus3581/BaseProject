@@ -32,7 +32,7 @@ static NSString *notificationNameFromOutsideScrollNotEnable = @"notificationName
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configureCollectionView];
+    [self initializeViews];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollEnabled) name:notificationNameFromInsideScrollEnable object:nil];
     self.isScrollEnabled = YES;
     //[self popDisabled]; //全局pop手势
@@ -60,7 +60,7 @@ static NSString *notificationNameFromOutsideScrollNotEnable = @"notificationName
 }
 
 #pragma mark - 布局collectionview
-- (void)configureCollectionView {
+- (void)initializeViews {
     _collectionView.backgroundColor = kWhiteColor;
     UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc] init];
     _collectionView.collectionViewLayout = flowLayout;

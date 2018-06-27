@@ -193,11 +193,17 @@ static CGFloat titleInset = 20.0f;
     
 }
 
-#pragma mark -数据处理
+#pragma mark - 创建views
+- (void)initializeViews {
+    
+}
+
+#pragma mark -数据请求
 - (void)request {
     
 }
 
+#pragma mark -数据处理
 - (void)handleData {
     
 }
@@ -234,7 +240,7 @@ static CGFloat titleInset = 20.0f;
     //必须实现
 }
 
-#pragma mark -  手动开启关闭左滑手势
+#pragma mark - 手动开启关闭左滑手势
 - (void)popDisabled:(BOOL)disabled {
     self.fd_interactivePopDisabled = disabled;
     self.navigationController.fd_viewControllerBasedNavigationBarAppearanceEnabled = disabled;

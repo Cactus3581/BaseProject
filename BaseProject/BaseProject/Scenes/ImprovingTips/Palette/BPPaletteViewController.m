@@ -33,10 +33,10 @@ static CGFloat paletteViewHeight = 100.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     //[self initUI];
-    [self configImageView];
+    [self initializeImageView];
 }
 
-- (void)configImageView {
+- (void)initializeImageView {
     UIImage *image = [UIImage imageNamed:@"Palette.jpeg"];
     _chooseImageView = [[UIImageView alloc]initWithImage:image];
     _chooseImageView.contentMode = UIViewContentModeScaleAspectFit;

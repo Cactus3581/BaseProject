@@ -17,11 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configureCircleView];
-
+    [self initializeCircleView];
 }
 
-- (void)configureCircleView {
+- (void)initializeCircleView {
     BPCircleView *view = [[BPCircleView alloc]init];
     [self.view addSubview:view];
     [view mas_makeConstraints:^(MASConstraintMaker *make) {

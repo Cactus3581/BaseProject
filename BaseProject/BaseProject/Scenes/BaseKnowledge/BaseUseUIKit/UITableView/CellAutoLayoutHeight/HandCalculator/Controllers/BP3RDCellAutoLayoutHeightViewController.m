@@ -25,10 +25,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configureTable];
+    [self initializeViews];
 }
 
-- (void)configureTable {
+- (void)initializeViews {
     [self.tableView reloadData];
 }
 

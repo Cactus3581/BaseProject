@@ -36,10 +36,10 @@ static NSString *footer_nib_identifier = @"nib_footer";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configCollectionView];
+    [self initializeViews];
 }
 
-- (void)configCollectionView {
+- (void)initializeViews {
     [self.view addSubview:self.collectionView];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);

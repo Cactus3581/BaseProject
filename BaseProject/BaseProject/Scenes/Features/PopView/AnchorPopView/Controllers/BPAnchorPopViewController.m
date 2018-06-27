@@ -34,12 +34,12 @@
                 break;
                 
             case 1:{
-                [self configureButton];
+                [self initializeButton];
             }
                 break;
                 
             case 2:{
-                [self configCollectionView];
+                [self initializeCollectionView];
             }
                 break;
                 
@@ -87,7 +87,7 @@
 }
 
 #pragma mark - 无列表锚点动画
-- (void)configureButton {
+- (void)initializeButton {
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
     rightButton.backgroundColor = kThemeColor;
     [rightButton setTitle:@"Show" forState:UIControlStateNormal];
@@ -131,7 +131,7 @@
     [_anchorPopView showPopView];
 }
 
-- (void)configCollectionView {
+- (void)initializeCollectionView {
     [self.view addSubview:self.collectionView];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);

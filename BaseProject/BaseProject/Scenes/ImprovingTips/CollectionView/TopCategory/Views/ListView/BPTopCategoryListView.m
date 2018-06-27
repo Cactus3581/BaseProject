@@ -20,7 +20,7 @@ static NSString *identifier  = @"BPTopCategoryListTableViewCell";
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self configTableView];
+    [self initializeTableView];
 }
 
 - (void)setHeaderView:(UIView *)headerView {
@@ -38,7 +38,7 @@ static NSString *identifier  = @"BPTopCategoryListTableViewCell";
     [self.tableView reloadData];
 }
 
-- (void)configTableView {
+- (void)initializeTableView {
     self.backgroundColor = kWhiteColor;
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView = tableView;

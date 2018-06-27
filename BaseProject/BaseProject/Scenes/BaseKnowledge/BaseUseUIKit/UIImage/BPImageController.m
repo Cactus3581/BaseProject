@@ -18,11 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self test];
-    [self configureImageView];//image 切割
+    [self initializeViews];//image 切割
 }
 
 #pragma mark image 切割
-- (void)configureImageView {
+- (void)initializeViews {
     UIImageView *view = [[UIImageView alloc]init];
     [self.view addSubview:view];
     [view mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -26,10 +26,10 @@ static CGFloat cellHeight = 100;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.rightBarButtonTitle = @"reloaddata";
-    [self configureTable];
+    [self initializeViews];
 }
 
-- (void)configureTable {
+- (void)initializeViews {
     self.tableView.estimatedRowHeight = 100;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
 

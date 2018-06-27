@@ -38,7 +38,7 @@ static NSString *placedFooterView_identifier = @"BPSectionPlacedFooterView";
     self.title = @"Calendar";
     self.courseid = 1;
     [self handleData];
-    [self configViews];
+    [self initializeViews];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -79,13 +79,13 @@ static NSString *placedFooterView_identifier = @"BPSectionPlacedFooterView";
 }
 
 #pragma mark - config subViews
-- (void)configViews {
+- (void)initializeViews {
     self.view.backgroundColor = kWhiteColor;
-    [self configTavleView];
+    [self initializeTableView];
 }
 
 #pragma mark - config tableView
-- (void)configTavleView {
+- (void)initializeTableView {
     self.tableView.backgroundColor = kWhiteColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.delegate = self;

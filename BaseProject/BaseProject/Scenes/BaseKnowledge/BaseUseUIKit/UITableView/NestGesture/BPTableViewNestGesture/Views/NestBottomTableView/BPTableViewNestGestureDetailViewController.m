@@ -22,7 +22,7 @@ static NSString *notificationNameFromOutsideScrollNotEnable = @"notificationName
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollEnabled) name:notificationNameFromOutsideScrollNotEnable object:nil];
-    [self configTableView];
+    [self initializeViews];
 }
 
 - (void)changeScrollEnabled {
@@ -30,7 +30,7 @@ static NSString *notificationNameFromOutsideScrollNotEnable = @"notificationName
     self.isScrollEnabled = YES;
 }
 
-- (void)configTableView {
+- (void)initializeViews {
     _isScrollEnabled = NO;
     self.view.backgroundColor = kWhiteColor;
     self.tableView.backgroundColor = kWhiteColor;

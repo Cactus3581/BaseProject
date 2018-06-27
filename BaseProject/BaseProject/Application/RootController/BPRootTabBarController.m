@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kWhiteColor;
-    [self configChildViewController];
+    [self addChildViewController];
     [self setTabbarTitleTheme];
 }
 
@@ -32,7 +32,7 @@
 /**
  *  添加所有子控制器方法
  */
-- (void)configChildViewController{
+- (void)addChildViewController{
     BPFeatureViewController *featureVC = [[BPFeatureViewController alloc]init];
     [self setUpChildViewController:featureVC image:[UIImage imageNamed:@"tabbar_hotScenes"] title:@"场景"];
     

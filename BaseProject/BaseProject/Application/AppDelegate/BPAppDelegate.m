@@ -24,7 +24,7 @@
     [self creatRootViewController];
     //[self configLaunchImage]; // 代码启动图片（在info里把launch key删除，防止展示两次）
     //[self configStyleByAppearance]; //统一设置style
-    [self configSDKS];
+    [self initializeSDKS];
     return YES;
 }
 
@@ -168,7 +168,7 @@
     }
 }
 
-- (void)configSDKS {
+- (void)initializeSDKS {
     BuglyConfig *debugMode = [[BuglyConfig alloc] init];
     debugMode.debugMode = YES;
     [Bugly startWithAppId:@"dc9e61f4db" developmentDevice:YES config:debugMode];

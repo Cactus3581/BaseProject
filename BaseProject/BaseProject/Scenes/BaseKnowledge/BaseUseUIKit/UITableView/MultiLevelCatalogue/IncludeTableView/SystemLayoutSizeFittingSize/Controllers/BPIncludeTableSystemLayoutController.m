@@ -36,7 +36,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutHeaderView";
     [super viewDidLoad];
     self.isShowAll = YES;
     [self handleData];
-    [self configTableView];
+    [self initializeViews];
     [self addFPSLabel];
 }
 
@@ -45,7 +45,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutHeaderView";
     self.arraySource = BPValidateArray(_data.array);
 }
 
-- (void)configTableView {
+- (void)initializeViews {
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     _tableView = tableView;
     [self.view addSubview:self.tableView];

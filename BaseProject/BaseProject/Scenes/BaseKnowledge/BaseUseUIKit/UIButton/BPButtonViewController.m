@@ -20,7 +20,7 @@
     [self test];
 }
 
-- (void)configureButton {
+- (void)initializeViews {
     self.view.backgroundColor = kGreenColor;
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
     rightButton.backgroundColor = kRedColor;

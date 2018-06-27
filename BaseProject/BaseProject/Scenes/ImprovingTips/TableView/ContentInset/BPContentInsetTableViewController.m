@@ -22,11 +22,11 @@ static NSString *footer_identifier = @"footer";
 #pragma mark - vc system methods
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configTableView];
+    [self initializeTableView];
 }
 
 #pragma mark - config tableView
-- (void)configTableView {
+- (void)initializeTableView {
     [self.view addSubview:self.tableView];
     self.tableView.contentInset = UIEdgeInsetsMake(10, 10, 10, -10);
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {

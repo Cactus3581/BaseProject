@@ -46,7 +46,7 @@ static CGFloat cellHeight = 100;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.rightBarButtonTitle = @"reloaddata";
-    [self configureTable];
+    [self initializeViews];
     [self addFPSLabel];
 }
 
@@ -55,7 +55,7 @@ static CGFloat cellHeight = 100;
 }
 
 #pragma mark - iOS 8自动计算（方法一代码）
-- (void)configureTable {
+- (void)initializeViews {
     //PS：iOS8 系统中 rowHeight 的默认值已经设置成了 UITableViewAutomaticDimension，所以第二行代码可以省略。
     self.tableView.estimatedRowHeight = 100;
     self.tableView.rowHeight = UITableViewAutomaticDimension;

@@ -31,12 +31,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configTagLabelView];
-    [self configTagCollectionView];
-    [self configTagFrameView];
+    [self initializeTagLabelView];
+    [self initializeTagCollectionView];
+    [self initializeTagFrameView];
 }
 
-- (void)configTagFrameView {
+- (void)initializeTagFrameView {
     BPTagFrameView *autoresizingView = [[BPTagFrameView alloc] init];
     _autoresizingView = autoresizingView;
     [self.view addSubview:autoresizingView];
@@ -54,7 +54,7 @@
     
 }
 
-- (void)configTagCollectionView {
+- (void)initializeTagCollectionView {
     BPTagCollectionView *tagCollectionView = [[BPTagCollectionView alloc] init];
     [self.view addSubview:tagCollectionView];
     tagCollectionView.delegate = self;
@@ -80,7 +80,7 @@
     BPLog(@"点击了第%ld个",index);
 }
 
-- (void)configTagLabelView {
+- (void)initializeTagLabelView {
     BPTagAutoLayoutView *tagLabelView = [[BPTagAutoLayoutView alloc] init];
     [self.view addSubview:tagLabelView];
     tagLabelView.delegate = self;

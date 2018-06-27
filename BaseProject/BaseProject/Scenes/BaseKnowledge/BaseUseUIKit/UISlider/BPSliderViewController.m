@@ -17,7 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-- (void)configScrollView_2 {
+
+- (void)initializeScrollView_2 {
     UIScrollView * scrollView = [[UIScrollView alloc] init];
     scrollView.backgroundColor = kGreenColor;
     scrollView.delegate = self;
@@ -61,7 +62,7 @@
     }];
 }
 
-- (void)configScrollView_1 {
+- (void)initializeScrollView_1 {
     UIScrollView * scrollView = [[UIScrollView alloc] init];
     scrollView.backgroundColor = kGreenColor;
     scrollView.delegate = self;

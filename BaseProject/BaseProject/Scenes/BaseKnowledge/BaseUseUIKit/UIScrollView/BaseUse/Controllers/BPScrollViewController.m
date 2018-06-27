@@ -18,10 +18,10 @@
 //http://blog.csdn.net/l_j_x_/article/details/50458161
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configScrollView];
+    [self initializeViews];
 }
 
-- (void)configScrollView {
+- (void)initializeViews {
     UIScrollView * scrollView = [[UIScrollView alloc] init];
     _scrollView = scrollView;
     scrollView.backgroundColor = kGreenColor;

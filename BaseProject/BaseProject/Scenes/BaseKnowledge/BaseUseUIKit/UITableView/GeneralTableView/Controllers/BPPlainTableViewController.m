@@ -38,11 +38,11 @@ static CGFloat cellH = 50;
     [super viewDidLoad];
     self.title = @"Plain";
     self.view.backgroundColor = kGreenColor;
-    [self configTableView];
+    [self initializeViews];
 }
 
 #pragma mark - config tableView
-- (void)configTableView {
+- (void)initializeViews {
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);

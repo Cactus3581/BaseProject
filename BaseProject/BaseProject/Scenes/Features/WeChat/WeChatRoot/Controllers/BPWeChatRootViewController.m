@@ -30,7 +30,7 @@
 #pragma mark - newRootViewController
 - (void)configNewRootViewController {
     self.rootTabbarViewController = [[UITabBarController alloc]init];
-    [self configChildViewController];
+    [self addChildViewController];
     BPAppDelegate *delegate = (BPAppDelegate *)[UIApplication sharedApplication].delegate;
     UIWindow *window = kAppDelegate.window;
     UIWindow *keyWindow = kKeyWindow;//可能是alert的window
@@ -59,7 +59,7 @@
 /**
  *  添加所有子控制器方法
  */
-- (void)configChildViewController{
+- (void)addChildViewController {
     BPChatListViewController *weChatVC = [[BPChatListViewController alloc]init];
     [self setUpChildViewController:weChatVC image:[UIImage imageNamed:@""] title:@"微信"];
     

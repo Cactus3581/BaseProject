@@ -22,14 +22,14 @@ static CGFloat layerH = 140.0f;
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self configureAnimationViews];
+        [self initializeAnimationViews];
     }
     return self;
 }
 
 
 #pragma mark - 油表进度动画
-- (void)configureAnimationViews {
+- (void)initializeAnimationViews {
     //背景shapelayer
     self.backShapeLayer =[CAShapeLayer layer] ;
     UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(layerW/2.0, layerW/2.0) radius:radius startAngle:M_PI * 0.85 endAngle:M_PI * 0.15 clockwise:YES];
