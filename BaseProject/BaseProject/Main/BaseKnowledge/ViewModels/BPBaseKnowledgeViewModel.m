@@ -18,7 +18,6 @@ typedef void(^successed)(NSArray *);
 
 @interface BPBaseKnowledgeViewModel ()
 @property (readwrite) NSArray *data;
-
 @end
 
 @implementation BPBaseKnowledgeViewModel{
@@ -93,5 +92,3 @@ typedef void(^successed)(NSArray *);
 }
 
 @end
-
-

@@ -26,7 +26,7 @@ static CGFloat titleInset = 20.0f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kWhiteColor;
-    //[self setLayoutStyle];
+    [self configLayoutStyle];
     [self configBarButtomItem];
 }
 
@@ -35,6 +35,8 @@ static CGFloat titleInset = 20.0f;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    //为了不影响其他页面,在viewDidDisappear做以下设置
     [self naviBarHidden:NO animated:animated];
     [self recoverNavigationBarStyle];
     [self recoverStatusStyle];
@@ -169,28 +171,69 @@ static CGFloat titleInset = 20.0f;
 }
 
 #pragma mark - config theme style
-- (void)setLayoutStyle {
+- (void)configLayoutStyle {
     //1. 所有view（包括scroll）坐标原点在导航栏下面,不影响导航栏的颜色及背景，即跟它没关系，只影响坐标原点；也不会设置scroll的偏移量
-    self.edgesForExtendedLayout = UIRectEdgeNone;//也可以是UIRectEdgeTop
+    self.edgesForExtendedLayout = UIRectEdgeAll;//也可以是UIRectEdgeTop
      
     //2.不让scroll产生偏移，也就是说内容y同frame的y，这样好处理，特别是在多scroll环境下
     if (kiOS11) {
         //self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
+        //self.automaticallyAdjustsScrollViewInsets = NO;
     }
      
     //3. 让translucent = NO的时候，坐标从（0，0）开始布局；平时用不到，因为默认就是从（0，0）开始布局，一般跟translucent一块使用
-    self.extendedLayoutIncludesOpaqueBars = NO;
+    self.extendedLayoutIncludesOpaqueBars = YES;
 }
 
 #pragma mark - 恢复默认样式
 - (void)recoverNavigationBarStyle {
-    
+    [self configNavigationBarStyle];
 }
 
-- (void)recoverStatusStyle {
+#pragma mark - config UINavigationBar
+- (void)configNavigationBarStyle {
     
+    //设置风格
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    
+    //translucent:半透明开关，当为NO时:ViewController上的View的原点坐标会以navigationBar以下的坐标为原点，并且设置NO后，导航栏背景色肯定是不透明的,无论设置某种系统风格还是背景图、背景颜色；当为YES时:ViewController上的View的原点坐标会以屏幕左上角为原点
+    self.navigationController.navigationBar.translucent = YES;
+    
+    /*
+     //给导航栏设置背景图片(不会改变原点+tableview inset改变了+导航栏还是透明的)，但是导航栏还是高斯也就是半透明，所以一般会配合设置translucent让其不透明
+     UIImage *backImage = [UIImage bp_imageWithColor:kGreenColor size:CGSizeMake(kScreenWidth, 1)];//当给我们navigationBar设置图片时，navigationBar不再透明
+     [self.navigationBar setBackgroundImage:backImage forBarMetrics:UIBarMetricsDefault];
+     
+     //设置导航栏透明
+     [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+     
+     //导航栏透明渐变:
+     UIImageView *barImageView = self.navigationBar.subviews.firstObject;
+     barImageView.alpha = 0.3;//对self.barImageView.alpha 做出改变
+     
+     //清除导航栏下面的细线，如果不设置则会看到一根线。
+     self.navigationBar.shadowImage = [UIImage new];//方法一：
+     self.navigationBar.clipsToBounds = YES;//方法二：
+     
+     //使底部线条颜色为红色
+     // 略.
+     
+     //barTintColor:给导航栏设置背景色，一旦设置了即为不透明
+     self.navigationBar.barTintColor = kOrangeColor;
+     
+     //tintColor:给导航栏的item设置渲染颜色，包括图片跟字体；不适用，因为一般都是自定义的控件，不适用系统的item
+     self.navigationBar.tintColor = kPurpleColor;//按钮颜色，包括图片跟字体,前提不包括customView
+     
+     //titleTextAttributes:修改导航栏标题
+     NSShadow *shadow = [[NSShadow alloc] init];
+     shadow.shadowColor = kRGBA(0, 0, 0, 0.8);
+     shadow.shadowOffset = CGSizeMake(0, 2);
+     self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:kRedColor,
+     NSShadowAttributeName:shadow,
+     NSFontAttributeName:[UIFont systemFontOfSize:15]
+     };
+     */
 }
 
 #pragma mark - 创建views
@@ -261,16 +304,36 @@ static CGFloat titleInset = 20.0f;
 }
 
 #pragma mark - StatusBar
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
+- (void)configStatusBarStyle {
+    
+}
+
+- (void)recoverStatusStyle {
+    [self setStatusBarBackgroundColor:kClearColor];
+    [self updateStatusBarAppearance];
 }
 
 - (BOOL)prefersStatusBarHidden {
     return NO;
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
     return UIStatusBarAnimationNone;
+}
+
+- (void)updateStatusBarAppearance {
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+- (void)setStatusBarBackgroundColor:(UIColor *)color {
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+        statusBar.backgroundColor = color;
+    }
 }
 
 #pragma mark - dealloc

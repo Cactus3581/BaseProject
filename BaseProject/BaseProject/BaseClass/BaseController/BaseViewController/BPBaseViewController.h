@@ -10,6 +10,8 @@
 #import "BPDynamicJumpHelper.h"
 
 @interface BPBaseViewController : UIViewController <BPDynamicJumpHelperProtocol>
+
+#pragma mark - 导航栏item
 /**
  自定义导航栏:left
  */
@@ -38,16 +40,17 @@
 - (void)leftBarButtonItemClickAction:(id)sender;
 
 - (void)configBarButtomItem;
-- (void)setTheme;
 
 - (void)configRightBarButtomItem;
 
 - (void)configLeftBarButtomItem;
 
-- (void)configBarDefaulyStyle;
-
 - (void)naviBarHidden:(BOOL)hidden animated:(BOOL)animated;
 
+- (void)configNavigationBarStyle;
+- (void)recoverNavigationBarStyle;
+
+#pragma mark - 检测卡顿工具
 - (void)addFPSLabel;
 
 - (void)removeFPSLabel;
@@ -59,6 +62,7 @@
 - (void)request;
 - (void)handleData;
 
+#pragma mark - 手势
 /**全屏pop手势关闭 ,默认NO，默认关闭*/
 - (void)popDisabled:(BOOL)disabled;
 
@@ -68,7 +72,13 @@
 @property(nonatomic,readonly,assign) BOOL needDynamicJump;
 - (void)handleDynamicJumpData;
 
-
+#pragma mark - stastuaBar
+- (void)configStatusBarStyle;
+- (void)recoverStatusStyle;
+/** 单独设置statusBar颜色*/
+- (void)setStatusBarBackgroundColor:(UIColor *)color;
+/** 动态调整statusBar隐藏 文字颜色 动画等属性*/
+- (void)updateStatusBarAppearance;
 
 #pragma mark - 强制旋转屏幕
 - (void)setInterfaceOrientation:(UIInterfaceOrientation)orientation;

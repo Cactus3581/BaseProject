@@ -25,6 +25,14 @@
     [self configDefaulyNavigationBarStyle];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
 #pragma mark - config UINavigationBar
 - (void)configDefaulyNavigationBarStyle {
 
@@ -109,11 +117,11 @@
 
 #pragma mark - 控制屏幕旋转方法
 - (BOOL)shouldAutorotate {
-    return [[self.viewControllers lastObject]shouldAutorotate];
+    return [[self.viewControllers lastObject] shouldAutorotate];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return [[self.viewControllers lastObject]supportedInterfaceOrientations];
+    return [[self.viewControllers lastObject] supportedInterfaceOrientations];
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
@@ -129,16 +137,16 @@
     return [self.viewControllers lastObject];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
+- (BOOL)prefersStatusBarHidden {
+    return [[self.viewControllers lastObject] prefersStatusBarHidden];
 }
 
-- (BOOL)prefersStatusBarHidden {
-    return NO;
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return [[self.viewControllers lastObject] preferredStatusBarStyle];
 }
 
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
-    return UIStatusBarAnimationNone;
+    return [[self.viewControllers lastObject] preferredStatusBarUpdateAnimation];
 }
 
 - (void)didReceiveMemoryWarning {

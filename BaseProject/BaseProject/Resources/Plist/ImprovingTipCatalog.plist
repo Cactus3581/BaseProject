@@ -162,14 +162,6 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>SpriteKit</string>
-		<key>fileName</key>
-		<string></string>
-		<key>briefIntro</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>旋转屏幕</string>
 		<key>fileName</key>
 		<string>BPRotatingScreenViewController</string>
@@ -181,6 +173,14 @@
 		<string>设置statusBar</string>
 		<key>fileName</key>
 		<string>BPStatusBarViewController</string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>常用函数</string>
+		<key>fileName</key>
+		<string>BPMathFunctionViewController</string>
 		<key>briefIntro</key>
 		<string></string>
 	</dict>

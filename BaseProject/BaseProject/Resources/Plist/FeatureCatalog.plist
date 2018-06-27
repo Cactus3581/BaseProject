@@ -450,5 +450,13 @@
 		<key>briefIntro</key>
 		<string></string>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>画板</string>
+		<key>fileName</key>
+		<string>BPDrawingBoardViewController</string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
 </array>
 </plist>

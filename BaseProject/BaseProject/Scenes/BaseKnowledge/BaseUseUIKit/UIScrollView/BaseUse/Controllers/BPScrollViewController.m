@@ -16,6 +16,7 @@
 //http://tech.glowing.com/cn/practice-in-uiscrollview/
 //http://blog.csdn.net/wolf_hong/article/details/53389406
 //http://blog.csdn.net/l_j_x_/article/details/50458161
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initializeViews];

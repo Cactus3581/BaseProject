@@ -108,7 +108,8 @@
     _layer = layer;
     layer.frame = CGRectMake(10, 410, kScreenWidth, 100);
     layer.backgroundColor = kLightGrayColor.CGColor;
-    layer.delegate = self; //设置代理，但是会引起崩溃，所以需要让属性接受下，在dealloc里把delegate设为nil
+#warning 设置代理，但是会引起崩溃，所以需要让属性接受下，在dealloc里把delegate设为nil;注意不要设置其delegate为uiview类型实例。会导致程序crash。
+    layer.delegate = self; 
     [layer setNeedsDisplay];// 调用此方法，drawLayer: inContext:方法才会被调用。
     [self.view.layer addSublayer:layer];
 }

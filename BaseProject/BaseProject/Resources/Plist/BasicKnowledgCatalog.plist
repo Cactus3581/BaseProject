@@ -184,6 +184,14 @@
 												<key>briefIntro</key>
 												<string></string>
 											</dict>
+											<dict>
+												<key>title</key>
+												<string>Masonry使用技巧</string>
+												<key>fileName</key>
+												<string>BPMasonrySkillViewController</string>
+												<key>briefIntro</key>
+												<string></string>
+											</dict>
 										</array>
 									</dict>
 								</array>
@@ -1437,9 +1445,36 @@
 				<key>title</key>
 				<string>触摸事件</string>
 				<key>fileName</key>
-				<string> </string>
+				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
 				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>Touch触摸</string>
+						<key>fileName</key>
+						<string>BPTouchViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>Hit-Test</string>
+						<key>fileName</key>
+						<string>BPHitTestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>手势</string>
+						<key>fileName</key>
+						<string>BPGestureRecognizerViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>title</key>
@@ -1456,6 +1491,70 @@
 				<string></string>
 				<key>briefIntro</key>
 				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Kit.framework</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>PhotoKit</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>MapKit</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>ARKit</string>
+				<key>fileName</key>
+				<string> </string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>SpriteKit</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>代码规范</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>分享38条iOS书写代码规范和小建议</string>
+				<key>fileName</key>
+				<string>BPCodeStandardsViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>url</key>
+				<string>https://mp.weixin.qq.com/s?__biz=MzIzNzIwODY2OQ==&amp;mid=2649822506&amp;idx=1&amp;sn=149e1f21b2d4809e3ddf94e505f05477&amp;chksm=f0c9a018c7be290e3f12aedc849e2d0d30baa0dd792a3f324d8cf798c690c3fdd6d4170965f5&amp;scene=21#wechat_redirect</string>
 			</dict>
 		</array>
 	</dict>

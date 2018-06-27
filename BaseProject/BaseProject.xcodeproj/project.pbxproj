@@ -296,6 +296,13 @@
 		0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0168F3882035EC0B00D63D83 /* ImprovingTipCatalog.plist */; };
 		0168F38D2035EC6C00D63D83 /* BPImprovingTipViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168F38C2035EC6C00D63D83 /* BPImprovingTipViewModel.m */; };
 		0169C01E20D00438001E51C3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0169C01D20D00438001E51C3 /* README.md */; };
+		016D95A420E3800F00651EDE /* BPMathFunctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95A320E3800F00651EDE /* BPMathFunctionViewController.m */; };
+		016D95AA20E3819500651EDE /* BPHitTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95A920E3819500651EDE /* BPHitTestViewController.m */; };
+		016D95AD20E3825500651EDE /* BPTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95AC20E3825500651EDE /* BPTouchViewController.m */; };
+		016D95B520E38A6900651EDE /* BPDrawingBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95B420E38A6900651EDE /* BPDrawingBoardViewController.m */; };
+		016D95E520E39E2300651EDE /* BPMasonrySkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95E420E39E2300651EDE /* BPMasonrySkillViewController.m */; };
+		016D95EA20E3CB1300651EDE /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95E920E3CB1300651EDE /* BaseWebViewController.m */; };
+		016D95ED20E3CEA700651EDE /* BPCodeStandardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95EC20E3CEA700651EDE /* BPCodeStandardsViewController.m */; };
 		016DADC720582FB100AA95EC /* NSArray+BPSafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC020582FAE00AA95EC /* NSArray+BPSafeAccess.m */; };
 		016DADC820582FB100AA95EC /* NSDictionary+BPSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC120582FAF00AA95EC /* NSDictionary+BPSafe.m */; };
 		016DADC920582FB100AA95EC /* NSObject+BPKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC220582FAF00AA95EC /* NSObject+BPKVO.m */; };
@@ -1251,6 +1258,20 @@
 		0168F38B2035EC6C00D63D83 /* BPImprovingTipViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPImprovingTipViewModel.h; sourceTree = "<group>"; };
 		0168F38C2035EC6C00D63D83 /* BPImprovingTipViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPImprovingTipViewModel.m; sourceTree = "<group>"; };
 		0169C01D20D00438001E51C3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		016D95A220E3800F00651EDE /* BPMathFunctionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMathFunctionViewController.h; sourceTree = "<group>"; };
+		016D95A320E3800F00651EDE /* BPMathFunctionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMathFunctionViewController.m; sourceTree = "<group>"; };
+		016D95A820E3819500651EDE /* BPHitTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPHitTestViewController.h; sourceTree = "<group>"; };
+		016D95A920E3819500651EDE /* BPHitTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPHitTestViewController.m; sourceTree = "<group>"; };
+		016D95AB20E3825500651EDE /* BPTouchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTouchViewController.h; sourceTree = "<group>"; };
+		016D95AC20E3825500651EDE /* BPTouchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTouchViewController.m; sourceTree = "<group>"; };
+		016D95B320E38A6900651EDE /* BPDrawingBoardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDrawingBoardViewController.h; sourceTree = "<group>"; };
+		016D95B420E38A6900651EDE /* BPDrawingBoardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDrawingBoardViewController.m; sourceTree = "<group>"; };
+		016D95E320E39E2300651EDE /* BPMasonrySkillViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMasonrySkillViewController.h; sourceTree = "<group>"; };
+		016D95E420E39E2300651EDE /* BPMasonrySkillViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMasonrySkillViewController.m; sourceTree = "<group>"; };
+		016D95E820E3CB1300651EDE /* BaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseWebViewController.h; sourceTree = "<group>"; };
+		016D95E920E3CB1300651EDE /* BaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseWebViewController.m; sourceTree = "<group>"; };
+		016D95EB20E3CEA700651EDE /* BPCodeStandardsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCodeStandardsViewController.h; sourceTree = "<group>"; };
+		016D95EC20E3CEA700651EDE /* BPCodeStandardsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCodeStandardsViewController.m; sourceTree = "<group>"; };
 		016DADBD20582FAD00AA95EC /* NSDictionary+BPSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BPSafe.h"; sourceTree = "<group>"; };
 		016DADBE20582FAD00AA95EC /* NSArray+BPSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BPSafe.h"; sourceTree = "<group>"; };
 		016DADBF20582FAE00AA95EC /* NSNull+BPSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+BPSafe.h"; sourceTree = "<group>"; };
@@ -2734,6 +2755,7 @@
 		010FBC3F206018B500BC9EC4 /* ImprovingTips */ = {
 			isa = PBXGroup;
 			children = (
+				016D959E20E37FCB00651EDE /* MathFunction */,
 				017F82C82063A87B00B656BA /* AddChildVC */,
 				01EF2C1C20AD352700DF98FB /* CollectionView */,
 				015120FC20CBF03100B33A76 /* DynamicJump */,
@@ -2742,7 +2764,6 @@
 				010FBD1120601D9D00BC9EC4 /* Palette */,
 				0137C73A207B3AA800F6B6CE /* Present */,
 				01E5142420DCEA4A00E6CFD0 /* RotatingScreen */,
-				011183C820DAA1C20044AE1D /* SpriteKit */,
 				0128925F20DE014700B9370F /* StatusBar */,
 				012D189E20AC1F4600C3E437 /* TableView */,
 				0184BF7A1FD6DA8B00CB9AAD /* TestUnit */,
@@ -2754,6 +2775,7 @@
 		010FBC4320601A0800BC9EC4 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				016D95AE20E38A5200651EDE /* DrawingBoard */,
 				01027AD91FDED98E0003F0FE /* Alert */,
 				01027ADC1FDED9C50003F0FE /* Animation */,
 				016760C72060F7F400F82ACE /* Barrage */,
@@ -2779,10 +2801,12 @@
 		010FBCFC20601CEB00BC9EC4 /* BaseKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				016D95E620E3CA9D00651EDE /* CodeStandards */,
 				01161F3D20308F4900FA3441 /* BaseUseData */,
 				01B726DA1FF806FC00648674 /* BaseUseUIKit */,
 				01161F522030975C00FA3441 /* DesignPatterns */,
 				01F373102065525D007B1498 /* Event */,
+				016D95B620E38B8F00651EDE /* Kit */,
 				01490C021FF547DA0035492D /* KnowledgePoint */,
 				017906DA20011C2E00E5C360 /* OtherKnowledge */,
 				0137C757207C94DF00F6B6CE /* ResearchDirection */,
@@ -2911,13 +2935,6 @@
 			children = (
 			);
 			path = NSData;
-			sourceTree = "<group>";
-		};
-		011183C820DAA1C20044AE1D /* SpriteKit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SpriteKit;
 			sourceTree = "<group>";
 		};
 		01161F32203088D500FA3441 /* AboutOC */ = {
@@ -3533,6 +3550,7 @@
 		0135198520BC1DA80010AEC2 /* AutoLayout */ = {
 			isa = PBXGroup;
 			children = (
+				016D95DE20E39DB000651EDE /* Masonry */,
 				0135198620BC1DA80010AEC2 /* XIB */,
 				0135198E20BC1DA80010AEC2 /* Code */,
 			);
@@ -4873,6 +4891,157 @@
 			path = Log;
 			sourceTree = "<group>";
 		};
+		016D959E20E37FCB00651EDE /* MathFunction */ = {
+			isa = PBXGroup;
+			children = (
+				016D95A220E3800F00651EDE /* BPMathFunctionViewController.h */,
+				016D95A320E3800F00651EDE /* BPMathFunctionViewController.m */,
+			);
+			path = MathFunction;
+			sourceTree = "<group>";
+		};
+		016D95A520E3815A00651EDE /* Gesture */ = {
+			isa = PBXGroup;
+			children = (
+				01F37314206552DB007B1498 /* BPGestureRecognizerViewController.h */,
+				01F37315206552DB007B1498 /* BPGestureRecognizerViewController.m */,
+			);
+			path = Gesture;
+			sourceTree = "<group>";
+		};
+		016D95A620E3816E00651EDE /* HitTest */ = {
+			isa = PBXGroup;
+			children = (
+				016D95A820E3819500651EDE /* BPHitTestViewController.h */,
+				016D95A920E3819500651EDE /* BPHitTestViewController.m */,
+			);
+			path = HitTest;
+			sourceTree = "<group>";
+		};
+		016D95A720E3817900651EDE /* TouchUp */ = {
+			isa = PBXGroup;
+			children = (
+				016D95AB20E3825500651EDE /* BPTouchViewController.h */,
+				016D95AC20E3825500651EDE /* BPTouchViewController.m */,
+			);
+			path = TouchUp;
+			sourceTree = "<group>";
+		};
+		016D95AE20E38A5200651EDE /* DrawingBoard */ = {
+			isa = PBXGroup;
+			children = (
+				016D95AF20E38A5C00651EDE /* Controllers */,
+				016D95B020E38A5C00651EDE /* Models */,
+				016D95B220E38A5C00651EDE /* ViewModels */,
+				016D95B120E38A5C00651EDE /* Views */,
+			);
+			path = DrawingBoard;
+			sourceTree = "<group>";
+		};
+		016D95AF20E38A5C00651EDE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				016D95B320E38A6900651EDE /* BPDrawingBoardViewController.h */,
+				016D95B420E38A6900651EDE /* BPDrawingBoardViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		016D95B020E38A5C00651EDE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		016D95B120E38A5C00651EDE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		016D95B220E38A5C00651EDE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		016D95B620E38B8F00651EDE /* Kit */ = {
+			isa = PBXGroup;
+			children = (
+				016D95B720E39B1B00651EDE /* SpriteKit */,
+			);
+			path = Kit;
+			sourceTree = "<group>";
+		};
+		016D95B720E39B1B00651EDE /* SpriteKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SpriteKit;
+			sourceTree = "<group>";
+		};
+		016D95DE20E39DB000651EDE /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				016D95DF20E39DBB00651EDE /* Controllers */,
+				016D95E020E39DBB00651EDE /* Models */,
+				016D95E220E39DBB00651EDE /* ViewModels */,
+				016D95E120E39DBB00651EDE /* Views */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		016D95DF20E39DBB00651EDE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				016D95E320E39E2300651EDE /* BPMasonrySkillViewController.h */,
+				016D95E420E39E2300651EDE /* BPMasonrySkillViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		016D95E020E39DBB00651EDE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		016D95E120E39DBB00651EDE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		016D95E220E39DBB00651EDE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		016D95E620E3CA9D00651EDE /* CodeStandards */ = {
+			isa = PBXGroup;
+			children = (
+				016D95EB20E3CEA700651EDE /* BPCodeStandardsViewController.h */,
+				016D95EC20E3CEA700651EDE /* BPCodeStandardsViewController.m */,
+			);
+			path = CodeStandards;
+			sourceTree = "<group>";
+		};
+		016D95E720E3CB0100651EDE /* BaseWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				016D95E820E3CB1300651EDE /* BaseWebViewController.h */,
+				016D95E920E3CB1300651EDE /* BaseWebViewController.m */,
+			);
+			path = BaseWebViewController;
+			sourceTree = "<group>";
+		};
 		016DADBB20582F7F00AA95EC /* Special */ = {
 			isa = PBXGroup;
 			children = (
@@ -5120,6 +5289,7 @@
 		017340091FA9753F006192F0 /* BaseController */ = {
 			isa = PBXGroup;
 			children = (
+				016D95E720E3CB0100651EDE /* BaseWebViewController */,
 				0173400A1FA9753F006192F0 /* BaseNavigationController */,
 				0173400D1FA9753F006192F0 /* BaseViewController */,
 				017340101FA9753F006192F0 /* BaseTabBarController */,
@@ -7156,8 +7326,8 @@
 		01C9357F1FC3358000D98FD6 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
-				01352FE21FD2DDA20011D65C /* FeatureCatalog.plist */,
 				0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */,
+				01352FE21FD2DDA20011D65C /* FeatureCatalog.plist */,
 				0168F3882035EC0B00D63D83 /* ImprovingTipCatalog.plist */,
 				014ED04F1FEFF9EE00D2926C /* Localizable.strings */,
 			);
@@ -8180,8 +8350,9 @@
 		01F373112065527E007B1498 /* TouchEvent */ = {
 			isa = PBXGroup;
 			children = (
-				01F37314206552DB007B1498 /* BPGestureRecognizerViewController.h */,
-				01F37315206552DB007B1498 /* BPGestureRecognizerViewController.m */,
+				016D95A720E3817900651EDE /* TouchUp */,
+				016D95A620E3816E00651EDE /* HitTest */,
+				016D95A520E3815A00651EDE /* Gesture */,
 			);
 			path = TouchEvent;
 			sourceTree = "<group>";
@@ -8679,6 +8850,7 @@
 				01782ACA20D6851C0091939C /* BPScrollReuseViewController.m in Sources */,
 				01D22BD11FDD814000BCC4AD /* NSArray+BPAdd.m in Sources */,
 				0135198120BC1D5D0010AEC2 /* BPAutoresizingViewB.m in Sources */,
+				016D95AA20E3819500651EDE /* BPHitTestViewController.m in Sources */,
 				017A9A471FDD2B9A00CDA599 /* UIView+BPScreenshot.m in Sources */,
 				01C0B6661FFCC65F005BB4A5 /* PaletteColorModel.m in Sources */,
 				01DF31E31FDD3B0300B8A955 /* NSNumber+BPRomanNumerals.m in Sources */,
@@ -8884,6 +9056,8 @@
 				01A191AD2004E155005EE4CD /* BPButtonViewController.m in Sources */,
 				01161F3C20308CB300FA3441 /* BPMan.m in Sources */,
 				011B7DDB20693E5B0071CB5D /* NSObject+BPAddRuntime.m in Sources */,
+				016D95B520E38A6900651EDE /* BPDrawingBoardViewController.m in Sources */,
+				016D95A420E3800F00651EDE /* BPMathFunctionViewController.m in Sources */,
 				01C935A01FC337E100D98FD6 /* BPFeatureViewController.m in Sources */,
 				017A9A8F1FDD311D00CDA599 /* NSString+BPFilepath.m in Sources */,
 				010DB7251FDD4D450099E66F /* UIColor+BPModify.m in Sources */,
@@ -8960,6 +9134,7 @@
 				013ED90920C7DB3C00A83E7F /* BPIncludeTableSystemLayoutHeadCell.m in Sources */,
 				010DB7B21FDD4D6F0099E66F /* UIButton+BPIndicator.m in Sources */,
 				01A597B62085CB6A000C6237 /* BPCellAutoLayoutHeightDataSource.m in Sources */,
+				016D95EA20E3CB1300651EDE /* BaseWebViewController.m in Sources */,
 				0173401C1FA9753F006192F0 /* BPAppDelegate.m in Sources */,
 				01DF32221FDD3B3000B8A955 /* NSString+BPRemoveEmoji.m in Sources */,
 				010DB7501FDD4D450099E66F /* UINavigationController+BPStackManager.m in Sources */,
@@ -8998,6 +9173,7 @@
 				01F2CE6320AABE6600F1D701 /* BPFlowCollectionView.m in Sources */,
 				01F2CE6220AABE6600F1D701 /* BPFlowCatergoryTagView.m in Sources */,
 				010DB78B1FDD4D640099E66F /* UIView+BPAnimation.m in Sources */,
+				016D95ED20E3CEA700651EDE /* BPCodeStandardsViewController.m in Sources */,
 				010DB70D1FDD4D450099E66F /* UIImageView+BPBetterFace.m in Sources */,
 				01C0B6251FFC87AB005BB4A5 /* PriorityBoxArray.m in Sources */,
 				010DB74A1FDD4D450099E66F /* UIApplication+BPPermissions.m in Sources */,
@@ -9025,6 +9201,7 @@
 				010DB70E1FDD4D450099E66F /* UIImageView+BPLetters.m in Sources */,
 				01C31F79200FA1B40096C2E0 /* BPArrowPopView.m in Sources */,
 				0179BC3920316EBA0061CD84 /* BPDesignPatternsDelegateViewControllerA.m in Sources */,
+				016D95E520E39E2300651EDE /* BPMasonrySkillViewController.m in Sources */,
 				013ED93220C7DE0400A83E7F /* BPIncludeTableSelfSizeHeadCell.m in Sources */,
 				01E5142320DCD45E00E6CFD0 /* BPGetFrameView.m in Sources */,
 				01F2CE6720AABE6600F1D701 /* BPFlowCatergoryViewProperty.m in Sources */,
@@ -9052,6 +9229,7 @@
 				010DB74D1FDD4D450099E66F /* UIApplication+BPKeyboardFrame.m in Sources */,
 				010DB7341FDD4D450099E66F /* UIResponder+BPChain.m in Sources */,
 				01DF31C11FDD3A9100B8A955 /* NSDictionary+BPJSONString.m in Sources */,
+				016D95AD20E3825500651EDE /* BPTouchViewController.m in Sources */,
 				017CF94B20D3AD7500D9AA30 /* BPFlowCatergoryImageTagCell.m in Sources */,
 				01DF31D61FDD3A9100B8A955 /* NSDateFormatter+BPMake.m in Sources */,
 				017CF98E20D3AE0100D9AA30 /* BPCollectionViewNestGestureCategotyDetailHeader.m in Sources */,

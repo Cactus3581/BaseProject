@@ -34,6 +34,7 @@ typedef NS_ENUM(NSInteger, BPImportance) {
 @property (nonatomic,copy)  NSString *dynamicJumpString;//动态跳转数据
 @property (nonatomic,copy)  NSString *briefIntro; // 简短说明
 @property (nonatomic,copy)  NSString *planIntro; //进度补充说明
+@property (nonatomic,copy)  NSString *url;//web地址
 @property (nonatomic,assign)  BPCompletePerformance completePerformance; //完成情况
 @property (nonatomic,assign)  BPImportance importance; //涉及的知识重要程度
 @end
