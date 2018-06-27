@@ -50,7 +50,7 @@
     [super viewDidLoad];
     //[self configNavigationBar];
     [self configNavigationItem];
-    [self configSubViews];//由导航栏引起的零点坐标问题
+    [self initializeSubViews];//由导航栏引起的零点坐标问题
     //[self setUpAppearance];
     //[self otherTest];
 }
@@ -184,7 +184,7 @@
  self.extendedLayoutIncludesOpaqueBars = YES;
  
  */
-- (void)configSubViews {
+- (void)initializeSubViews {
     [self setupTableView];
     [self setupNormalView];
     

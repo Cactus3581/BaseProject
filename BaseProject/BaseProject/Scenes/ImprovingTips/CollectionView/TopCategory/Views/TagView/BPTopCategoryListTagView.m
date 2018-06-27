@@ -21,13 +21,13 @@ static NSString * cellIdentifier = @"BPTopCategoryListTagCollectionViewCell";
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self configSubViews];
+    [self initializeSubViews];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self configSubViews];
+        [self initializeSubViews];
     }
     return self;
 }
@@ -52,7 +52,7 @@ static NSString * cellIdentifier = @"BPTopCategoryListTagCollectionViewCell";
     [self.collectionView reloadData];
 }
 
-- (void)configSubViews {
+- (void)initializeSubViews {
     BPTopCategoryTagFlowLayout *flowLayout = [[BPTopCategoryTagFlowLayout alloc] init];
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     _collectionView = collectionView;

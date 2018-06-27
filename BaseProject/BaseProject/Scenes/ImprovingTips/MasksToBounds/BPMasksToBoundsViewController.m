@@ -25,11 +25,11 @@ static CGFloat corner = 40;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configSubViews];
+    [self initializeSubViews];
     [self configMask];
 }
 
-- (void)configSubViews {
+- (void)initializeSubViews {
     self.topView.backgroundColor = kThemeColor;
     self.label.backgroundColor = kThemeColor;
     self.label.textColor = kWhiteColor;

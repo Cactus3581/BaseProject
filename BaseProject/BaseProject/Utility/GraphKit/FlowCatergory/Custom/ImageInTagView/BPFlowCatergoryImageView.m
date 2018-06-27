@@ -23,14 +23,14 @@ static NSString *identifier  = @"cell";
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self configSubViews];
+        [self initializeSubViews];
     }
     return self;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self configSubViews];
+    [self initializeSubViews];
 }
 
 - (void)setTagViewHeight:(CGFloat)tagViewHeight {
@@ -107,7 +107,7 @@ static NSString *identifier  = @"cell";
     }
 }
 
-- (void)configSubViews {
+- (void)initializeSubViews {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.minimumInteritemSpacing = layout.minimumLineSpacing = 0;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;

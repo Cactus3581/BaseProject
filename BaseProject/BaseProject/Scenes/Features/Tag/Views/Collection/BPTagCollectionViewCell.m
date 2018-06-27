@@ -16,12 +16,12 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self configSubViews];
+        [self initializeSubViews];
     }
     return self;
 }
 
-- (void)configSubViews {
+- (void)initializeSubViews {
     UILabel *label = [[UILabel alloc] init];
     [self.contentView addSubview:label];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {

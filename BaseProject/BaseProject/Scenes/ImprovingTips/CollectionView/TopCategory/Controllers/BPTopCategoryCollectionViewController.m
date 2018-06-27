@@ -28,7 +28,7 @@ static NSString *identifier  = @"BPTopCategoryListContainerCollectionViewCell";
     [super viewDidLoad];
     [self addFPSLabel];
     [self handlaData];
-    [self configSubViews];
+    [self initializeSubViews];
 }
 
 - (void)handlaData {
@@ -99,7 +99,7 @@ static NSString *identifier  = @"BPTopCategoryListContainerCollectionViewCell";
     
 }
 
-- (void)configSubViews {
+- (void)initializeSubViews {
     //主collectionView
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     //layout.estimatedItemSize = CGSizeMake(self.view.width, self.view.height);
