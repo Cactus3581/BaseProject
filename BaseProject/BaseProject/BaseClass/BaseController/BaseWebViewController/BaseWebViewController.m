@@ -17,6 +17,7 @@
 #pragma mark - lifeCircle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configRightBarButtomItem];
     WKWebView *webView = [[WKWebView alloc] init];
     _webView = webView;
     [self.view addSubview:webView];
@@ -28,6 +29,42 @@
     if (self.url) {
         [self loadUrl:self.url];
     }
+}
+
+#pragma mark - config rightBarButtonItem
+- (void)configRightBarButtomItem {
+    UIView *view = [[UIView alloc] init];
+    UIButton *rightBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightBarButton setTintColor:kWhiteColor];
+    [rightBarButton setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    [rightBarButton setTitle:@"copy" forState:UIControlStateNormal];
+    rightBarButton.titleLabel.font  = BPFont(16);
+    [rightBarButton addTarget:self action:@selector(copyEvent) forControlEvents:UIControlEventTouchUpInside];
+    rightBarButton.frame = CGRectMake(0, 0, bp_naviItem_width, bp_naviItem_height);
+    [rightBarButton sizeToFit];
+    
+    UIButton *rightBarButton1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightBarButton1 setTintColor:kWhiteColor];
+    [rightBarButton1 setTitleColor:kWhiteColor forState:UIControlStateNormal];
+    [rightBarButton1 setTitle:@"share" forState:UIControlStateNormal];
+    rightBarButton1.titleLabel.font  = BPFont(16);
+    [rightBarButton1 addTarget:self action:@selector(shareEvent) forControlEvents:UIControlEventTouchUpInside];
+    rightBarButton1.frame = CGRectMake(CGRectGetMaxX(rightBarButton.frame)+10, 0, bp_naviItem_width, bp_naviItem_height);
+    [rightBarButton1 sizeToFit];
+    
+    [view addSubview:rightBarButton];
+    [view addSubview:rightBarButton1];
+    
+    view.frame = CGRectMake(0, 0, rightBarButton.width+15+rightBarButton1.width, 44);
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:view];
+}
+
+- (void)copyEvent {
+    BPLog(@"url = %@",self.url)
+}
+
+- (void)shareEvent {
+    
 }
 
 - (void)viewSafeAreaInsetsDidChange {

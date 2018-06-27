@@ -1539,7 +1539,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>代码规范</string>
+		<string>文章</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
@@ -1548,13 +1548,45 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>分享38条iOS书写代码规范和小建议</string>
+				<string>代码规范</string>
 				<key>fileName</key>
-				<string>BPCodeStandardsViewController</string>
+				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
 				<string></string>
-				<key>url</key>
-				<string>https://mp.weixin.qq.com/s?__biz=MzIzNzIwODY2OQ==&amp;mid=2649822506&amp;idx=1&amp;sn=149e1f21b2d4809e3ddf94e505f05477&amp;chksm=f0c9a018c7be290e3f12aedc849e2d0d30baa0dd792a3f324d8cf798c690c3fdd6d4170965f5&amp;scene=21#wechat_redirect</string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>分享38条iOS书写代码规范和小建议</string>
+						<key>fileName</key>
+						<string>BPCodeStandardsViewController</string>
+						<key>url</key>
+						<string>https://mp.weixin.qq.com/s?__biz=MzIzNzIwODY2OQ==&amp;mid=2649822506&amp;idx=1&amp;sn=149e1f21b2d4809e3ddf94e505f05477&amp;chksm=f0c9a018c7be290e3f12aedc849e2d0d30baa0dd792a3f324d8cf798c690c3fdd6d4170965f5&amp;scene=21#wechat_redirect</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>博客</string>
+				<key>fileName</key>
+				<string>BPSimpleTableController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>唐巧</string>
+						<key>fileName</key>
+						<string>BPCodeStandardsViewController</string>
+						<key>url</key>
+						<string></string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 		</array>
 	</dict>

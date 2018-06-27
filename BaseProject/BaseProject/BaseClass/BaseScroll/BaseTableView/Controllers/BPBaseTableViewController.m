@@ -28,6 +28,12 @@
     [self initailizeUI];
 }
 
+/*双击tabbar回调*/
+- (void)tabbarDoubleClick {
+    UIEdgeInsets inset = BPSafeAreaInset(self.view);
+    [self.tableView setContentOffset:CGPointMake(0, -inset.top)  animated:YES];
+}
+
 #pragma mark - initialize methods
 - (void)initailizeUI {
     [self.view addSubview:self.tableView];

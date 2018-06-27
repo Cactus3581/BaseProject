@@ -303,6 +303,7 @@
 		016D95E520E39E2300651EDE /* BPMasonrySkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95E420E39E2300651EDE /* BPMasonrySkillViewController.m */; };
 		016D95EA20E3CB1300651EDE /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95E920E3CB1300651EDE /* BaseWebViewController.m */; };
 		016D95ED20E3CEA700651EDE /* BPCodeStandardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95EC20E3CEA700651EDE /* BPCodeStandardsViewController.m */; };
+		016D95F920E3E63D00651EDE /* UIView+BPShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95F820E3E63D00651EDE /* UIView+BPShare.m */; };
 		016DADC720582FB100AA95EC /* NSArray+BPSafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC020582FAE00AA95EC /* NSArray+BPSafeAccess.m */; };
 		016DADC820582FB100AA95EC /* NSDictionary+BPSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC120582FAF00AA95EC /* NSDictionary+BPSafe.m */; };
 		016DADC920582FB100AA95EC /* NSObject+BPKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC220582FAF00AA95EC /* NSObject+BPKVO.m */; };
@@ -1272,6 +1273,8 @@
 		016D95E920E3CB1300651EDE /* BaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseWebViewController.m; sourceTree = "<group>"; };
 		016D95EB20E3CEA700651EDE /* BPCodeStandardsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCodeStandardsViewController.h; sourceTree = "<group>"; };
 		016D95EC20E3CEA700651EDE /* BPCodeStandardsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCodeStandardsViewController.m; sourceTree = "<group>"; };
+		016D95F720E3E63D00651EDE /* UIView+BPShare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+BPShare.h"; sourceTree = "<group>"; };
+		016D95F820E3E63D00651EDE /* UIView+BPShare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+BPShare.m"; sourceTree = "<group>"; };
 		016DADBD20582FAD00AA95EC /* NSDictionary+BPSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BPSafe.h"; sourceTree = "<group>"; };
 		016DADBE20582FAD00AA95EC /* NSArray+BPSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BPSafe.h"; sourceTree = "<group>"; };
 		016DADBF20582FAE00AA95EC /* NSNull+BPSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+BPSafe.h"; sourceTree = "<group>"; };
@@ -6016,6 +6019,8 @@
 				017A9A9A1FDD315A00CDA599 /* UIView+BPShadow.m */,
 				017A9A451FDD2B9A00CDA599 /* UIView+BPScreenshot.h */,
 				017A9A461FDD2B9A00CDA599 /* UIView+BPScreenshot.m */,
+				016D95F720E3E63D00651EDE /* UIView+BPShare.h */,
+				016D95F820E3E63D00651EDE /* UIView+BPShare.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -9210,6 +9215,7 @@
 				01A1921D2004E61F005EE4CD /* BPCollectionViewCell.m in Sources */,
 				01A191DD2004E1F9005EE4CD /* BPProgressViewController.m in Sources */,
 				010DB7461FDD4D450099E66F /* UIImage+BPCapture.m in Sources */,
+				016D95F920E3E63D00651EDE /* UIView+BPShare.m in Sources */,
 				0173401E1FA9753F006192F0 /* BPBaseViewController.m in Sources */,
 				017CF94D20D3AD7500D9AA30 /* BPFlowCatergoryImageTagView.m in Sources */,
 				010DB7471FDD4D450099E66F /* UIImage+BPRoundedCorner.m in Sources */,

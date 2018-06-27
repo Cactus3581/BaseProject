@@ -10,7 +10,7 @@
 
 @interface UIView (BPFind)
 /**
- *  @brief  找到指定类名的SubVie对象
+ *  @brief  找到指定类名的SubView对象
  *
  *  @param clazz SubVie类名
  *

@@ -8,8 +8,8 @@
 
 #import "BPBaseTabBarController.h"
 
-@interface BPBaseTabBarController ()
-
+@interface BPBaseTabBarController ()<UITabBarControllerDelegate>
+@property (nonatomic,strong) NSDate *lastClickDate;
 @end
 
 @implementation BPBaseTabBarController
@@ -24,6 +24,30 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+}
+
+#pragma mark - Delegate
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    if ([self doubleClick]) {
+        UINavigationController *navigation =(UINavigationController *)viewController;
+        PerformSelectorLeakWarningIgnore(
+             if ([navigation.topViewController respondsToSelector:@selector(tabbarDoubleClick)]) {
+                 [navigation.topViewController performSelector:@selector(tabbarDoubleClick)];
+             }
+        );
+    }
+}
+
+#pragma mark - 双击事件
+- (BOOL)doubleClick {
+    NSDate *date = [NSDate date];
+    if (date.timeIntervalSince1970 - self.lastClickDate.timeIntervalSince1970 < 0.5) {
+        //完成一次双击后，重置第一次单击的时间，区分3次或多次的单击
+        self.lastClickDate = [NSDate dateWithTimeIntervalSince1970:0];
+        return YES;
+    }
+    self.lastClickDate = date;
+    return NO;
 }
 
 #pragma mark - 控制屏幕旋转方法
