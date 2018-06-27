@@ -29,9 +29,8 @@
  UINavigationController并没有navigationItem这样一个直接的属性，由于UINavigationController继承于UIViewController,而UIViewController是有navigationItem这个属性的。
  它是UINavigationItem一个独特的实例。当视图控制器被推到导航控制器中时，它来代表这个视图控制器。当第一次访问这个属性的时候，它会被创建。因此，如果你并没有用导航控制器来管理视图控制器，那你不应该访问这个属性。为确保navigationItem 已经配置，你可以在视图控制器初始化时，重写这个属性、创建BarButtonItem。
  UIBarButtonItem:它是专门给UIToolBar和UINavigationBar定制的类似button的类就好了。navigationItem有leftBarButtonItems和rightBarButtonItems两个属性
-
  
- 我们来总结一下，如果把导航控制器比作一个剧院，那导航栏就相当于舞台，舞台必然是属于剧院的，所以，导航栏是导航控制器的一个属性。视图控制器（UIViewController）就相当于一个个剧团，而导航项（navigation item）就相当于每个剧团的负责人，负责与剧院的人接洽沟通。显然，导航项应该是视图控制器的一个属性。虽然导航栏和导航项都在做与导航相关的事情，但是它们的从属是不同的。
+ 总结:如果把导航控制器比作一个剧院，那导航栏就相当于舞台，舞台必然是属于剧院的，所以，导航栏是导航控制器的一个属性。视图控制器（UIViewController）就相当于一个个剧团，而导航项（navigation item）就相当于每个剧团的负责人，负责与剧院的人接洽沟通。显然，导航项应该是视图控制器的一个属性。虽然导航栏和导航项都在做与导航相关的事情，但是它们的从属是不同的。
  
  导航栏相当于负责剧院舞台的布景配置，导航项则相当于协调每个在舞台上表演的演员（bar button item,title 等等），每个视图控制器的导航项可能都是不同的，可能一个右边有一个选择照片的bar button item,而另一个视图控制器的右边有两个bar button item。
  
@@ -158,6 +157,31 @@
 
  iOS7之后都是从屏幕原点开始布局的，但是有时，我们也会遇到在 NavigationController 中是以（0，64）布局的，此处又是什么情况呢？先来看一下下面几个属性：
  这几个属性当使用的时候互相影响互相有联系，对原点改变的影响力：navigationBarHidden> edgesForExtendedLayout> translucent> extendedLayoutIncludesOpaqueBars
+ 
+ 1. 所有view（包括scroll）坐标原点在导航栏下面,不影响导航栏的颜色及背景，即跟它没关系，只影响坐标原点；也不会设置scroll的偏移量
+ self.edgesForExtendedLayout =  UIRectEdgeNone;
+ 
+ 2. 透明度:所有view（包括scroll）坐标原点在导航栏下面,导航栏背景色肯定是不透明的,无论设置某种系统风格还是背景图、背景颜色
+ self.navigationController.navigationBar.translucent = NO;
+ 
+ 3.不让scroll产生偏移，也就是说内容y同frame的y，这样好处理，特别是在多scroll环境下
+ if (kiOS11) {
+ self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+ } else {
+ self.automaticallyAdjustsScrollViewInsets = NO;
+ }
+ 
+ 4. 给导航栏设置背景图片，但是导航栏还是高斯也就是半透明，所以一般会配合设置translucent让其不透明
+ [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"cactus_theme"] forBarMetrics:UIBarMetricsDefault];//(不会改变原点+tableview inset改变了+导航栏还是透明的)
+ 
+ 5. 给导航栏设置背景色，一旦设置了即为不透明
+ self.navigationController.navigationBar.barTintColor = kYellowColor;
+ 
+ 6. 给导航栏的item设置渲染颜色，不适用，因为一般都是自定义的控件，不适用系统的item
+ self.navigationController.navigationBar.tintColor = kYellowColor;
+ 
+ 7. 让translucent=NO的时候，坐标从（0，0）开始布局；平时用不到，因为默认就是从（0，0）开始布局，一般跟translucent一块使用
+ self.extendedLayoutIncludesOpaqueBars = YES;
  
  */
 - (void)configSubViews {

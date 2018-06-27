@@ -23,8 +23,7 @@
     /*
      通过UIAppearance设置一些UI的全局效果，这样就可以很方便的实现UI的自定义效果又能最简单的实现统一界面风格。
      
-     注意:使用appearance设置UI效果最好采用全局的设置，在所有界面初始化前开始设置，先设置控件主题，后添加控件，否则,控件先添加，后设置主题，对以前的添加的控件不起作用了。
-     所以一般写在appdelegate文件里面
+     注意:使用appearance设置UI效果最好采用全局的设置，在所有界面初始化前开始设置，先设置控件主题，后添加控件，否则,控件先添加，后设置主题，对以前的添加的控件不起作用了。所以一般写在appdelegate文件里面
      
      想要使用这个协议来自定义UI，类必须遵从UIAppearanceContainer协议，并且相关的属性需要有UI_APPEARANCE_SELECTOR标记。
      
@@ -55,7 +54,6 @@
      */
     
     //1.修改导航栏背景
-    
     UINavigationBar * navigationBarAppearance = [UINavigationBar appearance];
     UIImage *navBackgroundImg = [UIImage imageNamed:@"navBg.png"];
     [navigationBarAppearance setBackgroundImage:navBackgroundImg forBarMetrics:UIBarMetricsDefault];
@@ -94,22 +92,18 @@
             forLeftSegmentState:UIControlStateNormal
               rightSegmentState:UIControlStateSelected
                      barMetrics:UIBarMetricsDefault];
-    
     //字体
     NSDictionary *textAttributes1 = @{NSFontAttributeName: [UIFont systemFontOfSize:18],
                                       NSForegroundColorAttributeName: [UIColor blueColor],
                                       NSShadowAttributeName: [UIColor whiteColor],
                                       NSShadowAttributeName: [NSValue valueWithCGSize:CGSizeMake(1, 1)]};
-    
     [segmentedControlAppearance setTitleTextAttributes:textAttributes1 forState:1];
     
     NSDictionary *textAttributes2 = @{NSFontAttributeName: [UIFont systemFontOfSize:18],
                                       NSForegroundColorAttributeName: [UIColor whiteColor],
                                       NSShadowAttributeName: [UIColor blackColor],
                                       NSShadowAttributeName: [NSValue valueWithCGSize:CGSizeMake(1, 1)]};
-    
     [segmentedControlAppearance setTitleTextAttributes:textAttributes2 forState:0];
-    
     
     //4.UIBarbutton
     //注意：UIBarbutton有leftBarButton，rightBarButton和backBarButton，其中backBarButton由于带有箭头，需要单独设置。
@@ -123,34 +117,27 @@
                                      NSForegroundColorAttributeName: [UIColor blueColor],
                                      NSShadowAttributeName: [UIColor whiteColor],
                                      NSShadowAttributeName: [NSValue valueWithCGSize:CGSizeMake(1, 1)]};
-    
     [barButtonItemAppearance setTitleTextAttributes:textAttributes forState:1];//forState为0时为下正常状态，为1时为点击状态。
-    
     //修改leftBarButton，rightBarButton背景效果
     [barButtonItemAppearance setBackgroundImage:[UIImage imageNamed:@"navBarButton.png"]
                           forState:UIControlStateNormal
                              style:UIBarButtonItemStylePlain
                         barMetrics:UIBarMetricsDefault];
-    
     [barButtonItemAppearance setBackgroundImage:[UIImage imageNamed:@"navBarButton_a.png"]
                           forState:UIControlStateHighlighted
                              style:UIBarButtonItemStylePlain
                         barMetrics:UIBarMetricsDefault];
-    
     //backBarButton需要单独设置背景效果。只能在ios6.0以后才能用
     [barButtonItemAppearance setBackButtonBackgroundImage:[UIImage imageNamed:@"nav_bg.png"]
                                     forState:0
                                   barMetrics:UIBarMetricsDefault];
-    
     [barButtonItemAppearance setBackButtonBackgroundImage:[UIImage imageNamed:@"work.png"]
                                     forState:1
                                   barMetrics:UIBarMetricsDefault];
-    
     [barButtonItemAppearance setBackButtonTitlePositionAdjustment:UIOffsetMake(2, -1)
                                        forBarMetrics:UIBarMetricsDefault];
     
     //5.工具栏（UIToolbar）
-    
     UIToolbar *toolbarAppearance = [UIToolbar appearance];
     //样式和背景二选一即可，看需求了
     //样式（黑色半透明，不透明等）设置
