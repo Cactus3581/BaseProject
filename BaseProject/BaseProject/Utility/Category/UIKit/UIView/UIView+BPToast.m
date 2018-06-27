@@ -173,6 +173,7 @@ NSString * const BPToastPositionBottom          = @"bottom";
 }
 
 - (void)bp_makeToastActivity:(id)position {
+    self.userInteractionEnabled = NO;
     // sanity
     UIView *existingActivityView = (UIView *)objc_getAssociatedObject(self, &BPToastActivityViewKey);
     if (existingActivityView != nil) return;
@@ -210,6 +211,7 @@ NSString * const BPToastPositionBottom          = @"bottom";
 }
 
 - (void)bp_hideToastActivity {
+    self.userInteractionEnabled = YES;
     UIView *existingActivityView = (UIView *)objc_getAssociatedObject(self, &BPToastActivityViewKey);
     if (existingActivityView != nil) {
         [UIView animateWithDuration:BPToastFadeDuration

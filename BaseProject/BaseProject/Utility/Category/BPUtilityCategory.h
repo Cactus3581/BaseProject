@@ -10,8 +10,8 @@
 #define BPUtilityCategory_h
 
 #import "UIView+BPAdd.h"
+#import "UIView+BPToast.h"
 #import "UIFont+BPAdd.h"
 #import "NSString+BPSize.h"
 #import "UIColor+BPAdd.h"
-
 #endif /* BPUtilityCategory_h */

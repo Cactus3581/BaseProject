@@ -25,7 +25,9 @@
     }];
     webView.UIDelegate = self;
     webView.navigationDelegate = self;
-    [self loadUrl:self.url];
+    if (self.url) {
+        [self loadUrl:self.url];
+    }
 }
 
 - (void)viewSafeAreaInsetsDidChange {
@@ -40,7 +42,7 @@
 #pragma mark - WKNavigationDelegate
 // 页面开始加载时调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
-    
+    [self.view bp_makeToastActivity];
 }
 
 // 当内容开始返回时调用
@@ -50,12 +52,12 @@
 
 // 页面加载完成之后调用
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
-    
+    [self.view bp_hideToastActivity];
 }
 
 // 页面加载失败时调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
-    
+    [self.view bp_hideToastActivity];
 }
 
 // 接收到服务器跳转请求之后调用
