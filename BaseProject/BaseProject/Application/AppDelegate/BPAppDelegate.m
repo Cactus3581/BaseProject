@@ -21,14 +21,18 @@
 //程序准备就绪 将要运行时执行 我们一般用来进行 window创建 以及视图控件等等配置
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    [self creatRootViewController];
-    //[self configLaunchImage]; // 代码启动图片（在info里把launch key删除，防止展示两次）
+    [self initializeRootViewController];
+    
+    //[self initializeLaunchImage]; // 代码启动图片（在info里把launch key删除，防止展示两次）
+    
     //[self configStyleByAppearance]; //统一设置style
+    
     [self initializeSDKS];
+    
     return YES;
 }
 
-- (void)creatRootViewController {
+- (void)initializeRootViewController {
     self.rootTabbarViewController = [[BPRootTabBarController alloc]init];
     self.window.rootViewController = self.rootTabbarViewController;
 }
@@ -59,14 +63,13 @@
     BPBaseNavigationController *nav_1 = [[BPBaseNavigationController alloc] initWithRootViewController:vc];
 }
 
-- (void)configLaunchImage {
+- (void)initializeLaunchImage {
     UIViewController *viewController = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil] instantiateViewControllerWithIdentifier:@"LaunchScreen"];
     viewController.view.backgroundColor = kWhiteColor;
     UIView *launchView = viewController.view;
     UIWindow *mainWindow = [UIApplication sharedApplication].keyWindow;
     launchView.frame = [UIApplication sharedApplication].keyWindow.frame;
     [mainWindow addSubview:launchView];
-    
     
     [UIView animateWithDuration:0.6f delay:0.5f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         /*
@@ -76,7 +79,6 @@
     } completion:^(BOOL finished) {
         [launchView removeFromSuperview];
     }];
-     
 }
 
 - (void)testCurrentViewController {
@@ -164,7 +166,6 @@
     } else {
         // Unknown view controller type, return last child view controller
         return vc;
-        
     }
 }
 
@@ -176,48 +177,38 @@
 
 //程序将要取消活跃状态 执行的方法  我们可以进行歌曲 视频的暂停操作
 - (void)applicationWillResignActive:(UIApplication *)application {
-    BPLog(@"程序将要取消活跃状态%s %d",__FUNCTION__,__LINE__);
+    BPLog(@"程序将要取消活跃状态");
 }
 
 //程序已经进入到后台  执行的方法(一般用来保存临时的数据)
-
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    BPLog(@"程序已经进入到后台执行的方法 %s %d",__FUNCTION__,__LINE__);
-
+    BPLog(@"程序已经进入到后台执行的方法");
 }
 
 //程序将要进入到前台  执行的方法(一般进行视频 歌曲数据的恢复)
-
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    BPLog(@"程序将要进入到前台 %s %d",__FUNCTION__,__LINE__);
-
+    BPLog(@"程序将要进入到前台");
 }
 
 //程序已经变成活跃状态执行的方法   一般进行UI界面刷新
-
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    BPLog(@"程序已经变成活跃状态 %s %d",__FUNCTION__,__LINE__);
-
+    BPLog(@"程序已经变成活跃状态");
 }
 
 //程序将要退出执行的方法
-
 - (void)applicationWillTerminate:(UIApplication *)application {
-    BPLog(@"程序将要退出 %s %d",__FUNCTION__,__LINE__);
+    BPLog(@"程序将要退出");
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-
     return [self openUrl:url];
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-
     return [self openUrl:url];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-
     return [self openUrl:url];
 }
 

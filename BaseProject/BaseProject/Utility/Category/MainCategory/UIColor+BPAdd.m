@@ -699,5 +699,4 @@ void BP_HSL2HSB(CGFloat h, CGFloat s, CGFloat l,
     }
 }
 
-
 @end
