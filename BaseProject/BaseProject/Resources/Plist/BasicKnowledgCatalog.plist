@@ -152,38 +152,27 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>AutoLayout布局</string>
+								<string>AutoLayout布局：系统、VFL</string>
 								<key>fileName</key>
-								<string>BPSimpleTableController</string>
+								<string>BPAutoLayoutCodeViewController</string>
 								<key>briefIntro</key>
 								<string></string>
-								<key>subVc_array</key>
-								<array>
-									<dict>
-										<key>title</key>
-										<string>纯代码布局：系统、Masony、VFL</string>
-										<key>fileName</key>
-										<string>BPAutoLayoutCodeViewController</string>
-										<key>briefIntro</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>title</key>
-										<string>XIB布局：约束优先级的使用，抗压缩，active的使用</string>
-										<key>fileName</key>
-										<string>BPAutoLayoutXIBViewController</string>
-										<key>briefIntro</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>title</key>
-										<string>Masonry使用技巧</string>
-										<key>fileName</key>
-										<string>BPMasonrySkillViewController</string>
-										<key>briefIntro</key>
-										<string></string>
-									</dict>
-								</array>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>XIB布局：约束优先级，抗压缩，active</string>
+								<key>fileName</key>
+								<string>BPAutoLayoutXIBViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>Masonry使用技巧</string>
+								<key>fileName</key>
+								<string>BPMasonrySkillViewController</string>
+								<key>briefIntro</key>
+								<string></string>
 							</dict>
 						</array>
 					</dict>

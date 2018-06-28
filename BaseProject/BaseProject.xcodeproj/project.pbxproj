@@ -6904,8 +6904,10 @@
 			isa = PBXGroup;
 			children = (
 				01B0756C20E4FD0C004891F7 /* Autoresizing */,
-				01B0757520E4FD0C004891F7 /* AutoLayout */,
+				01B0757B20E4FD0C004891F7 /* Code */,
 				01B0758320E4FD0C004891F7 /* Frame */,
+				01B0757F20E4FD0C004891F7 /* Masonry */,
+				01B0757620E4FD0C004891F7 /* XIB */,
 			);
 			path = Layout_Method;
 			sourceTree = "<group>";
@@ -6937,16 +6939,6 @@
 				01B0757420E4FD0C004891F7 /* BPAutoresizingViewA.h */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		01B0757520E4FD0C004891F7 /* AutoLayout */ = {
-			isa = PBXGroup;
-			children = (
-				01B0757620E4FD0C004891F7 /* XIB */,
-				01B0757B20E4FD0C004891F7 /* Code */,
-				01B0757F20E4FD0C004891F7 /* Masonry */,
-			);
-			path = AutoLayout;
 			sourceTree = "<group>";
 		};
 		01B0757620E4FD0C004891F7 /* XIB */ = {
@@ -6995,8 +6987,8 @@
 		01B0758020E4FD0C004891F7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				01B0758120E4FD0C004891F7 /* BPMasonrySkillViewController.m */,
 				01B0758220E4FD0C004891F7 /* BPMasonrySkillViewController.h */,
+				01B0758120E4FD0C004891F7 /* BPMasonrySkillViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
