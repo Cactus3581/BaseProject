@@ -321,6 +321,8 @@
 		0173401D1FA9753F006192F0 /* BPBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0173400B1FA9753F006192F0 /* BPBaseNavigationController.m */; };
 		0173401E1FA9753F006192F0 /* BPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0173400E1FA9753F006192F0 /* BPBaseViewController.m */; };
 		0173401F1FA9753F006192F0 /* BPBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017340121FA9753F006192F0 /* BPBaseTabBarController.m */; };
+		0174CC0B20E4BA4900A62977 /* BPInheritParentObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0174CC0A20E4BA4900A62977 /* BPInheritParentObject.m */; };
+		0174CC0E20E4BA5400A62977 /* BPInheritSubObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0174CC0D20E4BA5400A62977 /* BPInheritSubObject.m */; };
 		01782AC420D684E50091939C /* BPScrollLazyLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01782AC320D684E50091939C /* BPScrollLazyLoadViewController.m */; };
 		01782AC720D685040091939C /* BPScrollLinkageParallaxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01782AC620D685040091939C /* BPScrollLinkageParallaxViewController.m */; };
 		01782ACA20D6851C0091939C /* BPScrollReuseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01782AC920D6851C0091939C /* BPScrollReuseViewController.m */; };
@@ -1310,6 +1312,10 @@
 		0173400F1FA9753F006192F0 /* BPBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBaseViewController.h; sourceTree = "<group>"; };
 		017340111FA9753F006192F0 /* BPBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBaseTabBarController.h; sourceTree = "<group>"; };
 		017340121FA9753F006192F0 /* BPBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBaseTabBarController.m; sourceTree = "<group>"; };
+		0174CC0920E4BA4900A62977 /* BPInheritParentObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPInheritParentObject.h; sourceTree = "<group>"; };
+		0174CC0A20E4BA4900A62977 /* BPInheritParentObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPInheritParentObject.m; sourceTree = "<group>"; };
+		0174CC0C20E4BA5400A62977 /* BPInheritSubObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPInheritSubObject.h; sourceTree = "<group>"; };
+		0174CC0D20E4BA5400A62977 /* BPInheritSubObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPInheritSubObject.m; sourceTree = "<group>"; };
 		01782AC220D684E50091939C /* BPScrollLazyLoadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPScrollLazyLoadViewController.h; sourceTree = "<group>"; };
 		01782AC320D684E50091939C /* BPScrollLazyLoadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPScrollLazyLoadViewController.m; sourceTree = "<group>"; };
 		01782AC520D685040091939C /* BPScrollLinkageParallaxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPScrollLinkageParallaxViewController.h; sourceTree = "<group>"; };
@@ -8183,6 +8189,10 @@
 		01F0DDE320CA20F0005082C7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0174CC0920E4BA4900A62977 /* BPInheritParentObject.h */,
+				0174CC0A20E4BA4900A62977 /* BPInheritParentObject.m */,
+				0174CC0C20E4BA5400A62977 /* BPInheritSubObject.h */,
+				0174CC0D20E4BA5400A62977 /* BPInheritSubObject.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -9030,6 +9040,7 @@
 				010DB7B01FDD4D6F0099E66F /* UIButton+BPBackgroundColor.m in Sources */,
 				01B726961FF7E45B00648674 /* BPAlgorithmController.m in Sources */,
 				01DF31ED1FDD3B1600B8A955 /* NSURL+BPParam.m in Sources */,
+				0174CC0B20E4BA4900A62977 /* BPInheritParentObject.m in Sources */,
 				010DB72B1FDD4D450099E66F /* UIBezierPath+BPThroughPointsBezier.m in Sources */,
 				01E5142020DCD44800E6CFD0 /* BPGetFrameViewController.m in Sources */,
 				015805B820CAE5D000D0EF7C /* BPTopCategoryListTagView.m in Sources */,
@@ -9083,6 +9094,7 @@
 				0128926620DFF47200B9370F /* BPAppearanceViewController.m in Sources */,
 				017F82CE2063A8B800B656BA /* BPSubAddChildViewController.m in Sources */,
 				01D6FBC120C832E300AD8A6E /* BPMultiLevelCatalogueModel.m in Sources */,
+				0174CC0E20E4BA5400A62977 /* BPInheritSubObject.m in Sources */,
 				01EB475320CE9A1E00195E88 /* BPTableViewNestGestureViewController.m in Sources */,
 				01DF323F1FDD3B3D00B8A955 /* NSObject+BPRuntime.m in Sources */,
 				01D22BD71FDD814000BCC4AD /* UITextField+BPAdd.m in Sources */,
