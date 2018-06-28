@@ -37,7 +37,8 @@
     [rightBarButton addTarget:self action:@selector(change) forControlEvents:UIControlEventTouchUpInside];
     rightBarButton.frame = CGRectMake(0, 0, bp_naviItem_width, bp_naviItem_height);
     [rightBarButton sizeToFit];
-    
+    rightBarButton.frame = CGRectMake(CGRectGetMinX(rightBarButton.frame), 0, CGRectGetWidth(rightBarButton.bounds), bp_naviItem_height);
+
     UIButton *rightBarButton1 = [UIButton buttonWithType:UIButtonTypeCustom];
     [rightBarButton1 setTintColor:kWhiteColor];
     [rightBarButton1 setTitleColor:kWhiteColor forState:UIControlStateNormal];
@@ -46,11 +47,12 @@
     [rightBarButton1 addTarget:self action:@selector(change1) forControlEvents:UIControlEventTouchUpInside];
     rightBarButton1.frame = CGRectMake(CGRectGetMaxX(rightBarButton.frame)+10, 0, bp_naviItem_width, bp_naviItem_height);
     [rightBarButton1 sizeToFit];
-    
-    
+    rightBarButton1.frame = CGRectMake(CGRectGetMinX(rightBarButton1.frame), 0, CGRectGetWidth(rightBarButton1.bounds), bp_naviItem_height);
+
     [view addSubview:rightBarButton];
     [view addSubview:rightBarButton1];
-    view.frame = CGRectMake(0, 0, rightBarButton.width+15+rightBarButton1.width, 44);
+    
+    view.frame = CGRectMake(0, 0, rightBarButton.width+10+rightBarButton1.width+5, bp_naviItem_height);
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:view];
 }
 

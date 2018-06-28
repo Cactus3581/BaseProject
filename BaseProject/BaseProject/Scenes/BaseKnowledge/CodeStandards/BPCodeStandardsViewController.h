@@ -6,8 +6,8 @@
 //  Copyright © 2018年 cactus. All rights reserved.
 //
 
-#import "BaseWebViewController.h"
+#import "BPBaseWebViewController.h"
 
-@interface BPCodeStandardsViewController : BaseWebViewController
+@interface BPCodeStandardsViewController : BPBaseWebViewController
 
 @end

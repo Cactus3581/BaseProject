@@ -1,5 +1,5 @@
 //
-//  BaseWebViewController.h
+//  BPBaseWebViewController.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/6/27.
@@ -9,7 +9,7 @@
 #import "BPBaseViewController.h"
 #import <WebKit/WebKit.h>
 
-@interface BaseWebViewController : BPBaseViewController<WKUIDelegate,WKNavigationDelegate>
+@interface BPBaseWebViewController : BPBaseViewController<WKUIDelegate,WKNavigationDelegate>
 
 @property (nonatomic,weak) WKWebView *webView;
 

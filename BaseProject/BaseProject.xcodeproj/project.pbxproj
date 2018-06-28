@@ -301,7 +301,7 @@
 		016D95AD20E3825500651EDE /* BPTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95AC20E3825500651EDE /* BPTouchViewController.m */; };
 		016D95B520E38A6900651EDE /* BPDrawingBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95B420E38A6900651EDE /* BPDrawingBoardViewController.m */; };
 		016D95E520E39E2300651EDE /* BPMasonrySkillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95E420E39E2300651EDE /* BPMasonrySkillViewController.m */; };
-		016D95EA20E3CB1300651EDE /* BaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95E920E3CB1300651EDE /* BaseWebViewController.m */; };
+		016D95EA20E3CB1300651EDE /* BPBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95E920E3CB1300651EDE /* BPBaseWebViewController.m */; };
 		016D95ED20E3CEA700651EDE /* BPCodeStandardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95EC20E3CEA700651EDE /* BPCodeStandardsViewController.m */; };
 		016D95F920E3E63D00651EDE /* UIView+BPShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95F820E3E63D00651EDE /* UIView+BPShare.m */; };
 		016DADC720582FB100AA95EC /* NSArray+BPSafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC020582FAE00AA95EC /* NSArray+BPSafeAccess.m */; };
@@ -1269,8 +1269,8 @@
 		016D95B420E38A6900651EDE /* BPDrawingBoardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDrawingBoardViewController.m; sourceTree = "<group>"; };
 		016D95E320E39E2300651EDE /* BPMasonrySkillViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMasonrySkillViewController.h; sourceTree = "<group>"; };
 		016D95E420E39E2300651EDE /* BPMasonrySkillViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMasonrySkillViewController.m; sourceTree = "<group>"; };
-		016D95E820E3CB1300651EDE /* BaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseWebViewController.h; sourceTree = "<group>"; };
-		016D95E920E3CB1300651EDE /* BaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseWebViewController.m; sourceTree = "<group>"; };
+		016D95E820E3CB1300651EDE /* BPBaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseWebViewController.h; sourceTree = "<group>"; };
+		016D95E920E3CB1300651EDE /* BPBaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseWebViewController.m; sourceTree = "<group>"; };
 		016D95EB20E3CEA700651EDE /* BPCodeStandardsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCodeStandardsViewController.h; sourceTree = "<group>"; };
 		016D95EC20E3CEA700651EDE /* BPCodeStandardsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCodeStandardsViewController.m; sourceTree = "<group>"; };
 		016D95F720E3E63D00651EDE /* UIView+BPShare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+BPShare.h"; sourceTree = "<group>"; };
@@ -5039,8 +5039,8 @@
 		016D95E720E3CB0100651EDE /* BaseWebViewController */ = {
 			isa = PBXGroup;
 			children = (
-				016D95E820E3CB1300651EDE /* BaseWebViewController.h */,
-				016D95E920E3CB1300651EDE /* BaseWebViewController.m */,
+				016D95E820E3CB1300651EDE /* BPBaseWebViewController.h */,
+				016D95E920E3CB1300651EDE /* BPBaseWebViewController.m */,
 			);
 			path = BaseWebViewController;
 			sourceTree = "<group>";
@@ -9139,7 +9139,7 @@
 				013ED90920C7DB3C00A83E7F /* BPIncludeTableSystemLayoutHeadCell.m in Sources */,
 				010DB7B21FDD4D6F0099E66F /* UIButton+BPIndicator.m in Sources */,
 				01A597B62085CB6A000C6237 /* BPCellAutoLayoutHeightDataSource.m in Sources */,
-				016D95EA20E3CB1300651EDE /* BaseWebViewController.m in Sources */,
+				016D95EA20E3CB1300651EDE /* BPBaseWebViewController.m in Sources */,
 				0173401C1FA9753F006192F0 /* BPAppDelegate.m in Sources */,
 				01DF32221FDD3B3000B8A955 /* NSString+BPRemoveEmoji.m in Sources */,
 				010DB7501FDD4D450099E66F /* UINavigationController+BPStackManager.m in Sources */,

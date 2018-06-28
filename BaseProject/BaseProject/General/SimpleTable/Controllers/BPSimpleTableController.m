@@ -10,7 +10,7 @@
 #import "BPSimpleTableViewCell.h"
 #import "BPSimpleModel.h"
 #import "BPSimpleViewModel.h"
-#import "BaseWebViewController.h"
+#import "BPBaseWebViewController.h"
 
 @interface BPSimpleTableController ()
 @property (strong, nonatomic) BPSimpleViewModel *viewModel;
@@ -64,7 +64,7 @@
             [vc setLeftBarButtonTitle:model.title];
             vc.dynamicJumpString = model.dynamicJumpString;
             if (model.url) {
-                [(BaseWebViewController *)vc setUrl:model.url];
+                [(BPBaseWebViewController *)vc setUrl:model.url];
             }
             [self.navigationController pushViewController:vc animated:YES];
         }
