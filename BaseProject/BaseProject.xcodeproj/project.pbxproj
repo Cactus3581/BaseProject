@@ -2764,11 +2764,11 @@
 		010FBC3F206018B500BC9EC4 /* ImprovingTips */ = {
 			isa = PBXGroup;
 			children = (
-				016D959E20E37FCB00651EDE /* MathFunction */,
 				017F82C82063A87B00B656BA /* AddChildVC */,
 				01EF2C1C20AD352700DF98FB /* CollectionView */,
 				015120FC20CBF03100B33A76 /* DynamicJump */,
 				011CD74B20CE18E600560EE6 /* MasksToBounds */,
+				016D959E20E37FCB00651EDE /* MathFunction */,
 				01F750A2209EDF7100C1F24C /* OtherProject */,
 				010FBD1120601D9D00BC9EC4 /* Palette */,
 				0137C73A207B3AA800F6B6CE /* Present */,
@@ -2784,7 +2784,6 @@
 		010FBC4320601A0800BC9EC4 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				016D95AE20E38A5200651EDE /* DrawingBoard */,
 				01027AD91FDED98E0003F0FE /* Alert */,
 				01027ADC1FDED9C50003F0FE /* Animation */,
 				016760C72060F7F400F82ACE /* Barrage */,
@@ -2792,6 +2791,7 @@
 				01027ADE1FDEDA030003F0FE /* Chart */,
 				01027ADF1FDEDA0E0003F0FE /* CodeScanner */,
 				017F82C7206261AB00B656BA /* Drawer */,
+				016D95AE20E38A5200651EDE /* DrawingBoard */,
 				0158055820CAE0E400D0EF7C /* DynamicTag */,
 				01027AE21FDEDA2F0003F0FE /* EnlargeImage */,
 				01027AE31FDEDA410003F0FE /* GaussianBlur */,
@@ -2810,9 +2810,9 @@
 		010FBCFC20601CEB00BC9EC4 /* BaseKnowledge */ = {
 			isa = PBXGroup;
 			children = (
-				016D95E620E3CA9D00651EDE /* CodeStandards */,
 				01161F3D20308F4900FA3441 /* BaseUseData */,
 				01B726DA1FF806FC00648674 /* BaseUseUIKit */,
+				016D95E620E3CA9D00651EDE /* CodeStandards */,
 				01161F522030975C00FA3441 /* DesignPatterns */,
 				01F373102065525D007B1498 /* Event */,
 				016D95B620E38B8F00651EDE /* Kit */,
@@ -6836,12 +6836,12 @@
 		01B0755820E4FD0C004891F7 /* Layer */ = {
 			isa = PBXGroup;
 			children = (
-				01B0755920E4FD0C004891F7 /* CAReplicatorLayer */,
 				01B0755C20E4FD0C004891F7 /* BezierPath */,
 				01B0755F20E4FD0C004891F7 /* CAGradientLayer */,
+				01B0755920E4FD0C004891F7 /* CAReplicatorLayer */,
+				01B0756820E4FD0C004891F7 /* CAShapeLayer */,
 				01B0756220E4FD0C004891F7 /* Layer */,
 				01B0756520E4FD0C004891F7 /* View */,
-				01B0756820E4FD0C004891F7 /* CAShapeLayer */,
 			);
 			path = Layer;
 			sourceTree = "<group>";
@@ -7049,6 +7049,7 @@
 			isa = PBXGroup;
 			children = (
 				01B0759520E4FD0C004891F7 /* Controllers */,
+				01B075CE20E503DD004891F7 /* Views */,
 			);
 			path = CalculateSize;
 			sourceTree = "<group>";
@@ -7118,6 +7119,13 @@
 			children = (
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		01B075CE20E503DD004891F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		01B7268B1FF7DF1900648674 /* DataStructure */ = {
