@@ -99,6 +99,9 @@ static CGFloat outset = 50; //假设外部左右两个都为0，决定此view的
 
 #pragma mark - Timer:auto life circles
 - (void)createTimer {
+    if (_timer) {
+        return;
+    }
     __weak typeof (self) weakSelf = self;
     NSTimer *timer = [NSTimer bp_scheduledTimerWithTimeInterval:self.autoScrollTimeInterval repeats:YES block:^(NSTimer *timer) {
         [weakSelf automaticScroll];

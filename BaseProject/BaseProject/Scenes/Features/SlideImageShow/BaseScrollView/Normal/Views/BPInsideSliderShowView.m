@@ -98,6 +98,9 @@ static CGFloat inset = 15; //假设内部左右两个都为30
 
 #pragma mark - Timer:auto life circles
 - (void)createTimer {
+    if (_timer) {
+        return;
+    }
     __weak typeof (self) weakSelf = self;
     NSTimer *timer = [NSTimer bp_scheduledTimerWithTimeInterval:self.autoScrollTimeInterval repeats:YES block:^(NSTimer *timer) {
         [weakSelf automaticScroll];
