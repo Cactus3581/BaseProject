@@ -7075,8 +7075,8 @@
 		01B0759920E4FD0C004891F7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				01B0759A20E4FD0C004891F7 /* BPIntrinsicContentSizeController.m */,
 				01B0759B20E4FD0C004891F7 /* BPIntrinsicContentSizeController.h */,
+				01B0759A20E4FD0C004891F7 /* BPIntrinsicContentSizeController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -7084,8 +7084,8 @@
 		01B0759C20E4FD0C004891F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				01B0759D20E4FD0C004891F7 /* BPIntrinsicContentSizeLabel.m */,
 				01B0759E20E4FD0C004891F7 /* BPIntrinsicContentSizeLabel.h */,
+				01B0759D20E4FD0C004891F7 /* BPIntrinsicContentSizeLabel.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";

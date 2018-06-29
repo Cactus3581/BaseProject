@@ -16,9 +16,7 @@
 - (CGSize)intrinsicContentSize {
     CGSize size = [super intrinsicContentSize];
     if (self.text && [self.text length] > 0) {
-        //        size.width += self.intervalSize.width;
-        //        size.height += self.intervalSize.height;
-        size.height+=20;
+        size.width+=40;
     }
     return size;
 }

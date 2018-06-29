@@ -248,7 +248,7 @@
 								<key>title</key>
 								<string>固有内容大小</string>
 								<key>fileName</key>
-								<string></string>
+								<string>BPIntrinsicContentSizeController</string>
 								<key>briefIntro</key>
 								<string></string>
 							</dict>
