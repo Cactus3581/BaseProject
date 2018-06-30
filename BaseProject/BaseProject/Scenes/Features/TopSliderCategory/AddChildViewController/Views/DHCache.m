@@ -19,7 +19,7 @@
 
 @implementation DHCache
 
-- (id)initWithCount:(NSInteger)count
+- (instancetype)initWithCount:(NSInteger)count
 {
     if (self = [super init]) {
         _capacity = count;

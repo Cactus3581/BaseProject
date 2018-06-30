@@ -17,6 +17,14 @@
 
 @implementation BPAutoLayoutScrollViewController
 
+/*
+ 
+ 1. 处理滚动视图时，可使用混合布局；
+ 
+ 2. 只要是指定了contentView并明确了contentView的布局（位置及大小），就可以不需要手动设置scroll的contentSize
+ 
+ **/
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.autoLayoutScrollView.backgroundColor = kWhiteColor;

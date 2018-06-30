@@ -18,7 +18,7 @@
  *
  *
  */
-- (id)initWithURL:(NSURL *)URL parameters:(NSDictionary *)params;
+- (instancetype)initWithURL:(NSURL *)URL parameters:(NSDictionary *)params;
 
 + (NSURLRequest *)_requestGETWithURL:(NSURL *)url parameters:(NSDictionary *)params;
 

@@ -209,7 +209,7 @@
 									</dict>
 									<dict>
 										<key>title</key>
-										<string>Scroll的使用</string>
+										<string>创建Scroll的ContentView的方式</string>
 										<key>fileName</key>
 										<string>BPAutoLayoutScrollViewController</string>
 										<key>briefIntro</key>
@@ -272,7 +272,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>绘制及异步渲染</string>
+						<string>绘制及渲染</string>
 						<key>fileName</key>
 						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
@@ -297,7 +297,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>图片编解码</string>
+								<string>图片编解码，软解硬解，纵横比</string>
 								<key>fileName</key>
 								<string></string>
 								<key>briefIntro</key>
@@ -307,7 +307,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>重要的几个点</string>
+						<string>重要的几个点：优先级，不等式，比例系数，有效性</string>
 						<key>fileName</key>
 						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
@@ -332,7 +332,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>固有内容大小</string>
+								<string>固有内容：内容布局</string>
 								<key>fileName</key>
 								<string>BPIntrinsicContentSizeController</string>
 								<key>briefIntro</key>
@@ -340,9 +340,9 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>抗压缩抗拉伸</string>
+								<string>抗压缩抗拉伸和约束优先级的使用</string>
 								<key>fileName</key>
-								<string></string>
+								<string>BPAutoLayoutHuggingViewController</string>
 								<key>briefIntro</key>
 								<string></string>
 							</dict>
@@ -356,7 +356,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>Transform</string>
+								<string>Transform与AutoLayout、Frame的关系</string>
 								<key>fileName</key>
 								<string>BPTransformViewController</string>
 								<key>briefIntro</key>
@@ -364,7 +364,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>Baseline</string>
+								<string>基线对齐方式Baseline</string>
 								<key>fileName</key>
 								<string>BPBaselineViewController</string>
 								<key>briefIntro</key>
@@ -374,7 +374,7 @@
 								<key>title</key>
 								<string>PreferredMaxLayoutWidth</string>
 								<key>fileName</key>
-								<string>BPPreferredMaxLayoutWidthViewController</string>
+								<string>折行：BPPreferredMaxLayoutWidthViewController</string>
 								<key>briefIntro</key>
 								<string></string>
 							</dict>

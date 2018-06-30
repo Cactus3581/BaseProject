@@ -20,7 +20,7 @@
     return result;
 }
 
-- (id)initWithBPCGFloat:(CGFloat)value
+- (instancetype)initWithBPCGFloat:(CGFloat)value
 {
 #if (CGFLOAT_IS_DOUBLE == 1)
     self = [self initWithDouble:value];

@@ -29,14 +29,14 @@ static UIEdgeInsets const kPadding = {10, 10, 10, 10};
 }
 
 - (void)initializeSubViews {
-    self.shortLabel = UILabel.new;
+    self.shortLabel = [[UILabel alloc] init];
     self.shortLabel.numberOfLines = 1;
     self.shortLabel.textColor = [UIColor purpleColor];
     self.shortLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     self.shortLabel.text = @"Bacon";
     [self addSubview:self.shortLabel];
     
-    self.longLabel = UILabel.new;
+    self.longLabel = [[UILabel alloc] init];
     self.longLabel.numberOfLines = 8;
     self.longLabel.textColor = [UIColor darkGrayColor];
     self.longLabel.lineBreakMode = NSLineBreakByTruncatingTail;

@@ -15,11 +15,17 @@
 
 @implementation BPAutoLayoutScrollView
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
-    if (!self) return nil;
+    if (self) {
+        [self initialize];
+    }
+    return self;
+}
+
+- (void)initialize {
     
-    UIScrollView *scrollView = UIScrollView.new;
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
     self.scrollView = scrollView;
     scrollView.backgroundColor = [UIColor grayColor];
     [self addSubview:scrollView];
@@ -28,12 +34,10 @@
     }];
     
     [self generateContent];
-    
-    return self;
 }
 
 - (void)generateContent {
-    UIView* contentView = UIView.new;
+    UIView *contentView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.scrollView addSubview:contentView];
     
     [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -42,11 +46,13 @@
     }];
     
     UIView *lastView;
+    
     CGFloat height = 25;
     
     for (int i = 0; i < 10; i++) {
-        UIView *view = UIView.new;
-        view.backgroundColor = [self randomColor];
+        
+        UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
+        view.backgroundColor = kRandomColor;
         [contentView addSubview:view];
         
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];
@@ -66,13 +72,6 @@
     [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(lastView.mas_bottom);
     }];
-}
-
-- (UIColor *)randomColor {
-    CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
-    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
-    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
-    return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
 }
 
 - (void)singleTap:(UITapGestureRecognizer*)sender {

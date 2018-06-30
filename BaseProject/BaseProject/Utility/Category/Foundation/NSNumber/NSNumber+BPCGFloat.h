@@ -13,7 +13,7 @@
 
 - (CGFloat)_CGFloatValue;
 
-- (id)initWithBPCGFloat:(CGFloat)value;
+- (instancetype)initWithBPCGFloat:(CGFloat)value;
 
 + (NSNumber *)_numberWithCGFloat:(CGFloat)value;
 

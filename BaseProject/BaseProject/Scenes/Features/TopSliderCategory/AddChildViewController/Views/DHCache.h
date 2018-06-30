@@ -11,7 +11,7 @@
 
 @interface DHCache : NSObject<DHCacheProtocol>
 
-- (id)initWithCount:(NSInteger)count;
+- (instancetype)initWithCount:(NSInteger)count;
 - (void)setObject:(id)object forKey:(NSString *)key;
 - (id)objectForKey:(NSString *)key;
 

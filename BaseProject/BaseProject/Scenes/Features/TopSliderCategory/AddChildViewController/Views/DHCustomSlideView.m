@@ -24,14 +24,14 @@
     self.tabbarBottomSpacing = kDefaultTabbarBottomSpacing;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder{
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
     if (self = [super initWithCoder:aDecoder]) {
         [self commonInit];
     }
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         [self commonInit];
     }

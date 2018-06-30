@@ -21,6 +21,9 @@
 #pragma mark - 总体布局过程
 
 /*
+ 
+ Autoresizing可以与AutoLayout一块混合使用，但是不能在同一个view上使用；比如这样是可以的：Autoresizing作用于子视图，autoLayout作用于它的父视图
+
  总体过程：
  使用 Auto Layout 将 View 显示在屏幕上需要的经过三个步骤。
  

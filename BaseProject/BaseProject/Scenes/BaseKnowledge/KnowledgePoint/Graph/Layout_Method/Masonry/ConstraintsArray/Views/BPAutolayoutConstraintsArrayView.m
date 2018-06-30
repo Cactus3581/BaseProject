@@ -18,23 +18,23 @@
 
 @implementation BPAutolayoutConstraintsArrayView
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if (!self) return nil;
     
-    UIView *greenView = UIView.new;
+    UIView *greenView = [[UIView alloc] initWithFrame:CGRectZero];
     greenView.backgroundColor = UIColor.greenColor;
     greenView.layer.borderColor = UIColor.blackColor.CGColor;
     greenView.layer.borderWidth = 2;
     [self addSubview:greenView];
     
-    UIView *redView = UIView.new;
+    UIView *redView = [[UIView alloc] initWithFrame:CGRectZero];
     redView.backgroundColor = UIColor.redColor;
     redView.layer.borderColor = UIColor.blackColor.CGColor;
     redView.layer.borderWidth = 2;
     [self addSubview:redView];
     
-    UIView *blueView = UIView.new;
+    UIView *blueView = [[UIView alloc] initWithFrame:CGRectZero];
     blueView.backgroundColor = UIColor.blueColor;
     blueView.layer.borderColor = UIColor.blackColor.CGColor;
     blueView.layer.borderWidth = 2;
@@ -44,7 +44,7 @@
     int padding = self.padding = 10;
     UIEdgeInsets paddingInsets = UIEdgeInsetsMake(self.padding, self.padding, self.padding, self.padding);
     
-    self.animatableConstraints = NSMutableArray.new;
+    self.animatableConstraints = @[].mutableCopy;
     
     [greenView mas_makeConstraints:^(MASConstraintMaker *make) {
         [self.animatableConstraints addObjectsFromArray:@[

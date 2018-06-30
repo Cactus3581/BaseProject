@@ -21,6 +21,9 @@
 @implementation BPAutoresizingViewController
 
 /*
+ 
+ Autoresizing可以与AutoLayout一块混合使用，但是不能在同一个view上使用；比如这样是可以的：Autoresizing作用于子视图，autoLayout作用于它的父视图
+ 
  autoresizing是UIView的属性
  typedef NS_OPTIONS(NSUInteger, UIViewAutoresizing) {
  UIViewAutoresizingNone                 = 0,     不会随父视图的改变而改变

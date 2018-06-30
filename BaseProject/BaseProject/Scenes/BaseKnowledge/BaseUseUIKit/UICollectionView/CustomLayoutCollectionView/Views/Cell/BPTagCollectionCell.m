@@ -9,7 +9,7 @@
 #import "BPTagCollectionCell.h"
 
 @implementation BPTagCollectionCell
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {

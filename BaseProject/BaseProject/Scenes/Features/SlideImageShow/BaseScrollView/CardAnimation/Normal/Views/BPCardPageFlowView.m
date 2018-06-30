@@ -34,7 +34,7 @@ static NSString *subviewClassName;
 #pragma mark -
 #pragma mark Override Methods
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         [self initialize];
@@ -42,7 +42,7 @@ static NSString *subviewClassName;
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self initialize];

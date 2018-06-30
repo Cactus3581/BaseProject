@@ -43,4 +43,9 @@
     BPLog(@"i'm parent E");
 }
 
+#pragma mark - 子类重写，但是没有调用super，父类也会调用，奇怪
+- (void)dealloc {
+    BPLog(@"i'm parent dealloc");
+}
+
 @end

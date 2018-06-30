@@ -5221,6 +5221,7 @@
 		017906DA20011C2E00E5C360 /* OtherKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				01DBF16B20E7D301001C52C0 /* ManagerController */,
 				011F91BF20E6661D00124DC1 /* Debug */,
 				01F0DDD820CA2090005082C7 /* Inherit */,
 				0179070520011D9E00E5C360 /* Block */,
@@ -7002,8 +7003,8 @@
 		01B0756D20E4FD0C004891F7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				01B0756E20E4FD0C004891F7 /* BPAutoresizingViewController.m */,
 				01B0756F20E4FD0C004891F7 /* BPAutoresizingViewController.h */,
+				01B0756E20E4FD0C004891F7 /* BPAutoresizingViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -7974,6 +7975,37 @@
 				01DBF16620E7B070001C52C0 /* BPAutolayoutConstraintsArrayView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		01DBF16B20E7D301001C52C0 /* ManagerController */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF16E20E7D32F001C52C0 /* AddChildViewController */,
+				01DBF16D20E7D31B001C52C0 /* Model */,
+				01DBF16C20E7D312001C52C0 /* Push */,
+			);
+			path = ManagerController;
+			sourceTree = "<group>";
+		};
+		01DBF16C20E7D312001C52C0 /* Push */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Push;
+			sourceTree = "<group>";
+		};
+		01DBF16D20E7D31B001C52C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		01DBF16E20E7D32F001C52C0 /* AddChildViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddChildViewController;
 			sourceTree = "<group>";
 		};
 		01DF315F1FDD3A0800B8A955 /* CAShapeLayer */ = {

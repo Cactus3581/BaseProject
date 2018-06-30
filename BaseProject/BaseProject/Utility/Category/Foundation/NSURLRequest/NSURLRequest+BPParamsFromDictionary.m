@@ -14,7 +14,7 @@
     return [[NSURLRequest alloc] initWithURL:url parameters:params];
 }
 
-- (id)initWithURL:(NSURL *)URL parameters:(NSDictionary *)params {
+- (instancetype)initWithURL:(NSURL *)URL parameters:(NSDictionary *)params {
     if (params) {
         NSArray *queryStringComponents = [[self class] _queryStringComponentsFromKey:nil value:params];
         NSString *parameterString = [queryStringComponents componentsJoinedByString:@"&"];
