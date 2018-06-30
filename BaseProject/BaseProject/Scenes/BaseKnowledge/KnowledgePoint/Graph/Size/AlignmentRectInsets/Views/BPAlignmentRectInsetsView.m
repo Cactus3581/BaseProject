@@ -33,6 +33,7 @@
 
 - (void)setText {
     self.backgroundColor = kThemeColor;
+    
     self.label1.backgroundColor = kWhiteColor;
     self.label1.textColor = kThemeColor;
     

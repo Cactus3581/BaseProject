@@ -170,9 +170,68 @@
 								<key>title</key>
 								<string>Masonry使用技巧</string>
 								<key>fileName</key>
-								<string>BPMasonrySkillViewController</string>
+								<string>BPSimpleTableController</string>
 								<key>briefIntro</key>
 								<string></string>
+								<key>subVc_array</key>
+								<array>
+									<dict>
+										<key>title</key>
+										<string>Masonry基本使用</string>
+										<key>fileName</key>
+										<string>BPMasonrySkillViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>优先级的使用</string>
+										<key>fileName</key>
+										<string>BPAutoLayoutPriorityViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>抗压缩+内容吸附的使用</string>
+										<key>fileName</key>
+										<string>BPAutoLayoutHuggingViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>等宽等间隔的使用</string>
+										<key>fileName</key>
+										<string>BPAutoLayoutEqualInsetViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>Scroll的使用</string>
+										<key>fileName</key>
+										<string>BPAutoLayoutScrollViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>更新约束+动画+view数组</string>
+										<key>fileName</key>
+										<string>BPAutoLayoutUpdateConstraintsController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>更新约束+动画+约束数组</string>
+										<key>fileName</key>
+										<string>BPAutolayoutConstraintsArrayViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+								</array>
 							</dict>
 						</array>
 					</dict>
@@ -221,7 +280,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>计算Size方法,固有内容，抗压缩抗拉伸</string>
+						<string>重要属性：固有内容，抗性，对齐矩形，获取size</string>
 						<key>fileName</key>
 						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
@@ -230,7 +289,7 @@
 						<array>
 							<dict>
 								<key>title</key>
-								<string>计算size几种方法</string>
+								<string>未完成布局前计算Size的方法</string>
 								<key>fileName</key>
 								<string>BPViewSizeController</string>
 								<key>briefIntro</key>
@@ -260,15 +319,39 @@
 								<key>briefIntro</key>
 								<string></string>
 							</dict>
+							<dict>
+								<key>title</key>
+								<string>获取正确的frame</string>
+								<key>fileName</key>
+								<string>BPGetFrameViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>Transform</string>
+								<key>fileName</key>
+								<string>BPTransformViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>Baseline</string>
+								<key>fileName</key>
+								<string>BPBaselineViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>PreferredMaxLayoutWidth</string>
+								<key>fileName</key>
+								<string>BPPreferredMaxLayoutWidthViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
 						</array>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>获取正确的frame</string>
-						<key>fileName</key>
-						<string>BPGetFrameViewController</string>
-						<key>briefIntro</key>
-						<string></string>
 					</dict>
 					<dict>
 						<key>title</key>

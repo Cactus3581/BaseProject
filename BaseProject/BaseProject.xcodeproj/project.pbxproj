@@ -168,6 +168,8 @@
 		011E8DC220B2FB3300B04378 /* BPCalendarDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8DBB20B2FB3200B04378 /* BPCalendarDayCell.m */; };
 		011E8DC320B2FB3300B04378 /* BPCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8DBE20B2FB3200B04378 /* BPCalendarView.m */; };
 		011E8DCB20B3182700B04378 /* BPCustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E8DCA20B3182700B04378 /* BPCustomTableViewController.m */; };
+		011F91C320E6662900124DC1 /* BPDebugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011F91C120E6662900124DC1 /* BPDebugViewController.m */; };
+		011F91C420E6662900124DC1 /* BPDebugViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011F91C220E6662900124DC1 /* BPDebugViewController.xib */; };
 		0126B5361FB4ACBB00E522CF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0126B5351FB4ACBB00E522CF /* MapKit.framework */; };
 		0128926220DE016700B9370F /* BPStatusBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128926120DE016700B9370F /* BPStatusBarViewController.m */; };
 		0128926620DFF47200B9370F /* BPAppearanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0128926520DFF47100B9370F /* BPAppearanceViewController.m */; };
@@ -262,6 +264,10 @@
 		0160718D204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160718C204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m */; };
 		016760CF2060F94400F82ACE /* BPNSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016760CE2060F94400F82ACE /* BPNSOperationViewController.m */; };
 		016760D720610F3900F82ACE /* BPSingleThreadTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 016760D620610F3900F82ACE /* BPSingleThreadTimer.m */; };
+		0167A35220E619DB00F13905 /* BPBaselineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0167A35020E619DB00F13905 /* BPBaselineViewController.m */; };
+		0167A35320E619DB00F13905 /* BPBaselineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0167A35120E619DB00F13905 /* BPBaselineViewController.xib */; };
+		0167A35720E619F100F13905 /* BPTransformViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0167A35520E619F100F13905 /* BPTransformViewController.m */; };
+		0167A35820E619F100F13905 /* BPTransformViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0167A35620E619F100F13905 /* BPTransformViewController.xib */; };
 		0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */; };
 		0168F3872035E66900D63D83 /* BPBaseKnowledgeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0168F3862035E66900D63D83 /* BPBaseKnowledgeViewModel.m */; };
 		0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0168F3882035EC0B00D63D83 /* ImprovingTipCatalog.plist */; };
@@ -551,6 +557,17 @@
 		01D6FBC020C832E300AD8A6E /* BPMultiLevelCatalogueModel+BPHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D6FBBB20C832E300AD8A6E /* BPMultiLevelCatalogueModel+BPHeight.m */; };
 		01D6FBC120C832E300AD8A6E /* BPMultiLevelCatalogueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D6FBBD20C832E300AD8A6E /* BPMultiLevelCatalogueModel.m */; };
 		01D6FBC220C832E300AD8A6E /* BPMultiLevelCatalogueModelDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D6FBBE20C832E300AD8A6E /* BPMultiLevelCatalogueModelDataSource.m */; };
+		01DBF13F20E74171001C52C0 /* BPAutoLayoutHuggingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF13E20E74171001C52C0 /* BPAutoLayoutHuggingViewController.m */; };
+		01DBF14220E74195001C52C0 /* BPAutoLayoutPriorityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF14120E74195001C52C0 /* BPAutoLayoutPriorityViewController.m */; };
+		01DBF14520E741A4001C52C0 /* BPAutoLayoutEqualInsetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF14420E741A4001C52C0 /* BPAutoLayoutEqualInsetViewController.m */; };
+		01DBF14E20E7424D001C52C0 /* BPAutoLayoutScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF14D20E7424D001C52C0 /* BPAutoLayoutScrollViewController.m */; };
+		01DBF15420E7740D001C52C0 /* BPPreferredMaxLayoutWidthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF15320E7740D001C52C0 /* BPPreferredMaxLayoutWidthViewController.m */; };
+		01DBF15720E7741F001C52C0 /* BPPreferredMaxLayoutWidthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF15620E7741F001C52C0 /* BPPreferredMaxLayoutWidthView.m */; };
+		01DBF15B20E77775001C52C0 /* BPAutoLayoutUpdateConstraintsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF15A20E77775001C52C0 /* BPAutoLayoutUpdateConstraintsController.m */; };
+		01DBF15E20E77796001C52C0 /* BPAutoLayoutUpdateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF15D20E77796001C52C0 /* BPAutoLayoutUpdateView.m */; };
+		01DBF16120E783F9001C52C0 /* BPAutoLayoutScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF16020E783F9001C52C0 /* BPAutoLayoutScrollView.m */; };
+		01DBF16720E7B070001C52C0 /* BPAutolayoutConstraintsArrayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF16620E7B070001C52C0 /* BPAutolayoutConstraintsArrayView.m */; };
+		01DBF16A20E7B081001C52C0 /* BPAutolayoutConstraintsArrayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DBF16920E7B081001C52C0 /* BPAutolayoutConstraintsArrayViewController.m */; };
 		01DF316E1FDD3A0900B8A955 /* CAShapeLayer+BPUIBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF31611FDD3A0800B8A955 /* CAShapeLayer+BPUIBezierPath.m */; };
 		01DF316F1FDD3A0900B8A955 /* CALayer+BPBorderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF31641FDD3A0800B8A955 /* CALayer+BPBorderColor.m */; };
 		01DF31701FDD3A0900B8A955 /* CAMediaTimingFunction+BPAdditionalEquations.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF31671FDD3A0800B8A955 /* CAMediaTimingFunction+BPAdditionalEquations.m */; };
@@ -1021,6 +1038,9 @@
 		011E8DBF20B2FB3200B04378 /* BPCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCalendarView.h; sourceTree = "<group>"; };
 		011E8DC920B3182700B04378 /* BPCustomTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCustomTableViewController.h; sourceTree = "<group>"; };
 		011E8DCA20B3182700B04378 /* BPCustomTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCustomTableViewController.m; sourceTree = "<group>"; };
+		011F91C020E6662900124DC1 /* BPDebugViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDebugViewController.h; sourceTree = "<group>"; };
+		011F91C120E6662900124DC1 /* BPDebugViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDebugViewController.m; sourceTree = "<group>"; };
+		011F91C220E6662900124DC1 /* BPDebugViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPDebugViewController.xib; sourceTree = "<group>"; };
 		0126B5351FB4ACBB00E522CF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0128926020DE016700B9370F /* BPStatusBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPStatusBarViewController.h; sourceTree = "<group>"; };
 		0128926120DE016700B9370F /* BPStatusBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPStatusBarViewController.m; sourceTree = "<group>"; };
@@ -1201,6 +1221,12 @@
 		016760CE2060F94400F82ACE /* BPNSOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNSOperationViewController.m; sourceTree = "<group>"; };
 		016760D320610EB200F82ACE /* BPSingleThreadTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPSingleThreadTimer.h; sourceTree = "<group>"; };
 		016760D620610F3900F82ACE /* BPSingleThreadTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPSingleThreadTimer.m; sourceTree = "<group>"; };
+		0167A34F20E619DB00F13905 /* BPBaselineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaselineViewController.h; sourceTree = "<group>"; };
+		0167A35020E619DB00F13905 /* BPBaselineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaselineViewController.m; sourceTree = "<group>"; };
+		0167A35120E619DB00F13905 /* BPBaselineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPBaselineViewController.xib; sourceTree = "<group>"; };
+		0167A35420E619F100F13905 /* BPTransformViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTransformViewController.h; sourceTree = "<group>"; };
+		0167A35520E619F100F13905 /* BPTransformViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTransformViewController.m; sourceTree = "<group>"; };
+		0167A35620E619F100F13905 /* BPTransformViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTransformViewController.xib; sourceTree = "<group>"; };
 		0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BasicKnowledgCatalog.plist; sourceTree = "<group>"; };
 		0168F3852035E66900D63D83 /* BPBaseKnowledgeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseKnowledgeViewModel.h; sourceTree = "<group>"; };
 		0168F3862035E66900D63D83 /* BPBaseKnowledgeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseKnowledgeViewModel.m; sourceTree = "<group>"; };
@@ -1762,6 +1788,28 @@
 		01D6FBBD20C832E300AD8A6E /* BPMultiLevelCatalogueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPMultiLevelCatalogueModel.m; sourceTree = "<group>"; };
 		01D6FBBE20C832E300AD8A6E /* BPMultiLevelCatalogueModelDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPMultiLevelCatalogueModelDataSource.m; sourceTree = "<group>"; };
 		01D6FBBF20C832E300AD8A6E /* BPMultiLevelCatalogueModel+BPHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BPMultiLevelCatalogueModel+BPHeight.h"; sourceTree = "<group>"; };
+		01DBF13D20E74171001C52C0 /* BPAutoLayoutHuggingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAutoLayoutHuggingViewController.h; sourceTree = "<group>"; };
+		01DBF13E20E74171001C52C0 /* BPAutoLayoutHuggingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAutoLayoutHuggingViewController.m; sourceTree = "<group>"; };
+		01DBF14020E74195001C52C0 /* BPAutoLayoutPriorityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAutoLayoutPriorityViewController.h; sourceTree = "<group>"; };
+		01DBF14120E74195001C52C0 /* BPAutoLayoutPriorityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAutoLayoutPriorityViewController.m; sourceTree = "<group>"; };
+		01DBF14320E741A4001C52C0 /* BPAutoLayoutEqualInsetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAutoLayoutEqualInsetViewController.h; sourceTree = "<group>"; };
+		01DBF14420E741A4001C52C0 /* BPAutoLayoutEqualInsetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAutoLayoutEqualInsetViewController.m; sourceTree = "<group>"; };
+		01DBF14C20E7424D001C52C0 /* BPAutoLayoutScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAutoLayoutScrollViewController.h; sourceTree = "<group>"; };
+		01DBF14D20E7424D001C52C0 /* BPAutoLayoutScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAutoLayoutScrollViewController.m; sourceTree = "<group>"; };
+		01DBF15220E7740D001C52C0 /* BPPreferredMaxLayoutWidthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPreferredMaxLayoutWidthViewController.h; sourceTree = "<group>"; };
+		01DBF15320E7740D001C52C0 /* BPPreferredMaxLayoutWidthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPreferredMaxLayoutWidthViewController.m; sourceTree = "<group>"; };
+		01DBF15520E7741F001C52C0 /* BPPreferredMaxLayoutWidthView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPreferredMaxLayoutWidthView.h; sourceTree = "<group>"; };
+		01DBF15620E7741F001C52C0 /* BPPreferredMaxLayoutWidthView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPreferredMaxLayoutWidthView.m; sourceTree = "<group>"; };
+		01DBF15920E77775001C52C0 /* BPAutoLayoutUpdateConstraintsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAutoLayoutUpdateConstraintsController.h; sourceTree = "<group>"; };
+		01DBF15A20E77775001C52C0 /* BPAutoLayoutUpdateConstraintsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAutoLayoutUpdateConstraintsController.m; sourceTree = "<group>"; };
+		01DBF15C20E77796001C52C0 /* BPAutoLayoutUpdateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAutoLayoutUpdateView.h; sourceTree = "<group>"; };
+		01DBF15D20E77796001C52C0 /* BPAutoLayoutUpdateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAutoLayoutUpdateView.m; sourceTree = "<group>"; };
+		01DBF15F20E783F9001C52C0 /* BPAutoLayoutScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAutoLayoutScrollView.h; sourceTree = "<group>"; };
+		01DBF16020E783F9001C52C0 /* BPAutoLayoutScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAutoLayoutScrollView.m; sourceTree = "<group>"; };
+		01DBF16520E7B070001C52C0 /* BPAutolayoutConstraintsArrayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAutolayoutConstraintsArrayView.h; sourceTree = "<group>"; };
+		01DBF16620E7B070001C52C0 /* BPAutolayoutConstraintsArrayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAutolayoutConstraintsArrayView.m; sourceTree = "<group>"; };
+		01DBF16820E7B081001C52C0 /* BPAutolayoutConstraintsArrayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAutolayoutConstraintsArrayViewController.h; sourceTree = "<group>"; };
+		01DBF16920E7B081001C52C0 /* BPAutolayoutConstraintsArrayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAutolayoutConstraintsArrayViewController.m; sourceTree = "<group>"; };
 		01DF31581FDD38EA00B8A955 /* BPUIKitCatergory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPUIKitCatergory.h; sourceTree = "<group>"; };
 		01DF31591FDD390700B8A955 /* BPFoundationCatergory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPFoundationCatergory.h; sourceTree = "<group>"; };
 		01DF315A1FDD392100B8A955 /* BPQuartzCoreCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPQuartzCoreCategory.h; sourceTree = "<group>"; };
@@ -3349,6 +3397,16 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		011F91BF20E6661D00124DC1 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				011F91C020E6662900124DC1 /* BPDebugViewController.h */,
+				011F91C120E6662900124DC1 /* BPDebugViewController.m */,
+				011F91C220E6662900124DC1 /* BPDebugViewController.xib */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		0128925F20DE014700B9370F /* StatusBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -4499,6 +4557,26 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		0167A34D20E619B100F13905 /* Transform */ = {
+			isa = PBXGroup;
+			children = (
+				0167A35420E619F100F13905 /* BPTransformViewController.h */,
+				0167A35520E619F100F13905 /* BPTransformViewController.m */,
+				0167A35620E619F100F13905 /* BPTransformViewController.xib */,
+			);
+			path = Transform;
+			sourceTree = "<group>";
+		};
+		0167A34E20E619C600F13905 /* Baseline */ = {
+			isa = PBXGroup;
+			children = (
+				0167A34F20E619DB00F13905 /* BPBaselineViewController.h */,
+				0167A35020E619DB00F13905 /* BPBaselineViewController.m */,
+				0167A35120E619DB00F13905 /* BPBaselineViewController.xib */,
+			);
+			path = Baseline;
+			sourceTree = "<group>";
+		};
 		0168F3842035E64800D63D83 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -5143,6 +5221,7 @@
 		017906DA20011C2E00E5C360 /* OtherKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				011F91BF20E6661D00124DC1 /* Debug */,
 				01F0DDD820CA2090005082C7 /* Inherit */,
 				0179070520011D9E00E5C360 /* Block */,
 				0179070A20011DC200E5C360 /* Copy */,
@@ -6760,10 +6839,10 @@
 		01B0754020E4FD0C004891F7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				01B0754420E4FD0C004891F7 /* BPMasonryAutoLayoutMoreDetailProcessViewController.h */,
 				01B0754120E4FD0C004891F7 /* BPMasonryAutoLayoutMoreDetailProcessViewController.m */,
 				01B0754220E4FD0C004891F7 /* BPMasonryAutoLayoutProcessViewController.h */,
 				01B0754320E4FD0C004891F7 /* BPMasonryAutoLayoutProcessViewController.m */,
-				01B0754420E4FD0C004891F7 /* BPMasonryAutoLayoutMoreDetailProcessViewController.h */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -6979,7 +7058,13 @@
 		01B0757F20E4FD0C004891F7 /* Masonry */ = {
 			isa = PBXGroup;
 			children = (
-				01B0758020E4FD0C004891F7 /* Controllers */,
+				01DBF16220E7AF4F001C52C0 /* ConstraintsArray */,
+				01DBF15820E77751001C52C0 /* UpdateConstraints */,
+				01DBF14720E7423A001C52C0 /* Scroll */,
+				01DBF14620E741C0001C52C0 /* BaseUse */,
+				01DBF13020E7412A001C52C0 /* Hugging */,
+				01DBF12F20E74110001C52C0 /* Priority */,
+				01DBF12E20E740FA001C52C0 /* EqualInset */,
 			);
 			path = Masonry;
 			sourceTree = "<group>";
@@ -7005,6 +7090,9 @@
 		01B0758620E4FD0C004891F7 /* Size */ = {
 			isa = PBXGroup;
 			children = (
+				01DBF14F20E773E5001C52C0 /* PreferredMaxLayoutWidth */,
+				0167A34E20E619C600F13905 /* Baseline */,
+				0167A34D20E619B100F13905 /* Transform */,
 				01B0758720E4FD0C004891F7 /* AlignmentRectInsets */,
 				01B0759420E4FD0C004891F7 /* CalculateSize */,
 				01B0759820E4FD0C004891F7 /* IntrinsicContentSize */,
@@ -7033,14 +7121,14 @@
 		01B0758B20E4FD0C004891F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				01B0758E20E4FD0C004891F7 /* BPAlignmentRectInsetsTemplateView.h */,
+				01B0759320E4FD0C004891F7 /* BPAlignmentRectInsetsTemplateView.m */,
+				01B0759120E4FD0C004891F7 /* BPAlignmentRectInsetsTemplateView.xib */,
+				01B0759020E4FD0C004891F7 /* BPAlignmentRectInsetsView.h */,
 				01B0758C20E4FD0C004891F7 /* BPAlignmentRectInsetsView.m */,
 				01B0758D20E4FD0C004891F7 /* BPAlignmentRectInsetsView.xib */,
-				01B0758E20E4FD0C004891F7 /* BPAlignmentRectInsetsTemplateView.h */,
-				01B0758F20E4FD0C004891F7 /* BPAlignmentRectInsetsLabel.m */,
-				01B0759020E4FD0C004891F7 /* BPAlignmentRectInsetsView.h */,
-				01B0759120E4FD0C004891F7 /* BPAlignmentRectInsetsTemplateView.xib */,
 				01B0759220E4FD0C004891F7 /* BPAlignmentRectInsetsLabel.h */,
-				01B0759320E4FD0C004891F7 /* BPAlignmentRectInsetsTemplateView.m */,
+				01B0758F20E4FD0C004891F7 /* BPAlignmentRectInsetsLabel.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -7671,6 +7759,221 @@
 				01D6FBBE20C832E300AD8A6E /* BPMultiLevelCatalogueModelDataSource.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		01DBF12E20E740FA001C52C0 /* EqualInset */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF13920E74159001C52C0 /* Controllers */,
+			);
+			path = EqualInset;
+			sourceTree = "<group>";
+		};
+		01DBF12F20E74110001C52C0 /* Priority */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF13520E74153001C52C0 /* Controllers */,
+				01DBF13620E74154001C52C0 /* Models */,
+				01DBF13820E74154001C52C0 /* ViewModels */,
+				01DBF13720E74154001C52C0 /* Views */,
+			);
+			path = Priority;
+			sourceTree = "<group>";
+		};
+		01DBF13020E7412A001C52C0 /* Hugging */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF13120E7414E001C52C0 /* Controllers */,
+				01DBF13220E7414E001C52C0 /* Models */,
+				01DBF13420E7414F001C52C0 /* ViewModels */,
+				01DBF13320E7414F001C52C0 /* Views */,
+			);
+			path = Hugging;
+			sourceTree = "<group>";
+		};
+		01DBF13120E7414E001C52C0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF13D20E74171001C52C0 /* BPAutoLayoutHuggingViewController.h */,
+				01DBF13E20E74171001C52C0 /* BPAutoLayoutHuggingViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01DBF13220E7414E001C52C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01DBF13320E7414F001C52C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01DBF13420E7414F001C52C0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		01DBF13520E74153001C52C0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF14020E74195001C52C0 /* BPAutoLayoutPriorityViewController.h */,
+				01DBF14120E74195001C52C0 /* BPAutoLayoutPriorityViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01DBF13620E74154001C52C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01DBF13720E74154001C52C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01DBF13820E74154001C52C0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		01DBF13920E74159001C52C0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF14320E741A4001C52C0 /* BPAutoLayoutEqualInsetViewController.h */,
+				01DBF14420E741A4001C52C0 /* BPAutoLayoutEqualInsetViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01DBF14620E741C0001C52C0 /* BaseUse */ = {
+			isa = PBXGroup;
+			children = (
+				01B0758020E4FD0C004891F7 /* Controllers */,
+			);
+			path = BaseUse;
+			sourceTree = "<group>";
+		};
+		01DBF14720E7423A001C52C0 /* Scroll */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF14820E7423F001C52C0 /* Controllers */,
+				01DBF14920E7423F001C52C0 /* Models */,
+				01DBF14B20E74240001C52C0 /* ViewModels */,
+				01DBF14A20E74240001C52C0 /* Views */,
+			);
+			path = Scroll;
+			sourceTree = "<group>";
+		};
+		01DBF14820E7423F001C52C0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF14C20E7424D001C52C0 /* BPAutoLayoutScrollViewController.h */,
+				01DBF14D20E7424D001C52C0 /* BPAutoLayoutScrollViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01DBF14920E7423F001C52C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		01DBF14A20E74240001C52C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF15F20E783F9001C52C0 /* BPAutoLayoutScrollView.h */,
+				01DBF16020E783F9001C52C0 /* BPAutoLayoutScrollView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01DBF14B20E74240001C52C0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		01DBF14F20E773E5001C52C0 /* PreferredMaxLayoutWidth */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF15020E773FF001C52C0 /* Controllers */,
+				01DBF15120E773FF001C52C0 /* Views */,
+			);
+			path = PreferredMaxLayoutWidth;
+			sourceTree = "<group>";
+		};
+		01DBF15020E773FF001C52C0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF15220E7740D001C52C0 /* BPPreferredMaxLayoutWidthViewController.h */,
+				01DBF15320E7740D001C52C0 /* BPPreferredMaxLayoutWidthViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01DBF15120E773FF001C52C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF15520E7741F001C52C0 /* BPPreferredMaxLayoutWidthView.h */,
+				01DBF15620E7741F001C52C0 /* BPPreferredMaxLayoutWidthView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		01DBF15820E77751001C52C0 /* UpdateConstraints */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF15920E77775001C52C0 /* BPAutoLayoutUpdateConstraintsController.h */,
+				01DBF15A20E77775001C52C0 /* BPAutoLayoutUpdateConstraintsController.m */,
+				01DBF15C20E77796001C52C0 /* BPAutoLayoutUpdateView.h */,
+				01DBF15D20E77796001C52C0 /* BPAutoLayoutUpdateView.m */,
+			);
+			path = UpdateConstraints;
+			sourceTree = "<group>";
+		};
+		01DBF16220E7AF4F001C52C0 /* ConstraintsArray */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF16320E7AF56001C52C0 /* Controllers */,
+				01DBF16420E7AF56001C52C0 /* Views */,
+			);
+			path = ConstraintsArray;
+			sourceTree = "<group>";
+		};
+		01DBF16320E7AF56001C52C0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF16820E7B081001C52C0 /* BPAutolayoutConstraintsArrayViewController.h */,
+				01DBF16920E7B081001C52C0 /* BPAutolayoutConstraintsArrayViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		01DBF16420E7AF56001C52C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01DBF16520E7B070001C52C0 /* BPAutolayoutConstraintsArrayView.h */,
+				01DBF16620E7B070001C52C0 /* BPAutolayoutConstraintsArrayView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		01DF315F1FDD3A0800B8A955 /* CAShapeLayer */ = {
@@ -8511,6 +8814,7 @@
 				017CF98D20D3AE0100D9AA30 /* BPCollectionViewNestGestureCategotyDetailTableViewCell.xib in Resources */,
 				011E8D9B20B2F7BA00B04378 /* BPPlanCalendarTableViewCell.xib in Resources */,
 				015805B420CAE5D000D0EF7C /* BPTopCategoryListView.xib in Resources */,
+				0167A35320E619DB00F13905 /* BPBaselineViewController.xib in Resources */,
 				010FBD2620601D9E00BC9EC4 /* palette.jpeg in Resources */,
 				017907E3200144F200E5C360 /* bookcatalogue.toc in Resources */,
 				011E8DA020B2F7BA00B04378 /* BPPlanCalendarViewController.xib in Resources */,
@@ -8522,6 +8826,7 @@
 				015805B320CAE5D000D0EF7C /* BPTopCategoryListContainerCollectionViewCell.xib in Resources */,
 				011E8D9D20B2F7BA00B04378 /* BPPlanGeneralTableViewCell.xib in Resources */,
 				017CF98320D3AE0100D9AA30 /* BPCollectionViewNestGestureViewController.xib in Resources */,
+				0167A35820E619F100F13905 /* BPTransformViewController.xib in Resources */,
 				01A597A82085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.xib in Resources */,
 				013ED92F20C7DE0400A83E7F /* BPIncludeTableSelfSizeInsideHeaderView.xib in Resources */,
 				0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */,
@@ -8540,6 +8845,7 @@
 				01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */,
 				015805BB20CAE5D000D0EF7C /* BPTopCategoryListTagView.xib in Resources */,
 				01B075A820E4FD0C004891F7 /* BPXIBAutoLayoutProcessViewController.xib in Resources */,
+				011F91C420E6662900124DC1 /* BPDebugViewController.xib in Resources */,
 				01A597AA2085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.xib in Resources */,
 				013ED90820C7DB3C00A83E7F /* BPIncludeTableSystemLayoutInsideTableViewCell.xib in Resources */,
 				01A1921F2004E61F005EE4CD /* BPCollectionReusableFootView.xib in Resources */,
@@ -8644,6 +8950,7 @@
 			files = (
 				017A9A9B1FDD315A00CDA599 /* UIView+BPSafeArea.m in Sources */,
 				017A9AA01FDD316C00CDA599 /* UIViewController+BPAdd.m in Sources */,
+				01DBF15720E7741F001C52C0 /* BPPreferredMaxLayoutWidthView.m in Sources */,
 				0149953D1FB4A3F900077866 /* BPRootNavigationController.m in Sources */,
 				011E8DC120B2FB3300B04378 /* BPCalendarWeekCell.m in Sources */,
 				018C449D20093F8900CF43D7 /* BPSliderShowView.m in Sources */,
@@ -8658,9 +8965,11 @@
 				0179070920011D9E00E5C360 /* BPBlockViewController.m in Sources */,
 				01F2CE8320AABF7000F1D701 /* DHScrollTabbarView.m in Sources */,
 				01B075C920E4FD0D004891F7 /* BPIntrinsicContentSizeLabel.m in Sources */,
+				01DBF15420E7740D001C52C0 /* BPPreferredMaxLayoutWidthViewController.m in Sources */,
 				010DB7441FDD4D450099E66F /* UIImage+BPBetterFace.m in Sources */,
 				01D6FBA520C80ED900AD8A6E /* BPIncludeTableManualController.m in Sources */,
 				010DB75A1FDD4D450099E66F /* UIFont+BPTTF.m in Sources */,
+				0167A35720E619F100F13905 /* BPTransformViewController.m in Sources */,
 				0140A13820DBDBA700EF35E4 /* BPImagetUrlHelper.m in Sources */,
 				01DF31C61FDD3A9100B8A955 /* NSURLConnection+BPSelfSigned.m in Sources */,
 				017CF90C20D217F800D9AA30 /* BPInsideSliderShowView.m in Sources */,
@@ -8725,6 +9034,7 @@
 				011B7DD1206906CB0071CB5D /* BPAppInfoTool.m in Sources */,
 				01D6FBC020C832E300AD8A6E /* BPMultiLevelCatalogueModel+BPHeight.m in Sources */,
 				010DB7101FDD4D450099E66F /* UIImageView+BPAddition.m in Sources */,
+				01DBF14E20E7424D001C52C0 /* BPAutoLayoutScrollViewController.m in Sources */,
 				010DB7131FDD4D450099E66F /* UIAlertView+BPBlock.m in Sources */,
 				01C31F84200FA1CD0096C2E0 /* BPAnchorPopView.m in Sources */,
 				01D22BE61FDD814000BCC4AD /* NSMutableDictionary+BPAdd.m in Sources */,
@@ -8803,6 +9113,7 @@
 				01DF32451FDD3B3D00B8A955 /* NSObject+BPReflection.m in Sources */,
 				011E8D7C20B2F7AA00B04378 /* BPCalendarModel.m in Sources */,
 				0158054220CADF3F00D0EF7C /* BPDataManager.m in Sources */,
+				01DBF16120E783F9001C52C0 /* BPAutoLayoutScrollView.m in Sources */,
 				01DF32201FDD3B3000B8A955 /* NSString+BPStringPages.m in Sources */,
 				01B075B920E4FD0C004891F7 /* BPAutoresizingViewController.m in Sources */,
 				01D22BE41FDD814000BCC4AD /* NSDictionary+BPAdd.m in Sources */,
@@ -8838,6 +9149,7 @@
 				010DB7321FDD4D450099E66F /* UIScrollView+BPPages.m in Sources */,
 				01E1DC26202ECDB100529ADB /* BPVolumeQueueHelper.m in Sources */,
 				01B075C120E4FD0C004891F7 /* BPAlignmentRectInsetsController.m in Sources */,
+				01DBF15E20E77796001C52C0 /* BPAutoLayoutUpdateView.m in Sources */,
 				01D22BD51FDD814000BCC4AD /* CALayer+BPAddForFrame.m in Sources */,
 				011E8DA120B2F7BA00B04378 /* BPPlanCalendarViewController.m in Sources */,
 				019AA91820205BE80090B038 /* CADisplayLink+BPAdd.m in Sources */,
@@ -8854,6 +9166,7 @@
 				015805B920CAE5D000D0EF7C /* BPTopCategoryListTagCollectionViewCell.m in Sources */,
 				01DF32601FDD3B9D00B8A955 /* NSData+BPGzip.m in Sources */,
 				011E8DCB20B3182700B04378 /* BPCustomTableViewController.m in Sources */,
+				01DBF16A20E7B081001C52C0 /* BPAutolayoutConstraintsArrayViewController.m in Sources */,
 				01A192202004E61F005EE4CD /* BPCollectionReusableHeadView.m in Sources */,
 				01D22BD01FDD814000BCC4AD /* UICollectionViewFlowLayout+BPAdd.m in Sources */,
 				01D22BE21FDD814000BCC4AD /* UIImageView+BPAdd.m in Sources */,
@@ -8899,6 +9212,7 @@
 				016DADC720582FB100AA95EC /* NSArray+BPSafeAccess.m in Sources */,
 				01B075A220E4FD0C004891F7 /* BPDrawViewLayer.m in Sources */,
 				015804E520CACF6D00D0EF7C /* BPTestViewController.m in Sources */,
+				01DBF15B20E77775001C52C0 /* BPAutoLayoutUpdateConstraintsController.m in Sources */,
 				017A9A431FDD2B8C00CDA599 /* NSNumber+BPDecimalNumber.m in Sources */,
 				01CFEA6F20DD522A00032ACD /* BPRotatingScreenPushiewController.m in Sources */,
 				018972BF1FC4802400D6DF5B /* BPBaseCollectionReusableView.m in Sources */,
@@ -8971,6 +9285,7 @@
 				0160718A204D3530009C66A2 /* PHAsset+BPAdd.m in Sources */,
 				0137C760207C952700F6B6CE /* BPTextCompositionViewController.m in Sources */,
 				010DB7AD1FDD4D6F0099E66F /* UIButton+BPTouchAreaInsets.m in Sources */,
+				0167A35220E619DB00F13905 /* BPBaselineViewController.m in Sources */,
 				01A597AB2085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.m in Sources */,
 				01DF31CB1FDD3A9100B8A955 /* NSNotificationCenter+BPMainThread.m in Sources */,
 				0158056820CAE57C00D0EF7C /* BPCollectionPageViewController.m in Sources */,
@@ -9006,6 +9321,7 @@
 				0158050E20CADE2300D0EF7C /* KSCellProgressController.m in Sources */,
 				0173401F1FA9753F006192F0 /* BPBaseTabBarController.m in Sources */,
 				013ED92E20C7DE0400A83E7F /* BPIncludeTableSelfSizeInsideHeaderView.m in Sources */,
+				01DBF16720E7B070001C52C0 /* BPAutolayoutConstraintsArrayView.m in Sources */,
 				017CF98420D3AE0100D9AA30 /* BPCollectionViewNestGestureViewController.m in Sources */,
 				010DB78F1FDD4D640099E66F /* UIView+BPNib.m in Sources */,
 				018C44CF2009E03D00CF43D7 /* BPCardPageFlowViewCell.m in Sources */,
@@ -9013,6 +9329,7 @@
 				01C0B6211FFC87AB005BB4A5 /* PaletteColorUtils.m in Sources */,
 				017907CE2001336100E5C360 /* BPAlertViewController.m in Sources */,
 				0128926620DFF47200B9370F /* BPAppearanceViewController.m in Sources */,
+				01DBF14520E741A4001C52C0 /* BPAutoLayoutEqualInsetViewController.m in Sources */,
 				017F82CE2063A8B800B656BA /* BPSubAddChildViewController.m in Sources */,
 				01D6FBC120C832E300AD8A6E /* BPMultiLevelCatalogueModel.m in Sources */,
 				0174CC0E20E4BA5400A62977 /* BPInheritSubObject.m in Sources */,
@@ -9060,6 +9377,7 @@
 				016DADCB20582FB100AA95EC /* NSArray+BPSafe.m in Sources */,
 				01D22BC51FDD814000BCC4AD /* UINavigationController+BPAdd.m in Sources */,
 				01D22BDB1FDD814000BCC4AD /* NSString+BPAdd.m in Sources */,
+				011F91C320E6662900124DC1 /* BPDebugViewController.m in Sources */,
 				010DB71B1FDD4D450099E66F /* UIWebView+BPLoadInfo.m in Sources */,
 				01DF32431FDD3B3D00B8A955 /* NSObject+BPAssociatedObject.m in Sources */,
 				010DB7081FDD4D450099E66F /* UILabel+BPSuggestSize.m in Sources */,
@@ -9198,6 +9516,7 @@
 				01D22BC81FDD814000BCC4AD /* Foundation+Log.m in Sources */,
 				01DF316E1FDD3A0900B8A955 /* CAShapeLayer+BPUIBezierPath.m in Sources */,
 				017906E120011C7E00E5C360 /* BPKVCModel.m in Sources */,
+				01DBF13F20E74171001C52C0 /* BPAutoLayoutHuggingViewController.m in Sources */,
 				01D6FBC220C832E300AD8A6E /* BPMultiLevelCatalogueModelDataSource.m in Sources */,
 				010DB7561FDD4D450099E66F /* UIControl+BPBlock.m in Sources */,
 				017A9A8E1FDD311D00CDA599 /* NSDate+BPUtilities.m in Sources */,
@@ -9263,6 +9582,7 @@
 				010DB7511FDD4D450099E66F /* UINavigationController+BPTransitions.m in Sources */,
 				010DB7401FDD4D450099E66F /* UIImage+BPRemoteSize.m in Sources */,
 				01790761200120CF00E5C360 /* NSObject+Log.m in Sources */,
+				01DBF14220E74195001C52C0 /* BPAutoLayoutPriorityViewController.m in Sources */,
 				010DB73C1FDD4D450099E66F /* UIImage+BPResize.m in Sources */,
 				01790760200120CF00E5C360 /* UIImage+Swizzling.m in Sources */,
 			);

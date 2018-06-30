@@ -28,6 +28,8 @@ intrinsicContentSize：
  2. 对于B类View，设置关于位置的约束一般就可以完整显示出来，但是要注意文字的换行问题（可以使用preferredMaxLayoutWidth，当然如果你宽度约束设置对了，可以忽略此方法）；当设置完位置约束后，AutoLayout会向此对象回调intrinsicContentSize方法，这个方法会根据B类View的属性（字体，字符串）返回size给autolayout，对于A类C类，因为没有Content，所以返回（-1，-1）
  3. 对于C类View，同A类，需要设置size相关的约束，因为它是可以滚动的，intrinsicContentSize返回（-1，-1），可以使用方法sizeThatFits获取size；
  
+ 注意：
+ 不要重写intrinsicContentSize，会侵害内容，建议重写对齐矩形alignmentRectInsets
  */
 
 @interface BPIntrinsicContentSizeController ()

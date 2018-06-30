@@ -13,18 +13,24 @@
 
 @implementation BPAlignmentRectInsetsLabel
 
-- (UIEdgeInsets)alignmentRectInsets {
-    return UIEdgeInsetsMake(-10.0, .0, -10.0, .0);
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    BPLog(@"%@",NSStringFromCGRect(self.frame));
 }
 
-//- (CGSize)intrinsicContentSize {
-//    CGSize size = [super intrinsicContentSize];
-//    if (self.text && [self.text length] > 0) {
-////        size.width += self.intervalSize.width;
-////        size.height += self.intervalSize.height;
-//        size.height+=20;
-//    }
-//    return size;
+//UIView 提供了方法，由 frame 得到 alignment rect：
+//- (CGRect)alignmentRectForFrame:(CGRect)frame {
+//    
 //}
+
+//它得可逆，也就是说得能从 alignment rect 反过来得到 frame：
+//- (CGRect)frameForAlignmentRect:(CGRect)alignmentRect {
+//
+//}
+
+//考虑到每次重写这两个方法比较烦，系统也提供了一个简便方法，由 inset 来指定 frame 与 aligment rect 的关系：
+- (UIEdgeInsets)alignmentRectInsets {
+    return UIEdgeInsetsMake(-10.0, -10.0, -10.0, -10.0);
+}
 
 @end

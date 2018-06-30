@@ -24,8 +24,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self setText];
-    
 }
+
 - (void)updateIndex:(NSInteger)index text:(NSString *)text {
     UILabel *label = self.array[index];
     label.text = text;

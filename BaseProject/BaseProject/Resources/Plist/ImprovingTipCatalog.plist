@@ -184,5 +184,13 @@
 		<key>briefIntro</key>
 		<string></string>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>调试技巧</string>
+		<key>fileName</key>
+		<string>BPDebugViewController</string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
 </array>
 </plist>

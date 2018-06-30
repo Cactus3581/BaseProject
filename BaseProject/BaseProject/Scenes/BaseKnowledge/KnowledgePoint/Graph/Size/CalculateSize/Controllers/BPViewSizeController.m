@@ -9,9 +9,13 @@
 #import "BPViewSizeController.h"
 
 /*
+ http://www.cocoachina.com/industry/20131012/7148.html
+ */
+
+/*
  
  想弄懂的是在布局未完成下不同类型UIView子类如何计算Size(不包括后期的显示，当然显示效果是正确的)：
- 1. 未布局完成，直接读取bgView肯定是不行的
+ 1. 未布局完成，直接读取frame肯定是不行的
  2. 布局完成，可以直接读取
  
  使用autolayout 设置约束后，不能立即获取 frame值的原因:
@@ -27,7 +31,8 @@
  获取UIView的size的UIView对象方法，iOS6之后出现的，仅用于那些使用AutoLayout的View对象上面的，并且可以提前立即计算好size；计算原理是通过约束+content；一般是计算拥有正确约束并且拥有subViews的ParentView；用于在view完成布局前（layoutSubViews之前）获取size值，如果view的constraints确保了完整性和正确性，通常它的返回值就是view完成布局之后的view.frame.size的值。
  2. intrinsicContentSize：
  含义：固定内容大小；但是开发者不会直接使用
- 3. sizeThatFits：根据字符串及字体计算出来的size；一般用于单个带content的view，比如UILabel，比如UITextView；在计算size过程中，不需要考虑constraints；根据文本计算最适合UITextView的size；对于滚动的View，可以使用方法sizeThatFits获取size；sizeThatFits在布局未完成之前对UIView的对象算不出来；
+ 3. sizeThatFits：根据字符串及字体计算出来的size；一般用于单个带content的view，比如UILabel，比如UITextView；在计算size过程中，不需要考虑constraints；根据文本计算最适合UITextView的size；对于滚动的View，可以使用方法sizeThatFits获取size；sizeThatFits在布局未完成之前对UIView的对象算不出来；sizeToFit和sizeThatFits方法都没有递归，对subviews也不负责，只负责自己
+
  4. sizetoFit：一般用于frame设置的view； = sizeThatFits + 立即布局
  5. [self.view layoutIfNeeded]：立即进行布局，用于获取布局后的值，相当于调用了updateViewConstraints，viewWillLayoutSubviews等方法，调用后可以立即获取frame
  6. preferredMaxLayoutWidth:解决文字的换行问题（当然如果你宽度约束设置对了，可以忽略此方法）；如果使用绝对布局，可以不用写，如果是用相对布局，需要写；Label的属性值小于等于preferredMaxLayoutWidth的属性值；
@@ -50,9 +55,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self testLabel];
+    [self testLabel];
 //    [self testLabel_label_bgView];
-    [self testLabel_textView_bgView];
+//    [self testLabel_textView_bgView];
+}
+
+- (void)configLayoutStyle {
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)viewDidLayoutSubviews {
@@ -63,7 +72,7 @@
     
     [self.view addSubview:self.label];
     [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_topLayoutGuideTop).offset(10);
+        make.top.equalTo(self.view).offset(10);
         make.leading.equalTo(self.view).offset(10);
         make.trailing.equalTo(self.view).offset(-10);
     }];
@@ -76,15 +85,16 @@
     size1 = [self.label sizeThatFits:CGSizeMake(kScreenWidth-20, MAXFLOAT)]; //OK:{348, 50.5}
     BPLog(@"%@",NSStringFromCGSize(size1));
 
+    // 计算不准确：因为，此时调用这个方法，autoLayout会让Label的固有内容API提供值，而label的宽度值及折行的范围没有确定，所以会按照单行来计算值，返回的固有内容值不对，因此systemLayoutSizeFittingSize计算出来的值也不对
     size2 = [self.label systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];//NO:{738.5, 17}
     BPLog(@"%@",NSStringFromCGSize(size2));
     
-
     self.label.preferredMaxLayoutWidth = kScreenWidth-20;
 //    [self.label mas_updateConstraints:^(MASConstraintMaker *make) {
 //        make.width.mas_equalTo(kScreenWidth-20);
 //    }];
 
+    //此时AutoLayout要的固有内容值是正确的，因此systemLayoutSizeFittingSize计算出来的值也不对
     size2 = [self.label systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];//OK:{355, 50.5}
     BPLog(@"%@",NSStringFromCGSize(size2));
     
@@ -107,7 +117,7 @@
     self.label1.text = @"天地玄黄 宇宙洪荒 日月盈昃 辰宿列张;天地玄黄 宇宙洪荒，天地玄黄 宇宙洪荒 日月盈昃 辰宿列张;天地玄黄 宇宙洪荒";
 
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_topLayoutGuideTop).offset(10);
+        make.top.equalTo(self.view).offset(10);
         make.leading.trailing.equalTo(self.view);
     }];
     
@@ -134,6 +144,7 @@
     size = [self.bgView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     BPLog(@"%@",NSStringFromCGSize(size));//NO:{758.5, 64}
     
+    //sizeToFit和sizeThatFits方法都没有递归，对subviews也不负责，只负责自己
     size = [self.bgView sizeThatFits:CGSizeMake(kScreenWidth, MAXFLOAT)];
     BPLog(@"%@",NSStringFromCGSize(size));//NO:{0, 0}
     
@@ -173,7 +184,7 @@
     self.textView.text = @"天地玄黄 宇宙洪荒 日月盈昃 辰宿列张;天地玄黄 宇宙洪荒，天地玄黄 宇宙洪荒 日月盈昃 辰宿列张;天地玄黄 宇宙洪荒";
 
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_topLayoutGuideTop).offset(10);
+        make.top.equalTo(self.view).offset(10);
         make.leading.trailing.equalTo(self.view);
     }];
     

@@ -58,7 +58,7 @@
 	<string>需要您的同意,才能访问相机</string>
 	<key>NSLocationUsageDescription</key>
 	<string>需要您的同意,才能访问位置</string>
-	<key>NSMicrophoneUsageDescription - 2</key>
+	<key>NSMicrophoneUsageDescription</key>
 	<string>需要您的同意,才能访问麦克风</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>需要您的同意,才能访问相册</string>
