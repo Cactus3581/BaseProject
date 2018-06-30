@@ -27,6 +27,7 @@
     [super updateConstraints];
 }
 
+#pragma mark - 方法2.2
 - (void)layoutSubviews {
     [super layoutSubviews];
 //    [_view1 mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -37,7 +38,6 @@
 - (void)getFrame {
     [self setNeedsLayout];
     [self layoutIfNeeded];
-    BPLog(@"%.2f",self.width);
 }
 
 - (void)initSubViews {
@@ -49,6 +49,7 @@
         make.center.equalTo(self);
         make.width.height.mas_equalTo(self.width/2.0);
     }];
+    
     [self setNeedsLayout];
     [self layoutIfNeeded];
     view1.backgroundColor = kExplicitColor;

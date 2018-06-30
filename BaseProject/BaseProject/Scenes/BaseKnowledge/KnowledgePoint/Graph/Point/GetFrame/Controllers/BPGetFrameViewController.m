@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    BPLog(@"self.view viewDidLoad = %@",NSStringFromCGRect(self.view.frame));
     BPGetFrameView *getFrameView = [[BPGetFrameView alloc] init];
     _getFrameView = getFrameView;
     [self.view addSubview:getFrameView];
@@ -25,16 +26,20 @@
         make.center.equalTo(self.view);
         make.width.height.mas_equalTo(100);
     }];
+    BPLog(@"getFrameView init = %@",NSStringFromCGRect(self.getFrameView.frame));
+
+#pragma mark - 方法1
     [_getFrameView getFrame];
+
 //    [self.view setNeedsLayout];
 //    [self.view layoutIfNeeded];
     getFrameView.backgroundColor = kThemeColor;
 }
 
+#pragma mark - 方法2.1
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     BPLog(@"%.2f",_getFrameView.width);
-
 }
 
 - (void)didReceiveMemoryWarning {

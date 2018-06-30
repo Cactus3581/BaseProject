@@ -6692,11 +6692,10 @@
 			children = (
 				01B0752C20E4FD0C004891F7 /* Animation */,
 				01B0751C20E4FD0C004891F7 /* Drawing */,
-				01B0755120E4FD0C004891F7 /* GetFrame */,
 				01B0755820E4FD0C004891F7 /* Layer */,
 				01B0753520E4FD0C004891F7 /* Layout_ Process */,
 				01B0756B20E4FD0C004891F7 /* Layout_Method */,
-				01B0758620E4FD0C004891F7 /* Size */,
+				01B0758620E4FD0C004891F7 /* Point */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -6897,8 +6896,8 @@
 		01B0755220E4FD0C004891F7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				01B0755320E4FD0C004891F7 /* BPGetFrameViewController.m */,
 				01B0755420E4FD0C004891F7 /* BPGetFrameViewController.h */,
+				01B0755320E4FD0C004891F7 /* BPGetFrameViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -7087,9 +7086,10 @@
 			path = Frame;
 			sourceTree = "<group>";
 		};
-		01B0758620E4FD0C004891F7 /* Size */ = {
+		01B0758620E4FD0C004891F7 /* Point */ = {
 			isa = PBXGroup;
 			children = (
+				01B0755120E4FD0C004891F7 /* GetFrame */,
 				01DBF14F20E773E5001C52C0 /* PreferredMaxLayoutWidth */,
 				0167A34E20E619C600F13905 /* Baseline */,
 				0167A34D20E619B100F13905 /* Transform */,
@@ -7097,7 +7097,7 @@
 				01B0759420E4FD0C004891F7 /* CalculateSize */,
 				01B0759820E4FD0C004891F7 /* IntrinsicContentSize */,
 			);
-			path = Size;
+			path = Point;
 			sourceTree = "<group>";
 		};
 		01B0758720E4FD0C004891F7 /* AlignmentRectInsets */ = {
