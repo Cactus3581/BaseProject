@@ -39,55 +39,6 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>AddChildVC</string>
-		<key>fileName</key>
-		<string>BPParentAddChildViewController</string>
-		<key>briefIntro</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>模态</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>模态1</string>
-				<key>fileName</key>
-				<string>BPPresentAViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;0&quot;}</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>模态2</string>
-				<key>fileName</key>
-				<string>BPPresentAViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;1&quot;}</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>模态3</string>
-				<key>fileName</key>
-				<string>BPPresentAViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;2&quot;}</string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>其他项目测试用</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>

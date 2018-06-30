@@ -2812,14 +2812,12 @@
 		010FBC3F206018B500BC9EC4 /* ImprovingTips */ = {
 			isa = PBXGroup;
 			children = (
-				017F82C82063A87B00B656BA /* AddChildVC */,
 				01EF2C1C20AD352700DF98FB /* CollectionView */,
 				015120FC20CBF03100B33A76 /* DynamicJump */,
 				011CD74B20CE18E600560EE6 /* MasksToBounds */,
 				016D959E20E37FCB00651EDE /* MathFunction */,
 				01F750A2209EDF7100C1F24C /* OtherProject */,
 				010FBD1120601D9D00BC9EC4 /* Palette */,
-				0137C73A207B3AA800F6B6CE /* Present */,
 				01E5142420DCEA4A00E6CFD0 /* RotatingScreen */,
 				0128925F20DE014700B9370F /* StatusBar */,
 				012D189E20AC1F4600C3E437 /* TableView */,
@@ -3460,7 +3458,7 @@
 			path = KVC;
 			sourceTree = "<group>";
 		};
-		0137C73A207B3AA800F6B6CE /* Present */ = {
+		0137C73A207B3AA800F6B6CE /* Normal */ = {
 			isa = PBXGroup;
 			children = (
 				0137C73B207B3AD200F6B6CE /* BPPresentAViewController.h */,
@@ -3470,7 +3468,7 @@
 				0137C741207B4A6000F6B6CE /* BPPresentCViewController.h */,
 				0137C742207B4A6000F6B6CE /* BPPresentCViewController.m */,
 			);
-			path = Present;
+			path = Normal;
 			sourceTree = "<group>";
 		};
 		0137C757207C94DF00F6B6CE /* ResearchDirection */ = {
@@ -6019,17 +6017,6 @@
 			path = Drawer;
 			sourceTree = "<group>";
 		};
-		017F82C82063A87B00B656BA /* AddChildVC */ = {
-			isa = PBXGroup;
-			children = (
-				017F82C92063A8AA00B656BA /* BPParentAddChildViewController.h */,
-				017F82CA2063A8AA00B656BA /* BPParentAddChildViewController.m */,
-				017F82CC2063A8B800B656BA /* BPSubAddChildViewController.h */,
-				017F82CD2063A8B800B656BA /* BPSubAddChildViewController.m */,
-			);
-			path = AddChildVC;
-			sourceTree = "<group>";
-		};
 		0184BF7A1FD6DA8B00CB9AAD /* TestUnit */ = {
 			isa = PBXGroup;
 			children = (
@@ -7997,6 +7984,8 @@
 		01DBF16D20E7D31B001C52C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				01DBF16F20E7D9F0001C52C0 /* Alert */,
+				0137C73A207B3AA800F6B6CE /* Normal */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -8004,8 +7993,19 @@
 		01DBF16E20E7D32F001C52C0 /* AddChildViewController */ = {
 			isa = PBXGroup;
 			children = (
+				017F82C92063A8AA00B656BA /* BPParentAddChildViewController.h */,
+				017F82CA2063A8AA00B656BA /* BPParentAddChildViewController.m */,
+				017F82CC2063A8B800B656BA /* BPSubAddChildViewController.h */,
+				017F82CD2063A8B800B656BA /* BPSubAddChildViewController.m */,
 			);
 			path = AddChildViewController;
+			sourceTree = "<group>";
+		};
+		01DBF16F20E7D9F0001C52C0 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		01DF315F1FDD3A0800B8A955 /* CAShapeLayer */ = {
