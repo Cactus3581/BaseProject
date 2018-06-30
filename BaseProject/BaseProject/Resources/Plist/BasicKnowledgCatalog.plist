@@ -152,7 +152,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>AutoLayout布局：系统、VFL</string>
+								<string>AutoLayout布局：原生写法、VFL写法</string>
 								<key>fileName</key>
 								<string>BPAutoLayoutCodeViewController</string>
 								<key>briefIntro</key>
@@ -160,7 +160,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>XIB布局：约束优先级，抗压缩，active</string>
+								<string>XIB布局：nib文件初始化</string>
 								<key>fileName</key>
 								<string>BPAutoLayoutXIBViewController</string>
 								<key>briefIntro</key>
@@ -185,7 +185,7 @@
 									</dict>
 									<dict>
 										<key>title</key>
-										<string>优先级的使用</string>
+										<string>约束优先级的使用</string>
 										<key>fileName</key>
 										<string>BPAutoLayoutPriorityViewController</string>
 										<key>briefIntro</key>
@@ -193,7 +193,7 @@
 									</dict>
 									<dict>
 										<key>title</key>
-										<string>抗压缩+内容吸附的使用</string>
+										<string>抗压缩+抗拉伸的使用</string>
 										<key>fileName</key>
 										<string>BPAutoLayoutHuggingViewController</string>
 										<key>briefIntro</key>
@@ -201,7 +201,7 @@
 									</dict>
 									<dict>
 										<key>title</key>
-										<string>等宽等间隔的使用</string>
+										<string>等宽+等间隔的使用</string>
 										<key>fileName</key>
 										<string>BPAutoLayoutEqualInsetViewController</string>
 										<key>briefIntro</key>
@@ -254,7 +254,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>AutoLayout:Masnory布局过程</string>
+								<string>Masnory布局过程</string>
 								<key>fileName</key>
 								<string>BPMasonryAutoLayoutProcessViewController</string>
 								<key>briefIntro</key>
@@ -262,7 +262,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>AutoLayout:XIB布局过程，XIB布局下的系统方法执行顺序</string>
+								<string>XIB布局过程及特有的系统方法</string>
 								<key>fileName</key>
 								<string>BPXIBAutoLayoutProcessViewController</string>
 								<key>briefIntro</key>
@@ -272,15 +272,42 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>绘制过程，自定义画图</string>
+						<string>绘制及异步渲染</string>
 						<key>fileName</key>
-						<string>BPDrawViewController</string>
+						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
 						<string></string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>视图绘制及绘制过程，自定义画图</string>
+								<key>fileName</key>
+								<string>BPDrawViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>异步绘制渲染</string>
+								<key>fileName</key>
+								<string></string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>图片编解码</string>
+								<key>fileName</key>
+								<string></string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+						</array>
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>重要属性：固有内容，抗性，对齐矩形，获取size</string>
+						<string>重要的几个点</string>
 						<key>fileName</key>
 						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
@@ -355,7 +382,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>Layer分类+属性+View仿射属性</string>
+						<string>Layer+贝塞尔曲线+View仿射属性</string>
 						<key>fileName</key>
 						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
@@ -442,6 +469,14 @@
 								<string>自定义转场动画及手势</string>
 								<key>fileName</key>
 								<string>BPSimpleTableController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>弹簧动画</string>
+								<key>fileName</key>
+								<string></string>
 								<key>briefIntro</key>
 								<string></string>
 							</dict>
