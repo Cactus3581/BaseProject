@@ -7,7 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BPDownLoadMacro.h"
+#import "BPAudioModel.h"
+#import "BPDownLoadItem.h"
+
+@class BPDownLoadGeneralView;
+
+@protocol BPDownLoadGeneralViewDelegate <NSObject>
+@optional
+
+- (void)downLoad:(BPDownLoadGeneralView *)downLoadGeneralView item:(BPAudioModel *)item;
+
+@end
+
 
 @interface BPDownLoadGeneralView : UIView
+
+- (void)setItem:(BPAudioModel *)item status:(BPDownLoadItemStatus)status;
+
+@property (nonatomic,weak) id <BPDownLoadGeneralViewDelegate> delegate;
 
 @end

@@ -14,8 +14,8 @@ typedef NS_ENUM(NSInteger, BPDownLoadItemStatus) {
     BPDownLoadItemPrepary,//准备下载
     BPDownLoadItemDowning,//下载中
     BPDownLoadItemPause,//暂停中
+    BPDownLoadItemSuccess,//已完成
     BPDownLoadItemFail,//下载失败
-    BPDownLoadItemSuccess//已完成
 };
 
 @interface BPDownLoadItem : NSObject

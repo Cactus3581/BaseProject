@@ -11,25 +11,38 @@
 #import "BPAudioModel.h"
 #import "UIImageView+WebCache.h"
 #import "BPDownLoadDataSource.h"
+#import "BPDownLoadGeneralView.h"
 
-@interface BPDownLoadOneFileViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
-@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UIButton *downLoadButton;
+@interface BPDownLoadOneFileViewController ()<UITableViewDelegate,UITableViewDataSource,BPDownLoadGeneralViewDelegate>
 @property (strong, nonatomic) NSArray *array;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) BPAudioModel *model;
-
+@property (weak, nonatomic) IBOutlet UIView *downLoadBackView;
+@property (weak, nonatomic) BPDownLoadGeneralView *downLoadView;
 @end
 
 @implementation BPDownLoadOneFileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configLayoutStyle];
+    [self setup];
     [self handleData];
     [self initializeViews];
+}
+
+- (void)downLoad:(BPDownLoadGeneralView *)downLoadGeneralView item:(BPAudioModel *)item {
+    
+}
+
+- (void)setup {
+    BPDownLoadGeneralView *downLoadView = [[[NSBundle mainBundle] loadNibNamed:@"BPDownLoadGeneralView" owner:self options:nil] lastObject];
+    _downLoadView = downLoadView;
+    _downLoadView.delegate = self;
+    [self.downLoadBackView addSubview:_downLoadView];
+    [_downLoadView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.downLoadBackView);
+    }];
 }
 
 - (void)configLayoutStyle {
@@ -42,8 +55,7 @@
 }
 
 - (void)initializeViews {
-    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:self.model.smallpic] placeholderImage:nil];
-    self.titleLabel.text = self.model.title;
+    [self.downLoadView setItem:self.model];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 50;

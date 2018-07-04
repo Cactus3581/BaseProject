@@ -179,6 +179,9 @@
 		012D948920344C7600691E40 /* BPPersonHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = 012D948820344C7600691E40 /* BPPersonHealth.m */; };
 		01349C4020EC958A00E50A86 /* BPDownLoadGeneralView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01349C3F20EC958A00E50A86 /* BPDownLoadGeneralView.m */; };
 		01349C4220EC959200E50A86 /* BPDownLoadGeneralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01349C4120EC959200E50A86 /* BPDownLoadGeneralView.xib */; };
+		01349C5020ECA6FD00E50A86 /* KSDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 01349C4E20ECA6FD00E50A86 /* KSDownloader.m */; };
+		01349C5520ECA71D00E50A86 /* BPDownLoadItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 01349C5420ECA71D00E50A86 /* BPDownLoadItem.m */; };
+		01349C5920ECA75100E50A86 /* BPDownLoadMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 01349C5820ECA75100E50A86 /* BPDownLoadMacro.m */; };
 		01352FE31FD2DDA20011D65C /* FeatureCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01352FE21FD2DDA20011D65C /* FeatureCatalog.plist */; };
 		0137C73D207B3AD200F6B6CE /* BPPresentAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C73C207B3AD200F6B6CE /* BPPresentAViewController.m */; };
 		0137C740207B3ADF00F6B6CE /* BPPresentBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C73F207B3ADF00F6B6CE /* BPPresentBViewController.m */; };
@@ -270,8 +273,6 @@
 		0159A62D20EC765200312293 /* BPDownLoadOneFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0159A62B20EC765200312293 /* BPDownLoadOneFileViewController.xib */; };
 		0159A63520EC782600312293 /* BPDownLoadMoreFilesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0159A63320EC782600312293 /* BPDownLoadMoreFilesTableViewCell.m */; };
 		0159A63620EC782600312293 /* BPDownLoadMoreFilesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0159A63420EC782600312293 /* BPDownLoadMoreFilesTableViewCell.xib */; };
-		0159A63A20EC796800312293 /* BPDownLoadItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0159A63920EC796800312293 /* BPDownLoadItem.m */; };
-		0159A63E20EC799100312293 /* BPDownLoadMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 0159A63D20EC799100312293 /* BPDownLoadMacro.m */; };
 		0159A64520EC863B00312293 /* BPAudioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0159A64420EC863B00312293 /* BPAudioModel.m */; };
 		0159A64820EC866A00312293 /* BPDownLoadDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0159A64720EC866A00312293 /* BPDownLoadDataSource.m */; };
 		0160718A204D3530009C66A2 /* PHAsset+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 01607189204D3530009C66A2 /* PHAsset+BPAdd.m */; };
@@ -1071,6 +1072,13 @@
 		01349C3E20EC958A00E50A86 /* BPDownLoadGeneralView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDownLoadGeneralView.h; sourceTree = "<group>"; };
 		01349C3F20EC958A00E50A86 /* BPDownLoadGeneralView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDownLoadGeneralView.m; sourceTree = "<group>"; };
 		01349C4120EC959200E50A86 /* BPDownLoadGeneralView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPDownLoadGeneralView.xib; sourceTree = "<group>"; };
+		01349C4E20ECA6FD00E50A86 /* KSDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSDownloader.m; sourceTree = "<group>"; };
+		01349C4F20ECA6FD00E50A86 /* KSDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSDownloader.h; sourceTree = "<group>"; };
+		01349C5320ECA71D00E50A86 /* BPDownLoadItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDownLoadItem.h; sourceTree = "<group>"; };
+		01349C5420ECA71D00E50A86 /* BPDownLoadItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDownLoadItem.m; sourceTree = "<group>"; };
+		01349C5620ECA74100E50A86 /* BPDownLoad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDownLoad.h; sourceTree = "<group>"; };
+		01349C5720ECA75100E50A86 /* BPDownLoadMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDownLoadMacro.h; sourceTree = "<group>"; };
+		01349C5820ECA75100E50A86 /* BPDownLoadMacro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDownLoadMacro.m; sourceTree = "<group>"; };
 		01352FE21FD2DDA20011D65C /* FeatureCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FeatureCatalog.plist; sourceTree = "<group>"; };
 		0137C73B207B3AD200F6B6CE /* BPPresentAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPresentAViewController.h; sourceTree = "<group>"; };
 		0137C73C207B3AD200F6B6CE /* BPPresentAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPresentAViewController.m; sourceTree = "<group>"; };
@@ -1241,10 +1249,6 @@
 		0159A63220EC782600312293 /* BPDownLoadMoreFilesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDownLoadMoreFilesTableViewCell.h; sourceTree = "<group>"; };
 		0159A63320EC782600312293 /* BPDownLoadMoreFilesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDownLoadMoreFilesTableViewCell.m; sourceTree = "<group>"; };
 		0159A63420EC782600312293 /* BPDownLoadMoreFilesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPDownLoadMoreFilesTableViewCell.xib; sourceTree = "<group>"; };
-		0159A63820EC796800312293 /* BPDownLoadItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDownLoadItem.h; sourceTree = "<group>"; };
-		0159A63920EC796800312293 /* BPDownLoadItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDownLoadItem.m; sourceTree = "<group>"; };
-		0159A63C20EC799100312293 /* BPDownLoadMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDownLoadMacro.h; sourceTree = "<group>"; };
-		0159A63D20EC799100312293 /* BPDownLoadMacro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDownLoadMacro.m; sourceTree = "<group>"; };
 		0159A64320EC863B00312293 /* BPAudioModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAudioModel.h; sourceTree = "<group>"; };
 		0159A64420EC863B00312293 /* BPAudioModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAudioModel.m; sourceTree = "<group>"; };
 		0159A64620EC866A00312293 /* BPDownLoadDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDownLoadDataSource.h; sourceTree = "<group>"; };
@@ -3496,6 +3500,44 @@
 			path = KVC;
 			sourceTree = "<group>";
 		};
+		01349C4920ECA55300E50A86 /* downLoadTool */ = {
+			isa = PBXGroup;
+			children = (
+				01349C5220ECA71200E50A86 /* Item */,
+				01349C5120ECA70B00E50A86 /* Macro */,
+				01349C4D20ECA6FD00E50A86 /* downLoader */,
+			);
+			path = downLoadTool;
+			sourceTree = "<group>";
+		};
+		01349C4D20ECA6FD00E50A86 /* downLoader */ = {
+			isa = PBXGroup;
+			children = (
+				01349C4F20ECA6FD00E50A86 /* KSDownloader.h */,
+				01349C4E20ECA6FD00E50A86 /* KSDownloader.m */,
+			);
+			path = downLoader;
+			sourceTree = "<group>";
+		};
+		01349C5120ECA70B00E50A86 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				01349C5620ECA74100E50A86 /* BPDownLoad.h */,
+				01349C5720ECA75100E50A86 /* BPDownLoadMacro.h */,
+				01349C5820ECA75100E50A86 /* BPDownLoadMacro.m */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		01349C5220ECA71200E50A86 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				01349C5320ECA71D00E50A86 /* BPDownLoadItem.h */,
+				01349C5420ECA71D00E50A86 /* BPDownLoadItem.m */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
 		0137C73A207B3AA800F6B6CE /* Normal */ = {
 			isa = PBXGroup;
 			children = (
@@ -4537,10 +4579,10 @@
 		0159A61220EC72E100312293 /* DownLoad */ = {
 			isa = PBXGroup;
 			children = (
-				0159A61E20EC737600312293 /* MoreFiles */,
-				0159A61D20EC736C00312293 /* OneFile */,
-				0159A61820EC734600312293 /* Tool */,
+				01349C4920ECA55300E50A86 /* downLoadTool */,
 				0159A61720EC733E00312293 /* DownLoadMainPage */,
+				0159A61D20EC736C00312293 /* OneFile */,
+				0159A61E20EC737600312293 /* MoreFiles */,
 			);
 			path = DownLoad;
 			sourceTree = "<group>";
@@ -4554,15 +4596,6 @@
 				0159A64220EC861A00312293 /* Views */,
 			);
 			path = DownLoadMainPage;
-			sourceTree = "<group>";
-		};
-		0159A61820EC734600312293 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				0159A63B20EC798400312293 /* Macro */,
-				0159A63720EC795000312293 /* Item */,
-			);
-			path = Tool;
 			sourceTree = "<group>";
 		};
 		0159A61D20EC736C00312293 /* OneFile */ = {
@@ -4579,17 +4612,9 @@
 			isa = PBXGroup;
 			children = (
 				0159A63020EC780600312293 /* Controllers */,
-				0159A62F20EC780500312293 /* Models */,
 				0159A63120EC780700312293 /* Views */,
 			);
 			path = MoreFiles;
-			sourceTree = "<group>";
-		};
-		0159A62F20EC780500312293 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		0159A63020EC780600312293 /* Controllers */ = {
@@ -4611,26 +4636,6 @@
 			);
 			path = Views;
 			sourceTree = "<group>";
-		};
-		0159A63720EC795000312293 /* Item */ = {
-			isa = PBXGroup;
-			children = (
-				0159A63820EC796800312293 /* BPDownLoadItem.h */,
-				0159A63920EC796800312293 /* BPDownLoadItem.m */,
-			);
-			name = Item;
-			path = BaseProject/Scenes/Features/DownLoad/MoreFiles/Views/Item;
-			sourceTree = SOURCE_ROOT;
-		};
-		0159A63B20EC798400312293 /* Macro */ = {
-			isa = PBXGroup;
-			children = (
-				0159A63C20EC799100312293 /* BPDownLoadMacro.h */,
-				0159A63D20EC799100312293 /* BPDownLoadMacro.m */,
-			);
-			name = Macro;
-			path = BaseProject/Scenes/Features/DownLoad/MoreFiles/Views/Item/Macro;
-			sourceTree = SOURCE_ROOT;
 		};
 		0159A63F20EC861900312293 /* DataSource */ = {
 			isa = PBXGroup;
@@ -9199,7 +9204,6 @@
 				01C31F86200FA1CD0096C2E0 /* BPAnchorAnimationView.m in Sources */,
 				017A9A361FDD2A9A00CDA599 /* BPPaddingLabel.m in Sources */,
 				01DF31D31FDD3A9100B8A955 /* NSTimer+BPAddition.m in Sources */,
-				0159A63E20EC799100312293 /* BPDownLoadMacro.m in Sources */,
 				010FBD0420601D3E00BC9EC4 /* BPWeiXinPhotoViewController.m in Sources */,
 				010DB72E1FDD4D450099E66F /* UIBezierPath+BPSymbol.m in Sources */,
 				01DF32171FDD3B3000B8A955 /* NSString+BPDictionaryValue.m in Sources */,
@@ -9261,7 +9265,6 @@
 				0158053220CADED000D0EF7C /* BPDatabaseViewController.m in Sources */,
 				010DB7291FDD4D450099E66F /* UISplitViewController+BPQuickAccess.m in Sources */,
 				01E5142920DCEA7100E6CFD0 /* BPRotatingScreenViewController.m in Sources */,
-				0159A63A20EC796800312293 /* BPDownLoadItem.m in Sources */,
 				01D22BE11FDD814000BCC4AD /* CALayer+BPAdd.m in Sources */,
 				0149953A1FB4A3D600077866 /* BPRootTabBarController.m in Sources */,
 				01EF2C2420AD35F400DF98FB /* BPTopCategoryCollectionViewController.m in Sources */,
@@ -9281,6 +9284,7 @@
 				014995331FB494D800077866 /* BPBaseTableView.m in Sources */,
 				018C44DA2009E74100CF43D7 /* BPCustomCardPageFlowViewController.m in Sources */,
 				010DB7521FDD4D450099E66F /* UINavigationController+BPKeyboardFix.m in Sources */,
+				01349C5520ECA71D00E50A86 /* BPDownLoadItem.m in Sources */,
 				017A9A2B1FDD22AB00CDA599 /* BPCacheTool.m in Sources */,
 				01DF32251FDD3B3000B8A955 /* NSString+BPURLEncode.m in Sources */,
 				017F82CB2063A8AA00B656BA /* BPParentAddChildViewController.m in Sources */,
@@ -9615,6 +9619,7 @@
 				010DB7501FDD4D450099E66F /* UINavigationController+BPStackManager.m in Sources */,
 				01DF32181FDD3B3000B8A955 /* NSString+BPMIME.m in Sources */,
 				010DB7371FDD4D450099E66F /* UITextField+BPInputLimit.m in Sources */,
+				01349C5920ECA75100E50A86 /* BPDownLoadMacro.m in Sources */,
 				018972C71FC481BF00D6DF5B /* BPBaseCollectionViewCell.m in Sources */,
 				0179070420011D8100E5C360 /* BPNetRequestViewController.m in Sources */,
 				01DF325B1FDD3B9D00B8A955 /* NSData+BPBase64.m in Sources */,
@@ -9706,6 +9711,7 @@
 				017CF94B20D3AD7500D9AA30 /* BPFlowCatergoryImageTagCell.m in Sources */,
 				01DF31D61FDD3A9100B8A955 /* NSDateFormatter+BPMake.m in Sources */,
 				017CF98E20D3AE0100D9AA30 /* BPCollectionViewNestGestureCategotyDetailHeader.m in Sources */,
+				01349C5020ECA6FD00E50A86 /* KSDownloader.m in Sources */,
 				01A597B32085CAF7000C6237 /* BP2NDCellAutoLayoutHeightViewController.m in Sources */,
 				015120F720CBD8A000B33A76 /* BPPopoverPresentationController.m in Sources */,
 				01C935BD1FC33A6B00D98FD6 /* BPSimpleViewModel.m in Sources */,

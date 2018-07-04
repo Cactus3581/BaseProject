@@ -11,7 +11,7 @@
 #import "BPDownLoadMacro.h"
 #import "BPDownLoadDataSource.h"
 
-@interface BPDownLoadMoreFilesViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface BPDownLoadMoreFilesViewController ()<UITableViewDelegate,UITableViewDataSource,BPDownLoadMoreFilesTableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *array;
 
@@ -25,9 +25,15 @@
     [self initializeViews];
 }
 
+- (void)downLoad:(BPDownLoadMoreFilesTableViewCell *)cell item:(BPAudioModel *)item indexPath:(NSIndexPath *)indexPath {
+    
+    
+}
+
 - (void)handleData {
     self.array = [BPDownLoadDataSource downLoadMoreDataSource];
 }
+
 #pragma mark - config rightBarButtonItem
 - (void)configRightBarButtomItem {
     UIView *view = [[UIView alloc] init];
@@ -71,7 +77,7 @@
 - (void)initializeViews {
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 100;
+    self.tableView.rowHeight = 120;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(BPDownLoadMoreFilesTableViewCell.class) bundle:nil] forCellReuseIdentifier:@"cell"];
 }
@@ -87,6 +93,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BPDownLoadMoreFilesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     [cell setItem:self.array[indexPath.row] indexPath:indexPath];
+    cell.delegate = self;
     cell.selectionStyle = UITableViewCellSelectionStyleDefault;
     return cell;
 }

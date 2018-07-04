@@ -8,26 +8,48 @@
 
 #import "BPDownLoadMoreFilesTableViewCell.h"
 #import "BPDownLoadMacro.h"
-#import "UIImageView+WebCache.h"
+#import "BPDownLoadGeneralView.h"
 
-@interface BPDownLoadMoreFilesTableViewCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
-@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UIButton *downLoadButton;
+@interface BPDownLoadMoreFilesTableViewCell ()<BPDownLoadGeneralViewDelegate>
+@property (weak, nonatomic) IBOutlet UIView *downLoadBackView;
+@property (weak, nonatomic) BPDownLoadGeneralView *downLoadView;
+@property (strong, nonatomic) BPAudioModel *model;
+@property (strong, nonatomic) NSIndexPath *indexPath;
 @end
 
 @implementation BPDownLoadMoreFilesTableViewCell
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        [self setup];
+    }
+    return self;
+}
+
+- (void)setup {
+    BPDownLoadGeneralView *downLoadView = [[[NSBundle mainBundle] loadNibNamed:@"BPDownLoadGeneralView" owner:self options:nil] lastObject];
+    _downLoadView.delegate = self;
+    _downLoadView = downLoadView;
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self.downLoadBackView addSubview:self.downLoadView];
+    [self.downLoadView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.downLoadBackView);
+    }];
+}
+
+- (void)downLoad:(BPDownLoadGeneralView *)downLoadGeneralView item:(BPAudioModel *)item {
+    if (_delegate && [_delegate respondsToSelector:@selector(downLoad:item:indexPath:)]) {
+        [_delegate downLoad:self item:self.model indexPath:self.indexPath];
+    }
 }
 
 - (void)setItem:(BPAudioModel *)item indexPath:(NSIndexPath *)indexPath {
-    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:item.smallpic] placeholderImage:nil];
-
-    self.titleLabel.text = item.title;
+    _model = item;
+    _indexPath = indexPath;
+    [self.downLoadView setItem:item];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -6,17 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BPDownLoadOneFileViewController">
             <connections>
-                <outlet property="coverImageView" destination="G3b-hf-D6C" id="0wI-3G-Xtc"/>
-                <outlet property="downLoadButton" destination="6a6-oM-DX5" id="6MG-af-0oV"/>
-                <outlet property="statusLabel" destination="lZy-l8-UhM" id="R6y-zv-83M"/>
+                <outlet property="downLoadBackView" destination="7PH-eS-O1b" id="Eqq-tj-k3w"/>
                 <outlet property="tableView" destination="Ipb-zM-rSV" id="zQ0-jr-Wd7"/>
-                <outlet property="titleLabel" destination="WVo-Hq-SUu" id="6ep-dS-deo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,48 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7PH-eS-O1b">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G3b-hf-D6C">
-                            <rect key="frame" x="15" y="15" width="98" height="98"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="G3b-hf-D6C" secondAttribute="height" multiplier="1:1" id="CL1-CZ-qPf"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVo-Hq-SUu">
-                            <rect key="frame" x="128" y="15" width="232" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZy-l8-UhM">
-                            <rect key="frame" x="166" y="88" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6a6-oM-DX5">
-                            <rect key="frame" x="306" y="79" width="54" height="34"/>
-                            <state key="normal" title="Button"/>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                    <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="6a6-oM-DX5" firstAttribute="bottom" secondItem="G3b-hf-D6C" secondAttribute="bottom" id="0Uo-1t-m5h"/>
-                        <constraint firstAttribute="height" constant="128" id="1uM-xF-NTX"/>
-                        <constraint firstAttribute="trailing" secondItem="WVo-Hq-SUu" secondAttribute="trailing" constant="15" id="4Op-rk-iWb"/>
-                        <constraint firstItem="lZy-l8-UhM" firstAttribute="bottom" secondItem="G3b-hf-D6C" secondAttribute="bottom" id="4oA-d2-Bv0"/>
-                        <constraint firstItem="lZy-l8-UhM" firstAttribute="leading" secondItem="G3b-hf-D6C" secondAttribute="trailing" constant="15" id="9ee-1k-Zxn"/>
-                        <constraint firstItem="WVo-Hq-SUu" firstAttribute="leading" secondItem="G3b-hf-D6C" secondAttribute="trailing" constant="15" id="MD3-Xv-m5M"/>
-                        <constraint firstItem="G3b-hf-D6C" firstAttribute="top" secondItem="7PH-eS-O1b" secondAttribute="top" constant="15" id="Mbd-LH-OIf"/>
-                        <constraint firstItem="WVo-Hq-SUu" firstAttribute="top" secondItem="G3b-hf-D6C" secondAttribute="top" id="WIq-IO-opN"/>
-                        <constraint firstAttribute="bottom" secondItem="G3b-hf-D6C" secondAttribute="bottom" constant="15" id="XKG-WN-eR5"/>
-                        <constraint firstAttribute="trailing" secondItem="6a6-oM-DX5" secondAttribute="trailing" constant="15" id="k9U-pc-pFZ"/>
-                        <constraint firstItem="G3b-hf-D6C" firstAttribute="leading" secondItem="7PH-eS-O1b" secondAttribute="leading" constant="15" id="lXY-cm-XEk"/>
+                        <constraint firstAttribute="height" constant="120" id="1uM-xF-NTX"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ipb-zM-rSV">
-                    <rect key="frame" x="0.0" y="128" width="375" height="539"/>
+                    <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
