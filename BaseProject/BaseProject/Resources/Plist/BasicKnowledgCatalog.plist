@@ -272,7 +272,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>绘制及渲染</string>
+						<string>绘制</string>
 						<key>fileName</key>
 						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
@@ -289,7 +289,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>异步绘制渲染</string>
+								<string>异步绘制</string>
 								<key>fileName</key>
 								<string></string>
 								<key>briefIntro</key>
@@ -382,7 +382,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>Layer+贝塞尔曲线+View仿射属性</string>
+						<string>图层Layer+贝塞尔曲线+View仿射属性</string>
 						<key>fileName</key>
 						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
@@ -1589,7 +1589,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>文字排版渲染</string>
+				<string>文字排版</string>
 				<key>fileName</key>
 				<string>BPTextCompositionViewController</string>
 				<key>briefIntro</key>
