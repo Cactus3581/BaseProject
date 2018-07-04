@@ -49,7 +49,7 @@
 - (void)setItem:(BPAudioModel *)item indexPath:(NSIndexPath *)indexPath {
     _model = item;
     _indexPath = indexPath;
-    [self.downLoadView setItem:item];
+    [self.downLoadView setItem:item status:BPDownLoadItemNone];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

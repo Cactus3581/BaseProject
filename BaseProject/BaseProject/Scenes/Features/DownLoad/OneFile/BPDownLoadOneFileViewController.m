@@ -55,7 +55,7 @@
 }
 
 - (void)initializeViews {
-    [self.downLoadView setItem:self.model];
+    [self.downLoadView setItem:self.model status:BPDownLoadItemNone];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 50;
