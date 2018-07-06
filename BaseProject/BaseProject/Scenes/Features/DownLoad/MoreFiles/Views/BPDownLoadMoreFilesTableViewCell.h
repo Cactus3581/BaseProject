@@ -21,7 +21,7 @@
 
 @interface BPDownLoadMoreFilesTableViewCell : UITableViewCell
 
-- (void)setItem:(BPAudioModel *)item indexPath:(NSIndexPath *)indexPath;
+- (void)setModel:(BPAudioModel *)item indexPath:(NSIndexPath *)indexPath;
 
 @property (nonatomic,weak) id <BPDownLoadMoreFilesTableViewCellDelegate> delegate;
 

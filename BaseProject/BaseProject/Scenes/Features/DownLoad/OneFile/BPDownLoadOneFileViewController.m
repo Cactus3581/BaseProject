@@ -12,6 +12,9 @@
 #import "UIImageView+WebCache.h"
 #import "BPDownLoadDataSource.h"
 #import "BPDownLoadGeneralView.h"
+#import "KSDownloader.h"
+#import "BPDownLoadItem.h"
+#import "BPDownLoad.h"
 
 @interface BPDownLoadOneFileViewController ()<UITableViewDelegate,UITableViewDataSource,BPDownLoadGeneralViewDelegate>
 @property (strong, nonatomic) NSArray *array;
@@ -29,10 +32,35 @@
     [self setup];
     [self handleData];
     [self initializeViews];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeStatusNotification:) name:kDownloadStatusNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeProgressNotification:) name:kDownloadDownLoadProgressNotification object:nil];
+
 }
 
-- (void)downLoad:(BPDownLoadGeneralView *)downLoadGeneralView item:(BPAudioModel *)item {
-    
+- (void)changeStatusNotification:(NSNotification *)notification {
+    BPDownLoadItem *item = [notification valueForKey:@"object"];
+    if (![item.downLoadUrl isEqualToString:self.model.mediaUrl]) {
+        return;
+    }
+    [self.downLoadView setItem:item];
+}
+
+- (void)changeProgressNotification:(NSNotification *)notification {
+    BPDownLoadItem *item = [notification valueForKey:@"object"];
+    if (![item.downLoadUrl isEqualToString:self.model.mediaUrl]) {
+        return;
+    }
+    [self.downLoadView setItem:item];
+}
+
+- (void)downLoad:(BPDownLoadGeneralView *)downLoadGeneralView item:(BPAudioModel *)model {
+    BPDownLoadItem *item = [[BPDownLoadItem alloc] init];
+    item.identify = model.identify;
+    item.downLoadUrl = model.mediaUrl;
+    item.title = model.title;
+    item.filepath = @"";
+    [[KSDownloader shareDownloader] downloadItem:item];
 }
 
 - (void)setup {
@@ -55,7 +83,7 @@
 }
 
 - (void)initializeViews {
-    [self.downLoadView setItem:self.model status:BPDownLoadItemNone];
+    [self.downLoadView setModel:self.model];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 50;
@@ -82,7 +110,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {

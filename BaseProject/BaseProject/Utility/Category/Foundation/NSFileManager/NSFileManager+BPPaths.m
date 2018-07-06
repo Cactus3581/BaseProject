@@ -5,59 +5,51 @@
 //  Created by xiaruzhen on 2017/12/10.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
+
 #import "NSFileManager+BPPaths.h"
 #include <sys/xattr.h>
 
 @implementation NSFileManager (BPPaths)
-+ (NSURL *)_URLForDirectory:(NSSearchPathDirectory)directory
-{
++ (NSURL *)bp_URLForDirectory:(NSSearchPathDirectory)directory {
     return [self.defaultManager URLsForDirectory:directory inDomains:NSUserDomainMask].lastObject;
 }
 
-+ (NSString *)_pathForDirectory:(NSSearchPathDirectory)directory
-{
++ (NSString *)bp_pathForDirectory:(NSSearchPathDirectory)directory {
     return NSSearchPathForDirectoriesInDomains(directory, NSUserDomainMask, YES)[0];
 }
 
-+ (NSURL *)_documentsURL
-{
-    return [self _URLForDirectory:NSDocumentDirectory];
++ (NSURL *)bp_documentsURL {
+    return [self bp_URLForDirectory:NSDocumentDirectory];
 }
 
-+ (NSString *)_documentsPath
-{
-    return [self _pathForDirectory:NSDocumentDirectory];
++ (NSString *)bp_documentsPath {
+    return [self bp_pathForDirectory:NSDocumentDirectory];
 }
 
-+ (NSURL *)_libraryURL
-{
-    return [self _URLForDirectory:NSLibraryDirectory];
++ (NSURL *)bp_libraryURL {
+    return [self bp_URLForDirectory:NSLibraryDirectory];
 }
 
-+ (NSString *)_libraryPath
-{
-    return [self _pathForDirectory:NSLibraryDirectory];
++ (NSString *)bp_libraryPath {
+    return [self bp_pathForDirectory:NSLibraryDirectory];
 }
 
-+ (NSURL *)_cachesURL
-{
-    return [self _URLForDirectory:NSCachesDirectory];
++ (NSURL *)bp_cachesURL {
+    return [self bp_URLForDirectory:NSCachesDirectory];
 }
 
-+ (NSString *)_cachesPath
-{
-    return [self _pathForDirectory:NSCachesDirectory];
++ (NSString *)bp_cachesPath {
+    return [self bp_pathForDirectory:NSCachesDirectory];
 }
 
-+ (BOOL)_addSkipBackupAttributeToFile:(NSString *)path
-{
++ (BOOL)bp_addSkipBackupAttributeToFile:(NSString *)path {
     return [[NSURL.alloc initFileURLWithPath:path] setResourceValue:@(YES) forKey:NSURLIsExcludedFromBackupKey error:nil];
 }
 
-+ (double)_availableDiskSpace
-{
-    NSDictionary *attributes = [self.defaultManager attributesOfFileSystemForPath:self._documentsPath error:nil];
++ (double)bp_availableDiskSpace {
+    NSDictionary *attributes = [self.defaultManager attributesOfFileSystemForPath:self.bp_documentsPath error:nil];
     
     return [attributes[NSFileSystemFreeSize] unsignedLongLongValue] / (double)0x100000;
 }
+
 @end

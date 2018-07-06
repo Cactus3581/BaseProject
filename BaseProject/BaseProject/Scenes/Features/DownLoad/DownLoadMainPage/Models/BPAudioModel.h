@@ -11,21 +11,21 @@
 
 @interface BPAudioModel: NSObject
 
-@property (nonatomic, assign) NSInteger catid;
+@property (nonatomic, copy) NSString *catid;
 @property (nonatomic, copy) NSString *mediaUrl;
-@property (nonatomic, assign) CGFloat mediaSize;
+@property (nonatomic, copy) NSString *mediaSize;
 @property (nonatomic, copy) NSString *cid;
-@property (nonatomic, assign) NSInteger mediaType;
+@property (nonatomic, copy) NSString *mediaType;
 @property (nonatomic, copy) NSString *summary;
-@property (nonatomic, assign) NSInteger onlineTime;
-@property (nonatomic, assign) NSInteger identify;
-@property (nonatomic, assign) NSInteger views;
+@property (nonatomic, copy) NSString *onlineTime;
+@property (nonatomic, copy) NSString *identify;
+@property (nonatomic, copy) NSString *views;
 @property (nonatomic, copy) NSString *smallpic;
 @property (nonatomic, copy) NSString *cidTitle;
 @property (nonatomic, copy) NSString *catname;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, assign) NSInteger mediaTime;
+@property (nonatomic, copy) NSString *mediaTime;
 @property (nonatomic, copy) NSString *mediaLrc;
-@property (nonatomic, assign) NSInteger dataType;
+@property (nonatomic, copy) NSString *dataType;
 
 @end

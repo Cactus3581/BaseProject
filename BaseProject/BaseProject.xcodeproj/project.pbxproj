@@ -561,6 +561,7 @@
 		01D2F5B12088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D2F5B02088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib */; };
 		01D2F5F92088E63F00D21B20 /* NSAttributedString+BPMarkColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5F82088E63F00D21B20 /* NSAttributedString+BPMarkColor.m */; };
 		01D2F5FC2088E72800D21B20 /* NSString+BPMarkColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5FB2088E72800D21B20 /* NSString+BPMarkColor.m */; };
+		01D67EC220EDD980002BFE62 /* BPDownloadUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D67EC120EDD980002BFE62 /* BPDownloadUtils.m */; };
 		01D6FBA520C80ED900AD8A6E /* BPIncludeTableManualController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D6FBA420C80ED900AD8A6E /* BPIncludeTableManualController.m */; };
 		01D6FBB120C80F7E00AD8A6E /* BPIncludeTableManualHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D6FBA620C80F7A00AD8A6E /* BPIncludeTableManualHeaderView.xib */; };
 		01D6FBB220C80F7E00AD8A6E /* BPIncludeTableManualInsideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D6FBA720C80F7A00AD8A6E /* BPIncludeTableManualInsideTableViewCell.xib */; };
@@ -1810,6 +1811,8 @@
 		01D2F5FB2088E72800D21B20 /* NSString+BPMarkColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BPMarkColor.m"; sourceTree = "<group>"; };
 		01D509E01FDD900400A8B1B4 /* BPAppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppMacro.h; sourceTree = "<group>"; };
 		01D509E21FDD909C00A8B1B4 /* BPAppTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppTool.h; sourceTree = "<group>"; };
+		01D67EC020EDD980002BFE62 /* BPDownloadUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDownloadUtils.h; sourceTree = "<group>"; };
+		01D67EC120EDD980002BFE62 /* BPDownloadUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDownloadUtils.m; sourceTree = "<group>"; };
 		01D6FBA320C80ED900AD8A6E /* BPIncludeTableManualController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPIncludeTableManualController.h; sourceTree = "<group>"; };
 		01D6FBA420C80ED900AD8A6E /* BPIncludeTableManualController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPIncludeTableManualController.m; sourceTree = "<group>"; };
 		01D6FBA620C80F7A00AD8A6E /* BPIncludeTableManualHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPIncludeTableManualHeaderView.xib; sourceTree = "<group>"; };
@@ -3503,6 +3506,7 @@
 		01349C4920ECA55300E50A86 /* downLoadTool */ = {
 			isa = PBXGroup;
 			children = (
+				01D67EBF20EDD95A002BFE62 /* Helper */,
 				01349C5220ECA71200E50A86 /* Item */,
 				01349C5120ECA70B00E50A86 /* Macro */,
 				01349C4D20ECA6FD00E50A86 /* downLoader */,
@@ -7907,6 +7911,15 @@
 			path = NSAttributedString;
 			sourceTree = "<group>";
 		};
+		01D67EBF20EDD95A002BFE62 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				01D67EC020EDD980002BFE62 /* BPDownloadUtils.h */,
+				01D67EC120EDD980002BFE62 /* BPDownloadUtils.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		01D6FBB820C832DB00AD8A6E /* General */ = {
 			isa = PBXGroup;
 			children = (
@@ -9811,6 +9824,7 @@
 				01DBF14220E74195001C52C0 /* BPAutoLayoutPriorityViewController.m in Sources */,
 				010DB73C1FDD4D450099E66F /* UIImage+BPResize.m in Sources */,
 				01790760200120CF00E5C360 /* UIImage+Swizzling.m in Sources */,
+				01D67EC220EDD980002BFE62 /* BPDownloadUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

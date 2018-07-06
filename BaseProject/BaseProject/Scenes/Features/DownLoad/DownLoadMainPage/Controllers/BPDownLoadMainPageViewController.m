@@ -52,22 +52,6 @@
     }
     cell.textLabel.text = self.array[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleDefault;
-    
-    switch (indexPath.row) {
-        case 0: {
-        }
-            break;
-            
-        case 1: {
-            
-        }
-            break;
-            
-        case 2: {
-            
-        }
-            break;
-    }
     return cell;
 }
 

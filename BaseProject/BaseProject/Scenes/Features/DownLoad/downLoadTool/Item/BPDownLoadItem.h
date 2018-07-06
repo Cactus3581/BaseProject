@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+//下载文件类型
+
 //完成情况
 typedef NS_ENUM(NSInteger, BPDownLoadItemStatus) {
     BPDownLoadItemNone,//没有开始写
-    BPDownLoadItemPrepary,//准备下载
+    BPDownLoadItemPrepary,//准备下载||等待下载
     BPDownLoadItemDowning,//下载中
     BPDownLoadItemPause,//暂停中
     BPDownLoadItemSuccess,//已完成
@@ -19,10 +21,12 @@ typedef NS_ENUM(NSInteger, BPDownLoadItemStatus) {
 };
 
 @interface BPDownLoadItem : NSObject
-@property (copy, nonatomic) NSString *ide;
+@property (copy, nonatomic) NSString *identify;
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *downLoadUrl;
-
-@property (copy, nonatomic) NSString *imageUrl;
+@property (copy, nonatomic) NSString *filepath;
 @property (assign, nonatomic) BPDownLoadItemStatus status;
+@property (copy, nonatomic) NSString *progress;
+@property (copy, nonatomic) NSString *completedUnitCount;
+@property (copy, nonatomic) NSString *totalUnitCount;
 @end

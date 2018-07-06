@@ -16,14 +16,18 @@
 @protocol BPDownLoadGeneralViewDelegate <NSObject>
 @optional
 
-- (void)downLoad:(BPDownLoadGeneralView *)downLoadGeneralView item:(BPAudioModel *)item;
+- (void)downLoad:(BPDownLoadGeneralView *)downLoadGeneralView item:(BPAudioModel *)model;
+- (void)pause:(BPDownLoadGeneralView *)downLoadGeneralView item:(BPAudioModel *)model;
+- (void)resume:(BPDownLoadGeneralView *)downLoadGeneralView item:(BPAudioModel *)model;
+- (void)stop:(BPDownLoadGeneralView *)downLoadGeneralView item:(BPAudioModel *)model;
 
 @end
 
 
 @interface BPDownLoadGeneralView : UIView
 
-- (void)setItem:(BPAudioModel *)item status:(BPDownLoadItemStatus)status;
+- (void)setModel:(BPAudioModel *)model;
+- (void)setItem:(BPDownLoadItem *)item;
 
 @property (nonatomic,weak) id <BPDownLoadGeneralViewDelegate> delegate;
 

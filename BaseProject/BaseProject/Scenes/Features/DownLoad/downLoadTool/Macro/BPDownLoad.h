@@ -9,5 +9,10 @@
 #ifndef BPDownLoad_h
 #define BPDownLoad_h
 
+#import "BPDownloadUtils.h"
+
+#define kDownloadPath                         @"HeritageDictionary"//下载权威文件路径
+#define kDownloadStatusNotification   @"kDownloadStatusNotification"//开始下载
+#define kDownloadDownLoadProgressNotification @"kDownloadDownLoadProgressNotification"//进度通知
 
 #endif /* BPDownLoad_h */
