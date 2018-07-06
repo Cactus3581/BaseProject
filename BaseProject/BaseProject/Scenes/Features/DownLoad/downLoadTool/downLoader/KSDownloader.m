@@ -10,12 +10,14 @@
 #import <AFNetworking.h>
 #import "BPDownLoad.h"
 #import "BPDownLoadItem.h"
+//#import "Foundation+Log.h"
+#import "NSObject+Log.h"
 
 static NSInteger maxCount = 3;
 
 @interface KSDownloader()
-@property (nonatomic,strong) NSMutableArray *allItems; // 存放所有对象的数组；
-@property (nonatomic,strong) NSMutableArray *needDownLoadArray; // 存放需要下载对象的数组，过滤掉已经下载的；
+@property (nonatomic,strong) NSMutableArray *allItems; // 存放外界提供所有对象的数组；
+@property (nonatomic,strong) NSMutableArray *needDownLoadArray; // 存放需要下载对象的数组，过滤掉已经下载的；BPDownLoadItemNone||BPDownLoadItemFail
 @property (nonatomic,strong) NSMutableArray *downLoadingArray; // 存放马上执行任务对象的数组；
 @property (nonatomic,strong) NSMutableDictionary *tasksDict; // 存放task的字典
 @end
@@ -35,6 +37,7 @@ static dispatch_group_t downloadGroup;
     return downloader;
 }
 
+#pragma mark - 私有方法
 //分析处理对象
 - (void)p_analyzeItems:(NSArray<BPDownLoadItem *> *)items {
     [self p_filteringItems:items];
@@ -48,18 +51,21 @@ static dispatch_group_t downloadGroup;
         
         if (self.allItems.count) {
             
+            __block BOOL isExist = NO;
             [self.allItems enumerateObjectsUsingBlock:^(BPDownLoadItem *item, NSUInteger idx, BOOL * _Nonnull stop) {
                 
-                if (![obj.downLoadUrl isEqualToString:item.downLoadUrl]) {
-                    [self.allItems addObject:obj];
-                    BPLog(@"初次处理对象去重");
+                if ([obj.downLoadUrl isEqualToString:item.downLoadUrl] && item.status == BPDownLoadItemNone) {
+                    isExist = YES;
+                    *stop = YES;
                 }
             }];
-            
+            if (!isExist) {
+                BPLog(@"初次处理对象去重");
+                [self.allItems addObject:obj];
+            }
         }else {
             [self.allItems addObject:obj];
             BPLog(@"初次处理对象去重");
-
         }
     }];
 }
@@ -69,8 +75,8 @@ static dispatch_group_t downloadGroup;
     // 进一步处理对象：将未为下载或者下载失败的对象放到下载队列里
     [self.allItems enumerateObjectsUsingBlock:^(BPDownLoadItem *item, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        if (item.status == BPDownLoadItemNone || item.status == BPDownLoadItemFail || item.status == BPDownLoadItemPause) {
-            [self p_handleItem:item status:BPDownLoadItemPrepary notification:kDownloadStatusNotification];
+        if (item.status == BPDownLoadItemNone || item.status == BPDownLoadItemFail) {
+            [self p_handleItem:item status:BPDownLoadItemWait notification:kDownloadStatusNotification];
             [self.needDownLoadArray addObject:item];
             BPLog(@"将未为下载或者下载失败的对象放到下载队列里");
         }
@@ -82,38 +88,43 @@ static dispatch_group_t downloadGroup;
     // 处理对象：将对象放到马上执行的队列里
     [self.needDownLoadArray enumerateObjectsUsingBlock:^(BPDownLoadItem *item, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        if (idx >= (self.maxCount-self.downLoadingArray.count)) {
+        // 限制下载数量
+        if (self.downLoadingArray.count > self.maxCount-1) {
             *stop = YES;
+            return;
         }
         
-        if (item.status == BPDownLoadItemPrepary || item.status == BPDownLoadItemPause) {
+        //如果下一个是待下载，将它放到正在下载的队列里
+        if (item.status == BPDownLoadItemWait) {
             BPLog(@"将对象放到马上执行的队列里");
-
             [self.downLoadingArray addObject:item];
         }
-
     }];
 }
 
 - (void)p_handleMission {
     // 执行下载任务
     for (BPDownLoadItem *item in self.downLoadingArray) {
-        if (item.status == BPDownLoadItemPrepary) {
-            dispatch_group_enter(downloadGroup);
-            [self p_downLoadWithItem:item completionHandler:^(BOOL result) {
-                // 任务完成：将对象从数据源里移除,并移除任务
-                [self.tasksDict removeObjectForKey:[BPDownloadUtils md5ForString:item.downLoadUrl]];
-                [self.needDownLoadArray removeObject:item];
-                [self.downLoadingArray removeObject:item];
-                dispatch_group_leave(downloadGroup);
-                //如果待下载的队列里还有任务，继续添加
-                [self p_resume];
-                BPLog(@"如果待下载的队列里还有任务，继续添加");
-            }];
-        }else if (item.status == BPDownLoadItemPause) {
-            BPLog(@"之前暂停人，然后继续下载的");
-
-            [self resumeDownloadForItem:item.downLoadUrl];
+        if (item.status == BPDownLoadItemWait ) { //如果是待下载里面去下载
+            
+            NSURLSessionDownloadTask *downloadTask = self.tasksDict[[BPDownloadUtils md5ForString:item.identify]];
+            if (downloadTask) {
+                if (downloadTask.state == NSURLSessionTaskStateSuspended) {
+                    [downloadTask resume];;
+                }
+            } else {
+                dispatch_group_enter(downloadGroup);
+                [self p_downLoadWithItem:item completionHandler:^(BOOL result) {
+                    // 任务完成：将对象从数据源里移除,并移除任务
+                    [self.tasksDict removeObjectForKey:[BPDownloadUtils md5ForString:item.downLoadUrl]];
+                    [self.needDownLoadArray removeObject:item];
+                    [self.downLoadingArray removeObject:item];
+                    dispatch_group_leave(downloadGroup);
+                    //如果待下载的队列里还有任务，继续添加
+                    [self p_nextDownLoadWhenLastEnd];
+                    BPLog(@"如果待下载的队列里还有任务，继续添加");
+                }];
+            }
         }
     }
     
@@ -123,23 +134,9 @@ static dispatch_group_t downloadGroup;
     });
 }
 
-//如果待下载的队列里还有任务，继续添加
-- (void)p_resume {
-    if (self.needDownLoadArray.count) {
-        BPLog(@"继续下载");
-        [self p_addIntoDownLoadingArray];
-        [self p_handleMission];
-    }else {
-        BPLog(@"全部下载完毕");
-    }
-}
-
 //下载任务
 - (void)p_downLoadWithItem:(BPDownLoadItem *)item completionHandler:(void (^)(BOOL result))result {
     
-    [self p_handleItem:item status:BPDownLoadItemPrepary notification:kDownloadStatusNotification];
-    NSLog(@"下载完毕");
-
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
@@ -187,6 +184,17 @@ static dispatch_group_t downloadGroup;
     
 }
 
+//当上一个任务完成或者暂停之后：如果待下载的队列里还有任务，继续添加并执行下载或者恢复
+- (void)p_nextDownLoadWhenLastEnd {
+    if (self.needDownLoadArray.count) {
+        BPLog(@"继续下载");
+        [self p_addIntoDownLoadingArray];
+        [self p_handleMission];
+    }else {
+        BPLog(@"全部下载完毕");
+    }
+}
+
 //单个下载
 - (void)downloadItem:(BPDownLoadItem *)item {
     [self downloadItems:@[item]];
@@ -204,22 +212,24 @@ static dispatch_group_t downloadGroup;
 
 //暂停下载
 - (void)pauseDownloadForItem:(id<NSCopying>)itemId {
-    
+
     NSURLSessionDownloadTask *downloadTask = self.tasksDict[[BPDownloadUtils md5ForString:itemId]];
     
     if (downloadTask) {
         
+        if (downloadTask.state == NSURLSessionTaskStateSuspended) {
+            return;
+        }
         [downloadTask suspend];
+
         BPLog(@"暂停下载");
 
-        __block BPDownLoadItem *item1;
         [self.allItems enumerateObjectsUsingBlock:^(BPDownLoadItem *item, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([item.downLoadUrl isEqualToString:(NSString *)itemId]) {
-                item1 = item;
-                [self.downLoadingArray removeObject:item];
-                [self p_handleItem:item1 status:BPDownLoadItemPause notification:kDownloadStatusNotification];
+            if ([item.downLoadUrl isEqualToString:(NSString *)itemId]) {//找到这个item
+                [self.downLoadingArray removeObject:item];//从正在下载的队列里去除
+                [self p_handleItem:item status:BPDownLoadItemPause notification:kDownloadStatusNotification];
+                [self p_nextDownLoadWhenLastEnd];//查找下一个需要下载的item
                 *stop = YES;
-                [self p_resume];
             }
         }];
     }
@@ -231,20 +241,25 @@ static dispatch_group_t downloadGroup;
     NSURLSessionDownloadTask *downloadTask = self.tasksDict[[BPDownloadUtils md5ForString:itemId]];
     
     if (downloadTask) {
-        
-        __block BPDownLoadItem *item1;
+        if (downloadTask.state == NSURLSessionTaskStateRunning) {
+            return;
+        }
         [self.allItems enumerateObjectsUsingBlock:^(BPDownLoadItem *item, NSUInteger idx, BOOL * _Nonnull stop) {
-            if ([item.downLoadUrl isEqualToString:(NSString *)itemId]) {
-                item1 = item;
-                [self p_handleItem:item1 status:BPDownLoadItemPrepary notification:kDownloadStatusNotification];
-                [self p_addIntoDownLoadingArray]; //重新添加到下载队列里
-                BPLog(@"恢复下载:重新添加到下载队列里");
-                if ([self.downLoadingArray containsObject:item]) {
-                    [downloadTask resume];
-                    [self p_handleItem:item1 status:BPDownLoadItemDowning notification:kDownloadStatusNotification];
-                    BPLog(@"恢复下载:正在下载");
-                }
+            if ([item.downLoadUrl isEqualToString:(NSString *)itemId]) { // 找到这个item
                 *stop = YES;
+                [self p_handleItem:item status:BPDownLoadItemWait notification:kDownloadStatusNotification];
+                
+                // 如果下载队列不足，则加入下载队列，进行下载；如果足了，等待下载任务完成
+                [self p_addIntoDownLoadingArray]; // 加入下载队列
+                
+                [self.downLoadingArray enumerateObjectsUsingBlock:^(BPDownLoadItem *downLoadItem, NSUInteger idx, BOOL * _Nonnull stop) {
+                    // 如果存在了立即下载的队列里
+                    if ([downLoadItem.downLoadUrl isEqualToString:(NSString *)itemId]) {
+                        [downloadTask resume];
+                        *stop = YES;
+                        BPLog(@"恢复下载:正在下载");
+                    }
+                }];
             }
         }];
     }

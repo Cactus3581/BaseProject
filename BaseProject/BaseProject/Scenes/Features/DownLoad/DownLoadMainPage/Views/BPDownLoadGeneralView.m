@@ -54,7 +54,7 @@
         case BPDownLoadItemNone:
             break;
             
-        case BPDownLoadItemPrepary:
+        case BPDownLoadItemWait:
             self.downLoadButton.selected = YES;
             statusStr = @"正在等待";
             break;

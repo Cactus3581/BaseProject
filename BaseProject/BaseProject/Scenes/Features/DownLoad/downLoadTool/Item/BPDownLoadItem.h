@@ -12,8 +12,8 @@
 
 //完成情况
 typedef NS_ENUM(NSInteger, BPDownLoadItemStatus) {
-    BPDownLoadItemNone,//没有开始写
-    BPDownLoadItemPrepary,//准备下载||等待下载
+    BPDownLoadItemNone,//没有开始下载
+    BPDownLoadItemWait,//准备下载||等待下载
     BPDownLoadItemDowning,//下载中
     BPDownLoadItemPause,//暂停中
     BPDownLoadItemSuccess,//已完成
