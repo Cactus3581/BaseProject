@@ -10,6 +10,7 @@
 #define BPDownLoad_h
 
 #import "BPDownloadUtils.h"
+#import "NSFileManager+BPAdd.h"
 
 #define kDownloadPath                         @"HeritageDictionary"//下载权威文件路径
 #define kDownloadStatusNotification   @"kDownloadStatusNotification"//开始下载

@@ -236,7 +236,7 @@
 		0158050D20CADE2300D0EF7C /* KSCellProgressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158050520CADE2300D0EF7C /* KSCellProgressModel.m */; };
 		0158050E20CADE2300D0EF7C /* KSCellProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158050720CADE2300D0EF7C /* KSCellProgressController.m */; };
 		0158050F20CADE2300D0EF7C /* KSCellProgressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158050B20CADE2300D0EF7C /* KSCellProgressTableViewCell.m */; };
-		0158052B20CADED000D0EF7C /* FMDBTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158051320CADED000D0EF7C /* FMDBTools.m */; };
+		0158052B20CADED000D0EF7C /* BPDataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158051320CADED000D0EF7C /* BPDataBaseManager.m */; };
 		0158052C20CADED000D0EF7C /* FMDatabaseQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158051720CADED000D0EF7C /* FMDatabaseQueueManager.m */; };
 		0158052D20CADED000D0EF7C /* FMDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158051B20CADED000D0EF7C /* FMDatabaseManager.m */; };
 		0158052E20CADED000D0EF7C /* DataBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158051F20CADED000D0EF7C /* DataBaseModel.m */; };
@@ -277,6 +277,9 @@
 		0159A64820EC866A00312293 /* BPDownLoadDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0159A64720EC866A00312293 /* BPDownLoadDataSource.m */; };
 		0160718A204D3530009C66A2 /* PHAsset+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 01607189204D3530009C66A2 /* PHAsset+BPAdd.m */; };
 		0160718D204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160718C204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m */; };
+		0161622820EF3B950041E87E /* NSFileManager+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161622720EF3B950041E87E /* NSFileManager+BPAdd.m */; };
+		0161622B20EF4A5C0041E87E /* BPDataBaseQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161622A20EF4A5C0041E87E /* BPDataBaseQueueManager.m */; };
+		0161622E20EF77A50041E87E /* BPDataBaseVersionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161622D20EF77A50041E87E /* BPDataBaseVersionManager.m */; };
 		016760CF2060F94400F82ACE /* BPNSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016760CE2060F94400F82ACE /* BPNSOperationViewController.m */; };
 		016760D720610F3900F82ACE /* BPSingleThreadTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 016760D620610F3900F82ACE /* BPSingleThreadTimer.m */; };
 		0167A35220E619DB00F13905 /* BPBaselineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0167A35020E619DB00F13905 /* BPBaselineViewController.m */; };
@@ -1183,8 +1186,8 @@
 		0158050820CADE2300D0EF7C /* KSCellProgressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCellProgressController.h; sourceTree = "<group>"; };
 		0158050A20CADE2300D0EF7C /* KSCellProgressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCellProgressTableViewCell.h; sourceTree = "<group>"; };
 		0158050B20CADE2300D0EF7C /* KSCellProgressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCellProgressTableViewCell.m; sourceTree = "<group>"; };
-		0158051320CADED000D0EF7C /* FMDBTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBTools.m; sourceTree = "<group>"; };
-		0158051420CADED000D0EF7C /* FMDBTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBTools.h; sourceTree = "<group>"; };
+		0158051320CADED000D0EF7C /* BPDataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDataBaseManager.m; sourceTree = "<group>"; };
+		0158051420CADED000D0EF7C /* BPDataBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDataBaseManager.h; sourceTree = "<group>"; };
 		0158051720CADED000D0EF7C /* FMDatabaseQueueManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueueManager.m; sourceTree = "<group>"; };
 		0158051820CADED000D0EF7C /* FMDatabaseQueueManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueueManager.h; sourceTree = "<group>"; };
 		0158051A20CADED000D0EF7C /* FMDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseManager.h; sourceTree = "<group>"; };
@@ -1259,6 +1262,12 @@
 		01607189204D3530009C66A2 /* PHAsset+BPAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PHAsset+BPAdd.m"; sourceTree = "<group>"; };
 		0160718B204D3905009C66A2 /* ALAssetsLibrary+BPAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+BPAdd.h"; sourceTree = "<group>"; };
 		0160718C204D3905009C66A2 /* ALAssetsLibrary+BPAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+BPAdd.m"; sourceTree = "<group>"; };
+		0161622620EF3B950041E87E /* NSFileManager+BPAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+BPAdd.h"; sourceTree = "<group>"; };
+		0161622720EF3B950041E87E /* NSFileManager+BPAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+BPAdd.m"; sourceTree = "<group>"; };
+		0161622920EF4A5C0041E87E /* BPDataBaseQueueManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDataBaseQueueManager.h; sourceTree = "<group>"; };
+		0161622A20EF4A5C0041E87E /* BPDataBaseQueueManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDataBaseQueueManager.m; sourceTree = "<group>"; };
+		0161622C20EF77A50041E87E /* BPDataBaseVersionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDataBaseVersionManager.h; sourceTree = "<group>"; };
+		0161622D20EF77A50041E87E /* BPDataBaseVersionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDataBaseVersionManager.m; sourceTree = "<group>"; };
 		016760CD2060F94400F82ACE /* BPNSOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNSOperationViewController.h; sourceTree = "<group>"; };
 		016760CE2060F94400F82ACE /* BPNSOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNSOperationViewController.m; sourceTree = "<group>"; };
 		016760D320610EB200F82ACE /* BPSingleThreadTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPSingleThreadTimer.h; sourceTree = "<group>"; };
@@ -4290,8 +4299,12 @@
 		0158051220CADED000D0EF7C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				0158051320CADED000D0EF7C /* FMDBTools.m */,
-				0158051420CADED000D0EF7C /* FMDBTools.h */,
+				0158051420CADED000D0EF7C /* BPDataBaseManager.h */,
+				0158051320CADED000D0EF7C /* BPDataBaseManager.m */,
+				0161622920EF4A5C0041E87E /* BPDataBaseQueueManager.h */,
+				0161622A20EF4A5C0041E87E /* BPDataBaseQueueManager.m */,
+				0161622C20EF77A50041E87E /* BPDataBaseVersionManager.h */,
+				0161622D20EF77A50041E87E /* BPDataBaseVersionManager.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -4339,8 +4352,8 @@
 		0158052320CADED000D0EF7C /* SubTools */ = {
 			isa = PBXGroup;
 			children = (
-				0158052420CADED000D0EF7C /* CountryDBTools.m */,
 				0158052520CADED000D0EF7C /* CountryDBTools.h */,
+				0158052420CADED000D0EF7C /* CountryDBTools.m */,
 			);
 			path = SubTools;
 			sourceTree = "<group>";
@@ -7916,6 +7929,8 @@
 			children = (
 				01D67EC020EDD980002BFE62 /* BPDownloadUtils.h */,
 				01D67EC120EDD980002BFE62 /* BPDownloadUtils.m */,
+				0161622620EF3B950041E87E /* NSFileManager+BPAdd.h */,
+				0161622720EF3B950041E87E /* NSFileManager+BPAdd.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -8381,8 +8396,8 @@
 		01DF31AA1FDD3A8F00B8A955 /* NSFileHandle */ = {
 			isa = PBXGroup;
 			children = (
-				01DF31AB1FDD3A8F00B8A955 /* NSFileHandle+BPReadLine.m */,
 				01DF31AC1FDD3A8F00B8A955 /* NSFileHandle+BPReadLine.h */,
+				01DF31AB1FDD3A8F00B8A955 /* NSFileHandle+BPReadLine.m */,
 			);
 			path = NSFileHandle;
 			sourceTree = "<group>";
@@ -9183,6 +9198,7 @@
 				0149953D1FB4A3F900077866 /* BPRootNavigationController.m in Sources */,
 				011E8DC120B2FB3300B04378 /* BPCalendarWeekCell.m in Sources */,
 				018C449D20093F8900CF43D7 /* BPSliderShowView.m in Sources */,
+				0161622E20EF77A50041E87E /* BPDataBaseVersionManager.m in Sources */,
 				010DB7451FDD4D450099E66F /* UIImage+BPAlpha.m in Sources */,
 				01DF31E51FDD3B0300B8A955 /* NSDecimalNumber+BPExtensions.m in Sources */,
 				010DB7211FDD4D450099E66F /* UIWebView+BPBlocks.m in Sources */,
@@ -9415,6 +9431,7 @@
 				016760D720610F3900F82ACE /* BPSingleThreadTimer.m in Sources */,
 				010DB73D1FDD4D450099E66F /* UIImage+BPVector.m in Sources */,
 				01C0B6261FFC87AB005BB4A5 /* UIImage+Palette.m in Sources */,
+				0161622B20EF4A5C0041E87E /* BPDataBaseQueueManager.m in Sources */,
 				010DB7201FDD4D450099E66F /* UIWebView+BPStyle.m in Sources */,
 				01490C0B1FF548740035492D /* BPMemoryViewController.m in Sources */,
 				0137C73D207B3AD200F6B6CE /* BPPresentAViewController.m in Sources */,
@@ -9502,6 +9519,7 @@
 				015804FF20CADE0000D0EF7C /* BPNaviTableViewControllerTwo.m in Sources */,
 				0168F38D2035EC6C00D63D83 /* BPImprovingTipViewModel.m in Sources */,
 				015805B520CAE5D000D0EF7C /* BPTopCategoryListView.m in Sources */,
+				0161622820EF3B950041E87E /* NSFileManager+BPAdd.m in Sources */,
 				01DF321E1FDD3B3000B8A955 /* NSString+BPSize.m in Sources */,
 				019B0EE020937B6700D105D1 /* BPTagViewController.m in Sources */,
 				016DADCA20582FB100AA95EC /* NSNull+BPSafe.m in Sources */,
@@ -9646,7 +9664,7 @@
 				010DB7171FDD4D450099E66F /* UITextView+BPInputLimit.m in Sources */,
 				01F5B0F620B2C9DA0026B8B4 /* BPTagAutoLayoutView.m in Sources */,
 				01ADC1F61FB492C1009150F0 /* BPBaseTableViewCell.m in Sources */,
-				0158052B20CADED000D0EF7C /* FMDBTools.m in Sources */,
+				0158052B20CADED000D0EF7C /* BPDataBaseManager.m in Sources */,
 				010FBD2320601D9E00BC9EC4 /* UIColor+Hex.m in Sources */,
 				010DB7971FDD4D640099E66F /* UIView+BPVisuals.m in Sources */,
 				0151210220CBFA9400B33A76 /* BPNetRequestParameter.m in Sources */,

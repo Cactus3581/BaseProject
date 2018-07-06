@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *resume;
 @property (weak, nonatomic) IBOutlet UIButton *stop;
 @property (strong, nonatomic) BPAudioModel *model;
+@property (strong, nonatomic) BPDownLoadItem *item;
+
 @end
 
 @implementation BPDownLoadGeneralView
@@ -47,6 +49,11 @@
 }
 
 - (void)setItem:(BPDownLoadItem *)item {
+    _item = item;
+    
+    if (![item.downLoadUrl isEqualToString:self.model.mediaUrl]) {
+        return;
+    }
     NSString *statusStr = @"下载";
     self.downLoadButton.selected = NO;
     switch (item.status) {
@@ -56,7 +63,7 @@
             
         case BPDownLoadItemWait:
             self.downLoadButton.selected = YES;
-            statusStr = @"正在等待";
+            statusStr = @"等待下载";
             break;
         case BPDownLoadItemDowning:
             self.downLoadButton.selected = YES;
@@ -110,11 +117,9 @@
 }
 
 - (void)setModel:(BPAudioModel *)model {
-    if (_model != model) {
-        _model = model;
-        [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:model.smallpic] placeholderImage:[UIImage imageNamed:@"cactus_ rect_steady"]];
-        self.titleLabel.text = model.title;
-    }
+    _model = model;
+    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:model.smallpic] placeholderImage:[UIImage imageNamed:@"cactus_ rect_steady"]];
+    self.titleLabel.text = model.title;
 }
 
 @end

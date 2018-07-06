@@ -1,5 +1,5 @@
 //
-//  FMDBTools.h
+//  BPDataBaseManager.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/5/12.
@@ -20,10 +20,10 @@ typedef enum ST_DB_ActionType
     ST_DB_ADDUPDATE	 //更新或者插入操作
 } ST_DB_ActionType;
 
-@interface FMDBTools : NSObject
+@interface BPDataBaseManager : NSObject
 @property(nonatomic,strong) FMDatabaseQueue *dbQueue;
 
-+ (FMDBTools *)shareInstance;
++ (BPDataBaseManager *)shareManager;
 
 /*
  无事务：单条sql，增删改查

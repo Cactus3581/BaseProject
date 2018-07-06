@@ -13,15 +13,17 @@
 @class BPDownLoadMoreFilesTableViewCell;
 
 @protocol BPDownLoadMoreFilesTableViewCellDelegate <NSObject>
+
 @optional
 
 - (void)downLoad:(BPDownLoadMoreFilesTableViewCell *)cell item:(BPAudioModel *)item indexPath:(NSIndexPath *)indexPath;
 
 @end
 
+
 @interface BPDownLoadMoreFilesTableViewCell : UITableViewCell
 
-- (void)setModel:(BPAudioModel *)item indexPath:(NSIndexPath *)indexPath;
+- (void)setModel:(BPAudioModel *)model indexPath:(NSIndexPath *)indexPath;
 
 @property (nonatomic,weak) id <BPDownLoadMoreFilesTableViewCellDelegate> delegate;
 

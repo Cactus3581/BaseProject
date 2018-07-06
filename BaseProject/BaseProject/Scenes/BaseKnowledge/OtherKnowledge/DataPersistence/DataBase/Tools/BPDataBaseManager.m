@@ -1,22 +1,22 @@
 //
-//  FMDBTools.m
+//  BPDataBaseManager.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/5/12.
 //  Copyright © 2017年 xiaruzhen. All rights reserved.
 //
 
-#import "FMDBTools.h"
+#import "BPDataBaseManager.h"
 #import "FMDB.h"
 
-static FMDBTools *sharedManager=nil;
+static BPDataBaseManager *sharedManager = nil;
 
-@implementation FMDBTools
+@implementation BPDataBaseManager
 
-+ (FMDBTools *)shareInstance {
++ (BPDataBaseManager *)shareManager {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedManager = [[FMDBTools alloc]init];
+        sharedManager = [[BPDataBaseManager alloc]init];
     });
     return sharedManager;
 }

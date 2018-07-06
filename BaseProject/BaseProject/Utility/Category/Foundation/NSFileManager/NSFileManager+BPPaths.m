@@ -10,6 +10,7 @@
 #include <sys/xattr.h>
 
 @implementation NSFileManager (BPPaths)
+
 + (NSURL *)bp_URLForDirectory:(NSSearchPathDirectory)directory {
     return [self.defaultManager URLsForDirectory:directory inDomains:NSUserDomainMask].lastObject;
 }

@@ -11,10 +11,10 @@ static CountryDBTools *sharedManager=nil;
 
 @implementation CountryDBTools
 
-+ (FMDBTools *)shareInstance {
++ (BPDataBaseManager *)shareInstance {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedManager = [[FMDBTools alloc]init];
+        sharedManager = [[BPDataBaseManager alloc]init];
     });
     return sharedManager;
 }

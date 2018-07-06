@@ -31,6 +31,6 @@
 /**
  创建路径
  */
-+ (void)createPathIfNotExist:(NSString *)path;
++ (BOOL)createPathIfNotExist:(NSString *)path;
 
 @end

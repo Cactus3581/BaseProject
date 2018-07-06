@@ -157,7 +157,7 @@ static dispatch_group_t downloadGroup;
         
     } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
         NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+        return [documentsDirectoryURL URLByAppendingPathComponent:[BPDownloadUtils md5ForString:item.downLoadUrl]];
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
         
         NSLog(@"File downloaded to: %@", filePath);
@@ -288,6 +288,19 @@ static dispatch_group_t downloadGroup;
 //获取已下载的任务
 - (NSArray<BPDownLoadItem*> *)downloadedItems {
     return self.downLoadingArray.copy;
+}
+
+//根据id获取item
+- (BPDownLoadItem *)ItemForItem:(BPDownLoadItem *)item {
+    __block BPDownLoadItem *item1;
+    [self.allItems enumerateObjectsUsingBlock:^(BPDownLoadItem *item2, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([item2.downLoadUrl isEqualToString:item.downLoadUrl]) { // 找到这个item
+            *stop = YES;
+            item1 = item2;
+
+        }
+    }];
+    return item1;
 }
 
 //根据id获取已下载的item

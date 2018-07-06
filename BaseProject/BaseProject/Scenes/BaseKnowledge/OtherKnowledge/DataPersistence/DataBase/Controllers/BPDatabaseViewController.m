@@ -10,7 +10,7 @@
 #import "FMDatabaseManager.h"
 #import "FMDatabaseQueueManager.h"
 #import "DataBaseModel.h"
-#import "FMDBTools.h"
+#import "BPDataBaseManager.h"
 #import "SchoolModel.h"
 #import "ClassModel.h"
 
@@ -33,7 +33,7 @@
     self.tableView.frame =CGRectMake(0, CGRectGetMaxY(searchBar.frame)+40, kScreenWidth, kScreenHeight-(CGRectGetMaxY(searchBar.frame)+40));
     self.tableView.backgroundColor = kRedColor;
     
-    [FMDBTools shareInstance];
+    [BPDataBaseManager shareManager];
     
     
     
@@ -85,21 +85,21 @@
 
 #pragma mark - update-无事务-单条sql
     /*
-     [[FMDBTools shareInstance] executeSQL:sql actionType:ST_DB_INSERT withBlock:^(BOOL bRet, FMResultSet *rs, NSString *msg) {
+     [[BPDataBaseManager shareManager] executeSQL:sql actionType:ST_DB_INSERT withBlock:^(BOOL bRet, FMResultSet *rs, NSString *msg) {
      
      }];
      */
     
 #pragma mark - update-无事务-数组sql
     /*
-     [[FMDBTools shareInstance] executeUpdateSQLList:@[sql1,sql2] withBlock:^(BOOL bRet, NSString *msg) {
+     [[BPDataBaseManager shareManager] executeUpdateSQLList:@[sql1,sql2] withBlock:^(BOOL bRet, NSString *msg) {
      
      }];
      */
     
 #pragma mark - update-事务-单条sql
     /*
-     [[FMDBTools shareInstance] executeUpdateTransactionSql:sql2 withBlock:^(BOOL bRet, NSString *msg, BOOL *bRollback) {
+     [[BPDataBaseManager shareManager] executeUpdateTransactionSql:sql2 withBlock:^(BOOL bRet, NSString *msg, BOOL *bRollback) {
      
      }];
      */
@@ -108,20 +108,20 @@
     
     for (int i = 0; i<5000; i++) {
         NSString * sqlopr = [NSString stringWithFormat:@"INSERT INTO %@ (classId,className,teacherName,stutentNumber,boyNumber,girlNumber) VALUES (%d,'%@','%@','%d','%d','%d')",TABLE_NAME_SCHOOL,i,[NSString stringWithFormat:@"%d年级",i+1],model.teacherName,i+100,i,5000-i];
-        [[FMDBTools shareInstance] executeUpdateTransactionSql:sqlopr withBlock:^(BOOL bRet, NSString *msg, BOOL *bRollback) {
+        [[BPDataBaseManager shareManager] executeUpdateTransactionSql:sqlopr withBlock:^(BOOL bRet, NSString *msg, BOOL *bRollback) {
             
         }];
     }
     
 
      
-//    [[FMDBTools shareInstance] executeUpdateTransactionSqlList:@[sql1,sql2] withBlock:^(BOOL bRet, NSString *msg, BOOL *bRollback) {
+//    [[BPDataBaseManager shareManager] executeUpdateTransactionSqlList:@[sql1,sql2] withBlock:^(BOOL bRet, NSString *msg, BOOL *bRollback) {
 //        
 //    }];
     
 #pragma mark - quary-无事务-单条sql
     /*
-     [[FMDBTools shareInstance] executeSQL:quarysql1 actionType:ST_DB_SELECT withBlock:^(BOOL bRet, FMResultSet *rs, NSString *msg) {
+     [[BPDataBaseManager shareManager] executeSQL:quarysql1 actionType:ST_DB_SELECT withBlock:^(BOOL bRet, FMResultSet *rs, NSString *msg) {
      while ([rs next]) {
      NSString *name = [rs stringForColumn:@"className"];
      int classId = [rs intForColumn:@"classId"];
@@ -138,7 +138,7 @@
 
      */
     
-//    [[FMDBTools shareInstance] executeQueryTransactionSql:quarysql1 withBlock:^(BOOL bRet, FMResultSet *rs, NSString *msg, BOOL *bRollback) {
+//    [[BPDataBaseManager shareManager] executeQueryTransactionSql:quarysql1 withBlock:^(BOOL bRet, FMResultSet *rs, NSString *msg, BOOL *bRollback) {
 //        while ([rs next]) {
 //            NSString *className = [rs stringForColumn:@"className"];
 //            NSString *teacherName = [rs stringForColumn:@"teacherName"];
@@ -148,7 +148,7 @@
 //        }
 //    }];
     
-//    [[FMDBTools shareInstance] alertTableWithName:TABLE_NAME_SCHOOL Column:@"rank" Parameter:@"text"];
+//    [[BPDataBaseManager shareManager] alertTableWithName:TABLE_NAME_SCHOOL Column:@"rank" Parameter:@"text"];
 
     
     /*
@@ -158,12 +158,12 @@
 }
 
 - (void)MaskInViewBt_2 {
-//    [[FMDBTools shareInstance] addIndexWithName:TABLE_NAME_SCHOOL Column:@"className" Index:@"Pindex"];
+//    [[BPDataBaseManager shareManager] addIndexWithName:TABLE_NAME_SCHOOL Column:@"className" Index:@"Pindex"];
     
     NSString * quarysql1 = [NSString stringWithFormat:@"select * from %@ order by className desc",TABLE_NAME_SCHOOL];
 
     
-     [[FMDBTools shareInstance] executeSQL:quarysql1 actionType:ST_DB_SELECT withBlock:^(BOOL bRet, FMResultSet *rs, NSString *msg) {
+     [[BPDataBaseManager shareManager] executeSQL:quarysql1 actionType:ST_DB_SELECT withBlock:^(BOOL bRet, FMResultSet *rs, NSString *msg) {
          while ([rs next]) {
              NSString *className = [rs stringForColumn:@"className"];
              NSString *teacherName = [rs stringForColumn:@"teacherName"];
@@ -182,7 +182,7 @@
 
 - (void)MaskInViewBt_3 {
     
-    [[FMDBTools shareInstance] alertTableWithName:TABLE_NAME_SCHOOL Column:@"rank" Parameter:@"text"];
+    [[BPDataBaseManager shareManager] alertTableWithName:TABLE_NAME_SCHOOL Column:@"rank" Parameter:@"text"];
 
 
     /*
@@ -193,7 +193,7 @@
 
 - (void)MaskInViewBt_4 {
     DataBaseModel *model = [DataBaseModel initializeWithName:@"哈3" Sex:@"男" Age:@18 Score:@2];
-    BPLog(@"%ld",[[FMDBTools shareInstance] getDBVerison]);
+    BPLog(@"%ld",[[BPDataBaseManager shareManager] getDBVerison]);
 
     
     /*

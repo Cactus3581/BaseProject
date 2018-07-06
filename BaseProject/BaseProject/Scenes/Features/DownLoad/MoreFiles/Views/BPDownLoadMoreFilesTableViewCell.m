@@ -66,12 +66,28 @@
 
 - (void)resume:(BPDownLoadGeneralView *)downLoadGeneralView item:(BPAudioModel *)model {
     [[KSDownloader shareDownloader] resumeDownloadForItem:model.mediaUrl];
-
 }
 
 - (void)stop:(BPDownLoadGeneralView *)downLoadGeneralView item:(BPAudioModel *)model {
 //    [[KSDownloader shareDownloader] st:item];
 
+}
+
+- (void)setModel:(BPAudioModel *)model indexPath:(NSIndexPath *)indexPath {
+    /*
+     下载进度
+     当前的下载数量
+     完全的下载数量
+     下载状态
+     下载速度
+     */
+    _model = model;
+    _indexPath = indexPath;
+    [self.downLoadView setModel:model];
+    
+    [[KSDownloader shareDownloader] resumeDownloadForItem:model.mediaUrl];
+
+    [self.downLoadView setItem:nil];
 }
 
 - (void)changeStatusNotification:(NSNotification *)notification {
@@ -90,11 +106,6 @@
     [self.downLoadView setItem:item];
 }
 
-- (void)setModel:(BPAudioModel *)item indexPath:(NSIndexPath *)indexPath {
-    _model = item;
-    _indexPath = indexPath;
-    [self.downLoadView setModel:item];
-}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

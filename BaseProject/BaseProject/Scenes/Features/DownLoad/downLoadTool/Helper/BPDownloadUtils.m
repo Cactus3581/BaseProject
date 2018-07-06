@@ -64,10 +64,19 @@
     return md5Result;
 }
 
-+ (void)createPathIfNotExist:(NSString *)path {
-    if(![[NSFileManager defaultManager] fileExistsAtPath:path]){
-        [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:true attributes:nil error:nil];
++ (BOOL)createPathIfNotExist:(NSString *)path {
+
+    BOOL ret = YES;
+    BOOL isExist = [[NSFileManager defaultManager] fileExistsAtPath:path];
+    if (!isExist) {
+        NSError *error;
+        BOOL isSuccess = [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error];
+        if (!isSuccess) {
+            ret = NO;
+            NSLog(@"creat Directory Failed. errorInfo:%@",error);
+        }
     }
+    return ret;
 }
 
 @end

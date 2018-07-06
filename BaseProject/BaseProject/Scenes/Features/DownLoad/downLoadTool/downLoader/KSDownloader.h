@@ -24,11 +24,10 @@
 //获取下载管理对象（单例）
 + (KSDownloader *)shareDownloader;
 
-//开始下载:以单个的形式
-- (void)downloadItem:(BPDownLoadItem *)item;
+//单个的形式
 
-//批量下载
-- (void)downloadItems:(NSArray<BPDownLoadItem*> *)items;
+//开始下载
+- (void)downloadItem:(BPDownLoadItem *)item;
 
 //暂停下载
 - (void)pauseDownloadForItem:(id<NSCopying>)itemId;
@@ -39,11 +38,31 @@
 //取消下载
 - (void)cancelDownloadForItem:(id<NSCopying>)itemId;
 
+//批量的形式
+
+//开始下载
+- (void)downloadItems:(NSArray<BPDownLoadItem*> *)items;
+
+//暂停下载
+- (void)pauseDownload;
+
+//恢复下载
+- (void)resumeDownload;
+
+//取消下载
+- (void)cancelDownload;
+
+//获取所有的任务
+- (NSArray<BPDownLoadItem *> *)allDownLoadItems;
+
 //获取下载中的任务
 - (NSArray<BPDownLoadItem *> *)downloadingItems;
 
 //获取已下载的任务
 - (NSArray<BPDownLoadItem*> *)downloadedItems;
+
+//根据id获取item
+- (BPDownLoadItem *)ItemForItem:(BPDownLoadItem *)item;
 
 //根据id获取已下载的item
 - (BPDownLoadItem *)downloadedItemForItem:(BPDownLoadItem *)item;

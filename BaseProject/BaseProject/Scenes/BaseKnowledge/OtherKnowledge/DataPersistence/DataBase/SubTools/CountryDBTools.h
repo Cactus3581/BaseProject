@@ -6,10 +6,10 @@
 //  Copyright © 2017年 xiaruzhen. All rights reserved.
 //
 
-#import "FMDBTools.h"
+#import "BPDataBaseManager.h"
 #import "FMDB.h"
 #import "FMDatabase.h"
 #import "FMDatabaseQueue.h"
-@interface CountryDBTools : FMDBTools
+@interface CountryDBTools : BPDataBaseManager
 
 @end
