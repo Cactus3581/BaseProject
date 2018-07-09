@@ -1,42 +1,40 @@
 //
-//  BPTopCategoryListContainerCollectionViewCell.m
+//  BPCategoryDetailViewController.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2018/4/27.
+//  Created by xiaruzhen on 2018/7/8.
 //  Copyright © 2018年 cactus. All rights reserved.
 //
 
-#import "BPTopCategoryListContainerCollectionViewCell.h"
+#import "BPCategoryDetailViewController.h"
 #import "BPTopCategoryListView.h"
 #import "BPTopCategoryListTagView.h"
 
-@interface BPTopCategoryListContainerCollectionViewCell()<BPTopCategoryListTagViewDelegate>
+@interface BPCategoryDetailViewController ()<BPTopCategoryListTagViewDelegate>
 @property (weak, nonatomic) IBOutlet BPTopCategoryListView *listView;
 @property (weak, nonatomic) IBOutlet BPTopCategoryListTagView *tagView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tagViewHeightConstraint;
-@property (nonatomic,strong) BPTopCategoryFirstCategoryModel *model;
 @end
 
-@implementation BPTopCategoryListContainerCollectionViewCell
+@implementation BPCategoryDetailViewController
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    self.contentView.backgroundColor = kWhiteColor;
+- (void)viewDidLoad {
+    [super viewDidLoad];
     self.tagView.delegate = self;
+    [self handleModel];
 }
 
-- (void)setModel:(BPTopCategoryFirstCategoryModel *)model indexPath:(NSIndexPath *)indexPath {
-    _model = model;
-    self.tagView.model = model;
-    if (!model.sub.count) { //没有tag
+- (void)handleModel {
+    self.tagView.model = self.model;
+    if (!self.model.sub.count) { //没有tag
         self.tagViewHeightConstraint.constant = 0.f;
-        if (model.thirdCategoryModel) {
-            self.listView.array = model.thirdCategoryModel.data;
+        if (self.model.thirdCategoryModel) {
+            self.listView.array = self.model.thirdCategoryModel.data;
         }else {
             
         }
     }else {
-        self.tagViewHeightConstraint.constant = model.tagHeight;
+        self.tagViewHeightConstraint.constant = self.model.tagHeight;
         [self handleListData];
     }
 }
@@ -72,8 +70,12 @@
     if (model.thirdCategoryModel) {
         self.listView.array = model.thirdCategoryModel.data;
     }else {
-
+        
     }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 @end

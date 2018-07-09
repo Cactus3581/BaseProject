@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BPTopCategoryModel.h"
+@class BPTopCategoryModel;
 
 @class BPTopCategoryThirdCategoryModel;
 @class BPTopCategoryThirdCategoryUpperModel;

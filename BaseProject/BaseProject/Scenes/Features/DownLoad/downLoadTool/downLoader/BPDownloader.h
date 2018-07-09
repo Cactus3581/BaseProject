@@ -1,5 +1,5 @@
 //
-//  KSDownloader.h
+//  BPDownloader.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/7/4.
@@ -19,10 +19,10 @@
 - (void)downloadItem:(BPDownLoadItem *)item speed:(NSUInteger)speed speedDesc:(NSString *)speedDesc;
 @end
 
-@interface KSDownloader : NSObject
+@interface BPDownloader : NSObject
 
 //获取下载管理对象（单例）
-+ (KSDownloader *)shareDownloader;
++ (BPDownloader *)shareDownloader;
 
 //单个的形式
 

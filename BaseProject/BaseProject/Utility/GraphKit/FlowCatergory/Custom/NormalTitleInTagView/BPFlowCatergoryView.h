@@ -11,10 +11,14 @@
 @class BPFlowCatergoryView;
 
 @protocol BPFlowCatergoryViewDelegate <NSObject>
-@optional
 
+@required
 /** 获取view*/
 - (UIViewController *)flowCatergoryView:(BPFlowCatergoryView *)flowCatergoryView cellForItemAtIndexPath:(NSInteger)row;
+
+@optional
+/** 点击*/
+- (void)flowCatergoryView:(BPFlowCatergoryView *)flowCatergoryView didSelectItemAtIndex:(NSInteger)row;
 
 /** 滑动中*/
 - (void)flowCatergoryViewDidScroll:(BPFlowCatergoryView *)flowCatergoryView;
@@ -44,6 +48,8 @@
 @property (nonatomic, assign) BOOL scrollWithAnimaitonWhenClicked;
 /**设置初始化默认选中的index，默认0*/
 @property (nonatomic, assign) NSUInteger defaultIndex;
+
+@property (nonatomic, strong) UIColor *flowTagViewColor;
 
 #pragma mark - item
 /**item间距，默认10，如果计算出的item排布的总宽度小于控件宽度，会自动修改item让item均布*/
@@ -85,6 +91,11 @@
 /**下方横线距离item底部的距离，默认10.0f*/
 @property (nonatomic, assign) CGFloat bottomLineSpacingFromTitleBottom;
 
+#pragma mark - bottomLine：长条。非动画条
+/**是否开启下方横线，默认NO*/
+@property (nonatomic, assign,getter=isLineHidden) BOOL lineHidden;
+@property (nonatomic, strong) UIColor *lineColor;
+
 #pragma mark - backEllipse
 /**是否开启背后的椭圆，默认NO*/
 @property (nonatomic, assign) BOOL backEllipseEable;
@@ -99,5 +110,10 @@
 
 /**重新设置titles数据源后调用该方法刷新控件*/
 - (void)bp_realoadData;
+- (void)bp_realoadDataForTag;
+- (void)bp_realoadDataForContentView;
+
+/**旋转问题*/
+- (void)performBatchUpdates;
 
 @end

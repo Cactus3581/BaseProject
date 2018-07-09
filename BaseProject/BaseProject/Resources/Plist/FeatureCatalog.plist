@@ -163,7 +163,7 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>AddChiledController</string>
+				<string>基于AddChiledController&amp;过渡动画</string>
 				<key>fileName</key>
 				<string>BP_Four_TopSliderCatergoryViewController</string>
 				<key>briefIntro</key>
@@ -171,7 +171,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>CollectionView做的</string>
+				<string>基于CollectionView</string>
 				<key>fileName</key>
 				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
@@ -182,25 +182,41 @@
 						<key>title</key>
 						<string>颜色左右渐变 + 底部线条</string>
 						<key>fileName</key>
-						<string>BP_ONE_TopSliderCatergoryViewController</string>
+						<string>BPFlowCatergoryViewController</string>
 						<key>briefIntro</key>
 						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;0&quot;}</string>
 					</dict>
 					<dict>
 						<key>title</key>
 						<string>颜色变化 + 背后椭圆 + 设置默认index</string>
 						<key>fileName</key>
-						<string>BP_TWO_TopSliderCatergoryViewController</string>
+						<string>BPFlowCatergoryViewController</string>
 						<key>briefIntro</key>
 						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;1&quot;}</string>
 					</dict>
 					<dict>
 						<key>title</key>
 						<string>颜色变化 + 文字缩放 + 模拟网络刷新</string>
 						<key>fileName</key>
-						<string>BP_THREE_TopSliderCatergoryViewController</string>
+						<string>BPFlowCatergoryViewController</string>
 						<key>briefIntro</key>
 						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;2&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>下划线</string>
+						<key>fileName</key>
+						<string>BPFlowCatergoryViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;3&quot;}</string>
 					</dict>
 				</array>
 			</dict>

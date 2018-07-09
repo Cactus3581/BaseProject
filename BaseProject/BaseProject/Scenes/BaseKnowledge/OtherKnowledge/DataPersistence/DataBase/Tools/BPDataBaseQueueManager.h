@@ -10,6 +10,12 @@
 #import "FMDB.h"
 @class FMDB;
 
+
+typedef NS_ENUM(NSInteger, BPDBType) {
+    BPDB_Base,//
+    BPDB_Queue //
+};
+
 @interface BPDataBaseQueueManager : NSObject
 
 #pragma mark - 初始化

@@ -8,7 +8,7 @@
 
 #import "BPDataBaseQueueManager.h"
 
-static NSString *kDB_NAME = @"BPDataBaseQueueManager.db";
+static NSString *kDB_NAME = @"cactus.db";
 static BPDataBaseQueueManager *dataBase = nil;
 
 typedef NS_ENUM(NSInteger, BPDBActionType) {

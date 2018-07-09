@@ -12,7 +12,7 @@
 #import "UIImageView+WebCache.h"
 #import "BPDownLoadDataSource.h"
 #import "BPDownLoadGeneralView.h"
-#import "KSDownloader.h"
+#import "BPDownloader.h"
 #import "BPDownLoadItem.h"
 #import "BPDownLoad.h"
 
@@ -60,7 +60,7 @@
     item.downLoadUrl = model.mediaUrl;
     item.title = model.title;
     item.filepath = @"";
-    [[KSDownloader shareDownloader] downloadItem:item];
+    [[BPDownloader shareDownloader] downloadItem:item];
 }
 
 - (void)setup {

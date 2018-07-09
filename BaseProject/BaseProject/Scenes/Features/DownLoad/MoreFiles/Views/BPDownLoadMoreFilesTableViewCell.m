@@ -10,7 +10,7 @@
 #import "BPDownLoadMacro.h"
 #import "BPDownLoadGeneralView.h"
 
-#import "KSDownloader.h"
+#import "BPDownloader.h"
 #import "BPDownLoad.h"
 
 @interface BPDownLoadMoreFilesTableViewCell ()<BPDownLoadGeneralViewDelegate>
@@ -52,7 +52,7 @@
     item.downLoadUrl = model.mediaUrl;
     item.title = model.title;
     item.filepath = @"";
-    [[KSDownloader shareDownloader] downloadItem:item];
+    [[BPDownloader shareDownloader] downloadItem:item];
     
 //    if (_delegate && [_delegate respondsToSelector:@selector(downLoad:item:indexPath:)]) {
 //        [_delegate downLoad:self item:model indexPath:self.indexPath];
@@ -60,16 +60,16 @@
 }
 
 - (void)pause:(BPDownLoadGeneralView *)downLoadGeneralView item:(BPAudioModel *)model {
-    [[KSDownloader shareDownloader] pauseDownloadForItem:model.mediaUrl];
+    [[BPDownloader shareDownloader] pauseDownloadForItem:model.mediaUrl];
 
 }
 
 - (void)resume:(BPDownLoadGeneralView *)downLoadGeneralView item:(BPAudioModel *)model {
-    [[KSDownloader shareDownloader] resumeDownloadForItem:model.mediaUrl];
+    [[BPDownloader shareDownloader] resumeDownloadForItem:model.mediaUrl];
 }
 
 - (void)stop:(BPDownLoadGeneralView *)downLoadGeneralView item:(BPAudioModel *)model {
-//    [[KSDownloader shareDownloader] st:item];
+//    [[BPDownloader shareDownloader] st:item];
 
 }
 
@@ -85,7 +85,7 @@
     _indexPath = indexPath;
     [self.downLoadView setModel:model];
     
-    [[KSDownloader shareDownloader] resumeDownloadForItem:model.mediaUrl];
+    [[BPDownloader shareDownloader] resumeDownloadForItem:model.mediaUrl];
 
     [self.downLoadView setItem:nil];
 }

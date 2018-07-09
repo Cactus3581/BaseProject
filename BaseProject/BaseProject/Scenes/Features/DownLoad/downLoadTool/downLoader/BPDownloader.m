@@ -1,12 +1,12 @@
 //
-//  KSDownloader.m
+//  BPDownloader.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/7/4.
 //  Copyright © 2018年 cactus. All rights reserved.
 //
 
-#import "KSDownloader.h"
+#import "BPDownloader.h"
 #import <AFNetworking.h>
 #import "BPDownLoad.h"
 #import "BPDownLoadItem.h"
@@ -15,22 +15,22 @@
 
 static NSInteger maxCount = 3;
 
-@interface KSDownloader()
+@interface BPDownloader()
 @property (nonatomic,strong) NSMutableArray *allItems; // 存放外界提供所有对象的数组；
 @property (nonatomic,strong) NSMutableArray *needDownLoadArray; // 存放需要下载对象的数组，过滤掉已经下载的；BPDownLoadItemNone||BPDownLoadItemFail
 @property (nonatomic,strong) NSMutableArray *downLoadingArray; // 存放马上执行任务对象的数组；
 @property (nonatomic,strong) NSMutableDictionary *tasksDict; // 存放task的字典
 @end
 
-static KSDownloader *downloader = nil;
+static BPDownloader *downloader = nil;
 static dispatch_group_t downloadGroup;
 
-@implementation KSDownloader
+@implementation BPDownloader
 
-+ (KSDownloader *)shareDownloader {
++ (BPDownloader *)shareDownloader {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        downloader = [[KSDownloader alloc] init];
+        downloader = [[BPDownloader alloc] init];
         downloader.maxCount = maxCount;
         downloadGroup = dispatch_group_create();
     });

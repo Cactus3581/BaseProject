@@ -8,17 +8,12 @@
 
 #import "BPTopCategoryCollectionViewController.h"
 #import "BPTopCategoryModel.h"
-#import "BPFlowCatergoryTagView.h"
-#import "UICollectionViewFlowLayout+BPFullItem.h"
-#import "BPTopCategoryListContainerCollectionViewCell.h"
+#import "BPFlowCatergoryView.h"
 #import "BPTopCategoryMacro.h"
+#import "BPCategoryDetailViewController.h"
 
-static NSString *identifier  = @"BPTopCategoryListContainerCollectionViewCell";
-
-
-@interface BPTopCategoryCollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, BPFlowCatergoryTagViewDelegate>
-@property (nonatomic, weak) UICollectionView *mainView;
-@property (nonatomic, weak) BPFlowCatergoryTagView *catergoryView;
+@interface BPTopCategoryCollectionViewController ()<BPFlowCatergoryViewDelegate>
+@property (nonatomic, weak) BPFlowCatergoryView *catergoryView;
 @property (nonatomic, strong) NSArray *cateogry;
 @end
 
@@ -29,6 +24,11 @@ static NSString *identifier  = @"BPTopCategoryListContainerCollectionViewCell";
     [self addFPSLabel];
     [self handlaData];
     [self initializeSubViews];
+}
+
+- (void)configLayoutStyle {
+    //1. 所有view（包括scroll）坐标原点在导航栏下面,不影响导航栏的颜色及背景，即跟它没关系，只影响坐标原点；也不会设置scroll的偏移量
+    self.edgesForExtendedLayout = UIRectEdgeNone;//也可以是UIRectEdgeTop
 }
 
 - (void)handlaData {
@@ -75,51 +75,10 @@ static NSString *identifier  = @"BPTopCategoryListContainerCollectionViewCell";
     }];
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.cateogry.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    BPTopCategoryListContainerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    //BPTopCategoryFirstCategoryModel *model = self.cateogry[indexPath.row];
-    //[cell setModel:model indexPath:indexPath];
-    return cell;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath  {
-    BPTopCategoryFirstCategoryModel *model = self.cateogry[indexPath.row];
-    [(BPTopCategoryListContainerCollectionViewCell *)cell setModel:model indexPath:indexPath];
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
 
 - (void)initializeSubViews {
-    //主collectionView
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    //layout.estimatedItemSize = CGSizeMake(self.view.width, self.view.height);
-    //layout.itemSize = UICollectionViewFlowLayoutAutomaticSize;
-    layout.minimumInteritemSpacing = layout.minimumLineSpacing = 0;
-    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    layout.fullItem = YES;
-    UICollectionView *mainView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-    self.mainView = mainView;
-    mainView.backgroundColor = kWhiteColor;
-    mainView.dataSource = self;
-    mainView.delegate = self;
-    mainView.pagingEnabled = YES;
-    mainView.scrollsToTop = NO;
-    mainView.showsHorizontalScrollIndicator = NO;
-    [mainView registerNib:[UINib nibWithNibName:NSStringFromClass([BPTopCategoryListContainerCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:identifier];
-    [self.view addSubview:mainView];
-    
     //catergoryView
-    BPFlowCatergoryTagView * catergoryView = [[BPFlowCatergoryTagView alloc] init];
+    BPFlowCatergoryView * catergoryView = [[BPFlowCatergoryView alloc] init];
     catergoryView.backgroundColor = kWhiteColor;
     self.catergoryView = catergoryView;
     [self.view addSubview:catergoryView];
@@ -135,7 +94,6 @@ static NSString *identifier  = @"BPTopCategoryListContainerCollectionViewCell";
     catergoryView.defaultIndex = 0;//默认优先显示的下标
     
     /* 关于交互:滑动、点击 */
-    catergoryView.scrollView = mainView;//必须设置关联的scrollview
     catergoryView.delegate = self;//监听item按钮点击
     
     /* 关于横线*/
@@ -171,22 +129,19 @@ static NSString *identifier  = @"BPTopCategoryListContainerCollectionViewCell";
     catergoryView.scrollWithAnimaitonWhenClicked = NO;//禁用点击item滚动scrollView的动画
     catergoryView.holdLastIndexAfterUpdate = NO;/**刷新后是否保持在原来的index上，默认NO，表示刷新后回到第0个item*/
     
-    [catergoryView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.trailing.equalTo(self.view);
-        make.top.equalTo(self.view).offset(64);
-        make.height.equalTo(@40);
+    [self.catergoryView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
     }];
-    
-    [mainView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.trailing.bottom.equalTo(self.view);
-        make.top.equalTo(catergoryView.mas_bottom);
-    }];
-    [catergoryView bp_realoadData];
-    [mainView reloadData];
+}
+
+- (UIViewController *)flowCatergoryView:(BPFlowCatergoryView *)flowCatergoryView cellForItemAtIndexPath:(NSInteger)row {
+    BPCategoryDetailViewController *vc = [[BPCategoryDetailViewController alloc] init];
+    BPTopCategoryFirstCategoryModel *model = self.cateogry[row];
+    vc.model = model;
+    return vc;
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    [self.mainView reloadData];
 }
 
 - (void)dealloc {
