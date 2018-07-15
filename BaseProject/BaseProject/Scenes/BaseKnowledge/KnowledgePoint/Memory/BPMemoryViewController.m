@@ -55,7 +55,59 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
     //    [self testDelegate];
 //        [self testTimer];
     //    [self testSystem];
-    [self testCopy];
+//    [self testCopy];
+    [self testSet];
+}
+
+- (void)testSet {
+    NSString *str1 = @"1";
+    NSMutableArray *muArray = @[].mutableCopy;
+    [muArray addObject:str1];
+    str1 = @"2";
+    BPLog(@"testSet = %@,%@",str1,muArray);
+    
+    NSString *str2 = str1;
+    str2 = nil;
+    BPLog(@"str1 = %@,str2 = %@",str1,str2);
+    
+    NSString *str3 = muArray[0];
+    BPLog(@"str3 = %@",str3);
+    
+    str3 = @"3";
+    BPLog(@"str1 = %@,str2 = %@,str3 = %@,muArray = %@",str1,str2,str3,muArray);
+    
+    // 无论用哪个变量，操控的都是同一个对象
+    UILabel *label = [[UILabel alloc] init];
+    label.text = @"a";
+    
+    NSMutableArray *muArray1 = @[].mutableCopy;
+    [muArray1 addObject:label];
+    
+    label.text = @"b";
+    BPLog(@"label.text = %@,muArray1 = %@",label.text,muArray1);
+
+    NSArray *array1 = muArray1.copy;
+    UILabel *label1 = array1[0];
+
+    label1.text = @"c";
+    BPLog(@"label.text = %@,label1 = %@,muArray1 = %@,array1 = %@",label.text,label1.text,muArray1,array1);
+    
+    
+    
+    NSString *string1 = @"A";
+    NSMutableArray *muArray2 = @[].mutableCopy;
+    
+    [muArray2 addObject:string1];
+    
+    NSMutableArray *muArray3 = @[].mutableCopy;
+    
+    [muArray3 addObject:string1];
+    
+    string1 = nil;
+    [muArray2 removeAllObjects];
+    muArray2 = nil;
+    BPLog(@"string1 = %@,%@,%@",string1,muArray2,muArray3)
+    BPLog(@"string1 = %p,%p,%p",&string1,&muArray2,&muArray3)
 }
 
 /*

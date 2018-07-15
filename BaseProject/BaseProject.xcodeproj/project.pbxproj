@@ -6942,8 +6942,8 @@
 		01B0752E20E4FD0C004891F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				01B0752F20E4FD0C004891F7 /* BPBlockAnimatonVC.m */,
 				01B0753020E4FD0C004891F7 /* BPBlockAnimatonVC.h */,
+				01B0752F20E4FD0C004891F7 /* BPBlockAnimatonVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

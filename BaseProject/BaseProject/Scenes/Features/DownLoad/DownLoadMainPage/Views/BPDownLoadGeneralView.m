@@ -8,6 +8,7 @@
 
 #import "BPDownLoadGeneralView.h"
 #import "UIImageView+WebCache.h"
+#import "BPDownloadUtils.h"
 
 @interface BPDownLoadGeneralView ()
 @property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
@@ -83,7 +84,7 @@
     
     self.statusLabel.text = statusStr;
     self.progressView.progress = [item.progress floatValue];
-    self.sizeLabel.text = [NSString stringWithFormat:@"%@/%@",item.completedUnitCount,item.totalUnitCount];
+    self.sizeLabel.text = [NSString stringWithFormat:@"%@/%@",[BPDownloadUtils fileSizeStringFromBytes:[item.completedUnitCount integerValue]],[BPDownloadUtils fileSizeStringFromBytes:[item.totalUnitCount integerValue]]];
 }
 
 - (IBAction)dowLoad:(id)sender {

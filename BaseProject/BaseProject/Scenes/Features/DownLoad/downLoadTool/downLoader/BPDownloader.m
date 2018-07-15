@@ -137,7 +137,11 @@ static dispatch_group_t downloadGroup;
 //下载任务
 - (void)p_downLoadWithItem:(BPDownLoadItem *)item completionHandler:(void (^)(BOOL result))result {
     
+//    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier:@"com.cactus.BaseProject"];
+    
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    configuration.allowsCellularAccess = YES;
+
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
     NSURL *URL = [NSURL URLWithString:item.downLoadUrl];

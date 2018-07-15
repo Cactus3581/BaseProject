@@ -48,7 +48,7 @@
                     <rect key="frame" x="160" y="98" width="200" height="2"/>
                 </progressView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7V-AB-lnD">
-                    <rect key="frame" x="160" y="36" width="135" height="28"/>
+                    <rect key="frame" x="160" y="36" width="163" height="28"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLs-qL-sF2">
                             <rect key="frame" x="3" y="0.0" width="30" height="28"/>
@@ -59,7 +59,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbP-tX-382">
-                            <rect key="frame" x="36" y="0.0" width="30" height="28"/>
+                            <rect key="frame" x="43" y="0.0" width="30" height="28"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="暂停"/>
                             <connections>
@@ -67,7 +67,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69s-X6-D8u">
-                            <rect key="frame" x="69" y="0.0" width="30" height="28"/>
+                            <rect key="frame" x="83" y="0.0" width="30" height="28"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="继续"/>
                             <connections>
@@ -75,7 +75,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIP-X8-fBU">
-                            <rect key="frame" x="102" y="0.0" width="30" height="28"/>
+                            <rect key="frame" x="123" y="0.0" width="30" height="28"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <state key="normal" title="停止"/>
                             <connections>
@@ -88,14 +88,14 @@
                         <constraint firstAttribute="bottom" secondItem="vbP-tX-382" secondAttribute="bottom" id="7yq-OH-ajf"/>
                         <constraint firstAttribute="bottom" secondItem="EIP-X8-fBU" secondAttribute="bottom" id="JaI-SS-pIK"/>
                         <constraint firstItem="uLs-qL-sF2" firstAttribute="top" secondItem="O7V-AB-lnD" secondAttribute="top" id="POh-IG-wry"/>
-                        <constraint firstAttribute="trailing" secondItem="EIP-X8-fBU" secondAttribute="trailing" constant="3" id="c2G-da-wcf"/>
+                        <constraint firstAttribute="trailing" secondItem="EIP-X8-fBU" secondAttribute="trailing" constant="10" id="c2G-da-wcf"/>
                         <constraint firstItem="EIP-X8-fBU" firstAttribute="top" secondItem="O7V-AB-lnD" secondAttribute="top" id="gHR-tA-rXV"/>
-                        <constraint firstItem="EIP-X8-fBU" firstAttribute="leading" secondItem="69s-X6-D8u" secondAttribute="trailing" constant="3" id="jcY-RN-g5t"/>
+                        <constraint firstItem="EIP-X8-fBU" firstAttribute="leading" secondItem="69s-X6-D8u" secondAttribute="trailing" constant="10" id="jcY-RN-g5t"/>
                         <constraint firstItem="69s-X6-D8u" firstAttribute="top" secondItem="O7V-AB-lnD" secondAttribute="top" id="m6P-4u-kl3"/>
-                        <constraint firstItem="69s-X6-D8u" firstAttribute="leading" secondItem="vbP-tX-382" secondAttribute="trailing" constant="3" id="qfH-LW-SeB"/>
+                        <constraint firstItem="69s-X6-D8u" firstAttribute="leading" secondItem="vbP-tX-382" secondAttribute="trailing" constant="10" id="qfH-LW-SeB"/>
                         <constraint firstAttribute="bottom" secondItem="uLs-qL-sF2" secondAttribute="bottom" id="t1a-Jw-zz2"/>
                         <constraint firstItem="uLs-qL-sF2" firstAttribute="leading" secondItem="O7V-AB-lnD" secondAttribute="leading" constant="3" id="tQk-oC-uLF"/>
-                        <constraint firstItem="vbP-tX-382" firstAttribute="leading" secondItem="uLs-qL-sF2" secondAttribute="trailing" constant="3" id="wGl-pg-Zfs"/>
+                        <constraint firstItem="vbP-tX-382" firstAttribute="leading" secondItem="uLs-qL-sF2" secondAttribute="trailing" constant="10" id="wGl-pg-Zfs"/>
                         <constraint firstAttribute="bottom" secondItem="69s-X6-D8u" secondAttribute="bottom" id="wbx-lK-1ei"/>
                         <constraint firstItem="vbP-tX-382" firstAttribute="top" secondItem="O7V-AB-lnD" secondAttribute="top" id="wzY-th-FfB"/>
                     </constraints>

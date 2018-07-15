@@ -85,7 +85,6 @@
     _indexPath = indexPath;
     [self.downLoadView setModel:model];
     
-    [[BPDownloader shareDownloader] resumeDownloadForItem:model.mediaUrl];
 
     [self.downLoadView setItem:nil];
 }
