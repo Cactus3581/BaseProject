@@ -27,22 +27,25 @@
     button.center = self.view.center;
     [button setTitle:@"登陆" forState:UIControlStateNormal];
     [button.titleLabel setFont:[UIFont systemFontOfSize:12]];
-    button.titleLabel.textAlignment = NSTextAlignmentCenter;
+//    button.titleLabel.textAlignment = NSTextAlignmentLeft;
     button.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-    [button setImage:[UIImage imageNamed:@"cactus_ round_steady"] forState:UIControlStateNormal];
+    //[button setImage:[UIImage imageNamed:@"cactus_ round_steady"] forState:UIControlStateNormal];
     [self.view addSubview:button];
     
-//    [button setImageEdgeInsets:UIEdgeInsetsMake(-60, 60, 0, 0)];
 
-//    [button setTitleEdgeInsets:UIEdgeInsetsMake(-60, 60, 0, 0)];
     
-//    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
 
     button.backgroundColor = kBrownColor;
     [button setTintColor:kWhiteColor];
     [button setTitleColor:kRedColor forState:UIControlStateNormal];
     button.titleLabel.backgroundColor = kBlueColor;
     button.imageView.backgroundColor = kGreenColor;
+    
+    //    [button setImageEdgeInsets:UIEdgeInsetsMake(-60, 60, 0, 0)];
+    
+    //    [button setTitleEdgeInsets:UIEdgeInsetsMake(-60, 60, 0, 0)];
+//    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+
 }
 
 - (void)initializeViews {
