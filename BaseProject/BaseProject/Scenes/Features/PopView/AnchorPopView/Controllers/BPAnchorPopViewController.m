@@ -42,9 +42,6 @@
                 [self initializeCollectionView];
             }
                 break;
-                
-            default:
-                break;
         }
     }
 }

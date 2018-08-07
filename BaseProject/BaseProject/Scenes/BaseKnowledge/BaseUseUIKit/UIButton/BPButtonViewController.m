@@ -17,7 +17,32 @@
 //addTarget uibutton 参数
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self test];
+    //[self test];
+    [self edgeInsetsMake];
+}
+
+- (void)edgeInsetsMake {
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.bounds = CGRectMake(100, 300, 100, 100);
+    button.center = self.view.center;
+    [button setTitle:@"登陆" forState:UIControlStateNormal];
+    [button.titleLabel setFont:[UIFont systemFontOfSize:12]];
+    button.titleLabel.textAlignment = NSTextAlignmentCenter;
+    button.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+    [button setImage:[UIImage imageNamed:@"cactus_ round_steady"] forState:UIControlStateNormal];
+    [self.view addSubview:button];
+    
+//    [button setImageEdgeInsets:UIEdgeInsetsMake(-60, 60, 0, 0)];
+
+//    [button setTitleEdgeInsets:UIEdgeInsetsMake(-60, 60, 0, 0)];
+    
+//    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+
+    button.backgroundColor = kBrownColor;
+    [button setTintColor:kWhiteColor];
+    [button setTitleColor:kRedColor forState:UIControlStateNormal];
+    button.titleLabel.backgroundColor = kBlueColor;
+    button.imageView.backgroundColor = kGreenColor;
 }
 
 - (void)initializeViews {

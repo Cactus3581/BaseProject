@@ -18,6 +18,13 @@
 //http://geek.csdn.net/news/detail/54092
 //http://blog.csdn.net/x32sky/article/details/50736578
 
+/*
+ 1. 线程，任务，队列，runloop，甚至是异步、并发的概念理解
+ 2. GCD的日常几种使用方式
+ 3. 线程安全的实现-锁：几种锁及区别
+ 4. GCD的内部实现原理
+ 5. GCD与Block的结合使用
+ */
 
 @interface BPGCDViewController ()
 
@@ -27,201 +34,51 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self gcd_general];
-//    [self gcd_cancel];
-//    [self gcd_deadlock];
-
-//    [self gcd_applications];
-//    [self gcd_safe];
-//    [self gcd_test];
+    [self handleDynamicJumpData];
 }
 
-- (void)gcd_test {
-    /*
-    任何需要刷新 UI 的工作都要由主线程执行，所以一般耗时的任务都要开辟子线程，让子线程来执行。主队列里只有主线程。UI刷新放在主线程里进行这种说法是不对的，因为线程是执行者，而队列是存放任务的，UI刷新是任务，应该说UI刷新必须由主线程进行,但是UI刷新不一定存放在主队列里，比如可以存放在同步自定义串行队列。
-    
-    串行与并行针对的是队列，而同步与异步，针对的则是线程。最大的区别在于，同步线程要阻塞当前线程，必须要等待同步线程中的任务执行完，返回以后，才能继续执行下一任务；而异步线程则是不用等待。
-     
-     添加任务和任务执行时间不一样；
-     一开始就确认了任务的顺序；
-     
-
-    */
-    
-    
-    //自定义串行串行队列
-    dispatch_queue_t queue = dispatch_queue_create("com.test.gcd", DISPATCH_QUEUE_SERIAL);
-
-    //异步任务1加入串行队列中
-    dispatch_async(queue, ^{
-        BPLog(@"串行队列任务1");
-        for (NSInteger i = 0; i < 10; i++) {
-            BPLog(@"串行队列任务1_i:%ld",i);
+- (void)handleDynamicJumpData {
+    if (self.needDynamicJump) {
+        NSInteger type = [self.dynamicJumpDict[@"type"] integerValue];
+        switch (type) {
+                
+            case 0:{
+                [self gcd_general];
+            }
+                break;
+                
+            case 1:{
+                [self gcd_cancel];
+            }
+                break;
+                
+            case 2:{
+                [self gcd_applications];
+            }
+                break;
+                
+            case 3:{
+                [self gcd_deadlock];
+            }
+                break;
+                
+            case 4:{
+                [self gcd_safe];
+            }
+                break;
+                
+            case 5:{
+                [self gcd_addtaskDiffExecutetask];
+            }
+                break;
         }
-    });
-    //同步任务2加入串行队列中
-    dispatch_sync(queue, ^{
-        BPLog(@"串行队列任务2");
-        for (NSInteger i = 0; i < 10; i++) {
-            BPLog(@"串行队列任务2_i:%ld",i);
-        }
-
-    });
-
-    //1.
-    dispatch_async(dispatch_get_main_queue(), ^{
-        BPLog(@"2");
-    });
-    BPLog(@"1");
-    BPLog(@"3");
-    BPLog(@"4");
-    BPLog(@"5");
-    BPLog(@"6");
-    //执行顺序 1 -> 3 -> ... -> 6 -> 2
-    //???:什么时机将BPLog(@"2");添加到主队列去的
-
-    
-    //2.
-    dispatch_async(dispatch_get_main_queue(), ^{
-        BPLog(@"1");
-    });
-
-    dispatch_async(dispatch_get_main_queue(), ^{
-        BPLog(@"2");
-    });
-    //执行顺序 1 -> 2
-}
-
-- (void)gcd_deadlock {
-    
-    //http://ios.jobbole.com/82622/
-    
-    //要理解同步异步函数是否返回这句话，返回其实就是指的';',是否返回跟阻塞其实一回事，直接返回，就不阻塞了，等待返回，就是阻塞；
-    
-    BPLog(@"1"); // 任务1  //顺序执行：任务1在主线程，主队列中执行；
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        BPLog(@"2"); // 任务2
-    });
-    BPLog(@"3"); // 任务3
-    //控制台输出：1；
-    
-    /*先来看看都有哪些任务加入了Main Queue：【任务1，同步函数、任务3】。
-     line_38：顺序执行：任务1在主线程，主队列中执行；
-     
-     line_39：发生死锁：获取主队列，dispatch_sync同步函数将任务2放到主队列里，并阻塞当前线程（在这是主线程）,以及等待任务2返回。
-     这时候，同步函数阻塞了主线程，同步函数并等待任务2的返回，但是线程都被阻塞了，block没有线程去执行，进入了互相等待的局面，导致死锁；相当于任务和线程之间有个同步函数裁判在阻隔着。
-     
-     line_42：不执行
-     */
-    
-    
-    BPLog(@"1"); // 任务1
-    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        BPLog(@"2"); // 任务2
-    });
-    BPLog(@"3"); // 任务3
-    
-    //控制台输出：1，2，3；
-    
-    /*
-     line_55：顺序执行：任务1在主线程，主队列中执行；
-     
-     line_56：顺序执行：获取全局队列，dispatch_sync同步函数将任务2放到全局队列里，并阻塞当前线程（在这是主线程）,以及等待全局队列里的任务2返回。
-     这时候，同步函数阻塞了主队列里的主线程，主线程跑到全局队列去执行任务2，同步函数并等待任务2的返回，block块在全局队列里被主线程执行完，返回到主队列；
-     
-     line_59：顺序执行
-     */
-    
-    
-    dispatch_queue_t queue = dispatch_queue_create("serialQueue", DISPATCH_QUEUE_SERIAL);
-    BPLog(@"1"); // 任务1
-    dispatch_async(queue, ^{
-        BPLog(@"2"); // 任务2
-        dispatch_sync(queue, ^{
-            BPLog(@"3"); // 任务3
-        });
-        BPLog(@"4"); // 任务4
-    });
-    BPLog(@"5"); // 任务5
-    
-    /*控制台输出：
-     1，
-     5，
-     2，
-    */
-    
-    /*
-     line_73：顺序执行：创建串行队列；
-
-     line_74：顺序执行：任务1在主线程，主队列中执行；
-
-     line_75：异步执行：dispatch_async异步函数将block块任务（里面有三个小任务组成一个大任务）放到串行队列里，不会阻塞当前线程（在这是主线程）,不需要等待串行队列里的任务，直接返回。 这时候，串行队列里，一共有三个任务,串行执行,
-     
-     line_76：顺序执行：任务2在串行队列首先执行；
-     
-     line_77：死锁：dispatch_sync将任务3放到串行队列里，dispatch_sync任务排在任务3的前面 ，此时并阻塞当前线程：任务2->同步函数->任务4->任务3,发生死锁
-
-     line_82：顺序执行
-     */
-    
-    
-    BPLog(@"1"); // 任务1
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        BPLog(@"2"); // 任务2
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            BPLog(@"3"); // 任务3
-        });
-        BPLog(@"4"); // 任务4
-    });
-    BPLog(@"5"); // 任务5
-    /*
-     以上不会发生死锁
-     
-     首先，将【任务1、异步线程、任务5】加入Main Queue中，异步线程中的任务是：【任务2、同步线程、任务4】。
-     
-     所以，先执行任务1，然后将异步线程中的任务加入到Global Queue中，因为异步线程，所以直接返回，任务5执行，结果就是2和5的输出顺序不一定。
-     
-     然后再看异步线程中的任务执行顺序。任务2执行完以后，遇到同步线程。将同步线程中的任务加入到Main Queue中，这时加入的任务3在任务5的后面。
-     
-     当任务3执行完以后，没有了阻塞，程序继续执行任务4。
-     */
-    
-    
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        BPLog(@"1"); // 任务1
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            BPLog(@"2"); // 任务2
-        });
-        BPLog(@"3"); // 任务3
-    });
-    BPLog(@"4"); // 任务4
-    while (1) {
     }
-    BPLog(@"5"); // 任务5
-    
-    /*
-     
-     先来看看都有哪些任务加入了Main Queue：【异步线程、任务4、死循环、任务5】。
-     
-     在加入到Global Queue异步线程中的任务有：【任务1、同步线程、任务3】。
-     
-     第一个就是异步函数，直接返回，任务4不用等待直接执行，所以结果任务1和任务4顺序不一定。
-     
-     任务4完成后，程序进入死循环，Main Queue阻塞。但是加入到Global Queue的异步线程不受影响，继续执行任务1后面的同步线程。
-     
-     同步线程中，将任务2加入到了主线程，并且，任务3等待任务2完成以后才能执行。这时的主线程，已经被死循环阻塞了。所以任务2无法执行，当然任务3也无法执行，在死循环后的任务5也不会执行。
-     
-     最终，只能得到1和4顺序不定的结果。
-     
-     */
-    
 }
-
 
 #pragma mark - 一般使用：同步异步函数；串行并行队列
 /*
  
- 任务是最小的基本单元，可以是末尾带;的一句话。任务都是放到队列里的队列则是用于保存以及管理任务的；线程是执行任务的。
+ 任务是最小的基本单元，可以是末尾带;的一句话。任务都是放到队列里的，队列则是用于保存以及管理任务的；线程是执行任务的。
  
  队列：存放任务并确定队列里面的任务是怎么执行的，是串行还是并行；
  任务：block块；同步任务；异步任务；
@@ -230,16 +87,20 @@
  异步（async）：将任务放到队列中->不阻塞当前线程->不需要等待任务直接返回;有开辟线程的能力；
  执行结束：线程释放；
  
+ 1. 主队列里只有主线程。UI刷新放在主线程里进行这种说法是不对的，因为线程是执行者，而队列是存放任务的，UI刷新是任务，应该说UI刷新必须由主线程进行,但是UI刷新不一定存放在主队列里，比如可以存放在同步自定义串行队列。
+ 2. 串行与并行针对的是队列，而同步与异步，针对的则是线程。最大的区别在于，同步线程要阻塞当前线程，必须要等待同步线程中的任务执行完，返回以后，才能继续执行下一任务；而异步线程则是不用等待。
+ 3. 添加任务和任务执行时间不一样；一开始就确认了任务的顺序；
+ 
  要注意在多线程环境下的安全：一般指的是写操作，读操作不需要；
  
-    通道（串行队列）  通道（并行队列）
-        |  |       |         |
-        |  |       |         |
-        |  |       |         |
-        |  |       |         |
-        |O |       |O O O O O|
+ 通道（串行队列）  通道（并行队列）
+ |  |           |         |
+ |  |           |         |
+ |  |           |         |
+ |O |           |         |
+ |O |           |O O O O O|
  
-  线程去执行任务.................
+ 线程去执行任务.................
  
  在主队列主线程的环境下：
  
@@ -258,17 +119,15 @@
  思考：
  在自定义串行队列+主线程的环境下；
  在自定义串行队列+子线程的环境下；
-
+ 
  主队列的特殊性：所有放在主队列中的任务都会在主线程上执行，
  据此可得，主队列中，即使有异步任务，也会依次在主线程上执行，一般在回到主线程的例子中：任务放到主队列的后面，因为主队列是串行队列，等主线程上的前面的代码执行完，所以异步函数里的任务会等主线程上的任务执行完再执行。
  
  */
 - (void)gcd_general {
     /*
-
      串行队列：任务按顺序执行
      并行队列：不按顺序
-     
      */
     
     //[self customQueue];
@@ -276,7 +135,7 @@
     [self systemQueue];
 }
 
-#pragma mark - 创建队列
+#pragma mark - 创建队列(自定义创建串行队列和并行队列)
 - (void)customQueue {
     dispatch_queue_t serialQueue = dispatch_queue_create("serialQueue", DISPATCH_QUEUE_SERIAL);
     dispatch_queue_t concurrentQueue = dispatch_queue_create("concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
@@ -314,12 +173,12 @@
      2. 同步全局队列：同步非阻塞;
      
      同步：
-     1. 阻塞当前队列的线程：不让他在同步函数任务所在的线程在当前队列中执行，并不是说也不让线程在其他队列执行;
+     1. 阻塞当前队列的线程：不让它在同步函数任务所在的线程在当前队列中执行，并不是说不让线程在其他队列执行;
      2. 需要等待任务返回；
      3. 不会开辟线程；
      */
     
-    //    [self testSync:globalQueue];
+    //[self testSync:globalQueue];
     
     /*
      1. 异步主队列：不开辟线程;
@@ -330,7 +189,7 @@
      2. 不需要等待任务返回；
      3. 可能会开辟线程；
      */
-        [self testAsync:mainQueue];
+    [self testAsync:mainQueue];
 }
 
 - (void)testSync:(dispatch_queue_t)queue {
@@ -370,91 +229,124 @@
     });
 }
 
+- (void)testAsync:(dispatch_queue_t)queue {
+    
+    //    dispatch_async(queue, ^{
+    //        BPLog(@"async1_%@_%d",BPThread);
+    //        BPLog(@"async2_%@_%d",BPThread);
+    //
+    //        BPLog(@"async3_%@_%d",BPThread);
+    //        BPLog(@"async4_%@_%d",BPThread);
+    //        BPLog(@"async5_%@_%d",BPThread);
+    //        BPLog(@"async6_%@_%d",BPThread);
+    //        BPLog(@"async7_%@_%d",BPThread);
+    //
+    //        BPLog(@"async8_%@_%d",BPThread);
+    //
+    //    });
+    dispatch_async(queue, ^{
+        [self testEventWithData:200];
+        BPLog(@"async1_%@_%d",BPThread);
+    });
+    dispatch_async(queue, ^{
+        [self testEventWithData:150];
+        
+        BPLog(@"async2_%@_%d",BPThread);
+    });
+    dispatch_async(queue, ^{
+        [self testEventWithData:120];
+        BPLog(@"async3_%@_%d",BPThread);
+    });
+    dispatch_async(queue, ^{
+        [self testEventWithData:100];
+        BPLog(@"async4_%@_%d",BPThread);
+    });
+    dispatch_async(queue, ^{
+        [self testEventWithData:90];
+        BPLog(@"async5_%@_%d",BPThread);
+    });
+    dispatch_async(queue, ^{
+        [self testEventWithData:80];
+        BPLog(@"async6_%@_%d",BPThread);
+    });
+    dispatch_async(queue, ^{
+        [self testEventWithData:0];
+        BPLog(@"async7_%@_%d",BPThread);
+    });
+}
+
+- (void)testEventWithData:(NSInteger)limit {
+    for (int i = 0; i<limit; i++) {
+        NSNumber *number = @(i);
+        BPLog(@"%@",number);
+    }
+}
+
+#pragma mark - 添加任务和任务执行时间不一样；一开始就确认了任务的顺序
+- (void)gcd_addtaskDiffExecutetask {
+    //自定义串行串行队列
+    dispatch_queue_t queue = dispatch_queue_create("com.test.gcd", DISPATCH_QUEUE_SERIAL);
+
+    //异步任务1加入串行队列中
+    dispatch_async(queue, ^{
+        BPLog(@"串行队列任务1");
+        for (NSInteger i = 0; i < 10; i++) {
+            BPLog(@"串行队列任务1_i:%ld",i);
+        }
+    });
+    //同步任务2加入串行队列中
+    dispatch_sync(queue, ^{
+        BPLog(@"串行队列任务2");
+        for (NSInteger i = 0; i < 10; i++) {
+            BPLog(@"串行队列任务2_i:%ld",i);
+        }
+    });
+
+    //1.
+    dispatch_async(dispatch_get_main_queue(), ^{
+        BPLog(@"2");
+    });
+    BPLog(@"1");
+    BPLog(@"3");
+    BPLog(@"4");
+    BPLog(@"5");
+    BPLog(@"6");
+    //执行顺序 1 -> 3 -> ... -> 6 -> 2
+    //???:什么时机将BPLog(@"2");添加到主队列去的
+
+    //2.
+    dispatch_async(dispatch_get_main_queue(), ^{
+        BPLog(@"1");
+    });
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        BPLog(@"2");
+    });
+    //执行顺序 1 -> 2
+}
+
 #pragma mark - 取消任务
 - (void)gcd_cancel {
 //    [self gcd_block_cancel];
-//    [self gcd_extern_var];//通过定义外部变量，判断是否进行，否就return
-//    [self gcd_block_suspend];
-//    [self gcd_block_testcancel];
-    
-//     NSOperation，NSOperation天生支持Cancel，调用其cancel方法即可
-}
-
-
-//测试给定的分派块是否被取消。
-- (void)gcd_block_testcancel {
-    dispatch_queue_t queue = dispatch_queue_create("com.gcdtest.www", DISPATCH_QUEUE_CONCURRENT);
-    
-    dispatch_block_t block1 = dispatch_block_create(0, ^{
-        sleep(5);
-        BPLog(@"1-gcd_block_testcancel-block1 %@_%d",BPThread);
-        [self testEventWithData:1000];
-    });
-
-    NSInteger result =  dispatch_block_testcancel(block1);//测试给定的分派块是否被取消。
-    BPLog(@"3-gcd_block_testcancel-block1 %@_%d_%ld",BPThread,result);
-    if (result>0) {
-        BPLog(@"取消成功");
-    }else {
-        BPLog(@"取消失败");
-    }
-
-    dispatch_async(queue, block1);
-    BPLog(@"2-gcd_block_testcancel-block1_%@_%d",BPThread);
-    
-    dispatch_block_t block2 = dispatch_block_create(0, ^{
-        sleep(5);
-        BPLog(@"4-block2_%@_%d",BPThread);
-    });
-    BPLog(@"5-block2_%@_%d",BPThread);
-    dispatch_async(queue, block2);
-    BPLog(@"6-block2_%@_%d",BPThread);
-}
-
-//suspend只是挂起当前队列，但还不是取消，dispatch_suspend并不会立即暂停正在运行的block，而是在当前block执行完成后，暂停后续的block执行。
-- (void)gcd_block_suspend {
-    dispatch_queue_t queue = dispatch_queue_create("com.test.gcd", DISPATCH_QUEUE_SERIAL);
-    //提交第一个block，延时5秒打印。
-    dispatch_async(queue, ^{
-        sleep(5);
-        BPLog(@"After 5 seconds...");
-    });
-    //提交第二个block，也是延时5秒打印
-    dispatch_async(queue, ^{
-        sleep(5);
-        BPLog(@"After 5 seconds again...");
-    });
-    //延时一秒
-    BPLog(@"sleep 1 second...");
-    sleep(1);
-    //挂起队列
-    BPLog(@"suspend...");
-    dispatch_suspend(queue);
-    //延时10秒
-    BPLog(@"sleep 10 second...");
-    sleep(10);
-    //恢复队列
-    BPLog(@"resume...");
-    dispatch_resume(queue);
+    //[self gcd_extern_var];//通过定义外部变量，判断是否进行，否就return
+    //[self gcd_block_suspend];
+    //NSOperation天生支持Cancel，调用其cancel方法即可
 }
 
 /*
- 
  1.iOS8后的api
  2.必须用dispatch_block_create创建dispatch_block_t任务
  3.dispatch_block_cancel也只能取消尚未执行的任务，对正在执行的任务不起作用。
-
  */
-
 - (void)gcd_block_cancel{
-    dispatch_queue_t queue = dispatch_queue_create("com.gcdtest.www", DISPATCH_QUEUE_CONCURRENT);
-    
+    dispatch_queue_t concurrentQueue = dispatch_queue_create("com.gcdtest.www", DISPATCH_QUEUE_CONCURRENT);
+
     dispatch_block_t block1 = dispatch_block_create(0, ^{
-        sleep(5);
         BPLog(@"block1 %@",[NSThread currentThread]);
     });
     
     dispatch_block_t block2 = dispatch_block_create(0, ^{
+        sleep(5);
         BPLog(@"block2 %@",[NSThread currentThread]);
     });
     
@@ -462,9 +354,76 @@
         BPLog(@"block3 %@",[NSThread currentThread]);
     });
     
-    dispatch_async(queue, block1);
-    dispatch_async(queue, block2);
-    dispatch_block_cancel(block3);
+    dispatch_async(concurrentQueue, block1);
+    dispatch_async(concurrentQueue, block2);
+    
+    dispatch_block_cancel(block1);// success cancel
+    NSInteger block1Result =  dispatch_block_testcancel(block1);//测试给定的分派块是否被取消。
+    if (block1Result) {
+        BPLog(@"block1取消成功");
+    }else {
+        BPLog(@"block1取消失败");
+    }
+    
+    dispatch_block_cancel(block2);// success cancel
+    NSInteger block2Result =  dispatch_block_testcancel(block2);//测试给定的分派块是否被取消。
+    if (block2Result) {
+        BPLog(@"block2取消成功");
+    }else {
+        BPLog(@"block2取消失败");
+    }
+    
+    dispatch_block_cancel(block3);// success cancel
+    NSInteger block3Result =  dispatch_block_testcancel(block3);//测试给定的分派块是否被取消。
+    if (block3Result) {
+        BPLog(@"block3取消成功");
+    }else {
+        BPLog(@"block3取消失败");
+    }
+    dispatch_async(concurrentQueue, block3);
+    
+
+    dispatch_queue_t serialQueue = dispatch_queue_create("com.gcdtest.www", NULL);
+    
+    dispatch_block_t block4 = dispatch_block_create(0, ^{
+        BPLog(@"block4 %@",[NSThread currentThread]);
+    });
+    
+    dispatch_block_t block5 = dispatch_block_create(0, ^{
+        sleep(5);
+        BPLog(@"block5 %@",[NSThread currentThread]);
+    });
+    
+    dispatch_block_t block6 = dispatch_block_create(0, ^{
+        BPLog(@"block6 %@",[NSThread currentThread]);
+    });
+    
+    dispatch_async(serialQueue, block4);
+    dispatch_async(serialQueue, block5);
+    
+    dispatch_block_cancel(block4);// fail cancel
+    NSInteger block4Result =  dispatch_block_testcancel(block4);//测试给定的分派块是否被取消。
+    if (block4Result) {
+        BPLog(@"block4取消成功");
+    }else {
+        BPLog(@"block4取消失败");
+    }
+    dispatch_block_cancel(block5);// success cancel
+    NSInteger block5Result =  dispatch_block_testcancel(block5);//测试给定的分派块是否被取消。
+    if (block5Result) {
+        BPLog(@"block5取消成功");
+    }else {
+        BPLog(@"block5取消失败");
+    }
+    
+    dispatch_block_cancel(block6);
+    NSInteger block6Result =  dispatch_block_testcancel(block6);//测试给定的分派块是否被取消。
+    if (block6Result) {
+        BPLog(@"block6取消成功");
+    }else {
+        BPLog(@"block6取消失败");
+    }
+    dispatch_async(serialQueue, block6);// success cancel
 }
 
 - (void)gcd_extern_var{
@@ -495,6 +454,36 @@
             BPLog(@"任务004 %@",[NSThread currentThread]);
         }
     });
+}
+
+//suspend只是挂起当前队列，但还不是取消，dispatch_suspend并不会立即暂停正在运行的block，而是在当前block执行完成后，暂停后续的block执行。
+- (void)gcd_block_suspend {
+    dispatch_queue_t queue = dispatch_queue_create("com.test.gcd", DISPATCH_QUEUE_SERIAL);
+    //提交第一个block，延时5秒打印。
+    dispatch_async(queue, ^{
+        sleep(5);
+        BPLog(@"After 5 seconds...");
+    });
+    //提交第二个block，也是延时5秒打印
+    dispatch_async(queue, ^{
+        sleep(5);
+        BPLog(@"After 5 seconds again...");
+    });
+    //延时一秒
+    BPLog(@"sleep 1 second...");
+    sleep(1);
+    
+    //挂起队列
+    BPLog(@"suspend...");
+    dispatch_suspend(queue);
+    
+    //延时10秒
+    BPLog(@"sleep 10 second...");
+    sleep(10);
+    
+    //恢复队列
+    BPLog(@"resume...");
+    dispatch_resume(queue);
 }
 
 #pragma mark - 具体应用: 倒计时；延长执行；依赖-信号量;遍历;线程通信
@@ -779,57 +768,129 @@
     dispatch_resume(timer);
 }
 
-- (void)testAsync:(dispatch_queue_t)queue {
+#pragma mark - 死锁：理解执行顺序
+- (void)gcd_deadlock {
     
-    //    dispatch_async(queue, ^{
-    //        BPLog(@"async1_%@_%d",BPThread);
-    //        BPLog(@"async2_%@_%d",BPThread);
-    //
-    //        BPLog(@"async3_%@_%d",BPThread);
-    //        BPLog(@"async4_%@_%d",BPThread);
-    //        BPLog(@"async5_%@_%d",BPThread);
-    //        BPLog(@"async6_%@_%d",BPThread);
-    //        BPLog(@"async7_%@_%d",BPThread);
-    //
-    //        BPLog(@"async8_%@_%d",BPThread);
-    //
-    //    });
-    dispatch_async(queue, ^{
-        [self testEventWithData:200];
-        BPLog(@"async1_%@_%d",BPThread);
+    //http://ios.jobbole.com/82622/
+    
+    //要理解同步异步函数是否返回这句话，返回其实就是指的';',是否返回跟阻塞其实一回事，直接返回，就不阻塞了，等待返回，就是阻塞；
+    
+    BPLog(@"1"); // 任务1  //顺序执行：任务1在主线程，主队列中执行；
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        BPLog(@"2"); // 任务2
     });
-    dispatch_async(queue, ^{
-        [self testEventWithData:150];
-
-        BPLog(@"async2_%@_%d",BPThread);
+    BPLog(@"3"); // 任务3
+    //控制台输出：1；
+    
+    /*先来看看都有哪些任务加入了Main Queue：【任务1，同步函数、任务3】。
+     line_38：顺序执行：任务1在主线程，主队列中执行；
+     
+     line_39：发生死锁：获取主队列，dispatch_sync同步函数将任务2放到主队列里，并阻塞当前线程（在这是主线程）,以及等待任务2返回。
+     这时候，同步函数阻塞了主线程，同步函数并等待任务2的返回，但是线程都被阻塞了，block没有线程去执行，进入了互相等待的局面，导致死锁；相当于任务和线程之间有个同步函数裁判在阻隔着。
+     
+     line_42：不执行
+     */
+    
+    
+    BPLog(@"1"); // 任务1
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        BPLog(@"2"); // 任务2
     });
+    BPLog(@"3"); // 任务3
+    
+    //控制台输出：1，2，3；
+    
+    /*
+     line_55：顺序执行：任务1在主线程，主队列中执行；
+     
+     line_56：顺序执行：获取全局队列，dispatch_sync同步函数将任务2放到全局队列里，并阻塞当前线程（在这是主线程）,以及等待全局队列里的任务2返回。
+     这时候，同步函数阻塞了主队列里的主线程，主线程跑到全局队列去执行任务2，同步函数并等待任务2的返回，block块在全局队列里被主线程执行完，返回到主队列；
+     
+     line_59：顺序执行
+     */
+    
+    
+    dispatch_queue_t queue = dispatch_queue_create("serialQueue", DISPATCH_QUEUE_SERIAL);
+    BPLog(@"1"); // 任务1
     dispatch_async(queue, ^{
-        [self testEventWithData:120];
-        BPLog(@"async3_%@_%d",BPThread);
+        BPLog(@"2"); // 任务2
+        dispatch_sync(queue, ^{
+            BPLog(@"3"); // 任务3
+        });
+        BPLog(@"4"); // 任务4
     });
-    dispatch_async(queue, ^{
-        [self testEventWithData:100];
-        BPLog(@"async4_%@_%d",BPThread);
+    BPLog(@"5"); // 任务5
+    
+    /*控制台输出：
+     1，
+     5，
+     2，
+     */
+    
+    /*
+     line_73：顺序执行：创建串行队列；
+     
+     line_74：顺序执行：任务1在主线程，主队列中执行；
+     
+     line_75：异步执行：dispatch_async异步函数将block块任务（里面有三个小任务组成一个大任务）放到串行队列里，不会阻塞当前线程（在这是主线程）,不需要等待串行队列里的任务，直接返回。 这时候，串行队列里，一共有三个任务,串行执行,
+     
+     line_76：顺序执行：任务2在串行队列首先执行；
+     
+     line_77：死锁：dispatch_sync将任务3放到串行队列里，dispatch_sync任务排在任务3的前面 ，此时并阻塞当前线程：任务2->同步函数->任务4->任务3,发生死锁
+     
+     line_82：顺序执行
+     */
+    
+    
+    BPLog(@"1"); // 任务1
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        BPLog(@"2"); // 任务2
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            BPLog(@"3"); // 任务3
+        });
+        BPLog(@"4"); // 任务4
     });
-    dispatch_async(queue, ^{
-        [self testEventWithData:90];
-        BPLog(@"async5_%@_%d",BPThread);
+    BPLog(@"5"); // 任务5
+    /*
+     以上不会发生死锁
+     
+     首先，将【任务1、异步线程、任务5】加入Main Queue中，异步线程中的任务是：【任务2、同步线程、任务4】。
+     
+     所以，先执行任务1，然后将异步线程中的任务加入到Global Queue中，因为异步线程，所以直接返回，任务5执行，结果就是2和5的输出顺序不一定。
+     
+     然后再看异步线程中的任务执行顺序。任务2执行完以后，遇到同步线程。将同步线程中的任务加入到Main Queue中，这时加入的任务3在任务5的后面。
+     
+     当任务3执行完以后，没有了阻塞，程序继续执行任务4。
+     */
+    
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        BPLog(@"1"); // 任务1
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            BPLog(@"2"); // 任务2
+        });
+        BPLog(@"3"); // 任务3
     });
-    dispatch_async(queue, ^{
-        [self testEventWithData:80];
-        BPLog(@"async6_%@_%d",BPThread);
-    });
-    dispatch_async(queue, ^{
-        [self testEventWithData:0];
-        BPLog(@"async7_%@_%d",BPThread);
-    });
-}
-
-- (void)testEventWithData:(NSInteger)limit {
-    for (int i = 0; i<limit; i++) {
-        NSNumber *number = @(i);
-        BPLog(@"%d",i);
+    BPLog(@"4"); // 任务4
+    while (1) {
     }
+    BPLog(@"5"); // 任务5
+    
+    /*
+     
+     先来看看都有哪些任务加入了Main Queue：【异步线程、任务4、死循环、任务5】。
+     
+     在加入到Global Queue异步线程中的任务有：【任务1、同步线程、任务3】。
+     
+     第一个就是异步函数，直接返回，任务4不用等待直接执行，所以结果任务1和任务4顺序不一定。
+     
+     任务4完成后，程序进入死循环，Main Queue阻塞。但是加入到Global Queue的异步线程不受影响，继续执行任务1后面的同步线程。
+     
+     同步线程中，将任务2加入到了主线程，并且，任务3等待任务2完成以后才能执行。这时的主线程，已经被死循环阻塞了。所以任务2无法执行，当然任务3也无法执行，在死循环后的任务5也不会执行。
+     
+     最终，只能得到1和4顺序不定的结果。
+     
+     */
 }
 
 #pragma mark - 多线程的安全——原子性、原子操作，锁，信号量

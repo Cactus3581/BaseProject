@@ -17,6 +17,8 @@ static NSString *identifier  = @"cell";
 @property (nonatomic, weak) BPFlowCatergoryTagView *catergoryView;
 @property (nonatomic, strong,readwrite) NSMutableDictionary *vcCacheDic;
 @property (nonatomic, weak) UIView *lineView;
+@property (nonatomic, weak) UIButton *button;
+@property (nonatomic, weak) UIView *moveLineView;
 @end
 
 @implementation BPFlowCatergoryView
@@ -71,7 +73,7 @@ static NSString *identifier  = @"cell";
     [self addSubview:catergoryView];
     catergoryView.scrollView = contentCollectionView;//必须设置关联的scrollview
     catergoryView.delegate = self;//监听item按钮点击
-    
+    [self configDefaultPropery];
     [catergoryView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.equalTo(self);
         make.top.equalTo(self);
@@ -93,6 +95,38 @@ static NSString *identifier  = @"cell";
     }];
 }
 
+- (void)configDefaultPropery {
+    self.catergoryView.defaultIndex = 0;//默认显示的下标
+    /* 关于横线*/
+    self.catergoryView.bottomLineEable = YES;//开启底部线条
+    self.catergoryView.bottomLineHeight = 3.0f;//横线高度
+    self.catergoryView.bottomLineWidth = 15.0f;//横线宽度
+    self.catergoryView.bottomLineColor = kExplicitColor;//下方横线颜色
+    self.catergoryView.bottomLineSpacingFromTitleBottom = 4;//设置底部线条距离item底部的距离
+    self.catergoryView.bottomLineCornerRadius = YES;
+    
+    /* 关于缩放*/
+    self.catergoryView.scaleEnable = NO;//是否开启缩放
+    //self.catergoryView.scaleRatio = 1.01f;//缩放比例
+    
+    /* 关于cell 间距*/
+    self.catergoryView.itemSpacing = 35;//item间距
+    self.catergoryView.edgeSpacing = 25;//左右边缘间距
+    
+    /* 关于字体*/
+    self.catergoryView.titleColorChangeEable = YES;//是否开启文字颜色变化效果
+    self.catergoryView.titleColorChangeGradually = NO;//设置文字左右渐变
+    self.catergoryView.titleColor = kThemeColor;//item颜色
+    self.catergoryView.titleSelectColor = kDarkTextColor;//item选中颜色
+    self.catergoryView.titleFont = [UIFont systemFontOfSize:15];//item字体
+    self.catergoryView.titleSelectFont = [UIFont fontOfSize:15 weight:UIFontWeightMedium];//item选中字体
+    
+    /* 关于动画*/
+    self.catergoryView.clickedAnimationDuration = 0.25;//点击item后各个控件动画的时间，默认0.3秒
+    self.catergoryView.scrollWithAnimaitonWhenClicked = NO;//禁用点击item滚动scrollView的动画
+    self.catergoryView.holdLastIndexAfterUpdate = NO;//刷新后是否保持在原来的index上
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.titles.count;
 }
@@ -108,7 +142,7 @@ static NSString *identifier  = @"cell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    //    [self displayWithCollectionView:collectionView cell:cell forItemAtIndexPath:indexPath];
+    //[self displayWithCollectionView:collectionView cell:cell forItemAtIndexPath:indexPath];
 }
 
 - (void)displayWithCollectionView:(UICollectionView *)collectionView cell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -187,7 +221,54 @@ static NSString *identifier  = @"cell";
 - (void)setTitles:(NSArray *)titles {
     if (_titles != titles) {
         _titles = titles;
-        _catergoryView.titles = _titles;//数据源titles，必须设置;
+        if (titles.count>=2) {
+            [self.button removeFromSuperview];
+            [self.moveLineView removeFromSuperview];
+            _catergoryView.titles = _titles;//数据源titles，必须设置;
+        } else {
+            [self handlaDataWhenExcept];
+        }
+    }
+}
+
+- (void)handlaDataWhenExcept {
+    if (_titles.count == 1) {
+        if (self.button) {
+            [self.button setTitle:_titles.firstObject forState:UIControlStateNormal];
+            return;
+        }
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.button = button;
+        [self.catergoryView addSubview:button];
+        [button mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self.catergoryView);
+        }];
+        [button setTitle:_titles.firstObject forState:UIControlStateNormal];
+        button.adjustsImageWhenHighlighted = NO;
+        button.adjustsImageWhenDisabled = NO;
+        button.highlighted = NO;
+        [button setTitleColor: kDarkTextColor forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont fontOfSize:15 weight:UIFontWeightMedium];
+        
+        UIView *moveLineView = [[UIView alloc] init];
+        _moveLineView = moveLineView;
+        [self.catergoryView addSubview:moveLineView];
+        [moveLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.catergoryView);
+            make.bottom.equalTo(self.catergoryView).offset(-4);
+            make.width.mas_equalTo(15);
+            make.height.mas_equalTo(3);
+        }];
+        moveLineView.backgroundColor = kExplicitColor;
+        moveLineView.layer.cornerRadius = 1.5;
+    } else {
+        BPLog(@"no happen");
+    }
+}
+
+- (void)clickAction:(UIButton *)button {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(flowCatergoryView:didSelectItemAtIndex:)]) {
+        [self.delegate flowCatergoryView:self didSelectItemAtIndex:0];
     }
 }
 

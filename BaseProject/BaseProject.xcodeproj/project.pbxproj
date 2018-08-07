@@ -143,6 +143,7 @@
 		011B7DD920693E5B0071CB5D /* UIBarButtonItem+BPCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD320693E5B0071CB5D /* UIBarButtonItem+BPCreate.m */; };
 		011B7DDA20693E5B0071CB5D /* UINavigation+BPFixSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD420693E5B0071CB5D /* UINavigation+BPFixSpace.m */; };
 		011B7DDB20693E5B0071CB5D /* NSObject+BPAddRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD520693E5B0071CB5D /* NSObject+BPAddRuntime.m */; };
+		011BE5602101793500842DDF /* KSCALayerBasePropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011BE55F2101793500842DDF /* KSCALayerBasePropertyViewController.m */; };
 		011CD74F20CE190A00560EE6 /* BPMasksToBoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011CD74D20CE190A00560EE6 /* BPMasksToBoundsViewController.m */; };
 		011CD75020CE190A00560EE6 /* BPMasksToBoundsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011CD74E20CE190A00560EE6 /* BPMasksToBoundsViewController.xib */; };
 		011DCE862084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011DCE852084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.m */; };
@@ -1011,6 +1012,8 @@
 		011B7DD620693E5B0071CB5D /* UIBarButtonItem+BPCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BPCreate.h"; sourceTree = "<group>"; };
 		011B7DD720693E5B0071CB5D /* NSObject+BPAddRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPAddRuntime.h"; sourceTree = "<group>"; };
 		011B7DD820693E5B0071CB5D /* UINavigation+BPFixSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigation+BPFixSpace.h"; sourceTree = "<group>"; };
+		011BE55E2101793500842DDF /* KSCALayerBasePropertyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSCALayerBasePropertyViewController.h; sourceTree = "<group>"; };
+		011BE55F2101793500842DDF /* KSCALayerBasePropertyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSCALayerBasePropertyViewController.m; sourceTree = "<group>"; };
 		011CD74C20CE190A00560EE6 /* BPMasksToBoundsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMasksToBoundsViewController.h; sourceTree = "<group>"; };
 		011CD74D20CE190A00560EE6 /* BPMasksToBoundsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMasksToBoundsViewController.m; sourceTree = "<group>"; };
 		011CD74E20CE190A00560EE6 /* BPMasksToBoundsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPMasksToBoundsViewController.xib; sourceTree = "<group>"; };
@@ -3197,6 +3200,47 @@
 				011B7DD420693E5B0071CB5D /* UINavigation+BPFixSpace.m */,
 			);
 			path = NaviSpace;
+			sourceTree = "<group>";
+		};
+		011BE5592101790000842DDF /* BaseProperty */ = {
+			isa = PBXGroup;
+			children = (
+				011BE55C2101791700842DDF /* Controllers */,
+				011BE55B2101791700842DDF /* Models */,
+				011BE55A2101791700842DDF /* ViewModels */,
+				011BE55D2101791700842DDF /* Views */,
+			);
+			path = BaseProperty;
+			sourceTree = "<group>";
+		};
+		011BE55A2101791700842DDF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		011BE55B2101791700842DDF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		011BE55C2101791700842DDF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				011BE55E2101793500842DDF /* KSCALayerBasePropertyViewController.h */,
+				011BE55F2101793500842DDF /* KSCALayerBasePropertyViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		011BE55D2101791700842DDF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		011CD74B20CE18E600560EE6 /* MasksToBounds */ = {
@@ -6891,8 +6935,8 @@
 		01B0751D20E4FD0C004891F7 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
-				01B0751E20E4FD0C004891F7 /* BPDrawLayer_CG.m */,
 				01B0751F20E4FD0C004891F7 /* BPDrawLayer_CG.h */,
+				01B0751E20E4FD0C004891F7 /* BPDrawLayer_CG.m */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -6900,8 +6944,8 @@
 		01B0752020E4FD0C004891F7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				01B0752120E4FD0C004891F7 /* BPDrawViewController.m */,
 				01B0752220E4FD0C004891F7 /* BPDrawViewController.h */,
+				01B0752120E4FD0C004891F7 /* BPDrawViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -7092,6 +7136,7 @@
 		01B0755820E4FD0C004891F7 /* Layer */ = {
 			isa = PBXGroup;
 			children = (
+				011BE5592101790000842DDF /* BaseProperty */,
 				01B0755C20E4FD0C004891F7 /* BezierPath */,
 				01B0755F20E4FD0C004891F7 /* CAGradientLayer */,
 				01B0755920E4FD0C004891F7 /* CAReplicatorLayer */,
@@ -7114,8 +7159,8 @@
 		01B0755C20E4FD0C004891F7 /* BezierPath */ = {
 			isa = PBXGroup;
 			children = (
-				01B0755D20E4FD0C004891F7 /* BPBezierPathViewController.m */,
 				01B0755E20E4FD0C004891F7 /* BPBezierPathViewController.h */,
+				01B0755D20E4FD0C004891F7 /* BPBezierPathViewController.m */,
 			);
 			path = BezierPath;
 			sourceTree = "<group>";
@@ -7150,8 +7195,8 @@
 		01B0756820E4FD0C004891F7 /* CAShapeLayer */ = {
 			isa = PBXGroup;
 			children = (
-				01B0756920E4FD0C004891F7 /* BPShapeLayerViewController.m */,
 				01B0756A20E4FD0C004891F7 /* BPShapeLayerViewController.h */,
+				01B0756920E4FD0C004891F7 /* BPShapeLayerViewController.m */,
 			);
 			path = CAShapeLayer;
 			sourceTree = "<group>";
@@ -8323,8 +8368,8 @@
 		01DF31911FDD3A8D00B8A955 /* NSSet */ = {
 			isa = PBXGroup;
 			children = (
-				01DF31921FDD3A8D00B8A955 /* NSSet+BPBlock.m */,
 				01DF31931FDD3A8D00B8A955 /* NSSet+BPBlock.h */,
+				01DF31921FDD3A8D00B8A955 /* NSSet+BPBlock.m */,
 			);
 			path = NSSet;
 			sourceTree = "<group>";
@@ -9242,6 +9287,7 @@
 				01DF31CD1FDD3A9100B8A955 /* NSMutableURLRequest+BPUpload.m in Sources */,
 				01DF31C71FDD3A9100B8A955 /* NSUserDefaults+BPiCloudSync.m in Sources */,
 				011E8D7D20B2F7AA00B04378 /* BPCalendarAppearance.m in Sources */,
+				011BE5602101793500842DDF /* KSCALayerBasePropertyViewController.m in Sources */,
 				018C451E200A5AD300CF43D7 /* YYFPSLabel.m in Sources */,
 				01DF32591FDD3B9D00B8A955 /* NSData+BPzlib.m in Sources */,
 				01A191C22004E1BF005EE4CD /* BPWKWebViewController.m in Sources */,
