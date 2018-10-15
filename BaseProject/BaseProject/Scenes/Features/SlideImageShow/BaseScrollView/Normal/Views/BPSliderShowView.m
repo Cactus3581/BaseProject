@@ -212,11 +212,11 @@
     self.rightImageView.backgroundColor = self.imageArray[rightIndex];
     
     /*
-    [self.centerImageView sd_setImageWithURL:[NSURL URLWithString:KSValidateString(self.imageArray[currentImageIndex])] placeholderImage:self.placeHolderImage];
+    [self.centerImageView sd_setImageWithURL:[NSURL URLWithString:BPValidateString(self.imageArray[currentImageIndex])] placeholderImage:self.placeHolderImage];
     
-    [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:KSValidateString(self.imageArray[leftIndex])] placeholderImage:self.placeHolderImage];
+    [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:BPValidateString(self.imageArray[leftIndex])] placeholderImage:self.placeHolderImage];
     
-    [self.rightImageView sd_setImageWithURL:[NSURL URLWithString:KSValidateString(self.imageArray[rightIndex])] placeholderImage:self.placeHolderImage];
+    [self.rightImageView sd_setImageWithURL:[NSURL URLWithString:BPValidateString(self.imageArray[rightIndex])] placeholderImage:self.placeHolderImage];
      */
 }
 

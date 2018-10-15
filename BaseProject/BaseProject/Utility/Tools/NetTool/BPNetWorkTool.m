@@ -67,7 +67,7 @@ static BPNetWorkTool *netWorkTool = nil;
     
     //TODO:替换
     /*
-    [KSHttpRequest getWithURL:url params:dic.copy progress:nil success:^(id json) {
+    [BPHttpRequest getWithURL:url params:dic.copy progress:nil success:^(id json) {
         if([BPValidateString(BPValidateDict(json)[@"status"]) isEqualToString:@"1"]) {
             success(json);
         } else {

@@ -83,7 +83,7 @@
 
 - (void)testCurrentViewController {
     UIViewController *visibleViewController = [self currentViewController];
-//    if ([visibleViewController isKindOfClass:[KSScanPaperContainerController class]]) {
+//    if ([visibleViewController isKindOfClass:[BPScanPaperContainerController class]]) {
 //    }
 }
 

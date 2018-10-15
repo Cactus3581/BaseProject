@@ -28,7 +28,7 @@
  */
 - (void)startUpThread {
     self.thread = [[NSThread alloc] initWithTarget:self selector:@selector(configureRunloop) object:nil] ;
-    [self.thread setName:@"KSPermanentThread1"];
+    [self.thread setName:@"BPPermanentThread1"];
     [self.thread start];
     [self performSelector:@selector(update) onThread:self.thread withObject:nil waitUntilDone:NO];
 }
@@ -74,7 +74,7 @@
 
 - (void)startUpThread {
     self.thread = [[NSThread alloc] initWithTarget:self selector:@selector(configureRunloop) object:nil] ;
-    [self.thread setName:@"KS_VolumeWaver_Thread"];
+    [self.thread setName:@"BP_VolumeWaver_Thread"];
     [self.thread start];
     [self startTimer];
 }
@@ -131,7 +131,7 @@
 
 - (void)startUpThread {
     self.thread = [[NSThread alloc] initWithTarget:self selector:@selector(configureRunloop) object:nil] ;
-    [self.thread setName:@"KS_VolumeWaver_Thread"];
+    [self.thread setName:@"BP_VolumeWaver_Thread"];
     [self.thread start];
     [self startTimer];
 }

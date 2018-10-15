@@ -26,7 +26,7 @@ static NSThread *thread;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         thread = [[NSThread alloc] initWithTarget:self selector:@selector(configureRunloop) object:nil] ;
-        [thread setName:@"KS_VolumeWaver_Thread"];
+        [thread setName:@"BP_VolumeWaver_Thread"];
         [thread start];
     });
     [self startTimer];

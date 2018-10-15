@@ -1,5 +1,5 @@
 //
-//  KSCellProgressModel.h
+//  BPCellProgressModel.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/3/9.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface KSCellProgressModel : NSObject
+@interface BPCellProgressModel : NSObject
 @property (nonatomic, strong)   NSNumber *modelId;
 @property (nonatomic, assign)   float progress;
 @end

@@ -1,19 +1,20 @@
 //
-//  KSCellProgressSimulateDownloader.m
+//  BPCellProgressSimulateDownloader.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/3/9.
 //  Copyright © 2018年 cactus. All rights reserved.
 //
 
-#import "KSCellProgressSimulateDownloader.h"
-@interface KSCellProgressSimulateDownloader()
+#import "BPCellProgressSimulateDownloader.h"
+
+@interface BPCellProgressSimulateDownloader()
 @property (nonatomic,strong) NSTimer *timer;
 @end
 
-@implementation KSCellProgressSimulateDownloader
+@implementation BPCellProgressSimulateDownloader
 
-- (void)startDownload:(KSCellProgressModel *)model {
+- (void)startDownload:(BPCellProgressModel *)model {
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(downLoadTimer) userInfo:nil repeats:YES];
     [self.timer fire];
 }
@@ -26,4 +27,5 @@
         self.model.progress = progress;
     }
 }
+
 @end

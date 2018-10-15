@@ -1,18 +1,18 @@
 //
-//  KSCellProgressTableViewCell.m
+//  BPCellProgressTableViewCell.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/3/9.
 //  Copyright © 2018年 cactus. All rights reserved.
 //
 
-#import "KSCellProgressTableViewCell.h"
-#import "KSCellProgressSimulateDownloader.h"
+#import "BPCellProgressTableViewCell.h"
+#import "BPCellProgressSimulateDownloader.h"
 
-@interface KSCellProgressTableViewCell()
+@interface BPCellProgressTableViewCell()
 @property (nonatomic, strong)   UILabel *lbRow;
 @property (nonatomic, strong)   UIButton *btnPlay;
-@property (nonatomic, strong)   KSCellProgressSimulateDownloader *downloader;
+@property (nonatomic, strong)   BPCellProgressSimulateDownloader *downloader;
 
 @end
 
@@ -22,9 +22,9 @@
  绑定，kvo（下载器与model绑定；cell监听model的progress属性；cell检测如果更新的model是自己的才更新UI；）
  */
 
-@implementation KSCellProgressTableViewCell
+@implementation BPCellProgressTableViewCell
 
-- (void)setLabelIndex:(NSUInteger)index model:(KSCellProgressModel *)model {
+- (void)setLabelIndex:(NSUInteger)index model:(BPCellProgressModel *)model {
     self.lbRow.text = [NSString stringWithFormat:@"%u",index];
     self.model = model;
     //这里根据model值来绘制UI
@@ -44,7 +44,7 @@
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    KSCellProgressModel *model = (KSCellProgressModel *)object;
+    BPCellProgressModel *model = (BPCellProgressModel *)object;
     //检查是否是自己的model更新，防止复用问题
     if (model.modelId != self.model.modelId) {
         return;

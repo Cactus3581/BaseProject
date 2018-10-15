@@ -456,7 +456,7 @@
 								<key>title</key>
 								<string>基本属性</string>
 								<key>fileName</key>
-								<string>KSCALayerBasePropertyViewController</string>
+								<string>BPCALayerBasePropertyViewController</string>
 								<key>briefIntro</key>
 								<string></string>
 							</dict>

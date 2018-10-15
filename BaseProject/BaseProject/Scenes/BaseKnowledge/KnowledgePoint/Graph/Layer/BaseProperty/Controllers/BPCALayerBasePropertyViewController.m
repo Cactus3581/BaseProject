@@ -1,18 +1,18 @@
 //
-//  KSCALayerBasePropertyViewController.m
+//  BPCALayerBasePropertyViewController.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/7/20.
 //  Copyright © 2018年 cactus. All rights reserved.
 //
 
-#import "KSCALayerBasePropertyViewController.h"
+#import "BPCALayerBasePropertyViewController.h"
 
-@interface KSCALayerBasePropertyViewController ()
+@interface BPCALayerBasePropertyViewController ()
 
 @end
 
-@implementation KSCALayerBasePropertyViewController
+@implementation BPCALayerBasePropertyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

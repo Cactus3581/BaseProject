@@ -1,5 +1,5 @@
 //
-//  KSCALayerBasePropertyViewController.h
+//  BPCALayerBasePropertyViewController.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/7/20.
@@ -8,6 +8,6 @@
 
 #import "BPBaseViewController.h"
 
-@interface KSCALayerBasePropertyViewController : BPBaseViewController
+@interface BPCALayerBasePropertyViewController : BPBaseViewController
 
 @end
