@@ -11,6 +11,7 @@
 @interface BPBlockAPI : NSObject
 
 typedef void (^successBlock) (NSDictionary *_Nullable responseObject);
+@property (nonatomic, copy) NSString *str1;
 
 @property (nonatomic, copy) successBlock block;
 

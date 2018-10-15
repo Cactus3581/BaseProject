@@ -39,9 +39,9 @@
         _tableView = tableView;
         _tableView.estimatedRowHeight = 0.0f;
         _tableView.backgroundColor = kWhiteColor;
-        [_tableView registerNib:[UINib nibWithNibName:@"BPCellAutoLayoutHeightHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"BPCellAutoLayoutHeightHeaderView"];
-        [_tableView registerNib:[UINib nibWithNibName:@"BPCellAutoLayoutHeightTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"BPCellAutoLayoutHeightTableViewCell"];
-        [_tableView registerNib:[UINib nibWithNibName:@"BPCellAutoLayoutHeightFooterView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"BPCellAutoLayoutHeightFooterView"];
+        [_tableView registerNib:[BPCellAutoLayoutHeightHeaderView bp_loadNib] forHeaderFooterViewReuseIdentifier:@"BPCellAutoLayoutHeightHeaderView"];
+        [_tableView registerNib:[BPCellAutoLayoutHeightTableViewCell bp_loadNib] forCellReuseIdentifier:@"BPCellAutoLayoutHeightTableViewCell"];
+        [_tableView registerNib:[BPCellAutoLayoutHeightFooterView bp_loadNib] forHeaderFooterViewReuseIdentifier:@"BPCellAutoLayoutHeightFooterView"];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.delegate = self;
         _tableView.dataSource = self;

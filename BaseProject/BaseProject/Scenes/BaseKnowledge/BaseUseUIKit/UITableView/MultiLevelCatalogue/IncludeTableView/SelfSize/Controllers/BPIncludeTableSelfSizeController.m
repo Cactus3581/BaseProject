@@ -88,7 +88,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSelfSizeHeaderView";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     BPIncludeTableSelfSizeHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerIdentifier];
     if (!header) {
-        header = [[[NSBundle mainBundle] loadNibNamed:headerIdentifier owner:nil options:nil] firstObject];
+        header = [BPIncludeTableSelfSizeHeaderView bp_loadInstanceFromNib];
     }
     BPMultiLevelCatalogueModel1st *sectionModel = BPValidateArrayObjAtIdx(self.arraySource,section);
     [header setModel:sectionModel section:section];

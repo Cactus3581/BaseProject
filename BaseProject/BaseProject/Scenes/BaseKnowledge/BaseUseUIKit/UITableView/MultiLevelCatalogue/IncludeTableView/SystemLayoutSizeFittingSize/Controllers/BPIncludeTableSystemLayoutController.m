@@ -107,7 +107,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutHeaderView";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     BPIncludeTableSystemLayoutHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerIdentifier];
     if (!header) {
-        header = [[[NSBundle mainBundle] loadNibNamed:headerIdentifier owner:nil options:nil] firstObject];
+        header = [BPIncludeTableSystemLayoutHeaderView bp_loadInstanceFromNib];
     }
     BPMultiLevelCatalogueModel1st *sectionModel = BPValidateArrayObjAtIdx(self.arraySource,section);
     [header setModel:sectionModel section:section];
@@ -148,7 +148,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutHeaderView";
         static BPIncludeTableSystemLayoutHeaderView *header;
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            header = [[[NSBundle mainBundle] loadNibNamed:headerIdentifier owner:nil options:nil] firstObject];
+            header = [BPIncludeTableSystemLayoutHeaderView bp_loadInstanceFromNib];
         });
         BPMultiLevelCatalogueModel1st *sectionModel = BPValidateArrayObjAtIdx(self.arraySource,section);
         [header setModel:sectionModel section:section];

@@ -12,7 +12,7 @@
 @interface BPBlockViewController ()
 @property (nonatomic,copy) NSString *blockString;
 @property (nonatomic,strong) BPBlockAPI *blockObj;
-
+@property (nonatomic,weak) NSString *blockStringA;
 @end
 
 // 测试目的：分为基本数据类型和OC对象
@@ -21,14 +21,244 @@ static NSInteger block_numberB = 2;
 
 NSString *block_strA = @"block_strA";
 static NSString *block_strB = @"block_strB";
+typedef void (^block1)(id);
 
+block1 blockA;
+
+typedef void (^block)();
+
+block blockB;
 @implementation BPBlockViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self previous];
-    [self captureVal];
+    id array = [[NSMutableArray alloc] init];
+    blockA = ^(id obj) {
+        [array addObject:obj];
+    } ;
+//    [self test0_1];
 
+
+    //[self previous];
+//    [self captureVal];
+    
+//    [self setBlock];
+}
+
+- (void)tapGRAction {
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self testA1];
+
+}
+- (void)testA1 {
+    blockA([[NSObject alloc] init]);
+}
+
+#pragma mark - 值传递 和 指针传递
+- (void)testA {
+    NSString *str = @"viewDidLoad";
+    BPLog(@"1 %@;对象的地址 = %p;  指针的地址 = %p",str,str,&str);
+    [self changNSString:&str];
+    BPLog(@"4 %@;对象的地址 = %p;  指针的地址 = %p",str,str,&str);
+}
+
+- (void)changNSString:(NSString **)str {
+    BPLog(@"2 %@;对象的地址 = %p;  指针的地址 = %p",*str,str,&str);
+    *str = @"changNSString";
+    BPLog(@"3 %@;对象的地址 = %p;  指针的地址 = %p",*str,str,&str);
+}
+
+#pragma mark - Block块的定义和使用
+- (void)testB {
+    [self testB_1];
+    [self testB_2];
+}
+
+//局部变量：不用__block说明。无法修改。值传递，block内指针的地址改变了，外部的指针的地址没有改变
+- (void)testB_1 {
+    NSString *str1 = @"a";
+    __block NSString *str2 = @"b";
+    BPLog(@"1.1 %@;对象的地址 = %p;  指针的地址 = %p",str1,str1,&str1);
+    BPLog(@"1.2 %@;对象的地址 = %p;  指针的地址 = %p",str2,str2,&str2);
+    void (^block1)();
+    block1 = ^{
+        BPLog(@"3.1 %@;对象的地址 = %p;  指针的地址 = %p",str1,str1,&str1);
+        BPLog(@"3.2 %@;对象的地址 = %p;  指针的地址 = %p",str2,str2,&str2);
+        str2 = @"b";
+        BPLog(@"4.1 %@;对象的地址 = %p;  指针的地址 = %p",str1,str1,&str1);
+        BPLog(@"4.2 %@;对象的地址 = %p;  指针的地址 = %p",str2,str2,&str2);
+    };
+
+    BPLog(@"2.1 %@;对象的地址 = %p;  指针的地址 = %p",str1,str1,&str1);
+    BPLog(@"2.2 %@;对象的地址 = %p;  指针的地址 = %p",str2,str2,&str2);
+    block1();
+    BPLog(@"5.1 %@;对象的地址 = %p;  指针的地址 = %p",str1,str1,&str1);
+    BPLog(@"5.2 %@;对象的地址 = %p;  指针的地址 = %p",str2,str2,&str2);
+}
+
+//局部变量：__block说明。不修改。指针传递，block内指针的地址改变了，外部的指针的地址有改变
+- (void)testB_2 {
+    __block NSString *str2 = @"a";
+    BPLog(@"2.1 %@;对象的地址 = %p;  指针的地址 = %p",str2,str2,&str2);
+    //定义一个block
+    void (^block1)();
+    block1 = ^{
+        BPLog(@"2.3 %@;对象的地址 = %p;  指针的地址 = %p",str2,str2,&str2);
+    };
+    BPLog(@"2.2 %@;对象的地址 = %p;  指针的地址 = %p",str2,str2,&str2);
+    block1();
+    BPLog(@"2.4 %@;对象的地址 = %p;  指针的地址 = %p",str2,str2,&str2);
+}
+
+//局部变量：__block说明。修改。指针传递，block内指针的地址改变了，外部的指针的地址有改变
+- (void)test3 {
+    __block NSString *str2 = @"a";
+    BPLog(@"3.1 %@;对象的地址 = %p;  指针的地址 = %p",str2,str2,&str2);
+    //定义一个block
+    void (^block1)();
+    block1 = ^{
+        BPLog(@"3.3 %@;对象的地址 = %p;  指针的地址 = %p",str2,str2,&str2);
+        str2 = @"b";
+        BPLog(@"3.4 %@;对象的地址 = %p;  指针的地址 = %p",str2,str2,&str2);
+    };
+    BPLog(@"3.2 %@;对象的地址 = %p;  指针的地址 = %p",str2,str2,&str2);
+    block1();
+    BPLog(@"3.5 %@;对象的地址 = %p;  指针的地址 = %p",str2,str2,&str2);
+}
+
+//全局变量：修改|不修改。指针传递，指针的地址没有改变,指针存放的对象的地址变了
+- (void)test4 {
+    BPLog(@"4.1 %@;对象的地址 = %p;  指针的地址 = %p",block_strA,block_strA,&(block_strA));
+    //定义一个block
+    void (^block)();
+    block = ^{
+        BPLog(@"4.3 %@;对象的地址 = %p;  指针的地址 = %p",block_strA,block_strA,&(block_strA));
+        block_strA = @"b";
+        BPLog(@"4.4 %@;对象的地址 = %p;  指针的地址 = %p",block_strA,block_strA,&(block_strA));
+    };
+    BPLog(@"4.2 %@;对象的地址 = %p;  指针的地址 = %p",block_strA,block_strA,&(block_strA));
+    block();
+    BPLog(@"4.5 %@;对象的地址 = %p;  指针的地址 = %p",block_strA,block_strA,&(block_strA));
+}
+
+//实例变量或者是属性：修改|不修改。指针传递，指针的地址没有改变,指针存放的对象的地址变了。为什么指针的地址没有改变，因为指针在堆区
+- (void)test5 {
+    _blockString = @"a";
+    BPLog(@"5.1 %@;对象的地址 = %p;  指针的地址 = %p",_blockString,_blockString,&(_blockString));//&array不一样
+    //定义一个block
+    void (^block)();
+    block = ^{
+        BPLog(@"5.3 %@;对象的地址 = %p;  指针的地址 = %p",_blockString,_blockString,&(_blockString));
+        _blockString = @"b";
+        BPLog(@"5.4 %@;对象的地址 = %p;  指针的地址 = %p",_blockString,_blockString,&(_blockString));
+    };
+    BPLog(@"5.2 %@;对象的地址 = %p;  指针的地址 = %p",_blockString,_blockString,&(_blockString));
+    block();
+    BPLog(@"5.5 %@;对象的地址 = %p;  指针的地址 = %p",_blockString,_blockString,&(_blockString));
+}
+
+//自定义对象的属性
+- (void)test6 {
+    BPBlockAPI *obA = [[BPBlockAPI alloc] init];
+    obA.str1 = @"a";
+    BPLog(@"1.1 %@;对象的地址 = %p;  指针的地址 = %p",obA,obA,&obA);
+//    BPLog(@"1.2 %@;对象的地址 = %p;  指针的地址 = %p",obA.str1,obA.str1,&(obA.str1));
+    BPLog(@"1.2 %@;对象的地址 = %p;",obA.str1,obA.str1);
+    //定义一个block
+    void (^block)();
+    block = ^{
+        BPLog(@"3.1 %@;对象的地址 = %p;  指针的地址 = %p",obA,obA,&obA);
+//        BPLog(@"3.2 %@;对象的地址 = %p;  指针的地址 = %p",obA.str1,obA.str1,&(obA.str1));
+        BPLog(@"3.2 %@;对象的地址 = %p;",obA.str1,obA.str1);
+        obA.str1 = @"b";
+        BPLog(@"4.1 %@;对象的地址 = %p;  指针的地址 = %p",obA,obA,&obA);
+//        BPLog(@"4.2 %@;对象的地址 = %p;  指针的地址 = %p",obA.str1,obA.str1,&(obA.str1));
+        BPLog(@"4.2 %@;对象的地址 = %p;",obA.str1,obA.str1);
+    };
+    BPLog(@"2.1 %@;对象的地址 = %p;  指针的地址 = %p",obA,obA,&obA);
+//    BPLog(@"2.2 %@;对象的地址 = %p;  指针的地址 = %p",obA.str1,obA.str1,&(obA.str1));
+    BPLog(@"2.2 %@;对象的地址 = %p;",obA.str1,obA.str1);
+    block();
+    BPLog(@"5.1 %@;对象的地址 = %p;  指针的地址 = %p",obA,obA,&obA);
+//    BPLog(@"5.2 %@;对象的地址 = %p;  指针的地址 = %p",obA.str1,obA.str1,&(obA.str1));
+    BPLog(@"5.2 %@;对象的地址 = %p;",obA.str1,obA.str1);
+}
+
+//数组
+- (void)test7 {
+    NSMutableArray *array = @[].mutableCopy;
+    __block NSMutableArray *array1 = @[].mutableCopy;
+    BPLog(@"1.1 %@;对象的地址 = %p;  指针的地址 = %p",array,array,&array);
+    BPLog(@"1.2 %@;对象的地址 = %p;  指针的地址 = %p",array1,array1,&array1); //&array1不一样
+    //定义一个block
+    void (^block1)();
+    block1 = ^{
+//        [array addObject:@"a"];
+//        [array1 addObject:@"a"];
+        BPLog(@"2.1 %@;对象的地址 = %p;  指针的地址 = %p",array,array,&array);//&array不一样
+        BPLog(@"2.2 %@;对象的地址 = %p;  指针的地址 = %p",array1,array1,&array1);
+        
+        array1 = @[@"c"].mutableCopy;
+        BPLog(@"5.1 %@;对象的地址 = %p;  指针的地址 = %p",array,array,&array);//&array不一样
+        BPLog(@"5.2 %@;对象的地址 = %p;  指针的地址 = %p",array1,array1,&array1);
+    };
+    
+//    [array addObject:@"b"];
+//    [array1 addObject:@"b"];
+    BPLog(@"3.1 %@;对象的地址 = %p;  指针的地址 = %p",array,array,&array);
+    BPLog(@"3.2 %@;对象的地址 = %p;  指针的地址 = %p",array1,array1,&array1);
+    
+    block1();
+    BPLog(@"4.1 %@;对象的地址 = %p;  指针的地址 = %p",array,array,&array);
+    BPLog(@"4.2 %@;对象的地址 = %p;  指针的地址 = %p",array1,array1,&array1);
+}
+
+- (void)test8 {
+    __block NSMutableArray *array = @[].mutableCopy;
+    BPLog(@"1.1 %@;对象的地址 = %p;  指针的地址 = %p",array,array,&array);//&array不一样
+    //定义一个block
+    void (^block)();
+    block = ^{
+        BPLog(@"2.1 %@;对象的地址 = %p;  指针的地址 = %p",array,array,&array);
+        array = @[].mutableCopy;
+        [array addObject:@"a"];
+        BPLog(@"5.1 %@;对象的地址 = %p;  指针的地址 = %p",array,array,&array);
+    };
+    
+    [array addObject:@"b"];
+    BPLog(@"3.1 %@;对象的地址 = %p;  指针的地址 = %p",array,array,&array);
+    
+    block();
+    BPLog(@"4.1 %@;对象的地址 = %p;  指针的地址 = %p",array,array,&array);
+}
+
+#pragma mark - 内存区域，作用域
+- (void)test_memory_areas {
+    NSMutableArray *arrayA = @[@"a"].mutableCopy;
+    NSMutableArray __weak *arrayB = arrayA;
+    BPLog(@"1.1 %@;对象的地址 = %p;  指针的地址 = %p",arrayA,arrayA,&(arrayA));
+    BPLog(@"1.2 %@;对象的地址 = %p;  指针的地址 = %p",arrayB,arrayB,&(arrayB));
+
+    //定义一个block
+    blockB = [^{
+        [arrayB addObject:@"b"];
+        BPLog(@"2.1 %@;对象的地址 = %p;  指针的地址 = %p",arrayA,arrayA,&(arrayA));
+        BPLog(@"2.2 %@;对象的地址 = %p;  指针的地址 = %p",arrayB,arrayB,&(arrayB));
+    } copy];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        BPLog(@"3.1 %@;对象的地址 = %p;  指针的地址 = %p",arrayA,arrayA,&(arrayA));
+        BPLog(@"3.2 %@;对象的地址 = %p;  指针的地址 = %p",arrayB,arrayB,&(arrayB));
+        [self test10];
+    });
+}
+
+- (void)test10 {
+    blockB();
 }
 
 #pragma mark - Block的声明和定义：block块其实就是函数指针
@@ -65,7 +295,11 @@ static NSString *block_strB = @"block_strB";
     };
 
 }
+#pragma mark - __block意义
 
+#pragma mark - 循环引用（几个例子）
+
+#pragma mark - 系统API与Block的结合使用
 - (void)captureVal {
     /*
      block块内 使用了外部的变量，则将这些变量保存到自己的结构体里；
@@ -211,11 +445,6 @@ static NSString *block_strB = @"block_strB";
     }];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-//    [self setcycle];
-}
-
 /*
  
  因为你的block是作为参数传过来的，也就是说，在这个方法没有执行完，block是一直存在的;
@@ -252,6 +481,9 @@ static NSString *block_strB = @"block_strB";
     __block int b = 2;
     __block NSString *str1 = @"c";
     __block NSString *str2 = @"d";
+    NSString *str3 = @"d";
+    NSMutableArray *array = @[].mutableCopy;
+
     //定义一个block
     void (^block)();
     
@@ -262,10 +494,17 @@ static NSString *block_strB = @"block_strB";
         b  =  25;
         str1 = @"a";
         str2 = @"b";
+        array;
+        
+        [array addObject:@"a"];
+//        str3 = @"d";
     };
+    BPLog(@"%@",array);
+
     block();
     BPLog(@"%d,%d,%@,%@",a,b,str1,str2);
-    
+    BPLog(@"%@",array);
+
     //4.static修饰
     static int base = 100;
     MyBlock operation_2 = ^ int (int a,int b){

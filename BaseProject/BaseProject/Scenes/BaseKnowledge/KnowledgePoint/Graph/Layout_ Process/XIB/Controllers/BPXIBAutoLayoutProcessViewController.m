@@ -111,7 +111,7 @@
 
 - (BPXIBAutoLayoutProcessView *)xibview {
     if (!_xibview) {
-        _xibview = [[[NSBundle mainBundle] loadNibNamed:@"BPXIBAutoLayoutProcessView" owner:self options:nil] firstObject];
+        _xibview = [BPXIBAutoLayoutProcessView bp_loadInstanceFromNib];
         _xibview.backgroundColor = kRedColor;
     }
     return _xibview;

@@ -374,7 +374,7 @@
 
 #pragma mark - public methods
 
-- (void)bp_realoadData{
+- (void)bp_realoadData {
     if (!_holdLastIndexAfterUpdate || _data.count - 1 < _lastIndexPath.item) {
         _lastIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];
         [_scrollView setContentOffset:CGPointZero];
@@ -383,6 +383,10 @@
     [_mainView.collectionViewLayout prepareLayout];
     _autoScrollAnimationEable = YES;
     [self setNeedsLayout];
+}
+
+- (void)bp_simpleRealoadData {
+    [_mainView reloadData];
 }
 
 #pragma mark - KVO

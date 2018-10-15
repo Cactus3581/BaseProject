@@ -7,6 +7,7 @@
 //
 
 #import "BPTestViewController.h"
+#import "BPCircleProgressButton.h"
 
 @interface BPTestViewController ()<UIGestureRecognizerDelegate>
 
@@ -16,6 +17,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self InitializeCircleProgressButton];
+}
+
+- (void)InitializeCircleProgressButton {
+    BPCircleProgressButton *playerButton = [BPCircleProgressButton buttonWithType:UIButtonTypeCustom];
+    playerButton.bounds = CGRectMake(0, 0, 100, 100);
+    playerButton.center = self.view.center;
+    playerButton.showsTouchWhenHighlighted = NO;
+    playerButton.enabled = YES;
+    playerButton.progress = 0.5;
+    [self.view addSubview:playerButton];
+    playerButton.backgroundColor = kGreenColor;
 }
 
 #pragma mark - 系统手势

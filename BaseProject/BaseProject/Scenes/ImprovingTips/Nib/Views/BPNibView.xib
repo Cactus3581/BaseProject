@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="3WG-Um-rR2" customClass="BPNibView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是view的第一个label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJt-lr-jLr">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="YJt-lr-jLr" secondAttribute="trailing" id="YwQ-KJ-qXE"/>
+                <constraint firstAttribute="bottom" secondItem="YJt-lr-jLr" secondAttribute="bottom" id="iWD-bE-dbD"/>
+                <constraint firstItem="YJt-lr-jLr" firstAttribute="top" secondItem="3WG-Um-rR2" secondAttribute="top" id="mWx-TU-NkH"/>
+                <constraint firstItem="YJt-lr-jLr" firstAttribute="leading" secondItem="3WG-Um-rR2" secondAttribute="leading" id="y4l-0z-orH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="firstLabelInView" destination="YJt-lr-jLr" id="GVO-nW-R6w"/>
+                <outlet property="secondBackViewInView" destination="k9G-P1-Z6e" id="c7Z-qM-aho"/>
+                <outlet property="secondLabelInView" destination="l9e-eB-9Wc" id="dSM-s7-S7k"/>
+            </connections>
+            <point key="canvasLocation" x="59" y="-206.5"/>
+        </view>
+        <view contentMode="scaleToFill" id="k9G-P1-Z6e" customClass="BPNibView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是view的第二个label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9e-eB-9Wc">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="l9e-eB-9Wc" secondAttribute="bottom" id="0Cj-Zt-22F"/>
+                <constraint firstAttribute="trailing" secondItem="l9e-eB-9Wc" secondAttribute="trailing" id="pCc-3N-OQ0"/>
+                <constraint firstItem="l9e-eB-9Wc" firstAttribute="top" secondItem="k9G-P1-Z6e" secondAttribute="top" id="qES-64-THt"/>
+                <constraint firstItem="l9e-eB-9Wc" firstAttribute="leading" secondItem="k9G-P1-Z6e" secondAttribute="leading" id="sc1-XG-3uf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="59" y="13"/>
+        </view>
+    </objects>
+</document>

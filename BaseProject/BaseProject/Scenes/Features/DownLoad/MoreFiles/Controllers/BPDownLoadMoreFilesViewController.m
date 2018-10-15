@@ -79,7 +79,7 @@
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 120;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass(BPDownLoadMoreFilesTableViewCell.class) bundle:nil] forCellReuseIdentifier:@"cell"];
+    [self.tableView registerNib:[BPDownLoadMoreFilesTableViewCell bp_loadNib] forCellReuseIdentifier:@"cell"];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

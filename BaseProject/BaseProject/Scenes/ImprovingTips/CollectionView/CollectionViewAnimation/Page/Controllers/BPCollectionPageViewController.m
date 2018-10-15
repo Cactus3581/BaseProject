@@ -49,7 +49,7 @@
 //        _collectionView.alwaysBounceVertical = YES;
         _collectionView.showsVerticalScrollIndicator = YES;
         _collectionView.backgroundColor = kLightGrayColor;
-        [_collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([BPCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:@"cell"];
+        [_collectionView registerNib:[BPCollectionViewCell bp_loadNib] forCellWithReuseIdentifier:@"cell"];
     }
     return _collectionView;
 }

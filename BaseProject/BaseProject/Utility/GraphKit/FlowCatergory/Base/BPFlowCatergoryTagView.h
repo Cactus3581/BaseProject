@@ -134,4 +134,7 @@
 /**重新设置titles数据源后调用该方法刷新控件*/
 - (void)bp_realoadData;
 
+/**只是刷新UI*/
+- (void)bp_simpleRealoadData;
+
 @end

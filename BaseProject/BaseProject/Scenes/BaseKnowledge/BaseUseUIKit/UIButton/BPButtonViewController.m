@@ -18,7 +18,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //[self test];
-    [self edgeInsetsMake];
+//    [self edgeInsetsMake];
+    [self imageButton];
+}
+
+- (void)imageButton {
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeSystem];
+    button.bounds = CGRectMake(100, 300, 100, 100);
+    button.center = self.view.center;
+//    [button setTitle:@"登陆" forState:UIControlStateNormal];
+    [button.titleLabel setFont:[UIFont systemFontOfSize:12]];
+    //    button.titleLabel.textAlignment = NSTextAlignmentLeft;
+    button.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+    [button setImage:[UIImage imageNamed:@"navi_back"] forState:UIControlStateNormal];
+    [self.view addSubview:button];
+
+    button.backgroundColor = kBrownColor;
+    [button setTintColor:kRedColor];
+    button.titleLabel.backgroundColor = kBlueColor;
+    button.imageView.backgroundColor = kGreenColor;
 }
 
 - (void)edgeInsetsMake {

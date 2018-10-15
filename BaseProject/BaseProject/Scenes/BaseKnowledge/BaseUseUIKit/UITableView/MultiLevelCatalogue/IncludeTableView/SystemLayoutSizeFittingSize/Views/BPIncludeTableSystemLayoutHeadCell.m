@@ -98,7 +98,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutInsideHeaderView
     }];
     
     //fd需要注册
-    //[self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([BPIncludeTableSystemLayoutInsideTableViewCell class]) bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellIdentifier];
+    //[self.tableView registerNib:[BPIncludeTableSystemLayoutInsideTableViewCell bp_loadNib] forCellReuseIdentifier:cellIdentifier];
 }
 
 #pragma mark - TableView delegate
@@ -118,7 +118,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutInsideHeaderView
         static BPIncludeTableSystemLayoutInsideTableViewCell *cell;
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            cell = [[[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil] firstObject];
+            cell = [BPIncludeTableSystemLayoutInsideTableViewCell bp_loadInstanceFromNib];
         });
         BPMultiLevelCatalogueModel3rd *model = BPValidateArrayObjAtIdx(self.arraySource,indexPath.row);
         [cell setModel:model indexPath:indexPath];
@@ -137,7 +137,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutInsideHeaderView
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BPIncludeTableSystemLayoutInsideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:cellIdentifier owner:nil options:nil] firstObject];
+        cell = [BPIncludeTableSystemLayoutInsideTableViewCell bp_loadInstanceFromNib];
     }
     BPMultiLevelCatalogueModel3rd *model = BPValidateArrayObjAtIdx(self.arraySource,indexPath.row);
     [cell setModel:model indexPath:indexPath];
@@ -151,7 +151,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutInsideHeaderView
         static BPIncludeTableSystemLayoutInsideHeaderView *header;
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            header = [[[NSBundle mainBundle] loadNibNamed:headerIdentifier owner:nil options:nil] firstObject];
+            header = [BPIncludeTableSystemLayoutInsideHeaderView bp_loadInstanceFromNib];
         });
         [header setModel:_model section:section];
         NSInteger height = ceil([header systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + kOnePixel);
@@ -163,7 +163,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSystemLayoutInsideHeaderView
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     BPIncludeTableSystemLayoutInsideHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerIdentifier];
     if (!header) {
-        header = [[[NSBundle mainBundle] loadNibNamed:headerIdentifier owner:nil options:nil] firstObject];
+        header = [BPIncludeTableSystemLayoutInsideHeaderView bp_loadInstanceFromNib];
     }
     [header setModel:_model section:section];
     return header;

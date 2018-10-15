@@ -63,7 +63,7 @@ static NSString * cellIdentifier = @"BPTopCategoryListTagCollectionViewCell";
     _collectionView.showsVerticalScrollIndicator = NO;
     _collectionView.backgroundColor = kWhiteColor;
     flowLayout.estimatedItemSize = CGSizeMake(0, 0);
-    [self.collectionView registerNib:[UINib nibWithNibName:cellIdentifier bundle:nil] forCellWithReuseIdentifier:cellIdentifier];
+    [self.collectionView registerNib:[BPTopCategoryListTagCollectionViewCell bp_loadNib] forCellWithReuseIdentifier:cellIdentifier];
     [self addSubview:self.collectionView];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self).offset(0);

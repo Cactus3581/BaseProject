@@ -7,6 +7,26 @@
 //
 
 #import "BPStaticConstViewController.h"
+
+
+/*
+ 用法总结，从作用域和生命周期来看：
+ 1. 在函数外，直接定义对象，不需要额外添加修饰符，对象可被修改； 一般形式的全局变量
+ 2. 只用static修饰，对象可以被修改，但是生命周期在APP运行期； 用static修饰就是静态变量（也叫全局静态变量），不用static修饰的就是全局非静态变量；
+ 修饰局部变量：让局部变量只初始化一次；局部变量在程序中只有一份内存；并不会改变局部变量的作用域，仅仅是改变了局部变量的生命周期（只到程序结束，这个局部变量才会销毁）
+ 修饰全局变量：全局变量的作用域仅限于当前文件
+ 
+ 3. 用const修饰：一般不定义在本文件内，字符串可以被修改，也可以不被修改（主要）；用const修饰的就是常量；全局非静态／静态常量
+ 4. 用static，const一起修饰：全局静态常量，在本文件内字符串可以被修改，也可以不被修改（主要）；
+ 
+ 
+ 常用的三种：
+ 1. static 修饰全局静态变量，比如cell的标识符
+ 2. static+const在本文件内使用，修饰不可变字符串，全局静态常量
+ 3. const在单独一个文件内使用，修饰字符串，变成不可变的常量。
+ */
+
+
 @interface BPStaticConstViewController ()
 
 @end
@@ -20,7 +40,9 @@ static NSString *static_str1 = @"static_str1"; //仅限本文件使用，字符�
 
 
 // 关于本文件中的const
+// const修饰指针变量访问的内存空间，修饰的是右边 *local_constStr1，*local_constStr1：常量 local_constStr1:变量
 const NSString *local_constStr1 = @"local_constStr1"; //可以修改
+// const修饰指针变量local_constStr2，*local_constStr2:变量 local_constStr2:常量
 NSString * const local_constStr2 = @"local_constStr2"; // 不可以被修改
 
 // 关于static与const结合
@@ -36,22 +58,7 @@ static  NSString * const static_Const_str2 = @"static_Const_str2";//字符串不
 //    [self testStatic];
 //    [self testConst];
     [self testStatic_const];
-/*
- 用法总结：
- 1. 在函数外，直接定义对象，不需要额外添加修饰符，对象可被修改； 一般形式的全局变量
- 2. 只用static修饰，对象可以被修改，但是生命周期在APP运行期； 用static修饰就是静态变量（也叫全局静态变量），不用static修饰的就是全局非静态变量；
- 修饰局部变量：让局部变量只初始化一次；局部变量在程序中只有一份内存；并不会改变局部变量的作用域，仅仅是改变了局部变量的生命周期（只到程序结束，这个局部变量才会销毁）
- 修饰全局变量：全局变量的作用域仅限于当前文件
- 
- 3. 用const修饰：一般不定义在本文件内，字符串可以被修改，也可以不被修改（主要）；用const修饰的就是常量；全局非静态／静态常量
- 4. 用static，const一起修饰：全局静态常量，在本文件内字符串可以被修改，也可以不被修改（主要）；
 
- 
- 常用的三种：
- 1. static 修饰全局静态变量，比如cell的标识符
- 2. static+const在本文件内使用，修饰不可变字符串，全局静态常量
- 3. const在单独一个文件内使用，修饰字符串，变成不可变的常量。
- */
 }
 
 - (void)testStatic {

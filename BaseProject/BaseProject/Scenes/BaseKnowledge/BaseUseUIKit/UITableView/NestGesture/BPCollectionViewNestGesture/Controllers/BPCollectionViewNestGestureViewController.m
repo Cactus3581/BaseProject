@@ -71,8 +71,8 @@ static NSString *notificationNameFromOutsideScrollNotEnable = @"notificationName
     _collectionView.showsVerticalScrollIndicator = NO;
     _collectionView.backgroundColor = kWhiteColor;
     [self.collectionView registerClass:[BPCollectionViewNestGestureBannerCollectionViewCell class] forCellWithReuseIdentifier:cell_identifier1];
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([BPCollectionViewNestGestureTopCategoryCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:cell_identifier2];
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([BPCollectionViewNestGestureClassifiedHeaderView class]) bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:header_identifier1];
+    [self.collectionView registerNib:[BPCollectionViewNestGestureTopCategoryCollectionViewCell bp_loadNib] forCellWithReuseIdentifier:cell_identifier2];
+    [self.collectionView registerNib:[BPCollectionViewNestGestureClassifiedHeaderView bp_loadNib] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:header_identifier1];
     [self.collectionView registerClass:[BPCollectionViewNestGestureBottomCategoryCollectionCell class] forCellWithReuseIdentifier:cell_identifier4];
     //self.collectionView.scrollIndicatorInsets = self.collectionView.contentInset;
     [self setUpRefresh];

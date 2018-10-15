@@ -7,7 +7,7 @@
 //
 
 #import "BPBaseServerAPI.h"
-#import "YTKNetworkConfig.h"
+//#import "YTKNetworkConfig.h"
 
 @implementation BPBaseServerAPI
 
@@ -19,6 +19,7 @@
     return self;
 }
 
+/*
 #pragma mark - 修改 YTKNetworkConfig 中的 baseUrl
 - (void)configHosts {
      YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
@@ -63,5 +64,5 @@
     // 3 分钟 = 180 秒
     return 60 * 3;
 }
-
+*/
 @end

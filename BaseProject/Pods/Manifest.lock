@@ -15,19 +15,11 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - Bugly (2.5.0)
-  - CocoaAsyncSocket (7.6.3)
   - FBRetainCycleDetector (0.1.4)
   - FDFullscreenPopGesture (1.1)
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
   - FMDB/standard (2.7.2)
-  - hpple (0.2.0)
-  - IQKeyboardManager (6.0.3)
-  - KTVCocoaHTTPServer (1.0.0):
-    - CocoaAsyncSocket
-  - KTVHTTPCache (1.1.3):
-    - KTVCocoaHTTPServer
-  - lottie-ios (2.5.0)
   - Masonry (1.1.0)
   - MJExtension (3.0.15)
   - MJRefresh (3.1.15.3)
@@ -38,10 +30,7 @@ PODS:
   - SDWebImage (4.4.1):
     - SDWebImage/Core (= 4.4.1)
   - SDWebImage/Core (4.4.1)
-  - SSZipArchive (2.1.3)
-  - UITableView+FDTemplateLayoutCell (1.6)
-  - YTKNetwork (2.0.4):
-    - AFNetworking (~> 3.0)
+  - "UITableView+FDTemplateLayoutCell (1.6)"
   - YYAsyncLayer (1.0)
   - YYCache (1.0.4)
   - YYCategories (1.0.4):
@@ -61,13 +50,8 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - Bugly
-  - CocoaAsyncSocket
   - FDFullscreenPopGesture
   - FMDB
-  - hpple
-  - IQKeyboardManager
-  - KTVHTTPCache
-  - lottie-ios
   - Masonry
   - MJExtension
   - MJRefresh
@@ -75,9 +59,7 @@ DEPENDENCIES:
   - Reachability
   - SAMKeychain
   - SDWebImage
-  - SSZipArchive
-  - UITableView+FDTemplateLayoutCell
-  - YTKNetwork
+  - "UITableView+FDTemplateLayoutCell"
   - YYAsyncLayer
   - YYCache
   - YYCategories
@@ -88,18 +70,37 @@ DEPENDENCIES:
   - YYText
   - YYWebImage
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Bugly
+    - FBRetainCycleDetector
+    - FDFullscreenPopGesture
+    - FMDB
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - MLeaksFinder
+    - Reachability
+    - SAMKeychain
+    - SDWebImage
+    - "UITableView+FDTemplateLayoutCell"
+    - YYAsyncLayer
+    - YYCache
+    - YYCategories
+    - YYDispatchQueuePool
+    - YYImage
+    - YYKeyboardManager
+    - YYModel
+    - YYText
+    - YYWebImage
+
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
-  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
-  hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
-  IQKeyboardManager: c390e612f4b98c8fd748016470138537dc163ead
-  KTVCocoaHTTPServer: df8d7b861e603ff8037e9b2138aca2563a6b768d
-  KTVHTTPCache: 6c2be425693f494279d7e84eadbfc54c56bcc6e4
-  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 3f039575db1b135a20699ad298713b26acec1528
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
@@ -107,9 +108,7 @@ SPEC CHECKSUMS:
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
-  SSZipArchive: 51a800ebb77f95a8329b6ced1faaff394b47f509
-  UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
-  YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
+  "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   YYAsyncLayer: df6b01ebc695c5f6b4c15dd5c23fa3e081eb25c0
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
@@ -120,6 +119,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: ddda59ca7804c1397003fa51f44213414efd12ab
+PODFILE CHECKSUM: d4bf7478452d3717cb9d5020cccc7fff3327b35d
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

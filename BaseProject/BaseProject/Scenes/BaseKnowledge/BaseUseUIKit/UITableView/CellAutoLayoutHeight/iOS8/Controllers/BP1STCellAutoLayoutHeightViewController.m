@@ -116,7 +116,7 @@ static CGFloat cellHeight = 100;
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView = tableView;
         _tableView.backgroundColor = kWhiteColor;
-        [_tableView registerNib:[UINib nibWithNibName:@"BPCellAutoLayoutHeightTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"BPCellAutoLayoutHeightTableViewCell"];
+        [_tableView registerNib:[BPCellAutoLayoutHeightTableViewCell bp_loadNib] forCellReuseIdentifier:@"BPCellAutoLayoutHeightTableViewCell"];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.delegate = self;
         _tableView.dataSource = self;

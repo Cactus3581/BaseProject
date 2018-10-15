@@ -531,9 +531,36 @@
 								<key>title</key>
 								<string>核心动画</string>
 								<key>fileName</key>
-								<string>BPCoreAnimationVC</string>
+								<string>BPSimpleTableController</string>
 								<key>briefIntro</key>
 								<string></string>
+								<key>subVc_array</key>
+								<array>
+									<dict>
+										<key>title</key>
+										<string>核心动画</string>
+										<key>fileName</key>
+										<string>BPCoreAnimationVC</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>属性动画</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>关键帧动画</string>
+										<key>fileName</key>
+										<string>BPCAKeyframeAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+								</array>
 							</dict>
 							<dict>
 								<key>title</key>
@@ -1179,6 +1206,38 @@
 						<string>collectionView 多个scroll子类多手势联动</string>
 						<key>fileName</key>
 						<string>BPCollectionViewNestGestureViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>折叠</string>
+						<key>fileName</key>
+						<string>BPTableViewFoldController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>单选</string>
+						<key>fileName</key>
+						<string>BPTableViewSingleSelectionController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>多选</string>
+						<key>fileName</key>
+						<string>BPTableViewMultipleSelectionController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>刷新的几种方法及刷新动画</string>
+						<key>fileName</key>
+						<string>BPTableViewReloadViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>

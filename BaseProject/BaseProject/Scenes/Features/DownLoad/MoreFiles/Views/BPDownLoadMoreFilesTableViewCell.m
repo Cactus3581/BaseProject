@@ -30,7 +30,7 @@
 }
 
 - (void)setup {
-    BPDownLoadGeneralView *downLoadView = [[[NSBundle mainBundle] loadNibNamed:@"BPDownLoadGeneralView" owner:self options:nil] lastObject];
+    BPDownLoadGeneralView *downLoadView = [BPDownLoadGeneralView bp_loadInstanceFromNib];
     _downLoadView = downLoadView;
     _downLoadView.delegate = self;
 }

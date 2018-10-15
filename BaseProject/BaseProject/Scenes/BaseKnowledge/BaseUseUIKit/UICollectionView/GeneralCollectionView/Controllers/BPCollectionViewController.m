@@ -78,11 +78,11 @@ static NSString *footer_nib_identifier = @"nib_footer";
 
         //nib
         //注册cell
-        [_collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([BPCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:cell_nib_identifier];
+        [_collectionView registerNib:[BPCollectionViewCell bp_loadNib] forCellWithReuseIdentifier:cell_nib_identifier];
         //注册页眉
-        [_collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([BPCollectionReusableHeadView class]) bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:header_nib_identifier];
+        [_collectionView registerNib:[BPCollectionReusableHeadView bp_loadNib] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:header_nib_identifier];
         //注册页脚
-        [_collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([BPCollectionReusableFootView class]) bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footer_nib_identifier];
+        [_collectionView registerNib:[BPCollectionReusableFootView bp_loadNib] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footer_nib_identifier];
         
         //纯代码
         //注册cell

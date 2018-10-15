@@ -118,7 +118,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSelfSizeInsideHeaderView";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     BPIncludeTableSelfSizeInsideHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerIdentifier];
     if (!header) {
-        header = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([BPIncludeTableSelfSizeInsideHeaderView class]) owner:nil options:nil] firstObject];
+        header = [BPIncludeTableSelfSizeInsideHeaderView bp_loadInstanceFromNib];
     }
     [header setModel:_model section:section];
     return header;
@@ -127,7 +127,7 @@ static NSString *headerIdentifier = @"BPIncludeTableSelfSizeInsideHeaderView";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BPIncludeTableSelfSizeInsideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([BPIncludeTableSelfSizeInsideTableViewCell class]) owner:nil options:nil] firstObject];
+        cell = [BPIncludeTableSelfSizeInsideTableViewCell bp_loadInstanceFromNib];
     }
     BPMultiLevelCatalogueModel3rd *model = BPValidateArrayObjAtIdx(self.arraySource,indexPath.row);
     [cell setModel:model indexPath:indexPath];

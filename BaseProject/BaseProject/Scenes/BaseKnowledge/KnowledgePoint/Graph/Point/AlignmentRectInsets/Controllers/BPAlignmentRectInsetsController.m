@@ -99,7 +99,7 @@
 
 - (BPAlignmentRectInsetsView *)alignmentRectInsetsView {
     if (!_alignmentRectInsetsView) {
-        BPAlignmentRectInsetsView *alignmentRectInsetsView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([BPAlignmentRectInsetsView class]) owner:self options:nil] lastObject];
+        BPAlignmentRectInsetsView *alignmentRectInsetsView = [BPAlignmentRectInsetsView bp_loadInstanceFromNib];
         _alignmentRectInsetsView = alignmentRectInsetsView;
         [self.view addSubview:_alignmentRectInsetsView];
         [_alignmentRectInsetsView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -112,7 +112,7 @@
 
 - (BPAlignmentRectInsetsTemplateView *)alignmentRectInsetsTemplateView {
     if (!_alignmentRectInsetsTemplateView) {
-        BPAlignmentRectInsetsTemplateView *alignmentRectInsetsTemplateView = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([BPAlignmentRectInsetsTemplateView class]) owner:self options:nil] lastObject];
+        BPAlignmentRectInsetsTemplateView *alignmentRectInsetsTemplateView = [BPAlignmentRectInsetsTemplateView bp_loadInstanceFromNib];
         _alignmentRectInsetsTemplateView = alignmentRectInsetsTemplateView;
         [self.view addSubview:_alignmentRectInsetsTemplateView];
         [_alignmentRectInsetsTemplateView mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -67,6 +67,9 @@ typedef void(^BPAddViewBlock)(CGRect frame);
 
 - (void)bp_setAnchorPointTo:(CGPoint)point;
 
+// 判断此view是否正在屏幕上显示
+- (BOOL)bp_isDisplayedInScreen;
+
 @end
 
 NS_ASSUME_NONNULL_END

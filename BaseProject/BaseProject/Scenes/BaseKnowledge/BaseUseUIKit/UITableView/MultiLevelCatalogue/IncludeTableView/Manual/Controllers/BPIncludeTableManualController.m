@@ -121,7 +121,7 @@ static NSString *headerIdentifier = @"BPIncludeTableManualHeaderView";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     BPIncludeTableManualHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerIdentifier];
     if (!header) {
-        header = [[[NSBundle mainBundle] loadNibNamed:@"BPIncludeTableManualHeaderView" owner:nil options:nil] firstObject];
+        header = [BPIncludeTableManualHeaderView bp_loadInstanceFromNib];
     }
     BPMultiLevelCatalogueModel1st *sectionModel = BPValidateArrayObjAtIdx(self.arraySource,section);
     [header setModel:sectionModel section:section];

@@ -1,21 +1,23 @@
 platform :ios, '8.0'
 target 'BaseProject' do
+
     pod 'AFNetworking'
     pod 'SDWebImage'
     pod 'Masonry'
-    pod 'MJRefresh'
     pod 'FMDB'
-    pod 'YTKNetwork'
+    pod 'MJRefresh'
     pod 'MJExtension'
     pod 'SAMKeychain'
     
+    pod 'MLeaksFinder'
+    #pod 'FBRetainCycleDetector'
+    #pod 'FBMemoryProfiler'
+    pod 'Bugly'
+
     pod 'Reachability'
-    pod 'IQKeyboardManager'
-    pod 'SSZipArchive'
+
     pod 'UITableView+FDTemplateLayoutCell'
     pod 'FDFullscreenPopGesture'
-    pod 'hpple'
-    pod 'KTVHTTPCache'
 
     pod 'YYModel'
     pod 'YYCache'
@@ -26,18 +28,19 @@ target 'BaseProject' do
     pod 'YYDispatchQueuePool'
     pod 'YYAsyncLayer'
     pod 'YYCategories'
-    
-    pod 'MLeaksFinder'
-    pod 'Bugly'
-    pod 'SAMKeychain'
-    #pod 'FLEX'
 
-    pod 'CocoaAsyncSocket'
+    #pod 'FBRetainCycleDetector'
+    #pod 'FBMemoryProfiler'
 
+    #pod 'YTKNetwork'
+    #pod 'hpple'                #html解析工具 从web前端的html里获取数据
+    #pod 'KTVHTTPCache'         #唱吧iOS音视频在线播放缓存框架
     #pod 'FreeStreamer'
+    #pod 'IQKeyboardManager'
+    #pod 'SSZipArchive'
+    #pod 'FLEX'
+    #pod 'CocoaAsyncSocket'
     #pod 'YYKit'
-
-    pod 'lottie-ios'
-
+    #pod 'lottie-ios'
 
 end

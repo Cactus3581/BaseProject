@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BPBasicAnimationViewController">
+            <connections>
+                <outlet property="hourHand" destination="XJ7-R7-BFb" id="Og8-GR-H2z"/>
+                <outlet property="minuteHand" destination="bOY-Z6-Ejp" id="tVR-pQ-FrS"/>
+                <outlet property="secondHand" destination="Bd2-5z-PLd" id="GN8-vf-buv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XJ7-R7-BFb">
+                    <rect key="frame" x="184.5" y="308.5" width="5" height="50"/>
+                    <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="D25-Q3-8gD"/>
+                        <constraint firstAttribute="width" constant="5" id="bKV-wP-mnp"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bOY-Z6-Ejp">
+                    <rect key="frame" x="185.5" y="298.5" width="3" height="70"/>
+                    <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="3" id="4IA-C6-6bR"/>
+                        <constraint firstAttribute="height" constant="70" id="zjg-G8-HTr"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bd2-5z-PLd">
+                    <rect key="frame" x="186.5" y="283.5" width="1" height="100"/>
+                    <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="TiM-Id-Sxb"/>
+                        <constraint firstAttribute="height" constant="100" id="XFR-Ov-dt1"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Bd2-5z-PLd" firstAttribute="centerX" secondItem="XJ7-R7-BFb" secondAttribute="centerX" id="9X3-ko-Cx0"/>
+                <constraint firstItem="bOY-Z6-Ejp" firstAttribute="centerY" secondItem="XJ7-R7-BFb" secondAttribute="centerY" id="HMU-P0-u5Q"/>
+                <constraint firstItem="Bd2-5z-PLd" firstAttribute="centerY" secondItem="XJ7-R7-BFb" secondAttribute="centerY" id="HQ5-Di-FiV"/>
+                <constraint firstItem="bOY-Z6-Ejp" firstAttribute="centerX" secondItem="XJ7-R7-BFb" secondAttribute="centerX" id="TH4-Ch-AB9"/>
+                <constraint firstItem="XJ7-R7-BFb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="aPC-Jz-nu6"/>
+                <constraint firstItem="XJ7-R7-BFb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bJ2-C8-D8Q"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

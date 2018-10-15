@@ -218,6 +218,14 @@
 						<key>dynamicJumpString</key>
 						<string>{&quot;type&quot;:&quot;3&quot;}</string>
 					</dict>
+					<dict>
+						<key>title</key>
+						<string>当数据各位为2的时候特殊处理</string>
+						<key>fileName</key>
+						<string>BPSpecificFlowCatergoryViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
 				</array>
 			</dict>
 		</array>

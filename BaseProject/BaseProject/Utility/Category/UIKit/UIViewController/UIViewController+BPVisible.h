@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIViewController (BPVisible)
+
 - (BOOL)bp_isVisible;
 
 @end

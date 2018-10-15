@@ -143,5 +143,13 @@
 		<key>briefIntro</key>
 		<string></string>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>可视化Nib</string>
+		<key>fileName</key>
+		<string>BPNibViewController</string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
 </array>
 </plist>

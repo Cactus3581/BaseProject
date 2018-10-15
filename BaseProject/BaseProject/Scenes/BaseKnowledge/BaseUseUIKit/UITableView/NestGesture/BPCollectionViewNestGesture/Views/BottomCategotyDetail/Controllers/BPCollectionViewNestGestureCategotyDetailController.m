@@ -49,8 +49,8 @@ static NSString *notificationNameFromOutsideScrollNotEnable = @"notificationName
     self.tableView.dataSource = self;
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];//Height = 0 不行
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([BPCollectionViewNestGestureCategotyDetailTableViewCell class]) bundle:nil] forCellReuseIdentifier:identifier];
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([BPCollectionViewNestGestureCategotyDetailHeader class]) bundle:nil] forHeaderFooterViewReuseIdentifier:head_identifier];
+    [self.tableView registerNib:[BPCollectionViewNestGestureCategotyDetailTableViewCell bp_loadNib] forCellReuseIdentifier:identifier];
+    [self.tableView registerNib:[BPCollectionViewNestGestureCategotyDetailHeader bp_loadNib] forHeaderFooterViewReuseIdentifier:head_identifier];
     [self setUpRefresh];
 }
 

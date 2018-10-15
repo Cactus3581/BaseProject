@@ -110,7 +110,7 @@ static NSString *headerIdentifier = @"BPIncludeTableManualInsideHeaderView";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BPIncludeTableManualInsideTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([BPIncludeTableManualInsideTableViewCell class]) owner:self options:nil] lastObject];
+        cell = [BPIncludeTableManualInsideTableViewCell bp_loadInstanceFromNib];
     }
     BPMultiLevelCatalogueModel3rd *model = BPValidateArrayObjAtIdx(self.arraySource,indexPath.row);
     [cell setModel:model indexPath:indexPath];
@@ -128,7 +128,7 @@ static NSString *headerIdentifier = @"BPIncludeTableManualInsideHeaderView";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     BPIncludeTableManualInsideHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerIdentifier];
     if (!header) {
-        header = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([BPIncludeTableManualInsideHeaderView class]) owner:nil options:nil] firstObject];
+        header = [BPIncludeTableManualInsideHeaderView bp_loadInstanceFromNib];
     }
     [header setModel:_model section:section];
     return header;

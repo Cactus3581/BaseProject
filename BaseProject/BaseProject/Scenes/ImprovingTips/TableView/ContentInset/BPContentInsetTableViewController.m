@@ -61,7 +61,7 @@ static NSString *footer_identifier = @"footer";
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    //UIView  *headerView = [[[NSBundle mainBundle] loadNibNamed:calendarFooter_identifier owner:self options:nil] lastObject];
+    //UIView *headerView = [UIView bp_loadInstanceFromNib];
     UILabel *headerView = [[UILabel alloc] initWithFrame:CGRectZero];
     headerView.backgroundColor = kRedColor;
     headerView.text = [NSString stringWithFormat:@"我是Section Header:第%ld区",section];

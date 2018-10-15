@@ -42,7 +42,7 @@ static NSString *identifier  = @"BPTopCategoryListTableViewCell";
     self.backgroundColor = kWhiteColor;
     UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView = tableView;
-    [_tableView registerNib:[UINib nibWithNibName:@"BPTopCategoryListTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:identifier];
+    [_tableView registerNib:[BPTopCategoryListTableViewCell bp_loadNib] forCellReuseIdentifier:identifier];
     _tableView.backgroundColor = kWhiteColor;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;

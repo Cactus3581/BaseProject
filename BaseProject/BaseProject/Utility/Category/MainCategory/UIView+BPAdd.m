@@ -277,4 +277,41 @@ BPSYNTH_DUMMY_CLASS(UIView_BPAdd)
     self.layer.anchorPoint = point;
 }
 
+// 判断此view是否正在屏幕上显示
+- (BOOL)bp_isDisplayedInScreen {
+    if (self == nil) {
+        return FALSE;
+    }
+    CGRect screenRect = [UIScreen mainScreen].bounds;
+    
+    // 转换view对应window的Rect
+    CGRect rect = [self convertRect:self.frame fromView:nil];
+    if (CGRectIsEmpty(rect) || CGRectIsNull(rect)) { // app进入后台的时候，在这返回NO
+        return FALSE;
+    }
+    
+    // 若view 隐藏
+    if (self.hidden) {
+        return FALSE;
+    }
+    
+    // 若没有superview
+    if (self.superview == nil) {
+        return FALSE;
+    }
+    
+    // 若size为CGrectZero
+    if (CGSizeEqualToSize(rect.size, CGSizeZero)) {
+        return  FALSE;
+    }
+    
+    // 获取 该view与window 交叉的 Rect
+    CGRect intersectionRect = CGRectIntersection(rect, screenRect);
+    if (CGRectIsEmpty(intersectionRect) || CGRectIsNull(intersectionRect)) {
+        return FALSE;
+    }
+    
+    return TRUE;
+}
+
 @end

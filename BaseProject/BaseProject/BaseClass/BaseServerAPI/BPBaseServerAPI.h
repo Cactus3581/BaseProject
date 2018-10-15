@@ -6,8 +6,7 @@
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "YTKRequest.h"
 
-@interface BPBaseServerAPI : YTKRequest
+@interface BPBaseServerAPI : NSObject
 
 @end

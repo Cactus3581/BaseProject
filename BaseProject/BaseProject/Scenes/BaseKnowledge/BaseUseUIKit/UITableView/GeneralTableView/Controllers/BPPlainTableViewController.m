@@ -50,9 +50,9 @@ static CGFloat cellH = 50;
 }
 
 - (void)register_tableView_nib {
-    [self.tableView registerNib:[UINib nibWithNibName:cell_identifier bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cell_identifier];
-    [self.tableView registerNib:[UINib nibWithNibName:header_identifier bundle:[NSBundle mainBundle]] forCellReuseIdentifier:header_identifier];
-    [self.tableView registerNib:[UINib nibWithNibName:footer_identifier bundle:[NSBundle mainBundle]] forCellReuseIdentifier:footer_identifier];
+    [self.tableView registerNib:[UITableViewCell bp_loadNib] forCellReuseIdentifier:cell_identifier];
+    [self.tableView registerNib:[UITableViewHeaderFooterView bp_loadNib] forCellReuseIdentifier:header_identifier];
+    [self.tableView registerNib:[UITableViewHeaderFooterView bp_loadNib] forCellReuseIdentifier:footer_identifier];
 }
 
 #pragma mark - tabeview delegate
@@ -80,7 +80,7 @@ static CGFloat cellH = 50;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    //UIView  *headerView = [[[NSBundle mainBundle] loadNibNamed:calendarFooter_identifier owner:self options:nil] lastObject];
+    //UIView  *headerView = [UIView bp_loadInstanceFromNib];
     UILabel *headerView = [[UILabel alloc] initWithFrame:CGRectZero];
     headerView.backgroundColor = kRedColor;
     headerView.text = [NSString stringWithFormat:@"我是Section Header:第%ld区",section];
@@ -93,7 +93,7 @@ static CGFloat cellH = 50;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    //UIView *footerView = [[[NSBundle mainBundle] loadNibNamed:placedFooterView_identifier owner:self options:nil] lastObject];
+    //UIView *footerView = [UIView bp_loadInstanceFromNib];
     UILabel *footerView = [[UILabel alloc] initWithFrame:CGRectZero];
     footerView.backgroundColor = kWhiteColor;
     footerView.text = [NSString stringWithFormat:@"我是Section Footer:第%ld区",section];

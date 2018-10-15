@@ -101,8 +101,8 @@ static NSString *placedFooterView_identifier = @"BPSectionPlacedFooterView";
 }
 
 - (void)register_tableView_nib {
-    [self.tableView registerNib:[UINib nibWithNibName:calendarCell_identifier bundle:[NSBundle mainBundle]] forCellReuseIdentifier:calendarCell_identifier];
-    [self.tableView registerNib:[UINib nibWithNibName:generalCell_identifier bundle:[NSBundle mainBundle]] forCellReuseIdentifier:generalCell_identifier];
+    [self.tableView registerNib:[BPPlanCalendarTableViewCell bp_loadNib] forCellReuseIdentifier:calendarCell_identifier];
+    [self.tableView registerNib:[BPPlanGeneralTableViewCell bp_loadNib] forCellReuseIdentifier:generalCell_identifier];
 }
 
 #pragma mark - tabeview delegate
@@ -173,7 +173,7 @@ static NSString *placedFooterView_identifier = @"BPSectionPlacedFooterView";
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     if (section == 1) {
-        BPSectionPlacedFooterView *placedFooterView = [[[NSBundle mainBundle] loadNibNamed:placedFooterView_identifier owner:self options:nil] lastObject];
+        BPSectionPlacedFooterView *placedFooterView = [BPSectionPlacedFooterView bp_loadInstanceFromNib];
         return placedFooterView;
     }
     return nil;
@@ -195,7 +195,7 @@ static NSString *placedFooterView_identifier = @"BPSectionPlacedFooterView";
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section == 1) {
-        BPPlanCalendarSectionFooterView *calendarhead = [[[NSBundle mainBundle] loadNibNamed:calendarFooter_identifier owner:self options:nil] lastObject];
+        BPPlanCalendarSectionFooterView *calendarhead = [BPPlanCalendarSectionFooterView bp_loadInstanceFromNib];
         return calendarhead;
     }
     return nil;
