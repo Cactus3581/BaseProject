@@ -70,6 +70,8 @@ typedef void(^BPAddViewBlock)(CGRect frame);
 // 判断此view是否正在屏幕上显示
 - (BOOL)bp_isDisplayedInScreen;
 
+- (UIViewController* )ks_currentViewController;
+
 @end
 
 NS_ASSUME_NONNULL_END

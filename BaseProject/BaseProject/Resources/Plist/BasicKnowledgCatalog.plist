@@ -695,6 +695,14 @@
 				<array>
 					<dict>
 						<key>title</key>
+						<string>文件处理</string>
+						<key>fileName</key>
+						<string>KSFileManageViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
 						<string>iOS自有的</string>
 						<key>fileName</key>
 						<string>BPDataPersistenceVC</string>

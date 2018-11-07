@@ -24,7 +24,7 @@
     
     backView.layer.shadowColor = kRedColor.CGColor;//阴影颜色
     backView.layer.shadowOpacity = 0.5f; //颜色透明度
-    backView.layer.shadowRadius = 5; // 阴影宽度
+    backView.layer.shadowRadius = 5; // 阴影宽度;设置虚化范围程度
     backView.layer.shadowOffset = CGSizeMake(0, 5); //不露出上边的阴影，左右下露出
    // UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 100, 80)];
 //    backView.layer.shadowPath = [path CGPath];

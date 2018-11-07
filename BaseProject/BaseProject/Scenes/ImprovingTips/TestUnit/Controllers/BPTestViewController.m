@@ -10,15 +10,39 @@
 #import "BPCircleProgressButton.h"
 
 @interface BPTestViewController ()<UIGestureRecognizerDelegate>
-
+@property (nonatomic,copy) NSString *str1;
 @end
 
 @implementation BPTestViewController
 
+@dynamic str1;
+
+- (NSString *)str1 {
+    return @"";
+}
+
+- (void)setStr1:(NSString *)str1 {
+//    _str1 = str1;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self InitializeCircleProgressButton];
+    
+    NSString *str1 = @"a";
+    NSString *str2 = @"a";
+
+    NSNumber *number1 = @(1);
+    NSNumber *number2 = @(1);
+
+    
+    NSArray *array = @[str1,number1];
+    
+    BPLog(@"%d,%d,%d,%d",[str1 isEqual:str2],[number1 isEqual:number2],[array containsObject:str2],[array containsObject:number2]);
+
+    
+//    [self InitializeCircleProgressButton];
 }
+
 
 - (void)InitializeCircleProgressButton {
     BPCircleProgressButton *playerButton = [BPCircleProgressButton buttonWithType:UIButtonTypeCustom];

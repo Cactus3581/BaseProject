@@ -339,6 +339,14 @@
 	</dict>
 	<dict>
 		<key>title</key>
+		<string>CoreText-文章详情</string>
+		<key>fileName</key>
+		<string></string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>书籍阅读页面-文字布局</string>
 		<key>fileName</key>
 		<string></string>
@@ -364,7 +372,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>卡片非轮播图滑动</string>
+				<string>卡片滑动</string>
 				<key>fileName</key>
 				<string>BPCardPageViewController</string>
 				<key>briefIntro</key>
@@ -375,6 +383,14 @@
 				<string>卡片轮播图滑动，带缩放动画</string>
 				<key>fileName</key>
 				<string>BPCardPageFlowViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>基于collectionView卡片滑动</string>
+				<key>fileName</key>
+				<string>BPCardPageCollectionViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>

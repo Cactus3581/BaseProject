@@ -91,10 +91,14 @@ typedef enum :NSUInteger{
 }
 
 #pragma mark - CABasicAnimation-基础动画:位移、透明度、缩放、旋转
+//动画的本质就是移动。通过移动实现动画效果的。就有两个点，起点位置，最终位置。
+
 /**
  *  透明度动画
  */
 - (void)opacityAniamtion{
+    //CABasicAnimation 有两个重要的属性：fromValue 初始值  toValue目标值
+
     CABasicAnimation *anima = [CABasicAnimation animationWithKeyPath:@"opacity"];
     anima.fromValue = [NSNumber numberWithFloat:1.0f];
     anima.toValue = [NSNumber numberWithFloat:0.2f];
@@ -115,6 +119,18 @@ typedef enum :NSUInteger{
     anima.removedOnCompletion = NO;
     anima.fillMode = kCAFillModeForwards;
     [self.testView.layer addAnimation:anima forKey:@"scaleAnimation"];
+    
+    //改变颜色
+    CABasicAnimation *animation2 = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+    //配置动画
+    animation2.duration = 3.0f;
+    animation2.repeatCount=100;
+    //设置初始值
+    animation2.fromValue = (id)[UIColor redColor].CGColor;
+    //目标值
+    animation2.toValue = (id)[UIColor greenColor].CGColor;
+    //添加动画
+    [self.testView.layer addAnimation:animation2 forKey:@"backgroundColor"];
 }
 
 /**
@@ -158,6 +174,7 @@ typedef enum :NSUInteger{
  *  path动画
  */
 - (void)keyframeAnimation_path{
+    //view没动。她的layer在动。
     CAKeyframeAnimation *anima = [CAKeyframeAnimation animationWithKeyPath:@"position"];
     anima.beginTime = CACurrentMediaTime() + 1.0;
 

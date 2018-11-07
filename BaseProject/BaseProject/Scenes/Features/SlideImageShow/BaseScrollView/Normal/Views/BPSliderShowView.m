@@ -48,7 +48,7 @@
 
 - (void)initialization {
     _autoScroll = YES;
-    _autoScrollTimeInterval = 3.0;
+    _autoScrollTimeInterval = 5.0;
     self.otherPageControlColor = kGrayColor;
     self.curPageControlColor = kWhiteColor;
     _showPageControl = YES;

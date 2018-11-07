@@ -46,7 +46,7 @@
     _imageInset = 8;
     _pageControlBottom = 0;
     _autoScroll = YES;
-    _autoScrollTimeInterval = 3.0;
+    _autoScrollTimeInterval = 5.0;
     _otherPageControlColor = kLightGrayColor;
     _curPageControlColor = kWhiteColor;
     _showPageControl = YES;

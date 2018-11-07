@@ -10,6 +10,7 @@
 
 @interface BPScrollViewController ()<UIScrollViewDelegate>
 @property (weak, nonatomic) UIScrollView *scrollView;
+@property (assign, nonatomic) CGFloat lastContentOffset;
 @end
 
 @implementation BPScrollViewController
@@ -85,10 +86,29 @@
 #pragma mark - scrollView delegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     BPLog(@"1 - 将开始拖拽");
+    //全局变量记录滑动前的contentOffset
+    self.lastContentOffset = scrollView.contentOffset.y;//判断上下滑动时
+    //self.lastContentOffset = scrollView.contentOffset.x;//判断左右滑动时
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     BPLog(@"2 - 在滚动着");
+    if (scrollView.contentOffset.y < self.lastContentOffset ){
+        //向上
+        BPLog(@"上滑");
+    } else if (scrollView.contentOffset.y > self.lastContentOffset ){
+        //向下
+        BPLog(@"下滑");
+    }
+    
+    //判断左右滑动时
+    //    if (scrollView.contentOffset.x < self.lastContentOffset ){
+    //        //向右
+    //        BPLog(@"左滑");
+    //    } else if (scrollView. contentOffset.x > self.lastContentOffset ){
+    //        //向左
+    //        BPLog(@"右滑");
+    //    }
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {

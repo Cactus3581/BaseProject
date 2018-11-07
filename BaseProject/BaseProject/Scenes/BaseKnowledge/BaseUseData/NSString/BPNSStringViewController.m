@@ -47,9 +47,9 @@
      NSString *str6 = [NSString stringWithUTF8String:"通过便利构造器方法将c语言字符串 转化为oc字符串对象"];
      */
     /*
-     //创建一个字符串对象 http://www.lanou3g.com
+     //创建一个字符串对象
      
-     NSString *str = [NSString stringWithFormat:@"http://www.lanou3g.com"];
+     NSString *str = [NSString stringWithFormat:@"hello world"];
      BPLog(@"%@",str);
      
      //1.替换  将所有符号条件的字符串都进行替换

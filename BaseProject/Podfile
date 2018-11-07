@@ -42,5 +42,8 @@ target 'BaseProject' do
     #pod 'CocoaAsyncSocket'
     #pod 'YYKit'
     #pod 'lottie-ios'
+    
+    #pod 'SkeletonView'
 
+	
 end

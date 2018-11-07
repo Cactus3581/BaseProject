@@ -51,7 +51,7 @@ static CGFloat inset = 15; //假设内部左右两个都为30
 
 - (void)initialization {
     _autoScroll = YES;
-    _autoScrollTimeInterval = 3.0;
+    _autoScrollTimeInterval = 5.0;
     self.otherPageControlColor = kGrayColor;
     self.curPageControlColor = kWhiteColor;
     _showPageControl = YES;

@@ -285,7 +285,9 @@ BPSYNTH_DUMMY_CLASS(UIView_BPAdd)
     CGRect screenRect = [UIScreen mainScreen].bounds;
     
     // 转换view对应window的Rect
-    CGRect rect = [self convertRect:self.frame fromView:nil];
+    UIWindow *window= [UIApplication sharedApplication].keyWindow;
+    CGRect rect = [self convertRect:self.frame toView:window];
+    
     if (CGRectIsEmpty(rect) || CGRectIsNull(rect)) { // app进入后台的时候，在这返回NO
         return FALSE;
     }
@@ -312,6 +314,72 @@ BPSYNTH_DUMMY_CLASS(UIView_BPAdd)
     }
     
     return TRUE;
+}
+
+#pragma mark - 获取顶部视图控制器
+//第一种方法：获取当前展示的vc(参数传入导航试图控制器或者UITabBarController,self.window.rootViewController 也可。（这个比较通用）
+- (UIViewController* )bp_currentViewController {
+    // Find best view controller
+    UIViewController* viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    return [self bp_findcurrentViewController:viewController];
+}
+
+- (UIViewController* )bp_findcurrentViewController:(UIViewController*)vc {
+    if (vc.presentedViewController) {
+        // Return presented view controller
+        return [self bp_findcurrentViewController:vc.presentedViewController];
+        
+    } else if ([vc isKindOfClass:[UISplitViewController class]]) {
+        // Return right hand side
+        UISplitViewController* svc = (UISplitViewController*) vc;
+        if (svc.viewControllers.count > 0)
+            return [self bp_findcurrentViewController:svc.viewControllers.lastObject];
+        else
+            return vc;
+        
+    } else if ([vc isKindOfClass:[UINavigationController class]]) {
+        // Return top view
+        UINavigationController* svc = (UINavigationController*) vc;
+        if (svc.viewControllers.count > 0)
+            return [self bp_findcurrentViewController:svc.topViewController];
+        else
+            return vc;
+        
+    } else if ([vc isKindOfClass:[UITabBarController class]]) {
+        // Return visible view
+        UITabBarController* svc = (UITabBarController*) vc;
+        if (svc.viewControllers.count > 0)
+            return [self bp_findcurrentViewController:svc.selectedViewController];
+        else
+            return vc;
+        
+    } else {
+        // Unknown view controller type, return last child view controller
+        return vc;
+        
+    }
+}
+
+//第二种方法：获取顶部视图控制器
+- (UIViewController *)topViewController {
+    UIViewController *topVC;
+    topVC = [self getTopViewController:[[UIApplication sharedApplication].keyWindow rootViewController]];
+    while (topVC.presentedViewController) {
+        topVC = [self getTopViewController:topVC.presentedViewController];
+    }
+    return topVC;
+}
+
+- (UIViewController *)getTopViewController:(UIViewController *)vc {
+    if (![vc isKindOfClass:[UIViewController class]]) {
+        return nil;
+    } if ([vc isKindOfClass:[UINavigationController class]]) {
+        return [self getTopViewController:[(UINavigationController *)vc topViewController]];
+    } else if ([vc isKindOfClass:[UITabBarController class]]) {
+        return [self getTopViewController:[(UITabBarController *)vc selectedViewController]];
+    } else {
+        return vc;
+    }
 }
 
 @end

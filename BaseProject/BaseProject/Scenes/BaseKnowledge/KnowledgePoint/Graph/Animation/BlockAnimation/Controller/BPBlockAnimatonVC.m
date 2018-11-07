@@ -31,21 +31,39 @@
 
 #pragma mark - 一般形式的UIView动画
 - (void)baseViewAnimation {
-    [UIView beginAnimations:@"centerAnimation" context:nil];
+    //1.创建动画
+    //第一个参数给动画起一个名字，第二个参数 为哪一个视图做的动画
+    [UIView beginAnimations:@"centerAnimation" context:(__bridge void *)(self.testView)];//创建动画:第一个参数给动画起一个名字，第二个参数 为哪一个视图做的动画
+    //[UIView beginAnimations:@"centerAnimation" context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    //2.配置动画
+    //设置动画时间
     [UIView setAnimationDuration:2.0];
+    //设置是否重复
+    [UIView setAnimationRepeatAutoreverses:YES];
+    //如果设置重复，设置重复次数
+    [UIView setAnimationRepeatCount:100];
+    //设置动画延迟的时间
+    [UIView setAnimationDelay:0];
+    
+    //设置代理(不需要再写遵守协议)
     [UIView setAnimationDelegate:self];
-    [UIView setAnimationWillStartSelector:@selector(animationWillStart)];
-    [UIView setAnimationDidStopSelector:@selector(animationDidStop)];
+    //代理方法
+    [UIView setAnimationWillStartSelector:@selector(animationWillStart:context:)];//动画开始时做什么
+    [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];//动画结束时做什么
+    
+    
     self.testView.center = CGPointMake(kScreenWidth/2, 64);//这个也作为动画的一部分
-    [UIView commitAnimations];
+    [UIView commitAnimations];//提交动画
 }
 
-- (void)animationWillStart {
+//动画开始
+-(void)animationWillStart:(NSString *)animationID context:(void *)context {
     self.testView.transform = CGAffineTransformMakeScale(0.2, 0.2);
 }
 
-- (void)animationDidStop {
+//动画结束
+-(void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)contexts {
     self.testView.transform = CGAffineTransformIdentity;
 }
 

@@ -52,7 +52,7 @@ static CGFloat outset = 50; //假设外部左右两个都为0，决定此view的
 
 - (void)initialization {
     _autoScroll = YES;
-    _autoScrollTimeInterval = 3.0;
+    _autoScrollTimeInterval = 5.0;
     self.otherPageControlColor = kGrayColor;
     self.curPageControlColor = kWhiteColor;
     _showPageControl = YES;
