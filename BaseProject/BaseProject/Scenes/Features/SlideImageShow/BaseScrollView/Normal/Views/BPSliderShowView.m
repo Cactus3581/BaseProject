@@ -13,7 +13,7 @@
 #import "UIImageView+YYWebImage.h"
 #import "UIImage+YYWebImage.h"
 
-static CGFloat inset = 15;
+static CGFloat inset = 0;
 
 @interface BPSliderShowView ()<UIScrollViewDelegate>
 @property (nonatomic,strong) UIImageView *leftImageView;
