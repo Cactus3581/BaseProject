@@ -54,4 +54,7 @@
 
 @property (nonatomic,weak) id<BPSliderShowViewDelegate> delegate;
 
+// 当此view不在视野范围内时，计时器工作的时候直接返回
+@property (nonatomic, weak) UIViewController *viewControllerInSide;
+
 @end

@@ -1,5 +1,5 @@
 //
-//  KSFileManageViewController.h
+//  BPFileManageViewController.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/11/3.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KSFileManageViewController : BPBaseViewController
+@interface BPFileManageViewController : BPBaseViewController
 
 @end
 

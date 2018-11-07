@@ -9,7 +9,18 @@
 #ifndef BPAppInfoMacro_h
 #define BPAppInfoMacro_h
 
+//刷新加载控件文案
+#define kRefreshHeaderHeight 64;
+#define kRefreshFooterHeight 36;
 
+#define kHeaderPullToRefreshText        @"下拉刷新"
+#define kHeaderReleaseToRefreshText     @"松开刷新数据"
+#define kHeaderRefreshingText           @"正在加载..."
+
+#define kFooterPullToRefreshText        @"上拉加载更多"
+#define kFooterReleaseToRefreshText     @"松开加载更多数据"
+#define kFooterRefreshingText           @"正在载入..."
+#define kFooterRefreshNoMoreDataText    @"没有更多内容了"
 
 /*
  //系统版本号

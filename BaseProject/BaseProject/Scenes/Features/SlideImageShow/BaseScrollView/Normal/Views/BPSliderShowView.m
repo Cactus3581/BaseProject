@@ -10,7 +10,10 @@
 #import "UIView+BPAdd.h"
 #import "NSTimer+BPUnRetain.h"
 #import "UIImageView+WebCache.h"
-#import "UIView+BPRoundedCorner.h"
+#import "UIImageView+YYWebImage.h"
+#import "UIImage+YYWebImage.h"
+
+static CGFloat inset = 15;
 
 @interface BPSliderShowView ()<UIScrollViewDelegate>
 @property (nonatomic,strong) UIImageView *leftImageView;
@@ -20,6 +23,7 @@
 @property (nonatomic,assign) NSUInteger currentImageIndex;
 @property (nonatomic,weak) NSTimer *timer;
 @property (nonatomic,strong) UIPageControl *pageControl;
+@property (nonatomic,assign) BOOL suspendTimer;
 @end
 
 @implementation BPSliderShowView
@@ -35,15 +39,28 @@
 
 #pragma mark - 创建布局及设置默认值
 - (void)initializeSubViews {
+    //self.clipsToBounds = YES; //阴影问题
     self.backgroundColor = kWhiteColor;
     [self addSubview:self.scrollView];
     [self addSubview:self.pageControl];
-
+    
     [self.scrollView addSubview:self.leftImageView];
     [self.scrollView addSubview:self.centerImageView];
     [self.scrollView addSubview:self.rightImageView];
     [self initializeSubViewsFrame];
     [self bringSubviewToFront:self.pageControl];
+}
+
+- (void)setViewControllerInSide:(UIViewController *)viewControllerInSide {
+    _viewControllerInSide = viewControllerInSide;
+    [_viewControllerInSide addObserver:self forKeyPath:@"pauseTimer" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if(object == _viewControllerInSide && [keyPath isEqualToString:@"pauseTimer"]) {
+        BOOL pauseTimer = [change[NSKeyValueChangeNewKey] boolValue];
+        _suspendTimer = pauseTimer;
+    }
 }
 
 - (void)initialization {
@@ -53,6 +70,17 @@
     self.curPageControlColor = kWhiteColor;
     _showPageControl = YES;
     _hideWhenSinglePage = YES;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector (willEnterForeground) name: UIApplicationWillEnterForegroundNotification object:nil];//注册程序进入前台通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector (didEnterBackground) name: UIApplicationDidEnterBackgroundNotification object:nil];//注册程序进入后台通知
+}
+
+- (void)willEnterForeground {
+    _suspendTimer = NO;
+}
+
+- (void)didEnterBackground {
+    _suspendTimer = YES;
 }
 
 #pragma mark - view旋转
@@ -60,6 +88,11 @@
     [super layoutSubviews];
     self.scrollView.contentSize = CGSizeMake(self.width * 3, 0); //可以不写，因为下面的子view决定了大小
     [self.scrollView setContentOffset:CGPointMake(self.width, 0.0) animated:NO];
+    
+    CGFloat imageSizeW = self.width - 2*inset;
+    [self.leftImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(imageSizeW);
+    }];
 }
 
 #pragma mark - 数据源
@@ -104,6 +137,27 @@
 }
 
 - (void)automaticScroll {
+    
+    // 当此view不在视野范围内时，计时器工作的时候直接返回
+    
+    //方法1：
+    if (_suspendTimer) {
+        return;
+    }
+    
+    /*
+     //方法2：这个方法虽然可以避免代码耦合，但是开销稍微有些大
+     if ([self ks_currentViewController] != self.viewControllerInSide) {
+     BPLog(@"判断此view不在当前控制器");
+     return;
+     }
+     
+     if (![self ks_isDisplayedInScreen]) {
+     BPLog(@"判断此view不在屏幕上显示 = %@",NSStringFromCGRect(self.frame));
+     return;
+     }
+     */
+    
     if (BPValidateArray(self.imageArray).count <= 1) return;
     if(self.scrollView.scrollEnabled == NO) return;
     [self.scrollView setContentOffset:CGPointMake(self.width*2, 0.0) animated:YES];
@@ -121,7 +175,6 @@
     }else {
         BPLog(@"1 - 将开始拖拽");
     }
-    
     CGFloat standardOffsetX = self.width;
     if (scrollView.contentOffset.x < standardOffsetX) {
         [self willDisplayItemAtIndex:self.currentImageIndex-1];
@@ -129,23 +182,6 @@
         [self willDisplayItemAtIndex:self.currentImageIndex+1];
     }else {
         BPLog(@"没有偏移");
-    }
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    BPLog(@"2 - 在滚动着");
-}
-
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-    BPLog(@"3 - 将要结束拖拽");
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    BPLog(@"4 - 已经结束拖拽");
-    if (decelerate == NO) {
-        BPLog(@"scrollView停止滚动，完全静止"); //不走这个log？
-    } else {
-        BPLog(@"4(end) - 用户停止拖拽，但是scrollView由于惯性，会继续滚动，并且减速");
     }
 }
 
@@ -181,11 +217,12 @@
     if (!BPValidateArray(self.imageArray).count) {
         return;
     }
+    CGFloat scrollWidth = self.width ;
     CGPoint contentOffset = [self.scrollView contentOffset];
-    if (contentOffset.x > self.width) {
+    if (contentOffset.x > scrollWidth) {
         //向左滑动+1
         _currentImageIndex = (_currentImageIndex + 1) % self.imageArray.count;
-    } else if (contentOffset.x < self.width) {
+    } else if (contentOffset.x < scrollWidth) {
         //向右滑动-1
         _currentImageIndex = (_currentImageIndex - 1 + self.imageArray.count) % self.imageArray.count;
     }
@@ -205,19 +242,48 @@
         return;
     }
     [self reviseCenterContentOffset];
-    self.centerImageView.backgroundColor = self.imageArray[currentImageIndex];
     NSInteger leftIndex = (unsigned long)((_currentImageIndex - 1 + self.imageArray.count) % self.imageArray.count);
-    self.leftImageView.backgroundColor = self.imageArray[leftIndex];
     NSInteger rightIndex = (unsigned long)((_currentImageIndex + 1) % self.imageArray.count);
+    
+    self.centerImageView.backgroundColor = self.imageArray[currentImageIndex];
+
+    self.leftImageView.backgroundColor = self.imageArray[leftIndex];
+
     self.rightImageView.backgroundColor = self.imageArray[rightIndex];
-    
+
     /*
-    [self.centerImageView sd_setImageWithURL:[NSURL URLWithString:BPValidateString(self.imageArray[currentImageIndex])] placeholderImage:self.placeHolderImage];
-    
-    [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:BPValidateString(self.imageArray[leftIndex])] placeholderImage:self.placeHolderImage];
-    
-    [self.rightImageView sd_setImageWithURL:[NSURL URLWithString:BPValidateString(self.imageArray[rightIndex])] placeholderImage:self.placeHolderImage];
+     [self.centerImageView sd_setImageWithURL:[NSURL URLWithString:BPValidateString(self.imageArray[currentImageIndex])] placeholderImage:self.placeHolderImage];
+     [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:BPValidateString(self.imageArray[leftIndex])] placeholderImage:self.placeHolderImage];
+     [self.rightImageView sd_setImageWithURL:[NSURL URLWithString:BPValidateString(self.imageArray[rightIndex])] placeholderImage:self.placeHolderImage];
      */
+    
+    
+    [self.centerImageView yy_setImageWithURL:[NSURL URLWithString:BPValidateString(self.imageArray[currentImageIndex])]
+                                 placeholder:self.placeHolderImage
+                                     options:YYWebImageOptionSetImageWithFadeAnimation | YYWebImageOptionProgressiveBlur
+                                    progress:nil
+                                   transform:^UIImage *(UIImage *image, NSURL *url) {
+                                       return [image yy_imageByRoundCornerRadius:4];
+                                   }
+                                  completion:nil];
+    
+    [self.leftImageView yy_setImageWithURL:[NSURL URLWithString:BPValidateString(self.imageArray[leftIndex])]
+                               placeholder:self.placeHolderImage
+                                   options:YYWebImageOptionSetImageWithFadeAnimation | YYWebImageOptionProgressiveBlur
+                                  progress:nil
+                                 transform:^UIImage *(UIImage *image, NSURL *url) {
+                                     return [image yy_imageByRoundCornerRadius:4];
+                                 }
+                                completion:nil];
+    
+    [self.rightImageView yy_setImageWithURL:[NSURL URLWithString:BPValidateString(self.imageArray[rightIndex])]
+                                placeholder:self.placeHolderImage
+                                    options:YYWebImageOptionSetImageWithFadeAnimation | YYWebImageOptionProgressiveBlur
+                                   progress:nil
+                                  transform:^UIImage *(UIImage *image, NSURL *url) {
+                                      return [image yy_imageByRoundCornerRadius:4];
+                                  }
+                                 completion:nil];
 }
 
 #pragma mark - 告知给外界的事件
@@ -245,9 +311,9 @@
 #pragma mark -- Properties
 
 - (void)setRadius:(CGFloat)radius cornerColor:(UIColor *)color {
-    [_leftImageView bp_roundedCornerWithRadius:radius cornerColor:color];
-    [_centerImageView bp_roundedCornerWithRadius:radius cornerColor:color];
-    [_rightImageView bp_roundedCornerWithRadius:radius cornerColor:color];
+    _leftImageView.layer.cornerRadius = radius;
+    _centerImageView.layer.cornerRadius = radius;
+    _rightImageView.layer.cornerRadius = radius;
 }
 
 - (void)setAutoScroll:(BOOL)autoScroll{
@@ -301,7 +367,7 @@
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.delegate = self;
         _scrollView.pagingEnabled = YES;
-        _scrollView.clipsToBounds = YES;
+        _scrollView.clipsToBounds = NO;
         _scrollView.bounces = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;
@@ -334,7 +400,6 @@
         _rightImageView = [[UIImageView alloc] init];
         _rightImageView.contentMode = UIViewContentModeScaleAspectFill;
         _rightImageView.clipsToBounds = YES;
-
     }
     return _rightImageView;
 }
@@ -352,6 +417,7 @@
 }
 
 - (void)initializeSubViewsFrame {
+    CGFloat imageSizeW = self.width - 2*inset ;
     //设置偏移量
     self.scrollView.contentSize = CGSizeMake(self.width * 3, 0); //可以不写，因为下面的子view决定了大小
     [self.scrollView setContentOffset:CGPointMake(self.width, 0.0) animated:NO];
@@ -363,28 +429,26 @@
     
     [self.leftImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(self.scrollView);
-        make.leading.equalTo(self.scrollView);
+        make.leading.equalTo(self.scrollView).offset(inset);
         make.height.equalTo(self.scrollView);
-        make.width.equalTo(self.scrollView);
+        make.width.mas_equalTo(imageSizeW);
     }];
     
     [self.centerImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(self.leftImageView);
-        make.leading.equalTo(self.leftImageView.mas_trailing);
+        make.leading.equalTo(self.leftImageView.mas_trailing).offset(inset*2);
         make.height.width.equalTo(self.leftImageView);
     }];
     
     [self.rightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(self.leftImageView);
-        make.leading.equalTo(self.centerImageView.mas_trailing);
+        make.leading.equalTo(self.centerImageView.mas_trailing).offset(inset*2);
         make.height.width.equalTo(self.leftImageView);
-        make.trailing.equalTo(self.scrollView);
+        make.trailing.equalTo(self.scrollView).offset(-inset);
     }];
     
     [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.width.mas_equalTo(200);
-//        make.height.mas_equalTo(30);
-        make.bottom.equalTo(self).offset(0);
+        make.bottom.equalTo(self).offset(5);
         make.centerX.equalTo(self);
     }];
 }
@@ -392,6 +456,8 @@
 //解决当timer释放后 回调scrollViewDidScroll时访问野指针导致崩溃
 - (void)dealloc {
     _scrollView.delegate = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [_viewControllerInSide removeObserver:self forKeyPath:@"pauseTimer"];
     [self invalidateTimer];
 }
 

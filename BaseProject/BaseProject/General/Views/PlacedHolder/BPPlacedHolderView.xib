@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="UUI-lI-9uU" customClass="BPPlacedHolderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homePage_placedHolder" translatesAutoresizingMaskIntoConstraints="NO" id="YCY-Yl-mKO">
+                    <rect key="frame" x="55" y="168" width="265" height="107"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="107" id="csY-1F-XE7"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5w-hP-XeX">
+                    <rect key="frame" x="142.5" y="319.5" width="90" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="W0q-mk-XVu"/>
+                        <constraint firstAttribute="width" constant="90" id="qZw-2d-7qt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="重新加载">
+                        <color key="titleColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZl-SL-guv">
+                    <rect key="frame" x="172" y="290" width="31" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="RZl-SL-guv" firstAttribute="centerX" secondItem="UUI-lI-9uU" secondAttribute="centerX" id="2ez-ao-FVO"/>
+                <constraint firstItem="YCY-Yl-mKO" firstAttribute="centerX" secondItem="UUI-lI-9uU" secondAttribute="centerX" id="R1t-dZ-Dq4"/>
+                <constraint firstItem="T5w-hP-XeX" firstAttribute="centerY" secondItem="UUI-lI-9uU" secondAttribute="centerY" id="RfI-TK-huK"/>
+                <constraint firstItem="T5w-hP-XeX" firstAttribute="top" secondItem="RZl-SL-guv" secondAttribute="bottom" constant="15" id="Rpa-iv-6lc"/>
+                <constraint firstItem="T5w-hP-XeX" firstAttribute="centerX" secondItem="UUI-lI-9uU" secondAttribute="centerX" id="Xi9-zQ-RkT"/>
+                <constraint firstItem="RZl-SL-guv" firstAttribute="top" secondItem="YCY-Yl-mKO" secondAttribute="bottom" constant="15" id="pdL-Vc-cJT"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="YCY-Yl-mKO" id="xwN-za-Mle"/>
+                <outlet property="reloadButton" destination="T5w-hP-XeX" id="gAg-Pk-gFe"/>
+                <outlet property="textLabel" destination="RZl-SL-guv" id="Vmg-iE-G67"/>
+            </connections>
+            <point key="canvasLocation" x="198" y="-133"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="homePage_placedHolder" width="265" height="101.5"/>
+    </resources>
+</document>

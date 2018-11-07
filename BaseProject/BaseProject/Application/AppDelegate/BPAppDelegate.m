@@ -92,41 +92,6 @@
     return self.rootTabbarViewController.selectedViewController;
 }
 
-#pragma mark - 追逐label
-- (UILabel *)trackWindowLabel {
-    if (!_trackWindowLabel) {
-        UILabel *trackWindowLabel = [[UILabel alloc] init];
-        _trackWindowLabel = trackWindowLabel;
-        _trackWindowLabel.textAlignment = NSTextAlignmentLeft;
-        _trackWindowLabel.numberOfLines = 0;
-        _trackWindowLabel.backgroundColor = kBlackColor;
-        _trackWindowLabel.alpha = 0.9;
-        _trackWindowLabel.textColor = kWhiteColor;
-        _trackWindowLabel.preferredMaxLayoutWidth = kScreenWidth/3*2.0;
-        [self.window addSubview:_trackWindowLabel];
-        [_trackWindowLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.trailing.equalTo(self.window).offset(-10);
-            make.bottom.equalTo(self.window).offset(-49);
-        }];
-    }
-    [self.window bringSubviewToFront:_trackWindowLabel];
-    return _trackWindowLabel;
-}
-
-- (NSString *)trackString:(NSString *)string {
-    if (!BPValidateString(string).length) {
-        return nil;
-    }
-    NSMutableString *mutableString =  [self.trackWindowLabel.text mutableCopy];
-    [mutableString appendString:string];
-    self.trackWindowLabel.text = [NSString stringWithFormat:@"%@;\n",[mutableString copy]] ;
-    return self.trackWindowLabel.text;
-}
-
-- (void)reserTrackString {
-    self.trackWindowLabel.text = @"";
-}
-
 #pragma mark - 获取当前展示的vc(参数传入导航试图控制器或者UITabBarController,self.window.rootViewController 也可。（这个比较通用）)
 - (UIViewController*)currentViewController {
     // Find best view controller
@@ -234,6 +199,16 @@
     // 项目中所有的导航栏统一设置
     [UINavigationBar appearance].tintColor = kThemeColor;
     //[[UINavigationBar appearance] setBackgroundImage:backImage forBarMetrics:UIBarMetricsDefault];
+}
+
+- (BPStatisticsLogView *)logView {
+    if (!_logView) {
+        BPStatisticsLogView *logView = [[[NSBundle mainBundle] loadNibNamed:@"BPStatisticsLogView" owner:nil options:nil] lastObject];
+        _logView = logView;
+        [_window addSubview:logView];
+    }
+    [_window bringSubviewToFront:_logView];
+    return _logView;
 }
 
 @end

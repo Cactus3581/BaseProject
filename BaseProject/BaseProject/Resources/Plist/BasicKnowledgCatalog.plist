@@ -697,7 +697,7 @@
 						<key>title</key>
 						<string>文件处理</string>
 						<key>fileName</key>
-						<string>KSFileManageViewController</string>
+						<string>BPFileManageViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>

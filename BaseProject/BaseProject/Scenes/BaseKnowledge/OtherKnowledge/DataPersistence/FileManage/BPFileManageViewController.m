@@ -1,20 +1,20 @@
 //
-//  KSFileManageViewController.m
+//  BPFileManageViewController.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/11/3.
 //  Copyright © 2018 cactus. All rights reserved.
 //
 
-#import "KSFileManageViewController.h"
+#import "BPFileManageViewController.h"
 
-@interface KSFileManageViewController ()
+@interface BPFileManageViewController ()
 @property (retain, nonatomic) IBOutlet UITextField *tf1;
 @property (retain, nonatomic) IBOutlet UITextField *tf2;
 
 @end
 
-@implementation KSFileManageViewController
+@implementation BPFileManageViewController
 
 //写入
 - (IBAction)write:(id)sender {

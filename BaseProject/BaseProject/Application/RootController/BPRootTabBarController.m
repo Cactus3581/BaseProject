@@ -55,7 +55,7 @@
     viewController.navigationItem.title = title;
     navC.tabBarItem.image = image;
     navC.tabBarItem.selectedImage = image;
-//    navC.tabBarItem.selectedImage = [[[UIImage imageNamed:image] imageWithTintColor:KSColor1] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    navC.tabBarItem.selectedImage = [[[UIImage imageNamed:image] imageWithTintColor:kThemeColor] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //[navC.navigationBar setBackgroundImage:[UIImage imageNamed:@"commentary_num_bg"] forBarMetrics:UIBarMetricsDefault];
     [self addChildViewController:navC];
 }
