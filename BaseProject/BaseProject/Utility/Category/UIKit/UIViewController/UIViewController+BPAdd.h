@@ -11,6 +11,7 @@
 @interface UIViewController (BPAdd)
 
 - (void)removeSelf_from_naviViewControllers;
+- (void)removeMiddleSelfFromParentViewController;
 
 // 设置alertController居左对齐
 - (void)setAlertControllerTitleLabelTextAlignment:(NSTextAlignment)textAlignment;

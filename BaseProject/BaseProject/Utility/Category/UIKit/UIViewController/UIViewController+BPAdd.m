@@ -23,6 +23,24 @@
     }
 }
 
+- (void)removeMiddleSelfFromParentViewController {
+    if (self.navigationController && self.navigationController.viewControllers.count > 0) {
+        NSMutableArray *array = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];
+        NSMutableArray *vcs = [[[array reverseObjectEnumerator] allObjects] mutableCopy];
+        __block BOOL exist = NO;
+        [vcs enumerateObjectsUsingBlock:^(UIViewController  *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj isKindOfClass:[self class]]) {
+                exist = YES;
+                [vcs removeObject:obj];
+                *stop = YES;
+            }
+        }];
+        if(exist) {
+            self.navigationController.viewControllers = [[vcs reverseObjectEnumerator] allObjects];
+        }
+    }
+}
+
 - (void)setAlertControllerTitleLabelTextAlignment:(NSTextAlignment)textAlignment {
     if (![self isKindOfClass:[UIAlertController class]]) {
         return;
