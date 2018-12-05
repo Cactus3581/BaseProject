@@ -20,12 +20,11 @@
  
  */
 
-int * bubble_sort(int a[], int length)
-{
+int * bubble_sort(int a[], int length) {
     int i, j, temp;
     for (i = 0; i < length - 1; i++)
-        for (j = 0; j < length - 1 - i; j++) //外层循环每循环一次就能确定出一个泡泡（最大或者最小），所以内层循环不用再计算已经排好的部分
-        {
+        for (j = 0; j < length - 1 - i; j++) { //外层循环每循环一次就能确定出一个泡泡（最大或者最小），所以内层循环不用再计算已经排好的部分
+        
             if(a[j] > a[i + 1]) {
                 temp = a[j];
                 a[j] = a[j + 1];
@@ -69,8 +68,7 @@ int * bubble_sort(int a[], int length)
  如果调用层数比较深，需要增加额外的堆栈处理（还有可能出现堆栈溢出的情况）
  递归算法和循环算法总结：一般递归调用可以处理的算法，也通过循环去解决常需要额外的低效处理。
  */
-int fib(int n)
-{
+int fib(int n) {
     
     if(n==1||n==2)
     {
@@ -97,8 +95,7 @@ int fib(int n)
  1-6步的每一次完成，都会找到temp的精准位置，并将temp左边所以的值都比它小，右边的值都比temp大
  
  */
-void quicksort(int a[],int left,int right)
-{
+void quicksort(int a[],int left,int right) {
     int i, j, t, temp;
     if(left > right)  //开始位置坐标大于结束位置坐标时,直接return,结束下面的操作
     {
@@ -186,11 +183,9 @@ int binarySearch2(int a[], int findNum,int length)
     int high = length - 1;
 
     
-    while (low <= high)
-    {
+    while (low <= high) {
         int mid = ( low + high) / 2;   //此处一定要放在while里面，求中点位置
         if (a[mid] < findNum)
-
             low = mid + 1; // 继续在后半区间进行查找
         else if (a[mid] > findNum)
             high = mid - 1; // 继续在前半区间进行查找
@@ -204,8 +199,6 @@ int binarySearch2(int a[], int findNum,int length)
 int sumNumber(int *a, int length) {
     return length == 0 ? 0 : sumNumber(a, length - 1) + a[length - 1];
 }
-
-
 
 //KMP算法
 void get_next(char *t,int next[]) {   //修正前的next数组

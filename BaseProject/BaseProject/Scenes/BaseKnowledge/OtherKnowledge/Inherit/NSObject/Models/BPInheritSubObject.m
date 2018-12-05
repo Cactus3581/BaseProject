@@ -21,21 +21,21 @@
 #pragma mark - 系统主动调用
 - (void)methond_A {
     [super methond_A];
-    BPLog(@"i'm sub A");
+    BPLog(@"i'm sub a");
 }
 
 - (void)methond_B {
-    BPLog(@"i'm sub B");
+    BPLog(@"i'm sub b");
 }
 
 #pragma mark - 自己主动调用
 - (void)methond_C {
     [super methond_C];
-    BPLog(@"i'm sub C");
+    BPLog(@"i'm sub c");
 }
 
 - (void)methond_D {
-    BPLog(@"i'm sub D");
+    BPLog(@"i'm sub d");
 }
 
 - (void)methond_f {

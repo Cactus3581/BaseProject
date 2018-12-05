@@ -3041,6 +3041,7 @@
 		010FBD0520601D6300BC9EC4 /* Thread */ = {
 			isa = PBXGroup;
 			children = (
+				015EC4E421B6577C00DEBDDD /* GCD */,
 				016760C82060F91800F82ACE /* NSOperation */,
 				010FBD0620601D6300BC9EC4 /* NSThread */,
 			);
@@ -3984,7 +3985,6 @@
 				01161F32203088D500FA3441 /* AboutOC */,
 				01B7268F1FF7E45B00648674 /* Algorithm */,
 				01B7268B1FF7DF1900648674 /* DataStructure */,
-				01490C031FF547F00035492D /* GCD */,
 				01B0751B20E4FD0C004891F7 /* Graph */,
 				01B726971FF7E4BB00648674 /* LearnThirdLibrary */,
 				01490C041FF548010035492D /* Memory */,
@@ -3994,15 +3994,6 @@
 				010FBD0520601D6300BC9EC4 /* Thread */,
 			);
 			path = KnowledgePoint;
-			sourceTree = "<group>";
-		};
-		01490C031FF547F00035492D /* GCD */ = {
-			isa = PBXGroup;
-			children = (
-				01490C061FF548650035492D /* BPGCDViewController.h */,
-				01490C071FF548650035492D /* BPGCDViewController.m */,
-			);
-			path = GCD;
 			sourceTree = "<group>";
 		};
 		01490C041FF548010035492D /* Memory */ = {
@@ -4877,6 +4868,15 @@
 				01349C4120EC959200E50A86 /* BPDownLoadGeneralView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		015EC4E421B6577C00DEBDDD /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				01490C061FF548650035492D /* BPGCDViewController.h */,
+				01490C071FF548650035492D /* BPGCDViewController.m */,
+			);
+			path = GCD;
 			sourceTree = "<group>";
 		};
 		01607187204D34EE009C66A2 /* Photos */ = {
@@ -7614,8 +7614,8 @@
 		01B7268F1FF7E45B00648674 /* Algorithm */ = {
 			isa = PBXGroup;
 			children = (
-				01B726901FF7E45B00648674 /* BPAlgorithm.h */,
 				01B726911FF7E45B00648674 /* BPAlgorithm.c */,
+				01B726901FF7E45B00648674 /* BPAlgorithm.h */,
 				01B726921FF7E45B00648674 /* Controllers */,
 			);
 			path = Algorithm;

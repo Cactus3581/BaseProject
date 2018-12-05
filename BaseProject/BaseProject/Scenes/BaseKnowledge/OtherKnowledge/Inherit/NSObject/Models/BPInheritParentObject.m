@@ -10,10 +10,16 @@
 
 @implementation BPInheritParentObject
 
++ (void)initialize {
+    if (self == [BPInheritParentObject class]) {
+        BPLog(@"initialize = %@ ",self);
+    }
+}
+
 - (instancetype)init {
     self = [super init];
+    BPLog(@"i'm = %@ ",self);
     if (self) {
-        BPLog(@"i'm parent init");
         [self methond_A];
         [self methond_B];
     }
@@ -35,7 +41,7 @@
 }
 
 - (void)methond_D {
-    BPLog(@"i'm parent C");
+    BPLog(@"i'm parent D");
 }
 
 #pragma mark - 子类拿不到，子类无法使用

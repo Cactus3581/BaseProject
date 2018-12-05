@@ -13,33 +13,6 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>多线程种类</string>
-				<key>fileName</key>
-				<string>BPSimpleTableController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>subVc_array</key>
-				<array>
-					<dict>
-						<key>title</key>
-						<string>NSThread</string>
-						<key>fileName</key>
-						<string>BPNSThreadViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>NSOperation</string>
-						<key>fileName</key>
-						<string>BPNSOperationViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>title</key>
 				<string>OC的类和对象</string>
 				<key>fileName</key>
 				<string>BPSimpleTableController</string>
@@ -75,7 +48,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>GCD,信号量,锁</string>
+				<string>多线程</string>
 				<key>fileName</key>
 				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
@@ -84,63 +57,90 @@
 				<array>
 					<dict>
 						<key>title</key>
-						<string>基础使用</string>
+						<string>GCD,信号量,锁</string>
 						<key>fileName</key>
-						<string>BPGCDViewController</string>
+						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
 						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;0&quot;}</string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>基础使用</string>
+								<key>fileName</key>
+								<string>BPGCDViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+								<key>dynamicJumpString</key>
+								<string>{&quot;type&quot;:&quot;0&quot;}</string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>取消GCD任务</string>
+								<key>fileName</key>
+								<string>BPGCDViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+								<key>dynamicJumpString</key>
+								<string>{&quot;type&quot;:&quot;1&quot;}</string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>几种方法的日常使用</string>
+								<key>fileName</key>
+								<string>BPGCDViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+								<key>dynamicJumpString</key>
+								<string>{&quot;type&quot;:&quot;2&quot;}</string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>死锁</string>
+								<key>fileName</key>
+								<string>BPGCDViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+								<key>dynamicJumpString</key>
+								<string>{&quot;type&quot;:&quot;3&quot;}</string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>线程安全和锁</string>
+								<key>fileName</key>
+								<string>BPGCDViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+								<key>dynamicJumpString</key>
+								<string>{&quot;type&quot;:&quot;4&quot;}</string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>多线程、异步和并发</string>
+								<key>fileName</key>
+								<string>BPGCDViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+								<key>dynamicJumpString</key>
+								<string>{&quot;type&quot;:&quot;5&quot;}</string>
+							</dict>
+						</array>
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>取消GCD任务</string>
+						<string>NSOperation</string>
 						<key>fileName</key>
-						<string>BPGCDViewController</string>
+						<string>BPNSOperationViewController</string>
 						<key>briefIntro</key>
 						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;1&quot;}</string>
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>几种方法的日常使用</string>
+						<string>NSThread</string>
 						<key>fileName</key>
-						<string>BPGCDViewController</string>
+						<string>BPNSThreadViewController</string>
 						<key>briefIntro</key>
 						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;2&quot;}</string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>死锁</string>
-						<key>fileName</key>
-						<string>BPGCDViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;3&quot;}</string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>线程安全和锁</string>
-						<key>fileName</key>
-						<string>BPGCDViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;4&quot;}</string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>多线程、异步和并发</string>
-						<key>fileName</key>
-						<string>BPGCDViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;5&quot;}</string>
 					</dict>
 				</array>
 			</dict>
