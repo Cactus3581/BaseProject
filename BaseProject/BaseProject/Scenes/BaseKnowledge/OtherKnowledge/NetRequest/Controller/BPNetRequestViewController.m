@@ -24,7 +24,6 @@ static NSString *urlstrimage1 = @"http://120.25.226.186:32812/resources/images/m
 
 @implementation BPNetRequestViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kWhiteColor;
@@ -49,8 +48,7 @@ static NSString *urlstrimage1 = @"http://120.25.226.186:32812/resources/images/m
 
 }
 
-- (void)viewDidDisappear:(BOOL)animated
-{
+- (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     /*
      针对：setDataTask_delegate
@@ -74,8 +72,7 @@ NSURLSessionDataTask 发送 GET 请求:
     2.执行 Task
  
 */
-- (void)setDataTask_get
-{
+- (void)setDataTask_get {
     //确定请求路径
     NSURL *url = [NSURL URLWithString:urlstr];
     //创建 NSURLSession 对象
@@ -115,14 +112,52 @@ NSURLSessionDataTask 发送 GET 请求:
             1.使用 NSURLSession 对象创建 Task
             2.执行 Task
  */
-- (void)setDataTask_post
-{
+- (void)setDataTask_post {
+    // 构造NSURLSessionConfiguration
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    //设置请求超时为30秒钟
+    configuration.timeoutIntervalForRequest = 30;
+    
+    //在蜂窝网络情况下是否继续请求（上传或下载）
+    configuration.allowsCellularAccess = NO;
+    
+    //配置请求头
+    configuration.HTTPAdditionalHeaders =@{@"Content-Encoding":@"gzip"};
+    
+    /*
+     请求：
+    请求行：
+    1.是请求方法，GET和POST是最常见的HTTP方法，除此以外还包括DELETE、HEAD、OPTIONS、PUT、TRACE。
+    2.为请求对应的URL地址，它和报文头的Host属性组成完整的请求URL。
+    3.是协议名称及版本号。
+     
+     请求头：
+     1.是HTTP的报文头，报文头包含若干个属性，格式为“属性名:属性值”，服务端据此获取客户端的信息。
+     2.与缓存相关的规则信息，均包含在header中
+     
+     响应：在response里面
+     响应行： 响应状态码
+     */
+    
     //确定请求路径
     NSURL *url = [NSURL URLWithString:urlstr1];
     //创建可变请求对象
     NSMutableURLRequest *requestM = [NSMutableURLRequest requestWithURL:url];
     //修改请求方法
     requestM.HTTPMethod = @"POST";
+    
+    //(3)设置请求头
+    NSDictionary *dic = @{@"Content-Encoding":@"gzip"};
+    [requestM setAllHTTPHeaderFields:dic];
+    //设置头部参数
+    [requestM addValue:@"gzip" forHTTPHeaderField:@"Content-Encoding"];
+
+    //设置缓存策略
+    [requestM setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+    
+    //(2)超时
+    [requestM setTimeoutInterval:30];
+    
     //设置请求体
     requestM.HTTPBody = [@"username=13501120689&password=000000&type=JSON" dataUsingEncoding:NSUTF8StringEncoding];
     //创建会话对象
@@ -134,6 +169,11 @@ NSURLSessionDataTask 发送 GET 请求:
                                           //解析返回的数据
                                           NSDictionary *dic = [self dictionaryWithdata:data];
                                           BPLog(@"%@",dic);
+                                          
+                                          NSHTTPURLResponse *res = (NSHTTPURLResponse *)response;
+                                          NSDictionary *headerDict = res.allHeaderFields;
+                                          BPLog(@"%@",headerDict);
+
 
                                       }];
     //发送请求
@@ -151,8 +191,7 @@ NSURLSessionDataTask 发送 GET 请求:
                 2.执行 Task
  */
 
-- (void)setDataTask_delegate
-{
+- (void)setDataTask_delegate {
     //确定请求路径
     NSURL *url = [NSURL URLWithString:urlstr1];
     //创建可变请求对象
@@ -178,8 +217,7 @@ NSURLSessionDataTask 发送 GET 请求:
 }
 //遵守协议，实现代理方法（常用的有三种代理方法）
 
-- (void)URLSession:(NSURLSession *)session dataTask:(nonnull NSURLSessionDataTask *)dataTask didReceiveResponse:(nonnull NSURLResponse *)response completionHandler:(nonnull void (^)(NSURLSessionResponseDisposition))completionHandler
-{
+- (void)URLSession:(NSURLSession *)session dataTask:(nonnull NSURLSessionDataTask *)dataTask didReceiveResponse:(nonnull NSURLResponse *)response completionHandler:(nonnull void (^)(NSURLSessionResponseDisposition))completionHandler {
     //子线程中执行
     BPLog(@"接收到服务器响应的时候调用 -- %@", [NSThread currentThread]);
     
@@ -188,18 +226,17 @@ NSURLSessionDataTask 发送 GET 请求:
     //必须告诉系统是否接收服务器返回的数据
     completionHandler(NSURLSessionResponseAllow);
 }
+
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data {
-    
     BPLog(@"接受到服务器返回数据的时候调用,可能被调用多次");
     //拼接服务器返回的数据
     [self.dataM appendData:data];
 }
+
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
-    
     BPLog(@"请求完成或者是失败的时候调用");
     //解析服务器返回数据
     BPLog(@"%@", [self dictionaryWithdata:self.dataM]);
-    
 }
 
 /*
@@ -225,8 +262,7 @@ NSURLSessionDataTask 发送 GET 请求:
         2.执行请求
  */
 
-- (void)setDataTask_1
-{
+- (void)setDataTask_1 {
     [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:
                                                     urlstrimage]
                                  completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -315,12 +351,10 @@ NSURLSessionDataTask 发送 GET 请求:
  * @return 返回字典
  */
 - (NSDictionary *)dictionaryWithdata:(NSData *)data {
-    
     NSError *err;
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data
                                                         options:NSJSONReadingMutableContainers
                                                           error:&err];
-    
     if(err) {
         BPLog(@"json解析失败：%@",err);
         return nil;
@@ -328,13 +362,8 @@ NSURLSessionDataTask 发送 GET 请求:
     return dic;
 }
 
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-
 
 @end

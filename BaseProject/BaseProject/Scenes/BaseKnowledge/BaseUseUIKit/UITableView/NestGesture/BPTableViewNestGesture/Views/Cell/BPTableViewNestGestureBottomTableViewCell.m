@@ -7,13 +7,12 @@
 //
 
 #import "BPTableViewNestGestureBottomTableViewCell.h"
-#import "BPFlowCatergoryView.h"
+#import "BPFlowCategoryView.h"
 #import "BPTableViewNestGestureDetailViewController.h"
 
-@interface BPTableViewNestGestureBottomTableViewCell ()<BPFlowCatergoryViewDelegate>
-@property (nonatomic, weak) BPFlowCatergoryView *flowCatergoryView;
+@interface BPTableViewNestGestureBottomTableViewCell ()<BPFlowCategoryViewDelegate>
+@property (nonatomic, weak) BPFlowCategoryView *flowCategoryView;
 @property (weak, nonatomic) UIScrollView *scroll;
-
 @end
 
 @implementation BPTableViewNestGestureBottomTableViewCell
@@ -32,41 +31,41 @@
 
 - (void)initViews {
     self.contentView.backgroundColor = kWhiteColor;
-    self.flowCatergoryView.backgroundColor = kWhiteColor;
-    self.flowCatergoryView.titles = @[@"to be bester",@"to be bester",@"to be bester",@"to be bester",@"to be bester",@"to be bester",@"to be bester",@"to be bester",@"to be bester"];
+    self.flowCategoryView.backgroundColor = kWhiteColor;
+    self.flowCategoryView.titles = @[@"to be bester",@"to be bester",@"to be bester",@"to be bester",@"to be bester",@"to be bester",@"to be bester",@"to be bester",@"to be bester"];
 }
 
-- (BPFlowCatergoryView *)flowCatergoryView {
-    if (!_flowCatergoryView) {
-        BPFlowCatergoryView * flowCatergoryView = [[BPFlowCatergoryView alloc] init];
-        _flowCatergoryView = flowCatergoryView;
+- (BPFlowCategoryView *)flowCategoryView {
+    if (!_flowCategoryView) {
+        BPFlowCategoryView * flowCategoryView = [[BPFlowCategoryView alloc] init];
+        _flowCategoryView = flowCategoryView;
         /* 关于交互:滑动、点击 */
-        _flowCatergoryView.delegate = self;//监听item按钮点击
-        [self.contentView addSubview:_flowCatergoryView];
-        [_flowCatergoryView mas_makeConstraints:^(MASConstraintMaker *make) {
+        _flowCategoryView.delegate = self;//监听item按钮点击
+        [self.contentView addSubview:_flowCategoryView];
+        [_flowCategoryView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.contentView);
         }];
     }
-    return _flowCatergoryView;
+    return _flowCategoryView;
 }
 
-- (UIViewController *)flowCatergoryView:(BPFlowCatergoryView *)flowCatergoryView cellForItemAtIndexPath:(NSInteger)row {
+- (UIViewController *)flowCategoryView:(BPFlowCategoryView *)flowCategoryView cellForItemAtIndexPath:(NSInteger)row {
     BPTableViewNestGestureDetailViewController *vc = [[BPTableViewNestGestureDetailViewController alloc] init];
     vc.index = row;
     return vc;
 }
 
 #pragma mark - 在下面的collectionView左右滑动的时候：禁止外面（上面）的scroll上下互动；禁止子vc里的tableView上下滑动
-- (void)flowCatergoryViewDidScroll:(BPFlowCatergoryView *)flowCatergoryView {
+- (void)flowCategoryViewDidScroll:(BPFlowCategoryView *)flowCategoryView {
     _scroll.scrollEnabled = NO;
-    for (BPTableViewNestGestureDetailViewController *vc in _flowCatergoryView.vcCacheDic.allValues) {
+    for (BPTableViewNestGestureDetailViewController *vc in _flowCategoryView.vcCacheDic.allValues) {
         vc.tableView.scrollEnabled = NO;
     }
 }
 
-- (void)flowCatergoryViewDidEndDecelerating:(BPFlowCatergoryView *)flowCatergoryView {
+- (void)flowCategoryViewDidEndDecelerating:(BPFlowCategoryView *)flowCategoryView {
     _scroll.scrollEnabled = YES;
-    for (BPTableViewNestGestureDetailViewController *vc in _flowCatergoryView.vcCacheDic.allValues) {
+    for (BPTableViewNestGestureDetailViewController *vc in _flowCategoryView.vcCacheDic.allValues) {
         vc.tableView.scrollEnabled = YES;
     }
 }

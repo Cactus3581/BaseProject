@@ -16,12 +16,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self test];
+}
+
+// 面试题
+- (void)test {
     //创建一个线程队列
     NSOperationQueue *queue = [[NSOperationQueue alloc]init];
     queue.maxConcurrentOperationCount = 2; //最大并发数
     
     [queue addOperationWithBlock:^{
-        NSLog(@"%@",[NSThread currentThread]);
+        BPLog(@"%@",[NSThread currentThread]);
         [queue addOperationWithBlock:^{
             sleep(1);
             printf("1");
@@ -35,7 +40,6 @@
     }];
     sleep(2);
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

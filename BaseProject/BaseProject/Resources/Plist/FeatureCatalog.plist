@@ -165,7 +165,7 @@
 				<key>title</key>
 				<string>基于AddChiledController&amp;过渡动画</string>
 				<key>fileName</key>
-				<string>BP_Four_TopSliderCatergoryViewController</string>
+				<string>BP_Four_TopSliderCategoryViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -182,7 +182,7 @@
 						<key>title</key>
 						<string>颜色左右渐变 + 底部线条</string>
 						<key>fileName</key>
-						<string>BPFlowCatergoryViewController</string>
+						<string>BPFlowCategoryViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 						<key>dynamicJumpString</key>
@@ -192,7 +192,7 @@
 						<key>title</key>
 						<string>颜色变化 + 背后椭圆 + 设置默认index</string>
 						<key>fileName</key>
-						<string>BPFlowCatergoryViewController</string>
+						<string>BPFlowCategoryViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 						<key>dynamicJumpString</key>
@@ -202,7 +202,7 @@
 						<key>title</key>
 						<string>颜色变化 + 文字缩放 + 模拟网络刷新</string>
 						<key>fileName</key>
-						<string>BPFlowCatergoryViewController</string>
+						<string>BPFlowCategoryViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 						<key>dynamicJumpString</key>
@@ -212,7 +212,7 @@
 						<key>title</key>
 						<string>下划线</string>
 						<key>fileName</key>
-						<string>BPFlowCatergoryViewController</string>
+						<string>BPFlowCategoryViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 						<key>dynamicJumpString</key>
@@ -222,7 +222,7 @@
 						<key>title</key>
 						<string>当数据各位为2的时候特殊处理</string>
 						<key>fileName</key>
-						<string>BPSpecificFlowCatergoryViewController</string>
+						<string>BPSpecificFlowCategoryViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>

@@ -8,6 +8,10 @@
 
 #import "BPAlgorithmController.h"
 #include "BPAlgorithm.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <fcntl.h>
 
 @interface BPAlgorithmController ()
 @end
@@ -31,10 +35,25 @@
 //    [self sum];
 
 //    [self kmp];
-    
+
+    [self maxsum];
+    [self reverseSentence];
+}
+
+- (void)maxsum {
     int a[] = {3,2,4,4,2,2,2};
     printf("%d",maxsum(a,7));
+}
+
+- (void)reverseSentence {
+    char originalStr[] = "the sky is blue";
+    char p[] = "the sky is blue";
+    char q[] = "xiaruzhen";
+    getStr(p,q);
     
+    //    char *reversedStr = ReverseSentence(originalStr);
+    //    NSLog(@"reversedStr: %s", reversedStr);
+    //    NSLog(@"reversedStr: %c", 1+(*originalStr));
 }
 
 //递归-斐波那契奇数列

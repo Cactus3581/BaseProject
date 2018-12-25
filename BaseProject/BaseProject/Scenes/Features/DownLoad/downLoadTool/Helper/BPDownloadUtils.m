@@ -73,7 +73,7 @@
         BOOL isSuccess = [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error];
         if (!isSuccess) {
             ret = NO;
-            NSLog(@"creat Directory Failed. errorInfo:%@",error);
+            BPLog(@"creat Directory Failed. errorInfo:%@",error);
         }
     }
     return ret;

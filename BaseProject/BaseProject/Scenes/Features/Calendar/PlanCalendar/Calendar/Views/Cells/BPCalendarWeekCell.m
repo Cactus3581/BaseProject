@@ -20,7 +20,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initalizeSubView];
+        [self initializeSubView];
     }
     return self;
 }
@@ -32,7 +32,7 @@
     }];
 }
 
-- (void)initalizeSubView {
+- (void)initializeSubView {
     self.contentView.backgroundColor = kWhiteColor;
     UILabel *label = [[UILabel alloc] init];
     self.label = label;

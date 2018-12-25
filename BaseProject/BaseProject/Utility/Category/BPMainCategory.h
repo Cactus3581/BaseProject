@@ -1,0 +1,45 @@
+//
+//  BPMainCategory.h
+//  BaseProject
+//
+//  Created by xiaruzhen on 16/5/27.
+//  Copyright © 2016年 cactus. All rights reserved.
+//
+
+#import "UIView+BPAddForFrame.h"
+#import "UILabel+BPAddForFrame.h"
+#import "CALayer+BPAddForFrame.h"
+#import "Foundation+Log.m"
+#import "CALayer+BPAdd.h"
+#import "NSDate+BPAdd.h"
+#import "NSData+BPAdd.h"
+#import "NSString+BPAdd.h"
+#import "NSNumber+BPAdd.h"
+#import "NSArray+BPAdd.h"
+#import "NSMutableArray+BPAdd.h"
+#import "NSDictionary+BPAdd.h"
+#import "NSMutableDictionary+BPAdd.h"
+#import "NSNotificationCenter+BPAdd.h"
+#import "NSTimer+BPAdd.h"
+#import "NSObject+BPAdd.h"
+#import "UIColor+BPAdd.h"
+#import "UIImage+BPAdd.h"
+#import "UIView+BPAdd.h"
+#import "UIScreen+BPAdd.h"
+#import "UIDevice+BPAdd.h"
+#import "UIApplication+BPAdd.h"
+#import "UIFont+BPAdd.h"
+#import "UIBezierPath+BPAdd.h"
+#import "UIScrollView+BPAdd.h"
+#import "UITableView+BPAdd.h"
+#import "UIActivityIndicatorView+BPAdd.h"
+#import "UIAlertView+BPAdd.h"
+#import "UIBarButtonItem+BPAdd.h"
+#import "UIBarButtonItem+BPAdd.h"
+#import "UICollectionViewFlowLayout+BPAdd.h"
+#import "UIImageView+BPAdd.h"
+#import "UILabel+BPAdd.h"
+#import "UIControl+BPAdd.h"
+#import "UIBarButtonItem+BPAdd.h"
+#import "UINavigationController+BPAdd.h"
+#import "UITextField+BPAdd.h"

@@ -10,8 +10,6 @@
 #import <AFNetworking.h>
 #import "BPDownLoad.h"
 #import "BPDownLoadItem.h"
-//#import "Foundation+Log.h"
-#import "NSObject+Log.h"
 
 static NSInteger maxCount = 3;
 
@@ -164,7 +162,7 @@ static dispatch_group_t downloadGroup;
         return [documentsDirectoryURL URLByAppendingPathComponent:[BPDownloadUtils md5ForString:item.downLoadUrl]];
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
         
-        NSLog(@"File downloaded to: %@", filePath);
+        BPLog(@"File downloaded to: %@", filePath);
         
         if(error) {
             if (error.code == NSURLErrorCancelled) {

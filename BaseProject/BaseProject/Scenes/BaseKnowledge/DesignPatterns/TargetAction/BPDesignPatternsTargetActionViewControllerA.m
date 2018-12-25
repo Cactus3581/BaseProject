@@ -9,6 +9,10 @@
 #import "BPDesignPatternsTargetActionViewControllerA.h"
 #import "BPDesignPatternsTargetActionViewControllerB.h"
 
+/**
+ 目标-行为模式
+ */
+
 @interface BPDesignPatternsTargetActionViewControllerA ()
 
 @end

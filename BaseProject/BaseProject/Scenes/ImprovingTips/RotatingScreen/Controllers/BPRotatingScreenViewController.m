@@ -68,7 +68,7 @@
     [self.navigationController presentViewController:naviVc animated:YES completion:nil];
 }
 
-- (void)resert {
+- (void)reset {
     [self setInterfaceOrientation:UIInterfaceOrientationPortrait];
 }
 
@@ -277,9 +277,9 @@
     UIButton *rightBarButton2 = [UIButton buttonWithType:UIButtonTypeCustom];
     [rightBarButton2 setTintColor:kWhiteColor];
     [rightBarButton2 setTitleColor:kWhiteColor forState:UIControlStateNormal];
-    [rightBarButton2 setTitle:@"resert" forState:UIControlStateNormal];
+    [rightBarButton2 setTitle:@"reset" forState:UIControlStateNormal];
     rightBarButton2.titleLabel.font  = BPFont(16);
-    [rightBarButton2 addTarget:self action:@selector(resert) forControlEvents:UIControlEventTouchUpInside];
+    [rightBarButton2 addTarget:self action:@selector(reset) forControlEvents:UIControlEventTouchUpInside];
     rightBarButton2.frame = CGRectMake(CGRectGetMaxX(rightBarButton1.frame)+5, 0, bp_naviItem_width, bp_naviItem_height);
     [rightBarButton2 sizeToFit];
     rightBarButton2.frame = CGRectMake(CGRectGetMinX(rightBarButton2.frame), 0, CGRectGetWidth(rightBarButton2.bounds), bp_naviItem_height);

@@ -24,19 +24,19 @@ static NSString *cellIdentifier = @"BPBaseTableViewCell";
     BPBaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
         cell = [[BPBaseTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        [cell initailizeUI];
+        [cell initializeUI];
     }
     return cell;
 }
 
 + (instancetype)xib_cellWithTableView:(UITableView *)tableView {
     BPBaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    [cell initailizeUI];
+    [cell initializeUI];
     return cell;
 }
 
 #pragma mark - initialize methods
-- (void)initailizeUI{
+- (void)initializeUI{
     self.backgroundColor = kWhiteColor;
     UILabel *songNameLabel = [UILabel new];
     _titleLabel = songNameLabel; 

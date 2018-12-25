@@ -66,7 +66,7 @@
     [_scrollView setContentOffset:CGPointMake(_currentImageIndex * _scrollView.width, 0.0) animated:NO]; //位移归位
 }
 
-- (void)resert {
+- (void)reset {
     [self invalidateTimer];
     [self.imageViewArray removeAllObjects];
     [_scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
@@ -81,7 +81,7 @@
 - (void)setImageArray:(NSArray *)imageArray {
     _imageArray = BPValidateArray(imageArray);
     
-    [self resert];//恢复
+    [self reset];//恢复
     
     if (!_imageArray.count) {
         _scrollView.scrollEnabled = NO;

@@ -371,6 +371,11 @@ static CGFloat inset = 0;
         _scrollView.bounces = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;
+        if (kiOS11) {
+            _scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+//            self.automaticallyAdjustsScrollViewInsets = NO; // 在控制器里设置
+        }
     }
     return _scrollView;
 }

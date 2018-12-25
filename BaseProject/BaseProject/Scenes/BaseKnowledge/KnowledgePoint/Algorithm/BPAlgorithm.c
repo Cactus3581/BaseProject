@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <fcntl.h> // for open
 /*
  冒泡排序，核心思想：归位（以下是从左到右归位）
  1.从列表的第一个数字到倒数第二个数字，逐个检查：若某一位上的数字大于他的下一位，则将它与它的下一位交换。
@@ -277,3 +278,56 @@ int maxsum(int a[],  int n){
     }
     return max;
 }  
+
+char * ReverseSentence(char* s) {
+    // 这两个指针用来确定一个单词的首尾边界
+    char* p = s ; // 指向单词的首字符
+    char* q = s ; // 指向空格或者 '\0'
+    
+    while(*q != '\0') {
+        if (*q ==' ') {
+            reverseWord(p, q - 1) ;
+            q++ ; // 指向下一个单词首字符
+            p = q ;
+        }
+        else
+            q++ ;
+    }
+    reverseWord(p, q - 1) ; // 对最后一个单词逆序
+    reverseWord(s, q - 1) ; // 对整个句子逆序
+    return s;
+}
+
+void getStr(char* p, char* q) {
+    char o[] = "dsds";
+    char *m = "dsds";
+
+    printf("p = %s,*p = %c\n",p,*p);
+    printf("q = %s,*q = %c\n",q,*q);
+//    *p++;
+    p++;
+    printf("p = %s,*p = %c\n",p,*p);
+    printf("p = %s,*p = %c\n",p,*p);
+
+    char t = *p ;
+    printf("p = %s,*p = %c\n",p,*p);
+    printf("t = %c\n",t);
+
+    *p++ = *q ;
+    printf("p = %s,*p = %c\n",p,*p);
+    printf("q = %s,*q = %c\n",q,*q);
+    *q-- = t ;
+    printf("p = %s,*p = %c\n",p,*p);
+    printf("q = %s,*q = %c\n",q,*q);
+}
+
+// 对指针p和q之间的所有字符逆序
+void reverseWord(char* p, char* q) {
+    while(p < q) {
+        char t = *p ;
+        *p++ = *q ;
+        *q-- = t ;
+    }
+}
+
+

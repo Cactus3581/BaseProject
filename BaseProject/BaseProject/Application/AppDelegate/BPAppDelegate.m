@@ -157,7 +157,7 @@
 
 //程序已经变成活跃状态执行的方法   一般进行UI界面刷新
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    BPLog(@"程序已经变成活跃状态");
+    //BPLog(@"程序已经变成活跃状态");
 }
 
 //程序将要退出执行的方法

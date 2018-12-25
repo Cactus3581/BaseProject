@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly) BOOL hasAlphaChannel;
 
-#pragma mark - image initailize (图片初始化相关)
+#pragma mark - image initialize (图片初始化相关)
 
 + (UIImage *)bp_imageWithPDF:(id)dataOrPath;
 

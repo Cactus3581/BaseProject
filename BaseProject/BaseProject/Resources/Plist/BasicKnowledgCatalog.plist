@@ -657,6 +657,14 @@
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>编程通用知识点</string>
+				<key>fileName</key>
+				<string>BPGeneralProgrammingViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
 		</array>
 	</dict>
 	<dict>

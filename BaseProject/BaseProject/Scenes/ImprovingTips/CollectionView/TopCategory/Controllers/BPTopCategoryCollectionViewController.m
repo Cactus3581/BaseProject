@@ -8,12 +8,12 @@
 
 #import "BPTopCategoryCollectionViewController.h"
 #import "BPTopCategoryModel.h"
-#import "BPFlowCatergoryView.h"
+#import "BPFlowCategoryView.h"
 #import "BPTopCategoryMacro.h"
 #import "BPCategoryDetailViewController.h"
 
-@interface BPTopCategoryCollectionViewController ()<BPFlowCatergoryViewDelegate>
-@property (nonatomic, weak) BPFlowCatergoryView *catergoryView;
+@interface BPTopCategoryCollectionViewController ()<BPFlowCategoryViewDelegate>
+@property (nonatomic, weak) BPFlowCategoryView *categoryView;
 @property (nonatomic, strong) NSArray *cateogry;
 @end
 
@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addFPSLabel];
-    [self handlaData];
+    [self handleData];
     [self initializeSubViews];
 }
 
@@ -31,7 +31,7 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;//也可以是UIRectEdgeTop
 }
 
-- (void)handlaData {
+- (void)handleData {
     NSArray *array1 = @[@"四级",@"六级",@"小学",@"初中",@"高中",@"大学"];
     NSArray *array2 = @[@"初中牛津版",@"新教初中牛津版",@"仁爱的版",@"初中河北版",@"初中牛津版",@"翼教版",@"初中牛津版",@"新教初中牛津版",@"仁爱的版",@"初中河北版",@"初中牛津版",@"翼教版"];
     NSArray *array3 = @[@"专四真题高频词",@"专四真题高频词",@"专四真题高频词",@"专四真题高频词",@"专四真题高频词",@"专四真题高频词",@"专四真题高频词",@"专四真题高频词",@"专四真题高频词",@"专四真题高频词"];
@@ -77,11 +77,11 @@
 
 
 - (void)initializeSubViews {
-    //catergoryView
-    BPFlowCatergoryView * catergoryView = [[BPFlowCatergoryView alloc] init];
-    catergoryView.backgroundColor = kWhiteColor;
-    self.catergoryView = catergoryView;
-    [self.view addSubview:catergoryView];
+    //categoryView
+    BPFlowCategoryView * categoryView = [[BPFlowCategoryView alloc] init];
+    categoryView.backgroundColor = kWhiteColor;
+    self.categoryView = categoryView;
+    [self.view addSubview:categoryView];
     
     NSMutableArray *itemArray = [NSMutableArray array];
     for (int i = 0; i < self.cateogry.count; i++) {
@@ -89,16 +89,16 @@
         [itemArray addObject:model.name];
     }
     /* 关于数据*/
-    catergoryView.titles = itemArray;//数据源titles，必须设置
+    categoryView.titles = itemArray;//数据源titles，必须设置
     
     /* 关于交互:滑动、点击 */
-    catergoryView.delegate = self;//监听item按钮点击
-    [self.catergoryView mas_makeConstraints:^(MASConstraintMaker *make) {
+    categoryView.delegate = self;//监听item按钮点击
+    [self.categoryView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
 }
 
-- (UIViewController *)flowCatergoryView:(BPFlowCatergoryView *)flowCatergoryView cellForItemAtIndexPath:(NSInteger)row {
+- (UIViewController *)flowCategoryView:(BPFlowCategoryView *)flowCategoryView cellForItemAtIndexPath:(NSInteger)row {
     BPCategoryDetailViewController *vc = [[BPCategoryDetailViewController alloc] init];
     BPTopCategoryFirstCategoryModel *model = self.cateogry[row];
     vc.model = model;

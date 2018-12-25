@@ -77,21 +77,22 @@
 
 #pragma mark - 正常使用
 - (void)addChildVC {
-    //使用addChildViewController的三个步骤
     BPSubAddChildViewController *vc = [[BPSubAddChildViewController alloc] init];
     _subVc = vc;
-    //[vc willMoveToParentViewController:self]; //不需要写
-    [self addChildViewController:vc];//1.addChildViewController:的同时调用addSubView：
+    
+    //[vc willMoveToParentViewController:self]; //不需要写：调用addChildViewController方法系统会自动调用willMoveToParentViewController:方法。
+    [self addChildViewController:vc];//addChildViewController:的同时调用addSubView：
     [self.view addSubview:vc.view];
-    vc.view.frame = CGRectMake(0, 300, 1, 1);//2.设置子视图的位置，并显示出来
-    [vc didMoveToParentViewController:self];
+    vc.view.frame = CGRectMake(0, 300, 1, 1);
+    [vc didMoveToParentViewController:self];//最后通知child，完成了父子关系的建立。
 }
 
 //移除子视图
 - (void)removeChildVC {
-    [_subVc willMoveToParentViewController:nil];
-    [_subVc removeFromParentViewController];
+    [_subVc willMoveToParentViewController:nil];//需要显示调用：通知child，即将解除父子关系，设置 child的parent即将为nil。
     [_subVc.view removeFromSuperview];
+    [_subVc removeFromParentViewController];
+    //[_subVc didMoveToParentViewController:nil];//不需要显示调用
 }
 
 - (NSMutableArray *)array {

@@ -34,7 +34,6 @@
     if (image == nil) {
         //BPLog(@"加载空的图片");
     }
-    
     return image;
 }
 

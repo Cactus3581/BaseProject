@@ -32,13 +32,13 @@
     if (!cell) {
         cell = [[BPTestRoundedCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell->_tableView = tableView;
-        [cell _bp_initailizeUI];
+        [cell _bp_initializeUI];
     }
     [cell _bp_updateWithURL:imageURL];
     return cell;
 }
 
-- (void)_bp_initailizeUI{
+- (void)_bp_initializeUI{
     UIColor *backColor = kWhiteColor;
     _backColor = backColor;
     self.contentView.backgroundColor = backColor;

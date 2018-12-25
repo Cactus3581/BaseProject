@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initailizeUI];
+    [self initializeUI];
 }
 
 /*双击tabbar回调*/
@@ -35,7 +35,7 @@
 }
 
 #pragma mark - initialize methods
-- (void)initailizeUI {
+- (void)initializeUI {
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);

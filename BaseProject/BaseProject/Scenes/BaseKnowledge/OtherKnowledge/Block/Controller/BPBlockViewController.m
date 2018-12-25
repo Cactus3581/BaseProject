@@ -32,6 +32,8 @@ block blockB;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self war1];
+    
     id array = [[NSMutableArray alloc] init];
     blockA = ^(id obj) {
         [array addObject:obj];
@@ -43,6 +45,31 @@ block blockB;
 //    [self captureVal];
     
 //    [self setBlock];
+}
+
+// 面试题
+- (void)war1 {
+    static NSUInteger a = 1;
+    NSInteger b = 2;
+    __block NSInteger c = 3;
+    
+    NSInteger d = ^(NSInteger a) {
+        return ++a;
+    }
+    (b);
+    NSInteger (^e)(NSInteger) = ^(NSInteger e) {
+        NSInteger f = a + b + c + d + e;
+        a+=d;
+        c++;
+        e+=c;
+        return f;
+    };
+    
+    a++;
+    b++;
+    c++;
+    NSInteger g = e(a);
+    NSLog(@"%ld,%ld,%ld,%ld,%ld",a,b,c,d,g);//5,3,5,3,13
 }
 
 - (void)tapGRAction {

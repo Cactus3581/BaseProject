@@ -42,4 +42,11 @@ void get_nextval(char *t,int nextval[]) ;
 int Index_kmp(char *S,char *t,int next[]) ;
 
 int maxsum(int a[], int n);
+
+// 反转字符串
+void reverseWord(char* p, char* q);
+
+char *  ReverseSentence(char *s);
+void getStr(char* p, char* q);
+
 #endif /* BPAlgorithm_h */

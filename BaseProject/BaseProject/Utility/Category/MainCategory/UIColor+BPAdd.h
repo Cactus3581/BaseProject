@@ -47,7 +47,7 @@ typedef NS_ENUM (NSUInteger, BPGradientStyle) {
 @property (nullable, nonatomic, readonly) NSString *hexString;
 @property (nullable, nonatomic, readonly) NSString *hexStringWithAlpha;
 
-#pragma mark - color initailize (颜色初始化相关)
+#pragma mark - color initialize (颜色初始化相关)
 
 /**Color With HSL*/
 + (UIColor *)bp_colorWithHue:(CGFloat)hue

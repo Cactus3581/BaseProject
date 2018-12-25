@@ -41,7 +41,7 @@
             return;
         }
         --self.currentIndex;
-        NSLog(@"右滑 = %ld",self.currentIndex);
+        BPLog(@"右滑 = %ld",self.currentIndex);
     } else if (scrollView. contentOffset.x > self.lastContentOffset ){
         //向左
         if (self.currentIndex>=4) {
@@ -49,7 +49,7 @@
         }
         ++self.currentIndex;
         
-        NSLog(@"左滑 = %ld",self.currentIndex);
+        BPLog(@"左滑 = %ld",self.currentIndex);
     } else {
         return;
     }
