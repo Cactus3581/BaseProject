@@ -175,9 +175,172 @@
 				<key>title</key>
 				<string>Runtime</string>
 				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
+				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
 				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>函数调用的几种方法</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;0&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>交换方法的实现</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;1&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>动态创建类</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;2&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>获取属性、变量、方法</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;3&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>给category添加关联对象</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;4&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>归档反归档</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;5&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>模型转换</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;6&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>动态解析 动态添加方法</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;7&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>消息转发 动态更换调用对象</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;8&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>消息完整转发</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;9&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>打印属性的性质</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;10&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>performSelectr</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;11&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>invocation 传递多个参数</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;12&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>函数指针</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;13&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>self与super的class方法</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;14&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>动态类型特性</string>
+						<key>fileName</key>
+						<string>BPRuntimeViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;15&quot;}</string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>title</key>
@@ -730,6 +893,14 @@
 						<string>缓存设计：NSCache</string>
 						<key>fileName</key>
 						<string></string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>NSUserDefaults</string>
+						<key>fileName</key>
+						<string>BPNSUserDefaultsViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>

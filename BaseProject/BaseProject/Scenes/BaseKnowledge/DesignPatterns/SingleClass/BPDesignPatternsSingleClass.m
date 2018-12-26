@@ -7,7 +7,9 @@
 //
 
 #import "BPDesignPatternsSingleClass.h"
-//对象指针都是nil，NULL。
+
+#pragma mark - 下面是苹果官方的单例写法：
+
 static BPDesignPatternsSingleClass *single = nil;
 
 @implementation BPDesignPatternsSingleClass
@@ -29,4 +31,37 @@ static BPDesignPatternsSingleClass *single = nil;
     }
 }
 
+
++ (id)allocWithZone:(NSZone *)zone {
+    @synchronized(self) {
+        if (single == nil) {
+            single = [super allocWithZone:zone];
+            return single;  // assignment and return on first allocation
+        }
+    }
+    return nil; 
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+    return self;
+}
+
+#pragma mark - MRC下
+/*
+- (id)retain {
+    return self;
+}
+
+- (unsigned)retainCount {
+    return UINT_MAX;  //denotes an object that cannot be released
+}
+
+- (void)release {
+    //do nothing
+}
+
+- (id)autorelease {
+    return self;
+}
+*/
 @end

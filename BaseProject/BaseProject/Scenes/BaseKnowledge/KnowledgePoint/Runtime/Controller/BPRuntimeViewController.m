@@ -17,34 +17,166 @@
 #import "UIImage+Swizzling.h"
 
 @interface BPRuntimeViewController ()
+
 @property int age;  // 年龄
 @property NSString *propertyString;
 
 @end
 
+
 @implementation BPRuntimeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self base_msgSend];
-//    [self exchangeMethods];
-//    [self creatClass];
-//    [self getIvar];
-//    [self addPropertyToCategory];
-//    [self autoEncode];
-
-//    [self autoModel];
-//    [self addMethodIMP];
-//    [self exchangeObj];
-//    [self invocation];
-//    [self getPropertyAttribute];
-//    [self use_invocation];
-//    [self use_invocation_performSelector_multiplePara];
-//    [self imp_functionPointer];
-
+    [self handleDynamicJumpData];
 }
 
+- (void)handleDynamicJumpData {
+    
+    if (self.needDynamicJump) {
+        
+        NSInteger type = [self.dynamicJumpDict[@"type"] integerValue];
+        switch (type) {
+                
+            case 0:{
+                [self base_msgSend];//函数调用的几种方法
+            }
+                break;
+                
+            case 1:{
+                [self exchangeMethods];// 交换方法的实现
+            }
+                break;
+                
+            case 2:{
+                [self creatClass];// 动态创建类
+            }
+                break;
+                
+            case 3:{
+                [self getIvar];// 获取属性、变量、方法
+            }
+                break;
+                
+            case 4:{
+                [self addPropertyToCategory];// 给category添加关联对象
+            }
+                break;
+                
+            case 5:{
+                [self autoEncode];// 归档反归档
+            }
+                break;
+                
+            case 6:{
+                [self autoModel];// 模型转换
+            }
+                break;
+                
+            case 7:{
+                [self addMethodIMP];//动态解析 动态添加方法
+            }
+                break;
+                
+            case 8:{
+                [self exchangeObj];//消息转发 动态更换调用对象
+            }
+                break;
+                
+            case 9:{
+                [self invocation];//消息完整转发 实现不提供声明和实现，不修改调用对象，而是修改方法
+            }
+                break;
+                
+            case 10:{
+                [self getPropertyAttribute]; // 打印属性的性质
+            }
+                break;
+                
+            case 11:{
+                [self perform]; //perform 基础调用方法
+            }
+                break;
+                
+            case 12:{
+                [self use_invocation_performSelector_multiplePara];//invocation 传递多个参数
+            }
+                break;
+                
+            case 13:{
+                [self imp_functionPointer]; // 函数指针
+            }
+                break;
+                
+            case 14:{
+                [self selfAndSuperInInstanceMethod]; // self与super的class
+                [BPRuntimeViewController selfAndSuperInClassMethod];
+            }
+                break;
+                
+            case 15:{
+                [self dynamicType]; // 动态特性
+            }
+                break;
+        }
+    }
+}
 
+#pragma mark - self与super的class方法
+
+#pragma mark - 动态类型
+- (void)dynamicType {
+    //类族（工厂模式构建的）：NSNumber同NSArray也是含有隐藏的多个子类
+    NSMutableArray *array = @[].mutableCopy;
+    BPLog(@"%d,%d",[array class] == [NSArray class],[array class] == [NSMutableArray class]);// 0,0
+    BPLog(@"%d,%d",[array isMemberOfClass:[NSArray class]],[array isMemberOfClass:[NSMutableArray class]]);// 0,0
+    BPLog(@"%d,%d",[array isKindOfClass:[NSArray class]],[array isKindOfClass:[NSMutableArray class]]); // 1,1
+    
+    // sing=1没有声明，也没有实现，但是sing的sel指向了otherdSing的函数实现；dance=0没有声明，也没有实现；hello=1提供了声明和实现；say=0有声明，没实现；
+    People *people = [[People alloc] init];
+    BPLog(@"%d,%d,%d,%d",[people respondsToSelector:@selector(sing)],[people respondsToSelector:@selector(dance)],[people respondsToSelector:@selector(hello)],[people respondsToSelector:@selector(say)]);// 1,0,1,0
+    
+    // sing=0没有声明，也没有实现，调用的是People的同名方法；
+    Bird *bird = [[Bird alloc] init];
+    BPLog(@"%d",[bird respondsToSelector:@selector(sing)]);// 0
+    
+    
+    // sing=0没有声明，也没有实现；dance=1没有声明，是通过forwardInvocation添加的；
+    Animal *animal = [[Animal alloc] init];
+    BPLog(@"%d,%d",[animal respondsToSelector:@selector(sing)],[animal respondsToSelector:@selector(dance)]);// 0,1
+}
+
+- (void)selfAndSuperInInstanceMethod {
+    
+    //当前类：BPRuntimeViewController
+    Class a1 = [self class]; // 不管是类还是对象，返回的都是类本身
+    Class a2 = [super class];
+    Class a3 = [BPRuntimeViewController class];
+
+    //当前类的父类：BPBaseViewController
+    Class b1 = [self superclass]; // 不管是类还是对象，返回的都是类本身
+    Class b2 = [super superclass];
+    Class b3 = [BPRuntimeViewController superclass];
+    
+    BPLog(@"%@,%@,%@,%@,%@,%@,%@",self,NSStringFromClass(a1),NSStringFromClass(a2),NSStringFromClass(a3),NSStringFromClass(b1),NSStringFromClass(b2),NSStringFromClass(b3));
+}
+
+// 在类方法中
++ (void)selfAndSuperInClassMethod {
+    //当前类：BPRuntimeViewController
+    Class a1 = [self class]; // 不管是类还是对象，返回的都是类本身
+    Class a2 = [super class];
+    Class a3 = [BPRuntimeViewController class];
+    
+    //当前类的父类：BPBaseViewController
+    Class b1 = [self superclass]; // 不管是类还是对象，返回的都是类本身
+    Class b2 = [super superclass];
+    Class b3 = [BPRuntimeViewController superclass];
+    
+    BPLog(@"%@,%@,%@,%@,%@,%@,%@",self,NSStringFromClass(a1),NSStringFromClass(a2),NSStringFromClass(a3),NSStringFromClass(b1),NSStringFromClass(b2),NSStringFromClass(b3));
+}
+
+#pragma mark - 打印属性的属性
 - (void)getPropertyAttribute {
     _age = 18;
     _propertyString = @"xiaruzhen";
@@ -59,7 +191,12 @@
     }
 }
 
-#pragma mark - 基础使用：消息发送
+#pragma mark - 基础使用：消息发送：一个象可以通过四种方式调用其方法
+
+- (void)printStr:(NSString *)str {
+    BPLog(@"printStr  %@",str);
+}
+
 - (void)base_msgSend {
     // 创建person对象
     People *person = [[People alloc] init];
@@ -78,10 +215,39 @@
     // 调用类方法3-底层会自动把类名转换成类对象调用
     ((void(*)(id, SEL)) objc_msgSend)([People class], @selector(hi));
     
-
-
+    
+    //type1
+    [self printStr:@"hello world 1"];
+    
+    //type2
+    [self performSelector:@selector(printStr:) withObject:@"hello world 2"];
+    
+    //type3
+    //获取方法签名
+    NSMethodSignature *signature;
+    signature = [NSMethodSignature instanceMethodSignatureForSelector:@selector(printStr:)];//类方法创建
+    signature = [self methodSignatureForSelector:@selector(printStr:)]; //实例方法创建
+    
+    //获取方法签名对应的invocation
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+    
+    /**
+     设置消息接受者，与[invocation setArgument:(__bridge void * _Nonnull)(self) atIndex:0]等价
+     */
+    [invocation setTarget:self];
+    
+    /**设置要执行的selector。与[invocation setArgument:@selector(printStr:) atIndex:1] 等价*/
+    [invocation setSelector:@selector(printStr:)];
+    
+    //设置参数
+    NSString *str = @"hello world 3";
+    [invocation setArgument:&str atIndex:2];
+    
+    //开始执行
+    [invocation invoke];
 }
 
+#pragma mark - 函数指针：消息发送
 - (void)imp_functionPointer {
     // 定义普通的c语言函数指针
     int (* func)(int val); //定义一个函数指针变量
@@ -185,7 +351,7 @@ void sayFunction(id self, SEL _cmd, id some) {
     People *cangTeacher = [[People alloc] init];
     cangTeacher.name = @"苍井空";
     cangTeacher.age = 18;
-    cangTeacher.phoneNumber = @"10086";
+    cangTeacher.phoneNumber = 10086;
     [cangTeacher setValue:@"老师" forKey:@"occupation"];
     cangTeacher.associatedBust = @(90);
     cangTeacher.associatedCallBack = ^(){
@@ -216,7 +382,7 @@ void sayFunction(id self, SEL _cmd, id some) {
 - (void)autoEncode {
     People *cangTeacher = [[People alloc] init];
     cangTeacher.name = @"苍井空";
-    cangTeacher.age = @18;
+    cangTeacher.age = 18;
     cangTeacher.occupation = @"老师";
     cangTeacher.nationality = @"日本";
     
@@ -226,7 +392,7 @@ void sayFunction(id self, SEL _cmd, id some) {
     [NSKeyedArchiver archiveRootObject:cangTeacher toFile:path];
     // 解归档
     People *teacher = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-    BPLog(@"热烈欢迎，从%@远道而来的%@岁的%@%@",teacher.nationality,teacher.age,teacher.name,teacher.occupation);
+    BPLog(@"热烈欢迎，从%@远道而来的%ld岁的%@%@",teacher.nationality,teacher.age,teacher.name,teacher.occupation);
 }
 
 #pragma mark - 自动模型转换与KVC的比较
@@ -280,43 +446,6 @@ void sayFunction(id self, SEL _cmd, id some) {
  
  */
 
-- (void)use_invocation {
-    //一个实例对象可以通过三种方式调用其方法
-    //type1
-    [self printStr:@"hello world 1"];
-    
-    //type2
-    [self performSelector:@selector(printStr:) withObject:@"hello world 2"];
-    
-    //type3
-    //获取方法签名
-    NSMethodSignature *signature;
-    signature = [NSMethodSignature instanceMethodSignatureForSelector:@selector(printStr:)];//类方法创建
-    signature = [self methodSignatureForSelector:@selector(printStr:)]; //实例方法创建
-    
-    //获取方法签名对应的invocation
-    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
-    
-    /**
-     设置消息接受者，与[invocation setArgument:(__bridge void * _Nonnull)(self) atIndex:0]等价
-     */
-    [invocation setTarget:self];
-    
-    /**设置要执行的selector。与[invocation setArgument:@selector(printStr:) atIndex:1] 等价*/
-    [invocation setSelector:@selector(printStr:)];
-    
-    //设置参数
-    NSString *str = @"hello world 3";
-    [invocation setArgument:&str atIndex:2];
-    
-    //开始执行
-    [invocation invoke];
-}
-
-- (void)printStr:(NSString *)str {
-    NSLog(@"printStr  %@",str);
-}
-
 - (void)use_invocation_performSelector_multiplePara {
     id target = self;
     NSString *methodName = @"invocationWithString:num:array:";
@@ -326,7 +455,7 @@ void sayFunction(id self, SEL _cmd, id some) {
 }
 
 - (void)invocationWithString:(NSString *)string num:(NSNumber *)number array:(NSArray *)array {
-    NSLog(@"%@, %@, %@", string, number, array);
+    BPLog(@"%@, %@, %@", string, number, array);
 }
 
 // 如何实现performSelector 传入多个参数
@@ -359,7 +488,7 @@ void sayFunction(id self, SEL _cmd, id some) {
 //使用NSInvocation调用block
 - (void)use_invocation_block {
 //    void (^block1)(int) = ^(int a){
-//        NSLog(@"block1 %d",a);
+//        BPLog(@"block1 %d",a);
 //    };
 //    
 //    //type1：常用的方法，不再赘述
@@ -373,6 +502,63 @@ void sayFunction(id self, SEL _cmd, id some) {
 //    int a=2;
 //    [invocation setArgument:&a atIndex:1];
 //    [invocation invoke];
+}
+
+- (void)perform {
+    
+    // 同步方法，在当前线程下执行
+    [self performSelector:@selector(testPerform:) withObject:@(1)];// 主线程
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self performSelector:@selector(testPerform:) withObject:@(2)];// 子线程
+    });
+
+    // 异步执行，即使delay传参为0，仍为异步执行；只能在主线程中执行，在子线程中不会调到aSelector方法。
+    [self performSelector:@selector(testPerform:) withObject:@(3) afterDelay:1];;// 主线程异步
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self performSelector:@selector(testPerform:) withObject:@(4) afterDelay:1]; // 不执行
+    });
+
+    //开启子线程在后台运行
+    [self performSelectorInBackground:@selector(testPerform:) withObject:@(5)]; // 子线程
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self performSelectorInBackground:@selector(testPerform:) withObject:@(6)];// 子线程
+    });
+    
+    /*
+     @selector在主线程下执行；
+     当前线程是否要被阻塞，YES为阻塞，NO为不阻塞。
+     waitUntilDone为NO：即不用等待@selector执行完成，直接执行下面的代码
+     waitUntilDone为YES：即需要等待callBack执行完成后，子线程才会继续执行后面的代码；
+    */
+    [self performSelectorOnMainThread:@selector(testPerform:) withObject:@(7) waitUntilDone:NO];//主线程
+    [self performSelectorOnMainThread:@selector(testPerform:) withObject:@(8) waitUntilDone:YES];//主线程
+    
+    //调用指定线程中的某个方法，在子线程下执行
+    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(newThread:) object:nil];
+    [thread setName:@"bp_runtine_perform"];
+    [thread start];
+    [self performSelector:@selector(testPerform:) onThread:thread withObject:@(11) waitUntilDone:NO];
+    [self performSelector:@selector(testPerform:) onThread:thread withObject:@(12) waitUntilDone:YES];
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self performSelector:@selector(testPerform:) onThread:thread withObject:@(13) waitUntilDone:NO];
+        [self performSelector:@selector(testPerform:) onThread:thread withObject:@(14) waitUntilDone:YES];
+    });
+}
+
+- (void)testPerform:(NSNumber *)number {
+    if (number.integerValue == 7 || number.integerValue == 8) {
+//        sleep(5);
+    }
+    BPLog(@"testPerform_%@_%@_%d",number,BPThread);
+}
+
+- (void)newThread:(id)obj {
+    @autoreleasepool {
+        [[NSRunLoop currentRunLoop] addPort:[NSMachPort port] forMode:NSDefaultRunLoopMode];
+        [[NSRunLoop currentRunLoop] run];
+        //[currentRunLoop runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

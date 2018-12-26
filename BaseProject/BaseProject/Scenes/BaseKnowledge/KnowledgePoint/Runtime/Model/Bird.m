@@ -35,8 +35,6 @@
  在这个方法里，我们可以修改方法，也可以将消息转发给其他对象来处理
  */
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
-    anInvocation.selector;
-    anInvocation.methodSignature;
     // 我们改变调用对象为People
     People *cangTeacher = [[People alloc] init];
     cangTeacher.name = @"苍老师";

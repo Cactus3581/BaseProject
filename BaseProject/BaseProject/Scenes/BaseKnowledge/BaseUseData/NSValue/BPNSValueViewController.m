@@ -26,7 +26,7 @@
     NSArray *array1 = [NSArray arrayWithObject:value1];//放到数组中
     NSValue *value2 = [array1 lastObject];
     CGPoint point2 = [value2 CGPointValue];//同样对于系统自带的结构体有对应的取值方法(例如 本例pointValue)
-    NSLog(@"x=%f,y=%f", point2.x, point2.y);//结果:x=10.000000,y=20.000000
+    BPLog(@"x=%f,y=%f", point2.x, point2.y);//结果:x=10.000000,y=20.000000
 }
 
 @end

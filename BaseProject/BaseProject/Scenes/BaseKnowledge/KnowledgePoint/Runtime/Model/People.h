@@ -29,7 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 // 转换成字典
 - (NSDictionary *)covertToDictionary;
 
-- (void)sing; // 只有声明，没有实现
+- (void)sing; // 只有声明，没有实现,但是动态添加了方法
+- (void)say; // 只有声明，没有实现
 
 - (void)hello;
 + (void)hi;

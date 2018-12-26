@@ -52,8 +52,8 @@
     getStr(p,q);
     
     //    char *reversedStr = ReverseSentence(originalStr);
-    //    NSLog(@"reversedStr: %s", reversedStr);
-    //    NSLog(@"reversedStr: %c", 1+(*originalStr));
+    //    BPLog(@"reversedStr: %s", reversedStr);
+    //    BPLog(@"reversedStr: %c", 1+(*originalStr));
 }
 
 //递归-斐波那契奇数列

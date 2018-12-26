@@ -69,7 +69,7 @@ block blockB;
     b++;
     c++;
     NSInteger g = e(a);
-    NSLog(@"%ld,%ld,%ld,%ld,%ld",a,b,c,d,g);//5,3,5,3,13
+    BPLog(@"%ld,%ld,%ld,%ld,%ld",a,b,c,d,g);//5,3,5,3,13
 }
 
 - (void)tapGRAction {

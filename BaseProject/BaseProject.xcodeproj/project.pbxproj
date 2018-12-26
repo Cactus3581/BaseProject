@@ -140,6 +140,7 @@
 		01161F512030901300FA3441 /* BPNSSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01161F502030901300FA3441 /* BPNSSetViewController.m */; };
 		011664BB20179DF200B60453 /* BPBlockAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 011664BA20179DF200B60453 /* BPBlockAPI.m */; };
 		011A7731201F256F00D97E11 /* BPVolumeWaverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011A7730201F256F00D97E11 /* BPVolumeWaverViewController.m */; };
+		011AECBB21D3B77B001BC8DC /* BPNSUserDefaultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011AECBA21D3B77B001BC8DC /* BPNSUserDefaultsViewController.m */; };
 		011B7DD1206906CB0071CB5D /* BPAppInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD0206906CB0071CB5D /* BPAppInfoTool.m */; };
 		011B7DD920693E5B0071CB5D /* UIBarButtonItem+BPCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD320693E5B0071CB5D /* UIBarButtonItem+BPCreate.m */; };
 		011B7DDA20693E5B0071CB5D /* UINavigation+BPFixSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD420693E5B0071CB5D /* UINavigation+BPFixSpace.m */; };
@@ -243,6 +244,8 @@
 		0153F13620B2A502007C50C5 /* BPChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153F13520B2A502007C50C5 /* BPChatDetailViewController.m */; };
 		0153F13B20B2A65A007C50C5 /* BPPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153F13A20B2A659007C50C5 /* BPPhotoBrowserViewController.m */; };
 		0153F14020B2A6A6007C50C5 /* BPWeChatRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153F13F20B2A6A6007C50C5 /* BPWeChatRootViewController.m */; };
+		0156295A21D375CB002A6722 /* launchImage8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0156295821D375CB002A6722 /* launchImage8@2x.png */; };
+		0156295B21D375CB002A6722 /* launchImage8@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0156295921D375CB002A6722 /* launchImage8@3x.png */; };
 		015804E520CACF6D00D0EF7C /* BPTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015804E420CACF6D00D0EF7C /* BPTestViewController.m */; };
 		015804FB20CADE0000D0EF7C /* BPNaviProperyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015804EA20CADDFF00D0EF7C /* BPNaviProperyViewController.m */; };
 		015804FC20CADE0000D0EF7C /* BPNaviTableViewControllerThree.m in Sources */ = {isa = PBXBuildFile; fileRef = 015804EE20CADDFF00D0EF7C /* BPNaviTableViewControllerThree.m */; };
@@ -703,8 +706,6 @@
 		01DF32761FDD3BB100B8A955 /* NSDate+BPLunarCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF326D1FDD3BB000B8A955 /* NSDate+BPLunarCalendar.m */; };
 		01DF32771FDD3BB100B8A955 /* NSDate+BPReporting.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DF326E1FDD3BB000B8A955 /* NSDate+BPReporting.m */; };
 		01E01327200CFEEB00374C53 /* BPPaletteTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E01326200CFEEA00374C53 /* BPPaletteTool.m */; };
-		01E1BCDD20CA67330063D87A /* launchImage7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E1BCDB20CA67330063D87A /* launchImage7@2x.png */; };
-		01E1BCDE20CA67330063D87A /* launchImage7@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01E1BCDC20CA67330063D87A /* launchImage7@3x.png */; };
 		01E1DC23202ECD9F00529ADB /* BPShapeLayerPathWaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E1DC22202ECD9F00529ADB /* BPShapeLayerPathWaverView.m */; };
 		01E1DC26202ECDB100529ADB /* BPVolumeQueueHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E1DC25202ECDB100529ADB /* BPVolumeQueueHelper.m */; };
 		01E1DC29202ECE5700529ADB /* BPVolumeWaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E1DC28202ECE5700529ADB /* BPVolumeWaverView.m */; };
@@ -1051,6 +1052,8 @@
 		011664BA20179DF200B60453 /* BPBlockAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBlockAPI.m; sourceTree = "<group>"; };
 		011A772F201F256F00D97E11 /* BPVolumeWaverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPVolumeWaverViewController.h; sourceTree = "<group>"; };
 		011A7730201F256F00D97E11 /* BPVolumeWaverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPVolumeWaverViewController.m; sourceTree = "<group>"; };
+		011AECB921D3B77B001BC8DC /* BPNSUserDefaultsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNSUserDefaultsViewController.h; sourceTree = "<group>"; };
+		011AECBA21D3B77B001BC8DC /* BPNSUserDefaultsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNSUserDefaultsViewController.m; sourceTree = "<group>"; };
 		011B7DCF206906CB0071CB5D /* BPAppInfoTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppInfoTool.h; sourceTree = "<group>"; };
 		011B7DD0206906CB0071CB5D /* BPAppInfoTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAppInfoTool.m; sourceTree = "<group>"; };
 		011B7DD320693E5B0071CB5D /* UIBarButtonItem+BPCreate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+BPCreate.m"; sourceTree = "<group>"; };
@@ -1241,6 +1244,8 @@
 		0153F13A20B2A659007C50C5 /* BPPhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPhotoBrowserViewController.m; sourceTree = "<group>"; };
 		0153F13E20B2A6A6007C50C5 /* BPWeChatRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPWeChatRootViewController.h; sourceTree = "<group>"; };
 		0153F13F20B2A6A6007C50C5 /* BPWeChatRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPWeChatRootViewController.m; sourceTree = "<group>"; };
+		0156295821D375CB002A6722 /* launchImage8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage8@2x.png"; sourceTree = "<group>"; };
+		0156295921D375CB002A6722 /* launchImage8@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage8@3x.png"; sourceTree = "<group>"; };
 		01564DF020C90FCE00325B71 /* BPUtilityCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPUtilityCategory.h; sourceTree = "<group>"; };
 		015804E320CACF6D00D0EF7C /* BPTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPTestViewController.h; sourceTree = "<group>"; };
 		015804E420CACF6D00D0EF7C /* BPTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPTestViewController.m; sourceTree = "<group>"; };
@@ -2135,8 +2140,6 @@
 		01DF32701FDD3BB100B8A955 /* NSDate+BPCupertinoYankee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+BPCupertinoYankee.h"; sourceTree = "<group>"; };
 		01E01325200CFEEA00374C53 /* BPPaletteTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPaletteTool.h; sourceTree = "<group>"; };
 		01E01326200CFEEA00374C53 /* BPPaletteTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPaletteTool.m; sourceTree = "<group>"; };
-		01E1BCDB20CA67330063D87A /* launchImage7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage7@2x.png"; sourceTree = "<group>"; };
-		01E1BCDC20CA67330063D87A /* launchImage7@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage7@3x.png"; sourceTree = "<group>"; };
 		01E1DC21202ECD9F00529ADB /* BPShapeLayerPathWaverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPShapeLayerPathWaverView.h; sourceTree = "<group>"; };
 		01E1DC22202ECD9F00529ADB /* BPShapeLayerPathWaverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPShapeLayerPathWaverView.m; sourceTree = "<group>"; };
 		01E1DC24202ECDB100529ADB /* BPVolumeQueueHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPVolumeQueueHelper.h; sourceTree = "<group>"; };
@@ -3318,6 +3321,15 @@
 				011A7730201F256F00D97E11 /* BPVolumeWaverViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		011AECB821D3B76A001BC8DC /* NSUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				011AECB921D3B77B001BC8DC /* BPNSUserDefaultsViewController.h */,
+				011AECBA21D3B77B001BC8DC /* BPNSUserDefaultsViewController.m */,
+			);
+			path = NSUserDefaults;
 			sourceTree = "<group>";
 		};
 		011B7DCE206906920071CB5D /* AppInfoTool */ = {
@@ -5688,6 +5700,7 @@
 		017906F020011D4100E5C360 /* DataPersistence */ = {
 			isa = PBXGroup;
 			children = (
+				011AECB821D3B76A001BC8DC /* NSUserDefaults */,
 				010B06ED218DBF7000F40294 /* FileManage */,
 				0158053520CADF1C00D0EF7C /* Cocoa */,
 				0158051120CADED000D0EF7C /* DataBase */,
@@ -7996,8 +8009,8 @@
 		01C935801FC3358B00D98FD6 /* launchImage */ = {
 			isa = PBXGroup;
 			children = (
-				01E1BCDB20CA67330063D87A /* launchImage7@2x.png */,
-				01E1BCDC20CA67330063D87A /* launchImage7@3x.png */,
+				0156295821D375CB002A6722 /* launchImage8@2x.png */,
+				0156295921D375CB002A6722 /* launchImage8@3x.png */,
 			);
 			path = launchImage;
 			sourceTree = "<group>";
@@ -9702,9 +9715,9 @@
 				0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */,
 				01D6FBB720C80F7E00AD8A6E /* BPIncludeTableManualInsideHeaderView.xib in Resources */,
 				01D27438212D0A7E00E3E862 /* BPBasicAnimationViewController.xib in Resources */,
-				01E1BCDD20CA67330063D87A /* launchImage7@2x.png in Resources */,
 				011E8D9920B2F7BA00B04378 /* BPPlanCalendarSectionFooterView.xib in Resources */,
 				013ED93120C7DE0400A83E7F /* BPIncludeTableSelfSizeHeaderView.xib in Resources */,
+				0156295B21D375CB002A6722 /* launchImage8@3x.png in Resources */,
 				01B075AA20E4FD0C004891F7 /* BPXIBAutoLayoutProcessView.xib in Resources */,
 				013ED90E20C7DB3C00A83E7F /* BPIncludeTableSystemLayoutHeaderView.xib in Resources */,
 				011E8D9820B2F7BA00B04378 /* BPSectionPlacedFooterView.xib in Resources */,
@@ -9713,6 +9726,7 @@
 				017CF98D20D3AE0100D9AA30 /* BPCollectionViewNestGestureCategotyDetailTableViewCell.xib in Resources */,
 				011E8D9B20B2F7BA00B04378 /* BPPlanCalendarTableViewCell.xib in Resources */,
 				0159A62320EC73A400312293 /* BPDownLoadMainPageViewController.xib in Resources */,
+				0156295A21D375CB002A6722 /* launchImage8@2x.png in Resources */,
 				0159A62820EC762900312293 /* BPDownLoadMoreFilesViewController.xib in Resources */,
 				015805B420CAE5D000D0EF7C /* BPTopCategoryListView.xib in Resources */,
 				0167A35320E619DB00F13905 /* BPBaselineViewController.xib in Resources */,
@@ -9738,7 +9752,6 @@
 				0168F3832035E4ED00D63D83 /* BasicKnowledgCatalog.plist in Resources */,
 				01D6FBB220C80F7E00AD8A6E /* BPIncludeTableManualInsideTableViewCell.xib in Resources */,
 				01A1921E2004E61F005EE4CD /* BPCollectionViewCell.xib in Resources */,
-				01E1BCDE20CA67330063D87A /* launchImage7@3x.png in Resources */,
 				01BCF6462179CBD00015433B /* BPCycleCollectionViewCell.xib in Resources */,
 				01733FDD1FA974FB006192F0 /* LaunchScreen.storyboard in Resources */,
 				011CD75020CE190A00560EE6 /* BPMasksToBoundsViewController.xib in Resources */,
@@ -9928,6 +9941,7 @@
 				01A192212004E61F005EE4CD /* BPCollectionReusableFootView.m in Sources */,
 				01DF31CF1FDD3A9100B8A955 /* NSArray+BPBlock.m in Sources */,
 				0158054120CADF3F00D0EF7C /* BPArchiverSubModel.m in Sources */,
+				011AECBB21D3B77B001BC8DC /* BPNSUserDefaultsViewController.m in Sources */,
 				01F373062065469C007B1498 /* BPDesignPatternsTargetActionViewControllerA.m in Sources */,
 				01A192192004E61F005EE4CD /* BPTagFlowLayout.m in Sources */,
 				010DB7421FDD4D450099E66F /* UIImage+BPColor.m in Sources */,
