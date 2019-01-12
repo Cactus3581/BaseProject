@@ -3073,7 +3073,6 @@
 				01490C021FF547DA0035492D /* KnowledgePoint */,
 				017906DA20011C2E00E5C360 /* OtherKnowledge */,
 				0137C757207C94DF00F6B6CE /* ResearchDirection */,
-				017907AD200127EF00E5C360 /* SwiftCode */,
 			);
 			path = BaseKnowledge;
 			sourceTree = "<group>";
@@ -5803,13 +5802,6 @@
 				017907A22001249400E5C360 /* BPWaterWaveView.m */,
 			);
 			path = WaterWave;
-			sourceTree = "<group>";
-		};
-		017907AD200127EF00E5C360 /* SwiftCode */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SwiftCode;
 			sourceTree = "<group>";
 		};
 		017907D22001345300E5C360 /* Circle */ = {
