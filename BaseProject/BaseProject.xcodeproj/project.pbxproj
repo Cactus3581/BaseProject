@@ -3064,15 +3064,25 @@
 		010FBCFC20601CEB00BC9EC4 /* BaseKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				01161F32203088D500FA3441 /* AboutOC */,
+				01B7268F1FF7E45B00648674 /* Algorithm */,
 				01161F3D20308F4900FA3441 /* BaseUseData */,
 				01B726DA1FF806FC00648674 /* BaseUseUIKit */,
 				016D95E620E3CA9D00651EDE /* CodeStandards */,
+				01B7268B1FF7DF1900648674 /* DataStructure */,
 				01161F522030975C00FA3441 /* DesignPatterns */,
 				01F373102065525D007B1498 /* Event */,
+				019DA7D821D1C18400E3AB16 /* GeneralProgramming */,
+				01B0751B20E4FD0C004891F7 /* Graph */,
 				016D95B620E38B8F00651EDE /* Kit */,
-				01490C021FF547DA0035492D /* KnowledgePoint */,
+				01B726971FF7E4BB00648674 /* LearnThirdLibrary */,
+				01490C041FF548010035492D /* Memory */,
+				01490C051FF548460035492D /* OptimizeTableView */,
 				017906DA20011C2E00E5C360 /* OtherKnowledge */,
 				0137C757207C94DF00F6B6CE /* ResearchDirection */,
+				010FBABA1FF8A3C7000729FE /* Runloop */,
+				01490C151FF54B940035492D /* Runtime */,
+				010FBD0520601D6300BC9EC4 /* Thread */,
 			);
 			path = BaseKnowledge;
 			sourceTree = "<group>";
@@ -4068,24 +4078,6 @@
 				013ED8E520C7D6A200A83E7F /* IncludeTableView */,
 			);
 			path = MultiLevelCatalogue;
-			sourceTree = "<group>";
-		};
-		01490C021FF547DA0035492D /* KnowledgePoint */ = {
-			isa = PBXGroup;
-			children = (
-				019DA7D821D1C18400E3AB16 /* GeneralProgramming */,
-				01161F32203088D500FA3441 /* AboutOC */,
-				01B7268F1FF7E45B00648674 /* Algorithm */,
-				01B7268B1FF7DF1900648674 /* DataStructure */,
-				01B0751B20E4FD0C004891F7 /* Graph */,
-				01B726971FF7E4BB00648674 /* LearnThirdLibrary */,
-				01490C041FF548010035492D /* Memory */,
-				01490C051FF548460035492D /* OptimizeTableView */,
-				010FBABA1FF8A3C7000729FE /* Runloop */,
-				01490C151FF54B940035492D /* Runtime */,
-				010FBD0520601D6300BC9EC4 /* Thread */,
-			);
-			path = KnowledgePoint;
 			sourceTree = "<group>";
 		};
 		01490C041FF548010035492D /* Memory */ = {
@@ -7731,7 +7723,8 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = LearnThirdLibrary;
+			name = LearnThirdLibrary;
+			path = KnowledgePoint/LearnThirdLibrary;
 			sourceTree = "<group>";
 		};
 		01B726DA1FF806FC00648674 /* BaseUseUIKit */ = {
