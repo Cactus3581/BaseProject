@@ -10,6 +10,7 @@
 #import "FMDB.h"
 #import "FMDatabase.h"
 #import "FMDatabaseQueue.h"
+
 @interface CountryDBTools : BPDataBaseManager
 
 @end

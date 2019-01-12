@@ -22,31 +22,59 @@ static NSString *test4 = @"test4";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self ternaryOperator];
-    [self testStaticAndConst];
-    BPLog(@"test2 = %@,%p,%p",test2,test2,&test2);
-    BPLog(@"test4 = %@,%p,%p",test4,test4,&test4);
+    [self handleDynamicJumpData];
 }
 
-- (void)testStaticAndConst {
+- (void)handleDynamicJumpData {
+    
+    if (self.needDynamicJump) {
+        
+        NSInteger type = [self.dynamicJumpDict[@"type"] integerValue];
+        switch (type) {
+                
+            case 0:{
+                [self ternaryOperator];// 三目运算符
+            }
+                break;
+                
+            case 1:{
+                BPLog(@"进函数栈");
+                [self basics_staticAndConst];// static/const
+                BPLog(@"出函数栈");
+                BPLog(@"test2 = %@,%p,%p",test2,test2,&test2);
+                BPLog(@"test4 = %@,%p,%p",test4,test4,&test4);
+            }
+                break;
+        }
+    }
+}
+
+#pragma mark - static const
+- (void)basics_staticAndConst {
+    
     //test1 = @"test1-1";//不可修改test1变量
+    
     BPLog(@"test2 = %p,%p",test2,&test2);//  test2对象所在的地址，&test2指针所在的地址
+    
     test2 = @"test2-2";
+    
     BPLog(@"test2 = %p,%p",test2,&test2);
 
-//    test3 = 3;//不可修改test1变量
+    //test3 = 3;//不可修改test1变量
     
     BPLog(@"test4 = %@,%p,%p",test4,test4,&test4);
     test4 = @"test4-4";
     BPLog(@"test4 = %@,%p,%p",test4,test4,&test4);
 }
 
+#pragma mark - 三目运算符
 - (void)ternaryOperator {
     NSInteger a =  5>3?4:1;
     NSInteger b =  5?:1; // == 5?5:1
-    //    int c =  5?1:; //报错
-    BPLog(@"%ld",a);
-    BPLog(@"%ld",b);
+    //NSInteger c =  5?1:; //报错
+    NSInteger c =  !1?:1;
+
+    BPLog(@"a = %ld,b = %ld,c = %ld",a,b,c);
 }
 
 @end

@@ -156,6 +156,36 @@
     BPLog(@"%ld,%ld",range.location,range.length);
 }
 
+#pragma mark - 字符串比较降序升序
+- (void)string_compare {
+    
+    NSString *str = @"abcdef";
+    NSString *str1 = @"wxyz";
+    
+    NSInteger result = [str compare:str1];
+    if (result == NSOrderedSame) {
+        BPLog(@"same");
+    } else if (result == NSOrderedAscending) {
+        BPLog(@"Ascend");
+    } else if (result == NSOrderedDescending) {
+        BPLog(@"Descend");
+    }
+    
+    NSString *str2 = @"18";
+    NSString *str3 = @"6";
+    
+    int result1 = [str2 compare:str3 options:NSNumericSearch];
+    if (result1 == NSOrderedSame) {
+        BPLog(@"same");
+        
+    } else if (result1 == NSOrderedAscending) {
+        BPLog(@"Ascend");
+        
+    } else if (result1 == NSOrderedDescending) {
+        BPLog(@"Descend");
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

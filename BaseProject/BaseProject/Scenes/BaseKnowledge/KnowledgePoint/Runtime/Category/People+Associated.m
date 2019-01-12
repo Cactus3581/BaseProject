@@ -14,6 +14,9 @@ static const char *phoneNumberKey = "phoneNumber";
 
 @implementation People (Associated)
 
+//@synthesize unfinishIvar = _unfinishIvar;
+@dynamic unfinishIvar;
+
 - (NSNumber *)associatedBust {
     // 得到关联对象
     return objc_getAssociatedObject(self, @selector(associatedBust));
@@ -58,7 +61,10 @@ static const char *phoneNumberKey = "phoneNumber";
 }
 
 - (void)setUnfinishIvar:(NSString *)unfinishIvar {
-    self.unfinishIvar = unfinishIvar;
+}
+
+- (NSString *)unfinishIvar {
+    return nil;
 }
 
 @end

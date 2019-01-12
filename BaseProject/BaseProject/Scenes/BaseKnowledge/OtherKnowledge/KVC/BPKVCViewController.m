@@ -8,6 +8,8 @@
 
 #import "BPKVCViewController.h"
 #import "BPKVCModel.h"
+#import "NSObject+BPCustomKVO.h"
+#import "BPCustomKVOModel.h"
 
 @interface BPKVCViewController ()
 
@@ -17,9 +19,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    [self previous];
+    [self handleCustomKVO];
+}
+
+#pragma mark - 手动实现KVO
+- (void)handleCustomKVO {
+    BPKVCModel *model = [[BPKVCModel alloc] init];
+    [model bp_addObserver:self forKey:@"macbook"
+                              withBlock:^(id observedObject, NSString *observedKey, id oldValue, id newValue) {
+                                  dispatch_async(dispatch_get_main_queue(), ^{
+                                      BPLog(@"%@.%@ is now: %@", observedObject, observedKey, newValue);
+                                  });
+                              }];
     
-    
-    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self changeMessage];
+        [model setValue:@"name" forKey:@"macbook"];
+
+    });
+}
+
+
+- (void)changeMessage {
+    NSArray *msgs = @[@"Hello World!", @"Objective C", @"Swift", @"Peng Gu", @"peng.gu@me.com", @"www.gupeng.me", @"glowing.com"];
+    NSUInteger index = arc4random_uniform((u_int32_t)msgs.count);
+//    self.customKVOModel.text = msgs[index];
+}
+
+- (void)previous {
     UIButton *bt = [UIButton buttonWithType:UIButtonTypeCustom];
     bt.backgroundColor = kBlackColor;
     bt.titleLabel.font = [UIFont systemFontOfSize:13];
@@ -32,26 +60,26 @@
     CGFloat imageWidth = image.size.width; //20
     CGFloat titleWidth = strSize.width;//54
     //100-74 = 26;
- /*
-    [bt setImageEdgeInsets:UIEdgeInsetsMake(0, -8, 0, 8)];   //40 * 40
-
-     [bt setTitleEdgeInsets:UIEdgeInsetsMake(0, 8, 0, -8)];
-  */
     /*
-
-    [bt setImageEdgeInsets:UIEdgeInsetsMake(0, -13, 0, 13)];
-    
-   [bt setTitleEdgeInsets:UIEdgeInsetsMake(0, 13, 0, -13)];
+     [bt setImageEdgeInsets:UIEdgeInsetsMake(0, -8, 0, 8)];   //40 * 40
+     
+     [bt setTitleEdgeInsets:UIEdgeInsetsMake(0, 8, 0, -8)];
      */
-
+    /*
+     
+     [bt setImageEdgeInsets:UIEdgeInsetsMake(0, -13, 0, 13)];
+     
+     [bt setTitleEdgeInsets:UIEdgeInsetsMake(0, 13, 0, -13)];
+     */
+    
     [self.view addSubview:bt];
     [bt mas_makeConstraints:^(MASConstraintMaker *make) {
         //
-       // make.center.equalTo(self.view);
-
+        // make.center.equalTo(self.view);
+        
         make.centerY.equalTo(self.view);
-     //   make.centerX.mas_equalTo(kScreenWidth/2);
-
+        //   make.centerX.mas_equalTo(kScreenWidth/2);
+        
         make.width.mas_equalTo(100);
         make.height.mas_equalTo(40);
         make.leading.mas_equalTo(kScreenWidth-100);
@@ -65,54 +93,46 @@
     
     //UIImageView *imageView = [[UIImageView alloc]init];
     /*
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 300, 100)];
-    imageView.center = self.view.center;
-
-    imageView.image = [UIImage imageNamed:@"jobs_youth"];
-    imageView.backgroundColor = kRedColor;
-    //imageView.layer.backgroundColor = kRedColor.CGColor;
-    //imageView.contentMode = UIViewContentModeScaleAspectFit;//这个可以考虑
-   //imageView.contentMode = UIViewContentModeCenter;
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
-    imageView.clipsToBounds = YES; //跟以下语句一样
-
-    [self.view addSubview:imageView];
+     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 300, 100)];
+     imageView.center = self.view.center;
+     
+     imageView.image = [UIImage imageNamed:@"jobs_youth"];
+     imageView.backgroundColor = kRedColor;
+     //imageView.layer.backgroundColor = kRedColor.CGColor;
+     //imageView.contentMode = UIViewContentModeScaleAspectFit;//这个可以考虑
+     //imageView.contentMode = UIViewContentModeCenter;
+     imageView.contentMode = UIViewContentModeScaleAspectFill;
+     imageView.clipsToBounds = YES; //跟以下语句一样
+     
+     [self.view addSubview:imageView];
      */
-
+    
     
     /*
-    UIViewContentModeTop,
-    UIViewContentModeBottom,
-    UIViewContentModeLeft,
-    UIViewContentModeRight,
-    UIViewContentModeTopLeft,
-    UIViewContentModeTopRight,
-    UIViewContentModeBottomLeft,
-    UIViewContentModeBottomRight,
-
-    //imageView.contentMode = UIViewContentModeTopLeft;
-
-    //imageView.clipsToBounds = YES; //跟以下语句一样
-    //imageView.layer.masksToBounds = YES;
-    [self.view addSubview:imageView];
-
-    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.center.equalTo(self.view);
-        make.width.mas_equalTo(50);
-        make.width.mas_equalTo(100);
-
-    }];
-*/
-    
-    
-
-
-
-
-
+     UIViewContentModeTop,
+     UIViewContentModeBottom,
+     UIViewContentModeLeft,
+     UIViewContentModeRight,
+     UIViewContentModeTopLeft,
+     UIViewContentModeTopRight,
+     UIViewContentModeBottomLeft,
+     UIViewContentModeBottomRight,
+     
+     //imageView.contentMode = UIViewContentModeTopLeft;
+     
+     //imageView.clipsToBounds = YES; //跟以下语句一样
+     //imageView.layer.masksToBounds = YES;
+     [self.view addSubview:imageView];
+     
+     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+     
+     make.center.equalTo(self.view);
+     make.width.mas_equalTo(50);
+     make.width.mas_equalTo(100);
+     
+     }];
+     */
 }
-
 - (void)testCompare_Str
 {
     NSString *str = @"abcdef";

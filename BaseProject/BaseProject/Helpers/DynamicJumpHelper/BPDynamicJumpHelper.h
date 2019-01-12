@@ -12,6 +12,9 @@
  * 动态VC的数据源协议，实现该协议的controller都得实现loadWithData方法
  */
 @protocol BPDynamicJumpHelperProtocol <NSObject>
+
+@property (nonatomic,strong) NSString *protocolName;// 测试用的：可以给协议添加属性吗
+
 @required
 
 - (void)loadWithData:(NSDictionary *)dict;

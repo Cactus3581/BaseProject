@@ -9,8 +9,8 @@
 #import "BPArchiverSubModel.h"
 
 @implementation BPArchiverSubModel
-- (instancetype)initWithName:(NSString *)name Age:(NSInteger)age
-{
+
+- (instancetype)initWithName:(NSString *)name Age:(NSInteger)age {
     self = [super init];
     if (self) {
         _name = name;
@@ -21,27 +21,19 @@
 }
 
 //解析
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     self = [super init];
     if (self) {
-        
         self.name = [aDecoder decodeObjectForKey:@"name"];
         self.age = [aDecoder decodeIntegerForKey:@"age"];
-        
-        
     }
-    
     return self;
 }
+
 //归档
-- (void)encodeWithCoder:(NSCoder *)aCoder
-{
+- (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:_name forKey:@"name"];
     [aCoder encodeInteger:_age forKey:@"age"];
-    
 }
-
-
 
 @end

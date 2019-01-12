@@ -8,7 +8,7 @@
 
 #import "BPArchiverSubModel.h"
 
-@interface BPArchiverModel : NSObject <NSCoding>
+@interface BPArchiverModel : NSObject <NSCoding,NSSecureCoding>
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,assign) NSInteger age;
 @property (nonatomic,strong) BPArchiverSubModel *model;

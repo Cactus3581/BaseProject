@@ -15,16 +15,36 @@
 #import "Bird.h"
 #import "People+Associated.h"
 #import "UIImage+Swizzling.h"
+#import "NSObject+BPDeallocBlockExecutor.h"
+#import "NSObject+BPModel.h"
+#import "NSObject+BPCustomKVO.h"
+#import "BPCustomKVOModel.h"
 
-@interface BPRuntimeViewController ()
+@interface BPRuntimeViewController () {
+    NSString * _dynamicString2;//手动添加，由于@dynamic不能像@synthesize那样向实现文件(.m)提供实例变量，所以我们需要在类中显式提供实例变量。
+}
 
 @property int age;  // 年龄
 @property NSString *propertyString;
+@property (nonatomic, copy) NSString *synthesizeString1;
+@property (nonatomic, copy) NSString *synthesizeString2;
+@property (nonatomic, copy) NSString *dynamicString1;
+@property (nonatomic, copy) NSString *dynamicString2;//需要手动添加，网上看
+@property (nonatomic, strong) BPCustomKVOModel *customKVOModel;//kvo
 
 @end
 
 
 @implementation BPRuntimeViewController
+
+//@synthesize和@dynamic
+@synthesize synthesizeString1;
+@synthesize synthesizeString2 = _re_synthesizeString2;
+@dynamic dynamicString1;
+@dynamic dynamicString2;
+
+//协议的属性
+@synthesize protocolName = _protocolName;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,7 +64,7 @@
                 break;
                 
             case 1:{
-                [self exchangeMethods];// 交换方法的实现
+                [self hookMethods];// 交换方法的实现
             }
                 break;
                 
@@ -118,24 +138,93 @@
                 [self dynamicType]; // 动态特性
             }
                 break;
+                
+            case 16:{
+                [self designKVO]; // 设计KVO
+            }
+                break;
+                
+            case 17:{
+                [self synthesizeString]; //synthesize
+            }
+                break;
+                
+            case 18:{
+                [self handleProtocolName]; //协议的属性
+            }
+                break;
+                
+            case 19:{
+                [self handleCustomKVO]; //手动实现KVO
+            }
+                break;
+                
         }
     }
 }
 
-#pragma mark - self与super的class方法
+#pragma mark - 手动实现KVO
+- (void)handleCustomKVO {
+    self.customKVOModel = [[BPCustomKVOModel alloc] init];
+    [self.customKVOModel bp_addObserver:self forKey:NSStringFromSelector(@selector(text))
+                       withBlock:^(id observedObject, NSString *observedKey, id oldValue, id newValue) {
+                           dispatch_async(dispatch_get_main_queue(), ^{
+                               BPLog(@"%@.%@ is now: %@", observedObject, observedKey, newValue);
+                           });
+                       }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self changeMessage];
+    });
+}
+
+
+- (void)changeMessage {
+    NSArray *msgs = @[@"Hello World!", @"Objective C", @"Swift", @"Peng Gu", @"peng.gu@me.com", @"www.gupeng.me", @"glowing.com"];
+    NSUInteger index = arc4random_uniform((u_int32_t)msgs.count);
+    self.customKVOModel.text = msgs[index];
+}
+
+#pragma mark - 动态类型
+- (void)designKVO {
+    [self.view addObserver:self forKeyPath:@"pauseTimer" options:NSKeyValueObservingOptionNew context:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector (didEnterBackground) name: UIApplicationDidEnterBackgroundNotification object:nil];//注册程序进入后台通知
+
+    __weak typeof (self) weakSelf = self;
+    [self bp_executeAtDealloc:^{
+        [weakSelf.view removeObserver:weakSelf forKeyPath:@"pauseTimer"];
+        [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
+    }];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    
+}
+
+- (void)didEnterBackground {
+    
+}
 
 #pragma mark - 动态类型
 - (void)dynamicType {
     //类族（工厂模式构建的）：NSNumber同NSArray也是含有隐藏的多个子类
     NSMutableArray *array = @[].mutableCopy;
-    BPLog(@"%d,%d",[array class] == [NSArray class],[array class] == [NSMutableArray class]);// 0,0
-    BPLog(@"%d,%d",[array isMemberOfClass:[NSArray class]],[array isMemberOfClass:[NSMutableArray class]]);// 0,0
-    BPLog(@"%d,%d",[array isKindOfClass:[NSArray class]],[array isKindOfClass:[NSMutableArray class]]); // 1,1
+    BPLog(@"== %d,%d",[array class] == [NSArray class],[array class] == [NSMutableArray class]);// 0,0
+    BPLog(@"isMemberOfClass %d,%d",[array isMemberOfClass:[NSArray class]],[array isMemberOfClass:[NSMutableArray class]]);// 0,0
+    BPLog(@"isKindOfClass %d,%d",[array isKindOfClass:[NSArray class]],[array isKindOfClass:[NSMutableArray class]]); // 1,1
     
+    BPLog(@"NSArray %d,%d",[[NSArray class] isKindOfClass:[NSArray class]],[[NSArray class] isMemberOfClass:[NSArray class]]); // 0,0
+    BPLog(@"NSObject %d,%d",[[NSObject class] isKindOfClass:[NSObject class]],[[NSObject class] isMemberOfClass:[NSObject class]]); // 1,0
+
     // sing=1没有声明，也没有实现，但是sing的sel指向了otherdSing的函数实现；dance=0没有声明，也没有实现；hello=1提供了声明和实现；say=0有声明，没实现；
     People *people = [[People alloc] init];
     BPLog(@"%d,%d,%d,%d",[people respondsToSelector:@selector(sing)],[people respondsToSelector:@selector(dance)],[people respondsToSelector:@selector(hello)],[people respondsToSelector:@selector(say)]);// 1,0,1,0
     
+    NSArray *array1 = @[];
+
+    BPLog(@" == %@,%@",[@"" class],[NSString class]);//__NSCFConstantString,NSString
+    BPLog(@" == %d,%d",[array1 isKindOfClass:[NSMutableArray class]],[[array1 class] isKindOfClass:[NSMutableArray class]]);//0,0
+
     // sing=0没有声明，也没有实现，调用的是People的同名方法；
     Bird *bird = [[Bird alloc] init];
     BPLog(@"%d",[bird respondsToSelector:@selector(sing)]);// 0
@@ -144,8 +233,13 @@
     // sing=0没有声明，也没有实现；dance=1没有声明，是通过forwardInvocation添加的；
     Animal *animal = [[Animal alloc] init];
     BPLog(@"%d,%d",[animal respondsToSelector:@selector(sing)],[animal respondsToSelector:@selector(dance)]);// 0,1
+    
+    UIViewController *vc = [[UIViewController alloc] init];
+    BPLog(@"conformsToProtocol = %d",[vc conformsToProtocol:@protocol(BPDynamicJumpHelperProtocol)]);
+    BPLog(@"conformsToProtocol = %d",[self conformsToProtocol:@protocol(BPDynamicJumpHelperProtocol)]);
 }
 
+#pragma mark - self与super的class方法
 - (void)selfAndSuperInInstanceMethod {
     
     //当前类：BPRuntimeViewController
@@ -271,7 +365,7 @@ int test(int val) {
 }
 
 #pragma mark - 交换方法的实现
-- (void)exchangeMethods {
+- (void)hookMethods {
     // 需求：给imageNamed方法提供功能:判断图片是否加载成功。
     // 步骤一：先搞个分类，定义一个能加载图片并且能打印的方法+ (instancetype)imageWithName:(NSString *)name;
     // 步骤二：交换imageNamed和imageWithName的实现，就能调用imageWithName，间接调用imageWithName的实现。
@@ -285,6 +379,7 @@ void sayFunction(id self, SEL _cmd, id some) {
 }
 
 - (void)creatClass {
+
     // 动态创建对象 创建一个Person 继承自 NSObject类
     Class People = objc_allocateClassPair([NSObject class], "Person", 0);
     
@@ -294,9 +389,12 @@ void sayFunction(id self, SEL _cmd, id some) {
     class_addIvar(People, "_age", sizeof(int), sizeof(int), @encode(int));
     
     // 注册方法名为say的方法
-    SEL s = sel_registerName("say:");
+    SEL sel = sel_registerName("say:");
     // 为该类增加名为say的方法
-    class_addMethod(People, s, (IMP)sayFunction, "v@:@");
+    class_addMethod(People, sel, (IMP)sayFunction, "v@:@");
+    
+//    Method instanceMethod = class_getInstanceMethod(People, sel);
+//    class_addMethod(People, sel, method_getImplementation(instanceMethod), method_getTypeEncoding(instanceMethod));
     
     // 注册该类
     objc_registerClassPair(People);
@@ -314,7 +412,7 @@ void sayFunction(id self, SEL _cmd, id some) {
     
     // 调用 peopleInstance 对象中的 s 方法选择器对于的方法
     // objc_msgSend(peopleInstance, s, @"大家好!"); // 这样写会报错，但是也可以通过Build Setting–> Apple LLVM 7.0 – Preprocessing–> Enable Strict Checking of objc_msgSend Calls 改为 NO
-    ((void (*)(id, SEL, id))objc_msgSend)(peopleInstance, s, @"大家好");//强制转换objc_msgSend函数类型为带三个参数且返回值为void函数，然后才能传三个参数。
+    ((void (*)(id, SEL, id))objc_msgSend)(peopleInstance, sel, @"大家好");//强制转换objc_msgSend函数类型为带三个参数且返回值为void函数，然后才能传三个参数。
     
     peopleInstance = nil; //当People类或者它的子类的实例还存在，则不能调用objc_disposeClassPair这个方法；因此这里要先销毁实例对象后才能销毁类；
     
@@ -369,12 +467,12 @@ void sayFunction(id self, SEL _cmd, id some) {
         BPLog(@"方法名字:%@, 方法参数个数:%@", methodName, methodResultDic[methodName]);
     }
     
-    /*
-    会报错
+    
+//    会报错
     People *model = [[People alloc] init];
     model.unfinishIvar = @"unfinishIvar";
     BPLog(@"%@",model.unfinishIvar);
-     */
+     
 }
 
 
@@ -463,9 +561,9 @@ void sayFunction(id self, SEL _cmd, id some) {
     // 创建SEL
     SEL selector = NSSelectorFromString(sel);
     // 创建NSMethodSignature
-    NSMethodSignature *signature = [target methodSignatureForSelector:selector];
+    NSMethodSignature *methodSignature = [target methodSignatureForSelector:selector];
     // 创建NSInvocation
-    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
     // 设置target
     invocation.target = target;
     // 设置SEL
@@ -479,7 +577,7 @@ void sayFunction(id self, SEL _cmd, id some) {
     
     // 获取返回值
     id returnValue = nil;
-    if (signature.methodReturnLength) { // 有返回值类型，才去获得返回值
+    if (methodSignature.methodReturnLength) { // 有返回值类型，才去获得返回值
         [invocation getReturnValue:&returnValue];
     }
     return returnValue;
@@ -561,8 +659,63 @@ void sayFunction(id self, SEL _cmd, id some) {
     }
 }
 
+#pragma mark - @synthesizehe和@dynamic
+- (void)synthesizeString {
+    self.synthesizeString1;
+    synthesizeString1;
+    //_synthesizeString1;// 报错
+    
+    self.synthesizeString2;
+    _re_synthesizeString2;
+    // _synthesizeString2 //报错
+
+    
+    self.dynamicString1;
+//    _dynamicString1; //报错
+//    dynamicString1; //报错
+
+    self.dynamicString2;
+    _dynamicString2;
+//    dynamicString2; //报错
+
+}
+
+- (void)setDynamicString1:(NSString *)dynamicString1 {
+    
+}
+
+- (NSString *)dynamicString1 {
+    return nil;
+}
+
+- (void)setDynamicString2:(NSString *)dynamicString2 {
+    _dynamicString2 = dynamicString2;
+}
+
+- (NSString *)dynamicString2 {
+    return _dynamicString2;
+}
+
+#pragma mark - 协议的属性
+- (void)handleProtocolName {
+    self.protocolName = @"BPDynamicJumpHelperProtocol";
+    BPLog(@"protocolName",self.protocolName)
+}
+
+- (void)setProtocolName:(NSString *)protocolName {
+    _protocolName = protocolName;
+}
+
+- (NSString *)protocolName {
+    return _protocolName;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)dealloc {
+    
 }
 
 @end

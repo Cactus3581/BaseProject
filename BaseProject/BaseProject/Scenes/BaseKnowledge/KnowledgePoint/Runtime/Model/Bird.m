@@ -22,6 +22,13 @@
     return nil;
 }
 
+//- (id)forwardingTargetForSelector:(SEL)aSelector {
+//    if ([NSStringFromSelector(aSelector) isEqualToString:@"sing"]) {
+//        return [[People alloc] init];//只要这个方法返回的不是 nil 和 self，整个消息发送的过程就会被重启
+//    }
+//    return nil;
+//}
+
 // 第三步：返回方法选择器，然后进入第四步；
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
     if ([NSStringFromSelector(aSelector) isEqualToString:@"sing"]) {

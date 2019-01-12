@@ -1,5 +1,5 @@
 //
-//  BPBlockAPI.h
+//  BPBlockModel.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/1/24.
@@ -8,16 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BPBlockAPI : NSObject
+@interface BPBlockModel : NSObject
 
 typedef void (^successBlock) (NSDictionary *_Nullable responseObject);
-@property (nonatomic, copy) NSString *str1;
 
 @property (nonatomic, copy) successBlock block;
 
 - (void)handleBlock:(dispatch_block_t)failure;
 
-- (void)handleBlock1:(successBlock)block;
+- (void)handlePropertyBlock:(successBlock)block;
 
-- (void)test;
+- (void)resolvePropertyBlock:(successBlock)block;
+
+- (void)foo;
+
 @end

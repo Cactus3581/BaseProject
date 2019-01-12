@@ -25,7 +25,7 @@
     [self handleData];
 }
 
-- (BPBaseKnowledgeViewModel *)viewModel{
+- (BPBaseKnowledgeViewModel *)viewModel {
     if (!_viewModel) {
         BPBaseKnowledgeViewModel *viewModel = [BPBaseKnowledgeViewModel viewModel];
         weakify(viewModel);
@@ -71,6 +71,8 @@
             vc.hidesBottomBarWhenPushed = YES;
             //vc.navigationItem.title = model.title;
             [vc setLeftBarButtonTitle:model.title];
+            NSDictionary *dict = @{@"type":@(indexPath.row)};
+            model.dynamicJumpString = BPJSON(dict);// 暂时不用plist的元数据了，因为个人开发用，有些麻烦，如果正式用，必须用plist的数据
             vc.dynamicJumpString = model.dynamicJumpString;
             [self.navigationController pushViewController:vc animated:YES];
         }

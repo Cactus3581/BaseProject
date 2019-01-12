@@ -10,7 +10,16 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 
+@interface People ()
+@property (nonatomic, copy) NSString *p_secret; // 私有属性
+@end
+
 @implementation People
+
+//私有方法
+- (void)p_secretMethod {
+    
+}
 
 - (void)hello {
     BPLog(@"hello");
@@ -47,8 +56,9 @@
 - (NSDictionary *)allIvars {
     unsigned int count = 0;
     NSMutableDictionary *resultDict = [@{} mutableCopy];
-    Ivar *ivars = class_copyIvarList([self class], &count);
+    Ivar *ivars = class_copyIvarList([self class], &count);// 获取实例变量列表
     for (NSUInteger i = 0; i < count; i ++) {
+        // 获取实例变量的名称和值
         const char *varName = ivar_getName(ivars[i]);
         NSString *name = [NSString stringWithUTF8String:varName];
         id varValue = [self valueForKey:name];

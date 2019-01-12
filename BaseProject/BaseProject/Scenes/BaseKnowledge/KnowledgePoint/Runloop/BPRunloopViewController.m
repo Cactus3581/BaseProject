@@ -19,6 +19,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self handleDynamicJumpData];
+}
+
+- (void)handleDynamicJumpData {
+    if (self.needDynamicJump) {
+        NSInteger type = [self.dynamicJumpDict[@"type"] integerValue];
+        switch (type) {
+                
+            case 0:{
+
+            }
+                break;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {

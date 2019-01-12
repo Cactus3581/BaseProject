@@ -29,8 +29,6 @@ target 'BaseProject' do
     pod 'YYAsyncLayer'
     pod 'YYCategories'
 
-    #pod 'FBRetainCycleDetector'
-    #pod 'FBMemoryProfiler'
 
     #pod 'YTKNetwork'
     #pod 'hpple'                #html解析工具 从web前端的html里获取数据

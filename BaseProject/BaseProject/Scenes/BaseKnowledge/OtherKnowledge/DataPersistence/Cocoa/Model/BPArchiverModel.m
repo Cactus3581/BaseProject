@@ -19,6 +19,11 @@
     return self;
 }
 
+//启用SecureCoding协议f，废弃NSCoding协议
++ (BOOL)supportsSecureCoding {
+    return YES;
+}
+
 /**
  *  每次从文件中恢复(解码)对象时，都会调用这个方法。
  *  一般在这个方法里面指定如何解码文件中的数据为对象的实例变量，
