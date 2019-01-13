@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010601F021EB5C64004D4A1E /* NSObject+BPSark.m in Sources */ = {isa = PBXBuildFile; fileRef = 010601EF21EB5C64004D4A1E /* NSObject+BPSark.m */; };
+		010601F321EB5CA3004D4A1E /* BPRuntimeSark.m in Sources */ = {isa = PBXBuildFile; fileRef = 010601F221EB5CA3004D4A1E /* BPRuntimeSark.m */; };
 		010B06F0218DBF8E00F40294 /* BPFileManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010B06EF218DBF8E00F40294 /* BPFileManageViewController.m */; };
 		010DB7071FDD4D450099E66F /* UINavigationBar+BPAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB63E1FDD4D400099E66F /* UINavigationBar+BPAwesome.m */; };
 		010DB7081FDD4D450099E66F /* UILabel+BPSuggestSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 010DB6421FDD4D400099E66F /* UILabel+BPSuggestSize.m */; };
@@ -792,6 +794,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		010601EE21EB5C64004D4A1E /* NSObject+BPSark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPSark.h"; sourceTree = "<group>"; };
+		010601EF21EB5C64004D4A1E /* NSObject+BPSark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BPSark.m"; sourceTree = "<group>"; };
+		010601F121EB5CA3004D4A1E /* BPRuntimeSark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPRuntimeSark.h; sourceTree = "<group>"; };
+		010601F221EB5CA3004D4A1E /* BPRuntimeSark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPRuntimeSark.m; sourceTree = "<group>"; };
 		010B06EE218DBF8E00F40294 /* BPFileManageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPFileManageViewController.h; sourceTree = "<group>"; };
 		010B06EF218DBF8E00F40294 /* BPFileManageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPFileManageViewController.m; sourceTree = "<group>"; };
 		010DB63E1FDD4D400099E66F /* UINavigationBar+BPAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+BPAwesome.m"; sourceTree = "<group>"; };
@@ -5756,6 +5762,10 @@
 				01790758200120CF00E5C360 /* UIImage+Swizzling.m */,
 				014E483F21B914B4007DF48A /* People+Associated.h */,
 				014E484021B914B4007DF48A /* People+Associated.m */,
+				010601EE21EB5C64004D4A1E /* NSObject+BPSark.h */,
+				010601EF21EB5C64004D4A1E /* NSObject+BPSark.m */,
+				010601F121EB5CA3004D4A1E /* BPRuntimeSark.h */,
+				010601F221EB5CA3004D4A1E /* BPRuntimeSark.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -10345,6 +10355,7 @@
 				01C8E2BF21CC8D8D00596D8D /* NSString+BPSearchString.m in Sources */,
 				01BCF63D2179BD390015433B /* BPCardPageCollectionViewController.m in Sources */,
 				010DB7AB1FDD4D6F0099E66F /* UIButton+BPBadge.m in Sources */,
+				010601F021EB5C64004D4A1E /* NSObject+BPSark.m in Sources */,
 				01DF31BD1FDD3A9100B8A955 /* NSDictionary+BPSafeAccess.m in Sources */,
 				01A597BB2085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.m in Sources */,
 				01EC9C0221BA78A400477EB8 /* BPStack.m in Sources */,
@@ -10395,6 +10406,7 @@
 				01F2608F21D89665008973C1 /* BPCustomKVOModel.m in Sources */,
 				01ADC1F61FB492C1009150F0 /* BPBaseTableViewCell.m in Sources */,
 				0158052B20CADED000D0EF7C /* BPDataBaseManager.m in Sources */,
+				010601F321EB5CA3004D4A1E /* BPRuntimeSark.m in Sources */,
 				010FBD2320601D9E00BC9EC4 /* UIColor+Hex.m in Sources */,
 				010DB7971FDD4D640099E66F /* UIView+BPVisuals.m in Sources */,
 				0151210220CBFA9400B33A76 /* BPNetRequestParameter.m in Sources */,

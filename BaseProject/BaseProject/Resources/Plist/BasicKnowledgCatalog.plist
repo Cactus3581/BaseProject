@@ -130,13 +130,23 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>面试题</string>
+				<string>编译优化：同一个对象的不同类型</string>
 				<key>fileName</key>
 				<string>BPMemoryViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 				<key>dynamicJumpString</key>
 				<string>{&quot;type&quot;:&quot;9&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>面试题</string>
+				<key>fileName</key>
+				<string>BPMemoryViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;10&quot;}</string>
 			</dict>
 		</array>
 	</dict>
@@ -699,6 +709,16 @@
 				<string></string>
 				<key>dynamicJumpString</key>
 				<string>{&quot;type&quot;:&quot;19&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>面试题</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;20&quot;}</string>
 			</dict>
 		</array>
 	</dict>
@@ -2365,7 +2385,7 @@
 				<key>title</key>
 				<string>NSString</string>
 				<key>fileName</key>
-				<string> </string>
+				<string>BPNSStringViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>

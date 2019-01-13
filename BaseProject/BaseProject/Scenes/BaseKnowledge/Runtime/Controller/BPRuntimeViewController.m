@@ -20,6 +20,9 @@
 #import "NSObject+BPCustomKVO.h"
 #import "BPCustomKVOModel.h"
 
+#import "BPRuntimeSark.h"
+#import "NSObject+BPSark.h"
+
 @interface BPRuntimeViewController () {
     NSString * _dynamicString2;//手动添加，由于@dynamic不能像@synthesize那样向实现文件(.m)提供实例变量，所以我们需要在类中显式提供实例变量。
 }
@@ -159,8 +162,26 @@
             }
                 break;
                 
+            case 20:{
+                [self changeSark]; //面试题
+            }
+                break;
+
+                
         }
     }
+}
+
+#pragma mark - 面试题
+- (void)changeSark {
+    // 测试代码1
+    [NSObject foo];
+//    [[NSObject new] foo];
+    
+    // 测试代码2
+    id cls = [BPRuntimeSark class];
+    void *obj = &cls;
+//    [(__bridge id)obj speak];
 }
 
 #pragma mark - 手动实现KVO

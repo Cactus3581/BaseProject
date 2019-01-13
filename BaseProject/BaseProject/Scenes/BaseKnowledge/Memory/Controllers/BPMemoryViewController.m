@@ -110,6 +110,11 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
                 break;
                 
             case 9:{
+                [self memory_type];// 编译优化：同一个对象的不同类型
+            }
+                break;
+                
+            case 10:{
                 [self change];//面试题
             }
                 break;
@@ -376,6 +381,31 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
 
     BPLog(@"%ld,%ld,%ld,%ld,%ld,%ld,%ld",length1,length2,length3,length4,length5,length6,length7);
 }
+
+#pragma mark - 编译优化：同一个对象的不同类型
+- (void)memory_type {
+    //测试代码
+    NSString *a = @"string";
+    NSString *b = [[NSString alloc] init];
+    NSString *c = [[NSString alloc] initWithString:@"string"];
+    NSString *d = [[NSString alloc] initWithFormat:@"string"];
+    NSString *e = [NSString stringWithFormat:@"string"];
+    NSString *f = [NSString stringWithFormat:@"123456789"];
+    NSString *g = [NSString stringWithFormat:@"1234567890"];
+    
+    BPDLog(a); BPDLog(b); BPDLog(c); BPDLog(d); BPDLog(e); BPDLog(f); BPDLog(g);
+    
+    NSArray *a1 = @[@"1",@"2"];
+    NSArray *a2 = [[NSArray alloc] init];
+    NSArray *a3 = [[NSArray alloc] initWithObjects:@"1", nil];
+    NSArray *a4 = [[NSArray alloc] initWithArray:@[@"a",@"b"]];
+    NSArray *a5 = [NSArray arrayWithObjects:@"m",@"n", nil];
+    NSArray *a6 = [[NSArray alloc] init];
+    NSArray *a7 = @[];
+    
+    BPDLog(a1); BPDLog(a2); BPDLog(a3); BPDLog(a4); BPDLog(a5); BPDLog(a6);BPDLog(a7);
+}
+
 
 #pragma mark - 面试题
 - (void)change {

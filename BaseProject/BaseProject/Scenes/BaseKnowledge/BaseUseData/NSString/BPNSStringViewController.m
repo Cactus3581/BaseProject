@@ -16,6 +16,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self string_type];
+}
+
+#pragma mark - 编译优化：不同类型的字符串
+- (void)string_type {
+    //测试代码
+    NSString *a = @"string";
+    NSString *b = [[NSString alloc] init];
+    NSString *c = [[NSString alloc] initWithString:@"string"];
+    NSString *d = [[NSString alloc] initWithFormat:@"string"];
+    NSString *e = [NSString stringWithFormat:@"string"];
+    NSString *f = [NSString stringWithFormat:@"123456789"];
+    NSString *g = [NSString stringWithFormat:@"1234567890"];
+    
+    BPDLog(a); BPDLog(b); BPDLog(c); BPDLog(d); BPDLog(e); BPDLog(f); BPDLog(g);
 }
 
 - (void)handle {

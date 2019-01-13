@@ -24,7 +24,7 @@
     [self handleData];
 }
 
-- (BPSimpleViewModel *)viewModel{
+- (BPSimpleViewModel *)viewModel {
     if (!_viewModel) {
         BPSimpleViewModel *viewModel = [BPSimpleViewModel viewModelWithArray:self.dataArray];
         weakify(viewModel);
