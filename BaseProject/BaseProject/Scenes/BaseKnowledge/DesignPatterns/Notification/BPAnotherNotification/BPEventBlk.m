@@ -11,7 +11,7 @@
 @implementation BPEventBlk
 
 - (void)dealloc {
-    NSLog(@"BPEventBlk - 销毁了");
+    BPLog(@"BPEventBlk - 销毁了");
 }
 
 @end

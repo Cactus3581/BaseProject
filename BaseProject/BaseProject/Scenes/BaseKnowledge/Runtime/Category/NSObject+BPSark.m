@@ -11,7 +11,7 @@
 @implementation NSObject (BPSark)
 
 - (void)foo {
-    NSLog(@"IMP: -[NSObject (Sark) foo]");
+    BPLog(@"IMP: -[NSObject (Sark) foo]");
 }
 
 @end

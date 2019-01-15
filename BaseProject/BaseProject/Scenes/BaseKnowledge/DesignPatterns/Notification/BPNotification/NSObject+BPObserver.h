@@ -8,11 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class BPEventBlkPool;
-
 @interface NSObject (BPObserver)
 
-@property (nonatomic, strong) BPEventBlkPool *eventBlkPool; // block事件池
+@property (nonatomic, strong) NSMutableArray *muArray; // block事件池
 
 @end
 

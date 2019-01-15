@@ -1,5 +1,5 @@
 //
-//  BPNotificationCenter.h
+//  BPAnotherNotificationCenter.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2019/1/15.
@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BPEventBlk.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^BPEventCallBlk)(id info);
+@class BPEventBlkPool;
 
-@interface BPNotificationCenter : NSObject
+@interface BPAnotherNotificationCenter : NSObject
 
 + (instancetype)defaultCenter;
 
@@ -33,3 +34,4 @@ typedef void(^BPEventCallBlk)(id info);
 @end
 
 NS_ASSUME_NONNULL_END
+

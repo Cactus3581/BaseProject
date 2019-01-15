@@ -1,13 +1,14 @@
 //
-//  BPNotificationCenter.m
+//  BPAnotherNotificationCenter.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2019/1/15.
 //  Copyright © 2019 cactus. All rights reserved.
 //
 
-#import "BPNotificationCenter.h"
-#import "NSObject+BPObserver.h"
+#import "BPAnotherNotificationCenter.h"
+#import "BPEventBlkPool.h"
+#import "NSObject+BPAnotherObserver.h"
 
 static NSString * const kDefaultNotificationName = @"PSSDefaultNotification";
 
@@ -18,20 +19,20 @@ block();\
 dispatch_sync(dispatch_get_main_queue(), block);\
 }
 
-@interface BPNotificationCenter ()
+@interface BPAnotherNotificationCenter ()
 
-@property (nonatomic, strong) NSMutableDictionary <NSString *, NSMapTable<NSString *, NSMutableArray *> *> *dict;
+@property (nonatomic, strong) NSMutableDictionary <NSString *, NSMapTable<NSString *, BPEventBlkPool *> *> *dict;
 
 @end
 
 
-@implementation BPNotificationCenter
+@implementation BPAnotherNotificationCenter
 
 + (instancetype)defaultCenter {
-    static BPNotificationCenter *sharedInstance;
+    static BPAnotherNotificationCenter *sharedInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        if (!sharedInstance) {
+        if (sharedInstance == nil) {
             sharedInstance = [[self alloc] init];
         }
     });
@@ -40,7 +41,7 @@ dispatch_sync(dispatch_get_main_queue(), block);\
 
 #pragma mark - 注册观察者
 - (void)addObserverForName:(NSString *)name observer:(NSObject *)observer usingBlock:(BPEventCallBlk)block {
-
+    
     if (!block) {
         return;
     }
@@ -50,31 +51,25 @@ dispatch_sync(dispatch_get_main_queue(), block);\
     if (!name.length) {
         name = kDefaultNotificationName;
     }
-
+    
     bp_dispatch_queue_main_async_safe((^{
-        /*
-         // 这个字典是NSMapTable，可以对持有的Value弱引用
-         @{
-            @"通知名字": @{
-                @"观察者内存地址生成的字符串_1": [blk1,blk2],
-                @"观察者内存地址生成的字符串_2": [blk1,blk2],
-            }
-         };
-         */
         NSMapTable *observerBlockMap = self.dict[name];// 通过通知名字获取map，map里存储着观察者和block事件
         if (!observerBlockMap) {
             observerBlockMap = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsCopyIn valueOptions:NSPointerFunctionsWeakMemory];
             [self.dict setValue:observerBlockMap forKey:name];
         }
         
-        NSString *observerKey = [NSString stringWithFormat:@"%p", observer]; // 懒加载获取观察者的block事件池，然后取地址作为观察者的key
-        NSMutableArray *muArray = [observerBlockMap objectForKey:observerKey];
-        if (!muArray) {
-            //muArray = @[].mutableCopy;//创建了block事件池对象，但是出栈后会被立即释放
-            muArray = observer.muArray;//创建了block事件池对象，利用观察者的强引用不让存放block的数据释放
-            [observerBlockMap setObject:muArray forKey:observerKey];
-        }
-        [muArray addObject:[block copy]];
+         NSString *observerKey = [NSString stringWithFormat:@"%p", observer.eventBlkPool]; // 懒加载获取观察者的block事件池，然后取地址作为观察者的key
+         BPEventBlkPool *eventBlkPool = [observerBlockMap objectForKey:observerKey];
+         if (!eventBlkPool) {
+             eventBlkPool = observer.eventBlkPool;//创建了block事件池对象
+             [observerBlockMap setObject:eventBlkPool forKey:observerKey];
+         }
+         BPEventBlk *blk = [[BPEventBlk alloc] init];
+         blk.callBlk = block;
+         
+         [eventBlkPool.pool addObject:blk];
+         
     }));
 }
 
@@ -85,11 +80,10 @@ dispatch_sync(dispatch_get_main_queue(), block);\
         if (!observerBlockMap) {
             return;
         }
-
         for (NSString *observerKey in observerBlockMap) {
-            NSMutableArray *muArray = [observerBlockMap objectForKey:observerKey];
-            for (BPEventCallBlk blk in muArray) {
-                blk(info);
+            BPEventBlkPool *eventBlkPool = [observerBlockMap objectForKey:observerKey];
+            for (BPEventBlk *blk in eventBlkPool.pool) {
+                blk.callBlk(info);
             }
         }
     });
@@ -98,22 +92,17 @@ dispatch_sync(dispatch_get_main_queue(), block);\
 // 移出指定observer下的所有通知
 - (void)removeObserver:(NSObject *)observer {
     bp_dispatch_queue_main_async_safe((^{
-        for (NSString *name in self.dict) {
-            
-            NSMapTable *observerBlockMap = self.dict[name];
-            
+        for (NSString *notiName in self.dict) {
+            NSMapTable *observerBlockMap = [self.dict valueForKey:notiName];
             if (!observerBlockMap) {
                 continue;
             }
-            
-            NSString *observerKey = [NSString stringWithFormat:@"%p", observer]; // 懒加载获取观察者的block事件池，然后取地址作为观察者的key
-            NSMutableArray *muArray = [observerBlockMap objectForKey:observerKey];
-            
-            if (!muArray) {
+            NSString *observerKey = [NSString stringWithFormat:@"%p", observer.eventBlkPool];
+            BPEventBlkPool *eventBlkPool = [observerBlockMap objectForKey:observerKey];
+            if (!eventBlkPool) {
                 continue;
             }
-            
-            [muArray removeAllObjects];
+            [eventBlkPool.pool removeAllObjects];
             [observerBlockMap removeObjectForKey:observerKey];
         }
     }));
@@ -122,30 +111,26 @@ dispatch_sync(dispatch_get_main_queue(), block);\
 
 // 移出指定observer下的指定通知
 - (void)removeObserver:(NSObject *)observer name:(NSString *)name {
-    
     if (!name) {
         name = kDefaultNotificationName;
     }
-    
     if (!observer) {
         return;
     }
-    
     NSMapTable *observerBlockMap = self.dict[name];
     if (!observerBlockMap) {
         return;
     }
-    
     bp_dispatch_queue_main_async_safe((^{
-        NSString *observerKey = [NSString stringWithFormat:@"%p", observer]; // 懒加载获取观察者的block事件池，然后取地址作为观察者的key
-        NSMutableArray *muArray = [observerBlockMap objectForKey:observerKey];
-        [muArray removeAllObjects];
-        [observerBlockMap removeObjectForKey:observerKey];
+        NSString *obserKey = [NSString stringWithFormat:@"%p", observer.eventBlkPool];
+        BPEventBlkPool *eventBlkPool = [observerBlockMap objectForKey:obserKey];
+        [eventBlkPool.pool removeAllObjects];
+        [observerBlockMap removeObjectForKey:obserKey];
     }));
 }
 
 #pragma mark - getter
-- (NSMutableDictionary<NSString *,NSMapTable<NSString *,NSMutableArray *> *> *)dict {
+- (NSMutableDictionary<NSString *,NSMapTable<NSString *,BPEventBlkPool *> *> *)dict {
     if (!_dict) {
         _dict = @{}.mutableCopy;
     }
@@ -153,3 +138,4 @@ dispatch_sync(dispatch_get_main_queue(), block);\
 }
 
 @end
+

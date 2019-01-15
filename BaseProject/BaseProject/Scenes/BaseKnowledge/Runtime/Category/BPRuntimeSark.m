@@ -11,7 +11,7 @@
 @implementation BPRuntimeSark
 
 - (void)speak {
-    NSLog(@"my name's %@", self.name); //  有时候会崩溃
+    BPLog(@"my name's %@", self.name); //  有时候会崩溃
 }
 
 @end

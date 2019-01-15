@@ -193,6 +193,8 @@
 		01352FE31FD2DDA20011D65C /* FeatureCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01352FE21FD2DDA20011D65C /* FeatureCatalog.plist */; };
 		0136DF5121EE07570047E7B0 /* BPNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0136DF5021EE07570047E7B0 /* BPNotificationCenter.m */; };
 		0136DF5521EE17CC0047E7B0 /* BPMapTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0136DF5421EE17CC0047E7B0 /* BPMapTableViewController.m */; };
+		0136DF5821EE217F0047E7B0 /* BPAnotherNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0136DF5721EE217F0047E7B0 /* BPAnotherNotificationCenter.m */; };
+		0136DF5E21EE282F0047E7B0 /* NSObject+BPAnotherObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 0136DF5D21EE282F0047E7B0 /* NSObject+BPAnotherObserver.m */; };
 		0137C73D207B3AD200F6B6CE /* BPPresentAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C73C207B3AD200F6B6CE /* BPPresentAViewController.m */; };
 		0137C740207B3ADF00F6B6CE /* BPPresentBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C73F207B3ADF00F6B6CE /* BPPresentBViewController.m */; };
 		0137C743207B4A6000F6B6CE /* BPPresentCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C742207B4A6000F6B6CE /* BPPresentCViewController.m */; };
@@ -1164,6 +1166,10 @@
 		0136DF5021EE07570047E7B0 /* BPNotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNotificationCenter.m; sourceTree = "<group>"; };
 		0136DF5321EE17CC0047E7B0 /* BPMapTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMapTableViewController.h; sourceTree = "<group>"; };
 		0136DF5421EE17CC0047E7B0 /* BPMapTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMapTableViewController.m; sourceTree = "<group>"; };
+		0136DF5621EE217F0047E7B0 /* BPAnotherNotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAnotherNotificationCenter.h; sourceTree = "<group>"; };
+		0136DF5721EE217F0047E7B0 /* BPAnotherNotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAnotherNotificationCenter.m; sourceTree = "<group>"; };
+		0136DF5C21EE282F0047E7B0 /* NSObject+BPAnotherObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPAnotherObserver.h"; sourceTree = "<group>"; };
+		0136DF5D21EE282F0047E7B0 /* NSObject+BPAnotherObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BPAnotherObserver.m"; sourceTree = "<group>"; };
 		0137C73B207B3AD200F6B6CE /* BPPresentAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPresentAViewController.h; sourceTree = "<group>"; };
 		0137C73C207B3AD200F6B6CE /* BPPresentAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPresentAViewController.m; sourceTree = "<group>"; };
 		0137C73E207B3ADF00F6B6CE /* BPPresentBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPresentBViewController.h; sourceTree = "<group>"; };
@@ -3819,6 +3825,21 @@
 			path = NSMapTable;
 			sourceTree = "<group>";
 		};
+		0136DF5F21EE29050047E7B0 /* BPAnotherNotification */ = {
+			isa = PBXGroup;
+			children = (
+				0136DF5621EE217F0047E7B0 /* BPAnotherNotificationCenter.h */,
+				0136DF5721EE217F0047E7B0 /* BPAnotherNotificationCenter.m */,
+				01D1289B21EDE13A00C129A6 /* BPEventBlkPool.h */,
+				01D1289621EDE13A00C129A6 /* BPEventBlkPool.m */,
+				0136DF5C21EE282F0047E7B0 /* NSObject+BPAnotherObserver.h */,
+				0136DF5D21EE282F0047E7B0 /* NSObject+BPAnotherObserver.m */,
+				01D1289921EDE13A00C129A6 /* BPEventBlk.h */,
+				01D1289D21EDE13A00C129A6 /* BPEventBlk.m */,
+			);
+			path = BPAnotherNotification;
+			sourceTree = "<group>";
+		};
 		0137C73A207B3AA800F6B6CE /* Normal */ = {
 			isa = PBXGroup;
 			children = (
@@ -5881,6 +5902,7 @@
 			children = (
 				0179BC3D20316EFD0061CD84 /* BPDesignPatternsNotificationViewController.h */,
 				0179BC3E20316EFD0061CD84 /* BPDesignPatternsNotificationViewController.m */,
+				0136DF5F21EE29050047E7B0 /* BPAnotherNotification */,
 				01D1289521EDE13A00C129A6 /* BPNotification */,
 			);
 			path = Notification;
@@ -8223,12 +8245,8 @@
 			children = (
 				0136DF4F21EE07570047E7B0 /* BPNotificationCenter.h */,
 				0136DF5021EE07570047E7B0 /* BPNotificationCenter.m */,
-				01D1289B21EDE13A00C129A6 /* BPEventBlkPool.h */,
-				01D1289621EDE13A00C129A6 /* BPEventBlkPool.m */,
 				01D1289C21EDE13A00C129A6 /* NSObject+BPObserver.h */,
 				01D1289821EDE13A00C129A6 /* NSObject+BPObserver.m */,
-				01D1289921EDE13A00C129A6 /* BPEventBlk.h */,
-				01D1289D21EDE13A00C129A6 /* BPEventBlk.m */,
 			);
 			path = BPNotification;
 			sourceTree = "<group>";
@@ -10190,6 +10208,7 @@
 				019AA91820205BE80090B038 /* CADisplayLink+BPAdd.m in Sources */,
 				015804FC20CADE0000D0EF7C /* BPNaviTableViewControllerThree.m in Sources */,
 				01DF32721FDD3BB100B8A955 /* NSDate+BPnternetDateTime.m in Sources */,
+				0136DF5E21EE282F0047E7B0 /* NSObject+BPAnotherObserver.m in Sources */,
 				01A191D42004E1E7005EE4CD /* BPSegmentedControlController.m in Sources */,
 				011CD74F20CE190A00560EE6 /* BPMasksToBoundsViewController.m in Sources */,
 				01B075A720E4FD0C004891F7 /* BPXIBAutoLayoutProcessViewController.m in Sources */,
@@ -10325,6 +10344,7 @@
 				015805B820CAE5D000D0EF7C /* BPTopCategoryListTagView.m in Sources */,
 				01B075A320E4FD0C004891F7 /* BPDrawRect_CG.m in Sources */,
 				010DB7951FDD4D640099E66F /* UIView+BPRecursion.m in Sources */,
+				0136DF5821EE217F0047E7B0 /* BPAnotherNotificationCenter.m in Sources */,
 				010FBD2520601D9E00BC9EC4 /* BPPaletteView.m in Sources */,
 				013ED90F20C7DB3C00A83E7F /* BPIncludeTableSystemLayoutController.m in Sources */,
 				01A597AC2085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.m in Sources */,

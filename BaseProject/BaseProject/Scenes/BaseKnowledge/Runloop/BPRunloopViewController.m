@@ -74,7 +74,7 @@
         [runLoop run];
         
         // 测试是否开启了RunLoop，如果开启RunLoop，则来不了这里，因为RunLoop开启了循环。
-        NSLog(@"开启RunLoop失败");
+        BPLog(@"开启RunLoop失败");
     }
 }
 
@@ -139,34 +139,34 @@
         switch (activity) {
 
             case kCFRunLoopEntry:
-                NSLog(@"即将进入Loop");
+                BPLog(@"即将进入Loop");
                 break;
                 
             case kCFRunLoopBeforeTimers:
-                NSLog(@"即将处理 Timer");
+                BPLog(@"即将处理 Timer");
                 break;
                 
             case kCFRunLoopBeforeSources:
-                NSLog(@"即将处理 Source");
+                BPLog(@"即将处理 Source");
                 break;
                 
             case kCFRunLoopBeforeWaiting:
-                NSLog(@"即将进入休眠");
+                BPLog(@"即将进入休眠");
                 break;
                 
                 
             case kCFRunLoopAfterWaiting:
-                NSLog(@"刚从休眠中唤醒");
+                BPLog(@"刚从休眠中唤醒");
                 break;
                 
                 
             case kCFRunLoopExit:
-                NSLog(@"即将退出Loop");
+                BPLog(@"即将退出Loop");
                 break;
                 
                 
             case kCFRunLoopAllActivities:
-                NSLog(@"所有活动，不知道这个type是什么意思");
+                BPLog(@"所有活动，不知道这个type是什么意思");
                 break;
         }
     });

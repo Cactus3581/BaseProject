@@ -73,9 +73,9 @@
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
-            NSLog(@"Error: %@", error);
+            BPLog(@"Error: %@", error);
         } else {
-            NSLog(@"%@ %@", response, responseObject);
+            BPLog(@"%@ %@", response, responseObject);
         }
     }];
     [dataTask resume];
@@ -93,7 +93,7 @@
         NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
         return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
     } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
-        NSLog(@"File downloaded to: %@", filePath);
+        BPLog(@"File downloaded to: %@", filePath);
     }];
     [downloadTask resume];
 }
@@ -109,9 +109,9 @@
     NSURL *filePath = [NSURL fileURLWithPath:@"file://path/to/image.png"];
     NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithRequest:request fromFile:filePath progress:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {
-            NSLog(@"Error: %@", error);
+            BPLog(@"Error: %@", error);
         } else {
-            NSLog(@"Success: %@ %@", response, responseObject);
+            BPLog(@"Success: %@ %@", response, responseObject);
         }
     }];
     [uploadTask resume];
@@ -141,9 +141,9 @@
                   }
                   completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
                       if (error) {
-                          NSLog(@"Error: %@", error);
+                          BPLog(@"Error: %@", error);
                       } else {
-                          NSLog(@"%@ %@", response, responseObject);
+                          BPLog(@"%@ %@", response, responseObject);
                       }
                   }];
     
@@ -188,7 +188,7 @@
 - (void)sharedNetworkReachability {
 
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        NSLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
+        BPLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
     }];
     
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];

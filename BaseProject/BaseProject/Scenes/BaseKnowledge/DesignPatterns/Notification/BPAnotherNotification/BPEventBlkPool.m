@@ -13,14 +13,14 @@
 @implementation BPEventBlkPool
 
 - (NSMutableArray<BPEventBlk *> *)pool {
-    if (_pool == nil) {
-        _pool = [[NSMutableArray alloc] init];
+    if (!_pool) {
+        _pool = @[].mutableCopy;
     }
     return _pool;
 }
 
 - (void)dealloc {
-    NSLog(@"BPEventBlkPool 被销毁了，移除观察者下所有的通知");
+    BPLog(@"BPEventBlkPool 被销毁了，移除观察者下所有的通知");
     [[BPNotificationCenter defaultCenter] removeObserver:self];
 }
 

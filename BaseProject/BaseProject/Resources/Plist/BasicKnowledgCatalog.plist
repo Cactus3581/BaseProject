@@ -842,7 +842,15 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>自定义封装消息机制</string>
+						<string>自定义封装消息机制 一</string>
+						<key>fileName</key>
+						<string>BPDesignPatternsNotificationViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>自定义封装消息机制 二</string>
 						<key>fileName</key>
 						<string>BPDesignPatternsNotificationViewController</string>
 						<key>briefIntro</key>
