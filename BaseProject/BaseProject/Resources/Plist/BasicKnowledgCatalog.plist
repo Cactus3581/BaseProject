@@ -2499,6 +2499,14 @@
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>NSMapTable</string>
+				<key>fileName</key>
+				<string>BPMapTableViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
 		</array>
 	</dict>
 	<dict>

@@ -1,9 +1,9 @@
 //
 //  BPEventBlk.h
-//  PSSNotification
+//  BaseProject
 //
-//  Created by 泡泡 on 2018/11/13.
-//  Copyright © 2018 泡泡. All rights reserved.
+//  Created by xiaruzhen on 2019/1/15.
+//  Copyright © 2019 cactus. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

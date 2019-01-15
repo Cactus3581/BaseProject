@@ -192,6 +192,7 @@
 		01349C5920ECA75100E50A86 /* BPDownLoadMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 01349C5820ECA75100E50A86 /* BPDownLoadMacro.m */; };
 		01352FE31FD2DDA20011D65C /* FeatureCatalog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01352FE21FD2DDA20011D65C /* FeatureCatalog.plist */; };
 		0136DF5121EE07570047E7B0 /* BPNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0136DF5021EE07570047E7B0 /* BPNotificationCenter.m */; };
+		0136DF5521EE17CC0047E7B0 /* BPMapTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0136DF5421EE17CC0047E7B0 /* BPMapTableViewController.m */; };
 		0137C73D207B3AD200F6B6CE /* BPPresentAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C73C207B3AD200F6B6CE /* BPPresentAViewController.m */; };
 		0137C740207B3ADF00F6B6CE /* BPPresentBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C73F207B3ADF00F6B6CE /* BPPresentBViewController.m */; };
 		0137C743207B4A6000F6B6CE /* BPPresentCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C742207B4A6000F6B6CE /* BPPresentCViewController.m */; };
@@ -1161,6 +1162,8 @@
 		01352FE21FD2DDA20011D65C /* FeatureCatalog.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FeatureCatalog.plist; sourceTree = "<group>"; };
 		0136DF4F21EE07570047E7B0 /* BPNotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNotificationCenter.h; sourceTree = "<group>"; };
 		0136DF5021EE07570047E7B0 /* BPNotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNotificationCenter.m; sourceTree = "<group>"; };
+		0136DF5321EE17CC0047E7B0 /* BPMapTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMapTableViewController.h; sourceTree = "<group>"; };
+		0136DF5421EE17CC0047E7B0 /* BPMapTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMapTableViewController.m; sourceTree = "<group>"; };
 		0137C73B207B3AD200F6B6CE /* BPPresentAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPresentAViewController.h; sourceTree = "<group>"; };
 		0137C73C207B3AD200F6B6CE /* BPPresentAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPresentAViewController.m; sourceTree = "<group>"; };
 		0137C73E207B3ADF00F6B6CE /* BPPresentBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPresentBViewController.h; sourceTree = "<group>"; };
@@ -3273,6 +3276,7 @@
 		01161F3D20308F4900FA3441 /* BaseUseData */ = {
 			isa = PBXGroup;
 			children = (
+				0136DF5221EE17B80047E7B0 /* NSMapTable */,
 				0143427221D21E6400CEDCD1 /* NSDecimalNumber */,
 				011183C720DA94270044AE1D /* NSData */,
 				01161F3F20308F7400FA3441 /* NSArray */,
@@ -3804,6 +3808,15 @@
 				01349C5420ECA71D00E50A86 /* BPDownLoadItem.m */,
 			);
 			path = Item;
+			sourceTree = "<group>";
+		};
+		0136DF5221EE17B80047E7B0 /* NSMapTable */ = {
+			isa = PBXGroup;
+			children = (
+				0136DF5321EE17CC0047E7B0 /* BPMapTableViewController.h */,
+				0136DF5421EE17CC0047E7B0 /* BPMapTableViewController.m */,
+			);
+			path = NSMapTable;
 			sourceTree = "<group>";
 		};
 		0137C73A207B3AA800F6B6CE /* Normal */ = {
@@ -10056,6 +10069,7 @@
 				010DB74E1FDD4D450099E66F /* UIBarButtonItem+BPAction.m in Sources */,
 				01A192262004E61F005EE4CD /* BPGroupTableViewController.m in Sources */,
 				0158053220CADED000D0EF7C /* BPDatabaseViewController.m in Sources */,
+				0136DF5521EE17CC0047E7B0 /* BPMapTableViewController.m in Sources */,
 				010DB7291FDD4D450099E66F /* UISplitViewController+BPQuickAccess.m in Sources */,
 				01E5142920DCEA7100E6CFD0 /* BPRotatingScreenViewController.m in Sources */,
 				01D22BE11FDD814000BCC4AD /* CALayer+BPAdd.m in Sources */,

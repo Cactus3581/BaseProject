@@ -12,7 +12,7 @@
 
 static NSString * const kDefaultNotificationName = @"PSSDefaultNotification";
 
-#define pss_dispatch_queue_main_async_safe(block)\
+#define bp_dispatch_queue_main_async_safe(block)\
 if ([[NSThread currentThread] isMainThread]) {\
 block();\
 } else {\
@@ -51,7 +51,9 @@ dispatch_sync(dispatch_get_main_queue(), block);\
     if (!name.length) {
         name = kDefaultNotificationName;
     }
-    pss_dispatch_queue_main_async_safe((^{
+    BPLog(@"addObserverForName 前 dict = %@",self.dict);
+
+    bp_dispatch_queue_main_async_safe((^{
         /*
          // 这个字典是NSMapTable，可以对持有的Value弱引用
          @{
@@ -60,14 +62,13 @@ dispatch_sync(dispatch_get_main_queue(), block);\
                 @"观察者内存地址生成的字符串_2": [blk1,blk2],
             }
          };
-         
-        
          */
         NSMapTable *observerBlockMap = self.dict[name];// 通过通知名字获取map，map里存储着观察者和block事件
         if (!observerBlockMap) {
             observerBlockMap = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsCopyIn valueOptions:NSPointerFunctionsWeakMemory];
             [self.dict setValue:observerBlockMap forKey:name];
         }
+        /*
         NSString *observerKey = [NSString stringWithFormat:@"%p", observer.eventBlkPool]; // 懒加载获取观察者的block事件池，然后取地址作为观察者的key
         BPEventBlkPool *eventBlkPool = [observerBlockMap objectForKey:observerKey];
         if (!eventBlkPool) {
@@ -76,32 +77,55 @@ dispatch_sync(dispatch_get_main_queue(), block);\
         }
         BPEventBlk *blk = [[BPEventBlk alloc] init];
         blk.callBlk = block;
-        
+
         [eventBlkPool.pool addObject:blk];
+         */
+        
+        NSString *observerKey = [NSString stringWithFormat:@"%p", observer]; // 懒加载获取观察者的block事件池，然后取地址作为观察者的key
+        NSMutableArray *muArray = [observerBlockMap objectForKey:observerKey];
+        if (!muArray) {
+            muArray = @[].mutableCopy;//创建了block事件池对象
+            [observerBlockMap setObject:muArray forKey:observerKey];
+        }
+        [muArray addObject:[block copy]];
+        BPLog(@"addObserverForName 后 dict = %@",self.dict);
     }));
 }
 
 #pragma mark - 发送通知
 - (void)postNotificationName:(NSString *)name info:(id)info {
-    pss_dispatch_queue_main_async_safe(^{
+    bp_dispatch_queue_main_async_safe(^{
         NSMapTable *observerBlockMap = [self.dict valueForKey:name];
         if (!observerBlockMap) {
             return;
         }
+        /*
         for (NSString *observerKey in observerBlockMap) {
             BPEventBlkPool *eventBlkPool = [observerBlockMap objectForKey:observerKey];
             for (BPEventBlk *blk in eventBlkPool.pool) {
                 blk.callBlk(info);
             }
         }
-        BPLog(@"dict = %@",self.dict);
+         */
+        BPLog(@"blk dict = %@",observerBlockMap);
 
+        for (NSString *observerKey in observerBlockMap) {
+            NSMutableArray *muArray = [observerBlockMap objectForKey:observerKey];
+            BPLog(@"return dict = %@",self.dict);
+
+            for (BPEventCallBlk blk in muArray) {
+                BPLog(@"blk dict = %@",self.dict);
+
+                blk(info);
+            }
+        }
+        BPLog(@"postNotificationName dict = %@",self.dict);
     });
 }
 
 // 移出指定observer下的所有通知
 - (void)removeObserver:(NSObject *)observer {
-    pss_dispatch_queue_main_async_safe((^{
+    bp_dispatch_queue_main_async_safe((^{
         for (NSString *notiName in self.dict) {
             NSMapTable *notiDic = [self.dict valueForKey:notiName];
             if (!notiDic) {
@@ -131,7 +155,7 @@ dispatch_sync(dispatch_get_main_queue(), block);\
     if (!notiDic) {
         return;
     }
-    pss_dispatch_queue_main_async_safe((^{
+    bp_dispatch_queue_main_async_safe((^{
         NSString *obserKey = [NSString stringWithFormat:@"%p", observer.eventBlkPool];
         BPEventBlkPool *eventBlkPool = [notiDic objectForKey:obserKey];
         [eventBlkPool.pool removeAllObjects];

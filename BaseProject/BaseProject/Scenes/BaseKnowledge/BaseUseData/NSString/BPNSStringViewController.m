@@ -22,13 +22,13 @@
 #pragma mark - 编译优化：不同类型的字符串
 - (void)string_type {
     //测试代码
-    NSString *a = @"string";
-    NSString *b = [[NSString alloc] init];
-    NSString *c = [[NSString alloc] initWithString:@"string"];
-    NSString *d = [[NSString alloc] initWithFormat:@"string"];
-    NSString *e = [NSString stringWithFormat:@"string"];
-    NSString *f = [NSString stringWithFormat:@"123456789"];
-    NSString *g = [NSString stringWithFormat:@"1234567890"];
+    NSString *a = @"string";//__NSCFConstantString
+    NSString *b = [[NSString alloc] init];//__NSCFConstantString
+    NSString *c = [[NSString alloc] initWithString:@"string"];//__NSCFConstantString
+    NSString *d = [[NSString alloc] initWithFormat:@"string"];//NSTaggedPointerString
+    NSString *e = [NSString stringWithFormat:@"string"];//NSTaggedPointerString
+    NSString *f = [NSString stringWithFormat:@"123456789"];//NSTaggedPointerString
+    NSString *g = [NSString stringWithFormat:@"1234567890"];//__NSCFString
     
     BPDLog(a); BPDLog(b); BPDLog(c); BPDLog(d); BPDLog(e); BPDLog(f); BPDLog(g);
 }
