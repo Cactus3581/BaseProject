@@ -10,7 +10,7 @@
 #import "BPEventBlkPool.h"
 #import "NSObject+BPAnotherObserver.h"
 
-static NSString * const kDefaultNotificationName = @"PSSDefaultNotification";
+static NSString * const kDefaultNotificationName = @"BPAnotherDefaultNotification";
 
 #define bp_dispatch_queue_main_async_safe(block)\
 if ([[NSThread currentThread] isMainThread]) {\

@@ -5902,8 +5902,8 @@
 			children = (
 				0179BC3D20316EFD0061CD84 /* BPDesignPatternsNotificationViewController.h */,
 				0179BC3E20316EFD0061CD84 /* BPDesignPatternsNotificationViewController.m */,
-				0136DF5F21EE29050047E7B0 /* BPAnotherNotification */,
 				01D1289521EDE13A00C129A6 /* BPNotification */,
+				0136DF5F21EE29050047E7B0 /* BPAnotherNotification */,
 			);
 			path = Notification;
 			sourceTree = "<group>";

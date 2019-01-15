@@ -9,7 +9,7 @@
 #import "BPNotificationCenter.h"
 #import "NSObject+BPObserver.h"
 
-static NSString * const kDefaultNotificationName = @"PSSDefaultNotification";
+static NSString * const kDefaultNotificationName = @"BPDefaultNotification";
 
 #define bp_dispatch_queue_main_async_safe(block)\
 if ([[NSThread currentThread] isMainThread]) {\
@@ -53,6 +53,7 @@ dispatch_sync(dispatch_get_main_queue(), block);\
 
     bp_dispatch_queue_main_async_safe((^{
         /*
+         维护的数据结构
          // 这个字典是NSMapTable，可以对持有的Value弱引用
          @{
             @"通知名字": @{
