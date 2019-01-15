@@ -7,24 +7,23 @@
 //
 
 #import "NSObject+BPObserver.h"
-#import "BPEventBlkPool.h"
 #import <objc/runtime.h>
 
-static char BPEventBlkPoolKey;
+static char BPEventBlkArrayKey;
 
 @implementation NSObject (BPObserver)
 
-- (void)setEventBlkPool:(BPEventBlkPool *)eventBlkPool {
-    objc_setAssociatedObject(self, &BPEventBlkPoolKey, eventBlkPool, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setMuArray:(NSMutableArray *)muArray {
+    objc_setAssociatedObject(self, &BPEventBlkArrayKey, muArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (BPEventBlkPool *)eventBlkPool {
-    BPEventBlkPool *eventBlkPool = objc_getAssociatedObject(self, &BPEventBlkPoolKey);
-    if (!eventBlkPool) {
-        eventBlkPool = [[BPEventBlkPool alloc] init];
-        [self setEventBlkPool:eventBlkPool];
+- (NSMutableArray *)muArray {
+    NSMutableArray *muArray = objc_getAssociatedObject(self, &BPEventBlkArrayKey);
+    if (!muArray) {
+        muArray = @[].mutableCopy;
+        [self setMuArray:muArray];
     }
-    return eventBlkPool;
+    return muArray;
 }
 
 @end
