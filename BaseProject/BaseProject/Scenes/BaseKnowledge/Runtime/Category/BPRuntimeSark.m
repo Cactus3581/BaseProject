@@ -9,7 +9,9 @@
 #import "BPRuntimeSark.h"
 
 @implementation BPRuntimeSark
+
 - (void)speak {
-    NSLog(@"my name's %@", self.name);
+    NSLog(@"my name's %@", self.name); //  有时候会崩溃
 }
+
 @end

@@ -825,11 +825,30 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>Notification</string>
+				<string>NotificationCenter 消息队列</string>
 				<key>fileName</key>
-				<string></string>
+				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
 				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>系统API基础使用</string>
+						<key>fileName</key>
+						<string>BPDesignPatternsNotificationViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>自定义封装消息机制</string>
+						<key>fileName</key>
+						<string>BPDesignPatternsNotificationViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>title</key>
@@ -933,7 +952,7 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string></string>
+				<string>在常驻线程下工作</string>
 				<key>fileName</key>
 				<string>BPRunloopViewController</string>
 				<key>briefIntro</key>
@@ -941,7 +960,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string></string>
+				<string>Mode和Timer的使用</string>
 				<key>fileName</key>
 				<string>BPRunloopViewController</string>
 				<key>briefIntro</key>
@@ -949,7 +968,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string></string>
+				<string>空闲时UIImageView赋值图片</string>
 				<key>fileName</key>
 				<string>BPRunloopViewController</string>
 				<key>briefIntro</key>
@@ -957,41 +976,9 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string></string>
+				<string>用来展示CFRunLoopObserverRef使用</string>
 				<key>fileName</key>
 				<string>BPRunloopViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string></string>
-				<key>fileName</key>
-				<string>BPRunloopViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string></string>
-				<key>fileName</key>
-				<string>BPRunloopViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string></string>
-				<key>fileName</key>
-				<string>BPRunloopViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>面试题</string>
-				<key>fileName</key>
-				<string>BPNSOperationViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -1668,9 +1655,68 @@
 				<key>title</key>
 				<string>AFN</string>
 				<key>fileName</key>
-				<string></string>
+				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
 				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>普通请求数据</string>
+						<key>fileName</key>
+						<string>BPAFNViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>下载</string>
+						<key>fileName</key>
+						<string>BPAFNViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>上传</string>
+						<key>fileName</key>
+						<string>BPAFNViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>为一个包含多个部分的请求创建上传任务，并显示进度</string>
+						<key>fileName</key>
+						<string>BPAFNViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>请求序列化</string>
+						<key>fileName</key>
+						<string>BPAFNViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>网络监听</string>
+						<key>fileName</key>
+						<string>BPAFNViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>SSL证书</string>
+						<key>fileName</key>
+						<string>BPAFNViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>title</key>

@@ -635,16 +635,16 @@
 #pragma mark - 向指定队列里面设置一个标识
 - (void)gcd_set_specific {
     
-    static void *key = "cactus";
+    static void *key = "cactusKey";
     
     dispatch_queue_t queue = dispatch_queue_create("com.test.gcd", NULL);
     
-    dispatch_queue_set_specific(queue, key, (void *)[@"cactus" UTF8String], NULL);
+    dispatch_queue_set_specific(queue, key, (void *)[@"cactusValue" UTF8String], NULL);
     
     dispatch_async(queue, ^{
         void *value = dispatch_get_specific(key);
         NSString *str = [[NSString alloc] initWithBytes:value length:7 encoding:4];
-        BPLog(@"%@", str);//cactus
+        BPLog(@"%@", str);//cactusValue
     });
 }
 

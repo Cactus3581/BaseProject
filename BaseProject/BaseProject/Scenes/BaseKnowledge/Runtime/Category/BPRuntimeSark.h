@@ -11,7 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BPRuntimeSark : NSObject
+
 @property (nonatomic, copy) NSString *name;
+
+- (void)speak;
 
 @end
 

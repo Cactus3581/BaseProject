@@ -11,7 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (BPSark)
+
 + (void)foo;
+
+- (void)foo;
 
 @end
 

@@ -506,5 +506,13 @@
 		<key>briefIntro</key>
 		<string></string>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>本地通知推送</string>
+		<key>fileName</key>
+		<string>BPLocalNotificationViewController</string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
 </array>
 </plist>

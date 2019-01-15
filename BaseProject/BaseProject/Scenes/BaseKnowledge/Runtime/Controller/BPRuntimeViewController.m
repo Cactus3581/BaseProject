@@ -176,12 +176,13 @@
 - (void)changeSark {
     // 测试代码1
     [NSObject foo];
-//    [[NSObject new] foo];
-    
+    [[NSObject new] foo];
+
     // 测试代码2
+    NSString *name = @"ryan";
     id cls = [BPRuntimeSark class];
-    void *obj = &cls;
-//    [(__bridge id)obj speak];
+    void *obj = &cls;// 相当于创建了一个对象:对象是指向类对象地址的变量
+    [(__bridge id)obj speak];// 没有声明，为什么不报错；为什么把name加进来了？：实例变量是对象的地址+偏移量，一般的偏移量是4，也就是在这个栈上+4，往上看就是name。
 }
 
 #pragma mark - 手动实现KVO
