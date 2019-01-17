@@ -140,6 +140,17 @@
     [Bugly startWithAppId:@"dc9e61f4db" developmentDevice:YES config:debugMode];
 }
 
+#pragma amrk - 系统触发的delegate
+//程序将要进入到前台  执行的方法(一般进行视频 歌曲数据的恢复)
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    BPLog(@"程序将要进入到前台");
+}
+
+//程序已经变成活跃状态执行的方法   一般进行UI界面刷新
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    BPLog(@"程序已经变成活跃状态");
+}
+
 //程序将要取消活跃状态 执行的方法  我们可以进行歌曲 视频的暂停操作
 - (void)applicationWillResignActive:(UIApplication *)application {
     BPLog(@"程序将要取消活跃状态");
@@ -150,14 +161,14 @@
     BPLog(@"程序已经进入到后台执行的方法");
 }
 
-//程序将要进入到前台  执行的方法(一般进行视频 歌曲数据的恢复)
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    BPLog(@"程序将要进入到前台");
+//进行内存清理工作防止程序被终止
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    BPLog(@"内存溢出，进行内存清理工作防止程序被终止");
 }
 
-//程序已经变成活跃状态执行的方法   一般进行UI界面刷新
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    //BPLog(@"程序已经变成活跃状态");
+//当系统时间发生改变时执行
+- (void)applicationSignificantTimeChange:(UIApplication *)application {
+    BPLog(@"当系统时间发生改变时执行");
 }
 
 //程序将要退出执行的方法

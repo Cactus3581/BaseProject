@@ -1652,6 +1652,57 @@
 	</dict>
 	<dict>
 		<key>title</key>
+		<string>设计一个xxx框架系列</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>设计一个图片下载框架</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>设计一个文件下载框架</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>设计一个缓存框架</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>设计一个网络请求框架</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>设计一个模型转换框架</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
 		<string>学习第三方库</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
@@ -2704,6 +2755,41 @@
 		<string>BPAlgorithmController</string>
 		<key>briefIntro</key>
 		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>软件设计架构模式</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>简单的MVVM（没有数据绑定）</string>
+				<key>fileName</key>
+				<string>BPMVVMViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>复杂的MVVM（数据绑定）</string>
+				<key>fileName</key>
+				<string>BPMVVMViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>MVP</string>
+				<key>fileName</key>
+				<string>BPMVPViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<dict>
 		<key>title</key>

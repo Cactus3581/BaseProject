@@ -7,8 +7,6 @@
 //
 
 #import "NSObject+BPAnotherObserver.h"
-
-
 #import "NSObject+BPObserver.h"
 #import "BPEventBlkPool.h"
 #import <objc/runtime.h>

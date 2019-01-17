@@ -141,6 +141,11 @@
 		01161F4B2030900200FA3441 /* BPNSDictionaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01161F4A2030900200FA3441 /* BPNSDictionaryViewController.m */; };
 		01161F4E2030900B00FA3441 /* BPNSStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01161F4D2030900B00FA3441 /* BPNSStringViewController.m */; };
 		01161F512030901300FA3441 /* BPNSSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01161F502030901300FA3441 /* BPNSSetViewController.m */; };
+		0117F7B221EF647F003E461B /* BPMVVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0117F7B121EF647F003E461B /* BPMVVMViewController.m */; };
+		0117F7B921EF6498003E461B /* BPMVPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0117F7B821EF6498003E461B /* BPMVPViewController.m */; };
+		0117F7BC21EF652F003E461B /* BPMVVMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0117F7BB21EF652F003E461B /* BPMVVMModel.m */; };
+		0117F7BF21EF6545003E461B /* BPMVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0117F7BE21EF6545003E461B /* BPMVVMViewModel.m */; };
+		0117F7C221EF6941003E461B /* BPMVVMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0117F7C121EF6941003E461B /* BPMVVMTableViewCell.m */; };
 		011A7731201F256F00D97E11 /* BPVolumeWaverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011A7730201F256F00D97E11 /* BPVolumeWaverViewController.m */; };
 		011AECBB21D3B77B001BC8DC /* BPNSUserDefaultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011AECBA21D3B77B001BC8DC /* BPNSUserDefaultsViewController.m */; };
 		011B7DD1206906CB0071CB5D /* BPAppInfoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD0206906CB0071CB5D /* BPAppInfoTool.m */; };
@@ -1070,6 +1075,16 @@
 		01161F4D2030900B00FA3441 /* BPNSStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNSStringViewController.m; sourceTree = "<group>"; };
 		01161F4F2030901300FA3441 /* BPNSSetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNSSetViewController.h; sourceTree = "<group>"; };
 		01161F502030901300FA3441 /* BPNSSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNSSetViewController.m; sourceTree = "<group>"; };
+		0117F7B021EF647F003E461B /* BPMVVMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMVVMViewController.h; sourceTree = "<group>"; };
+		0117F7B121EF647F003E461B /* BPMVVMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMVVMViewController.m; sourceTree = "<group>"; };
+		0117F7B721EF6498003E461B /* BPMVPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMVPViewController.h; sourceTree = "<group>"; };
+		0117F7B821EF6498003E461B /* BPMVPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMVPViewController.m; sourceTree = "<group>"; };
+		0117F7BA21EF652F003E461B /* BPMVVMModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMVVMModel.h; sourceTree = "<group>"; };
+		0117F7BB21EF652F003E461B /* BPMVVMModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMVVMModel.m; sourceTree = "<group>"; };
+		0117F7BD21EF6545003E461B /* BPMVVMViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMVVMViewModel.h; sourceTree = "<group>"; };
+		0117F7BE21EF6545003E461B /* BPMVVMViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMVVMViewModel.m; sourceTree = "<group>"; };
+		0117F7C021EF6941003E461B /* BPMVVMTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMVVMTableViewCell.h; sourceTree = "<group>"; };
+		0117F7C121EF6941003E461B /* BPMVVMTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMVVMTableViewCell.m; sourceTree = "<group>"; };
 		011A772F201F256F00D97E11 /* BPVolumeWaverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPVolumeWaverViewController.h; sourceTree = "<group>"; };
 		011A7730201F256F00D97E11 /* BPVolumeWaverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPVolumeWaverViewController.m; sourceTree = "<group>"; };
 		011AECB921D3B77B001BC8DC /* BPNSUserDefaultsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNSUserDefaultsViewController.h; sourceTree = "<group>"; };
@@ -3103,6 +3118,7 @@
 				01B726DA1FF806FC00648674 /* BaseUseUIKit */,
 				016D95E620E3CA9D00651EDE /* CodeStandards */,
 				01B7268B1FF7DF1900648674 /* DataStructure */,
+				0117F7A921EF643A003E461B /* DesignArchitecture */,
 				01161F522030975C00FA3441 /* DesignPatterns */,
 				01F373102065525D007B1498 /* Event */,
 				019DA7D821D1C18400E3AB16 /* GeneralProgramming */,
@@ -3354,6 +3370,111 @@
 				0179BC3120316E660061CD84 /* Delegate */,
 			);
 			path = DesignPatterns;
+			sourceTree = "<group>";
+		};
+		0117F7A921EF643A003E461B /* DesignArchitecture */ = {
+			isa = PBXGroup;
+			children = (
+				0117F7C421EF72DE003E461B /* MVVM */,
+				0117F7AA21EF6459003E461B /* SimpleMVVM */,
+				0117F7AB21EF6462003E461B /* MVP */,
+			);
+			path = DesignArchitecture;
+			sourceTree = "<group>";
+		};
+		0117F7AA21EF6459003E461B /* SimpleMVVM */ = {
+			isa = PBXGroup;
+			children = (
+				0117F7AE21EF646D003E461B /* Controllers */,
+				0117F7AF21EF646E003E461B /* Models */,
+				0117F7AC21EF646D003E461B /* ViewModels */,
+				0117F7AD21EF646D003E461B /* Views */,
+			);
+			path = SimpleMVVM;
+			sourceTree = "<group>";
+		};
+		0117F7AB21EF6462003E461B /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				0117F7B521EF648F003E461B /* Controllers */,
+				0117F7B621EF648F003E461B /* Models */,
+				0117F7B321EF648E003E461B /* ViewModels */,
+				0117F7B421EF648E003E461B /* Views */,
+			);
+			path = MVP;
+			sourceTree = "<group>";
+		};
+		0117F7AC21EF646D003E461B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0117F7BD21EF6545003E461B /* BPMVVMViewModel.h */,
+				0117F7BE21EF6545003E461B /* BPMVVMViewModel.m */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0117F7AD21EF646D003E461B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0117F7C021EF6941003E461B /* BPMVVMTableViewCell.h */,
+				0117F7C121EF6941003E461B /* BPMVVMTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0117F7AE21EF646D003E461B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0117F7B021EF647F003E461B /* BPMVVMViewController.h */,
+				0117F7B121EF647F003E461B /* BPMVVMViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0117F7AF21EF646E003E461B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0117F7BA21EF652F003E461B /* BPMVVMModel.h */,
+				0117F7BB21EF652F003E461B /* BPMVVMModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0117F7B321EF648E003E461B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0117F7B421EF648E003E461B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0117F7B521EF648F003E461B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0117F7B721EF6498003E461B /* BPMVPViewController.h */,
+				0117F7B821EF6498003E461B /* BPMVPViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0117F7B621EF648F003E461B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0117F7C421EF72DE003E461B /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MVVM;
 			sourceTree = "<group>";
 		};
 		011A772A201F252100D97E11 /* VolumeWaver */ = {
@@ -8037,8 +8158,8 @@
 		01C9357F1FC3358000D98FD6 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
-				0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */,
 				01352FE21FD2DDA20011D65C /* FeatureCatalog.plist */,
+				0168F3822035E4ED00D63D83 /* BasicKnowledgCatalog.plist */,
 				0168F3882035EC0B00D63D83 /* ImprovingTipCatalog.plist */,
 				014ED04F1FEFF9EE00D2926C /* Localizable.strings */,
 			);
@@ -10107,6 +10228,7 @@
 				011B7DD920693E5B0071CB5D /* UIBarButtonItem+BPCreate.m in Sources */,
 				014995331FB494D800077866 /* BPBaseTableView.m in Sources */,
 				018C44DA2009E74100CF43D7 /* BPCustomCardPageFlowViewController.m in Sources */,
+				0117F7BC21EF652F003E461B /* BPMVVMModel.m in Sources */,
 				010DB7521FDD4D450099E66F /* UINavigationController+BPKeyboardFix.m in Sources */,
 				01349C5520ECA71D00E50A86 /* BPDownLoadItem.m in Sources */,
 				017A9A2B1FDD22AB00CDA599 /* BPCacheTool.m in Sources */,
@@ -10176,10 +10298,12 @@
 				01B075A020E4FD0C004891F7 /* BPDrawViewController.m in Sources */,
 				01161F512030901300FA3441 /* BPNSSetViewController.m in Sources */,
 				01D22BD81FDD814000BCC4AD /* NSMutableArray+BPAdd.m in Sources */,
+				0117F7BF21EF6545003E461B /* BPMVVMViewModel.m in Sources */,
 				010DB73E1FDD4D450099E66F /* UIImage+BPGIF.m in Sources */,
 				0159A62720EC762900312293 /* BPDownLoadMoreFilesViewController.m in Sources */,
 				011DCE862084F1010045C035 /* BP1STCellAutoLayoutHeightViewController.m in Sources */,
 				010DB7391FDD4D450099E66F /* UITextField+BPBlocks.m in Sources */,
+				0117F7B221EF647F003E461B /* BPMVVMViewController.m in Sources */,
 				010DB7541FDD4D450099E66F /* UITableViewCell+BPNIB.m in Sources */,
 				013ED90A20C7DB3C00A83E7F /* BPIncludeTableSystemLayoutInsideHeaderView.m in Sources */,
 				016FCB6A20D61D380097F27E /* BPCardPageViewController.m in Sources */,
@@ -10348,6 +10472,7 @@
 				010FBD2520601D9E00BC9EC4 /* BPPaletteView.m in Sources */,
 				013ED90F20C7DB3C00A83E7F /* BPIncludeTableSystemLayoutController.m in Sources */,
 				01A597AC2085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.m in Sources */,
+				0117F7C221EF6941003E461B /* BPMVVMTableViewCell.m in Sources */,
 				0160718A204D3530009C66A2 /* PHAsset+BPAdd.m in Sources */,
 				014E484721B9185A007DF48A /* Animal.m in Sources */,
 				0137C760207C952700F6B6CE /* BPTextCompositionViewController.m in Sources */,
@@ -10366,6 +10491,7 @@
 				01EB476720CEB21400195E88 /* BPGestureRecognizerTableView.m in Sources */,
 				01A191C52004E1CB005EE4CD /* BPWebViewController.m in Sources */,
 				017CF99120D3AE0100D9AA30 /* BPCollectionViewNestGestureBannerCollectionViewCell.m in Sources */,
+				0117F7B921EF6498003E461B /* BPMVPViewController.m in Sources */,
 				01B075B820E4FD0C004891F7 /* BPShapeLayerViewController.m in Sources */,
 				01B075BA20E4FD0C004891F7 /* BPAutoresizingViewB.m in Sources */,
 				01A191DA2004E1F3005EE4CD /* BPSliderViewController.m in Sources */,
