@@ -6,10 +6,12 @@
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "BPBaseTableViewController.h"
+#import "BPBaseViewController.h"
 
-@interface BPSimpleTableController : BPBaseTableViewController
+@interface BPSimpleTableController : BPBaseViewController
 
-@property (strong, nonatomic) NSArray *dataArray;
+@property (nonatomic,strong) NSArray *dataArray;// 其他业务页面
+
+@property (nonatomic,copy) NSString *url; // 作为主导航用的
 
 @end

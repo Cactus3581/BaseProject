@@ -60,10 +60,7 @@ static NSString *urlstrimage1 = @"http://120.25.226.186:32812/resources/images/m
      finishTasksAndInvalidate 方法等请求完成之后释放代理对象。
      */
     [self.session finishTasksAndInvalidate];
-
 }
-
-
 
 /*
 NSURLSessionDataTask 发送 GET 请求:
@@ -73,10 +70,10 @@ NSURLSessionDataTask 发送 GET 请求:
  
 */
 - (void)setDataTask_get {
-    //确定请求路径
-    NSURL *url = [NSURL URLWithString:urlstr];
-    //创建 NSURLSession 对象
-    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSURL *url = [NSURL URLWithString:urlstr];//确定请求路径
+    
+    NSURLSession *session = [NSURLSession sharedSession];//创建 NSURLSession 对象
     
     /**
      根据对象创建 Task 请求
@@ -92,7 +89,7 @@ NSURLSessionDataTask 发送 GET 请求:
                                       ^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                                           
                                           //解析服务器返回的数据
-//                                          BPLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+                                          BPLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
                                           BPLog(@"%@", response);
 
                                           NSDictionary *dic = [self dictionaryWithdata:data];
@@ -127,9 +124,9 @@ NSURLSessionDataTask 发送 GET 请求:
     /*
      请求：
     请求行：
-    1.是请求方法，GET和POST是最常见的HTTP方法，除此以外还包括DELETE、HEAD、OPTIONS、PUT、TRACE。
-    2.为请求对应的URL地址，它和报文头的Host属性组成完整的请求URL。
-    3.是协议名称及版本号。
+    1.包括请求方法，GET和POST是最常见的HTTP方法，除此以外还包括DELETE、HEAD、OPTIONS、PUT、TRACE。
+    2.包括请求对应的URL地址，它和报文头的Host属性组成完整的请求URL。
+    3.包括协议名称及版本号。
      
      请求头：
      1.是HTTP的报文头，报文头包含若干个属性，格式为“属性名:属性值”，服务端据此获取客户端的信息。

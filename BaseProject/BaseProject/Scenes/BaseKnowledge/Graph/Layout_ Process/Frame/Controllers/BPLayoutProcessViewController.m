@@ -26,9 +26,9 @@ static CGFloat layoutProcessViewMetaValue = 20;
 - (void)viewDidLoad {
     [super viewDidLoad];
     BPLog(@"ViewController: 1-viewDidLoad");
-    self.rightBarButtonTitle = @"changeFrame";
+//    self.rightBarButtonTitle = @"changeFrame";
     [self initSubView];
-    [self testClick];
+//    [self testClick];
     #pragma mark - 测试滑动对lauoutSubViews的回调效果
     //self.scrollView.backgroundColor = kGreenColor;
 }
@@ -163,6 +163,17 @@ static CGFloat layoutProcessViewMetaValue = 20;
     self.layoutProcessView.center = CGPointMake(self.view.width/2.0, self.view.height/2.0);
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self testlayoutIfNeeded];
+}
+
+- (void)testlayoutIfNeeded {
+    [self.layoutProcessView setNeedsLayout];
+    BPLog(@"同步1");
+    
+    [self.layoutProcessView layoutIfNeeded];
+    BPLog(@"同步2");
+}
 #pragma mark - 滑动不会引起layoutSubViews
 - (UIScrollView *)scrollView {
     if (!_scrollView) {

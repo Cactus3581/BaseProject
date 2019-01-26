@@ -1,8 +1,8 @@
 //
-//  NSObject+BPSark.h
+//  BPSwizzlingParent.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 2019/1/13.
+//  Created by xiaruzhen on 2019/1/19.
 //  Copyright © 2019 cactus. All rights reserved.
 //
 
@@ -10,11 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSObject (BPSark)
+@interface BPSwizzlingParent : NSObject
 
-+ (void)p_foo;
-
-- (void)p_foo;
+- (void)foo;
 
 @end
 

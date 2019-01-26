@@ -1621,6 +1621,14 @@
 					</dict>
 				</array>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>isEqual与hash</string>
+				<key>fileName</key>
+				<string>BPEqualHashViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
 		</array>
 	</dict>
 	<dict>

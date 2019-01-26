@@ -77,8 +77,6 @@ typedef void(^successed)(NSArray *);
     return nil;
 }
 
-
-
 - (void)dealloc {
     
 }

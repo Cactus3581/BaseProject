@@ -6,7 +6,7 @@
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "BPBaseModel.h"
+#import <Foundation/Foundation.h>
 
 //完成情况
 typedef NS_ENUM(NSInteger, BPCompletePerformance) {
@@ -23,9 +23,7 @@ typedef NS_ENUM(NSInteger, BPImportance) {
     BPImportanceHigh,//重要的
 };
 
-@class BPBaseModel;
-
-@interface BPSimpleModel : BPBaseModel
+@interface BPSimpleModel : NSObject
 @property (nonatomic,copy)  NSString *title;
 @property (nonatomic,copy)  NSString *fileName;
 @property (nonatomic,strong)  NSArray *subVc_array;

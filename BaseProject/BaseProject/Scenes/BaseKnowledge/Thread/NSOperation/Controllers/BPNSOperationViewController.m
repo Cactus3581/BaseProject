@@ -591,6 +591,8 @@
 - (void)change {
     //创建一个并发队列
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+//    NSOperationQueue *queue = [NSOperationQueue mainQueue];
+
     queue.maxConcurrentOperationCount = 2; //最大并发数
     
     [queue addOperationWithBlock:^{

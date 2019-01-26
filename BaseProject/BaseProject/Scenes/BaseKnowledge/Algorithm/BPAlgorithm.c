@@ -289,13 +289,22 @@ char * ReverseSentence(char* s) {
             reverseWord(p, q - 1) ;
             q++ ; // 指向下一个单词首字符
             p = q ;
-        }
-        else
+        } else {
             q++ ;
+        }
     }
     reverseWord(p, q - 1) ; // 对最后一个单词逆序
     reverseWord(s, q - 1) ; // 对整个句子逆序
     return s;
+}
+
+// 对指针p和q之间的所有字符逆序，对单个单词进行翻转
+void reverseWord(char* p, char* q) {
+    while(p < q) {
+        char t = *p ;
+        *p++ = *q ;
+        *q-- = t ;
+    }
 }
 
 void getStr(char* p, char* q) {
@@ -321,13 +330,6 @@ void getStr(char* p, char* q) {
     printf("q = %s,*q = %c\n",q,*q);
 }
 
-// 对指针p和q之间的所有字符逆序
-void reverseWord(char* p, char* q) {
-    while(p < q) {
-        char t = *p ;
-        *p++ = *q ;
-        *q-- = t ;
-    }
-}
+
 
 

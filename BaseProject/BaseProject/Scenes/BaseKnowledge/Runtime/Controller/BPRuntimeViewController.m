@@ -14,7 +14,12 @@
 #import "Animal.h"
 #import "Bird.h"
 #import "People+Associated.h"
-#import "UIImage+Swizzling.h"
+#import "BPSwizzlingParent.h"
+#import "BPSwizzlingChild.h"
+#import "BPSwizzlingParent+BPSwizzling.h"
+
+#import "BPSwizzlingChild+BPSwizzing.h"
+
 #import "NSObject+BPDeallocBlockExecutor.h"
 #import "NSObject+BPModel.h"
 #import "NSObject+BPCustomKVO.h"
@@ -175,8 +180,8 @@
 #pragma mark - 面试题
 - (void)changeSark {
     // 测试代码1
-    [NSObject foo];
-    [[NSObject new] foo];
+    [NSObject p_foo];
+    [[NSObject new] p_foo];
 
     // 测试代码2
     NSString *name = @"ryan";
@@ -391,7 +396,20 @@ int test(int val) {
     // 需求：给imageNamed方法提供功能:判断图片是否加载成功。
     // 步骤一：先搞个分类，定义一个能加载图片并且能打印的方法+ (instancetype)imageWithName:(NSString *)name;
     // 步骤二：交换imageNamed和imageWithName的实现，就能调用imageWithName，间接调用imageWithName的实现。
-    UIImage *image = [UIImage imageNamed:@"123"];
+    
+    
+    BPSwizzlingParent *parent = [[BPSwizzlingParent alloc] init];
+    [parent foo];
+    
+    /*
+     父类的 +load 早于子类，但是并没有限制父类的分类加载会早于子类的分类的加载，实际上这取决于编译的顺序。
+     
+父类在子类之后 Swizzling 其实并没有对子类 hook 到。
+     */
+    //我并没有重写子类的foo方法，所以如果此时直接将两个方法进行交换，实际上是将它的父类的foo和s_foo方法进行交换。
+//    BPSwizzlingChild *child = [[BPSwizzlingChild alloc] init];
+//    [child foo];
+    
 }
 
 #pragma mark - 动态创建一个类，并创建成员变量和方法，最后赋值成员变量并发送消息。其中成员变量的赋值使用了KVC和object_setIvar函数两种方式

@@ -8,22 +8,56 @@
 
 #import "BPSimpleTableViewCell.h"
 #import "BPSimpleModel.h"
+#import <Masonry.h>
+
 static NSString *cellIdentifier = @"BPSimpleTableViewCell";
 
-@implementation BPSimpleTableViewCell
+@interface BPSimpleTableViewCell ()
+
+@end
+
+@implementation BPSimpleTableViewCell {
+    UILabel *_titleLabel;
+    UILabel *_detailLabel;
+}
 
 + (instancetype)cellWithTableView:(UITableView *)tableView {
     BPSimpleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[BPSimpleTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-        //cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell = [[BPSimpleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        [cell initializeUI];
     }
     return cell;
 }
 
 + (instancetype)xib_cellWithTableView:(UITableView *)tableView {
     BPSimpleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    [cell initializeUI];
     return cell;
+}
+
+#pragma mark - initialize methods
+- (void)initializeUI {
+    self.backgroundColor = kWhiteColor;
+    UILabel *songNameLabel = [UILabel new];
+    _titleLabel = songNameLabel;
+    songNameLabel.numberOfLines = 0;
+    [self.contentView addSubview:songNameLabel];
+    [songNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(self).offset(widthRatio(10));
+        make.top.equalTo(self).offset(widthRatio(2.5));
+    }];
+    
+    UILabel *artistLabel = [UILabel new];
+    _detailLabel = artistLabel;
+    [self.contentView addSubview:artistLabel];
+    [artistLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(songNameLabel);
+        make.top.equalTo(songNameLabel.mas_bottom).offset(widthRatio(2.5));
+    }];
+    
+    _titleLabel.backgroundColor = kRedColor;
+    _detailLabel.backgroundColor = kGreenColor;
 }
 
 - (void)setModel:(BPSimpleModel *)model indexPath:(NSIndexPath *)indexPath {

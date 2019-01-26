@@ -98,6 +98,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)bp_postNotificationWithName:(NSString *)name userInfo:(nullable NSDictionary *)userInfo;
 
++ (void)p_swizzleMethods:(Class)class originalSelector:(SEL)origSel swizzledSelector:(SEL)swizSel;
+
 @end
 
 NS_ASSUME_NONNULL_END

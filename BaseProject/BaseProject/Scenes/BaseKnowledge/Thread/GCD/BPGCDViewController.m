@@ -25,6 +25,9 @@
 
 @interface BPGCDViewController ()
 @property (nonatomic,strong) dispatch_semaphore_t semaphore; // 测试崩溃
+
+@property (assign, nonatomic) NSInteger index;
+@property (strong, nonatomic) NSArray *array;
 @end
 
 @implementation BPGCDViewController
@@ -845,6 +848,13 @@
 #pragma mark -  面试题
 - (void)change {
     
+    for (int i = 0; i<100000; i++) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            self.index = self.index + 1;//不是原子操作,当前线程store的时候可能其他线程已经执行了若干次store了，导致最后的值小于预期值。这种场景我们也可以称之为多线程不安全。
+            //self.array = @[@"asd"];
+            
+        });
+    }
 }
 
 - (void)dealloc {
