@@ -5755,14 +5755,14 @@
 		017906DA20011C2E00E5C360 /* OtherKnowledge */ = {
 			isa = PBXGroup;
 			children = (
-				019DA7D821D1C18400E3AB16 /* GeneralProgramming */,
-				0138525B21F1D293008C5871 /* isEqualAndHash */,
-				01DBF16B20E7D301001C52C0 /* ManagerController */,
-				011F91BF20E6661D00124DC1 /* Debug */,
-				01F0DDD820CA2090005082C7 /* Inherit */,
 				0179070A20011DC200E5C360 /* Copy */,
 				017906F020011D4100E5C360 /* DataPersistence */,
+				011F91BF20E6661D00124DC1 /* Debug */,
+				019DA7D821D1C18400E3AB16 /* GeneralProgramming */,
+				01F0DDD820CA2090005082C7 /* Inherit */,
+				0138525B21F1D293008C5871 /* isEqualAndHash */,
 				017906DB20011C7E00E5C360 /* KVC */,
+				01DBF16B20E7D301001C52C0 /* ManagerController */,
 				017906EC20011D1600E5C360 /* Modifier_Static&Const */,
 				017906FF20011D8100E5C360 /* NetRequest */,
 			);

@@ -15,9 +15,12 @@
 #import "BPBaseWebViewController.h"
 
 @interface BPSimpleTableController ()<UITableViewDelegate>
+
 @property (strong, nonatomic) BPSimpleViewModel *viewModel;
 @property (nonatomic, strong) UITableView *tableView;
+
 @end
+
 
 @implementation BPSimpleTableController
 
@@ -129,7 +132,6 @@
 - (void)tableView:(UITableView*)tableView didDeselectRowAtIndexPath:(NSIndexPath*)indexPath {
     
 }
-
 
 - (NSIndexPath *)getIndexPathWithPoint:(CGPoint)point{
     __block NSIndexPath *indexPath = nil;
