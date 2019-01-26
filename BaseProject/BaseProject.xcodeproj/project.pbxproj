@@ -3089,7 +3089,6 @@
 				011DF64021F06FDD0099A962 /* DesignLib */,
 				01161F522030975C00FA3441 /* DesignPatterns */,
 				01F373102065525D007B1498 /* Event */,
-				019DA7D821D1C18400E3AB16 /* GeneralProgramming */,
 				01B0751B20E4FD0C004891F7 /* Graph */,
 				016D95B620E38B8F00651EDE /* Kit */,
 				01490C041FF548010035492D /* Memory */,
@@ -5756,6 +5755,7 @@
 		017906DA20011C2E00E5C360 /* OtherKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				019DA7D821D1C18400E3AB16 /* GeneralProgramming */,
 				0138525B21F1D293008C5871 /* isEqualAndHash */,
 				01DBF16B20E7D301001C52C0 /* ManagerController */,
 				011F91BF20E6661D00124DC1 /* Debug */,

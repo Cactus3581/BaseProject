@@ -947,6 +947,14 @@
 					</dict>
 				</array>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>Target-Action</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -1629,32 +1637,32 @@
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>编程通用知识点</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
 			<dict>
 				<key>title</key>
-				<string>三目运算符</string>
+				<string>编程通用知识点</string>
 				<key>fileName</key>
-				<string>BPGeneralProgrammingViewController</string>
+				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
 				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>全局变量、static和const</string>
-				<key>fileName</key>
-				<string>BPGeneralProgrammingViewController</string>
-				<key>briefIntro</key>
-				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>三目运算符</string>
+						<key>fileName</key>
+						<string>BPGeneralProgrammingViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>全局变量、static和const</string>
+						<key>fileName</key>
+						<string>BPGeneralProgrammingViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 		</array>
 	</dict>
