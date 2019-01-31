@@ -257,6 +257,16 @@
 		0153F13620B2A502007C50C5 /* BPChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153F13520B2A502007C50C5 /* BPChatDetailViewController.m */; };
 		0153F13B20B2A65A007C50C5 /* BPPhotoBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153F13A20B2A659007C50C5 /* BPPhotoBrowserViewController.m */; };
 		0153F14020B2A6A6007C50C5 /* BPWeChatRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0153F13F20B2A6A6007C50C5 /* BPWeChatRootViewController.m */; };
+		0154D0A72202D96B00819387 /* BPMediaPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0154D0A62202D96B00819387 /* BPMediaPlayer.m */; };
+		0154D0AA2202DA0900819387 /* BPDeviceOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0154D0A92202DA0900819387 /* BPDeviceOrientation.m */; };
+		0154D0B12202DA1C00819387 /* BPVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0154D0AC2202DA1C00819387 /* BPVideoView.m */; };
+		0154D0B22202DA1C00819387 /* BPVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0154D0AE2202DA1C00819387 /* BPVideoView.xib */; };
+		0154D0B82202DA2600819387 /* BPMediaDataSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0154D0B52202DA2500819387 /* BPMediaDataSourceManager.m */; };
+		0154D0B92202DA2600819387 /* BPMediaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0154D0B62202DA2500819387 /* BPMediaModel.m */; };
+		0154D0BC2202DF0700819387 /* BPPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0154D0BB2202DF0700819387 /* BPPlayerViewController.m */; };
+		0154D0C02202DF6A00819387 /* BPAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0154D0BE2202DF6A00819387 /* BPAudioView.m */; };
+		0154D0C12202DF6A00819387 /* BPAudioView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0154D0BF2202DF6A00819387 /* BPAudioView.xib */; };
+		0154D0C42202E07000819387 /* BPGradualAnimationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0154D0C32202E07000819387 /* BPGradualAnimationButton.m */; };
 		0156295A21D375CB002A6722 /* launchImage8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0156295821D375CB002A6722 /* launchImage8@2x.png */; };
 		0156295B21D375CB002A6722 /* launchImage8@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0156295921D375CB002A6722 /* launchImage8@3x.png */; };
 		015804E520CACF6D00D0EF7C /* BPTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 015804E420CACF6D00D0EF7C /* BPTestViewController.m */; };
@@ -1281,6 +1291,24 @@
 		0153F13A20B2A659007C50C5 /* BPPhotoBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPhotoBrowserViewController.m; sourceTree = "<group>"; };
 		0153F13E20B2A6A6007C50C5 /* BPWeChatRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPWeChatRootViewController.h; sourceTree = "<group>"; };
 		0153F13F20B2A6A6007C50C5 /* BPWeChatRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPWeChatRootViewController.m; sourceTree = "<group>"; };
+		0154D0A52202D96B00819387 /* BPMediaPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMediaPlayer.h; sourceTree = "<group>"; };
+		0154D0A62202D96B00819387 /* BPMediaPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMediaPlayer.m; sourceTree = "<group>"; };
+		0154D0A82202DA0900819387 /* BPDeviceOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDeviceOrientation.h; sourceTree = "<group>"; };
+		0154D0A92202DA0900819387 /* BPDeviceOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDeviceOrientation.m; sourceTree = "<group>"; };
+		0154D0AC2202DA1C00819387 /* BPVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPVideoView.m; sourceTree = "<group>"; };
+		0154D0AE2202DA1C00819387 /* BPVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPVideoView.xib; sourceTree = "<group>"; };
+		0154D0AF2202DA1C00819387 /* BPVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPVideoView.h; sourceTree = "<group>"; };
+		0154D0B42202DA2500819387 /* BPMediaDataSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMediaDataSourceManager.h; sourceTree = "<group>"; };
+		0154D0B52202DA2500819387 /* BPMediaDataSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPMediaDataSourceManager.m; sourceTree = "<group>"; };
+		0154D0B62202DA2500819387 /* BPMediaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPMediaModel.m; sourceTree = "<group>"; };
+		0154D0B72202DA2600819387 /* BPMediaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMediaModel.h; sourceTree = "<group>"; };
+		0154D0BA2202DF0700819387 /* BPPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPPlayerViewController.h; sourceTree = "<group>"; };
+		0154D0BB2202DF0700819387 /* BPPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPlayerViewController.m; sourceTree = "<group>"; };
+		0154D0BD2202DF6A00819387 /* BPAudioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPAudioView.h; sourceTree = "<group>"; };
+		0154D0BE2202DF6A00819387 /* BPAudioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPAudioView.m; sourceTree = "<group>"; };
+		0154D0BF2202DF6A00819387 /* BPAudioView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPAudioView.xib; sourceTree = "<group>"; };
+		0154D0C22202E07000819387 /* BPGradualAnimationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGradualAnimationButton.h; sourceTree = "<group>"; };
+		0154D0C32202E07000819387 /* BPGradualAnimationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGradualAnimationButton.m; sourceTree = "<group>"; };
 		0156295821D375CB002A6722 /* launchImage8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage8@2x.png"; sourceTree = "<group>"; };
 		0156295921D375CB002A6722 /* launchImage8@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launchImage8@3x.png"; sourceTree = "<group>"; };
 		01564DF020C90FCE00325B71 /* BPUtilityCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPUtilityCategory.h; sourceTree = "<group>"; };
@@ -2386,17 +2414,6 @@
 			path = GaussianBlur;
 			sourceTree = "<group>";
 		};
-		01027AE71FDEDA740003F0FE /* Player */ = {
-			isa = PBXGroup;
-			children = (
-				01027AFE1FDEDAF30003F0FE /* Controllers */,
-				01027AFF1FDEDAF30003F0FE /* Models */,
-				01027B001FDEDAF30003F0FE /* ViewModels */,
-				01027AFD1FDEDAF20003F0FE /* Views */,
-			);
-			path = Player;
-			sourceTree = "<group>";
-		};
 		01027AE81FDEDA8D0003F0FE /* ReadBook */ = {
 			isa = PBXGroup;
 			children = (
@@ -2459,34 +2476,6 @@
 			sourceTree = "<group>";
 		};
 		01027AFC1FDEDAEC0003F0FE /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		01027AFD1FDEDAF20003F0FE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		01027AFE1FDEDAF30003F0FE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		01027AFF1FDEDAF30003F0FE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		01027B001FDEDAF30003F0FE /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -3051,6 +3040,7 @@
 		010FBC4320601A0800BC9EC4 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				0154D09B2202D8EA00819387 /* Player */,
 				01D1288521ED8B2C00C129A6 /* LocalNotification */,
 				01027AD91FDED98E0003F0FE /* Alert */,
 				01027ADC1FDED9C50003F0FE /* Animation */,
@@ -3064,7 +3054,6 @@
 				0158055820CAE0E400D0EF7C /* DynamicTag */,
 				01027AE21FDEDA2F0003F0FE /* EnlargeImage */,
 				01027AE31FDEDA410003F0FE /* GaussianBlur */,
-				01027AE71FDEDA740003F0FE /* Player */,
 				014995941FB4A5F300077866 /* PopView */,
 				01027AE81FDEDA8D0003F0FE /* ReadBook */,
 				01027AE91FDEDA990003F0FE /* SecondaryMenu */,
@@ -4517,6 +4506,63 @@
 				0153F13F20B2A6A6007C50C5 /* BPWeChatRootViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0154D09B2202D8EA00819387 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				0154D0AB2202DA1C00819387 /* Views */,
+				0154D0A12202D94C00819387 /* Tools */,
+				0154D09E2202D8F700819387 /* Controllers */,
+				0154D09C2202D8F600819387 /* Models */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		0154D09C2202D8F600819387 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0154D0A82202DA0900819387 /* BPDeviceOrientation.h */,
+				0154D0A92202DA0900819387 /* BPDeviceOrientation.m */,
+				0154D0B42202DA2500819387 /* BPMediaDataSourceManager.h */,
+				0154D0B52202DA2500819387 /* BPMediaDataSourceManager.m */,
+				0154D0B72202DA2600819387 /* BPMediaModel.h */,
+				0154D0B62202DA2500819387 /* BPMediaModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0154D09E2202D8F700819387 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0154D0BA2202DF0700819387 /* BPPlayerViewController.h */,
+				0154D0BB2202DF0700819387 /* BPPlayerViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0154D0A12202D94C00819387 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				0154D0A52202D96B00819387 /* BPMediaPlayer.h */,
+				0154D0A62202D96B00819387 /* BPMediaPlayer.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		0154D0AB2202DA1C00819387 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0154D0BD2202DF6A00819387 /* BPAudioView.h */,
+				0154D0BE2202DF6A00819387 /* BPAudioView.m */,
+				0154D0BF2202DF6A00819387 /* BPAudioView.xib */,
+				0154D0C22202E07000819387 /* BPGradualAnimationButton.h */,
+				0154D0C32202E07000819387 /* BPGradualAnimationButton.m */,
+				0154D0AF2202DA1C00819387 /* BPVideoView.h */,
+				0154D0AC2202DA1C00819387 /* BPVideoView.m */,
+				0154D0AE2202DA1C00819387 /* BPVideoView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		015804DB20CAB5B100D0EF7C /* UINavigationController */ = {
@@ -9702,6 +9748,7 @@
 			files = (
 				01FE8644211AE6CE0060B141 /* BPNibView.xib in Resources */,
 				01D27442212D0EAD00E3E862 /* BPCAKeyframeAnimationViewController.xib in Resources */,
+				0154D0C12202DF6A00819387 /* BPAudioView.xib in Resources */,
 				0168F3892035EC0B00D63D83 /* ImprovingTipCatalog.plist in Resources */,
 				01D6FBB720C80F7E00AD8A6E /* BPIncludeTableManualInsideHeaderView.xib in Resources */,
 				01D27438212D0A7E00E3E862 /* BPBasicAnimationViewController.xib in Resources */,
@@ -9733,6 +9780,7 @@
 				01B075C520E4FD0D004891F7 /* BPAlignmentRectInsetsTemplateView.xib in Resources */,
 				014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */,
 				011E8D9D20B2F7BA00B04378 /* BPPlanGeneralTableViewCell.xib in Resources */,
+				0154D0B22202DA1C00819387 /* BPVideoView.xib in Resources */,
 				017CF98320D3AE0100D9AA30 /* BPCollectionViewNestGestureViewController.xib in Resources */,
 				0167A35820E619F100F13905 /* BPTransformViewController.xib in Resources */,
 				0159A63620EC782600312293 /* BPDownLoadMoreFilesTableViewCell.xib in Resources */,
@@ -9868,6 +9916,7 @@
 				01B075C920E4FD0D004891F7 /* BPIntrinsicContentSizeLabel.m in Sources */,
 				01DBF15420E7740D001C52C0 /* BPPreferredMaxLayoutWidthViewController.m in Sources */,
 				010DB7441FDD4D450099E66F /* UIImage+BPBetterFace.m in Sources */,
+				0154D0BC2202DF0700819387 /* BPPlayerViewController.m in Sources */,
 				01D6FBA520C80ED900AD8A6E /* BPIncludeTableManualController.m in Sources */,
 				010DB75A1FDD4D450099E66F /* UIFont+BPTTF.m in Sources */,
 				0167A35720E619F100F13905 /* BPTransformViewController.m in Sources */,
@@ -9893,6 +9942,7 @@
 				010DB72E1FDD4D450099E66F /* UIBezierPath+BPSymbol.m in Sources */,
 				010F7B9220F2300D00A0AC33 /* BPFlowCategoryViewController.m in Sources */,
 				01DF32171FDD3B3000B8A955 /* NSString+BPDictionaryValue.m in Sources */,
+				0154D0B12202DA1C00819387 /* BPVideoView.m in Sources */,
 				01F2CE8820AAC31100F1D701 /* BP_Four_TopSliderCategorySubViewController.m in Sources */,
 				010DB7AC1FDD4D6F0099E66F /* UIButton+BPBlock.m in Sources */,
 				010DB70C1FDD4D450099E66F /* UIImageView+BPFaceAwareFill.m in Sources */,
@@ -9910,6 +9960,7 @@
 				010DB7431FDD4D450099E66F /* UIImage+BPAnimatedGIF.m in Sources */,
 				01DF31CD1FDD3A9100B8A955 /* NSMutableURLRequest+BPUpload.m in Sources */,
 				01DF31C71FDD3A9100B8A955 /* NSUserDefaults+BPiCloudSync.m in Sources */,
+				0154D0C02202DF6A00819387 /* BPAudioView.m in Sources */,
 				011E8D7D20B2F7AA00B04378 /* BPCalendarAppearance.m in Sources */,
 				011BE5602101793500842DDF /* BPCALayerBasePropertyViewController.m in Sources */,
 				018C451E200A5AD300CF43D7 /* YYFPSLabel.m in Sources */,
@@ -10011,6 +10062,7 @@
 				018C451D200A5AD300CF43D7 /* YYWeakProxy.m in Sources */,
 				011B7DDA20693E5B0071CB5D /* UINavigation+BPFixSpace.m in Sources */,
 				017A9A961FDD314C00CDA599 /* UIButton+BPImagePosition.m in Sources */,
+				0154D0A72202D96B00819387 /* BPMediaPlayer.m in Sources */,
 				010DB7181FDD4D450099E66F /* UINavigationItem+BPMargin.m in Sources */,
 				01D27437212D0A7E00E3E862 /* BPBasicAnimationViewController.m in Sources */,
 				014E484421B917B1007DF48A /* Bird.m in Sources */,
@@ -10285,6 +10337,7 @@
 				01D22BDE1FDD814000BCC4AD /* NSTimer+BPAdd.m in Sources */,
 				011E8DC220B2FB3300B04378 /* BPCalendarDayCell.m in Sources */,
 				0158055320CAE09400D0EF7C /* BPOptimizeTableViewCell.m in Sources */,
+				0154D0B92202DA2600819387 /* BPMediaModel.m in Sources */,
 				01B075AB20E4FD0C004891F7 /* BPMasonryAutoLayoutMoreDetailProcessViewController.m in Sources */,
 				010DB74F1FDD4D450099E66F /* UIBarButtonItem+BPBadge.m in Sources */,
 				01D22BCD1FDD814000BCC4AD /* NSNumber+BPAdd.m in Sources */,
@@ -10486,7 +10539,9 @@
 				01DF31CE1FDD3A9100B8A955 /* NSURLRequest+BPParamsFromDictionary.m in Sources */,
 				010DB72A1FDD4D450099E66F /* UIBezierPath+BPBasicShapes.m in Sources */,
 				010DB7901FDD4D640099E66F /* UIView+BPFrame.m in Sources */,
+				0154D0AA2202DA0900819387 /* BPDeviceOrientation.m in Sources */,
 				01DF321F1FDD3B3000B8A955 /* NSString+BPMatcher.m in Sources */,
+				0154D0C42202E07000819387 /* BPGradualAnimationButton.m in Sources */,
 				016FCB7A20D642030097F27E /* BPScrollTargetContentOffsetViewController.m in Sources */,
 				01D22BD61FDD814000BCC4AD /* UIDevice+BPAdd.m in Sources */,
 				01EC9C0521BA79B100477EB8 /* BPQueue.m in Sources */,
@@ -10517,6 +10572,7 @@
 				011E8D9C20B2F7BA00B04378 /* BPPlanCalendarTableViewCell.m in Sources */,
 				017906EF20011D1600E5C360 /* BPStaticConstViewController.m in Sources */,
 				013ED93320C7DE0400A83E7F /* BPIncludeTableSelfSizeHeaderView.m in Sources */,
+				0154D0B82202DA2600819387 /* BPMediaDataSourceManager.m in Sources */,
 				010DB70F1FDD4D450099E66F /* UIImageView+BPReflect.m in Sources */,
 				01DF31EC1FDD3B1600B8A955 /* NSURL+BPQueryDictionary.m in Sources */,
 				019C635D20E0E0DF00CE37F8 /* BPClassObjectMethod.m in Sources */,

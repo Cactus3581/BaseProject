@@ -232,9 +232,9 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>音频播放器</string>
+		<string>音视频播放器</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPPlayerViewController</string>
 		<key>briefIntro</key>
 		<string>边播边下载</string>
 	</dict>

@@ -11,6 +11,9 @@
 #import <Bugly/Bugly.h>
 #import "BPBaseViewController.h"
 #import "BPBaseNavigationController.h"
+#import "Reachability.h"
+
+NSString *const kChangedNotification = @"kChangedNotification";
 
 @interface BPAppDelegate ()
 
@@ -220,6 +223,39 @@
     }
     [_window bringSubviewToFront:_logView];
     return _logView;
+}
+
+#pragma 网络监测
+- (void)configAFNetworkReachabilityManager {
+    __weak typeof(self) weakSelf = self;
+    Reachability *reach = [Reachability reachabilityForInternetConnection];
+    [reach startNotifier];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkReachabilityStatus:) name:kReachabilityChangedNotification object:nil];
+    
+    reach.reachableBlock = ^(Reachability *reach) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"REACHABLE!");
+        });
+    };
+    //
+    //    reach.unreachableBlock = ^(Reachability *reach) {
+    //        dispatch_async(dispatch_get_main_queue(), ^{
+    //            NSLog(@"UNREACHABLE!");
+    //        });
+    //    };
+    //
+    //    reach.reachabilityBlock = ^(Reachability * reachability, SCNetworkConnectionFlags flags) {
+    //        dispatch_async(dispatch_get_main_queue(), ^{
+    //            NSLog(@"reachabilityBlock!");
+    //        });
+    //    };
+}
+
+- (void)networkReachabilityStatus:(NSNotification *)notification {
+    Reachability *reach = notification.object;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kChangedNotification
+                                                        object:reach];
 }
 
 @end

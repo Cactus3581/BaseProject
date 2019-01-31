@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "BPStatisticsLogView.h"
 
+extern NSString *const kChangedNotification;
+
 @interface BPAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UITabBarController *rootTabbarViewController;
