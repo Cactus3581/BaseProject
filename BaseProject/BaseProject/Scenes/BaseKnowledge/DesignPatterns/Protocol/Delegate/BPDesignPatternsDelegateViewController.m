@@ -1,18 +1,18 @@
 //
-//  BPDesignPatternsDelegateViewControllerB.m
+//  BPDesignPatternsDelegateViewController.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/3/23.
 //  Copyright © 2018年 cactus. All rights reserved.
 //
 
-#import "BPDesignPatternsDelegateViewControllerB.h"
+#import "BPDesignPatternsDelegateViewController.h"
 
-@interface BPDesignPatternsDelegateViewControllerB ()
+@interface BPDesignPatternsDelegateViewController ()
 
 @end
 
-@implementation BPDesignPatternsDelegateViewControllerB
+@implementation BPDesignPatternsDelegateViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,6 +30,5 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
 
 @end

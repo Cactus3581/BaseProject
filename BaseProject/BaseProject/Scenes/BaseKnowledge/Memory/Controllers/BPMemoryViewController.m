@@ -115,6 +115,11 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
                 break;
                 
             case 10:{
+                [self memory_pool];
+            }
+                break;
+                
+            case 11:{
                 [self change];//面试题
             }
                 break;
@@ -406,6 +411,22 @@ static NSString *sName = @"Dely";//全局（静态初始化）区
     BPDLog(a1); BPDLog(a2); BPDLog(a3); BPDLog(a4); BPDLog(a5); BPDLog(a6);BPDLog(a7);
 }
 
+
+#pragma mark - 自动释放池
+- (void)memory_pool {
+    //1.内存泄漏
+    //2.过度延缓释放
+    for (int i = 0; i<100; i++) {
+        /*
+         Person *per = [[Person alloc]init];
+         //[per release]; 若没有这句会造成：//1.内存泄漏
+         [per autorelease];  //2.这句话会造成过度延缓释放
+         */
+        @autoreleasepool {
+            NSArray *per = [[NSArray alloc] init];
+        }
+    }
+}
 
 #pragma mark - 面试题
 - (void)change {

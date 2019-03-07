@@ -13,7 +13,7 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>类和对象</string>
+				<string>类和对象（Class、id）+（NSObject）</string>
 				<key>fileName</key>
 				<string>BPClassObjectViewController</string>
 				<key>briefIntro</key>
@@ -24,6 +24,73 @@
 				<string>类方法和对象方法</string>
 				<key>fileName</key>
 				<string>BPClassObjecMethodtViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>NSCopy协议</string>
+				<key>fileName</key>
+				<string>BPAboutCopyViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>NSEncoding协议</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>继承</string>
+				<key>fileName</key>
+				<string>BPSimpleTableController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>NSObject继承</string>
+						<key>fileName</key>
+						<string>BPInheritObjectController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>UIView继承</string>
+						<key>fileName</key>
+						<string>BPInheritViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>比较：isEqual与hash</string>
+				<key>fileName</key>
+				<string>BPEqualHashViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>内省与动态类型：IsMemberOfClass</string>
+				<key>fileName</key>
+				<string>BPIsMemberOfClassViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>NSProxy：另一个根对象</string>
+				<key>fileName</key>
+				<string>BPNSProxyViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -140,13 +207,23 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>面试题</string>
+				<string>自动释放池</string>
 				<key>fileName</key>
 				<string>BPMemoryViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 				<key>dynamicJumpString</key>
 				<string>{&quot;type&quot;:&quot;10&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>面试题</string>
+				<key>fileName</key>
+				<string>BPMemoryViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;11&quot;}</string>
 			</dict>
 		</array>
 	</dict>
@@ -955,6 +1032,35 @@
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>Protocol</string>
+				<key>fileName</key>
+				<string>BPSimpleTableController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>使用Protocol</string>
+						<key>fileName</key>
+						<string>BPDesignPatternsProtocolViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;0&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>Delegate</string>
+						<key>fileName</key>
+						<string>BPDesignPatternsProtocolViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -1441,14 +1547,6 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>拷贝</string>
-				<key>fileName</key>
-				<string>BPAboutCopyViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
 				<string>数据持久化</string>
 				<key>fileName</key>
 				<string>BPSimpleTableController</string>
@@ -1513,33 +1611,6 @@
 				<string>BPNetRequestViewController</string>
 				<key>briefIntro</key>
 				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>继承</string>
-				<key>fileName</key>
-				<string>BPSimpleTableController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>subVc_array</key>
-				<array>
-					<dict>
-						<key>title</key>
-						<string>NSObject继承</string>
-						<key>fileName</key>
-						<string>BPInheritObjectController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>UIView继承</string>
-						<key>fileName</key>
-						<string>BPInheritViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-				</array>
 			</dict>
 			<dict>
 				<key>title</key>
@@ -1628,14 +1699,6 @@
 						<string>{&quot;type&quot;:&quot;2&quot;}</string>
 					</dict>
 				</array>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>isEqual与hash</string>
-				<key>fileName</key>
-				<string>BPEqualHashViewController</string>
-				<key>briefIntro</key>
-				<string></string>
 			</dict>
 			<dict>
 				<key>title</key>

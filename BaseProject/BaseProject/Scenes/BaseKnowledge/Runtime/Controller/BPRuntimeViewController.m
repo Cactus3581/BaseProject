@@ -242,6 +242,8 @@
     
     BPLog(@"NSArray %d,%d",[[NSArray class] isKindOfClass:[NSArray class]],[[NSArray class] isMemberOfClass:[NSArray class]]); // 0,0
     BPLog(@"NSObject %d,%d",[[NSObject class] isKindOfClass:[NSObject class]],[[NSObject class] isMemberOfClass:[NSObject class]]); // 1,0
+    BPLog(@"UIViewController %d,%d",[[UIViewController class] isKindOfClass:[UIViewController class]],[[UIViewController class] isMemberOfClass:[UIViewController class]]); // 0,0
+
 
     // sing=1没有声明，也没有实现，但是sing的sel指向了otherdSing的函数实现；dance=0没有声明，也没有实现；hello=1提供了声明和实现；say=0有声明，没实现；
     People *people = [[People alloc] init];

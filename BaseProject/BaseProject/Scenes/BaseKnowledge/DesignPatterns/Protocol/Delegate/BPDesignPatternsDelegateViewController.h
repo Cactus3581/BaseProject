@@ -1,5 +1,5 @@
 //
-//  BPDesignPatternsDelegateViewControllerB.h
+//  BPDesignPatternsDelegateViewController.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/3/23.
@@ -14,7 +14,7 @@
 - (NSString *)configDelegate;
 
 @end
-@interface BPDesignPatternsDelegateViewControllerB : BPBaseViewController
+@interface BPDesignPatternsDelegateViewController : BPBaseViewController
 //3.声明协议代理
 @property(nonatomic,assign)id<BPDesignPatternsDelegateViewControllerDelegate>delegate;
 @end
