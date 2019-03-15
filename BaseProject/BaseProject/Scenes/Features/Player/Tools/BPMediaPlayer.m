@@ -14,8 +14,6 @@
 #import "BPMediaModel.h"
 #import "SDWebImageManager.h"
 
-
-
 static NSString *kPlayerAudioLastMediaCacheName   = @"PlayerAudioLastMediaCache.data";
 static NSString *kPlayerAudioLastCourseModelCacheName   = @"PlayerAudioLastCourseModelCache.data";
 

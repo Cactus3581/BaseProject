@@ -1606,11 +1606,86 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>一般的网络请求</string>
+				<string>网络请求</string>
 				<key>fileName</key>
-				<string>BPNetRequestViewController</string>
+				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
 				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>以Block的方式进行普通请求</string>
+						<key>fileName</key>
+						<string>BPNetRequestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>以Delegate的方式进行普通请求</string>
+						<key>fileName</key>
+						<string>BPNetRequestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>以Block的方式进行下载请求</string>
+						<key>fileName</key>
+						<string>BPNetRequestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>以Delegate的方式进行下载请求</string>
+						<key>fileName</key>
+						<string>BPNetRequestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>以Block的方式进行上传文件请求</string>
+						<key>fileName</key>
+						<string>BPNetRequestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>以Delegate的方式进行上传文件请求</string>
+						<key>fileName</key>
+						<string>BPNetRequestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>以Block的方式建立TCP/IP连接</string>
+						<key>fileName</key>
+						<string>BPNetRequestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>以Delegate的方式建立TCP/IP连接</string>
+						<key>fileName</key>
+						<string>BPNetRequestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>配置Session</string>
+						<key>fileName</key>
+						<string>BPNetRequestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>title</key>

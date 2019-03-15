@@ -10,7 +10,4 @@
 
 @interface BPNetRequestViewController : BPBaseViewController
 
-@property (nonatomic,strong) NSString *titleName;
-@property (nonatomic,assign) NSInteger row;
-
 @end

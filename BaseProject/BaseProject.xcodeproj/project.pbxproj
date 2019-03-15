@@ -433,6 +433,7 @@
 		018C44DD2009E75200CF43D7 /* BPCustomCardPageFlowViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 018C44DC2009E75200CF43D7 /* BPCustomCardPageFlowViewCell.m */; };
 		018C451D200A5AD300CF43D7 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 018C4519200A5AD300CF43D7 /* YYWeakProxy.m */; };
 		018C451E200A5AD300CF43D7 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 018C451B200A5AD300CF43D7 /* YYFPSLabel.m */; };
+		018D09E0223A3EBB001C9128 /* CALayer+BPMask.m in Sources */ = {isa = PBXBuildFile; fileRef = 018D09DF223A3EBB001C9128 /* CALayer+BPMask.m */; };
 		018DF00621F2D37D001D334D /* BPSwizzlingParent.m in Sources */ = {isa = PBXBuildFile; fileRef = 018DF00521F2D37D001D334D /* BPSwizzlingParent.m */; };
 		018DF00921F2D389001D334D /* BPSwizzlingChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 018DF00821F2D389001D334D /* BPSwizzlingChild.m */; };
 		018DF00C21F2D3A7001D334D /* BPSwizzlingChild+BPSwizzing.m in Sources */ = {isa = PBXBuildFile; fileRef = 018DF00B21F2D3A7001D334D /* BPSwizzlingChild+BPSwizzing.m */; };
@@ -1628,6 +1629,8 @@
 		018C451A200A5AD300CF43D7 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		018C451B200A5AD300CF43D7 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		018C451C200A5AD300CF43D7 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
+		018D09DE223A3EBB001C9128 /* CALayer+BPMask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+BPMask.h"; sourceTree = "<group>"; };
+		018D09DF223A3EBB001C9128 /* CALayer+BPMask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+BPMask.m"; sourceTree = "<group>"; };
 		018DF00421F2D37D001D334D /* BPSwizzlingParent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPSwizzlingParent.h; sourceTree = "<group>"; };
 		018DF00521F2D37D001D334D /* BPSwizzlingParent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPSwizzlingParent.m; sourceTree = "<group>"; };
 		018DF00721F2D389001D334D /* BPSwizzlingChild.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPSwizzlingChild.h; sourceTree = "<group>"; };
@@ -8688,6 +8691,8 @@
 			children = (
 				01DF31631FDD3A0800B8A955 /* CALayer+BPBorderColor.h */,
 				01DF31641FDD3A0800B8A955 /* CALayer+BPBorderColor.m */,
+				018D09DE223A3EBB001C9128 /* CALayer+BPMask.h */,
+				018D09DF223A3EBB001C9128 /* CALayer+BPMask.m */,
 			);
 			path = CALayer;
 			sourceTree = "<group>";
@@ -10258,6 +10263,7 @@
 				01A597A92085CA5C000C6237 /* BPCellAutoLayoutHeightFooterView.m in Sources */,
 				01DF321B1FDD3B3000B8A955 /* NSString+BPContains.m in Sources */,
 				01D22BE91FDD814000BCC4AD /* UILabel+BPAdd.m in Sources */,
+				018D09E0223A3EBB001C9128 /* CALayer+BPMask.m in Sources */,
 				01D2F5F92088E63F00D21B20 /* NSAttributedString+BPMarkColor.m in Sources */,
 				012D948620344AD100691E40 /* BPDesignPatternsKVCViewController.m in Sources */,
 				01D22BDD1FDD814000BCC4AD /* UIView+BPAddForFrame.m in Sources */,
@@ -10818,6 +10824,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 599FJK8FBV;
@@ -10828,6 +10835,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cactus.BaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -10838,6 +10846,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 599FJK8FBV;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
@@ -10847,6 +10856,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cactus.BaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

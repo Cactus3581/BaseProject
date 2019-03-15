@@ -8,6 +8,7 @@
 
 #import "BPTestViewController.h"
 #import "BPCircleProgressButton.h"
+#import "CALayer+BPMask.h"
 
 @interface BPTestViewController ()<UIGestureRecognizerDelegate>
 @property (nonatomic,copy) NSString *str1;
@@ -28,6 +29,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];;
+    imageView.image = [UIImage imageNamed:@"scroll_nyc"];
+    [self.view addSubview:imageView];
+    
+    [imageView.layer configMask:CGRectMake(100, 300, 100, 100)];
+    
+    [self testAsync];
+    [self testAsync1];
+
+    return;
+    
+    
     NSString *str1 = @"a";
     NSString *str2 = @"a";
 
@@ -43,6 +56,15 @@
 //    [self InitializeCircleProgressButton];
 }
 
+- (void)testAsync {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"testAsync");
+    });
+}
+
+- (void)testAsync1 {
+    NSLog(@"testAsync1");
+}
 
 - (void)InitializeCircleProgressButton {
     BPCircleProgressButton *playerButton = [BPCircleProgressButton buttonWithType:UIButtonTypeCustom];
