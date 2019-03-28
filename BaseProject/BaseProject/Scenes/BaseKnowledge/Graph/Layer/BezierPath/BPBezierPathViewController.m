@@ -37,7 +37,7 @@
     return _shapeLayer;
 }
 
-#pragma mark - 创建不同的path
+#pragma mark - 点方法
 - (void)bezierPath_point {
     //   创建折线
     UIBezierPath *path = [UIBezierPath bezierPath];
@@ -50,6 +50,7 @@
     [self shapeLayerWithPath:path];
 }
 
+#pragma mark - 圆形方法
 - (void)bezierPath_oval {
     //创建圆
     UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:(CGRect){0,0,100,100}];
@@ -62,12 +63,14 @@
     [self shapeLayerWithPath:path];
 }
 
+#pragma mark - 矩形方法
 - (void)bezierPath_rect {
     //创建矩形
     UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(10, 10, 100, 80)];
     [self shapeLayerWithPath:path];
 }
 
+#pragma mark - 角矩形方法
 - (void)bezierPath_roundedRect {
     //创建圆角矩形
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:(CGRect){0,0,200,200} cornerRadius:30];
@@ -80,6 +83,7 @@
     [self shapeLayerWithPath:path];
 }
 
+#pragma mark - 弧线方法
 - (void)bezierPath_arc {
     /*圆弧
     Center : 圆点
@@ -94,6 +98,7 @@
     [self shapeLayerWithPath:path];
 }
 
+#pragma mark - 折线和弧线构成曲线
 - (void)bezierPath_arcCenter {
     //折线和弧线构成的曲线
     //创建路径
@@ -106,6 +111,8 @@
     [self shapeLayerWithPath:path];
 
 }
+
+#pragma mark - 二次贝塞尔曲线
 - (void)bezierPath_2quadCurve {
     /*二次贝塞尔曲线
     moveToPoint :起点
@@ -120,6 +127,7 @@
     [self shapeLayerWithPath:path];
 }
 
+#pragma mark - 三次贝塞尔曲线
 - (void)bezierPath_3quadCurve {
      //三次贝塞尔曲线
      UIBezierPath *path = [UIBezierPath bezierPath];

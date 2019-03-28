@@ -13,6 +13,7 @@
 - (CALayer *)configMask:(CGRect)rect {
     CALayer *maskLayer = [CALayer layer];
     maskLayer.frame = rect;
+    // 必须给contents或者backgroundColor，否则layer默认是透明的
     maskLayer.contents = (id)[UIImage imageNamed:@"popview_anchor_arrow"].CGImage;
     maskLayer.contentsGravity = kCAGravityResizeAspect;
     maskLayer.backgroundColor = kRedColor.CGColor;

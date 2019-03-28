@@ -11,8 +11,12 @@
 #import "CALayer+BPMask.h"
 
 @interface BPTestViewController ()<UIGestureRecognizerDelegate>
+
 @property (nonatomic,copy) NSString *str1;
+@property (nonatomic,weak) UIView *maskView;
+
 @end
+
 
 @implementation BPTestViewController
 
@@ -28,13 +32,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];;
-    imageView.image = [UIImage imageNamed:@"scroll_nyc"];
-    [self.view addSubview:imageView];
-    
-    [imageView.layer configMask:CGRectMake(100, 300, 100, 100)];
-    
+
+    [self testMaskLayer];
+    return;
+
     [self testAsync];
     [self testAsync1];
 
@@ -54,6 +55,39 @@
 
     
 //    [self InitializeCircleProgressButton];
+}
+
+- (void)testMaskLayer {
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    imageView.image = [UIImage imageNamed:@"cell_autoLayoutHeight03"];
+    [self.view addSubview:imageView];
+    
+    UIView *maskView = [[UIView alloc] initWithFrame:self.view.bounds];
+    _maskView = maskView;
+    maskView.backgroundColor = [kRedColor colorWithAlphaComponent:1];
+    [[UIApplication sharedApplication].keyWindow addSubview:maskView];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(remove)];
+    [maskView addGestureRecognizer:tap];
+    
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.view.bounds];
+    [path appendPath:[[UIBezierPath bezierPathWithRoundedRect:CGRectMake(5, 436, 90, 40) cornerRadius:5] bezierPathByReversingPath]];
+    
+    
+    // 构造e了一个镂空的layer
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.fillColor = kGreenColor.CGColor;
+    shapeLayer.strokeColor = kBlueColor.CGColor;
+    shapeLayer.lineWidth = 1;
+    
+    shapeLayer.path = path.CGPath;
+    // 当shapeLayer的部分有颜色时，才能看到maskView；关键点是：没有颜色（透明）时看不到maskView，但是能看到maskView.layer的前一个
+    [maskView.layer setMask:shapeLayer];
+    //[maskView.layer addSublayer:shapeLayer];
+}
+
+- (void)remove {
+    [_maskView removeFromSuperview];
 }
 
 - (void)testAsync {

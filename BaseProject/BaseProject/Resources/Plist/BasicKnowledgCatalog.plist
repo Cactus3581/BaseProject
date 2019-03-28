@@ -1271,11 +1271,22 @@
 				<array>
 					<dict>
 						<key>title</key>
-						<string>视图绘制及绘制过程，自定义画图</string>
+						<string>自定义绘制及绘制过程</string>
 						<key>fileName</key>
-						<string>BPDrawViewController</string>
+						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
 						<string></string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>视图绘制及绘制过程，自定义画图</string>
+								<key>fileName</key>
+								<string>BPDrawViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+						</array>
 					</dict>
 					<dict>
 						<key>title</key>

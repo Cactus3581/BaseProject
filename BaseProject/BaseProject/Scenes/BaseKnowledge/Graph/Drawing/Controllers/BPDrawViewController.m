@@ -11,7 +11,6 @@
 #import "BPDrawRect_OC.h"
 #import "BPDrawRect_CG.h"
 #import "BPDrawLayer_CG.h"
-
 #import "BPDrawView_Layer.h"
 
 
@@ -20,42 +19,72 @@
 @end
 
 @implementation BPDrawViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    /*
-     UIView:  - (void)drawRect:(CGRect)rect
-     OC - UIBezierPath
-     CG - Point,Path,Image，Text
-     */
-    [self drawRect_OC];
-    [self drawRect_CG];
+    [self handleDynamicJumpData];
+}
 
-    /*
-     CALayer：- (void)drawInContext:(CGContextRef)ctx
-     注意:setNeedsDisplay
-     只能用CG方法
-     */
-    [self drawInContext_CG];
+- (void)handleDynamicJumpData {
+    if (self.needDynamicJump) {
+        NSInteger type = [self.dynamicJumpDict[@"type"] integerValue];
+        switch (type) {
+                
+            case 0:{
+                [self drawRect_OC];
+            }
+                break;
+                
+            case 1:{
+                [self drawRect_CG];
+            }
+                break;
+                
+            case 2:{
+                /*
+                 CALayer：- (void)drawInContext:(CGContextRef)ctx
+                 注意:setNeedsDisplay
+                 只能用CG方法
+                 */
+                [self drawInContext_CG];
+            }
+                break;
+                
+            case 3:{
 
-     /*
-      UIViewController|UIView：
-      代理方法：- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx
-      注意应该也可以在自定义的view中，添加一个layer，然后实现代理方法
-    */
-    [self drawLayer_CG_VC];
-
-    /*
-     以上都是获取的系统的上下文，在其上画的；
-     以下是自己创建图形上下文：UIGraphicsBeginImageContextWithOptions
-     */
-    [self graphicsBeginImageContextWithOptions_OC];
-    [self graphicsBeginImageContextWithOptions_CG];
-    [self graphicsBeginImageContextWithOptions];
-
-    
-    [self drawViewLayer];
+                /*
+                 UIViewController|UIView：
+                 代理方法：- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx
+                 注意应该也可以在自定义的view中，添加一个layer，然后实现代理方法
+                 */
+                [self drawLayer_CG_VC];
+            }
+                break;
+                
+            case 4:{
+                /*
+                 以上都是获取的系统的上下文，在其上画的；
+                 以下是自己创建图形上下文：UIGraphicsBeginImageContextWithOptions
+                 */
+                [self graphicsBeginImageContextWithOptions_OC];
+            }
+                break;
+                
+            case 5:{
+                [self graphicsBeginImageContextWithOptions_CG];
+            }
+                break;
+                
+            case 6:{
+                [self graphicsBeginImageContextWithOptions];
+            }
+                break;
+                
+            case 7:{
+                [self drawViewLayer];
+            }
+                break;
+        }
+    }
 }
 
 - (void)drawViewLayer {

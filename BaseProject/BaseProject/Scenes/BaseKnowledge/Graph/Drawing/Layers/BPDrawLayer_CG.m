@@ -10,6 +10,22 @@
 
 @implementation BPDrawLayer_CG
 
+- (instancetype)initWithLayer:(id)layer {
+    self = [super initWithLayer:layer];
+    if (self) {
+        
+    }
+    return self;
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
 - (void)drawInContext:(CGContextRef)ctx {
     // 红色
     CGContextSetRGBFillColor(ctx, 1, 0, 0, 1);

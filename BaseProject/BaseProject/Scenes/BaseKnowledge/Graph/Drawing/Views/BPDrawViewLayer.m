@@ -10,6 +10,22 @@
 
 @implementation BPDrawViewLayer
 
+- (instancetype)initWithLayer:(id)layer {
+    self = [super initWithLayer:layer];
+    if (self) {
+        
+    }
+    return self;
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+
+    }
+    return self;
+}
+
 //使用自定义图层绘图
 //编写一个类继承于CALayer然后在drawInContext:中使用CGContext绘图。同样需要调用setNeedDisplay方法。
 - (void)drawInContext:(CGContextRef)ctx {

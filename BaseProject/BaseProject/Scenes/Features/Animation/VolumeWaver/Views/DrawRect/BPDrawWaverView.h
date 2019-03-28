@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol BPVolumeWaverViewDelegate<NSObject>
+@protocol BPDrawWaverViewDelegate<NSObject>
 @optional
 /**
  *  所有动画结束回调
@@ -24,7 +24,7 @@
 @interface BPDrawWaverView : UIView
 
 @property (nonatomic, assign) CGFloat value;//0-1之间
-@property (nonatomic,weak) id<BPVolumeWaverViewDelegate>delegate;
+@property (nonatomic,weak) id<BPDrawWaverViewDelegate>delegate;
 
 - (void)startVoiceWave;
 
