@@ -238,6 +238,14 @@
 		<array>
 			<dict>
 				<key>title</key>
+				<string>异步执行</string>
+				<key>fileName</key>
+				<string>BPAsyncViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
 				<string>多线程的安全：锁和线程同步</string>
 				<key>fileName</key>
 				<string>BPLockViewController</string>
@@ -1513,6 +1521,14 @@
 						<string>PreferredMaxLayoutWidth</string>
 						<key>fileName</key>
 						<string>折行：BPPreferredMaxLayoutWidthViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>Mask</string>
+						<key>fileName</key>
+						<string>BPLayerMaskViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -2820,17 +2836,17 @@
 				<array>
 					<dict>
 						<key>title</key>
-						<string>Touch触摸</string>
+						<string>Hit-Test</string>
 						<key>fileName</key>
-						<string>BPTouchViewController</string>
+						<string>BPHitTestViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>Hit-Test</string>
+						<string>Touch触摸</string>
 						<key>fileName</key>
-						<string>BPHitTestViewController</string>
+						<string>BPTouchViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
