@@ -1308,81 +1308,6 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>重要的几个点：优先级，不等式，比例系数，有效性</string>
-				<key>fileName</key>
-				<string>BPSimpleTableController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>subVc_array</key>
-				<array>
-					<dict>
-						<key>title</key>
-						<string>未完成布局前计算Size的方法</string>
-						<key>fileName</key>
-						<string>BPViewSizeController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>对齐矩形</string>
-						<key>fileName</key>
-						<string>BPAlignmentRectInsetsController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>固有内容：内容布局</string>
-						<key>fileName</key>
-						<string>BPIntrinsicContentSizeController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>抗压缩抗拉伸和约束优先级的使用</string>
-						<key>fileName</key>
-						<string>BPAutoLayoutHuggingViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>获取正确的frame</string>
-						<key>fileName</key>
-						<string>BPGetFrameViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>Transform与AutoLayout、Frame的关系</string>
-						<key>fileName</key>
-						<string>BPTransformViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>基线对齐方式Baseline</string>
-						<key>fileName</key>
-						<string>BPBaselineViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>PreferredMaxLayoutWidth</string>
-						<key>fileName</key>
-						<string>折行：BPPreferredMaxLayoutWidthViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>title</key>
 				<string>图层Layer+贝塞尔曲线+View仿射属性</string>
 				<key>fileName</key>
 				<string>BPSimpleTableController</string>
@@ -1410,7 +1335,7 @@
 						<key>title</key>
 						<string>View属性:mask/transform</string>
 						<key>fileName</key>
-						<string>BPViewPropertyController</string>
+						<string>BPViewTransformController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -1418,7 +1343,7 @@
 						<key>title</key>
 						<string>Layer属性</string>
 						<key>fileName</key>
-						<string>BPLayerViewController</string>
+						<string>BPLayerTransformController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -1513,6 +1438,81 @@
 						<string>弹簧动画</string>
 						<key>fileName</key>
 						<string></string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>重要属性：优先级，不等式，比例系数，有效性</string>
+				<key>fileName</key>
+				<string>BPSimpleTableController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>未完成布局前计算Size的方法</string>
+						<key>fileName</key>
+						<string>BPViewSizeController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>对齐矩形</string>
+						<key>fileName</key>
+						<string>BPAlignmentRectInsetsController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>固有内容：内容布局</string>
+						<key>fileName</key>
+						<string>BPIntrinsicContentSizeController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>抗压缩抗拉伸和约束优先级的使用</string>
+						<key>fileName</key>
+						<string>BPAutoLayoutHuggingViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>获取正确的frame</string>
+						<key>fileName</key>
+						<string>BPGetFrameViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>Transform与AutoLayout、Frame的关系</string>
+						<key>fileName</key>
+						<string>BPTransformViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>基线对齐方式Baseline</string>
+						<key>fileName</key>
+						<string>BPBaselineViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>PreferredMaxLayoutWidth</string>
+						<key>fileName</key>
+						<string>折行：BPPreferredMaxLayoutWidthViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>

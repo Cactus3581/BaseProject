@@ -509,8 +509,8 @@
 		01B075B320E4FD0C004891F7 /* BPReplicatorLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0755A20E4FD0C004891F7 /* BPReplicatorLayerViewController.m */; };
 		01B075B420E4FD0C004891F7 /* BPBezierPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0755D20E4FD0C004891F7 /* BPBezierPathViewController.m */; };
 		01B075B520E4FD0C004891F7 /* BPGradientLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0756020E4FD0C004891F7 /* BPGradientLayerViewController.m */; };
-		01B075B620E4FD0C004891F7 /* BPLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0756420E4FD0C004891F7 /* BPLayerViewController.m */; };
-		01B075B720E4FD0C004891F7 /* BPViewPropertyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0756720E4FD0C004891F7 /* BPViewPropertyController.m */; };
+		01B075B620E4FD0C004891F7 /* BPLayerTransformController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0756420E4FD0C004891F7 /* BPLayerTransformController.m */; };
+		01B075B720E4FD0C004891F7 /* BPViewTransformController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0756720E4FD0C004891F7 /* BPViewTransformController.m */; };
 		01B075B820E4FD0C004891F7 /* BPShapeLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0756920E4FD0C004891F7 /* BPShapeLayerViewController.m */; };
 		01B075B920E4FD0C004891F7 /* BPAutoresizingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0756E20E4FD0C004891F7 /* BPAutoresizingViewController.m */; };
 		01B075BA20E4FD0C004891F7 /* BPAutoresizingViewB.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0757120E4FD0C004891F7 /* BPAutoresizingViewB.m */; };
@@ -1774,10 +1774,10 @@
 		01B0755E20E4FD0C004891F7 /* BPBezierPathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBezierPathViewController.h; sourceTree = "<group>"; };
 		01B0756020E4FD0C004891F7 /* BPGradientLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPGradientLayerViewController.m; sourceTree = "<group>"; };
 		01B0756120E4FD0C004891F7 /* BPGradientLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPGradientLayerViewController.h; sourceTree = "<group>"; };
-		01B0756320E4FD0C004891F7 /* BPLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPLayerViewController.h; sourceTree = "<group>"; };
-		01B0756420E4FD0C004891F7 /* BPLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPLayerViewController.m; sourceTree = "<group>"; };
-		01B0756620E4FD0C004891F7 /* BPViewPropertyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPViewPropertyController.h; sourceTree = "<group>"; };
-		01B0756720E4FD0C004891F7 /* BPViewPropertyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPViewPropertyController.m; sourceTree = "<group>"; };
+		01B0756320E4FD0C004891F7 /* BPLayerTransformController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPLayerTransformController.h; sourceTree = "<group>"; };
+		01B0756420E4FD0C004891F7 /* BPLayerTransformController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPLayerTransformController.m; sourceTree = "<group>"; };
+		01B0756620E4FD0C004891F7 /* BPViewTransformController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPViewTransformController.h; sourceTree = "<group>"; };
+		01B0756720E4FD0C004891F7 /* BPViewTransformController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPViewTransformController.m; sourceTree = "<group>"; };
 		01B0756920E4FD0C004891F7 /* BPShapeLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPShapeLayerViewController.m; sourceTree = "<group>"; };
 		01B0756A20E4FD0C004891F7 /* BPShapeLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPShapeLayerViewController.h; sourceTree = "<group>"; };
 		01B0756E20E4FD0C004891F7 /* BPAutoresizingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPAutoresizingViewController.m; sourceTree = "<group>"; };
@@ -3546,42 +3546,10 @@
 		011BE5592101790000842DDF /* BaseProperty */ = {
 			isa = PBXGroup;
 			children = (
-				011BE55C2101791700842DDF /* Controllers */,
-				011BE55B2101791700842DDF /* Models */,
-				011BE55A2101791700842DDF /* ViewModels */,
-				011BE55D2101791700842DDF /* Views */,
-			);
-			path = BaseProperty;
-			sourceTree = "<group>";
-		};
-		011BE55A2101791700842DDF /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		011BE55B2101791700842DDF /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		011BE55C2101791700842DDF /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
 				011BE55E2101793500842DDF /* BPCALayerBasePropertyViewController.h */,
 				011BE55F2101793500842DDF /* BPCALayerBasePropertyViewController.m */,
 			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		011BE55D2101791700842DDF /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
+			path = BaseProperty;
 			sourceTree = "<group>";
 		};
 		011CD74B20CE18E600560EE6 /* MasksToBounds */ = {
@@ -7279,9 +7247,9 @@
 				01B0752C20E4FD0C004891F7 /* Animation */,
 				01B0751C20E4FD0C004891F7 /* Drawing */,
 				01B0755820E4FD0C004891F7 /* Layer */,
-				01B0753520E4FD0C004891F7 /* Layout_ Process */,
-				01B0756B20E4FD0C004891F7 /* Layout_Method */,
-				01B0758620E4FD0C004891F7 /* Point */,
+				01B0753520E4FD0C004891F7 /* LayoutProcess */,
+				01B0756B20E4FD0C004891F7 /* LayoutMethod */,
+				01B0758620E4FD0C004891F7 /* KeyPoint */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -7375,14 +7343,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		01B0753520E4FD0C004891F7 /* Layout_ Process */ = {
+		01B0753520E4FD0C004891F7 /* LayoutProcess */ = {
 			isa = PBXGroup;
 			children = (
 				01B0753620E4FD0C004891F7 /* XIB */,
 				01B0753F20E4FD0C004891F7 /* Masonry */,
 				01B0754820E4FD0C004891F7 /* Frame */,
 			);
-			path = "Layout_ Process";
+			path = LayoutProcess;
 			sourceTree = "<group>";
 		};
 		01B0753620E4FD0C004891F7 /* XIB */ = {
@@ -7543,8 +7511,8 @@
 		01B0756220E4FD0C004891F7 /* Layer */ = {
 			isa = PBXGroup;
 			children = (
-				01B0756320E4FD0C004891F7 /* BPLayerViewController.h */,
-				01B0756420E4FD0C004891F7 /* BPLayerViewController.m */,
+				01B0756320E4FD0C004891F7 /* BPLayerTransformController.h */,
+				01B0756420E4FD0C004891F7 /* BPLayerTransformController.m */,
 			);
 			path = Layer;
 			sourceTree = "<group>";
@@ -7552,8 +7520,8 @@
 		01B0756520E4FD0C004891F7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				01B0756620E4FD0C004891F7 /* BPViewPropertyController.h */,
-				01B0756720E4FD0C004891F7 /* BPViewPropertyController.m */,
+				01B0756620E4FD0C004891F7 /* BPViewTransformController.h */,
+				01B0756720E4FD0C004891F7 /* BPViewTransformController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -7567,7 +7535,7 @@
 			path = CAShapeLayer;
 			sourceTree = "<group>";
 		};
-		01B0756B20E4FD0C004891F7 /* Layout_Method */ = {
+		01B0756B20E4FD0C004891F7 /* LayoutMethod */ = {
 			isa = PBXGroup;
 			children = (
 				01B0756C20E4FD0C004891F7 /* Autoresizing */,
@@ -7576,7 +7544,7 @@
 				01B0757F20E4FD0C004891F7 /* Masonry */,
 				01B0757620E4FD0C004891F7 /* XIB */,
 			);
-			path = Layout_Method;
+			path = LayoutMethod;
 			sourceTree = "<group>";
 		};
 		01B0756C20E4FD0C004891F7 /* Autoresizing */ = {
@@ -7675,7 +7643,7 @@
 			path = Frame;
 			sourceTree = "<group>";
 		};
-		01B0758620E4FD0C004891F7 /* Point */ = {
+		01B0758620E4FD0C004891F7 /* KeyPoint */ = {
 			isa = PBXGroup;
 			children = (
 				01B0755120E4FD0C004891F7 /* GetFrame */,
@@ -7686,7 +7654,7 @@
 				01B0759420E4FD0C004891F7 /* CalculateSize */,
 				01B0759820E4FD0C004891F7 /* IntrinsicContentSize */,
 			);
-			path = Point;
+			path = KeyPoint;
 			sourceTree = "<group>";
 		};
 		01B0758720E4FD0C004891F7 /* AlignmentRectInsets */ = {
@@ -10002,7 +9970,7 @@
 				01D22BCB1FDD814000BCC4AD /* UIColor+BPAdd.m in Sources */,
 				01B7EF5221D4A6CB00D5FD23 /* BPDeallocExecutor.m in Sources */,
 				0153F12B20B2A4A7007C50C5 /* BPFriendsCircleViewController.m in Sources */,
-				01B075B620E4FD0C004891F7 /* BPLayerViewController.m in Sources */,
+				01B075B620E4FD0C004891F7 /* BPLayerTransformController.m in Sources */,
 				01B075C420E4FD0D004891F7 /* BPAlignmentRectInsetsLabel.m in Sources */,
 				01CE268521E490FE00A15D7F /* BPLockViewController.m in Sources */,
 				01D6FBB320C80F7E00AD8A6E /* BPIncludeTableManualHeaderView.m in Sources */,
@@ -10453,7 +10421,7 @@
 				01349C5920ECA75100E50A86 /* BPDownLoadMacro.m in Sources */,
 				0179070420011D8100E5C360 /* BPNetRequestViewController.m in Sources */,
 				01DF325B1FDD3B9D00B8A955 /* NSData+BPBase64.m in Sources */,
-				01B075B720E4FD0C004891F7 /* BPViewPropertyController.m in Sources */,
+				01B075B720E4FD0C004891F7 /* BPViewTransformController.m in Sources */,
 				012D18A220AC1F8C00C3E437 /* BPContentInsetTableViewController.m in Sources */,
 				01F2CE6920AABE6600F1D701 /* BPTopSliderCategoryCollectionViewCell.m in Sources */,
 				01DF31C51FDD3A9100B8A955 /* NSRunLoop+BPPerformBlock.m in Sources */,
