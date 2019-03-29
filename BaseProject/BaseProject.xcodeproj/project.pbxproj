@@ -343,7 +343,7 @@
 		016D95AD20E3825500651EDE /* BPTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95AC20E3825500651EDE /* BPTouchViewController.m */; };
 		016D95B520E38A6900651EDE /* BPDrawingBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95B420E38A6900651EDE /* BPDrawingBoardViewController.m */; };
 		016D95EA20E3CB1300651EDE /* BPBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95E920E3CB1300651EDE /* BPBaseWebViewController.m */; };
-		016D95ED20E3CEA700651EDE /* BPCodeStandardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95EC20E3CEA700651EDE /* BPCodeStandardsViewController.m */; };
+		016D95ED20E3CEA700651EDE /* BPBlogArtcileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95EC20E3CEA700651EDE /* BPBlogArtcileViewController.m */; };
 		016D95F920E3E63D00651EDE /* UIView+BPShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95F820E3E63D00651EDE /* UIView+BPShare.m */; };
 		016DADC720582FB100AA95EC /* NSArray+BPSafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC020582FAE00AA95EC /* NSArray+BPSafeAccess.m */; };
 		016DADC820582FB100AA95EC /* NSDictionary+BPSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC120582FAF00AA95EC /* NSDictionary+BPSafe.m */; };
@@ -1456,8 +1456,8 @@
 		016D95B420E38A6900651EDE /* BPDrawingBoardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDrawingBoardViewController.m; sourceTree = "<group>"; };
 		016D95E820E3CB1300651EDE /* BPBaseWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBaseWebViewController.h; sourceTree = "<group>"; };
 		016D95E920E3CB1300651EDE /* BPBaseWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBaseWebViewController.m; sourceTree = "<group>"; };
-		016D95EB20E3CEA700651EDE /* BPCodeStandardsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCodeStandardsViewController.h; sourceTree = "<group>"; };
-		016D95EC20E3CEA700651EDE /* BPCodeStandardsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCodeStandardsViewController.m; sourceTree = "<group>"; };
+		016D95EB20E3CEA700651EDE /* BPBlogArtcileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBlogArtcileViewController.h; sourceTree = "<group>"; };
+		016D95EC20E3CEA700651EDE /* BPBlogArtcileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBlogArtcileViewController.m; sourceTree = "<group>"; };
 		016D95F720E3E63D00651EDE /* UIView+BPShare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+BPShare.h"; sourceTree = "<group>"; };
 		016D95F820E3E63D00651EDE /* UIView+BPShare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+BPShare.m"; sourceTree = "<group>"; };
 		016DADBD20582FAD00AA95EC /* NSDictionary+BPSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BPSafe.h"; sourceTree = "<group>"; };
@@ -3133,7 +3133,7 @@
 				01B7268F1FF7E45B00648674 /* Algorithm */,
 				01161F3D20308F4900FA3441 /* BaseUseData */,
 				01B726DA1FF806FC00648674 /* BaseUseUIKit */,
-				016D95E620E3CA9D00651EDE /* CodeStandards */,
+				016D95E620E3CA9D00651EDE /* Blog */,
 				01B7268B1FF7DF1900648674 /* DataStructure */,
 				0117F7A921EF643A003E461B /* DesignArchitecture */,
 				011DF64021F06FDD0099A962 /* DesignLib */,
@@ -5371,13 +5371,13 @@
 			path = SpriteKit;
 			sourceTree = "<group>";
 		};
-		016D95E620E3CA9D00651EDE /* CodeStandards */ = {
+		016D95E620E3CA9D00651EDE /* Blog */ = {
 			isa = PBXGroup;
 			children = (
-				016D95EB20E3CEA700651EDE /* BPCodeStandardsViewController.h */,
-				016D95EC20E3CEA700651EDE /* BPCodeStandardsViewController.m */,
+				016D95EB20E3CEA700651EDE /* BPBlogArtcileViewController.h */,
+				016D95EC20E3CEA700651EDE /* BPBlogArtcileViewController.m */,
 			);
-			path = CodeStandards;
+			path = Blog;
 			sourceTree = "<group>";
 		};
 		016D95E720E3CB0100651EDE /* BaseWebViewController */ = {
@@ -10492,7 +10492,7 @@
 				01F2CE6220AABE6600F1D701 /* BPFlowCategoryTagView.m in Sources */,
 				010DB78B1FDD4D640099E66F /* UIView+BPAnimation.m in Sources */,
 				01D1288821ED8B4300C129A6 /* BPLocalNotificationViewController.m in Sources */,
-				016D95ED20E3CEA700651EDE /* BPCodeStandardsViewController.m in Sources */,
+				016D95ED20E3CEA700651EDE /* BPBlogArtcileViewController.m in Sources */,
 				010DB70D1FDD4D450099E66F /* UIImageView+BPBetterFace.m in Sources */,
 				01C0B6251FFC87AB005BB4A5 /* PriorityBoxArray.m in Sources */,
 				010DB74A1FDD4D450099E66F /* UIApplication+BPPermissions.m in Sources */,

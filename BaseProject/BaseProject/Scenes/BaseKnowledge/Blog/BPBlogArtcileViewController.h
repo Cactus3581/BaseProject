@@ -1,5 +1,5 @@
 //
-//  BPCodeStandardsViewController.h
+//  BPBlogArtcileViewController.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/6/27.
@@ -8,6 +8,6 @@
 
 #import "BPBaseWebViewController.h"
 
-@interface BPCodeStandardsViewController : BPBaseWebViewController
+@interface BPBlogArtcileViewController : BPBaseWebViewController
 
 @end

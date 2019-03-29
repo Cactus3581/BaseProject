@@ -1,18 +1,18 @@
 //
-//  BPCodeStandardsViewController.m
+//  BPBlogArtcileViewController.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/6/27.
 //  Copyright © 2018年 cactus. All rights reserved.
 //
 
-#import "BPCodeStandardsViewController.h"
+#import "BPBlogArtcileViewController.h"
 
-@interface BPCodeStandardsViewController ()
+@interface BPBlogArtcileViewController ()
 
 @end
 
-@implementation BPCodeStandardsViewController
+@implementation BPBlogArtcileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
