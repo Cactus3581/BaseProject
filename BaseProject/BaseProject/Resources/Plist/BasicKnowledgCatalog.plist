@@ -1288,7 +1288,55 @@
 						<array>
 							<dict>
 								<key>title</key>
-								<string>视图绘制及绘制过程，自定义画图</string>
+								<string>在自定义View的drawRect里使用CoreGraphics绘图</string>
+								<key>fileName</key>
+								<string>BPDrawViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>在自定义View的drawRect方法里使用贝塞尔曲线绘图</string>
+								<key>fileName</key>
+								<string>BPDrawViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>在自定义Layer的drawInContext方法里使用CoreGraphics绘图</string>
+								<key>fileName</key>
+								<string>BPDrawViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>在控制器里直接创建Layer并实现代理drawLayer方法</string>
+								<key>fileName</key>
+								<string>BPDrawViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>用贝塞尔曲线进行图片绘制</string>
+								<key>fileName</key>
+								<string>BPDrawViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>用CG进行图片绘制</string>
+								<key>fileName</key>
+								<string>BPDrawViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>绘制空心/镂空图片</string>
 								<key>fileName</key>
 								<string>BPDrawViewController</string>
 								<key>briefIntro</key>
@@ -1316,7 +1364,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>图层Layer+贝塞尔曲线+View仿射属性</string>
+				<string>Layer+path+仿射属性</string>
 				<key>fileName</key>
 				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
@@ -1325,11 +1373,38 @@
 				<array>
 					<dict>
 						<key>title</key>
-						<string>基本属性</string>
+						<string>layer的属性</string>
 						<key>fileName</key>
-						<string>BPCALayerBasePropertyViewController</string>
+						<string>BPSimpleTableController</string>
 						<key>briefIntro</key>
 						<string></string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>基本属性</string>
+								<key>fileName</key>
+								<string>BPCALayerBasePropertyViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>Mask 遮罩</string>
+								<key>fileName</key>
+								<string>BPCALayerBasePropertyViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>阴影</string>
+								<key>fileName</key>
+								<string>BPCALayerBasePropertyViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+						</array>
 					</dict>
 					<dict>
 						<key>title</key>
@@ -1524,21 +1599,13 @@
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
-					<dict>
-						<key>title</key>
-						<string>Mask</string>
-						<key>fileName</key>
-						<string>BPLayerMaskViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
 				</array>
 			</dict>
 		</array>
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>TableView优化点</string>
+		<string>TableView优化</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
@@ -1558,6 +1625,76 @@
 				<string>添加圆角</string>
 				<key>fileName</key>
 				<string>BPAddRoundedCornerViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>事件传递和响应</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>触摸事件</string>
+				<key>fileName</key>
+				<string>BPSimpleTableController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>Hit-Test</string>
+						<key>fileName</key>
+						<string>BPHitTestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>Touch触摸</string>
+						<key>fileName</key>
+						<string>BPTouchViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>手势</string>
+						<key>fileName</key>
+						<string>BPGestureRecognizerViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>拦截任意事件</string>
+						<key>fileName</key>
+						<string></string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>远程事件</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>加速计事件</string>
+				<key>fileName</key>
+				<string></string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -2811,68 +2948,6 @@
 				<string>文字排版</string>
 				<key>fileName</key>
 				<string>BPTextCompositionViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>三大事件</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>触摸事件</string>
-				<key>fileName</key>
-				<string>BPSimpleTableController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>subVc_array</key>
-				<array>
-					<dict>
-						<key>title</key>
-						<string>Hit-Test</string>
-						<key>fileName</key>
-						<string>BPHitTestViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>Touch触摸</string>
-						<key>fileName</key>
-						<string>BPTouchViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>手势</string>
-						<key>fileName</key>
-						<string>BPGestureRecognizerViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>远程事件</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>加速计事件</string>
-				<key>fileName</key>
-				<string></string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>

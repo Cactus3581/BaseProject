@@ -309,10 +309,11 @@
 		015805BA20CAE5D000D0EF7C /* BPTopCategoryTagFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158059620CAE5D000D0EF7C /* BPTopCategoryTagFlowLayout.m */; };
 		015805BB20CAE5D000D0EF7C /* BPTopCategoryListTagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0158059720CAE5D000D0EF7C /* BPTopCategoryListTagView.xib */; };
 		015805BC20CAE5D000D0EF7C /* BPTopCategoryListTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0158059920CAE5D000D0EF7C /* BPTopCategoryListTagCollectionViewCell.xib */; };
-		01583AFB224DB2A700172F7F /* BPLayerMaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01583AF9224DB2A700172F7F /* BPLayerMaskViewController.m */; };
-		01583AFC224DB2A700172F7F /* BPLayerMaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01583AFA224DB2A700172F7F /* BPLayerMaskViewController.xib */; };
 		01583B01224DB3AE00172F7F /* BPAsyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01583AFF224DB3AE00172F7F /* BPAsyncViewController.m */; };
 		01583B02224DB3AE00172F7F /* BPAsyncViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01583B00224DB3AE00172F7F /* BPAsyncViewController.xib */; };
+		01583B05224E1D2E00172F7F /* BPDrawRectCGView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01583B04224E1D2E00172F7F /* BPDrawRectCGView.m */; };
+		01583B08224E1D6D00172F7F /* BPDrawRectPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01583B06224E1D6C00172F7F /* BPDrawRectPathView.m */; };
+		01583B0B224E201400172F7F /* BPDrawViewCGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01583B0A224E201400172F7F /* BPDrawViewCGLayer.m */; };
 		0158A0501FDFD3570011AFE9 /* UILabel+BPInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */; };
 		0159A62220EC73A400312293 /* BPDownLoadMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0159A62020EC73A400312293 /* BPDownLoadMainPageViewController.m */; };
 		0159A62320EC73A400312293 /* BPDownLoadMainPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0159A62120EC73A400312293 /* BPDownLoadMainPageViewController.xib */; };
@@ -490,12 +491,7 @@
 		01A597B32085CAF7000C6237 /* BP2NDCellAutoLayoutHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A597B12085CAF7000C6237 /* BP2NDCellAutoLayoutHeightViewController.m */; };
 		01A597B62085CB6A000C6237 /* BPCellAutoLayoutHeightDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A597B52085CB6A000C6237 /* BPCellAutoLayoutHeightDataSource.m */; };
 		01A597BB2085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A597BA2085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.m */; };
-		01B0759F20E4FD0C004891F7 /* BPDrawLayer_CG.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0751E20E4FD0C004891F7 /* BPDrawLayer_CG.m */; };
 		01B075A020E4FD0C004891F7 /* BPDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0752120E4FD0C004891F7 /* BPDrawViewController.m */; };
-		01B075A120E4FD0C004891F7 /* BPDrawRect_OC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0752520E4FD0C004891F7 /* BPDrawRect_OC.m */; };
-		01B075A220E4FD0C004891F7 /* BPDrawViewLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0752620E4FD0C004891F7 /* BPDrawViewLayer.m */; };
-		01B075A320E4FD0C004891F7 /* BPDrawRect_CG.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0752A20E4FD0C004891F7 /* BPDrawRect_CG.m */; };
-		01B075A420E4FD0C004891F7 /* BPDrawView_Layer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0752B20E4FD0C004891F7 /* BPDrawView_Layer.m */; };
 		01B075A520E4FD0C004891F7 /* BPBlockAnimatonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0752F20E4FD0C004891F7 /* BPBlockAnimatonVC.m */; };
 		01B075A620E4FD0C004891F7 /* BPCoreAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0753320E4FD0C004891F7 /* BPCoreAnimationVC.m */; };
 		01B075A720E4FD0C004891F7 /* BPXIBAutoLayoutProcessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0753920E4FD0C004891F7 /* BPXIBAutoLayoutProcessViewController.m */; };
@@ -1398,12 +1394,15 @@
 		0158059820CAE5D000D0EF7C /* BPTopCategoryListTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPTopCategoryListTagView.h; sourceTree = "<group>"; };
 		0158059920CAE5D000D0EF7C /* BPTopCategoryListTagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BPTopCategoryListTagCollectionViewCell.xib; sourceTree = "<group>"; };
 		015805A220CAE5D000D0EF7C /* BPTopCategoryMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPTopCategoryMacro.h; sourceTree = "<group>"; };
-		01583AF8224DB2A700172F7F /* BPLayerMaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPLayerMaskViewController.h; sourceTree = "<group>"; };
-		01583AF9224DB2A700172F7F /* BPLayerMaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPLayerMaskViewController.m; sourceTree = "<group>"; };
-		01583AFA224DB2A700172F7F /* BPLayerMaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPLayerMaskViewController.xib; sourceTree = "<group>"; };
 		01583AFE224DB3AE00172F7F /* BPAsyncViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAsyncViewController.h; sourceTree = "<group>"; };
 		01583AFF224DB3AE00172F7F /* BPAsyncViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAsyncViewController.m; sourceTree = "<group>"; };
 		01583B00224DB3AE00172F7F /* BPAsyncViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPAsyncViewController.xib; sourceTree = "<group>"; };
+		01583B03224E1D2D00172F7F /* BPDrawRectCGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawRectCGView.h; sourceTree = "<group>"; };
+		01583B04224E1D2E00172F7F /* BPDrawRectCGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawRectCGView.m; sourceTree = "<group>"; };
+		01583B06224E1D6C00172F7F /* BPDrawRectPathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawRectPathView.m; sourceTree = "<group>"; };
+		01583B07224E1D6C00172F7F /* BPDrawRectPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawRectPathView.h; sourceTree = "<group>"; };
+		01583B09224E201400172F7F /* BPDrawViewCGLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawViewCGLayer.h; sourceTree = "<group>"; };
+		01583B0A224E201400172F7F /* BPDrawViewCGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawViewCGLayer.m; sourceTree = "<group>"; };
 		0158A04E1FDFD3560011AFE9 /* UILabel+BPInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BPInterval.h"; sourceTree = "<group>"; };
 		0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BPInterval.m"; sourceTree = "<group>"; };
 		0159A61F20EC73A400312293 /* BPDownLoadMainPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BPDownLoadMainPageViewController.h; path = BaseProject/Scenes/Features/DownLoad/DownLoadMainPage/Controllers/BPDownLoadMainPageViewController.h; sourceTree = SOURCE_ROOT; };
@@ -1740,18 +1739,8 @@
 		01A597B52085CB6A000C6237 /* BPCellAutoLayoutHeightDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCellAutoLayoutHeightDataSource.m; sourceTree = "<group>"; };
 		01A597B92085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BP3RDCellAutoLayoutHeightViewController.h; sourceTree = "<group>"; };
 		01A597BA2085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BP3RDCellAutoLayoutHeightViewController.m; sourceTree = "<group>"; };
-		01B0751E20E4FD0C004891F7 /* BPDrawLayer_CG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawLayer_CG.m; sourceTree = "<group>"; };
-		01B0751F20E4FD0C004891F7 /* BPDrawLayer_CG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawLayer_CG.h; sourceTree = "<group>"; };
 		01B0752120E4FD0C004891F7 /* BPDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawViewController.m; sourceTree = "<group>"; };
 		01B0752220E4FD0C004891F7 /* BPDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawViewController.h; sourceTree = "<group>"; };
-		01B0752420E4FD0C004891F7 /* BPDrawRect_CG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawRect_CG.h; sourceTree = "<group>"; };
-		01B0752520E4FD0C004891F7 /* BPDrawRect_OC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawRect_OC.m; sourceTree = "<group>"; };
-		01B0752620E4FD0C004891F7 /* BPDrawViewLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawViewLayer.m; sourceTree = "<group>"; };
-		01B0752720E4FD0C004891F7 /* BPDrawView_Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawView_Layer.h; sourceTree = "<group>"; };
-		01B0752820E4FD0C004891F7 /* BPDrawRect_OC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawRect_OC.h; sourceTree = "<group>"; };
-		01B0752920E4FD0C004891F7 /* BPDrawViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawViewLayer.h; sourceTree = "<group>"; };
-		01B0752A20E4FD0C004891F7 /* BPDrawRect_CG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawRect_CG.m; sourceTree = "<group>"; };
-		01B0752B20E4FD0C004891F7 /* BPDrawView_Layer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawView_Layer.m; sourceTree = "<group>"; };
 		01B0752F20E4FD0C004891F7 /* BPBlockAnimatonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBlockAnimatonVC.m; sourceTree = "<group>"; };
 		01B0753020E4FD0C004891F7 /* BPBlockAnimatonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBlockAnimatonVC.h; sourceTree = "<group>"; };
 		01B0753320E4FD0C004891F7 /* BPCoreAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCoreAnimationVC.m; sourceTree = "<group>"; };
@@ -5085,16 +5074,6 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		01583AF7224DB25900172F7F /* Mask */ = {
-			isa = PBXGroup;
-			children = (
-				01583AF8224DB2A700172F7F /* BPLayerMaskViewController.h */,
-				01583AF9224DB2A700172F7F /* BPLayerMaskViewController.m */,
-				01583AFA224DB2A700172F7F /* BPLayerMaskViewController.xib */,
-			);
-			path = Mask;
-			sourceTree = "<group>";
-		};
 		01583AFD224DB39F00172F7F /* Async */ = {
 			isa = PBXGroup;
 			children = (
@@ -7298,8 +7277,8 @@
 		01B0751D20E4FD0C004891F7 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
-				01B0751F20E4FD0C004891F7 /* BPDrawLayer_CG.h */,
-				01B0751E20E4FD0C004891F7 /* BPDrawLayer_CG.m */,
+				01583B09224E201400172F7F /* BPDrawViewCGLayer.h */,
+				01583B0A224E201400172F7F /* BPDrawViewCGLayer.m */,
 			);
 			path = Layers;
 			sourceTree = "<group>";
@@ -7316,14 +7295,10 @@
 		01B0752320E4FD0C004891F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				01B0752420E4FD0C004891F7 /* BPDrawRect_CG.h */,
-				01B0752A20E4FD0C004891F7 /* BPDrawRect_CG.m */,
-				01B0752820E4FD0C004891F7 /* BPDrawRect_OC.h */,
-				01B0752520E4FD0C004891F7 /* BPDrawRect_OC.m */,
-				01B0752720E4FD0C004891F7 /* BPDrawView_Layer.h */,
-				01B0752B20E4FD0C004891F7 /* BPDrawView_Layer.m */,
-				01B0752920E4FD0C004891F7 /* BPDrawViewLayer.h */,
-				01B0752620E4FD0C004891F7 /* BPDrawViewLayer.m */,
+				01583B07224E1D6C00172F7F /* BPDrawRectPathView.h */,
+				01583B06224E1D6C00172F7F /* BPDrawRectPathView.m */,
+				01583B03224E1D2D00172F7F /* BPDrawRectCGView.h */,
+				01583B04224E1D2E00172F7F /* BPDrawRectCGView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -7677,7 +7652,6 @@
 		01B0758620E4FD0C004891F7 /* KeyPoint */ = {
 			isa = PBXGroup;
 			children = (
-				01583AF7224DB25900172F7F /* Mask */,
 				01B0755120E4FD0C004891F7 /* GetFrame */,
 				01DBF14F20E773E5001C52C0 /* PreferredMaxLayoutWidth */,
 				0167A34E20E619C600F13905 /* Baseline */,
@@ -9806,7 +9780,6 @@
 				01D27438212D0A7E00E3E862 /* BPBasicAnimationViewController.xib in Resources */,
 				011E8D9920B2F7BA00B04378 /* BPPlanCalendarSectionFooterView.xib in Resources */,
 				013ED93120C7DE0400A83E7F /* BPIncludeTableSelfSizeHeaderView.xib in Resources */,
-				01583AFC224DB2A700172F7F /* BPLayerMaskViewController.xib in Resources */,
 				0156295B21D375CB002A6722 /* launchImage8@3x.png in Resources */,
 				01B075AA20E4FD0C004891F7 /* BPXIBAutoLayoutProcessView.xib in Resources */,
 				013ED90E20C7DB3C00A83E7F /* BPIncludeTableSystemLayoutHeaderView.xib in Resources */,
@@ -10016,7 +9989,6 @@
 				01DF31C71FDD3A9100B8A955 /* NSUserDefaults+BPiCloudSync.m in Sources */,
 				0154D0C02202DF6A00819387 /* BPAudioView.m in Sources */,
 				011E8D7D20B2F7AA00B04378 /* BPCalendarAppearance.m in Sources */,
-				01583AFB224DB2A700172F7F /* BPLayerMaskViewController.m in Sources */,
 				011BE5602101793500842DDF /* BPCALayerBasePropertyViewController.m in Sources */,
 				018C451E200A5AD300CF43D7 /* YYFPSLabel.m in Sources */,
 				01DF32591FDD3B9D00B8A955 /* NSData+BPzlib.m in Sources */,
@@ -10093,6 +10065,7 @@
 				01161F362030890700FA3441 /* BPClassObjectViewController.m in Sources */,
 				01A191B32004E16F005EE4CD /* BPTextViewViewController.m in Sources */,
 				01DF31C31FDD3A9100B8A955 /* NSIndexPath+BPOffset.m in Sources */,
+				01583B0B224E201400172F7F /* BPDrawViewCGLayer.m in Sources */,
 				01161F4E2030900B00FA3441 /* BPNSStringViewController.m in Sources */,
 				010DB72F1FDD4D450099E66F /* UIPopoverController+iPhone.m in Sources */,
 				01DF31E71FDD3B0300B8A955 /* NSDecimalNumber+BPCalculatingByString.m in Sources */,
@@ -10244,7 +10217,6 @@
 				01DF31CC1FDD3A9100B8A955 /* NSURLSession+BPSynchronousTask.m in Sources */,
 				016FCB6D20D61D4E0097F27E /* BPCardPageView.m in Sources */,
 				016DADC720582FB100AA95EC /* NSArray+BPSafeAccess.m in Sources */,
-				01B075A220E4FD0C004891F7 /* BPDrawViewLayer.m in Sources */,
 				015804E520CACF6D00D0EF7C /* BPTestViewController.m in Sources */,
 				01DBF15B20E77775001C52C0 /* BPAutoLayoutUpdateConstraintsController.m in Sources */,
 				017A9A431FDD2B8C00CDA599 /* NSNumber+BPDecimalNumber.m in Sources */,
@@ -10294,7 +10266,6 @@
 				017907D52001345300E5C360 /* BPCircleView.m in Sources */,
 				011E8D7A20B2F7AA00B04378 /* BPCalendar.m in Sources */,
 				01DF32151FDD3B3000B8A955 /* NSString+BPScore.m in Sources */,
-				01B0759F20E4FD0C004891F7 /* BPDrawLayer_CG.m in Sources */,
 				01A1921C2004E61F005EE4CD /* BPCollectionViewController.m in Sources */,
 				01A192272004E61F005EE4CD /* BPPlainTableViewController.m in Sources */,
 				017CF98A20D3AE0100D9AA30 /* BPCollectionViewNestGestureCategotyDetailController.m in Sources */,
@@ -10315,7 +10286,6 @@
 				0174CC0B20E4BA4900A62977 /* BPInheritParentObject.m in Sources */,
 				010DB72B1FDD4D450099E66F /* UIBezierPath+BPThroughPointsBezier.m in Sources */,
 				015805B820CAE5D000D0EF7C /* BPTopCategoryListTagView.m in Sources */,
-				01B075A320E4FD0C004891F7 /* BPDrawRect_CG.m in Sources */,
 				010DB7951FDD4D640099E66F /* UIView+BPRecursion.m in Sources */,
 				0136DF5821EE217F0047E7B0 /* BPAnotherNotificationCenter.m in Sources */,
 				010FBD2520601D9E00BC9EC4 /* BPPaletteView.m in Sources */,
@@ -10548,6 +10518,7 @@
 				010DB74D1FDD4D450099E66F /* UIApplication+BPKeyboardFrame.m in Sources */,
 				0126702721D51C0800FCA347 /* BPAutoModel.m in Sources */,
 				010DB7341FDD4D450099E66F /* UIResponder+BPChain.m in Sources */,
+				01583B05224E1D2E00172F7F /* BPDrawRectCGView.m in Sources */,
 				01DF31C11FDD3A9100B8A955 /* NSDictionary+BPJSONString.m in Sources */,
 				016D95AD20E3825500651EDE /* BPTouchViewController.m in Sources */,
 				017CF94B20D3AD7500D9AA30 /* BPFlowCategoryImageTagCell.m in Sources */,
@@ -10604,7 +10575,6 @@
 				016FCB7A20D642030097F27E /* BPScrollTargetContentOffsetViewController.m in Sources */,
 				01D22BD61FDD814000BCC4AD /* UIDevice+BPAdd.m in Sources */,
 				01EC9C0521BA79B100477EB8 /* BPQueue.m in Sources */,
-				01B075A420E4FD0C004891F7 /* BPDrawView_Layer.m in Sources */,
 				01DF31BE1FDD3A9100B8A955 /* NSDictionary+BPMerge.m in Sources */,
 				017CF99220D3AE0100D9AA30 /* BPCollectionViewNestGestureTopCategoryCollectionViewCell.m in Sources */,
 				016DADC920582FB100AA95EC /* NSObject+BPKVO.m in Sources */,
@@ -10634,6 +10604,7 @@
 				013ED93320C7DE0400A83E7F /* BPIncludeTableSelfSizeHeaderView.m in Sources */,
 				0154D0B82202DA2600819387 /* BPMediaDataSourceManager.m in Sources */,
 				010DB70F1FDD4D450099E66F /* UIImageView+BPReflect.m in Sources */,
+				01583B08224E1D6D00172F7F /* BPDrawRectPathView.m in Sources */,
 				01DF31EC1FDD3B1600B8A955 /* NSURL+BPQueryDictionary.m in Sources */,
 				019C635D20E0E0DF00CE37F8 /* BPClassObjectMethod.m in Sources */,
 				01C144262122A83E00E13FCF /* BPSpecificFlowCategoryViewController.m in Sources */,
@@ -10647,7 +10618,6 @@
 				01490C081FF548650035492D /* BPGCDViewController.m in Sources */,
 				01F2CE8520AABF7000F1D701 /* DHSlideView.m in Sources */,
 				01A191BF2004E1B9005EE4CD /* BPDatePickerController.m in Sources */,
-				01B075A120E4FD0C004891F7 /* BPDrawRect_OC.m in Sources */,
 				01DF31C01FDD3A9100B8A955 /* NSDictionary+BPXML.m in Sources */,
 				0143427121D21DCF00CEDCD1 /* BPNSValueViewController.m in Sources */,
 				013ED90C20C7DB3C00A83E7F /* BPIncludeTableSystemLayoutHeaderView.m in Sources */,

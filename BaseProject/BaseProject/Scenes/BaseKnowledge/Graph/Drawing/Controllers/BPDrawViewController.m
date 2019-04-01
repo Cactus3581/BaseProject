@@ -8,17 +8,20 @@
 
 #import "BPDrawViewController.h"
 
-#import "BPDrawRect_OC.h"
-#import "BPDrawRect_CG.h"
-#import "BPDrawLayer_CG.h"
-#import "BPDrawView_Layer.h"
+#import "BPDrawRectPathView.h"
+#import "BPDrawRectCGView.h"
 
+#import "BPDrawViewCGLayer.h"
 
 @interface BPDrawViewController () <CALayerDelegate>
+
 @property (nonatomic,weak) CALayer *layer;
+
 @end
 
+
 @implementation BPDrawViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self handleDynamicJumpData];
@@ -30,12 +33,12 @@
         switch (type) {
                 
             case 0:{
-                [self drawRect_OC];
+                [self drawRectInViewByCG];
             }
                 break;
                 
             case 1:{
-                [self drawRect_CG];
+                [self drawRectInViewByPath];
             }
                 break;
                 
@@ -45,62 +48,45 @@
                  注意:setNeedsDisplay
                  只能用CG方法
                  */
-                [self drawInContext_CG];
+                [self drawInContextInLayerByCG];
             }
                 break;
                 
             case 3:{
 
                 /*
-                 UIViewController|UIView：
                  代理方法：- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx
-                 注意应该也可以在自定义的view中，添加一个layer，然后实现代理方法
                  */
-                [self drawLayer_CG_VC];
+                [self drawLayerInVC];
             }
                 break;
                 
             case 4:{
                 /*
                  以上都是获取的系统的上下文，在其上画的；
-                 以下是自己创建图形上下文：UIGraphicsBeginImageContextWithOptions
+                 以下是自己创建图形上下文
                  */
-                [self graphicsBeginImageContextWithOptions_OC];
+                [self drawImageWithType:type];
             }
                 break;
                 
             case 5:{
-                [self graphicsBeginImageContextWithOptions_CG];
+                [self drawImageWithType:type];
             }
                 break;
                 
             case 6:{
-                [self graphicsBeginImageContextWithOptions];
-            }
-                break;
-                
-            case 7:{
-                [self drawViewLayer];
+                [self drawImageWithType:type];
             }
                 break;
         }
     }
 }
 
-- (void)drawViewLayer {
-    BPDrawView_Layer *view = [[BPDrawView_Layer alloc] init];
-    view.backgroundColor = kLightGrayColor;
-    [self.view addSubview:view];
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@(84));
-        make.trailing.equalTo(self.view.mas_trailing).offset(-10);
-        make.width.height.equalTo(@(100));
-    }];
-}
 
-#pragma mark - drawRect_OC - 1.1
-- (void)drawRect_OC {
-    BPDrawRect_OC *aView =  [[BPDrawRect_OC alloc] init];
+#pragma mark - 在自定义View的drawRect方法里使用贝塞尔曲线绘图
+- (void)drawRectInViewByPath {
+    BPDrawRectPathView *aView =  [[BPDrawRectPathView alloc] init];
     aView.backgroundColor = kLightGrayColor;
     [self.view addSubview:aView];
     [aView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -110,9 +96,9 @@
     }];
 }
 
-#pragma mark - drawRect_CG - 1.2
-- (void)drawRect_CG {
-    BPDrawRect_CG *aView =  [[BPDrawRect_CG alloc] init];
+#pragma mark - 在自定义View的drawRect里使用CoreGraphics绘图
+- (void)drawRectInViewByCG {
+    BPDrawRectCGView *aView =  [[BPDrawRectCGView alloc] init];
     aView.backgroundColor = kLightGrayColor;
     [self.view addSubview:aView];
     [aView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -122,24 +108,29 @@
     }];
 }
 
-#pragma mark -  drawInContext - 2
-- (void)drawInContext_CG {
-    BPDrawLayer_CG *layer = [BPDrawLayer_CG layer];
-    layer.frame = CGRectMake(10, 300, 100, 100);
+#pragma mark - 在自定义Layer的drawInContext方法里使用CoreGraphics绘图
+- (void)drawInContextInLayerByCG {
+    BPDrawViewCGLayer *layer = [BPDrawViewCGLayer layer];
+    layer.frame = CGRectMake(kScreenWidth/2, kScreenHeight/2.0, 100, 100);
     layer.backgroundColor = kLightGrayColor.CGColor;
-    [layer setNeedsDisplay];// 有这句话才能执行 -drawInContext 和 drawRect 方法
+    
+    // 有这句话才能执行 -drawInContext 和 drawRect 方法
+    [layer setNeedsDisplay];
+    
     [self.view.layer addSublayer:layer];
 }
 
-#pragma mark - 代理方法 - 3
-- (void)drawLayer_CG_VC {
+#pragma mark - 在控制器里直接创建Layer并实现代理drawLayer方法
+- (void)drawLayerInVC {
     CALayer *layer = [CALayer layer];
     _layer = layer;
     layer.frame = CGRectMake(10, 410, kScreenWidth, 100);
     layer.backgroundColor = kLightGrayColor.CGColor;
+    
 #warning 设置代理，但是会引起崩溃，所以需要让属性接受下，在dealloc里把delegate设为nil;注意不要设置其delegate为uiview类型实例。会导致程序crash。
     layer.delegate = self; 
     [layer setNeedsDisplay];// 调用此方法，drawLayer: inContext:方法才会被调用。
+    
     [self.view.layer addSublayer:layer];
 }
 
@@ -170,81 +161,61 @@
     UIGraphicsPopContext();
 }
 
-#pragma mark - UIGraphicsBeginImageContextWithOptions_OC - 4.1
-- (void)graphicsBeginImageContextWithOptions_OC {
+#pragma mark - 以下是自己创建图形上下文进行图片绘制，以上都是获取的系统的上下文，在其上画的；
+
+- (UIImage *)drawImageWithType:(NSInteger)type {
+
+    CGFloat width = kScreenWidth/3;
+    
     //该函数会自动创建一个context，并把它push到上下文栈顶，坐标系也经处理和UIKit的坐标系相同
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(100,100), NO, kScreenScale);
-    UIBezierPath* path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0,0,100,100)];
-    [kGreenColor setFill];
-    [path fill];
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(width,width), NO, kScreenScale);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    if (type == 4) {
+        // 用贝塞尔曲线进行图片绘制
+        
+        UIBezierPath* path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0,0,width,width)];
+        [kGreenColor setFill];
+        [path fill];
+    } else if (type == 5) {
+        // 用CG进行图片绘制
+        
+        CGContextAddEllipseInRect(context, CGRectMake(0,0,width,width));
+        //填充颜色为蓝色
+        CGContextSetFillColorWithColor(context, kGreenColor.CGColor);
+        //在context上绘制
+        CGContextFillPath(context);
+    } else if (type == 6) {
+        // 绘制空心/镂空图片
+        
+        CGContextSetLineWidth(context, 0);
+        [kRedColor set];
+        CGRect rect = CGRectMake(0, 0, width, width);
+        UIBezierPath *rectPath = [UIBezierPath bezierPathWithRect:CGRectInset(rect, -0.3, -0.3)];
+        UIBezierPath *roundPath = [UIBezierPath bezierPathWithRoundedRect:CGRectInset(rect, 0.3, 0.3) byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(width/2.0, width/2.0)];
+        [rectPath appendPath:roundPath];
+        CGContextAddPath(context, rectPath.CGPath);
+        CGContextEOFillPath(context);
+        [kGreenColor set];
+        UIBezierPath *borderOutterPath = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(width/2.0, width/2.0)];
+        UIBezierPath *borderInnerPath = [UIBezierPath bezierPathWithRoundedRect:CGRectInset(rect, 2, 2) byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(width/2.0, width/2.0)];
+        [borderOutterPath appendPath:borderInnerPath];
+        CGContextAddPath(context, borderOutterPath.CGPath);
+        CGContextEOFillPath(context);
+    }
+    
     //把当前context的内容输出成一个UIImage图片
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     //上下文栈pop出创建的context
     UIGraphicsEndImageContext();
     
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 520, 100, 100)];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(kScreenWidth/2.0-width/2, kScreenHeight/2.0-width/2, width, width)];
     imageView.backgroundColor = kLightGrayColor;
-    [imageView setImage:image];
-    [self.view addSubview:imageView];
-}
-
-#pragma mark - UIGraphicsBeginImageContextWithOptions_CG - 4.2
-- (void)graphicsBeginImageContextWithOptions_CG {
-    //该函数会自动创建一个context，并把它push到上下文栈顶，坐标系也经处理和UIKit的坐标系相同
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(100,100), NO, kScreenScale);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextAddEllipseInRect(context, CGRectMake(0,0,100,100));
-    //填充颜色为蓝色
-    CGContextSetFillColorWithColor(context, kGreenColor.CGColor);
-    //在context上绘制
-    CGContextFillPath(context);
-    //把当前context的内容输出成一个UIImage图片
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    //上下文栈pop出创建的context
-    UIGraphicsEndImageContext();
-    
-    UIImageView  *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(130, 520, 100, 100)];
-    imageView.backgroundColor = kLightGrayColor;
-    [imageView setImage:image];
-    [self.view addSubview:imageView];
-}
-
-#pragma mark - 生成空心图片
-- (void)graphicsBeginImageContextWithOptions {
-    
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(100, 100), NO, 0);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetLineWidth(context, 0);
-    [kRedColor set];
-    CGRect rect = CGRectMake(0, 0, 100, 100);
-    UIBezierPath *rectPath = [UIBezierPath bezierPathWithRect:CGRectInset(rect, -0.3, -0.3)];
-    UIBezierPath *roundPath = [UIBezierPath bezierPathWithRoundedRect:CGRectInset(rect, 0.3, 0.3) byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(50, 50)];
-    [rectPath appendPath:roundPath];
-    CGContextAddPath(context, rectPath.CGPath);
-    CGContextEOFillPath(context);
-    [kGreenColor set];
-    UIBezierPath *borderOutterPath = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(50, 50)];
-    UIBezierPath *borderInnerPath = [UIBezierPath bezierPathWithRoundedRect:CGRectInset(rect, 2, 2) byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(50, 50)];
-    [borderOutterPath appendPath:borderInnerPath];
-    CGContextAddPath(context, borderOutterPath.CGPath);
-    CGContextEOFillPath(context);
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    UIImageView  *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(250, 520, 100, 100)];
-    imageView.backgroundColor = kLightGrayColor;
-    [imageView setImage:image];
+    imageView.image = image;
     [self.view addSubview:imageView];
     
-    //测试用的
-    UIImageView  *imageView1 = [[UIImageView alloc] initWithFrame:CGRectMake(250, 320, 100, 100)];
-    imageView1.backgroundColor = kYellowColor;
-    [imageView1 setImage:image];
-//    [self.view addSubview:imageView1];
-    
-    //UIImageWriteToSavedPhotosAlbum(image, self, nil,nil);//保存图片
+    return image;
 }
 
 - (void)dealloc {
