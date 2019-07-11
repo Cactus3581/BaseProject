@@ -8,6 +8,7 @@
 
 #import "BPBaseNavigationController.h"
 #import "UIImage+BPAdd.h"
+#import "UIImage+BPColor.h"
 
 @interface BPBaseNavigationController ()<UIGestureRecognizerDelegate>
 
@@ -60,6 +61,8 @@
     
     //使底部线条颜色为红色
     // 略.
+     [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+     [self.navigationBar setShadowImage:[UIImage bp_imageWithColor:kRedColor]];
     
     //barTintColor:给导航栏设置背景色，一旦设置了即为不透明
     self.navigationBar.barTintColor = kOrangeColor;

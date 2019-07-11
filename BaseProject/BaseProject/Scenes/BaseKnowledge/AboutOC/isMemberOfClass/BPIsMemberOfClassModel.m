@@ -12,6 +12,14 @@
 
 @implementation BPIsMemberOfClassModel
 
+//- (Class)class {
+//    
+//}
+//
+//+ (Class)class {
+//    
+//}
+
 + (BOOL)isMemberOfClass:(Class)aClass {
     return object_getClass((id)self) == aClass;
 }

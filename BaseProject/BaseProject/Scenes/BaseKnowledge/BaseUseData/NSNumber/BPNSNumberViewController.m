@@ -18,6 +18,39 @@
     [super viewDidLoad];
 }
 
+//JSON传数字：
+- (void)test1 {
+    NSString *json = @"{\"a\":66.6, \"b\":66.66, \"c\":66.666, \"d\":66.6666}";
+    NSData *data = [json dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+    NSLog(@"%@", dict);
+    for (NSString *key in [dict allKeys]) {
+        id object = [dict objectForKey:key];
+        NSLog(@"%@: %@ - %@", key, [object class], object);
+        
+        float xf = [object floatValue];
+        double yf = [object doubleValue];
+        printf("nf: %f - df: %f\n", xf, yf);
+    }
+}
+
+// JSON传字符串类型的数字：
+
+- (void)test2 {
+    NSString *json = @"{\"a\":\"66.6\",\"b\":\"66.66\",\"c\":\"66.666\",\"d\":\"66.6666\"}";
+    NSData *data = [json dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+    NSLog(@"dict: %@", dict);
+    for (NSString *key in [dict allKeys]) {
+        id object = [dict objectForKey:key];
+        NSLog(@"%@: %@ - %@", key, [object class], object);
+        
+        float xf = [object floatValue];
+        double yf = [object doubleValue];
+        printf("nf: %f - df: %f\n", xf, yf);
+    }
+}
+
 - (void)handle {
 #pragma mark - NSNumber 数值对象类
     

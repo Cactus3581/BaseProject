@@ -34,9 +34,11 @@
     [fillColor set];
     [path fill];
     
-    //设置画笔颜色
+    //设置画笔颜色,设置线条颜色
     UIColor *stokeColor = kGreenColor;
     [stokeColor set];
+    
+    //描线 根据坐标连线
     [path stroke];
 }
 

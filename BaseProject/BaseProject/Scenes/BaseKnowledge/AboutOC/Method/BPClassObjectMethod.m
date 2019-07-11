@@ -51,12 +51,12 @@
     //[self objcMethod]
 }
 
-- (void) objcMethod {
+- (void)objcMethod {
     BPLog(@"objcMethod");
     self.title = @"ClassObject";
 }
 
-+ (void) classMethod_1 {
++ (void)classMethod_1 {
     BPLog(@"classMethod_1");
 }
 

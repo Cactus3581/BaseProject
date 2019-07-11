@@ -36,12 +36,12 @@
     return true;
 }
 
-/// 滑动停止
-///
-/// @param proposedContentOffset 当手指滚动完毕后，自然情况下根据“惯性”，会停留的位置
-/// @param velocity              速率,周率
-///
-/// @return 人为要让它停留的位置
+//  滑动停止
+// 
+//  @param proposedContentOffset 当手指滚动完毕后，自然情况下根据“惯性”，会停留的位置
+//  @param velocity              速率,周率
+// 
+//  @return 人为要让它停留的位置
 //- (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
 //    // 1.计算中心点位置
 //    CGFloat centerX = proposedContentOffset.x + self.collectionView.bounds.size.width * 0.5;

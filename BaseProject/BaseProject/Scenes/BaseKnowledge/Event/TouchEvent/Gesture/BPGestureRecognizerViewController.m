@@ -33,7 +33,6 @@
     
     //    创建手势
     [self creatrecognizers];
-    
 }
 
 //布局imageView
@@ -173,7 +172,7 @@
 
 //轻扫事件
 - (void)swipeAction:(UISwipeGestureRecognizer *)swipe {
-    ////    判断当前是左清扫 还是右清扫
+    //    判断当前是左清扫 还是右清扫
     //    if ((swipe.direction^UISwipeGestureRecognizerDirectionRight) == UISwipeGestureRecognizerDirectionLeft) {
     //        BPLog(@"左轻扫");
     //    } else if ((swipe.direction^UISwipeGestureRecognizerDirectionLeft) == UISwipeGestureRecognizerDirectionRight)

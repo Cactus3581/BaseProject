@@ -16,17 +16,25 @@ typedef NS_ENUM(NSInteger, BPDownLoadItemStatus) {
     BPDownLoadItemWait,//准备下载||等待下载
     BPDownLoadItemDowning,//下载中
     BPDownLoadItemPause,//暂停中
-    BPDownLoadItemSuccess,//已完成
+    BPDownLoadItemFinish,//已完成
     BPDownLoadItemFail,//下载失败
+    BPDownLoadItemCancel,//取消
 };
 
+
 @interface BPDownLoadItem : NSObject
-@property (copy, nonatomic) NSString *identify;
-@property (copy, nonatomic) NSString *title;
+
 @property (copy, nonatomic) NSString *downLoadUrl;
 @property (copy, nonatomic) NSString *filepath;
 @property (assign, nonatomic) BPDownLoadItemStatus status;
-@property (copy, nonatomic) NSString *progress;
+
+@property (nonatomic, strong) NSURLSessionDownloadTask *downloadTask; //下载任务
+
+@property (assign, nonatomic) CGFloat progress;
 @property (copy, nonatomic) NSString *completedUnitCount;
 @property (copy, nonatomic) NSString *totalUnitCount;
+
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSString *identify;
+
 @end

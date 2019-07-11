@@ -50,6 +50,7 @@
 
 #pragma mark - 观察有&没有setter方法的实例变量
 - (void)handleManualUseIvar {
+    
     BPKVOModel *model = [[BPKVOModel alloc] init];
     [model addObserver:self forKeyPath:@"macbook" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:@"macbook"];
     [model setValue:@"macbook" forKey:@"macbook"];
@@ -58,7 +59,7 @@
     [model changeIphone:@"iphone"];
     
     [model addObserver:self forKeyPath:@"ipad" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:@"ipad"];
-    model->_ipad = @"ipad"; // 不会引发kvo，因为没有d调用s子类的setter方法，而是直接访问的实例变量
+    model->_ipad = @"ipad"; // 不会引发kvo，因为没有调用子类的setter方法，而是直接访问的实例变量
 }
 
 #pragma mark - 手动实现KVO

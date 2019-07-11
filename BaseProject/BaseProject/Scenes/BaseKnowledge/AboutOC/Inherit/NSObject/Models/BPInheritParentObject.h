@@ -18,4 +18,10 @@
 
 - (void)methond_D;
 
+- (void)methond_X;
+
+- (void)methond_Y;
+
+- (void)methond_Z;
+
 @end

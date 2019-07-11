@@ -75,4 +75,5 @@
 - (NSString *)gainClassType {
     return nil;
 }
+
 @end

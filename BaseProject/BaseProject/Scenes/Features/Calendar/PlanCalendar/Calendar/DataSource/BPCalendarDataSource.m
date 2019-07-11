@@ -63,7 +63,7 @@
     NSMutableArray *array_server = self.model.plan_days.mutableCopy;
     
     //前期日期处理：补位
-    NSInteger weekDay = [self.date weekdayStringFromDate:self.date];////该日期是星期几,0代表星期天
+    NSInteger weekDay = [self.date weekdayStringFromDate:self.date];//该日期是星期几,0代表星期天
     for (NSInteger i = 0; i < weekDay ; i++){
         BPCalendarDayModel *model = [[BPCalendarDayModel alloc] init];
         NSDate *front_day_date =  [self.date bp_dateAfterDay:-(weekDay-i)];
@@ -169,7 +169,7 @@
     return _model;
 }
 
-///**
+// **
 // *  获取当前月的年份
 // */
 //- (NSInteger)currentYear:(NSDate *)date{
@@ -177,7 +177,7 @@
 //    NSDateComponents *componentsYear = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:date];
 //    return [componentsYear year];
 //}
-///**
+// **
 // *  获取当前月的月份
 // */
 //- (NSInteger)currentMonth:(NSDate *)date{
@@ -185,7 +185,7 @@
 //    NSDateComponents *componentsMonth = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:date];
 //    return [componentsMonth month];
 //}
-///**
+// **
 // *  获取当前是哪一天
 // *
 // *  @param date date description
@@ -197,7 +197,7 @@
 //    NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:date];
 //    return [components day];
 //}
-///**
+// **
 // *  本月有几天
 // *
 // *  @param date <#date description#>
@@ -209,7 +209,7 @@
 //    NSRange totaldaysInMonth = [[NSCalendar currentCalendar] rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:date];
 //    return totaldaysInMonth.length;
 //}
-///**
+// **
 // *  本月第一天是星期几
 // *
 // *  @param date <#date description#>

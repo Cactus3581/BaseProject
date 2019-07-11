@@ -73,7 +73,7 @@
         case BPDownLoadItemPause:
             statusStr = @"暂停下载";
             break;
-        case BPDownLoadItemSuccess:
+        case BPDownLoadItemFinish:
             self.downLoadButton.selected = YES;
             statusStr = @"下载成功";
             break;
@@ -83,7 +83,7 @@
     }
     
     self.statusLabel.text = statusStr;
-    self.progressView.progress = [item.progress floatValue];
+    self.progressView.progress = item.progress;
     self.sizeLabel.text = [NSString stringWithFormat:@"%@/%@",[BPDownloadUtils fileSizeStringFromBytes:[item.completedUnitCount integerValue]],[BPDownloadUtils fileSizeStringFromBytes:[item.totalUnitCount integerValue]]];
 }
 

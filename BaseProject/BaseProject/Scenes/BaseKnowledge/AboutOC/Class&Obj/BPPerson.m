@@ -100,7 +100,7 @@
     // setter ＝ 方法名，getter ＝ 方法名  生成我们指定方法名的setter和getter
 }
 
-////retain||strong下
+//retain||strong下
 - (void)setPhoneNumber:(NSNumber *)phoneNumber {
     //如果传入的对象和之前持有的 不是一个对象
     if (_phoneNumber != phoneNumber) {

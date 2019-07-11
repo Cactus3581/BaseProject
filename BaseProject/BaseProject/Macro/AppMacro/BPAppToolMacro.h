@@ -53,12 +53,17 @@
 #define BPFontName(name,F) [UIFont fontWithName:name size:F]
 #endif
 
-#ifndef kApplication
-#define kApplication        [UIApplication sharedApplication]
+#ifndef kWindow
+#define kWindow             [[[UIApplication sharedApplication] delegate] window]
 #endif
 
+// 最好不要用kKeyWindow，因为可能是alert所在的window
 #ifndef kKeyWindow
 #define kKeyWindow          [UIApplication sharedApplication].keyWindow
+#endif
+
+#ifndef kApplication
+#define kApplication        [UIApplication sharedApplication]
 #endif
 
 #ifndef kAppDelegate

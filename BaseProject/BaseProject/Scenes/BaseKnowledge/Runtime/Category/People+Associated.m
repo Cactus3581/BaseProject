@@ -15,7 +15,7 @@ static const char *phoneNumberKey = "phoneNumber";
 @implementation People (Associated)
 
 //@synthesize unfinishIvar = _unfinishIvar;
-@dynamic unfinishIvar;
+@dynamic unfinishIvar; // @dynamic语义是在编译期不要自动创建实现属性所用的存取方法。不写这个关键字，使用同名方法进行override也是可以达到相同效果的。但从编码规范和优化效率来讲，显式声明是最好的。
 
 - (NSNumber *)associatedBust {
     // 得到关联对象

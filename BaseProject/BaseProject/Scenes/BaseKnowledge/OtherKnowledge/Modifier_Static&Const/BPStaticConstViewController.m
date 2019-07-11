@@ -80,7 +80,7 @@ static  NSString * const static_Const_str2 = @"static_Const_str2";//字符串不
 //    local_constStr1 = @"local_constStr1_change";
 //    BPLog(@"%@", local_constStr1); //
 //
-////    local_constStr2 = @"local_constStr2_change";//报错：不能修改
+//    local_constStr2 = @"local_constStr2_change";//报错：不能修改
 //
 //    //test2:
 //    extern NSString * testStr1;

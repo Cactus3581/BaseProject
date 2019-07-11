@@ -55,11 +55,13 @@
 - (void)kvc_base {
     BPKVCModel *model = [[BPKVCModel alloc] init];
     
-    [model setValue:@"macbook" forKey:@"macbook"]; // 私有实例变量
+    // 私有实例变量
+    [model setValue:@"macbook" forKey:@"macbook"];
     BPLog(@"%@",[model valueForKey:@"macbook"]);
     
+    // KVC也可以设置value为自定义对象
     BPKVCSubModel *subModel = [[BPKVCSubModel alloc] init];
-    [model setValue:subModel forKey:@"subModel"]; // KVC也可以设置value为自定义对象
+    [model setValue:subModel forKey:@"subModel"];
     
     [model setValue:@"lastName" forKeyPath:@"subModel.lastName"];
     BPLog(@"%@",[model valueForKeyPath:@"subModel.lastName"]);
@@ -134,9 +136,8 @@
 }
 
 - (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
 }
 
-
 @end
-

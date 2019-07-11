@@ -9,16 +9,31 @@
 #import "BPBlockViewController.h"
 #import "BPBlockModel.h"
 
-typedef void(^BPBlockBlk)(NSString *);//重新起个名字
-BPBlockBlk globalBlk; // 定义一个全局的block
+// typedef 重新起个名字
+typedef void(^BPBlockBlk)(NSString *);
+typedef NSString *(^BPGlobeBlk)(NSArray *array,NSNumber *result);
 
-NSString *global_string_var = @"global_string_var";// 全局变量
-static NSString *global_static_string_var = @"global_static_string_var";// 全局静态变量
+// 定义一个全局的block
+BPBlockBlk globalBlk;
+BPGlobeBlk globalBlk1;
+
+NSString *string2 = @"string2";// 全局变量
+static NSString *string1 = @"string1";// 全局静态变量
+
+int val1 = 1;
+static int val2 = 2;
 
 @interface BPBlockViewController ()
-@property(nonatomic,copy) BPBlockBlk blk; // 用于循环引用例子的
-@property (nonatomic,copy) NSString *property_string_var;// 属性变量（堆区）
+
+// block 作为属性
+@property(nonatomic,copy) BPBlockBlk p_blk; // 用于循环引用例子的
+@property (nonatomic,copy) NSString *(^p_blk1)(NSArray *array,NSNumber *result);
+
+@property (nonatomic,copy) NSString *string6;// 属性变量（堆区）
+@property (nonatomic,assign) int val3;// 属性变量（堆区）
+
 @end
+
 
 @implementation BPBlockViewController
 
@@ -75,6 +90,19 @@ static NSString *global_static_string_var = @"global_static_string_var";// 全�
 
 #pragma mark - Block的声明和定义
 - (void)blockDeclarationAndDefinition {
+    // Block 作为局部变量
+    [self blockDeclarationAndDefinition1];
+    // Block 作为属性
+    [self blockDeclarationAndDefinition2];
+    // Block 作为方法参数
+    [self blockDeclarationAndDefinition3];
+    
+    // 使用 typedef 重命名Block
+    [self blockDeclarationAndDefinition4];
+}
+
+// Block 作为局部变量
+- (void)blockDeclarationAndDefinition1 {
     
     // block 的声明： 返回值(^blockName)(参数)
     NSString *(^block1)(NSArray *array,NSNumber *result);
@@ -111,6 +139,40 @@ static NSString *global_static_string_var = @"global_static_string_var";// 全�
     };
 }
 
+// Block 作为属性
+- (void)blockDeclarationAndDefinition2 {
+    
+    _p_blk1 = ^NSString *(NSArray *array,NSNumber *result) {
+        return array[[result integerValue]];
+    };
+    
+    _p_blk1(@[@"_p_blk1"],@0);
+}
+
+// Block 作为方法参数
+- (void)blockDeclarationAndDefinition3 {
+    
+    [self doWithBlock:^NSString *(NSArray *array, NSNumber *result) {
+        return array[[result integerValue]];
+    }];
+}
+
+- (void)doWithBlock:(NSString *(^)(NSArray *array,NSNumber *result))block {
+    if (block) {
+        NSString *str = block(@[@"block"],@1);
+        BPLog(@"str = %@",str);
+    }
+}
+
+// 使用 typedef 重命名Block
+- (void)blockDeclarationAndDefinition4 {
+    typedef NSString *(^block)(NSArray *array,NSNumber *result);
+    block blk = ^NSString *(NSArray *array,NSNumber *result) {
+        return array[[result integerValue]];
+    };
+    blk(@[@"blk"],@0);
+}
+
 #pragma mark - Block内存区域及__block（内存区域说明符）
 
 // 当指针在非栈区（全局、静态、属性(指针在堆区）、自定义对象的属性）：当被block捕获的时候，block的指针还是同一个，所以block里外操作的指针都是同一个，因为操作的都是同一个指针，所以不会产生歧义，不会引起编译错误；
@@ -136,143 +198,131 @@ static NSString *global_static_string_var = @"global_static_string_var";// 全�
  数据区（全局区）：.data区
  */
 - (void)handle__block {
-    [self handleLocalStackVar];
-    [self handleNoStackVar];
-    [self handleArray];
-}
-
-// 局部变量
-- (void)handleLocalStackVar {
-    // 局部变量
-    NSString *local_string_var = @"local_string_var";
-    // 带__block的局部变量
-    __block NSString *__block_string_var = @"__block_string_var";
-
-    BPLog(@"1. 定义block之前：局部变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",local_string_var,local_string_var,&local_string_var);
-    BPLog(@"1. 定义block之前：带__block的局部变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",__block_string_var,__block_string_var,&__block_string_var);
-    
-    NSString *(^block)(NSArray *array,NSNumber *result) = ^NSString *(NSArray *array,NSNumber *result) {
-        BPLog(@"4. 在block里面，修改之前：局部变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",local_string_var,local_string_var,&local_string_var);
-        BPLog(@"4. 在block里面，修改之前：带__block的局部变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",__block_string_var,__block_string_var,&__block_string_var);
-        
-        // 局部变量
-        //local_string_var = @"local_string_var_InBlock";//编译报错
-        __block_string_var = @"__block_string_var_InBlock";
-        
-        BPLog(@"5. 在block里面，修改之后：局部变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",local_string_var,local_string_var,&local_string_var);
-        BPLog(@"5. 在block里面，修改之后：带__block的局部变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",__block_string_var,__block_string_var,&__block_string_var);
-        
-        return array[[result integerValue]];
-    };
-    BPLog(@"2. 定义block之后，修改之前：局部变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",local_string_var,local_string_var,&local_string_var);
-    BPLog(@"2. 定义block之后，修改之前：带__block的局部变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",__block_string_var,__block_string_var,&__block_string_var);
-    
-    local_string_var = @"local_string_var_out";
-    __block_string_var = @"__block_string_var_out";
-
-    BPLog(@"3. 定义block之后，修改之后：局部变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",local_string_var,local_string_var,&local_string_var);
-    BPLog(@"3. 定义block之后，修改之后：带__block的局部变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",__block_string_var,__block_string_var,&__block_string_var);
-    
-    block(@[@"i am block"],@0);
-
-    BPLog(@"6. 定义block之后，block调用后修改之后：局部变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",local_string_var,local_string_var,&local_string_var);
-    BPLog(@"6. 定义block之后，block调用后修改之后：带__block的局部变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",__block_string_var,__block_string_var,&__block_string_var);
-}
 
 // 指针在非栈区，以下结果：指针所在的地址没变，指针存储的地址变变了，即指向的对象变了
-- (void)handleNoStackVar {
+    
     // 全局静态变量
-    global_static_string_var = @"global_static_string_var";
+    string1 = @"string1";
+    
     // 全局变量
-    global_string_var = @"global_string_var";
+    string2 = @"string2";
+    
     // 局部静态变量
-    static NSString *local_static_string_var = @"static_string_var";
+    static NSString *string3 = @"static_string_var";
+
+    // 局部变量
+    NSString *string4 = @"string4";
+    
+    // 带__block的局部变量
+    __block NSString *string5 = @"string5";
+    
     //属性
-    _property_string_var = @"_property_string_var";
-
-    BPLog(@"在block里面，修改之前：全局静态变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",global_static_string_var,global_static_string_var,&global_static_string_var);
-    BPLog(@"在block里面，修改之前：全局变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",global_string_var,global_string_var,&global_string_var);
-    BPLog(@"在block里面，修改之前：局部静态变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",local_static_string_var,local_static_string_var,&local_static_string_var);
-    BPLog(@"在block里面，修改之前：属性 = %@;对象的地址 = %p;  指针的地址 = %p\n",_property_string_var,_property_string_var,&_property_string_var);
+    _string6 = @"_string6";
     
-    NSString *(^block)(NSArray *array,NSNumber *result) = ^NSString *(NSArray *array,NSNumber *result) {
-        BPLog(@"在block里面，修改之前：全局静态变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",global_static_string_var,global_static_string_var,&global_static_string_var);
-        BPLog(@"在block里面，修改之前：全局变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",global_string_var,global_string_var,&global_string_var);
-        BPLog(@"在block里面，修改之前：局部静态变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",local_static_string_var,local_static_string_var,&local_static_string_var);
-        BPLog(@"在block里面，修改之前：属性 = %@;对象的地址 = %p;  指针的地址 = %p\n",_property_string_var,_property_string_var,&_property_string_var);
-        // 全局静态变量
-        global_static_string_var = @"global_static_string_var_InBlock";
-        // 全局变量
-        global_string_var = @"global_string_var_InBlock";
-        // 局部静态变量
-        local_static_string_var = @"static_string_var_InBlock";
-        //属性
-        _property_string_var = @"_property_string_var_InBlock";
-        
-        BPLog(@"在block里面，修改之后：全局静态变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",global_static_string_var,global_static_string_var,&global_static_string_var);
-        BPLog(@"在block里面，修改之后：全局变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",global_string_var,global_string_var,&global_string_var);
-        BPLog(@"在block里面，修改之后：局部静态变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",local_static_string_var,local_static_string_var,&local_static_string_var);
-        BPLog(@"在block里面，修改之后：属性 = %@;对象的地址 = %p;  指针的地址 = %p\n",_property_string_var,_property_string_var,&_property_string_var);
-        
-        return array[[result integerValue]];
-    };
-    BPLog(@"定义block之后，修改之前：全局静态变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",global_static_string_var,global_static_string_var,&global_static_string_var);
-    BPLog(@"定义block之后，修改之前：全局变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",global_string_var,global_string_var,&global_string_var);
-    BPLog(@"定义block之后，修改之前：局部静态变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",local_static_string_var,local_static_string_var,&local_static_string_var);
-    BPLog(@"定义block之后，修改之前：属性 = %@;对象的地址 = %p;  指针的地址 = %p\n",_property_string_var,_property_string_var,&_property_string_var);
-    
-    global_string_var = @"global_string_var_out";
-    global_static_string_var = @"global_static_string_var_out";
-    local_static_string_var = @"static_string_var_out";
-    _property_string_var = @"_property_string_var_out";
-
-    BPLog(@"定义block之后，修改之后：全局静态变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",global_static_string_var,global_static_string_var,&global_static_string_var);
-    BPLog(@"定义block之后，修改之后：全局变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",global_string_var,global_string_var,&global_string_var);
-    BPLog(@"定义block之后，修改之后：局部静态变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",local_static_string_var,local_static_string_var,&local_static_string_var);
-    BPLog(@"定义block之后，修改之后：属性 = %@;对象的地址 = %p;  指针的地址 = %p\n",_property_string_var,_property_string_var,&_property_string_var);
-    
-    block(@[@"i am block"],@0);
-    
-    BPLog(@"定义block之后，block调用后修改之后：全局静态变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",global_static_string_var,global_static_string_var,&global_static_string_var);
-    BPLog(@"定义block之后，block调用后修改之后：全局变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",global_string_var,global_string_var,&global_string_var);
-    BPLog(@"定义block之后，block调用后修改之后：局部静态变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",local_static_string_var,local_static_string_var,&local_static_string_var);
-    BPLog(@"定义block之后，block调用后修改之后：属性 = %@;对象的地址 = %p;  指针的地址 = %p\n",_property_string_var,_property_string_var,&_property_string_var);
-}
-
-// 数组
-- (void)handleArray {
-    // 带__block的数组
+    // 数组
     NSMutableArray *muArray = @[@(1)].mutableCopy;
+    // 带__block的数组
     __block NSMutableArray *blockMuArray = @[@(1)].mutableCopy;
-    BPLog(@"1. 定义block之前：局部变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",muArray,muArray,&muArray);
-    BPLog(@"1. 定义block之前：局部变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",blockMuArray,blockMuArray,&blockMuArray);
+    
+    NSLog(@"v1 = %p,v2 = %p,v3 = %p,v4 = %p,v5 = %p,v6 = %p,self = %p",string1,string2,string3,string4,string5,_string6,self);
+    NSLog(@"v1 = %p,v2 = %p,v3 = %p,v4 = %p,v5 = %p,v6 = %p,self = %p",&string1,&string2,&string3,&string4,&string5,&_string6,&self);
 
+    // 对象的地址都没有变化；只有v4和v5的指针变化了，也就是说不是一个指针变量了，浅copy了；属性为什么没有拷贝，因为拷贝的是self
     NSString *(^block)(NSArray *array,NSNumber *result) = ^NSString *(NSArray *array,NSNumber *result) {
-        BPLog(@"4. 在block里面，修改之前：属性 = %@;对象的地址 = %p;  指针的地址 = %p\n",muArray,muArray,&muArray);
-        BPLog(@"4. 在block里面，修改之前：属性 = %@;对象的地址 = %p;  指针的地址 = %p\n",blockMuArray,blockMuArray,&blockMuArray);
+        NSLog(@"v1 = %p,v2 = %p,v3 = %p,v4 = %p,v5 = %p,v6 = %p,self = %p",string1,string2,string3,string4,string5,_string6,self);
+        NSLog(@"v1 = %p,v2 = %p,v3 = %p,v4 = %p,v5 = %p,v6 = %p,self = %p",&string1,&string2,&string3,&string4,&string5,&_string6,&self);
+        // 全局静态变量
+        string1 = @"string1_InBlock";
+        
+        // 全局变量
+        string2 = @"string2_InBlock";
+        
+        // 局部静态变量
+        string3 = @"static_string_var_InBlock";
 
+        // 局部变量
+        //string4 = @"string4_InBlock";//编译报错
+        
+        // 带__block的局部变量
+        string5 = @"string5_InBlock";
+        
+        //属性
+        _string6 = @"_string6_InBlock";
+        
+        // 数组
         [muArray addObject:@(3)];
-        [blockMuArray addObject:@(3)];
         //muArray = @[].mutableCopy;//编译报错
+
+        // 带__block的数组
+        [blockMuArray addObject:@(3)];
         //blockMuArray = @[].mutableCopy;//编译成功
         
-        BPLog(@"5. 在block里面，修改之后：局部静态变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",muArray,muArray,&muArray);
-        BPLog(@"5. 在block里面，修改之后：局部静态变量 = %@;对象的地址 = %p;  指针的地址 = %p\n",blockMuArray,blockMuArray,&blockMuArray);
         return array[[result integerValue]];
     };
-    BPLog(@"2. 定义block之后，修改之前：属性 = %@;对象的地址 = %p;  指针的地址 = %p\n",muArray,muArray,&muArray);
-    BPLog(@"2. 定义block之后，修改之前：属性 = %@;对象的地址 = %p;  指针的地址 = %p\n",blockMuArray,blockMuArray,&muArray);
 
-    [muArray addObject:@(2)];
-    [blockMuArray addObject:@(2)];
+//    string2 = @"string2_out";
+//    string1 = @"string1_out";
+//    string3 = @"static_string_var_out";
+//    string4 = @"string4_out";
+//    string5 = @"string5_out";
+//    _string6 = @"_string6_out";
+//
+//    [muArray addObject:@(2)];
+//    [blockMuArray addObject:@(2)];
     
-    BPLog(@"3. 定义block之后，修改之后：属性 = %@;对象的地址 = %p;  指针的地址 = %p\n",muArray,muArray,&muArray);
-    BPLog(@"3. 定义block之后，修改之后：属性 = %@;对象的地址 = %p;  指针的地址 = %p\n",blockMuArray,blockMuArray,&blockMuArray);
+    block(@[@"i am block"],@0);
+}
+
+- (void)handle__block1 {
+    // v1,v2 v3 都没变
+    // v3
     
-    block(muArray,@0);
+    // 全局静态变量
     
-    BPLog(@"6. 定义block之后，block调用后修改之后：属性 = %@;对象的地址 = %p;  指针的地址 = %p\n",muArray,muArray,&muArray);
-    BPLog(@"6. 定义block之后，block调用后修改之后：属性 = %@;对象的地址 = %p;  指针的地址 = %p\n",blockMuArray,blockMuArray,&blockMuArray);
+    // 全局变量
+    
+    // 局部静态变量
+    static int val4 = 4;
+    
+    // 局部变量
+    int val5 = 5;
+    
+    // 带__block的局部变量
+    __block int val6 = 6;
+    
+    //属性
+    _val3 = 3;
+    
+    BPLog(@"v1 = %p,v2 = %p,v3 = %p,v4 = %p,v5 = %p,v6 = %p",val1,val2,_val3,val4,val5,val6);
+    BPLog(@"v1 = %p,v2 = %p,v3 = %p,v4 = %p,v5 = %p,v6 = %p",&val1,&val2,&_val3,&val4,&val5,&val6);
+
+    NSString *(^block)(NSArray *array,NSNumber *result) = ^NSString *(NSArray *array,NSNumber *result) {
+        
+        BPLog(@"v1 = %p,v2 = %p,v3 = %p,v4 = %p,v5 = %p,v6 = %p",val1,val2,_val3,val4,val5,val6);
+        BPLog(@"v1 = %p,v2 = %p,v3 = %p,v4 = %p,v5 = %p,v6 = %p",&val1,&val2,&_val3,&val4,&val5,&val6);
+        
+        // 全局静态变量
+        val1 = -1;
+        
+        // 全局变量
+        val2 = -2;
+
+        // 局部静态变量
+        val4 = -4;
+        
+        // 局部变量
+        //val5 = -5;//编译报错
+        
+        // 带__block的局部变量
+        val6 = -6;
+        
+        //属性
+        _val3 = -3;
+    
+        return array[[result integerValue]];
+    };
+    
+    block(@[@"i am block"],@0);
 }
 
 #pragma mark - 与异步使用的生命周期的例子
@@ -330,12 +380,12 @@ static NSString *global_static_string_var = @"global_static_string_var";// 全�
     */
     
     
-    self.blk = ^(NSString *str) {
-        //不管是通过self.property_string_var还是_property_string_var，或是函数调用[self doSomething]，只要 block 中用到了对象的属性或者函数，block就会持有该对象而不是该对象中的某个属性或者函数。
+    self.p_blk = ^(NSString *str) {
+        //不管是通过self.string6还是_string6，或是函数调用[self doSomething]，只要 block 中用到了对象的属性或者函数，block就会持有该对象而不是该对象中的某个属性或者函数。
         [weakSelf test];
-        BPLog(@"%@",weakSelf.property_string_var);
+        BPLog(@"%@",weakSelf.string6);
     };
-    self.blk(@"passValueBlock");
+    self.p_blk(@"passValueBlock");
     
     //例子2:使用多种方法破解循环引用
     BPBlockModel *model1 = [[BPBlockModel alloc] init];
@@ -419,7 +469,9 @@ static NSString *global_static_string_var = @"global_static_string_var";// 全�
         //b = 5; // 不能重指向值，但是可以进行加减运算
         return ++a;
     }
+    
     (b);//d=3
+    
     NSInteger (^e)(NSInteger) = ^(NSInteger e) {
         NSInteger f = a + b + c + d + e; //错误2+3+4+3+2 //正确2+2+4+3+2 关键在于b
         a+=d;//5 = 2+3

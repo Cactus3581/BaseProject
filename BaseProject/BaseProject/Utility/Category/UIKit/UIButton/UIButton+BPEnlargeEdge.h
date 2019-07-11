@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIButton (BPEnlargeEdge)
+
 /**
  增大点击区域
  @param size 上左下右的增大量
@@ -20,4 +21,5 @@
  @param size 上左下右的增大量
  */
 - (void)bp_setEnlargeEdgeWithTop:(CGFloat)top right:(CGFloat)right bottom:(CGFloat)bottom left:(CGFloat)left;
+
 @end

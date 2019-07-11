@@ -14,13 +14,13 @@
     NSLog(@"%s",__func__);
 }
 
-//+ (void)initialize{
-//    NSLog(@"%s %@",__func__,[self class]);
-//}
++ (void)initialize {
+    NSLog(@"%s %@",__func__,[self class]);
+}
 
 //- (void)foo {
-////    [super foo];
-//    NSLog(@"chaild foo = %@",[self class]);
+//    [super foo];
+//    NSLog(@"child foo = %@",[self class]);
 //}
 
 @end

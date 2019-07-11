@@ -42,7 +42,7 @@
 //        make.leading.trailing.equalTo(self.view);
 //    }];
     self.scrollTabbarView = scrollTabbarView;
-    self.scrollTabbarView.trackViewWidthEqualToTextLength = NO;////滑动线条宽度是否跟文字长度相同 否则跟显示文字的区域宽度相同
+    self.scrollTabbarView.trackViewWidthEqualToTextLength = NO;//滑动线条宽度是否跟文字长度相同 否则跟显示文字的区域宽度相同
     self.scrollTabbarView.shouldChangeBackViewColor = NO;
     self.scrollTabbarView.trackViewWidth = 15;
     self.scrollTabbarView.shouldChangeFontWhenSelected = NO;

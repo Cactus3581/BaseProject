@@ -151,5 +151,24 @@
 		<key>briefIntro</key>
 		<string></string>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>商业业务Demo</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>组装数据进行嵌套</string>
+				<key>fileName</key>
+				<string>BPBDNestListViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
 </array>
 </plist>

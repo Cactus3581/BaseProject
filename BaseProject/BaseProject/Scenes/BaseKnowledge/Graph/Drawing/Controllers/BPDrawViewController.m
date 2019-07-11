@@ -172,6 +172,36 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
+    /*
+     data：一个指向内存目标的指针，该内存用于存储需要渲染的图形数据。内存块的大小至少需要(bytePerRow * height)字节。
+     width：指定位图的宽度，单位是像素(pixel)。
+     height：指定位图的高度， 单位是像素(pixel)。
+     bitsPerComponent：指定内存中一个像素的每个组件使用的位数。例如，一个32位的像素格式和一个rgb颜色空间，我们可以指定每个组件为8位。
+     bytesPerRow：指定位图每行的字节数。
+     colorspace：颜色空间用于位图上下文。在创建位图Graphics Context时，我们可以使用灰度(gray), RGB, CMYK, NULL颜色空间。
+
+     bitmapInfo：位图的信息，这些信息用于指定位图是否需要包含alpha组件，像素中alpha组件的相对位置(如果有的话)，alpha组件是否是预乘的，及颜色组件是整型值还是浮点值。
+     */
+    
+    CGFloat pixelsWide = width;
+    CGFloat pixelsHigh = width;
+    
+    int bitmapBytesPerRow   = (pixelsWide * 4);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
+    
+    /*
+    int bitmapByteCount     = (bitmapBytesPerRow * pixelsHigh);
+    void *bitmapData = calloc(bitmapByteCount);
+    if (bitmapData == NULL) {
+        fprintf (stderr, "Memory not allocated!");
+        return NULL;
+    }
+     */
+    
+    // 位图上下文
+    //context = CGBitmapContextCreate (bitmapData, pixelsWide, pixelsHigh, 8, bitmapBytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
+    context = CGBitmapContextCreate (NULL, pixelsWide, pixelsHigh, 8, bitmapBytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
+
     if (type == 4) {
         // 用贝塞尔曲线进行图片绘制
         

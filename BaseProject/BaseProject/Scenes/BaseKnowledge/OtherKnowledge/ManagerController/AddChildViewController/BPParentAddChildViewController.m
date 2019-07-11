@@ -22,12 +22,16 @@
     
     BPSubAddChildViewController *vc = [[BPSubAddChildViewController alloc] init];
     _subVc = vc;
-    [self addChildViewController:vc];//1.addChildViewController:的同时调用addSubView：
+    
+    // 先添加子控制器，然后才能添加view
+    [self addChildViewController:vc];
     [self.view addSubview:vc.view];
+    
     //    [vc.view mas_makeConstraints:^(MASConstraintMaker *make) {
     //        make.top.equalTo(self.view).offset(200);
     //        make.leading.trailing.bottom.equalTo(self.view);
     //    }];
+    
     vc.view.frame = CGRectMake(0, 200, self.view.bounds.size.width, 200);
     vc.view.backgroundColor = kExplicitColor;
     [vc didMoveToParentViewController:self];

@@ -15,6 +15,7 @@ NSString *const kBPKVOAssociatedObservers = @"BPKVOAssociatedObservers";
 
 #pragma mark - BPObservationInfo
 @interface BPObservationInfo : NSObject
+
 @property (nonatomic, weak) NSObject *observer;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, copy) BPObservingBlock block;
@@ -33,6 +34,7 @@ NSString *const kBPKVOAssociatedObservers = @"BPKVOAssociatedObservers";
 }
 
 @end
+
 
 #pragma mark - Helpers
 //获得相应的 getter 的名字
@@ -71,6 +73,7 @@ static NSString * setterForGetter(NSString *getter) {
 
 #pragma mark - 重写新生成的子类的setter方法，新的 setter 在调用原 setter 方法后，通知每个观察者（调用之前传入的 block ）：
 static void kvo_setter(id self, SEL _cmd, id newValue) {
+    
     NSString *setterName = NSStringFromSelector(_cmd);
     NSString *getterName = getterForSetter(setterName);
     
@@ -167,18 +170,20 @@ static Class kvo_class(id self, SEL _cmd) {
 
 // 根据originalsuperClass新建一个继承此类的子类
 - (Class)makeKvoClassWithOriginalClassName:(NSString *)originalsuperClass {
+    
     NSString *kvosuperClass = [kBPKVOClassPrefix stringByAppendingString:originalsuperClass];
+    
     Class clazz = NSClassFromString(kvosuperClass);
     
     if (clazz) {
         return clazz;
     }
     
-    // class doesn't exist yet, make it
+    // KVO类不存在，创建它
     Class originalClazz = object_getClass(self);
     Class kvoClazz = objc_allocateClassPair(originalClazz, kvosuperClass.UTF8String, 0);
     
-    // grab class method's signature so we can borrow it
+    // 获取类方法的签名，以便我们可以借用它
     Method clazzMethod = class_getInstanceMethod(originalClazz, @selector(class));
     const char *types = method_getTypeEncoding(clazzMethod);
     class_addMethod(kvoClazz, @selector(class), (IMP)kvo_class, types);

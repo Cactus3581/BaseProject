@@ -13,10 +13,14 @@
 
 @implementation BPSwizzlingChild (BPSwizzing)
 
-
 // 加载分类到内存的时候调用
 + (void)load {
+    NSLog(@"%s",__func__);
     [self p_swizzleMethods:[self class] originalSelector:@selector(foo) swizzledSelector:@selector(s_foo)];
+}
+
++ (void)initialize{
+    NSLog(@"%s %@",__func__,[self class]);
 }
 
 // 不能在分类中重写方法foo，因为会把系统的功能给覆盖掉，而且分类中不能调用super.

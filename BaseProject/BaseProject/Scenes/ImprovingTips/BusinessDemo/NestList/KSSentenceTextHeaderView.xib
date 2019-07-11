@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="rJl-ca-fS9" customClass="KSSentenceTextHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNv-kR-4Dq">
+                    <rect key="frame" x="15" y="16" width="3" height="15"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="aQt-jw-I0R"/>
+                        <constraint firstAttribute="width" constant="3" id="vAi-PE-UUy"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgl-bO-VTc">
+                    <rect key="frame" x="23" y="14.5" width="376" height="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Wgl-bO-VTc" firstAttribute="centerY" secondItem="UNv-kR-4Dq" secondAttribute="centerY" id="4kK-CU-REz"/>
+                <constraint firstItem="Wgl-bO-VTc" firstAttribute="leading" secondItem="UNv-kR-4Dq" secondAttribute="trailing" constant="5" id="MWC-DG-dHV"/>
+                <constraint firstAttribute="bottom" secondItem="UNv-kR-4Dq" secondAttribute="bottom" constant="10" id="PlU-DS-p7n"/>
+                <constraint firstItem="UNv-kR-4Dq" firstAttribute="leading" secondItem="rJl-ca-fS9" secondAttribute="leading" constant="15" id="bJ5-dD-IVj"/>
+                <constraint firstAttribute="trailing" secondItem="Wgl-bO-VTc" secondAttribute="trailing" constant="15" id="nyA-hT-fF3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="lineView" destination="UNv-kR-4Dq" id="1sP-Rv-cUg"/>
+                <outlet property="titleLabel" destination="Wgl-bO-VTc" id="2E1-0d-PO1"/>
+            </connections>
+            <point key="canvasLocation" x="173.91304347826087" y="-200.55803571428569"/>
+        </view>
+    </objects>
+</document>

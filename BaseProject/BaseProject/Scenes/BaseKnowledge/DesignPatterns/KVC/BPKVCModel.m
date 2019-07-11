@@ -18,6 +18,8 @@
     return YES;
 }
 
+// 如果dic里面的有不存在于model中的元素会触发；当字典中的键，在对象属性中找不到对应的属性的时候会报错。
+
 - (void)setValue:(nullable id)value forUndefinedKey:(NSString *)key {
     BPLog(@"出现异常，该key不存在%@",key);
 }

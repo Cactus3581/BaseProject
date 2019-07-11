@@ -40,7 +40,7 @@ NSString *const kChangedNotification = @"kChangedNotification";
     self.window.rootViewController = self.rootTabbarViewController;
 }
 
-- (UIWindow *)window{
+- (UIWindow *)window {
     if (!_window) {
         _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     }
@@ -70,9 +70,8 @@ NSString *const kChangedNotification = @"kChangedNotification";
     UIViewController *viewController = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil] instantiateViewControllerWithIdentifier:@"LaunchScreen"];
     viewController.view.backgroundColor = kWhiteColor;
     UIView *launchView = viewController.view;
-    UIWindow *mainWindow = [UIApplication sharedApplication].keyWindow;
-    launchView.frame = [UIApplication sharedApplication].keyWindow.frame;
-    [mainWindow addSubview:launchView];
+    launchView.frame = kKeyWindow.frame;
+    [kKeyWindow addSubview:launchView];
     
     [UIView animateWithDuration:0.6f delay:0.5f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
         /*
@@ -97,8 +96,7 @@ NSString *const kChangedNotification = @"kChangedNotification";
 
 #pragma mark - 获取当前展示的vc(参数传入导航试图控制器或者UITabBarController,self.window.rootViewController 也可。（这个比较通用）)
 - (UIViewController*)currentViewController {
-    // Find best view controller
-    UIViewController* viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UIViewController* viewController = kWindow.rootViewController;
     return [self findcurrentViewController:viewController];
 }
 
@@ -193,7 +191,7 @@ NSString *const kChangedNotification = @"kChangedNotification";
 
 - (BOOL)openUrl:(NSURL *)url {
     NSString *urlstr = [url absoluteString];
-    if([urlstr rangeOfString:@"BaseProject"].location !=NSNotFound) {
+    if([urlstr rangeOfString:@"BaseProject"].location != NSNotFound) {
         return YES;
     }
     return NO;

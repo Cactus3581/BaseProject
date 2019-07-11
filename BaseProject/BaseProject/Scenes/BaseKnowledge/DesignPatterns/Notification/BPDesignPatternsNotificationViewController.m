@@ -15,6 +15,10 @@ static NSString *nofiKey2 = @"system_notificationCenter2";
 static NSString *nofiKey3 = @"system_notificationCenter3";
 static NSString *nofiKey4 = @"system_notificationCenter4";
 
+static void Callback(CFNotificationCenterRef center,void *observer,CFStringRef name,const void *object,CFDictionaryRef userInfo) {
+         //监听到notification后要做的处理}
+}
+
 @interface BPDesignPatternsNotificationViewController ()
 @property (nonatomic, weak) id <NSObject> observer;
 @property (nonatomic, strong) NSOperationQueue *mainQueue;
@@ -48,9 +52,44 @@ static NSString *nofiKey4 = @"system_notificationCenter4";
                 [self customAnotherNotificationCenter]; // 第二种通过对象的方式自定义通知机制
                 break;
             }
+                
+            case 3:{
+                [self addObserver1]; // 第二种通过对象的方式自定义通知机制
+                break;
+            }
         }
     }
 }
+- (void)addObserver1 {
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 80, 50)];
+    [button addTarget:self action:@selector(postNotificaiton) forControlEvents:UIControlEventTouchUpInside];
+    button.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:button];
+    
+    
+    CFNotificationCenterRef notification = CFNotificationCenterGetDarwinNotifyCenter();
+    
+    CFNotificationSuspensionBehavior behavior = CFNotificationSuspensionBehaviorDeliverImmediately;
+    
+    CFNotificationCenterAddObserver(notification,(__bridge const void *)(self),Callback,CFSTR("notification.identifier"),NULL,behavior);
+}
+
+- (void)postNotificaiton {
+    void *object;
+    CFDictionaryRef userInfo;
+    
+    CFNotificationCenterRef notification = CFNotificationCenterGetDarwinNotifyCenter();
+    
+    CFNotificationCenterPostNotification(notification,CFSTR("notification.identifier"),object,userInfo,true);
+}
+
+// 移除监听
+- (void)removeObserver {
+    CFNotificationCenterRef notification = CFNotificationCenterGetDarwinNotifyCenter ();
+    CFNotificationCenterRemoveObserver(notification, (__bridge const void *)(self), CFSTR("notification.identifier"), NULL);
+}
+
 
 #pragma mark - 系统基础API调用
 - (void)addObserver {

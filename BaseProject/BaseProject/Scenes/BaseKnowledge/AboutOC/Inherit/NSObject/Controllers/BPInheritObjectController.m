@@ -23,13 +23,14 @@
 
 #pragma mark - 自己主动调用
 - (void)rightBarButtonItemClickAction:(id)sender {
-    [_obj methond_C];
-    [_obj methond_D];
+    [_obj methond_C]; // C，c
+    [_obj methond_D]; // d
+    [_obj methond_X]; // X，Y，z
 }
 
 #pragma mark - 系统主动调用:创建的时候使用
 - (void)test {
-    BPInheritSubObject *obj = [[BPInheritSubObject alloc] init];
+    BPInheritSubObject *obj = [[BPInheritSubObject alloc] init]; //A,a,b
     _obj = obj;
 }
 

@@ -84,9 +84,9 @@ static NSString *notificationNameFromOutsideScrollNotEnable = @"notificationName
 //        BPLog(@"内部不能滑动");
 //    }
 //    if (scrollView.contentOffset.y <= 0) {
-////        if (!self.fingerIsTouch) {
-////            return;
-////        }
+//        if (!self.fingerIsTouch) {
+//            return;
+//        }
 //        BPLog(@"内部到顶");
 //
 //        self.isScrollEnabled = NO;

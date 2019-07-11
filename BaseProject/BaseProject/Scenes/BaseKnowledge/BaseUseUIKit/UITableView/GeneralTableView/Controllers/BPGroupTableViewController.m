@@ -36,9 +36,60 @@ static CGFloat cellH = 50;
 #pragma mark - vc system methods
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.rightBarButtonTitle = @"获取";
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+        make.top.equalTo(self.view).offset(100);
+        make.leading.equalTo(self.view);
+        make.bottom.equalTo(self.view).offset(-100);
+        make.trailing.equalTo(self.view);
+    }];
+    
+    _tableView.contentInset = UIEdgeInsetsMake(30, 0, 30, 0);
+}
+
+- (void)rightBarButtonItemClickAction:(id)sender {
+    
+    // 根据指定 index 获取 cell
+    BPTableViewCell *visibleCell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    BPLog(@"visibleCell text = %@",visibleCell.textLabel.text);
+
+    // 根据指定 cell 获取 index
+    NSIndexPath *indexPath = [_tableView indexPathForCell:visibleCell];
+    BPLog(@"visibleCell section = %ld,row = %ld",(long)indexPath.section,(long)indexPath.row);
+
+    // 获取 cell 在self.view上的位置
+    CGRect rect = [_tableView convertRect:visibleCell.frame toView:self.view];
+    BPLog(@"rect = %@",NSStringFromCGRect(rect));
+    
+    // 根据指定 index 获取 cell 相对于 tableView 的 Rect
+    CGRect visibleCellRect = [_tableView rectForRowAtIndexPath:indexPath];
+    BPLog(@"visibleCellRect = %@",NSStringFromCGRect(visibleCellRect));
+
+    CGRect visibleCellRect1 = [_tableView rectForRowAtIndexPath:indexPath];
+    BPLog(@"y = %.2f",visibleCellRect1.origin.y +_tableView.contentInset.top);
+    
+    BPTableViewCell *lastVisibleCell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:4]];
+    BPLog(@"lastVisibleCell text = %@",lastVisibleCell.textLabel.text);
+    
+    // 根据指定 cell 获取 index
+    NSIndexPath *lastIndexPath = [_tableView indexPathForCell:lastVisibleCell];
+    BPLog(@"lastVisibleCell section = %ld,row = %ld",(long)lastIndexPath.section,(long)lastIndexPath.row);
+    
+    // 根据指定 index 获取 cell 的 Rect
+    CGRect lastVisibleCellRect = [_tableView rectForRowAtIndexPath:lastIndexPath];
+    BPLog(@"lastVisibleCellRect = %@",NSStringFromCGRect(lastVisibleCellRect));
+    
+    // 获取可见的 IndexPaths 数组
+    NSArray *visibleCellIndexPaths = [_tableView indexPathsForVisibleRows];
+    [visibleCellIndexPaths enumerateObjectsUsingBlock:^(NSIndexPath *indexPath, NSUInteger idx, BOOL * _Nonnull stop) {
+        BPLog(@"section = %ld,row = %ld",(long)indexPath.section,(long)indexPath.row);
+    }];
+    
+    // 获取可见的 cell 数组
+    NSArray *visibleCells = [_tableView visibleCells];
+    [visibleCells enumerateObjectsUsingBlock:^(BPTableViewCell *cell, NSUInteger idx, BOOL * _Nonnull stop) {
+        BPLog(@"text = %@",cell.textLabel.text);
     }];
 }
 

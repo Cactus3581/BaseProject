@@ -49,6 +49,21 @@
     BPLog(@"i'm parent E");
 }
 
+#pragma mark - 子类拿不到，子类无法使用
+- (void)methond_X {
+    BPLog(@"i'm parent X");
+    [self methond_Y];
+    [self methond_Z];
+}
+
+- (void)methond_Y {
+    BPLog(@"i'm parent Y");
+}
+
+- (void)methond_Z {
+    BPLog(@"i'm parent Z");
+}
+
 #pragma mark - 子类重写，但是没有调用super，父类也会调用，奇怪
 - (void)dealloc {
     BPLog(@"i'm parent dealloc");

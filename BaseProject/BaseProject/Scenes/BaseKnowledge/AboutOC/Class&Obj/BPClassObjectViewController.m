@@ -88,10 +88,10 @@
     BPLog(@"%lu,%lu",BPRetainCount(person),BPRetainCount(person1));
 
     
-    BPPerson *per1 = [[BPPerson alloc]init];
-    BPPerson *per2 = [[BPPerson alloc]init];
-    BPPerson *per3 = [[BPPerson alloc]init];
-    NSArray *arr = [[NSArray alloc]initWithObjects:per1,per2,per3, nil];
+    BPPerson *per1 = [[BPPerson alloc] init];
+    BPPerson *per2 = [[BPPerson alloc] init];
+    BPPerson *per3 = [[BPPerson alloc] init];
+    NSArray *arr = [[NSArray alloc] initWithObjects:per1,per2,per3, nil];
     
     BPLog(@"per1:%lu,%p",BPRetainCount(per1),per1);
 

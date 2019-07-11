@@ -9,7 +9,6 @@
 #import "BPTableViewCell.h"
 
 @interface BPTableViewCell()
-@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @end
 
 @implementation BPTableViewCell

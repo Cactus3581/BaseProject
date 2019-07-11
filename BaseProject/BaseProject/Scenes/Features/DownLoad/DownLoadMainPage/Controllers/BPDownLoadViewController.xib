@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BPDownLoadViewController">
+            <connections>
+                <outlet property="cancelButton" destination="qJD-ng-dq0" id="atr-tf-5Yl"/>
+                <outlet property="progressLabel" destination="Oun-xb-y36" id="t80-fV-ysm"/>
+                <outlet property="progressView" destination="Jws-AO-pEi" id="dae-4h-I1v"/>
+                <outlet property="startDownLoadButton" destination="Hsl-9J-yoj" id="23e-VQ-Cpq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsl-9J-yoj">
+                    <rect key="frame" x="176.5" y="438" width="31" height="30"/>
+                    <state key="normal" title="开始"/>
+                    <connections>
+                        <action selector="startAction:" destination="-1" eventType="touchUpInside" id="QaY-Vm-J8i"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJD-ng-dq0">
+                    <rect key="frame" x="237.5" y="438" width="62" height="30"/>
+                    <state key="normal" title="删除文件"/>
+                    <connections>
+                        <action selector="caccelAction:" destination="-1" eventType="touchUpInside" id="PIQ-4F-wP1"/>
+                    </connections>
+                </button>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jws-AO-pEi">
+                    <rect key="frame" x="147" y="365" width="150" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="jOZ-uN-ai5"/>
+                    </constraints>
+                </progressView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oun-xb-y36">
+                    <rect key="frame" x="201" y="392" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Jws-AO-pEi" firstAttribute="centerX" secondItem="Oun-xb-y36" secondAttribute="centerX" id="Sas-Xc-BSL"/>
+                <constraint firstItem="qJD-ng-dq0" firstAttribute="leading" secondItem="Hsl-9J-yoj" secondAttribute="trailing" constant="30" id="YfS-IZ-mhu"/>
+                <constraint firstItem="Oun-xb-y36" firstAttribute="centerX" secondItem="Hsl-9J-yoj" secondAttribute="centerX" constant="30" id="Ztn-Ev-Yuf"/>
+                <constraint firstItem="Hsl-9J-yoj" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" constant="-15" id="dRy-YB-8X7"/>
+                <constraint firstItem="Oun-xb-y36" firstAttribute="top" secondItem="Jws-AO-pEi" secondAttribute="bottom" constant="25" id="jl6-Rk-EpE"/>
+                <constraint firstItem="Hsl-9J-yoj" firstAttribute="top" secondItem="Oun-xb-y36" secondAttribute="bottom" constant="25" id="oqL-pg-bDy"/>
+                <constraint firstItem="Hsl-9J-yoj" firstAttribute="centerY" secondItem="Q5M-cg-NOt" secondAttribute="centerY" id="pmv-0r-CTA"/>
+                <constraint firstItem="qJD-ng-dq0" firstAttribute="centerY" secondItem="Hsl-9J-yoj" secondAttribute="centerY" id="wQr-aP-uuA"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+</document>

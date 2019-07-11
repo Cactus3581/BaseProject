@@ -10,12 +10,12 @@
 
 @implementation BPSubClassObjectMethod
 
-+ (void) classMethod {
++ (void)classMethod {
     [super classMethod];
     BPLog(@"sub_classMethod");
 }
 
-- (void) objcMethod {
+- (void)objcMethod {
     [super objcMethod];
     BPLog(@"sub_objcMethod");
 }

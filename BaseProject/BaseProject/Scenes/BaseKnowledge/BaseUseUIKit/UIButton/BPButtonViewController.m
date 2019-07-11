@@ -19,9 +19,35 @@
     [super viewDidLoad];
     //[self test];
 //    [self edgeInsetsMake];
-    [self imageButton];
+    [self repeatAddAction];
 }
 
+- (void)repeatAddAction {
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeSystem];
+    button.bounds = CGRectMake(100, 300, 100, 100);
+    button.center = self.view.center;
+    //    [button setTitle:@"登陆" forState:UIControlStateNormal];
+    [button.titleLabel setFont:[UIFont systemFontOfSize:12]];
+    //    button.titleLabel.textAlignment = NSTextAlignmentLeft;
+    button.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+    [button setImage:[UIImage imageNamed:@"navi_back"] forState:UIControlStateNormal];
+    [self.view addSubview:button];
+    
+    [button addTarget:self action:@selector(sector1) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(sector2) forControlEvents:UIControlEventTouchUpInside];
+
+    button.backgroundColor = kBrownColor;
+    [button setTintColor:kRedColor];
+    button.titleLabel.backgroundColor = kBlueColor;
+    button.imageView.backgroundColor = kGreenColor;
+}
+- (void)sector1 {
+    BPLog(@"1");
+}
+
+- (void)sector2 {
+    BPLog(@"2");
+}
 - (void)imageButton {
     UIButton * button = [UIButton buttonWithType:UIButtonTypeSystem];
     button.bounds = CGRectMake(100, 300, 100, 100);
@@ -147,7 +173,7 @@
     //   正常状态下  title的设置
     //    [button setTitle:@"登陆" forState:UIControlStateNormal];
     //
-    ////    高亮状态下 title的设置
+    //    高亮状态下 title的设置
     //    [button setTitle:@"登陆中..." forState:UIControlStateHighlighted];
     
     
@@ -158,7 +184,7 @@
     //
     //    [button addTarget:self action:@selector(buttonAction2:) forControlEvents:UIControlEventTouchDown];
     //
-    ////    (3)移除点击事件
+    //    (3)移除点击事件
     //    [button removeTarget:self action:@selector(buttonAction2:) forControlEvents:UIControlEventTouchDown];
     
     //    (4)设置title的颜色
@@ -168,7 +194,7 @@
     //    (5)设置tite阴影颜色
     //    [button setTitleShadowColor:kBlackColor forState:UIControlStateNormal];
     //    //设置阴影大小。
-    ////    button.titleShadowOffset = CGSizeMake(5, 5);
+    //    button.titleShadowOffset = CGSizeMake(5, 5);
     //    [button setTitleShadowColor:kBlackColor forState:UIControlStateHighlighted];
     //
     

@@ -85,9 +85,9 @@ static CGFloat layerH = 140.0f;
 //    self.animation.fromValue = @0;
 //    self.animation.toValue = [NSNumber numberWithDouble:[persent doubleValue]];
 //    
-////    self.animation.removedOnCompletion = NO;
-////    self.animation.fillMode = kCAFillModeForwards;
-////    [self.maskShapeLayer addAnimation:self.animation forKey:nil];
+//    self.animation.removedOnCompletion = NO;
+//    self.animation.fillMode = kCAFillModeForwards;
+//    [self.maskShapeLayer addAnimation:self.animation forKey:nil];
     
     self.animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     self.animation.duration = 1.5;

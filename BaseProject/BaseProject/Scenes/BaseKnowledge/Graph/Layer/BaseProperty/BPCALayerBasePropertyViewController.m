@@ -75,7 +75,7 @@
     UIView *maskView = [[UIView alloc] initWithFrame:self.view.bounds];
     _maskView = maskView;
     maskView.backgroundColor = [kRedColor colorWithAlphaComponent:1];
-    [[UIApplication sharedApplication].keyWindow addSubview:maskView];
+    [kWindow addSubview:maskView];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(remove)];
     [maskView addGestureRecognizer:tap];

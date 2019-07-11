@@ -153,13 +153,13 @@ static CGFloat cellH = 50;
     return _dataArray;
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
 #pragma mark - dealloc
 - (void)dealloc {
 
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 @end

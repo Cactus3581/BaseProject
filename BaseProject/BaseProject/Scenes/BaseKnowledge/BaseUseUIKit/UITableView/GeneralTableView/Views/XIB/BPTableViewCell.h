@@ -10,6 +10,8 @@
 
 @interface BPTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+
 - (void)setText:(NSString *)text indexPath:(NSIndexPath *)indexPath;
 
 @end

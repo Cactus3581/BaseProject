@@ -279,14 +279,15 @@ BPSYNTH_DUMMY_CLASS(UIView_BPAdd)
 
 // 判断此view是否正在屏幕上显示
 - (BOOL)bp_isDisplayedInScreen {
+    
     if (self == nil) {
         return FALSE;
     }
+    
     CGRect screenRect = [UIScreen mainScreen].bounds;
     
     // 转换view对应window的Rect
-    UIWindow *window= [UIApplication sharedApplication].keyWindow;
-    CGRect rect = [self convertRect:self.frame toView:window];
+    CGRect rect = [self convertRect:self.frame toView:kKeyWindow];
     
     if (CGRectIsEmpty(rect) || CGRectIsNull(rect)) { // app进入后台的时候，在这返回NO
         return FALSE;
@@ -320,7 +321,7 @@ BPSYNTH_DUMMY_CLASS(UIView_BPAdd)
 //第一种方法：获取当前展示的vc(参数传入导航试图控制器或者UITabBarController,self.window.rootViewController 也可。（这个比较通用）
 - (UIViewController* )bp_currentViewController {
     // Find best view controller
-    UIViewController* viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UIViewController* viewController = kKeyWindow.rootViewController;
     return [self bp_findcurrentViewController:viewController];
 }
 
@@ -363,7 +364,7 @@ BPSYNTH_DUMMY_CLASS(UIView_BPAdd)
 //第二种方法：获取顶部视图控制器
 - (UIViewController *)topViewController {
     UIViewController *topVC;
-    topVC = [self getTopViewController:[[UIApplication sharedApplication].keyWindow rootViewController]];
+    topVC = [self getTopViewController:[kKeyWindow rootViewController]];
     while (topVC.presentedViewController) {
         topVC = [self getTopViewController:topVC.presentedViewController];
     }

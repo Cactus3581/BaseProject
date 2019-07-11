@@ -64,7 +64,7 @@ static NSInteger lineWidth = 10;
     
     UIView *maskView = [[UIView alloc] initWithFrame:self.view.bounds];
     maskView.backgroundColor = [kBlackColor colorWithAlphaComponent:0.5];
-    [[UIApplication sharedApplication].keyWindow addSubview:maskView];
+    [kWindow addSubview:maskView];
     
      path = [UIBezierPath bezierPathWithRect:self.view.bounds];
     //    [path appendPath:[UIBezierPath bezierPathWithArcCenter:CGPointMake(227, 188) radius:(46) startAngle:0 endAngle:2 * M_PI clockwise:NO]];

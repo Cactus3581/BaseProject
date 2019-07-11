@@ -68,7 +68,7 @@ static NSString *notificationNameFromOutsideScrollNotEnable = @"notificationName
         }else {
             //自己可以滑动了，但是外部不能滑动
         }
-    }else {
+    } else {
         //BPLog(@"内部不能滑动");
         scrollView.contentOffset = CGPointZero;//这个防止的是上下两个scroll都显示的情况
     }

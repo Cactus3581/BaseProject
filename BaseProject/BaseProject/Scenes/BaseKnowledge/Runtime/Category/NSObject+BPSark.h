@@ -14,8 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)p_foo;
 
-- (void)p_foo;
-
 @end
 
 NS_ASSUME_NONNULL_END

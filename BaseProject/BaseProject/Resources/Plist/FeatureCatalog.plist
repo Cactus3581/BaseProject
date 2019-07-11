@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string>微信</string>
+		<string>图文混排</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
@@ -502,7 +502,7 @@
 		<key>title</key>
 		<string>下载模块</string>
 		<key>fileName</key>
-		<string>BPDownLoadMainPageViewController</string>
+		<string>BPDownLoadViewController</string>
 		<key>briefIntro</key>
 		<string></string>
 	</dict>
@@ -511,6 +511,14 @@
 		<string>本地通知推送</string>
 		<key>fileName</key>
 		<string>BPLocalNotificationViewController</string>
+		<key>briefIntro</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Socket编程</string>
+		<key>fileName</key>
+		<string></string>
 		<key>briefIntro</key>
 		<string></string>
 	</dict>

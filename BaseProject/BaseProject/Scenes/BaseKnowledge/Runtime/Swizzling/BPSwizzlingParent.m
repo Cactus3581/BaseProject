@@ -10,7 +10,7 @@
 
 @implementation BPSwizzlingParent
 
-+ (void)load{
++ (void)load {
     NSLog(@"%s",__func__);
 }
 

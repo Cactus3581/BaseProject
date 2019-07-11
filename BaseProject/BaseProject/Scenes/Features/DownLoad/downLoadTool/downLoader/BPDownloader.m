@@ -127,7 +127,7 @@ static dispatch_group_t downloadGroup;
     }
     
     //所有子任务均完成
-    dispatch_group_notify(downloadGroup, dispatch_get_global_queue(0, 0), ^{
+    dispatch_group_notify(downloadGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
     });
 }
@@ -149,7 +149,7 @@ static dispatch_group_t downloadGroup;
         dispatch_async(dispatch_get_main_queue(), ^{
             CGFloat downLoadProgress = downloadProgress.completedUnitCount * 1.00 / downloadProgress.totalUnitCount;
             
-            item.progress = @(downLoadProgress).stringValue;
+            item.progress = downLoadProgress;
             item.completedUnitCount = @(downloadProgress.completedUnitCount).stringValue;
             item.totalUnitCount = @(downloadProgress.totalUnitCount).stringValue;
             
@@ -172,7 +172,7 @@ static dispatch_group_t downloadGroup;
                 result(0);
             }
         }else {
-            item.status = BPDownLoadItemSuccess;
+            item.status = BPDownLoadItemFinish;
             if (result) {
                 result(1);
             }

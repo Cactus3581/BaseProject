@@ -7,6 +7,15 @@
 //
 
 #import "BPHitTestViewController.h"
+#import "UIView+BPToast.h"
+#import "BPHitTestViewBaseProcessSuperView.h"
+#import "BPHitTestViewEnLargeSuperView.h"
+#import "BPHitTestInterceptParentView.h"
+#import "BPOutSideSuperView.h"
+#import "UIResponder+BPMsgSend.h"
+#import "BPHitTestGestureView.h"
+#import "BPHitTestButton.h"
+#import "BPHitTestNoGestureView.h"
 
 /*
  1、扩大UIButton的响应热区
@@ -16,94 +25,199 @@
 
 @interface BPHitTestViewController ()
 
+@property (nonatomic,weak) UIButton *button;
 @end
+
 
 @implementation BPHitTestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self handleDynamicJumpData];
 }
 
-#pragma mark - 边界之外能否响应
-- (void)configureViewOut {
-    UIView *backView = [[UIView alloc]init];
-    backView.backgroundColor = kClearColor;
-    [self.view addSubview:backView];
+- (void)handleDynamicJumpData {
+    if (self.needDynamicJump) {
+        NSInteger type = [self.dynamicJumpDict[@"type"] integerValue];
+        switch (type) {
+            case 0:{
+                [self baseUse];
+            }
+                break;
+                
+            case 1:{
+                [self eventIntercept];
+            }
+                break;
+                
+            case 2:{
+                [self eventOutSide];
+            }
+                break;
+                
+            case 3:{
+                [self eventEnLarge];
+            }
+                break;
+                
+            case 4:{
+                [self eventOutSide]; // 多层级View的通讯
+            }
+                break;
+                
+            case 5:{
+                [self gesture]; // 手势对响应链传递的影响
+            }
+                break;
+                
+            case 6:{
+                [self control]; // UIControl 对响应链传递的影响
+            }
+                break;
+                
+            case 7:{
+                [self findVC]; // 找到 响应者所在的控制器
+            }
+                break;
+                
+                
+        }
+    }
+}
+
+#pragma mark - 找到 响应者所在的控制器
+
+- (void)findVC {
+    [self.view bp_parentController];
+}
+
+#pragma mark - 基础过程
+- (void)baseUse {
     
-    [backView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(120);
+    BPHitTestViewBaseProcessSuperView *hitView = [[BPHitTestViewBaseProcessSuperView alloc]init];
+    hitView.backgroundColor = kLightGrayColor;
+    [self.view addSubview:hitView];
+    
+    [hitView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.equalTo(self.view);
+        make.height.equalTo(hitView.mas_width);
+        make.center.equalTo(self.view);
+    }];
+}
+
+#pragma mark - 事件拦截，让其他 responder 处理事件
+- (void)eventIntercept {
+    BPHitTestInterceptParentView *hitView = [[BPHitTestInterceptParentView alloc]init];
+    hitView.backgroundColor = kLightGrayColor;
+    [self.view addSubview:hitView];
+    
+    [hitView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.equalTo(self.view);
+        make.height.equalTo(hitView.mas_width);
+        make.center.equalTo(self.view);
+    }];
+}
+
+#pragma mark - 事件转发，让边界之外也能响应
+- (void)eventOutSide {
+    BPOutSideSuperView *hitView = [[BPOutSideSuperView alloc]init];
+    hitView.backgroundColor = kLightGrayColor;
+    [self.view addSubview:hitView];
+    
+    [hitView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.equalTo(self.view);
+        make.height.equalTo(hitView.mas_width);
+        make.center.equalTo(self.view);
+    }];
+}
+
+#pragma mark - 扩大响应范围
+- (void)eventEnLarge {
+    BPHitTestViewEnLargeSuperView *hitView = [[BPHitTestViewEnLargeSuperView alloc]init];
+    hitView.backgroundColor = kLightGrayColor;
+    [self.view addSubview:hitView];
+    
+    [hitView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.equalTo(@(100));
+        make.center.equalTo(self.view);
+    }];
+}
+
+#pragma mark - 多层级View的通讯
+- (void)bp_routerEventWithName:(NSString *)eventName userInfo:(NSObject *)userInfo {
+    NSLog(@"%s eventName:%@",__func__,eventName);
+}
+
+#pragma mark - 手势对响应链传递的影响
+- (void)gesture {
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
+    [self.view addGestureRecognizer:tap];
+    
+    BPHitTestGestureView *hitView = [[BPHitTestGestureView alloc]init];
+    hitView.backgroundColor = kRedColor;
+    [self.view addSubview:hitView];
+    
+    [hitView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.equalTo(@(100));
         make.center.equalTo(self.view);
     }];
     
-    UIView *view = [[UIView alloc]init];
-    view.backgroundColor = kGreenColor;
-    [backView addSubview:view];
-    
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(100);
-        make.center.equalTo(backView);
-    }];
-    
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
-    rightButton.backgroundColor = kRedColor;
-    [rightButton setTitle:@"push" forState:UIControlStateNormal];
-    [rightButton setTitleColor:kPurpleColor forState:UIControlStateNormal];
-    rightButton.titleLabel.font = [UIFont systemFontOfSize:10.0f];
-    [rightButton addTarget:self action:@selector(next:) forControlEvents:UIControlEventTouchUpInside];
-    [backView addSubview:rightButton];
-    [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(30);
-        make.top.equalTo(view).offset(-15);
-        make.trailing.equalTo(view.mas_trailing).offset(15);
-    }];
-    //    view.layer.masksToBounds = YES;
-}
+    BPHitTestNoGestureView *hitView1 = [[BPHitTestNoGestureView alloc]init];
+    hitView1.backgroundColor = kLightGrayColor;
+    [self.view addSubview:hitView1];
 
-#pragma mark - view hidden lauout 依赖
-- (void)configureLayout {
-    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
-    [rightButton setBackgroundImage:[UIImage imageNamed:@"transitionWithType01"] forState:UIControlStateNormal];
-    [rightButton setTitle:@"push" forState:UIControlStateNormal];
-    [rightButton setTitleColor:kPurpleColor forState:UIControlStateNormal];
-    rightButton.titleLabel.font = [UIFont systemFontOfSize:27.0f];
-    [rightButton.titleLabel setAdjustsFontSizeToFitWidth:YES];
-    [rightButton.titleLabel sizeToFit];
-    rightButton.imageView.layer.masksToBounds = YES;
-    rightButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    [rightButton addTarget:self action:@selector(buttonAct:) forControlEvents:UIControlEventTouchUpInside];
-    rightButton.backgroundColor = kGreenColor;
-    [self.view addSubview:rightButton];
-    
-    [rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(100);
-        make.width.height.mas_equalTo(50);
-        make.centerX.equalTo(self.view);
-    }];
-    
-    UIButton *bottomButton = [UIButton buttonWithType:UIButtonTypeCustom];//自定义样式
-    [bottomButton setBackgroundImage:[UIImage imageNamed:@"transitionWithType01"] forState:UIControlStateNormal];
-    [bottomButton setTitle:@"push" forState:UIControlStateNormal];
-    [bottomButton setTitleColor:kPurpleColor forState:UIControlStateNormal];
-    bottomButton.titleLabel.font = [UIFont systemFontOfSize:27.0f];
-    [bottomButton.titleLabel setAdjustsFontSizeToFitWidth:YES];
-    [bottomButton.titleLabel sizeToFit];
-    bottomButton.imageView.layer.masksToBounds = YES;
-    bottomButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    [bottomButton addTarget:self action:@selector(buttonAct:) forControlEvents:UIControlEventTouchUpInside];
-    bottomButton.backgroundColor = kGreenColor;
-    [self.view addSubview:bottomButton];
-    
-    //rightButton.hidden = YES;
-    
-    [bottomButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(rightButton).offset(100);
-        make.width.height.mas_equalTo(50);
-        make.centerX.equalTo(self.view);
+    [hitView1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(hitView.mas_bottom).offset(-30);
+        make.centerX.width.height.equalTo(hitView);
     }];
 }
 
-- (void)next:(UIButton *)bt {
-    [self.navigationController popViewControllerAnimated:YES];
+#pragma mark - UIControl 对响应链传递的影响
+- (void)control {
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
+    [self.view addGestureRecognizer:tap];
+    
+    BPHitTestButton *button = [BPHitTestButton buttonWithType:UIButtonTypeCustom];
+    button.backgroundColor = kRedColor;
+    [button setTitle:@"Button" forState:UIControlStateNormal];
+    [button setTitleColor:kPurpleColor forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:10.0f];
+    [self.view addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.height.equalTo(@(100));
+        make.center.equalTo(self.view);
+    }];
+    
+    [button addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
+}
++ (void)load {
+    
+}
+- (void)tap {
+    BPLog(@"controller tap");
+}
+
+- (void)buttonAction {
+    BPLog(@"BPHitTestButton Action");
+//    [self bp_routerEventWithName:@"" userInfo:nil];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    BPLog(@"Controller Began");
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    BPLog(@"Controller Move");
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    BPLog(@"Controller End");
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+    BPLog(@"Controller Cancelled");
 }
 
 - (void)didReceiveMemoryWarning {

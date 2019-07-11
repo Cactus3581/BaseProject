@@ -171,8 +171,11 @@
                 [self changeSark]; //面试题
             }
                 break;
-
                 
+            case 21:{
+                [self getThing]; // runtime API
+            }
+                break;
         }
     }
 }
@@ -181,13 +184,13 @@
 - (void)changeSark {
     // 测试代码1
     [NSObject p_foo];
-    [[NSObject new] p_foo];
+//    [[NSObject new] p_foo];// 编译错误
 
     // 测试代码2
     NSString *name = @"ryan";
     id cls = [BPRuntimeSark class];
     void *obj = &cls;// 相当于创建了一个对象:对象是指向类对象地址的变量
-    [(__bridge id)obj speak];// 没有声明，为什么不报错；为什么把name加进来了？：实例变量是对象的地址+偏移量，一般的偏移量是4，也就是在这个栈上+4，往上看就是name。
+    [(__bridge id)obj speak];// 为什么把name加进来了？：实例变量是对象的地址+偏移量，一般的偏移量是4，也就是在这个栈上+4，往上看就是name。
 }
 
 #pragma mark - 手动实现KVO
@@ -235,10 +238,10 @@
 #pragma mark - 动态类型
 - (void)dynamicType {
     //类族（工厂模式构建的）：NSNumber同NSArray也是含有隐藏的多个子类
-    NSMutableArray *array = @[].mutableCopy;
-    BPLog(@"== %d,%d",[array class] == [NSArray class],[array class] == [NSMutableArray class]);// 0,0
-    BPLog(@"isMemberOfClass %d,%d",[array isMemberOfClass:[NSArray class]],[array isMemberOfClass:[NSMutableArray class]]);// 0,0
-    BPLog(@"isKindOfClass %d,%d",[array isKindOfClass:[NSArray class]],[array isKindOfClass:[NSMutableArray class]]); // 1,1
+    NSMutableArray *muArray = @[].mutableCopy;
+    BPLog(@"== %d,%d",[muArray class] == [NSArray class],[muArray class] == [NSMutableArray class]);// 0,0
+    BPLog(@"isMemberOfClass %d,%d",[muArray isMemberOfClass:[NSArray class]],[muArray isMemberOfClass:[NSMutableArray class]]);// 0,0
+    BPLog(@"isKindOfClass %d,%d",[muArray isKindOfClass:[NSArray class]],[muArray isKindOfClass:[NSMutableArray class]]); // 1,1
     
     BPLog(@"NSArray %d,%d",[[NSArray class] isKindOfClass:[NSArray class]],[[NSArray class] isMemberOfClass:[NSArray class]]); // 0,0
     BPLog(@"NSObject %d,%d",[[NSObject class] isKindOfClass:[NSObject class]],[[NSObject class] isMemberOfClass:[NSObject class]]); // 1,0
@@ -271,12 +274,12 @@
 #pragma mark - self与super的class方法
 - (void)selfAndSuperInInstanceMethod {
     
-    //当前类：BPRuntimeViewController
+    //在实例方法里使用，以下返回的都是当前类：`BPRuntimeViewController`：
     Class a1 = [self class]; // 不管是类还是对象，返回的都是类本身
     Class a2 = [super class];
     Class a3 = [BPRuntimeViewController class];
 
-    //当前类的父类：BPBaseViewController
+    //在实例方法里使用，以下返回的都是当前类的父类：`BPBaseViewController`：
     Class b1 = [self superclass]; // 不管是类还是对象，返回的都是类本身
     Class b2 = [super superclass];
     Class b3 = [BPRuntimeViewController superclass];
@@ -286,12 +289,12 @@
 
 // 在类方法中
 + (void)selfAndSuperInClassMethod {
-    //当前类：BPRuntimeViewController
+    //在类方法里使用，以下返回的都是当前类：`BPRuntimeViewController`：
     Class a1 = [self class]; // 不管是类还是对象，返回的都是类本身
     Class a2 = [super class];
     Class a3 = [BPRuntimeViewController class];
     
-    //当前类的父类：BPBaseViewController
+    //在类方法里使用，以下返回的都是当前类的父类：`BPBaseViewController`：
     Class b1 = [self superclass]; // 不管是类还是对象，返回的都是类本身
     Class b2 = [super superclass];
     Class b3 = [BPRuntimeViewController superclass];
@@ -401,7 +404,7 @@ int test(int val) {
     
     
     BPSwizzlingParent *parent = [[BPSwizzlingParent alloc] init];
-    [parent foo];
+//    [parent foo];
     
     /*
      父类的 +load 早于子类，但是并没有限制父类的分类加载会早于子类的分类的加载，实际上这取决于编译的顺序。
@@ -409,8 +412,8 @@ int test(int val) {
 父类在子类之后 Swizzling 其实并没有对子类 hook 到。
      */
     //我并没有重写子类的foo方法，所以如果此时直接将两个方法进行交换，实际上是将它的父类的foo和s_foo方法进行交换。
-//    BPSwizzlingChild *child = [[BPSwizzlingChild alloc] init];
-//    [child foo];
+    BPSwizzlingChild *child = [[BPSwizzlingChild alloc] init];
+    [child foo];
     
 }
 
@@ -462,6 +465,87 @@ void sayFunction(id self, SEL _cmd, id some) {
     objc_disposeClassPair(People);
 }
 
+- (void)getThing {
+    People *myClass = [[People alloc] init];
+    unsigned int outCount = 0;
+    Class cls = People.class;
+    // 类名
+    NSLog(@"class name: %s", class_getName(cls));
+    NSLog(@"==========================================================");
+    // 父类
+    NSLog(@"super class name: %s", class_getName(class_getSuperclass(cls)));
+    NSLog(@"==========================================================");
+    // 是否是元类
+    NSLog(@"MyClass is %@ a meta-class", (class_isMetaClass(cls) ? @"" : @"not"));
+    NSLog(@"==========================================================");
+    Class meta_class = objc_getMetaClass(class_getName(cls));
+    NSLog(@"%s's meta-class is %s", class_getName(cls), class_getName(meta_class));
+    NSLog(@"==========================================================");
+    // 变量实例大小
+    NSLog(@"instance size: %zu", class_getInstanceSize(cls));
+    NSLog(@"==========================================================");
+    // 成员变量
+    Ivar *ivars = class_copyIvarList(cls, &outCount);
+    for (int i = 0; i < outCount; i++) {
+        Ivar ivar = ivars[i];
+        NSLog(@"instance variable's name: %s at index: %d", ivar_getName(ivar), i);
+    }
+    free(ivars);
+    Ivar string = class_getInstanceVariable(cls, "_string");
+    if (string != NULL) {
+        NSLog(@"instace variable %s", ivar_getName(string));
+    }
+    NSLog(@"==========================================================");
+    // 属性操作
+    objc_property_t * properties = class_copyPropertyList(cls, &outCount);
+    for (int i = 0; i < outCount; i++) {
+        objc_property_t property = properties[i];
+        NSLog(@"property's name: %s", property_getName(property));
+    }
+    free(properties);
+    objc_property_t array = class_getProperty(cls, "array");
+    if (array != NULL) {
+        NSLog(@"property %s", property_getName(array));
+    }
+    NSLog(@"==========================================================");
+    // 方法操作
+    Method *methods = class_copyMethodList(cls, &outCount);
+    for (int i = 0; i < outCount; i++) {
+        Method method = methods[i];
+        NSLog(@"method's signature: %s", method_getName(method));
+    }
+    free(methods);
+    Method method1 = class_getInstanceMethod(cls, @selector(method1));
+    if (method1 != NULL) {
+        NSLog(@"method %s", method_getName(method1));
+    }
+    Method classMethod = class_getClassMethod(cls, @selector(classMethod1));
+    if (classMethod != NULL) {
+        NSLog(@"class method : %s", method_getName(classMethod));
+    }
+    NSLog(@"MyClass is%@ responsd to selector: method3WithArg1:arg2:", class_respondsToSelector(cls, @selector(method3WithArg1:arg2:)) ? @"" : @" not");
+    IMP imp = class_getMethodImplementation(cls, @selector(method1));
+    imp();
+    NSLog(@"==========================================================");
+    // 协议
+    Protocol * __unsafe_unretained * protocols = class_copyProtocolList(cls, &outCount);
+    Protocol * protocol;
+    for (int i = 0; i < outCount; i++) {
+        protocol = protocols[i];
+        NSLog(@"protocol name: %s", protocol_getName(protocol));
+    }
+    NSLog(@"MyClass is%@ responsed to protocol %s", class_conformsToProtocol(cls, protocol) ? @"" : @" not", protocol_getName(protocol));
+    NSLog(@"==========================================================");
+    
+    
+    // 获取所有加载的Objective-C框架和动态库的名称
+    const char ** objc_copyImageNames ( unsigned int *outCount );
+    // 获取指定类所在动态库
+    const char * class_getImageName ( Class cls );
+    // 获取指定库或框架中所有类的类名
+    const char ** objc_copyClassNamesForImage ( const char *image, unsigned int *outCount );
+}
+          
 #pragma mark - 获取对象所有的属性名称和属性值、获取对象所有成员变量名称和变量值、获取对象所有的方法名和方法参数数量。
 - (void)getIvar {
     People *cangTeacher = [[People alloc] init];

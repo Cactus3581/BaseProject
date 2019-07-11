@@ -288,7 +288,7 @@ static BPMediaPlayer *playerManager = nil;
     //        //Playback started
     //
     //        BPLog(@"currentTimeStr = %@",self.currentTimeStr);
-    ////        [player removeTimeObserver:self.playerObserver];
+    //        [player removeTimeObserver:self.playerObserver];
     //    }];
     
     //在item添加完kvo，如果可以播放播放，执行以下代码：播放进度

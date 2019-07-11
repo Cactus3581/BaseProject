@@ -24,6 +24,7 @@ const void *BPDeallocExecutorsKey = &BPDeallocExecutorsKey;
     }
 }
 
+// 懒加载获取串行队列，保证线程安全
 - (dispatch_queue_t)deallocCallbackQueue {
     if (_deallocCallbackQueue == nil) {
         static dispatch_once_t onceToken;
@@ -34,6 +35,7 @@ const void *BPDeallocExecutorsKey = &BPDeallocExecutorsKey;
     return _deallocCallbackQueue;
 }
 
+// 懒加载获取NSHashTable，作为任务事件的容器
 - (NSHashTable *)bp_deallocExecutors {
     NSHashTable *table = objc_getAssociatedObject(self,BPDeallocExecutorsKey);
     if (!table) {
