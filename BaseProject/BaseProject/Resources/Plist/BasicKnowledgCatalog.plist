@@ -897,6 +897,41 @@
 		<array>
 			<dict>
 				<key>title</key>
+				<string>23种设计模式</string>
+				<key>fileName</key>
+				<string>BPSimpleTableController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>简单工厂模式</string>
+						<key>fileName</key>
+						<string>BPDesignPatternsViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>工厂模式</string>
+						<key>fileName</key>
+						<string>BPDesignPatternsViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>抽象工厂模式</string>
+						<key>fileName</key>
+						<string>BPDesignPatternsViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
 				<string>KVC</string>
 				<key>fileName</key>
 				<string>BPSimpleTableController</string>

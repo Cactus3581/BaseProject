@@ -553,6 +553,8 @@
 		01A597BB2085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A597BA2085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.m */; };
 		01A6B65B22BBE49D00F316ED /* NSObject+BPDebugDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A6B65A22BBE49D00F316ED /* NSObject+BPDebugDescription.m */; };
 		01A6B65E22BBE4DC00F316ED /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A6B65D22BBE4DC00F316ED /* NSObject+DLIntrospection.m */; };
+		01ADDA4D22DED0180058ECFE /* BPDesignPatternsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ADDA4B22DED0180058ECFE /* BPDesignPatternsViewController.m */; };
+		01ADDA4E22DED0180058ECFE /* BPDesignPatternsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01ADDA4C22DED0180058ECFE /* BPDesignPatternsViewController.xib */; };
 		01B075A020E4FD0C004891F7 /* BPDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0752120E4FD0C004891F7 /* BPDrawViewController.m */; };
 		01B075A520E4FD0C004891F7 /* BPBlockAnimatonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0752F20E4FD0C004891F7 /* BPBlockAnimatonVC.m */; };
 		01B075A620E4FD0C004891F7 /* BPCoreAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0753320E4FD0C004891F7 /* BPCoreAnimationVC.m */; };
@@ -593,6 +595,16 @@
 		01B075C920E4FD0D004891F7 /* BPIntrinsicContentSizeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0759D20E4FD0C004891F7 /* BPIntrinsicContentSizeLabel.m */; };
 		01B0F5E021EC257600D1D9C6 /* BPAFNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0F5DF21EC257600D1D9C6 /* BPAFNViewController.m */; };
 		01B27F6622CB1777004CAAF5 /* NSObject+BPDealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B27F6522CB1777004CAAF5 /* NSObject+BPDealloc.m */; };
+		01B2EDFB22DF558C00702C36 /* BPFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2EDFA22DF558C00702C36 /* BPFactory.m */; };
+		01B2EDFE22DF55C800702C36 /* BPFordFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2EDFD22DF55C800702C36 /* BPFordFactory.m */; };
+		01B2EE0122DF55E000702C36 /* BPBMWFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2EE0022DF55E000702C36 /* BPBMWFactory.m */; };
+		01B2EE0422DF560C00702C36 /* BPCarProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2EE0322DF560C00702C36 /* BPCarProduct.m */; };
+		01B2EE0722DF561B00702C36 /* BPSUVProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2EE0622DF561B00702C36 /* BPSUVProduct.m */; };
+		01B2EE0A22DF564C00702C36 /* BPFordSUVProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2EE0922DF564C00702C36 /* BPFordSUVProduct.m */; };
+		01B2EE0D22DF565B00702C36 /* BPBMWSUVProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2EE0C22DF565B00702C36 /* BPBMWSUVProduct.m */; };
+		01B2EE1022DF566D00702C36 /* BPFordCarProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2EE0F22DF566D00702C36 /* BPFordCarProduct.m */; };
+		01B2EE1322DF567900702C36 /* BPBMWCarProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2EE1222DF567900702C36 /* BPBMWCarProduct.m */; };
+		01B2EE1622DF61D400702C36 /* BPProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2EE1522DF61D400702C36 /* BPProduct.m */; };
 		01B7268E1FF7DF2700648674 /* BPDataStructureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B7268D1FF7DF2700648674 /* BPDataStructureViewController.m */; };
 		01B726951FF7E45B00648674 /* BPAlgorithm.c in Sources */ = {isa = PBXBuildFile; fileRef = 01B726911FF7E45B00648674 /* BPAlgorithm.c */; };
 		01B726961FF7E45B00648674 /* BPAlgorithmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B726941FF7E45B00648674 /* BPAlgorithmController.m */; };
@@ -1924,6 +1936,9 @@
 		01A6B65A22BBE49D00F316ED /* NSObject+BPDebugDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BPDebugDescription.m"; sourceTree = "<group>"; };
 		01A6B65C22BBE4DC00F316ED /* NSObject+DLIntrospection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DLIntrospection.h"; sourceTree = "<group>"; };
 		01A6B65D22BBE4DC00F316ED /* NSObject+DLIntrospection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DLIntrospection.m"; sourceTree = "<group>"; };
+		01ADDA4A22DED0180058ECFE /* BPDesignPatternsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDesignPatternsViewController.h; sourceTree = "<group>"; };
+		01ADDA4B22DED0180058ECFE /* BPDesignPatternsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDesignPatternsViewController.m; sourceTree = "<group>"; };
+		01ADDA4C22DED0180058ECFE /* BPDesignPatternsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPDesignPatternsViewController.xib; sourceTree = "<group>"; };
 		01B0752120E4FD0C004891F7 /* BPDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawViewController.m; sourceTree = "<group>"; };
 		01B0752220E4FD0C004891F7 /* BPDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawViewController.h; sourceTree = "<group>"; };
 		01B0752F20E4FD0C004891F7 /* BPBlockAnimatonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBlockAnimatonVC.m; sourceTree = "<group>"; };
@@ -1999,6 +2014,26 @@
 		01B0F5DF21EC257600D1D9C6 /* BPAFNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAFNViewController.m; sourceTree = "<group>"; };
 		01B27F6422CB1777004CAAF5 /* NSObject+BPDealloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPDealloc.h"; sourceTree = "<group>"; };
 		01B27F6522CB1777004CAAF5 /* NSObject+BPDealloc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BPDealloc.m"; sourceTree = "<group>"; };
+		01B2EDF922DF558C00702C36 /* BPFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPFactory.h; sourceTree = "<group>"; };
+		01B2EDFA22DF558C00702C36 /* BPFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPFactory.m; sourceTree = "<group>"; };
+		01B2EDFC22DF55C800702C36 /* BPFordFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPFordFactory.h; sourceTree = "<group>"; };
+		01B2EDFD22DF55C800702C36 /* BPFordFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPFordFactory.m; sourceTree = "<group>"; };
+		01B2EDFF22DF55E000702C36 /* BPBMWFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBMWFactory.h; sourceTree = "<group>"; };
+		01B2EE0022DF55E000702C36 /* BPBMWFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBMWFactory.m; sourceTree = "<group>"; };
+		01B2EE0222DF560C00702C36 /* BPCarProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCarProduct.h; sourceTree = "<group>"; };
+		01B2EE0322DF560C00702C36 /* BPCarProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCarProduct.m; sourceTree = "<group>"; };
+		01B2EE0522DF561B00702C36 /* BPSUVProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPSUVProduct.h; sourceTree = "<group>"; };
+		01B2EE0622DF561B00702C36 /* BPSUVProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPSUVProduct.m; sourceTree = "<group>"; };
+		01B2EE0822DF564C00702C36 /* BPFordSUVProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPFordSUVProduct.h; sourceTree = "<group>"; };
+		01B2EE0922DF564C00702C36 /* BPFordSUVProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPFordSUVProduct.m; sourceTree = "<group>"; };
+		01B2EE0B22DF565B00702C36 /* BPBMWSUVProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBMWSUVProduct.h; sourceTree = "<group>"; };
+		01B2EE0C22DF565B00702C36 /* BPBMWSUVProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBMWSUVProduct.m; sourceTree = "<group>"; };
+		01B2EE0E22DF566D00702C36 /* BPFordCarProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPFordCarProduct.h; sourceTree = "<group>"; };
+		01B2EE0F22DF566D00702C36 /* BPFordCarProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPFordCarProduct.m; sourceTree = "<group>"; };
+		01B2EE1122DF567900702C36 /* BPBMWCarProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPBMWCarProduct.h; sourceTree = "<group>"; };
+		01B2EE1222DF567900702C36 /* BPBMWCarProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBMWCarProduct.m; sourceTree = "<group>"; };
+		01B2EE1422DF61D400702C36 /* BPProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPProduct.h; sourceTree = "<group>"; };
+		01B2EE1522DF61D400702C36 /* BPProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPProduct.m; sourceTree = "<group>"; };
 		01B7268C1FF7DF2700648674 /* BPDataStructureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDataStructureViewController.h; sourceTree = "<group>"; };
 		01B7268D1FF7DF2700648674 /* BPDataStructureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDataStructureViewController.m; sourceTree = "<group>"; };
 		01B726901FF7E45B00648674 /* BPAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPAlgorithm.h; sourceTree = "<group>"; };
@@ -3615,6 +3650,12 @@
 		01161F522030975C00FA3441 /* DesignPatterns */ = {
 			isa = PBXGroup;
 			children = (
+				01ADDA4A22DED0180058ECFE /* BPDesignPatternsViewController.h */,
+				01ADDA4B22DED0180058ECFE /* BPDesignPatternsViewController.m */,
+				01ADDA4C22DED0180058ECFE /* BPDesignPatternsViewController.xib */,
+				01ADDA4422DECF340058ECFE /* AbstractFactory */,
+				01ADDA4322DECF290058ECFE /* Factory */,
+				01ADDA3622DE207D0058ECFE /* SimpleFactory */,
 				01F2609021D9B496008973C1 /* Block */,
 				01F372FD20654666007B1498 /* TargetAction */,
 				01F372F9206545D1007B1498 /* SingleClass */,
@@ -7810,6 +7851,47 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
+		01ADDA3622DE207D0058ECFE /* SimpleFactory */ = {
+			isa = PBXGroup;
+			children = (
+				01B2EDF922DF558C00702C36 /* BPFactory.h */,
+				01B2EDFA22DF558C00702C36 /* BPFactory.m */,
+				01B2EE1422DF61D400702C36 /* BPProduct.h */,
+				01B2EE1522DF61D400702C36 /* BPProduct.m */,
+				01B2EE0222DF560C00702C36 /* BPCarProduct.h */,
+				01B2EE0322DF560C00702C36 /* BPCarProduct.m */,
+				01B2EE0522DF561B00702C36 /* BPSUVProduct.h */,
+				01B2EE0622DF561B00702C36 /* BPSUVProduct.m */,
+			);
+			path = SimpleFactory;
+			sourceTree = "<group>";
+		};
+		01ADDA4322DECF290058ECFE /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				01B2EDFC22DF55C800702C36 /* BPFordFactory.h */,
+				01B2EDFD22DF55C800702C36 /* BPFordFactory.m */,
+				01B2EDFF22DF55E000702C36 /* BPBMWFactory.h */,
+				01B2EE0022DF55E000702C36 /* BPBMWFactory.m */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		01ADDA4422DECF340058ECFE /* AbstractFactory */ = {
+			isa = PBXGroup;
+			children = (
+				01B2EE0E22DF566D00702C36 /* BPFordCarProduct.h */,
+				01B2EE0F22DF566D00702C36 /* BPFordCarProduct.m */,
+				01B2EE0822DF564C00702C36 /* BPFordSUVProduct.h */,
+				01B2EE0922DF564C00702C36 /* BPFordSUVProduct.m */,
+				01B2EE0B22DF565B00702C36 /* BPBMWSUVProduct.h */,
+				01B2EE0C22DF565B00702C36 /* BPBMWSUVProduct.m */,
+				01B2EE1122DF567900702C36 /* BPBMWCarProduct.h */,
+				01B2EE1222DF567900702C36 /* BPBMWCarProduct.m */,
+			);
+			path = AbstractFactory;
+			sourceTree = "<group>";
+		};
 		01B0751B20E4FD0C004891F7 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
@@ -10425,6 +10507,7 @@
 				019B7CEC22B3786300B7419C /* BPMachViewController.xib in Resources */,
 				011CD75020CE190A00560EE6 /* BPMasksToBoundsViewController.xib in Resources */,
 				01C4BB7C227C89850076ABC3 /* BPPushChildViewController.xib in Resources */,
+				01ADDA4E22DED0180058ECFE /* BPDesignPatternsViewController.xib in Resources */,
 				01ED9E672276A448006FB4D6 /* KSAddSubViewSubController.xib in Resources */,
 				01D2F5B12088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib in Resources */,
 				01583B02224DB3AE00172F7F /* BPAsyncViewController.xib in Resources */,
@@ -10768,6 +10851,7 @@
 				013B42592254BA8500BD441A /* UIScreen+Additions.m in Sources */,
 				010DB7071FDD4D450099E66F /* UINavigationBar+BPAwesome.m in Sources */,
 				010DB7591FDD4D450099E66F /* UITableView+BPiOS7Style.m in Sources */,
+				01B2EE0A22DF564C00702C36 /* BPFordSUVProduct.m in Sources */,
 				01EC9C0E21BA7ADC00477EB8 /* BPTree.m in Sources */,
 				0179070D20011DC300E5C360 /* BPAboutCopyViewController.m in Sources */,
 				0161168E22D05954003A3ABC /* BPHitTestGestureView.m in Sources */,
@@ -10775,6 +10859,7 @@
 				01FE862D211AB88E0060B141 /* BPTableViewSingleSelectionController.m in Sources */,
 				01D22BC61FDD814000BCC4AD /* YYLabel+BPAddForFrame.m in Sources */,
 				01C935B41FC3399F00D98FD6 /* BPSimpleTableController.m in Sources */,
+				01B2EE0722DF561B00702C36 /* BPSUVProduct.m in Sources */,
 				01F5B10020B2D2D70026B8B4 /* BPTagCollectionViewCell.m in Sources */,
 				010DB7321FDD4D450099E66F /* UIScrollView+BPPages.m in Sources */,
 				010D0F7122126C29003E8390 /* BPNSProxyViewController.m in Sources */,
@@ -10834,6 +10919,7 @@
 				017907A42001249500E5C360 /* BPWaterWaveView.m in Sources */,
 				0111FF7D22776DFD00B51C65 /* KSSentenceTexTableView.m in Sources */,
 				01F2CE8220AABF7000F1D701 /* DHCustomSlideView.m in Sources */,
+				01B2EE1622DF61D400702C36 /* BPProduct.m in Sources */,
 				01F2CE6A20AABE6600F1D701 /* UICollectionViewFlowLayout+BPFullItem.m in Sources */,
 				016DADC820582FB100AA95EC /* NSDictionary+BPSafe.m in Sources */,
 				0143427521D21E7500CEDCD1 /* BPNSDecimalNumberViewController.m in Sources */,
@@ -10857,6 +10943,7 @@
 				015804E520CACF6D00D0EF7C /* BPTestViewController.m in Sources */,
 				01DBF15B20E77775001C52C0 /* BPAutoLayoutUpdateConstraintsController.m in Sources */,
 				017A9A431FDD2B8C00CDA599 /* NSNumber+BPDecimalNumber.m in Sources */,
+				01B2EE1322DF567900702C36 /* BPBMWCarProduct.m in Sources */,
 				01ED9E662276A448006FB4D6 /* KSAddSubViewSubController.m in Sources */,
 				01CFEA6F20DD522A00032ACD /* BPRotatingScreenPushiewController.m in Sources */,
 				01B075BB20E4FD0C004891F7 /* BPAutoresizingViewA.m in Sources */,
@@ -11059,6 +11146,7 @@
 				010DB71B1FDD4D450099E66F /* UIWebView+BPLoadInfo.m in Sources */,
 				01DF32431FDD3B3D00B8A955 /* NSObject+BPAssociatedObject.m in Sources */,
 				010DB7081FDD4D450099E66F /* UILabel+BPSuggestSize.m in Sources */,
+				01B2EE0122DF55E000702C36 /* BPBMWFactory.m in Sources */,
 				01DF32261FDD3B3000B8A955 /* NSString+BPUUID.m in Sources */,
 				01D2F5FC2088E72800D21B20 /* NSString+BPMarkColor.m in Sources */,
 				01C935BA1FC33A5900D98FD6 /* BPSimpleModel.m in Sources */,
@@ -11154,6 +11242,7 @@
 				016D95F920E3E63D00651EDE /* UIView+BPShare.m in Sources */,
 				0173401E1FA9753F006192F0 /* BPBaseViewController.m in Sources */,
 				018535ED2123C745003E80C9 /* BPCircleProgressButton.m in Sources */,
+				01ADDA4D22DED0180058ECFE /* BPDesignPatternsViewController.m in Sources */,
 				013B42492254B8B100BD441A /* BPAsyncDrawViewController.m in Sources */,
 				017CF94D20D3AD7500D9AA30 /* BPFlowCategoryImageTagView.m in Sources */,
 				010DB7471FDD4D450099E66F /* UIImage+BPRoundedCorner.m in Sources */,
@@ -11176,6 +11265,7 @@
 				01583B05224E1D2E00172F7F /* BPDrawRectCGView.m in Sources */,
 				01DF31C11FDD3A9100B8A955 /* NSDictionary+BPJSONString.m in Sources */,
 				0111FF6F227749F000B51C65 /* KSSentenceTextTableViewCell.m in Sources */,
+				01B2EDFB22DF558C00702C36 /* BPFactory.m in Sources */,
 				016D95AD20E3825500651EDE /* BPTouchViewController.m in Sources */,
 				017CF94B20D3AD7500D9AA30 /* BPFlowCategoryImageTagCell.m in Sources */,
 				01DF31D61FDD3A9100B8A955 /* NSDateFormatter+BPMake.m in Sources */,
@@ -11187,6 +11277,7 @@
 				01C935BD1FC33A6B00D98FD6 /* BPSimpleViewModel.m in Sources */,
 				01B075AD20E4FD0C004891F7 /* BPMasonryAutoLayoutProcessView.m in Sources */,
 				01DF32441FDD3B3D00B8A955 /* NSObject+BPEasyCopy.m in Sources */,
+				01B2EE0422DF560C00702C36 /* BPCarProduct.m in Sources */,
 				0158052E20CADED000D0EF7C /* DataBaseModel.m in Sources */,
 				01F2CE6420AABE6600F1D701 /* BPFlowCategoryViewCellModel.m in Sources */,
 				01C0B6221FFC87AB005BB4A5 /* Palette.m in Sources */,
@@ -11217,6 +11308,7 @@
 				01DF316E1FDD3A0900B8A955 /* CAShapeLayer+BPUIBezierPath.m in Sources */,
 				017906E120011C7E00E5C360 /* BPKVCModel.m in Sources */,
 				0159A63520EC782600312293 /* BPDownLoadMoreFilesTableViewCell.m in Sources */,
+				01B2EDFE22DF55C800702C36 /* BPFordFactory.m in Sources */,
 				01DBF13F20E74171001C52C0 /* BPAutoLayoutHuggingViewController.m in Sources */,
 				01D6FBC220C832E300AD8A6E /* BPMultiLevelCatalogueModelDataSource.m in Sources */,
 				010DB7561FDD4D450099E66F /* UIControl+BPBlock.m in Sources */,
@@ -11248,6 +11340,7 @@
 				01BA17BC20D5183900AC70A2 /* BPTableViewNestGestureDetailViewController.m in Sources */,
 				01D22BC91FDD814000BCC4AD /* UILabel+BPAddForFrame.m in Sources */,
 				017907DD200140EF00E5C360 /* BPRuntimeViewController.m in Sources */,
+				01B2EE0D22DF565B00702C36 /* BPBMWSUVProduct.m in Sources */,
 				01583B01224DB3AE00172F7F /* BPAsyncViewController.m in Sources */,
 				01DF32741FDD3BB100B8A955 /* NSDate+BPZeroDate.m in Sources */,
 				01D6FBB620C80F7E00AD8A6E /* BPIncludeTableManualHeadCell.m in Sources */,
@@ -11268,6 +11361,7 @@
 				013ED93320C7DE0400A83E7F /* BPIncludeTableSelfSizeHeaderView.m in Sources */,
 				0154D0B82202DA2600819387 /* BPMediaDataSourceManager.m in Sources */,
 				010DB70F1FDD4D450099E66F /* UIImageView+BPReflect.m in Sources */,
+				01B2EE1022DF566D00702C36 /* BPFordCarProduct.m in Sources */,
 				01528F0B22D4D78D004454D6 /* BPKeyChainViewController.m in Sources */,
 				01583B08224E1D6D00172F7F /* BPDrawRectPathView.m in Sources */,
 				015A33C1227370CB0029CC0B /* KSLaunchAdsViewController.m in Sources */,
