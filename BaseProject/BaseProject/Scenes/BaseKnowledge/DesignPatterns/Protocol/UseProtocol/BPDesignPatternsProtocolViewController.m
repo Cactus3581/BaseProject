@@ -7,30 +7,28 @@
 //
 
 #import "BPDesignPatternsProtocolViewController.h"
-#import "BPDesignPatternsDelegateViewController.h"
+#import "BPDesignPatternsProtocolModel.h"
 
-@interface BPDesignPatternsProtocolViewController ()<BPDesignPatternsDelegateViewControllerDelegate>//2.2遵守协议
+@interface BPDesignPatternsProtocolViewController ()
+
 @end
+
 
 @implementation BPDesignPatternsProtocolViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    BPDesignPatternsDelegateViewController *vc = [[BPDesignPatternsDelegateViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-    //2.1 设置代理
-    vc.delegate = self;
+    [self use];
 }
 
-//2.3实现协议方法
-- (NSString *)configDelegate {
-    return @"delegate";
+- (void)use {
+    BPDesignPatternsProtocolModel *model = [[BPDesignPatternsProtocolModel alloc] init];
+    [model requiredMethod];
+    [model optionalMethod];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
-

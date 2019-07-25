@@ -153,7 +153,7 @@
 
 - (id)copyWithZone:(NSZone *)zone {
     //创建新的对象
-    BPPerson *newPer = [[BPPerson alloc]init];
+    BPPerson *newPer = [[BPPerson alloc] init];
     //对应实例变量
     newPer.name = self.name;
     //newPer.sex = self.sex;//会报错

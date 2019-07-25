@@ -10,7 +10,6 @@
 #import "BPProduct.h"
 
 NS_ASSUME_NONNULL_BEGIN
-// 抽象产品
 
 @interface BPSUVProduct : BPProduct
 

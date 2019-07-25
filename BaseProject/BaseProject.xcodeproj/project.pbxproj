@@ -380,6 +380,7 @@
 		0161622E20EF77A50041E87E /* BPDataBaseVersionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0161622D20EF77A50041E87E /* BPDataBaseVersionManager.m */; };
 		01629918229016CF00C45595 /* BPDownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01629916229016CF00C45595 /* BPDownLoadViewController.m */; };
 		01629919229016CF00C45595 /* BPDownLoadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01629917229016CF00C45595 /* BPDownLoadViewController.xib */; };
+		0165B1D022E928A70093A7C9 /* BPDesignPatternsProtocolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0165B1CF22E928A70093A7C9 /* BPDesignPatternsProtocolModel.m */; };
 		016760CF2060F94400F82ACE /* BPNSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016760CE2060F94400F82ACE /* BPNSOperationViewController.m */; };
 		016760D720610F3900F82ACE /* BPSingleThreadTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 016760D620610F3900F82ACE /* BPSingleThreadTimer.m */; };
 		0167A35220E619DB00F13905 /* BPBaselineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0167A35020E619DB00F13905 /* BPBaselineViewController.m */; };
@@ -605,6 +606,8 @@
 		01B2EE1022DF566D00702C36 /* BPFordCarProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2EE0F22DF566D00702C36 /* BPFordCarProduct.m */; };
 		01B2EE1322DF567900702C36 /* BPBMWCarProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2EE1222DF567900702C36 /* BPBMWCarProduct.m */; };
 		01B2EE1622DF61D400702C36 /* BPProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2EE1522DF61D400702C36 /* BPProduct.m */; };
+		01B2EE1922DF6DCF00702C36 /* BPSUVFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2EE1822DF6DCF00702C36 /* BPSUVFactory.m */; };
+		01B2EE1C22DF6DDA00702C36 /* BPCarFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B2EE1B22DF6DDA00702C36 /* BPCarFactory.m */; };
 		01B7268E1FF7DF2700648674 /* BPDataStructureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B7268D1FF7DF2700648674 /* BPDataStructureViewController.m */; };
 		01B726951FF7E45B00648674 /* BPAlgorithm.c in Sources */ = {isa = PBXBuildFile; fileRef = 01B726911FF7E45B00648674 /* BPAlgorithm.c */; };
 		01B726961FF7E45B00648674 /* BPAlgorithmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B726941FF7E45B00648674 /* BPAlgorithmController.m */; };
@@ -1609,6 +1612,9 @@
 		01629915229016CF00C45595 /* BPDownLoadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDownLoadViewController.h; sourceTree = "<group>"; };
 		01629916229016CF00C45595 /* BPDownLoadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDownLoadViewController.m; sourceTree = "<group>"; };
 		01629917229016CF00C45595 /* BPDownLoadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPDownLoadViewController.xib; sourceTree = "<group>"; };
+		0165B1CD22E927D90093A7C9 /* BPDesignPatternsProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDesignPatternsProtocol.h; sourceTree = "<group>"; };
+		0165B1CE22E928A70093A7C9 /* BPDesignPatternsProtocolModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDesignPatternsProtocolModel.h; sourceTree = "<group>"; };
+		0165B1CF22E928A70093A7C9 /* BPDesignPatternsProtocolModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDesignPatternsProtocolModel.m; sourceTree = "<group>"; };
 		016760CD2060F94400F82ACE /* BPNSOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNSOperationViewController.h; sourceTree = "<group>"; };
 		016760CE2060F94400F82ACE /* BPNSOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNSOperationViewController.m; sourceTree = "<group>"; };
 		016760D320610EB200F82ACE /* BPSingleThreadTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPSingleThreadTimer.h; sourceTree = "<group>"; };
@@ -2034,6 +2040,10 @@
 		01B2EE1222DF567900702C36 /* BPBMWCarProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPBMWCarProduct.m; sourceTree = "<group>"; };
 		01B2EE1422DF61D400702C36 /* BPProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPProduct.h; sourceTree = "<group>"; };
 		01B2EE1522DF61D400702C36 /* BPProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPProduct.m; sourceTree = "<group>"; };
+		01B2EE1722DF6DCF00702C36 /* BPSUVFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPSUVFactory.h; sourceTree = "<group>"; };
+		01B2EE1822DF6DCF00702C36 /* BPSUVFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPSUVFactory.m; sourceTree = "<group>"; };
+		01B2EE1A22DF6DDA00702C36 /* BPCarFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCarFactory.h; sourceTree = "<group>"; };
+		01B2EE1B22DF6DDA00702C36 /* BPCarFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCarFactory.m; sourceTree = "<group>"; };
 		01B7268C1FF7DF2700648674 /* BPDataStructureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDataStructureViewController.h; sourceTree = "<group>"; };
 		01B7268D1FF7DF2700648674 /* BPDataStructureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDataStructureViewController.m; sourceTree = "<group>"; };
 		01B726901FF7E45B00648674 /* BPAlgorithm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPAlgorithm.h; sourceTree = "<group>"; };
@@ -2948,6 +2958,9 @@
 			children = (
 				010D0F7222126CD7003E8390 /* BPDesignPatternsProtocolViewController.h */,
 				010D0F7322126CD7003E8390 /* BPDesignPatternsProtocolViewController.m */,
+				0165B1CD22E927D90093A7C9 /* BPDesignPatternsProtocol.h */,
+				0165B1CE22E928A70093A7C9 /* BPDesignPatternsProtocolModel.h */,
+				0165B1CF22E928A70093A7C9 /* BPDesignPatternsProtocolModel.m */,
 			);
 			path = UseProtocol;
 			sourceTree = "<group>";
@@ -3653,9 +3666,9 @@
 				01ADDA4A22DED0180058ECFE /* BPDesignPatternsViewController.h */,
 				01ADDA4B22DED0180058ECFE /* BPDesignPatternsViewController.m */,
 				01ADDA4C22DED0180058ECFE /* BPDesignPatternsViewController.xib */,
-				01ADDA4422DECF340058ECFE /* AbstractFactory */,
-				01ADDA4322DECF290058ECFE /* Factory */,
 				01ADDA3622DE207D0058ECFE /* SimpleFactory */,
+				01ADDA4322DECF290058ECFE /* Factory */,
+				01ADDA4422DECF340058ECFE /* AbstractFactory */,
 				01F2609021D9B496008973C1 /* Block */,
 				01F372FD20654666007B1498 /* TargetAction */,
 				01F372F9206545D1007B1498 /* SingleClass */,
@@ -7869,10 +7882,10 @@
 		01ADDA4322DECF290058ECFE /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				01B2EDFC22DF55C800702C36 /* BPFordFactory.h */,
-				01B2EDFD22DF55C800702C36 /* BPFordFactory.m */,
-				01B2EDFF22DF55E000702C36 /* BPBMWFactory.h */,
-				01B2EE0022DF55E000702C36 /* BPBMWFactory.m */,
+				01B2EE1A22DF6DDA00702C36 /* BPCarFactory.h */,
+				01B2EE1B22DF6DDA00702C36 /* BPCarFactory.m */,
+				01B2EE1722DF6DCF00702C36 /* BPSUVFactory.h */,
+				01B2EE1822DF6DCF00702C36 /* BPSUVFactory.m */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -7880,6 +7893,10 @@
 		01ADDA4422DECF340058ECFE /* AbstractFactory */ = {
 			isa = PBXGroup;
 			children = (
+				01B2EDFC22DF55C800702C36 /* BPFordFactory.h */,
+				01B2EDFD22DF55C800702C36 /* BPFordFactory.m */,
+				01B2EDFF22DF55E000702C36 /* BPBMWFactory.h */,
+				01B2EE0022DF55E000702C36 /* BPBMWFactory.m */,
 				01B2EE0E22DF566D00702C36 /* BPFordCarProduct.h */,
 				01B2EE0F22DF566D00702C36 /* BPFordCarProduct.m */,
 				01B2EE0822DF564C00702C36 /* BPFordSUVProduct.h */,
@@ -10682,6 +10699,7 @@
 				01CE268521E490FE00A15D7F /* BPLockViewController.m in Sources */,
 				01D6FBB320C80F7E00AD8A6E /* BPIncludeTableManualHeaderView.m in Sources */,
 				014E483E21B91365007DF48A /* People.m in Sources */,
+				01B2EE1922DF6DCF00702C36 /* BPSUVFactory.m in Sources */,
 				015805BA20CAE5D000D0EF7C /* BPTopCategoryTagFlowLayout.m in Sources */,
 				01DF31C41FDD3A9100B8A955 /* NSHTTPCookieStorage+BPFreezeDry.m in Sources */,
 				010DB7431FDD4D450099E66F /* UIImage+BPAnimatedGIF.m in Sources */,
@@ -11299,6 +11317,7 @@
 				01EC9C0B21BA79FF00477EB8 /* BPLinkList.m in Sources */,
 				017A9A251FDD228600CDA599 /* BPCGUtilities.m in Sources */,
 				010DB76F1FDD4D560099E66F /* UIViewController+BPStoreKit.m in Sources */,
+				0165B1D022E928A70093A7C9 /* BPDesignPatternsProtocolModel.m in Sources */,
 				01D22BCF1FDD814000BCC4AD /* UIApplication+BPAdd.m in Sources */,
 				01DF32411FDD3B3D00B8A955 /* NSObject+BPGCD.m in Sources */,
 				010DB75C1FDD4D450099E66F /* UIFont+BPDynamicFontControl.m in Sources */,
@@ -11386,6 +11405,7 @@
 				01DF31E61FDD3B0300B8A955 /* NSNumber+BPRound.m in Sources */,
 				010DB78C1FDD4D640099E66F /* UIView+BPFind.m in Sources */,
 				0158054020CADF3F00D0EF7C /* BPKeyedArchiverViewController.m in Sources */,
+				01B2EE1C22DF6DDA00702C36 /* BPCarFactory.m in Sources */,
 				010DB7511FDD4D450099E66F /* UINavigationController+BPTransitions.m in Sources */,
 				010DB7401FDD4D450099E66F /* UIImage+BPRemoteSize.m in Sources */,
 				01DBF14220E74195001C52C0 /* BPAutoLayoutPriorityViewController.m in Sources */,

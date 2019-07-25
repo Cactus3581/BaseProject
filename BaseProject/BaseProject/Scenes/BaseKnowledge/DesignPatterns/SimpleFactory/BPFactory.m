@@ -13,7 +13,7 @@
 @implementation BPFactory
 
 // 简单工厂
-+ (BPProduct *)productWithType:(BPProductType)type {
++ (BPProduct *)produceWithType:(BPProductType)type {
     
     BPProduct *product = nil;
     
@@ -29,16 +29,6 @@
             break;
     }
     return product;
-}
-
-// 抽象工厂
-+ (BPFactory *)factory {
-    if ([[self class] isSubclassOfClass:[BPFordFactory class]]) {
-        return [[BPFordFactory alloc] init];
-    } else if ([[self class] isSubclassOfClass:[BPBMWFactory class]]) {
-        return [[BPBMWFactory alloc] init];
-    }
-    return nil;
 }
 
 @end

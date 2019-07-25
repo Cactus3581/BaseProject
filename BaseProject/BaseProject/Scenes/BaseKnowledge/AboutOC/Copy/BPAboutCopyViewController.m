@@ -8,6 +8,7 @@
 
 #import "BPAboutCopyViewController.h"
 #import "DataBaseModel.h"
+#import "BPAboutCopyModel.h"
 
 @interface BPAboutCopyViewController ()
 @property (getter=getsss,setter=setsss:,nonatomic, copy) NSMutableArray *mutableArray;
@@ -48,7 +49,13 @@
 //    
 //    BPLog(@"%p,%p,%p",array,self.array1,self.array2);
 //    BPLog(@"%@,%@,%@",array,self.array1,self.array2);
+    
+    [self testCopy];
+}
 
+- (void)testCopy {
+    BPAboutCopyModel *model = [[BPAboutCopyModel alloc] init];
+    BPLog(@"%p = %@",model,model.copy);
 }
 
 - (NSArray *)array1

@@ -9,7 +9,6 @@
 #import "BPSUVProduct.h"
 
 NS_ASSUME_NONNULL_BEGIN
-// 具体产品
 
 @interface BPBMWSUVProduct : BPSUVProduct
 

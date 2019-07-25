@@ -114,7 +114,7 @@
         if (!superClass) {
             return NO;
         }else{
-            return  [NSObject _isNSObjectClass:superClass];
+            return [NSObject _isNSObjectClass:superClass];
         }
     }
 }

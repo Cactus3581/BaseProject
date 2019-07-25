@@ -11,7 +11,7 @@
 @implementation BPBMWCarProduct
 
 - (void)productName {
-    BPLog(@"bmw - car - run");
+    BPLog(@"bmw - car");
 }
 
 @end

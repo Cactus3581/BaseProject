@@ -12,6 +12,8 @@
 #import "BPSUVProduct.h"
 #import "BPFordFactory.h"
 #import "BPBMWFactory.h"
+#import "BPCarFactory.h"
+#import "BPSuvFactory.h"
 
 @interface BPDesignPatternsViewController ()
 
@@ -50,39 +52,38 @@
 #pragma mark - 简单工厂模式
 - (void)simpleFactory {
     // BPCarProduct
-    BPProduct *product1 = [BPFactory productWithType:BPProductCarType];
-    [product1 productName];
+    BPProduct *car = [BPFactory produceWithType:BPProductCarType];
+    [car productName];
     
     // BPSuvProduct
-    BPProduct *product2 = [BPFactory productWithType:BPProductSuvType];
-    [product2 productName];
+    BPProduct *suv = [BPFactory produceWithType:BPProductSuvType];
+    [suv productName];
 }
 
 #pragma mark - 工厂模式
 - (void)factory {
     // BPCarProduct
-    BPProduct *product1 = [BPFordFactory product];
-    [product1 productName];
+    BPProduct *card = [BPCarFactory produce];
+    [card productName];
 
     // BPSuvProduct
-    BPProduct *product2 = [BPBMWFactory product];
-    [product2 productName];
+    BPProduct *suv = [BPSUVFactory produce];
+    [suv productName];
 }
 
 #pragma mark - 抽象工厂模式
 - (void)abstractFactory {
-    // BPCarProduct
-    BPFactory *factory1 = [BPFordFactory factory];
-    BPCarProduct *factory1_product1 = [factory1 carProduct];
-    BPSUVProduct *factory1_product2 = [factory1 suvProduct];
-    [factory1_product1 productName];
-    [factory1_product2 productName];
+    BPCarProduct *fordCar = [BPFordFactory produceCar];
+    [fordCar productName];
 
-    BPFactory *factory2 = [BPBMWFactory factory];
-    BPCarProduct *factory2_product1 = [factory2 carProduct];
-    BPSUVProduct *factory2_product2 = [factory2 suvProduct];
-    [factory2_product1 productName];
-    [factory2_product2 productName];
+    BPSUVProduct *fordSUV = [BPFordFactory produceSuv];
+    [fordSUV productName];
+
+    BPCarProduct *bmwCar = [BPBMWFactory produceCar];
+    [bmwCar productName];
+
+    BPSUVProduct *bmwSUV = [BPBMWFactory produceSuv];
+    [bmwSUV productName];
 }
 
 @end

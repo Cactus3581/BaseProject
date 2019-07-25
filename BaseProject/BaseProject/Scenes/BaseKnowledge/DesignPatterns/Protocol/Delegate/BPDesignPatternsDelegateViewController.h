@@ -7,14 +7,11 @@
 //
 
 #import "BPBaseViewController.h"
+#import "BPDesignPatternsProtocol.h"
 
-//1.声明协议
-@protocol BPDesignPatternsDelegateViewControllerDelegate<NSObject>
-//2.声明协议方法
-- (NSString *)configDelegate;
-
-@end
 @interface BPDesignPatternsDelegateViewController : BPBaseViewController
-//3.声明协议代理
-@property(nonatomic,assign)id<BPDesignPatternsDelegateViewControllerDelegate>delegate;
+
+// 声明协议代理
+@property(nonatomic,weak) id<BPDesignPatternsProtocol> delegate;
+
 @end

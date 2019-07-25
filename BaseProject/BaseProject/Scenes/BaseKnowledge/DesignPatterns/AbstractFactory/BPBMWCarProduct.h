@@ -9,7 +9,6 @@
 #import "BPCarProduct.h"
 
 NS_ASSUME_NONNULL_BEGIN
-// 具体产品
 
 @interface BPBMWCarProduct : BPCarProduct
 

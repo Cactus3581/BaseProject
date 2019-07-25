@@ -10,11 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BPAboutCopyModel : NSObject
+@interface BPAboutCopyModel : NSObject<NSCopying>
 
 @property (nonatomic, assign) NSInteger *age;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, strong) NSArray *array;
+@property (nonatomic, strong) NSArray <NSData *>*array;
 
 @end
 

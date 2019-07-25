@@ -14,17 +14,11 @@
 
 @implementation BPBMWFactory
 
-// 工厂
-+ (BPProduct *)product {
-    return [[BPSUVProduct alloc] init];
-}
-
-// 抽象工厂
-- (BPSUVProduct *)suvProduct {
++ (BPSUVProduct *)produceSuv {
     return [[BPBMWSUVProduct alloc] init];
 }
 
-- (BPCarProduct *)carProduct {
++ (BPCarProduct *)produceCar {
     return [[BPBMWCarProduct alloc] init];
 }
 

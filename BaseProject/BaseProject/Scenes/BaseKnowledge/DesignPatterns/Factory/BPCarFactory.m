@@ -1,17 +1,19 @@
 //
-//  BPCarProduct.m
+//  BPCarFactory.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2019/7/17.
 //  Copyright © 2019 cactus. All rights reserved.
 //
 
+#import "BPCarFactory.h"
 #import "BPCarProduct.h"
 
-@implementation BPCarProduct
+@implementation BPCarFactory
 
-- (void)productName {
-    BPLog(@"car");
+// 工厂
++ (BPProduct *)produce {
+    return [[BPCarProduct alloc] init];
 }
 
 @end
