@@ -83,6 +83,4 @@ return 1; \
 }
 #endif
 
-
-
 #endif /* BPSingletonMacro_h */

@@ -20,13 +20,15 @@
 
 #import "BPSwizzlingChild+BPSwizzing.h"
 
-#import "NSObject+BPDeallocBlockExecutor.h"
+#import "NSObject+BPWatchDealloc.h"
 #import "NSObject+BPModel.h"
 #import "NSObject+BPCustomKVO.h"
-#import "BPCustomKVOModel.h"
+#import "BPKVOModel.h"
 
 #import "BPRuntimeSark.h"
 #import "NSObject+BPSark.h"
+#import "BPCategoryParentModel.h"
+#import "BPCategorySubModel.h"
 
 @interface BPRuntimeViewController () {
     NSString * _dynamicString2;//手动添加，由于@dynamic不能像@synthesize那样向实现文件(.m)提供实例变量，所以我们需要在类中显式提供实例变量。
@@ -38,7 +40,7 @@
 @property (nonatomic, copy) NSString *synthesizeString2;
 @property (nonatomic, copy) NSString *dynamicString1;
 @property (nonatomic, copy) NSString *dynamicString2;//需要手动添加，网上看
-@property (nonatomic, strong) BPCustomKVOModel *customKVOModel;//kvo
+@property (nonatomic, strong) BPKVOModel *customKVOModel;//kvo
 
 @end
 
@@ -176,6 +178,11 @@
                 [self getThing]; // runtime API
             }
                 break;
+                
+            case 22:{
+                [self addMethodToCategory]; // 向category 添加方法
+            }
+                break;
         }
     }
 }
@@ -195,7 +202,7 @@
 
 #pragma mark - 手动实现KVO
 - (void)handleCustomKVO {
-    self.customKVOModel = [[BPCustomKVOModel alloc] init];
+    self.customKVOModel = [[BPKVOModel alloc] init];
     [self.customKVOModel bp_addObserver:self forKey:NSStringFromSelector(@selector(text))
                        withBlock:^(id observedObject, NSString *observedKey, id oldValue, id newValue) {
                            dispatch_async(dispatch_get_main_queue(), ^{
@@ -217,7 +224,11 @@
 
 #pragma mark - 动态类型
 - (void)designKVO {
+    
+    // 注册kvo
     [self.view addObserver:self forKeyPath:@"pauseTimer" options:NSKeyValueObservingOptionNew context:nil];
+    
+    // 注册通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector (didEnterBackground) name: UIApplicationDidEnterBackgroundNotification object:nil];//注册程序进入后台通知
 
     __weak typeof (self) weakSelf = self;
@@ -601,6 +612,26 @@ void sayFunction(id self, SEL _cmd, id some) {
      
 }
 
+#pragma mark - category - 添加方法
+- (void)addMethodToCategory {
+    /*
+     主类分类的执行顺序，决定了方法实现的顺序，进而决定了消息发送时，哪个具体实现来实现。
+
+     先主类，再分类
+     主类顺序：父->子
+     分类顺序：无关父子，有可能先子类的categoty，再主类的category；同个主类的分类看编译顺序。
+     比如主类parent，sub，分类：p1，p2 s1，s2: parent->sub->s2->p2->p1->p2
+     */
+    
+    BPCategoryParentModel *parent = [[BPCategoryParentModel alloc] init];
+    BPCategorySubModel *sub = [[BPCategorySubModel alloc] init];
+    
+    [parent test];
+    [sub test];
+    
+    [parent test1];
+    [sub test1];
+}
 
 #pragma mark - 自动归档&反归档
 - (void)autoEncode {

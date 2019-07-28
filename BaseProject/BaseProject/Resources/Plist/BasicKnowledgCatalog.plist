@@ -871,8 +871,6 @@
 				<string>BPRuntimeViewController</string>
 				<key>briefIntro</key>
 				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;19&quot;}</string>
 			</dict>
 			<dict>
 				<key>title</key>
@@ -881,8 +879,22 @@
 				<string>BPRuntimeViewController</string>
 				<key>briefIntro</key>
 				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;20&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>获取属性、变量、方法</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>category 添加方法，执行顺序</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
 			</dict>
 		</array>
 	</dict>
@@ -997,18 +1009,14 @@
 						<string>BPDesignPatternsKVOViewController</string>
 						<key>briefIntro</key>
 						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;0&quot;}</string>
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>KVO封装</string>
+						<string>自定义KVO</string>
 						<key>fileName</key>
 						<string>BPDesignPatternsKVOViewController</string>
 						<key>briefIntro</key>
 						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;1&quot;}</string>
 					</dict>
 					<dict>
 						<key>title</key>
@@ -1017,8 +1025,22 @@
 						<string>BPDesignPatternsKVOViewController</string>
 						<key>briefIntro</key>
 						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;2&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>基础使用</string>
+						<key>fileName</key>
+						<string>BPDesignPatternsKVOViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>优化KVO</string>
+						<key>fileName</key>
+						<string>BPDesignPatternsKVOViewController</string>
+						<key>briefIntro</key>
+						<string></string>
 					</dict>
 				</array>
 			</dict>
@@ -1149,8 +1171,14 @@
 						<string>BPBlockViewController</string>
 						<key>briefIntro</key>
 						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;6&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>block 一对多</string>
+						<key>fileName</key>
+						<string>BPBlockViewController</string>
+						<key>briefIntro</key>
+						<string></string>
 					</dict>
 				</array>
 			</dict>
@@ -1164,7 +1192,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>Protocol</string>
+				<string>委托/代理模式</string>
 				<key>fileName</key>
 				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
@@ -1175,17 +1203,23 @@
 						<key>title</key>
 						<string>使用Protocol</string>
 						<key>fileName</key>
-						<string>BPDesignPatternsProtocolViewController</string>
+						<string>BPDesignPatternsDelegateViewController</string>
 						<key>briefIntro</key>
 						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;0&quot;}</string>
 					</dict>
 					<dict>
 						<key>title</key>
 						<string>Delegate</string>
 						<key>fileName</key>
-						<string>BPDesignPatternsProtocolViewController</string>
+						<string>BPDesignPatternsDelegateViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>Delegate 的一对多</string>
+						<key>fileName</key>
+						<string>BPDesignPatternsDelegateViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>

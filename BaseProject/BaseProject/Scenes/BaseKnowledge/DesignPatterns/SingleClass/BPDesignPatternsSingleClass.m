@@ -12,6 +12,11 @@
 
 static BPDesignPatternsSingleClass *single = nil;
 
+@interface BPDesignPatternsSingleClass()
+
+@end
+
+
 @implementation BPDesignPatternsSingleClass
 
 + (BPDesignPatternsSingleClass *)shareSingleClass {
@@ -30,7 +35,6 @@ static BPDesignPatternsSingleClass *single = nil;
         return single;
     }
 }
-
 
 + (id)allocWithZone:(NSZone *)zone {
     @synchronized(self) {
@@ -64,4 +68,5 @@ static BPDesignPatternsSingleClass *single = nil;
     return self;
 }
 */
+
 @end

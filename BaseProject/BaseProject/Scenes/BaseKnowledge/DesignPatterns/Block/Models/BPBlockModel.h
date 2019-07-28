@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface BPBlockModel : NSObject
 
 typedef void (^successBlock) (NSDictionary *_Nullable responseObject);
@@ -23,3 +25,5 @@ typedef void (^successBlock) (NSDictionary *_Nullable responseObject);
 - (void)foo;
 
 @end
+
+NS_ASSUME_NONNULL_END

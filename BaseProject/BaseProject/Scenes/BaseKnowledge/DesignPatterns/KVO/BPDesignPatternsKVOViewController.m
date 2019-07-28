@@ -8,7 +8,6 @@
 
 #import "BPDesignPatternsKVOViewController.h"
 #import "NSObject+BPCustomKVO.h"
-#import "BPCustomKVOModel.h"
 #import "BPKVOModel.h"
 
 @interface BPDesignPatternsKVOViewController ()

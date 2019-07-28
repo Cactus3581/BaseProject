@@ -8,6 +8,7 @@
 
 #import "BPBlockViewController.h"
 #import "BPBlockModel.h"
+#import "BPBlockCenter.h"
 
 // typedef 重新起个名字
 typedef void(^BPBlockBlk)(NSString *);
@@ -83,10 +84,33 @@ static int val2 = 2;
                 [self block_strongSelf];//Heap-Stack Dance 替代 Weak-Strong Dance
             }
                 break;
+                
+            case 7:{
+                [self blockCenter];//一对多
+            }
+                break;
         }
     }
 }
 
+#pragma mark - Block的一对多
+- (void)blockCenter {
+//    [[BPBlockCenter shareCenter] addObserver:self callback:^{
+//        BPLog(@"1");
+//    }];
+//    
+//    [[BPBlockCenter shareCenter] addObserver:self callback:^{
+//        BPLog(@"2");
+//    }];
+    
+//    [[BPBlockCenter shareCenter] addObserver1:self callback:^{
+//        BPLog(@"3");
+//    }];
+    
+    [[BPBlockCenter shareCenter] addObserver2:self callback:^{
+        BPLog(@"4");
+    }];
+ }
 
 #pragma mark - Block的声明和定义
 - (void)blockDeclarationAndDefinition {
