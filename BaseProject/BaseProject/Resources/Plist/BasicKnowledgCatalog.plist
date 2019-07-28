@@ -3336,33 +3336,6 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>操作系统</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>Mach</string>
-				<key>fileName</key>
-				<string>BPMachViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>编译原理</string>
-		<key>fileName</key>
-		<string>BPCompilerPrincipleViewController</string>
-		<key>briefIntro</key>
-		<string></string>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>计算机网络</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
@@ -3470,6 +3443,33 @@
 				</array>
 			</dict>
 		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>操作系统</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>Mach</string>
+				<key>fileName</key>
+				<string>BPMachViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>编译原理</string>
+		<key>fileName</key>
+		<string>BPCompilerPrincipleViewController</string>
+		<key>briefIntro</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>title</key>
