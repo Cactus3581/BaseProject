@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string>OC的类和对象</string>
+		<string>类和对象</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
@@ -91,6 +91,239 @@
 				<string>NSProxy：另一个根对象</string>
 				<key>fileName</key>
 				<string>BPNSProxyViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Runtime</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>函数调用的几种方法</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;0&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>交换方法的实现</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;1&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>动态创建类</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;2&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>获取属性、变量、方法</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;3&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>给category添加关联对象</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;4&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>归档反归档</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;5&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>模型转换</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;6&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>动态解析 动态添加方法</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;7&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>消息转发 动态更换调用对象</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;8&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>消息完整转发</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;9&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>打印属性的性质</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;10&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>performSelectr</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;11&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>invocation 传递多个参数</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;12&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>函数指针</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;13&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>self与super的class方法</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;14&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>动态类型特性</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;15&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>设计KVO</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;16&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>@synthesize @dynamic</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;17&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>协议的属性</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>dynamicJumpString</key>
+				<string>{&quot;type&quot;:&quot;18&quot;}</string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>手动实现一个KVO</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>面试题</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>获取属性、变量、方法</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>category 添加方法，执行顺序</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -224,6 +457,97 @@
 				<string></string>
 				<key>dynamicJumpString</key>
 				<string>{&quot;type&quot;:&quot;11&quot;}</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>Runloop</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>Runloop的创建和销毁</string>
+				<key>fileName</key>
+				<string>BPRunloopViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>自定义Source0</string>
+				<key>fileName</key>
+				<string>BPRunloopViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>自定义Source1</string>
+				<key>fileName</key>
+				<string>BPRunloopViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>观察流程</string>
+				<key>fileName</key>
+				<string>BPRunloopViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>RunLoop的Observer</string>
+				<key>fileName</key>
+				<string>BPRunloopViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>开启常驻线程</string>
+				<key>fileName</key>
+				<string>BPRunloopViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>测试流程</string>
+				<key>fileName</key>
+				<string>BPRunloopViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>自定义source0唤醒</string>
+				<key>fileName</key>
+				<string>BPRunloopViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>自定义Port</string>
+				<key>fileName</key>
+				<string>BPRunloopViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>面试题</string>
+				<key>fileName</key>
+				<string>BPRunloopViewController</string>
+				<key>briefIntro</key>
+				<string></string>
 			</dict>
 		</array>
 	</dict>
@@ -667,7 +991,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Runtime</string>
+		<string>Block</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
 		<key>briefIntro</key>
@@ -676,9 +1000,9 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>函数调用的几种方法</string>
+				<string>基本语法</string>
 				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
+				<string>BPBlockViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 				<key>dynamicJumpString</key>
@@ -686,9 +1010,9 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>交换方法的实现</string>
+				<string>Block内存区域及__block（内存区域说明符）</string>
 				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
+				<string>BPBlockViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 				<key>dynamicJumpString</key>
@@ -696,9 +1020,9 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>动态创建类</string>
+				<string>与异步使用的生命周期的例子</string>
 				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
+				<string>BPBlockViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 				<key>dynamicJumpString</key>
@@ -706,9 +1030,9 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>获取属性、变量、方法</string>
+				<string>循环引用的例子</string>
 				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
+				<string>BPBlockViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 				<key>dynamicJumpString</key>
@@ -716,9 +1040,9 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>给category添加关联对象</string>
+				<string>系统方法与Block的结合</string>
 				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
+				<string>BPBlockViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 				<key>dynamicJumpString</key>
@@ -726,9 +1050,9 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>归档反归档</string>
+				<string>面试题</string>
 				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
+				<string>BPBlockViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 				<key>dynamicJumpString</key>
@@ -736,163 +1060,127 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>模型转换</string>
+				<string>Heap-Stack Dance 替代 Weak-Strong Dance</string>
 				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;6&quot;}</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>动态解析 动态添加方法</string>
-				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;7&quot;}</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>消息转发 动态更换调用对象</string>
-				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;8&quot;}</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>消息完整转发</string>
-				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;9&quot;}</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>打印属性的性质</string>
-				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;10&quot;}</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>performSelectr</string>
-				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;11&quot;}</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>invocation 传递多个参数</string>
-				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;12&quot;}</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>函数指针</string>
-				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;13&quot;}</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>self与super的class方法</string>
-				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;14&quot;}</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>动态类型特性</string>
-				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;15&quot;}</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>设计KVO</string>
-				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;16&quot;}</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>@synthesize @dynamic</string>
-				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;17&quot;}</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>协议的属性</string>
-				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>dynamicJumpString</key>
-				<string>{&quot;type&quot;:&quot;18&quot;}</string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>手动实现一个KVO</string>
-				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
+				<string>BPBlockViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>面试题</string>
+				<string>block 一对多</string>
 				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
+				<string>BPBlockViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>事件的传递和响应</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>触摸事件</string>
+				<key>fileName</key>
+				<string>BPSimpleTableController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>事件传递响应流程（Hit-Test）</string>
+						<key>fileName</key>
+						<string>BPHitTestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>事件拦截，选择任意一个view响应</string>
+						<key>fileName</key>
+						<string>BPHitTestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>边界之外也能响应</string>
+						<key>fileName</key>
+						<string>BPHitTestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>扩大响应范围</string>
+						<key>fileName</key>
+						<string>BPHitTestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>多层级View的通讯</string>
+						<key>fileName</key>
+						<string>BPHitTestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>手势对响应链事件传递的影响</string>
+						<key>fileName</key>
+						<string>BPHitTestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>UIControl 对响应链事件传递的影响</string>
+						<key>fileName</key>
+						<string>BPHitTestViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>Touch方法</string>
+						<key>fileName</key>
+						<string>BPTouchViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>手势</string>
+						<key>fileName</key>
+						<string>BPGestureRecognizerViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>远程事件</string>
+				<key>fileName</key>
+				<string></string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>获取属性、变量、方法</string>
+				<string>加速计事件</string>
 				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
-				<key>briefIntro</key>
 				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>category 添加方法，执行顺序</string>
-				<key>fileName</key>
-				<string>BPRuntimeViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -1097,93 +1385,6 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>Block</string>
-				<key>fileName</key>
-				<string>BPSimpleTableController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>subVc_array</key>
-				<array>
-					<dict>
-						<key>title</key>
-						<string>基本语法</string>
-						<key>fileName</key>
-						<string>BPBlockViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;0&quot;}</string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>Block内存区域及__block（内存区域说明符）</string>
-						<key>fileName</key>
-						<string>BPBlockViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;1&quot;}</string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>与异步使用的生命周期的例子</string>
-						<key>fileName</key>
-						<string>BPBlockViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;2&quot;}</string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>循环引用的例子</string>
-						<key>fileName</key>
-						<string>BPBlockViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;3&quot;}</string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>系统方法与Block的结合</string>
-						<key>fileName</key>
-						<string>BPBlockViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;4&quot;}</string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>面试题</string>
-						<key>fileName</key>
-						<string>BPBlockViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;5&quot;}</string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>Heap-Stack Dance 替代 Weak-Strong Dance</string>
-						<key>fileName</key>
-						<string>BPBlockViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>block 一对多</string>
-						<key>fileName</key>
-						<string>BPBlockViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>title</key>
 				<string>Target-Action</string>
 				<key>fileName</key>
 				<string></string>
@@ -1225,96 +1426,40 @@
 					</dict>
 				</array>
 			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>Runloop</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
 			<dict>
 				<key>title</key>
-				<string>Runloop的创建和销毁</string>
+				<string>软件设计架构模式</string>
 				<key>fileName</key>
-				<string>BPRunloopViewController</string>
+				<string>BPSimpleTableController</string>
 				<key>briefIntro</key>
 				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>自定义Source0</string>
-				<key>fileName</key>
-				<string>BPRunloopViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>自定义Source1</string>
-				<key>fileName</key>
-				<string>BPRunloopViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>观察流程</string>
-				<key>fileName</key>
-				<string>BPRunloopViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>RunLoop的Observer</string>
-				<key>fileName</key>
-				<string>BPRunloopViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>开启常驻线程</string>
-				<key>fileName</key>
-				<string>BPRunloopViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>测试流程</string>
-				<key>fileName</key>
-				<string>BPRunloopViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>自定义source0唤醒</string>
-				<key>fileName</key>
-				<string>BPRunloopViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>自定义Port</string>
-				<key>fileName</key>
-				<string>BPRunloopViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>面试题</string>
-				<key>fileName</key>
-				<string>BPRunloopViewController</string>
-				<key>briefIntro</key>
-				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>简单的MVVM（没有数据绑定）</string>
+						<key>fileName</key>
+						<string>BPMVVMViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>复杂的MVVM（数据绑定）</string>
+						<key>fileName</key>
+						<string>BPMVVMViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>MVP</string>
+						<key>fileName</key>
+						<string>BPMVPViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 		</array>
 	</dict>
@@ -1946,116 +2091,6 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>事件传递和响应</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>触摸事件</string>
-				<key>fileName</key>
-				<string>BPSimpleTableController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>subVc_array</key>
-				<array>
-					<dict>
-						<key>title</key>
-						<string>事件传递响应流程（Hit-Test）</string>
-						<key>fileName</key>
-						<string>BPHitTestViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>事件拦截，选择任意一个view响应</string>
-						<key>fileName</key>
-						<string>BPHitTestViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>边界之外也能响应</string>
-						<key>fileName</key>
-						<string>BPHitTestViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>扩大响应范围</string>
-						<key>fileName</key>
-						<string>BPHitTestViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>多层级View的通讯</string>
-						<key>fileName</key>
-						<string>BPHitTestViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>手势对响应链事件传递的影响</string>
-						<key>fileName</key>
-						<string>BPHitTestViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>UIControl 对响应链事件传递的影响</string>
-						<key>fileName</key>
-						<string>BPHitTestViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>Touch方法</string>
-						<key>fileName</key>
-						<string>BPTouchViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>手势</string>
-						<key>fileName</key>
-						<string>BPGestureRecognizerViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>远程事件</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>加速计事件</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
 		<string>数据持久化</string>
 		<key>fileName</key>
 		<string>BPSimpleTableController</string>
@@ -2116,6 +2151,167 @@
 				<string>内存缓存：NSCache</string>
 				<key>fileName</key>
 				<string>BPCacheViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>学习第三方库</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>AFN</string>
+				<key>fileName</key>
+				<string>BPSimpleTableController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>普通请求数据</string>
+						<key>fileName</key>
+						<string>BPAFNViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>下载</string>
+						<key>fileName</key>
+						<string>BPAFNViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>上传</string>
+						<key>fileName</key>
+						<string>BPAFNViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>为一个包含多个部分的请求创建上传任务，并显示进度</string>
+						<key>fileName</key>
+						<string>BPAFNViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>请求序列化</string>
+						<key>fileName</key>
+						<string>BPAFNViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>网络监听</string>
+						<key>fileName</key>
+						<string>BPAFNViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>SSL证书</string>
+						<key>fileName</key>
+						<string>BPAFNViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>SDWebImage</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>YTK</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>MJRefresh</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>YYKit</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>设计一个xxx框架系列</string>
+		<key>fileName</key>
+		<string>BPSimpleTableController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>设计一个图片下载框架</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>设计一个文件下载框架</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>设计一个缓存框架</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>设计一个网络请求框架</string>
+				<key>fileName</key>
+				<string></string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>设计一个模型转换框架</string>
+				<key>fileName</key>
+				<string></string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -2271,167 +2467,6 @@
 						<string></string>
 					</dict>
 				</array>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>设计一个xxx框架系列</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>设计一个图片下载框架</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>设计一个文件下载框架</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>设计一个缓存框架</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>设计一个网络请求框架</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>设计一个模型转换框架</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>学习第三方库</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>AFN</string>
-				<key>fileName</key>
-				<string>BPSimpleTableController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>subVc_array</key>
-				<array>
-					<dict>
-						<key>title</key>
-						<string>普通请求数据</string>
-						<key>fileName</key>
-						<string>BPAFNViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>下载</string>
-						<key>fileName</key>
-						<string>BPAFNViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>上传</string>
-						<key>fileName</key>
-						<string>BPAFNViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>为一个包含多个部分的请求创建上传任务，并显示进度</string>
-						<key>fileName</key>
-						<string>BPAFNViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>请求序列化</string>
-						<key>fileName</key>
-						<string>BPAFNViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>网络监听</string>
-						<key>fileName</key>
-						<string>BPAFNViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>SSL证书</string>
-						<key>fileName</key>
-						<string>BPAFNViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>SDWebImage</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>YTK</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>MJRefresh</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>YYKit</string>
-				<key>fileName</key>
-				<string></string>
-				<key>briefIntro</key>
-				<string></string>
 			</dict>
 		</array>
 	</dict>
@@ -3450,41 +3485,6 @@
 				<string>FMDB数据库</string>
 				<key>fileName</key>
 				<string>BPDatabaseViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>软件设计架构模式</string>
-		<key>fileName</key>
-		<string>BPSimpleTableController</string>
-		<key>briefIntro</key>
-		<string></string>
-		<key>subVc_array</key>
-		<array>
-			<dict>
-				<key>title</key>
-				<string>简单的MVVM（没有数据绑定）</string>
-				<key>fileName</key>
-				<string>BPMVVMViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>复杂的MVVM（数据绑定）</string>
-				<key>fileName</key>
-				<string>BPMVVMViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>MVP</string>
-				<key>fileName</key>
-				<string>BPMVPViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
