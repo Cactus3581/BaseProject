@@ -13,9 +13,9 @@ static NSString * const kDefaultNotificationName = @"BPDefaultNotification";
 
 #define bp_dispatch_queue_main_async_safe(block)\
 if ([[NSThread currentThread] isMainThread]) {\
-block();\
+    block();\
 } else {\
-dispatch_sync(dispatch_get_main_queue(), block);\
+    dispatch_sync(dispatch_get_main_queue(), block);\
 }
 
 @interface BPNotificationCenter ()
@@ -36,6 +36,46 @@ dispatch_sync(dispatch_get_main_queue(), block);\
         }
     });
     return sharedInstance;
+}
+
+- (void)addObserverForName1:(NSString *)name observer:(NSObject *)observer usingBlock:(BPEventCallBlk)block {
+    
+    if (!block) {
+        return;
+    }
+    if (!observer) {
+        return;
+    }
+    if (!name.length) {
+        name = kDefaultNotificationName;
+    }
+    
+    bp_dispatch_queue_main_async_safe((^{
+        /*
+         维护的数据结构
+         // 这个字典是NSMapTable，可以对持有的Value弱引用
+         @{
+         @"通知名字": @{
+         @"观察者内存地址生成的字符串_1": [blk1,blk2],
+         @"观察者内存地址生成的字符串_2": [blk1,blk2],
+         }
+         };
+         */
+        NSMapTable *observerBlockMap = self.dict[name];// 通过通知名字获取map，map里存储着观察者和block事件
+        if (!observerBlockMap) {
+            observerBlockMap = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsCopyIn valueOptions:NSPointerFunctionsWeakMemory];
+            [self.dict setValue:observerBlockMap forKey:name];
+        }
+        
+        NSString *observerAddressKey = [NSString stringWithFormat:@"%p", observer]; // 懒加载获取观察者的block事件池，然后取地址作为观察者的key
+        NSMutableArray *muArray = [observerBlockMap objectForKey:observerAddressKey];
+        if (!muArray) {
+            //muArray = @[].mutableCopy;//创建了block事件池对象，但是出栈后会被立即释放
+            muArray = observer.muArray;//创建了block事件池对象，利用观察者的强引用不让存放block的数据释放
+            [observerBlockMap setObject:muArray forKey:observerAddressKey];
+        }
+        [muArray addObject:[block copy]];
+    }));
 }
 
 #pragma mark - 注册观察者
@@ -68,12 +108,12 @@ dispatch_sync(dispatch_get_main_queue(), block);\
             [self.dict setValue:observerBlockMap forKey:name];
         }
         
-        NSString *observerKey = [NSString stringWithFormat:@"%p", observer]; // 懒加载获取观察者的block事件池，然后取地址作为观察者的key
-        NSMutableArray *muArray = [observerBlockMap objectForKey:observerKey];
+        NSString *observerAddressKey = [NSString stringWithFormat:@"%p", observer]; // 懒加载获取观察者的block事件池，然后取地址作为观察者的key
+        NSMutableArray *muArray = [observerBlockMap objectForKey:observerAddressKey];
         if (!muArray) {
             //muArray = @[].mutableCopy;//创建了block事件池对象，但是出栈后会被立即释放
             muArray = observer.muArray;//创建了block事件池对象，利用观察者的强引用不让存放block的数据释放
-            [observerBlockMap setObject:muArray forKey:observerKey];
+            [observerBlockMap setObject:muArray forKey:observerAddressKey];
         }
         [muArray addObject:[block copy]];
     }));
@@ -87,8 +127,8 @@ dispatch_sync(dispatch_get_main_queue(), block);\
             return;
         }
 
-        for (NSString *observerKey in observerBlockMap) {
-            NSMutableArray *muArray = [observerBlockMap objectForKey:observerKey];
+        for (NSString *observerAddressKey in observerBlockMap) {
+            NSMutableArray *muArray = [observerBlockMap objectForKey:observerAddressKey];
             for (BPEventCallBlk blk in muArray) {
                 blk(info);
             }
@@ -107,15 +147,15 @@ dispatch_sync(dispatch_get_main_queue(), block);\
                 continue;
             }
             
-            NSString *observerKey = [NSString stringWithFormat:@"%p", observer]; // 懒加载获取观察者的block事件池，然后取地址作为观察者的key
-            NSMutableArray *muArray = [observerBlockMap objectForKey:observerKey];
+            NSString *observerAddressKey = [NSString stringWithFormat:@"%p", observer]; // 懒加载获取观察者的block事件池，然后取地址作为观察者的key
+            NSMutableArray *muArray = [observerBlockMap objectForKey:observerAddressKey];
             
             if (!muArray) {
                 continue;
             }
             
             [muArray removeAllObjects];
-            [observerBlockMap removeObjectForKey:observerKey];
+            [observerBlockMap removeObjectForKey:observerAddressKey];
         }
     }));
 }
@@ -138,10 +178,10 @@ dispatch_sync(dispatch_get_main_queue(), block);\
     }
     
     bp_dispatch_queue_main_async_safe((^{
-        NSString *observerKey = [NSString stringWithFormat:@"%p", observer]; // 懒加载获取观察者的block事件池，然后取地址作为观察者的key
-        NSMutableArray *muArray = [observerBlockMap objectForKey:observerKey];
+        NSString *observerAddressKey = [NSString stringWithFormat:@"%p", observer]; // 懒加载获取观察者的block事件池，然后取地址作为观察者的key
+        NSMutableArray *muArray = [observerBlockMap objectForKey:observerAddressKey];
         [muArray removeAllObjects];
-        [observerBlockMap removeObjectForKey:observerKey];
+        [observerBlockMap removeObjectForKey:observerAddressKey];
     }));
 }
 

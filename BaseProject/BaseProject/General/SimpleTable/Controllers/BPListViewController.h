@@ -8,7 +8,7 @@
 
 #import "BPBaseViewController.h"
 
-@interface BPSimpleTableController : BPBaseViewController
+@interface BPListViewController : BPBaseViewController
 
 @property (nonatomic,copy) NSString *url; // 作为主导航用的
 @property (nonatomic,strong) NSArray *dataArray;// 其他业务页面

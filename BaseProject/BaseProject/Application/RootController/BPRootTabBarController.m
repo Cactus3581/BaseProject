@@ -8,7 +8,7 @@
 
 #import "BPRootTabBarController.h"
 #import "BPRootNavigationController.h"
-#import "BPSimpleTableController.h"
+#import "BPListViewController.h"
 
 static NSString *kFeatureCatalog = @"FeatureCatalog";
 static NSString *kBasicKnowledgCatalog = @"BasicKnowledgCatalog";
@@ -36,15 +36,15 @@ static NSString *kImprovingTipCatalog = @"ImprovingTipCatalog";
  */
 - (void)addChildViewController{
 
-    BPSimpleTableController *featureVC = [[BPSimpleTableController alloc]init];
+    BPListViewController *featureVC = [[BPListViewController alloc]init];
     featureVC.url = kFeatureCatalog;
     [self setUpChildViewController:featureVC image:[UIImage imageNamed:@"tabbar_hotScenes"] title:@"场景"];
     
-    BPSimpleTableController *baseKnowledgeVC = [[BPSimpleTableController alloc]init];
+    BPListViewController *baseKnowledgeVC = [[BPListViewController alloc]init];
     baseKnowledgeVC.url = kBasicKnowledgCatalog;
     [self setUpChildViewController:baseKnowledgeVC image:[UIImage imageNamed:@"tabbar_knowledge"] title:@"知识点"];
     
-    BPSimpleTableController *improvingTipVC = [[BPSimpleTableController alloc]init];
+    BPListViewController *improvingTipVC = [[BPListViewController alloc]init];
     improvingTipVC.url = kImprovingTipCatalog;
     [self setUpChildViewController:improvingTipVC image:[UIImage imageNamed:@"tabbar_skill"] title:@"技巧"];
 

@@ -121,7 +121,7 @@
 - (void)jmp {
     // 不直接取KeyWindow 是因为当有AlertView 或者有键盘弹出时， 取到的KeyWindow是错误的。
     UIViewController *rootVC = [[UIApplication sharedApplication].delegate window].rootViewController;
-    [[rootVC ks_navigationController] pushViewController:[KSLaunchAdsViewController new] animated:YES];
+    [[rootVC bp_navigationController] pushViewController:[KSLaunchAdsViewController new] animated:YES];
     
     [self remove];
 }

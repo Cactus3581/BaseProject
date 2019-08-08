@@ -457,15 +457,14 @@ static int val2 = 2;
 //  系统方法一般不会引起循环引用，但是会持有block。比如GCD，AFN，UIView动画，一般的类方法，系统的block在结束的时候会释放引用对象；
 - (void)handle_systembBlock {
     __weak typeof(self)weakSelf = self;
-    /*GCD不需要
-     因为将block作为参数传给dispatch_async时，系统会将block拷贝到堆上，而且block会持有block中用到的对象，因为dispatch_async并不知道block中对象会在什么时候被释放，为了确保系统调度执行block中的任务时其对象没有被意外释放掉，dispatch_async必须自己retain一次对象（即self），任务完成后再release对象（即self）。但这里使用__weak，使dispatch_async没有增加self的引用计数，这使得在系统在调度执行block之前，self可能已被销毁，但系统并不知道这个情况，导致block执行时访问已经被释放的self，而达不到预期的结果。
+    /* 会强持有：GCD不需要因为将block作为参数传给dispatch_async时，系统会将block拷贝到堆上，而且block会持有block中用到的对象，因为dispatch_async并不知道block中对象会在什么时候被释放，为了确保系统调度执行block中的任务时其对象没有被意外释放掉，dispatch_async必须自己retain一次对象（即self），任务完成后再release对象（即self）。但这里使用__weak，使dispatch_async没有增加self的引用计数，这使得在系统在调度执行block之前，self可能已被销毁，但系统并不知道这个情况，导致block执行时访问已经被释放的self，而达不到预期的结果。
      */
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self test];//执行完释放
     });
     
-    //当动画结束时，UIView 会结束持有这个 block，block 对象就会释放掉，从而 block 会释放掉对于 self 的持有。整个内存引用关系被解除。
+    //不会强持有：当动画结束时，UIView 会结束持有这个 block，block 对象就会释放掉，从而 block 会释放掉对于 self 的持有。整个内存引用关系被解除。
     [UIView animateWithDuration:0.2 animations:^{
         [self test];//执行完释放
     }];

@@ -147,12 +147,12 @@ static CGFloat inset = 0;
     
     /*
      //方法2：这个方法虽然可以避免代码耦合，但是开销稍微有些大
-     if ([self ks_currentViewController] != self.viewControllerInSide) {
+     if ([self bp_currentViewController] != self.viewControllerInSide) {
      BPLog(@"判断此view不在当前控制器");
      return;
      }
      
-     if (![self ks_isDisplayedInScreen]) {
+     if (![self bp_isDisplayedInScreen]) {
      BPLog(@"判断此view不在屏幕上显示 = %@",NSStringFromCGRect(self.frame));
      return;
      }

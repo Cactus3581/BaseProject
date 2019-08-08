@@ -16,7 +16,7 @@
 // 设置alertController居左对齐
 - (void)setAlertControllerTitleLabelTextAlignment:(NSTextAlignment)textAlignment;
 
-- (UINavigationController*)ks_navigationController;
+- (UINavigationController*)bp_navigationController;
 
 @end
 

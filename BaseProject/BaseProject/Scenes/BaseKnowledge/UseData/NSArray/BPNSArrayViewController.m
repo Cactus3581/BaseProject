@@ -192,6 +192,19 @@
     }
 }
 
+#pragma mark - 数组的几种遍历方法
+- (void)enumMethods {
+    
+}
+
+#pragma mark - 数组在遍历中删除
+- (void)deleteWhenEnum {
+    NSMutableArray *muArray = @[@"a",@"b"].mutableCopy;
+    [muArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [muArray removeObject:obj];
+    }];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

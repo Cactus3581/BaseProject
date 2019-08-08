@@ -64,14 +64,14 @@
     return nil;
 }
 
-- (UINavigationController*)ks_navigationController {
+- (UINavigationController*)bp_navigationController {
     UINavigationController* nav = nil;
     if ([self isKindOfClass:[UINavigationController class]]) {
         nav = (id)self;
     }
     else {
         if ([self isKindOfClass:[UITabBarController class]]) {
-            nav = [((UITabBarController*)self).selectedViewController ks_navigationController];
+            nav = [((UITabBarController*)self).selectedViewController bp_navigationController];
         }
         else {
             nav = self.navigationController;

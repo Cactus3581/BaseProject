@@ -22,8 +22,6 @@
 
 #import "NSObject+BPWatchDealloc.h"
 #import "NSObject+BPModel.h"
-#import "NSObject+BPCustomKVO.h"
-#import "BPKVOModel.h"
 
 #import "BPRuntimeSark.h"
 #import "NSObject+BPSark.h"
@@ -40,7 +38,6 @@
 @property (nonatomic, copy) NSString *synthesizeString2;
 @property (nonatomic, copy) NSString *dynamicString1;
 @property (nonatomic, copy) NSString *dynamicString2;//需要手动添加，网上看
-@property (nonatomic, strong) BPKVOModel *customKVOModel;//kvo
 
 @end
 
@@ -165,7 +162,7 @@
                 break;
                 
             case 19:{
-                [self handleCustomKVO]; //手动实现KVO
+
             }
                 break;
                 
@@ -198,28 +195,6 @@
     id cls = [BPRuntimeSark class];
     void *obj = &cls;// 相当于创建了一个对象:对象是指向类对象地址的变量
     [(__bridge id)obj speak];// 为什么把name加进来了？：实例变量是对象的地址+偏移量，一般的偏移量是4，也就是在这个栈上+4，往上看就是name。
-}
-
-#pragma mark - 手动实现KVO
-- (void)handleCustomKVO {
-    self.customKVOModel = [[BPKVOModel alloc] init];
-    [self.customKVOModel bp_addObserver:self forKey:NSStringFromSelector(@selector(text))
-                       withBlock:^(id observedObject, NSString *observedKey, id oldValue, id newValue) {
-                           dispatch_async(dispatch_get_main_queue(), ^{
-                               BPLog(@"%@.%@ is now: %@", observedObject, observedKey, newValue);
-                           });
-                       }];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self changeMessage];
-    });
-}
-
-
-- (void)changeMessage {
-    NSArray *msgs = @[@"Hello World!", @"Objective C", @"Swift", @"Peng Gu", @"peng.gu@me.com", @"www.gupeng.me", @"glowing.com"];
-    NSUInteger index = arc4random_uniform((u_int32_t)msgs.count);
-    self.customKVOModel.text = msgs[index];
 }
 
 #pragma mark - 动态类型

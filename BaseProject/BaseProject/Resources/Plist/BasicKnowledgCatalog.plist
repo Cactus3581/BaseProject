@@ -1241,13 +1241,19 @@
 				<array>
 					<dict>
 						<key>title</key>
-						<string>KVC基本使用及查找顺序</string>
+						<string>KVC基本使用</string>
 						<key>fileName</key>
 						<string>BPDesignPatternsKVCViewController</string>
 						<key>briefIntro</key>
 						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;0&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>KVC搜索key的顺序</string>
+						<key>fileName</key>
+						<string>BPDesignPatternsKVCViewController</string>
+						<key>briefIntro</key>
+						<string></string>
 					</dict>
 					<dict>
 						<key>title</key>
@@ -1256,8 +1262,6 @@
 						<string>BPDesignPatternsKVCViewController</string>
 						<key>briefIntro</key>
 						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;1&quot;}</string>
 					</dict>
 					<dict>
 						<key>title</key>
@@ -1266,18 +1270,14 @@
 						<string>BPDesignPatternsKVCViewController</string>
 						<key>briefIntro</key>
 						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;2&quot;}</string>
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>与KVO</string>
+						<string>自定义实现KVC</string>
 						<key>fileName</key>
 						<string>BPDesignPatternsKVCViewController</string>
 						<key>briefIntro</key>
 						<string></string>
-						<key>dynamicJumpString</key>
-						<string>{&quot;type&quot;:&quot;3&quot;}</string>
 					</dict>
 				</array>
 			</dict>
@@ -1292,6 +1292,14 @@
 				<array>
 					<dict>
 						<key>title</key>
+						<string>对实例变量和属性分别进行KVO</string>
+						<key>fileName</key>
+						<string>BPDesignPatternsKVOViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
 						<string>手动调用KVO</string>
 						<key>fileName</key>
 						<string>BPDesignPatternsKVOViewController</string>
@@ -1300,23 +1308,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>自定义KVO</string>
-						<key>fileName</key>
-						<string>BPDesignPatternsKVOViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>观察有&amp;没有setter方法的实例变量</string>
-						<key>fileName</key>
-						<string>BPDesignPatternsKVOViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>基础使用</string>
+						<string>依赖KVO</string>
 						<key>fileName</key>
 						<string>BPDesignPatternsKVOViewController</string>
 						<key>briefIntro</key>
@@ -1325,6 +1317,14 @@
 					<dict>
 						<key>title</key>
 						<string>优化KVO</string>
+						<key>fileName</key>
+						<string>BPDesignPatternsKVOViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>自定义KVO</string>
 						<key>fileName</key>
 						<string>BPDesignPatternsKVOViewController</string>
 						<key>briefIntro</key>
@@ -1351,6 +1351,14 @@
 					</dict>
 					<dict>
 						<key>title</key>
+						<string>异步调用</string>
+						<key>fileName</key>
+						<string>BPDesignPatternsNotificationViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
 						<string>自定义封装消息机制 一</string>
 						<key>fileName</key>
 						<string>BPDesignPatternsNotificationViewController</string>
@@ -1360,14 +1368,6 @@
 					<dict>
 						<key>title</key>
 						<string>自定义封装消息机制 二</string>
-						<key>fileName</key>
-						<string>BPDesignPatternsNotificationViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>CF框架</string>
 						<key>fileName</key>
 						<string>BPDesignPatternsNotificationViewController</string>
 						<key>briefIntro</key>
