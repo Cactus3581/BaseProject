@@ -1,5 +1,5 @@
 //
-//  BPSimpleTableController.m
+//  BPListViewController.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/11/21.

@@ -6,7 +6,7 @@
 		<key>title</key>
 		<string>图文混排</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string></string>
 		<key>subVc_array</key>
@@ -41,7 +41,7 @@
 		<key>title</key>
 		<string>日历Calendar</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string></string>
 		<key>subVc_array</key>
@@ -68,7 +68,7 @@
 		<key>title</key>
 		<string>PopView</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string>了解锚点动画/箭头PopView(图片/自定义画图)</string>
 		<key>subVc_array</key>
@@ -93,7 +93,7 @@
 				<key>title</key>
 				<string>锚点</string>
 				<key>fileName</key>
-				<string>BPSimpleTableController</string>
+				<string>BPListViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 				<key>dynamicJumpString</key>
@@ -156,7 +156,7 @@
 		<key>title</key>
 		<string>顶部滑动分类工具</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string>collectionView相关应用</string>
 		<key>subVc_array</key>
@@ -173,7 +173,7 @@
 				<key>title</key>
 				<string>基于CollectionView</string>
 				<key>fileName</key>
-				<string>BPSimpleTableController</string>
+				<string>BPListViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 				<key>subVc_array</key>
@@ -242,7 +242,7 @@
 		<key>title</key>
 		<string>图片放大器</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string>导航栏基本属性及动画/自定义Tabbar</string>
 	</dict>
@@ -250,7 +250,7 @@
 		<key>title</key>
 		<string>常用业务场景下的动画集合</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string></string>
 		<key>subVc_array</key>
@@ -309,7 +309,7 @@
 		<key>title</key>
 		<string>window提示框</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string>在window上的提示框</string>
 	</dict>
@@ -317,7 +317,7 @@
 		<key>title</key>
 		<string>二级菜单</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string>菜单联动</string>
 	</dict>
@@ -325,7 +325,7 @@
 		<key>title</key>
 		<string>高斯模糊</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string>卡片上(下)拉，背景图高斯模糊效果</string>
 	</dict>
@@ -333,7 +333,7 @@
 		<key>title</key>
 		<string>抽屉View</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string></string>
 	</dict>
@@ -357,7 +357,7 @@
 		<key>title</key>
 		<string>轮播图</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string></string>
 		<key>subVc_array</key>
@@ -408,7 +408,7 @@
 		<key>title</key>
 		<string>动态输入添加标签</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string>单行标签/多行标签/位置不固定圆形标签</string>
 		<key>subVc_array</key>
@@ -443,7 +443,7 @@
 		<key>title</key>
 		<string>二维码扫描工具</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string>二维码扫描工具</string>
 	</dict>
@@ -451,7 +451,7 @@
 		<key>title</key>
 		<string>图表</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string>折线图/曲线图/柱状图</string>
 		<key>subVc_array</key>

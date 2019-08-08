@@ -6,7 +6,7 @@
 		<key>title</key>
 		<string>测试</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string></string>
 		<key>subVc_array</key>
@@ -41,7 +41,7 @@
 		<key>title</key>
 		<string>其他项目测试用</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string></string>
 		<key>subVc_array</key>
@@ -51,7 +51,7 @@
 		<key>title</key>
 		<string>TableView相关测试</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string></string>
 		<key>subVc_array</key>
@@ -70,7 +70,7 @@
 		<key>title</key>
 		<string>collectionview测试相关</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string></string>
 		<key>subVc_array</key>
@@ -155,7 +155,7 @@
 		<key>title</key>
 		<string>商业业务Demo</string>
 		<key>fileName</key>
-		<string>BPSimpleTableController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string></string>
 		<key>subVc_array</key>
