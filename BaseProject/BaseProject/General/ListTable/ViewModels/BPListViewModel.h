@@ -1,5 +1,5 @@
 //
-//  BPSimpleViewModel.h
+//  BPListViewModel.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/11/21.
@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class BPSimpleModel;
+@class BPListModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BPSimpleViewModel : NSObject<UITableViewDataSource, UICollectionViewDataSource>
+@interface BPListViewModel : NSObject<UITableViewDataSource, UICollectionViewDataSource>
 
-@property (nullable, nonatomic, readonly) NSArray<BPSimpleModel *> *data;
+@property (nullable, nonatomic, readonly) NSArray<BPListModel *> *data;
 
 + (instancetype)viewModel;
 

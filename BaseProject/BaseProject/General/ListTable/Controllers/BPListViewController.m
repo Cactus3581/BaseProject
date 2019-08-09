@@ -1,5 +1,5 @@
 //
-//  BPSimpleTableController.m
+//  BPListViewController.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/11/21.
@@ -9,14 +9,14 @@
 #import "BPListViewController.h"
 #import <Masonry.h>
 #import <MJRefresh.h>
-#import "BPSimpleTableViewCell.h"
-#import "BPSimpleModel.h"
-#import "BPSimpleViewModel.h"
+#import "BPListTableViewCell.h"
+#import "BPListModel.h"
+#import "BPListViewModel.h"
 #import "BPBaseWebViewController.h"
 
 @interface BPListViewController ()<UITableViewDelegate>
 
-@property (strong, nonatomic) BPSimpleViewModel *viewModel;
+@property (strong, nonatomic) BPListViewModel *viewModel;
 @property (nonatomic, strong) UITableView *tableView;
 
 @end
@@ -29,13 +29,13 @@
     [self initializeUI];
 }
 
-- (BPSimpleViewModel *)viewModel{
+- (BPListViewModel *)viewModel{
     if (!_viewModel) {
-        BPSimpleViewModel *viewModel;
+        BPListViewModel *viewModel;
         if (_dataArray.count) {
-            viewModel = [BPSimpleViewModel viewModelWithArray:_dataArray];
+            viewModel = [BPListViewModel viewModelWithArray:_dataArray];
         } else if (_url){
-            viewModel = [BPSimpleViewModel viewModel];
+            viewModel = [BPListViewModel viewModel];
             weakify(self);
             [viewModel setDataLoadWithUrl:_url successed:^(NSArray * _Nonnull dataSource) {
                 strongify(self);
@@ -46,9 +46,9 @@
         }
         
         weakify(viewModel);
-        [viewModel configTableviewCell:^BPSimpleTableViewCell * _Nonnull(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
+        [viewModel configTableviewCell:^BPListTableViewCell * _Nonnull(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath) {
             strongify(viewModel);
-            BPSimpleTableViewCell *cell = [BPSimpleTableViewCell cellWithTableView:tableView];
+            BPListTableViewCell *cell = [BPListTableViewCell cellWithTableView:tableView];
             [cell setModel:viewModel.data[indexPath.row] indexPath:indexPath];
             return cell;
         }];
@@ -94,7 +94,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    BPSimpleModel *model = self.dataArray[indexPath.row];
+    BPListModel *model = self.dataArray[indexPath.row];
     NSString *className = model.fileName;
     Class classVc = NSClassFromString(className);
     if (classVc) {
@@ -123,7 +123,7 @@
         }
     }
     //点击后取消选中颜色。同[self.tableView deselectRowAtIndexPath:indexPath animated:NO];效果
-    BPSimpleTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    BPListTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:NO];

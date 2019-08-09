@@ -1,37 +1,37 @@
 //
-//  BPSimpleTableViewCell.m
+//  BPListTableViewCell.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/11/21.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "BPSimpleTableViewCell.h"
-#import "BPSimpleModel.h"
+#import "BPListTableViewCell.h"
+#import "BPListModel.h"
 #import <Masonry.h>
 
-static NSString *cellIdentifier = @"BPSimpleTableViewCell";
+static NSString *cellIdentifier = @"BPListTableViewCell";
 
-@interface BPSimpleTableViewCell ()
+@interface BPListTableViewCell ()
 
 @end
 
-@implementation BPSimpleTableViewCell {
+@implementation BPListTableViewCell {
     UILabel *_titleLabel;
     UILabel *_detailLabel;
 }
 
 + (instancetype)cellWithTableView:(UITableView *)tableView {
-    BPSimpleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    BPListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[BPSimpleTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[BPListTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         [cell initializeUI];
     }
     return cell;
 }
 
 + (instancetype)xib_cellWithTableView:(UITableView *)tableView {
-    BPSimpleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    BPListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     [cell initializeUI];
     return cell;
 }
@@ -60,7 +60,7 @@ static NSString *cellIdentifier = @"BPSimpleTableViewCell";
     _detailLabel.backgroundColor = kGreenColor;
 }
 
-- (void)setModel:(BPSimpleModel *)model indexPath:(NSIndexPath *)indexPath {
+- (void)setModel:(BPListModel *)model indexPath:(NSIndexPath *)indexPath {
     _model = model;
     
     if (model.subVc_array.count) {
@@ -130,7 +130,7 @@ static NSString *cellIdentifier = @"BPSimpleTableViewCell";
     }
 }
 
-- (void)setModel:(BPSimpleModel *)model {
+- (void)setModel:(BPListModel *)model {
     _model = model;
     [self setModel:model indexPath:nil];
 }

@@ -1,5 +1,5 @@
 //
-//  BPSimpleModel.h
+//  BPListModel.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/11/21.
@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, BPImportance) {
     BPImportanceHigh,//重要的
 };
 
-@interface BPSimpleModel : NSObject
+@interface BPListModel : NSObject
 @property (nonatomic,copy)  NSString *title;
 @property (nonatomic,copy)  NSString *fileName;
 @property (nonatomic,strong)  NSArray *subVc_array;

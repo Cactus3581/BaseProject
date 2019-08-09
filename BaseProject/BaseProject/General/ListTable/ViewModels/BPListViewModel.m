@@ -1,13 +1,13 @@
 //
-//  BPSimpleViewModel.m
+//  BPListViewModel.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/11/21.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 
-#import "BPSimpleViewModel.h"
-#import "BPSimpleModel.h"
+#import "BPListViewModel.h"
+#import "BPListModel.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import "NSObject+YYModel.h"
@@ -16,7 +16,7 @@
 
 typedef void(^successed)(NSArray *);
 
-@interface BPSimpleViewModel ()
+@interface BPListViewModel ()
 
 @property (nonatomic, copy) NSString *url;
 @property (nonatomic, strong,readwrite) NSArray *data;
@@ -25,7 +25,7 @@ typedef void(^successed)(NSArray *);
 
 @end
 
-@implementation BPSimpleViewModel{
+@implementation BPListViewModel{
     dispatch_block_t _failed;
     successed _successed;
 }
@@ -76,7 +76,7 @@ typedef void(^successed)(NSArray *);
     
     NSMutableArray *muArray = [NSMutableArray array];
     for (NSDictionary *dic in array) {
-        BPSimpleModel *model = [BPSimpleModel yy_modelWithDictionary:dic];
+        BPListModel *model = [BPListModel yy_modelWithDictionary:dic];
         [muArray addObject:model];
     }
     self.data = muArray.copy;
