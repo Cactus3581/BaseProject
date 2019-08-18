@@ -234,4 +234,8 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)dealloc {
+//    [self.model removeObserver:self forKeyPath:@""];
+}
+
 @end

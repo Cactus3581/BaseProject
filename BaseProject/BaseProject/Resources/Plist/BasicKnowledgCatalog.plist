@@ -1474,7 +1474,7 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>布局方法</string>
+				<string>布局</string>
 				<key>fileName</key>
 				<string>BPListViewController</string>
 				<key>briefIntro</key>
@@ -1483,39 +1483,15 @@
 				<array>
 					<dict>
 						<key>title</key>
-						<string>Frame布局</string>
+						<string>布局过程</string>
 						<key>fileName</key>
-						<string>BPFrameLayoutViewController</string>
+						<string>BPLayoutProcessViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>Autoresizing布局</string>
-						<key>fileName</key>
-						<string>BPAutoresizingViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>AutoLayout布局：原生写法、VFL写法</string>
-						<key>fileName</key>
-						<string>BPAutoLayoutCodeViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>XIB布局：nib文件初始化</string>
-						<key>fileName</key>
-						<string>BPAutoLayoutXIBViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>Masonry使用技巧</string>
+						<string>Masonry高级技巧</string>
 						<key>fileName</key>
 						<string>BPListViewController</string>
 						<key>briefIntro</key>
@@ -1579,49 +1555,6 @@
 								<string></string>
 							</dict>
 						</array>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>SizeClass布局</string>
-						<key>fileName</key>
-						<string>BPSizeClassViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>布局过程：View及VC显示过程</string>
-				<key>fileName</key>
-				<string>BPListViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-				<key>subVc_array</key>
-				<array>
-					<dict>
-						<key>title</key>
-						<string>Frame:布局过程</string>
-						<key>fileName</key>
-						<string>BPLayoutProcessViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>Masnory布局过程</string>
-						<key>fileName</key>
-						<string>BPMasonryAutoLayoutProcessViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>XIB布局过程及特有的系统方法</string>
-						<key>fileName</key>
-						<string>BPXIBAutoLayoutProcessViewController</string>
-						<key>briefIntro</key>
-						<string></string>
 					</dict>
 				</array>
 			</dict>
@@ -2781,7 +2714,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>scroll实现tableView</string>
+						<string>使用scroll实现tableView及重用机制</string>
 						<key>fileName</key>
 						<string>BPCustomTableViewController</string>
 						<key>briefIntro</key>
@@ -2789,7 +2722,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>TableView优化点（去重点知识目录查找）</string>
+						<string>Cell的下载进度、倒计时</string>
 						<key>fileName</key>
 						<string></string>
 						<key>briefIntro</key>
@@ -2797,15 +2730,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>Cell下载进度及秒杀倒计时</string>
-						<key>fileName</key>
-						<string></string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>tableView 多个scroll子类多手势联动</string>
+						<string>tableView内嵌多个scroll子类 多手势联动</string>
 						<key>fileName</key>
 						<string>BPTableViewNestGestureViewController</string>
 						<key>briefIntro</key>
@@ -2813,7 +2738,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>collectionView 多个scroll子类多手势联动</string>
+						<string>collectionView内嵌多个scroll子类 多手势联动</string>
 						<key>fileName</key>
 						<string>BPCollectionViewNestGestureViewController</string>
 						<key>briefIntro</key>
@@ -2845,15 +2770,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>刷新的几种方法及刷新动画</string>
-						<key>fileName</key>
-						<string>BPTableViewReloadViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>获取内容大小</string>
+						<string>获取ContentSize</string>
 						<key>fileName</key>
 						<string>BPTableViewContentSizeViewController</string>
 						<key>briefIntro</key>

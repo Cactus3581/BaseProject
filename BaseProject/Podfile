@@ -8,7 +8,8 @@ target 'BaseProject' do
     pod 'MJRefresh'
     pod 'MJExtension'
     pod 'SAMKeychain'
-    
+    #pod 'ReactiveCocoa'
+
     pod 'MLeaksFinder'
     #pod 'FBRetainCycleDetector'
     #pod 'FBMemoryProfiler'
@@ -40,7 +41,6 @@ target 'BaseProject' do
     #pod 'CocoaAsyncSocket'
     #pod 'YYKit'
     #pod 'lottie-ios'
-    
     #pod 'SkeletonView'
 
 	
