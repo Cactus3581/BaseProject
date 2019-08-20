@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BPDrawRectPathView : UIView
+@interface BPDrawRectProcessView : UIView
 
 @end
