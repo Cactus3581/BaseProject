@@ -7,31 +7,56 @@
 //
 
 #import "BPCustomTableViewController.h"
+#import "BPTableView.h"
+#import "BPCustomTableViewCell.h"
 
-@interface BPCustomTableViewController ()
+@interface BPCustomTableViewController ()<BPTableViewDelegate>
+
+@property (weak, nonatomic) BPTableView *tableView;
+@property (assign, nonatomic) NSInteger count;
 
 @end
+
 
 @implementation BPCustomTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _count = 50;
+    self.rightBarButtonTitle = @"reloadData";
+//    BPTableView *tableView = [[BPTableView alloc] init];
+    BPTableView *tableView = [[BPTableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    _tableView = tableView;
+    tableView.dataSource = self;
+    [tableView registerClass:[BPCustomTableViewCell class] forCellReuseIdentifier:@""];
+    [self.view addSubview:tableView];
+    
+//    [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.equalTo(self.view);
+//    }];
+}
+
+- (void)rightBarButtonItemClickAction:(id)sender {
+    _count = 100;
+    [_tableView reloadData];
+}
+
+- (NSInteger)tableView:(BPTableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _count;
+}
+
+- (BPCustomTableViewCell *)tableView:(BPTableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    BPCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@""];
+    cell.label.text = @(indexPath.row).stringValue;
+    return cell;
+}
+
+- (CGFloat)tableView:(BPTableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
