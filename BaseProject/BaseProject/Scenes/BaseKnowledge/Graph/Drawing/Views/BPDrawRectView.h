@@ -1,5 +1,5 @@
 //
-//  BPDrawRectCGView.h
+//  BPDrawRectView.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/1/23.

@@ -1,5 +1,5 @@
 //
-//  BPDrawViewCGLayer.h
+//  BPDrawLayer.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/1/23.
@@ -8,6 +8,6 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-@interface BPDrawViewCGLayer : CALayer
+@interface BPDrawLayer : CALayer
 
 @end

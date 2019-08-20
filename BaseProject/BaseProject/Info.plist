@@ -5,7 +5,7 @@
 	<key> Allow Arbitrary Loads</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
 	<string>Cactus</string>
 	<key>CFBundleExecutable</key>

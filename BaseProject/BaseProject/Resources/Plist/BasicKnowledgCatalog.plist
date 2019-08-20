@@ -1569,7 +1569,7 @@
 				<array>
 					<dict>
 						<key>title</key>
-						<string>自定义绘制及绘制过程</string>
+						<string>基本绘制过程/自定义实现绘制</string>
 						<key>fileName</key>
 						<string>BPListViewController</string>
 						<key>briefIntro</key>
@@ -1578,7 +1578,7 @@
 						<array>
 							<dict>
 								<key>title</key>
-								<string>在自定义View的drawRect里使用CoreGraphics绘图</string>
+								<string>自定义view绘图</string>
 								<key>fileName</key>
 								<string>BPDrawViewController</string>
 								<key>briefIntro</key>
@@ -1586,7 +1586,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>在自定义View的drawRect方法里使用贝塞尔曲线绘图</string>
+								<string>自定义layer绘图</string>
 								<key>fileName</key>
 								<string>BPDrawViewController</string>
 								<key>briefIntro</key>
@@ -1594,7 +1594,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>在自定义Layer的drawInContext方法里使用CoreGraphics绘图</string>
+								<string>实现Layer的代理方法，自定义绘图</string>
 								<key>fileName</key>
 								<string>BPDrawViewController</string>
 								<key>briefIntro</key>
@@ -1602,31 +1602,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>在控制器里直接创建Layer并实现代理drawLayer方法</string>
-								<key>fileName</key>
-								<string>BPDrawViewController</string>
-								<key>briefIntro</key>
-								<string></string>
-							</dict>
-							<dict>
-								<key>title</key>
-								<string>用贝塞尔曲线进行图片绘制</string>
-								<key>fileName</key>
-								<string>BPDrawViewController</string>
-								<key>briefIntro</key>
-								<string></string>
-							</dict>
-							<dict>
-								<key>title</key>
-								<string>用CG进行图片绘制</string>
-								<key>fileName</key>
-								<string>BPDrawViewController</string>
-								<key>briefIntro</key>
-								<string></string>
-							</dict>
-							<dict>
-								<key>title</key>
-								<string>绘制空心/镂空图片</string>
+								<string>自定义创建图形上下文绘制输出并返回一张图片</string>
 								<key>fileName</key>
 								<string>BPDrawViewController</string>
 								<key>briefIntro</key>
@@ -1644,7 +1620,15 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>图片解码</string>
+						<string>图片解码（CoreImage）</string>
+						<key>fileName</key>
+						<string></string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>文本绘制（CoreText）</string>
 						<key>fileName</key>
 						<string></string>
 						<key>briefIntro</key>

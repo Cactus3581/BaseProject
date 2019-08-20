@@ -362,9 +362,8 @@
 		015805BC20CAE5D000D0EF7C /* BPTopCategoryListTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0158059920CAE5D000D0EF7C /* BPTopCategoryListTagCollectionViewCell.xib */; };
 		01583B01224DB3AE00172F7F /* BPAsyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01583AFF224DB3AE00172F7F /* BPAsyncViewController.m */; };
 		01583B02224DB3AE00172F7F /* BPAsyncViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01583B00224DB3AE00172F7F /* BPAsyncViewController.xib */; };
-		01583B05224E1D2E00172F7F /* BPDrawRectCGView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01583B04224E1D2E00172F7F /* BPDrawRectCGView.m */; };
-		01583B08224E1D6D00172F7F /* BPDrawRectPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01583B06224E1D6C00172F7F /* BPDrawRectPathView.m */; };
-		01583B0B224E201400172F7F /* BPDrawViewCGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01583B0A224E201400172F7F /* BPDrawViewCGLayer.m */; };
+		01583B05224E1D2E00172F7F /* BPDrawRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01583B04224E1D2E00172F7F /* BPDrawRectView.m */; };
+		01583B0B224E201400172F7F /* BPDrawLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01583B0A224E201400172F7F /* BPDrawLayer.m */; };
 		0158A0501FDFD3570011AFE9 /* UILabel+BPInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */; };
 		0159272622904B60002875E5 /* BPDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0159272522904B60002875E5 /* BPDownloadManager.m */; };
 		0159A62220EC73A400312293 /* BPDownLoadMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0159A62020EC73A400312293 /* BPDownLoadMainPageViewController.m */; };
@@ -1582,12 +1581,10 @@
 		01583AFE224DB3AE00172F7F /* BPAsyncViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAsyncViewController.h; sourceTree = "<group>"; };
 		01583AFF224DB3AE00172F7F /* BPAsyncViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAsyncViewController.m; sourceTree = "<group>"; };
 		01583B00224DB3AE00172F7F /* BPAsyncViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPAsyncViewController.xib; sourceTree = "<group>"; };
-		01583B03224E1D2D00172F7F /* BPDrawRectCGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawRectCGView.h; sourceTree = "<group>"; };
-		01583B04224E1D2E00172F7F /* BPDrawRectCGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawRectCGView.m; sourceTree = "<group>"; };
-		01583B06224E1D6C00172F7F /* BPDrawRectPathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawRectPathView.m; sourceTree = "<group>"; };
-		01583B07224E1D6C00172F7F /* BPDrawRectPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawRectPathView.h; sourceTree = "<group>"; };
-		01583B09224E201400172F7F /* BPDrawViewCGLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawViewCGLayer.h; sourceTree = "<group>"; };
-		01583B0A224E201400172F7F /* BPDrawViewCGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawViewCGLayer.m; sourceTree = "<group>"; };
+		01583B03224E1D2D00172F7F /* BPDrawRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawRectView.h; sourceTree = "<group>"; };
+		01583B04224E1D2E00172F7F /* BPDrawRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawRectView.m; sourceTree = "<group>"; };
+		01583B09224E201400172F7F /* BPDrawLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawLayer.h; sourceTree = "<group>"; };
+		01583B0A224E201400172F7F /* BPDrawLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawLayer.m; sourceTree = "<group>"; };
 		0158A04E1FDFD3560011AFE9 /* UILabel+BPInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BPInterval.h"; sourceTree = "<group>"; };
 		0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BPInterval.m"; sourceTree = "<group>"; };
 		0159272422904B60002875E5 /* BPDownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDownloadManager.h; sourceTree = "<group>"; };
@@ -7987,8 +7984,8 @@
 		01B0751D20E4FD0C004891F7 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
-				01583B09224E201400172F7F /* BPDrawViewCGLayer.h */,
-				01583B0A224E201400172F7F /* BPDrawViewCGLayer.m */,
+				01583B09224E201400172F7F /* BPDrawLayer.h */,
+				01583B0A224E201400172F7F /* BPDrawLayer.m */,
 			);
 			name = Layers;
 			path = ../Layers;
@@ -8007,10 +8004,8 @@
 		01B0752320E4FD0C004891F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				01583B07224E1D6C00172F7F /* BPDrawRectPathView.h */,
-				01583B06224E1D6C00172F7F /* BPDrawRectPathView.m */,
-				01583B03224E1D2D00172F7F /* BPDrawRectCGView.h */,
-				01583B04224E1D2E00172F7F /* BPDrawRectCGView.m */,
+				01583B03224E1D2D00172F7F /* BPDrawRectView.h */,
+				01583B04224E1D2E00172F7F /* BPDrawRectView.m */,
 			);
 			name = Views;
 			path = ../Views;
@@ -10675,7 +10670,7 @@
 				01A191B32004E16F005EE4CD /* BPTextViewViewController.m in Sources */,
 				01DF31C31FDD3A9100B8A955 /* NSIndexPath+BPOffset.m in Sources */,
 				0161168122CF80ED003A3ABC /* BPResponderViewController.m in Sources */,
-				01583B0B224E201400172F7F /* BPDrawViewCGLayer.m in Sources */,
+				01583B0B224E201400172F7F /* BPDrawLayer.m in Sources */,
 				014DDD5522C36BD2006ED9A2 /* BPWeakProxy.m in Sources */,
 				01161F4E2030900B00FA3441 /* BPNSStringViewController.m in Sources */,
 				010DB72F1FDD4D450099E66F /* UIPopoverController+iPhone.m in Sources */,
@@ -11163,7 +11158,7 @@
 				010DB74D1FDD4D450099E66F /* UIApplication+BPKeyboardFrame.m in Sources */,
 				0126702721D51C0800FCA347 /* BPAutoModel.m in Sources */,
 				010DB7341FDD4D450099E66F /* UIResponder+BPChain.m in Sources */,
-				01583B05224E1D2E00172F7F /* BPDrawRectCGView.m in Sources */,
+				01583B05224E1D2E00172F7F /* BPDrawRectView.m in Sources */,
 				01DF31C11FDD3A9100B8A955 /* NSDictionary+BPJSONString.m in Sources */,
 				0111FF6F227749F000B51C65 /* KSSentenceTextTableViewCell.m in Sources */,
 				01B2EDFB22DF558C00702C36 /* BPFactory.m in Sources */,
@@ -11263,7 +11258,6 @@
 				010DB70F1FDD4D450099E66F /* UIImageView+BPReflect.m in Sources */,
 				01B2EE1022DF566D00702C36 /* BPFordCarProduct.m in Sources */,
 				01528F0B22D4D78D004454D6 /* BPKeyChainViewController.m in Sources */,
-				01583B08224E1D6D00172F7F /* BPDrawRectPathView.m in Sources */,
 				015A33C1227370CB0029CC0B /* KSLaunchAdsViewController.m in Sources */,
 				01DF31EC1FDD3B1600B8A955 /* NSURL+BPQueryDictionary.m in Sources */,
 				015A33BD227370B50029CC0B /* KSLaunchAdsHelper.m in Sources */,
