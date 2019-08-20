@@ -27,7 +27,7 @@ static NSInteger lineWidth = 10;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self strokeColor];
+//    [self strokeColor];
     return;
 
     [self strokeEnd];

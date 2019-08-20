@@ -1,21 +1,21 @@
 //
-//  BPCALayerBasePropertyViewController.m
+//  BPLayerShadowPathViewController.m
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/7/20.
 //  Copyright © 2018年 cactus. All rights reserved.
 //
 
-#import "BPCALayerBasePropertyViewController.h"
+#import "BPLayerShadowPathViewController.h"
 
-@interface BPCALayerBasePropertyViewController ()
+@interface BPLayerShadowPathViewController ()
 
 @property(nonatomic,weak) UIView *maskView;
 
 @end
 
 
-@implementation BPCALayerBasePropertyViewController
+@implementation BPLayerShadowPathViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,9 +65,6 @@
     //    backView.layer.shadowPath = [UIBezierPath bezierPathWithRect:backView.layer.bounds].CGPath;
     //backView.layer.masksToBounds = YES;
 }
-
-
-
 
 - (void)testMaskLayer {
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];

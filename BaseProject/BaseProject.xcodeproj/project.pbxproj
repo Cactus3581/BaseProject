@@ -168,7 +168,7 @@
 		011B7DD920693E5B0071CB5D /* UIBarButtonItem+BPCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD320693E5B0071CB5D /* UIBarButtonItem+BPCreate.m */; };
 		011B7DDA20693E5B0071CB5D /* UINavigation+BPFixSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD420693E5B0071CB5D /* UINavigation+BPFixSpace.m */; };
 		011B7DDB20693E5B0071CB5D /* NSObject+BPAddRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD520693E5B0071CB5D /* NSObject+BPAddRuntime.m */; };
-		011BE5602101793500842DDF /* BPCALayerBasePropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011BE55F2101793500842DDF /* BPCALayerBasePropertyViewController.m */; };
+		011BE5602101793500842DDF /* BPLayerShadowPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011BE55F2101793500842DDF /* BPLayerShadowPathViewController.m */; };
 		011CD74F20CE190A00560EE6 /* BPMasksToBoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011CD74D20CE190A00560EE6 /* BPMasksToBoundsViewController.m */; };
 		011CD75020CE190A00560EE6 /* BPMasksToBoundsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011CD74E20CE190A00560EE6 /* BPMasksToBoundsViewController.xib */; };
 		011D8B0721E4EC240096C60A /* BPKVOModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 011D8B0621E4EC240096C60A /* BPKVOModel.m */; };
@@ -574,6 +574,8 @@
 		01ADDA4E22DED0180058ECFE /* BPDesignPatternsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01ADDA4C22DED0180058ECFE /* BPDesignPatternsViewController.xib */; };
 		01AEF6C3230C1A6700F017F5 /* BPSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEF6C2230C1A6700F017F5 /* BPSizeViewController.m */; };
 		01AEF6C5230C1A9400F017F5 /* BPSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01AEF6C4230C1A9400F017F5 /* BPSizeViewController.xib */; };
+		01AEF6CC230C306200F017F5 /* BPLayerMaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEF6CA230C306200F017F5 /* BPLayerMaskViewController.m */; };
+		01AEF6CD230C306200F017F5 /* BPLayerMaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01AEF6CB230C306200F017F5 /* BPLayerMaskViewController.xib */; };
 		01B075A020E4FD0C004891F7 /* BPDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0752120E4FD0C004891F7 /* BPDrawViewController.m */; };
 		01B075A520E4FD0C004891F7 /* BPBlockAnimatonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0752F20E4FD0C004891F7 /* BPBlockAnimatonVC.m */; };
 		01B075A620E4FD0C004891F7 /* BPCoreAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0753320E4FD0C004891F7 /* BPCoreAnimationVC.m */; };
@@ -1220,8 +1222,8 @@
 		011B7DD620693E5B0071CB5D /* UIBarButtonItem+BPCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BPCreate.h"; sourceTree = "<group>"; };
 		011B7DD720693E5B0071CB5D /* NSObject+BPAddRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPAddRuntime.h"; sourceTree = "<group>"; };
 		011B7DD820693E5B0071CB5D /* UINavigation+BPFixSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigation+BPFixSpace.h"; sourceTree = "<group>"; };
-		011BE55E2101793500842DDF /* BPCALayerBasePropertyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCALayerBasePropertyViewController.h; sourceTree = "<group>"; };
-		011BE55F2101793500842DDF /* BPCALayerBasePropertyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCALayerBasePropertyViewController.m; sourceTree = "<group>"; };
+		011BE55E2101793500842DDF /* BPLayerShadowPathViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPLayerShadowPathViewController.h; sourceTree = "<group>"; };
+		011BE55F2101793500842DDF /* BPLayerShadowPathViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPLayerShadowPathViewController.m; sourceTree = "<group>"; };
 		011CD74C20CE190A00560EE6 /* BPMasksToBoundsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMasksToBoundsViewController.h; sourceTree = "<group>"; };
 		011CD74D20CE190A00560EE6 /* BPMasksToBoundsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMasksToBoundsViewController.m; sourceTree = "<group>"; };
 		011CD74E20CE190A00560EE6 /* BPMasksToBoundsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPMasksToBoundsViewController.xib; sourceTree = "<group>"; };
@@ -1979,6 +1981,9 @@
 		01AEF6C1230C1A6700F017F5 /* BPSizeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPSizeViewController.h; sourceTree = "<group>"; };
 		01AEF6C2230C1A6700F017F5 /* BPSizeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPSizeViewController.m; sourceTree = "<group>"; };
 		01AEF6C4230C1A9400F017F5 /* BPSizeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPSizeViewController.xib; sourceTree = "<group>"; };
+		01AEF6C9230C306200F017F5 /* BPLayerMaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPLayerMaskViewController.h; sourceTree = "<group>"; };
+		01AEF6CA230C306200F017F5 /* BPLayerMaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPLayerMaskViewController.m; sourceTree = "<group>"; };
+		01AEF6CB230C306200F017F5 /* BPLayerMaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPLayerMaskViewController.xib; sourceTree = "<group>"; };
 		01B0752120E4FD0C004891F7 /* BPDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawViewController.m; sourceTree = "<group>"; };
 		01B0752220E4FD0C004891F7 /* BPDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawViewController.h; sourceTree = "<group>"; };
 		01B0752F20E4FD0C004891F7 /* BPBlockAnimatonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBlockAnimatonVC.m; sourceTree = "<group>"; };
@@ -3840,13 +3845,15 @@
 			path = NaviSpace;
 			sourceTree = "<group>";
 		};
-		011BE5592101790000842DDF /* BaseProperty */ = {
+		011BE5592101790000842DDF /* Property */ = {
 			isa = PBXGroup;
 			children = (
-				011BE55E2101793500842DDF /* BPCALayerBasePropertyViewController.h */,
-				011BE55F2101793500842DDF /* BPCALayerBasePropertyViewController.m */,
+				01B0755C20E4FD0C004891F7 /* BezierPath */,
+				01AEF6C8230C304400F017F5 /* Mask */,
+				01B0756220E4FD0C004891F7 /* Transform */,
+				01AEF6C7230C2FF000F017F5 /* ShadowPath */,
 			);
-			path = BaseProperty;
+			path = Property;
 			sourceTree = "<group>";
 		};
 		011CD74B20CE18E600560EE6 /* MasksToBounds */ = {
@@ -4064,7 +4071,6 @@
 			children = (
 				011E8DC520B3181400B04378 /* Controllers */,
 				011E8DC620B3181400B04378 /* Models */,
-				011E8DC820B3181500B04378 /* ViewModels */,
 				011E8DC720B3181500B04378 /* Views */,
 			);
 			path = CustomTableView;
@@ -4091,13 +4097,6 @@
 			children = (
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		011E8DC820B3181500B04378 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		011F91BF20E6661D00124DC1 /* Debug */ = {
@@ -6247,9 +6246,6 @@
 			isa = PBXGroup;
 			children = (
 				01782ABE20D684D20091939C /* Controllers */,
-				01782ABF20D684D20091939C /* Models */,
-				01782AC120D684D30091939C /* ViewModels */,
-				01782AC020D684D30091939C /* Views */,
 			);
 			path = Reuse;
 			sourceTree = "<group>";
@@ -6345,27 +6341,6 @@
 				01782ACC20D6950C0091939C /* BPScrollReusableViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		01782ABF20D684D20091939C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		01782AC020D684D30091939C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		01782AC120D684D30091939C /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		017906DA20011C2E00E5C360 /* OtherKnowledge */ = {
@@ -7771,17 +7746,17 @@
 		01A192002004E61E005EE4CD /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
-				01490C051FF548460035492D /* OptimizeTableView */,
-				012E117122806F3400398710 /* GetContentSize */,
-				01FE8618211AB8260060B141 /* Fold */,
-				01FE8617211AB80E0060B141 /* MultipleSelection */,
-				01FE8616211AB7F50060B141 /* SingleSelection */,
-				01EB474C20CE9A0100195E88 /* NestGesture */,
+				011DCE7E2084F0BF0045C035 /* AutoLayoutHeight */,
 				0158050020CADE2300D0EF7C /* CellProgress */,
 				011E8DC420B3180900B04378 /* CustomTableView */,
-				011DCE7E2084F0BF0045C035 /* AutoLayoutHeight */,
-				0143B5D92082516200524ABB /* MultiLevelCatalogue */,
+				01FE8618211AB8260060B141 /* Fold */,
 				01A192112004E61E005EE4CD /* GeneralTableView */,
+				012E117122806F3400398710 /* GetContentSize */,
+				0143B5D92082516200524ABB /* MultiLevelCatalogue */,
+				01FE8617211AB80E0060B141 /* MultipleSelection */,
+				01EB474C20CE9A0100195E88 /* NestGesture */,
+				01490C051FF548460035492D /* OptimizeTableView */,
+				01FE8616211AB7F50060B141 /* SingleSelection */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -8003,14 +7978,32 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		01AEF6C7230C2FF000F017F5 /* ShadowPath */ = {
+			isa = PBXGroup;
+			children = (
+				011BE55E2101793500842DDF /* BPLayerShadowPathViewController.h */,
+				011BE55F2101793500842DDF /* BPLayerShadowPathViewController.m */,
+			);
+			path = ShadowPath;
+			sourceTree = "<group>";
+		};
+		01AEF6C8230C304400F017F5 /* Mask */ = {
+			isa = PBXGroup;
+			children = (
+				01AEF6C9230C306200F017F5 /* BPLayerMaskViewController.h */,
+				01AEF6CA230C306200F017F5 /* BPLayerMaskViewController.m */,
+				01AEF6CB230C306200F017F5 /* BPLayerMaskViewController.xib */,
+			);
+			path = Mask;
+			sourceTree = "<group>";
+		};
 		01B0751B20E4FD0C004891F7 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
+				01B0755820E4FD0C004891F7 /* Layer */,
 				01B0756B20E4FD0C004891F7 /* Layout */,
 				01B0751C20E4FD0C004891F7 /* Drawing */,
 				01B0752C20E4FD0C004891F7 /* Animation */,
-				01B0758620E4FD0C004891F7 /* KeyPoint */,
-				01B0755820E4FD0C004891F7 /* Layer */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -8160,13 +8153,10 @@
 		01B0755820E4FD0C004891F7 /* Layer */ = {
 			isa = PBXGroup;
 			children = (
-				011BE5592101790000842DDF /* BaseProperty */,
-				01B0755C20E4FD0C004891F7 /* BezierPath */,
+				011BE5592101790000842DDF /* Property */,
 				01B0755F20E4FD0C004891F7 /* CAGradientLayer */,
 				01B0755920E4FD0C004891F7 /* CAReplicatorLayer */,
 				01B0756820E4FD0C004891F7 /* CAShapeLayer */,
-				01B0756220E4FD0C004891F7 /* Layer */,
-				01B0756520E4FD0C004891F7 /* View */,
 			);
 			path = Layer;
 			sourceTree = "<group>";
@@ -8198,22 +8188,15 @@
 			path = CAGradientLayer;
 			sourceTree = "<group>";
 		};
-		01B0756220E4FD0C004891F7 /* Layer */ = {
+		01B0756220E4FD0C004891F7 /* Transform */ = {
 			isa = PBXGroup;
 			children = (
 				01B0756320E4FD0C004891F7 /* BPLayerTransformController.h */,
 				01B0756420E4FD0C004891F7 /* BPLayerTransformController.m */,
-			);
-			path = Layer;
-			sourceTree = "<group>";
-		};
-		01B0756520E4FD0C004891F7 /* View */ = {
-			isa = PBXGroup;
-			children = (
 				01B0756620E4FD0C004891F7 /* BPViewTransformController.h */,
 				01B0756720E4FD0C004891F7 /* BPViewTransformController.m */,
 			);
-			path = View;
+			path = Transform;
 			sourceTree = "<group>";
 		};
 		01B0756820E4FD0C004891F7 /* CAShapeLayer */ = {
@@ -8264,13 +8247,6 @@
 				01B0758120E4FD0C004891F7 /* BPMasonrySkillViewController.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		01B0758620E4FD0C004891F7 /* KeyPoint */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = KeyPoint;
 			sourceTree = "<group>";
 		};
 		01B0758720E4FD0C004891F7 /* AlignmentRectInsets */ = {
@@ -8437,8 +8413,6 @@
 		01B726DA1FF806FC00648674 /* UseUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				0175DB7922D42B3800C44EF5 /* UIStackView */,
-				0161167E22CF80D3003A3ABC /* UIResponder */,
 				0128926320DFF46400B9370F /* UIAppearance */,
 				01A191962004DF2B005EE4CD /* UIButton */,
 				01A191E12004E61E005EE4CD /* UICollectionView */,
@@ -8450,10 +8424,12 @@
 				01A1919F2004E01D005EE4CD /* UIPageControl */,
 				01A191A12004E07B005EE4CD /* UIPickView */,
 				01A1919D2004DFA9005EE4CD /* UIProgressView */,
+				0161167E22CF80D3003A3ABC /* UIResponder */,
 				01F240A02006588A00FA5174 /* UIScrollView */,
 				01A191A42004E0B5005EE4CD /* UISearchBar */,
 				01A191A02004E038005EE4CD /* UISegmentedControl */,
 				01A1919E2004DFB1005EE4CD /* UISlider */,
+				0175DB7922D42B3800C44EF5 /* UIStackView */,
 				015804E620CADC9600D0EF7C /* UITabBarController */,
 				01A192002004E61E005EE4CD /* UITableView */,
 				01A191972004DF36005EE4CD /* UITextField */,
@@ -10406,6 +10382,7 @@
 				014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */,
 				011E8D9D20B2F7BA00B04378 /* BPPlanGeneralTableViewCell.xib in Resources */,
 				0154D0B22202DA1C00819387 /* BPVideoView.xib in Resources */,
+				01AEF6CD230C306200F017F5 /* BPLayerMaskViewController.xib in Resources */,
 				017CF98320D3AE0100D9AA30 /* BPCollectionViewNestGestureViewController.xib in Resources */,
 				0167A35820E619F100F13905 /* BPTransformViewController.xib in Resources */,
 				0159A63620EC782600312293 /* BPDownLoadMoreFilesTableViewCell.xib in Resources */,
@@ -10607,7 +10584,7 @@
 				01DF31C71FDD3A9100B8A955 /* NSUserDefaults+BPiCloudSync.m in Sources */,
 				0154D0C02202DF6A00819387 /* BPAudioView.m in Sources */,
 				011E8D7D20B2F7AA00B04378 /* BPCalendarAppearance.m in Sources */,
-				011BE5602101793500842DDF /* BPCALayerBasePropertyViewController.m in Sources */,
+				011BE5602101793500842DDF /* BPLayerShadowPathViewController.m in Sources */,
 				018C451E200A5AD300CF43D7 /* YYFPSLabel.m in Sources */,
 				01DF32591FDD3B9D00B8A955 /* NSData+BPzlib.m in Sources */,
 				01A191C22004E1BF005EE4CD /* BPWKWebViewController.m in Sources */,
@@ -11202,6 +11179,7 @@
 				01F2CE6420AABE6600F1D701 /* BPFlowCategoryViewCellModel.m in Sources */,
 				01C0B6221FFC87AB005BB4A5 /* Palette.m in Sources */,
 				01D22BE31FDD814000BCC4AD /* UIActivityIndicatorView+BPAdd.m in Sources */,
+				01AEF6CC230C306200F017F5 /* BPLayerMaskViewController.m in Sources */,
 				011E8D9F20B2F7BA00B04378 /* BPPlanCalendarConfig.m in Sources */,
 				017A35C622ED52CF00F5BB1A /* BPBlockCenter.m in Sources */,
 				01B075B120E4FD0C004891F7 /* BPGetFrameViewController.m in Sources */,

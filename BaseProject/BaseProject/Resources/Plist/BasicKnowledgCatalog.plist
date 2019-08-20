@@ -1736,53 +1736,45 @@
 						<array>
 							<dict>
 								<key>title</key>
-								<string>基本属性</string>
-								<key>fileName</key>
-								<string>BPCALayerBasePropertyViewController</string>
-								<key>briefIntro</key>
-								<string></string>
-							</dict>
-							<dict>
-								<key>title</key>
-								<string>Mask 遮罩</string>
-								<key>fileName</key>
-								<string>BPCALayerBasePropertyViewController</string>
-								<key>briefIntro</key>
-								<string></string>
-							</dict>
-							<dict>
-								<key>title</key>
 								<string>阴影</string>
 								<key>fileName</key>
-								<string>BPCALayerBasePropertyViewController</string>
+								<string>BPLayerShadowPathViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>Mask</string>
+								<key>fileName</key>
+								<string>BPLayerMaskViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>layer的transform</string>
+								<key>fileName</key>
+								<string>BPLayerTransformController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>view的transform</string>
+								<key>fileName</key>
+								<string>BPViewTransformController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>path - 贝塞尔曲线</string>
+								<key>fileName</key>
+								<string>BPBezierPathViewController</string>
 								<key>briefIntro</key>
 								<string></string>
 							</dict>
 						</array>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>贝塞尔曲线</string>
-						<key>fileName</key>
-						<string>BPBezierPathViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>View属性:mask/transform</string>
-						<key>fileName</key>
-						<string>BPViewTransformController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>Layer属性</string>
-						<key>fileName</key>
-						<string>BPLayerTransformController</string>
-						<key>briefIntro</key>
-						<string></string>
 					</dict>
 					<dict>
 						<key>title</key>

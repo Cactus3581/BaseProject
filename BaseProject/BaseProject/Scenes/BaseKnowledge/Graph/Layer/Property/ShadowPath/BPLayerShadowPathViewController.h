@@ -1,5 +1,5 @@
 //
-//  BPCALayerBasePropertyViewController.h
+//  BPLayerShadowPathViewController.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2018/7/20.
@@ -8,6 +8,6 @@
 
 #import "BPBaseViewController.h"
 
-@interface BPCALayerBasePropertyViewController : BPBaseViewController
+@interface BPLayerShadowPathViewController : BPBaseViewController
 
 @end
