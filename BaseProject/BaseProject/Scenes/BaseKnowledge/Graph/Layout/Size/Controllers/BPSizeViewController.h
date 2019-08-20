@@ -1,8 +1,8 @@
 //
-//  BPRemoveFromSuperviewController.h
+//  BPSizeViewController.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 2019/4/29.
+//  Created by xiaruzhen on 2019/8/20.
 //  Copyright © 2019 cactus. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BPRemoveFromSuperviewController : BPBaseViewController
+@interface BPSizeViewController : BPBaseViewController
 
 @end
 

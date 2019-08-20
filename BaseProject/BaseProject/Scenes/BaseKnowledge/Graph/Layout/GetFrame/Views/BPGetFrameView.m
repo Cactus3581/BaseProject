@@ -9,7 +9,7 @@
 #import "BPGetFrameView.h"
 
 @interface BPGetFrameView()
-@property (nonatomic,weak) UIView *view1;
+@property (nonatomic,weak) UIView *view;
 @end
 
 
@@ -23,36 +23,27 @@
     return self;
 }
 
-- (void)updateConstraints {
-    [super updateConstraints];
-}
-
-#pragma mark - 方法2.2
+#pragma mark - 方法三
 - (void)layoutSubviews {
     [super layoutSubviews];
-//    [_view1 mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.width.height.mas_equalTo(self.width/2.0);
-//    }];
-}
-
-- (void)getFrame {
-    [self setNeedsLayout];
-    [self layoutIfNeeded];
+    BPLog(@"getFrameView layoutSubviews = %@",NSStringFromCGRect(self.frame));
 }
 
 - (void)initSubViews {
-    UIView *view1 = [[UIView alloc] init];
-    _view1 = view1;
-    [self addSubview:view1];
     
-    [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIView *view = [[UIView alloc] init];
+    _view = view;
+    view.backgroundColor = kExplicitColor;
+    [self addSubview:view];
+    
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
         make.width.height.mas_equalTo(self.width/2.0);
     }];
     
     [self setNeedsLayout];
     [self layoutIfNeeded];
-    view1.backgroundColor = kExplicitColor;
+    BPLog(@"view init = %@",NSStringFromCGRect(view.frame));// 0，0，0，0
 }
 
 @end

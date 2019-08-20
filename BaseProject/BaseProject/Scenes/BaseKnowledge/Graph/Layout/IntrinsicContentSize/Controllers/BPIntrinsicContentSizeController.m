@@ -58,7 +58,7 @@ intrinsicContentSize：
         make.leading.equalTo(self.view).offset(10);
         make.trailing.equalTo(self.view).offset(-10);
     }];
-    self.label.text = @"天地玄黄 宇宙洪荒 日月盈昃 辰宿列张;天地玄黄 宇宙洪荒，天地玄黄 宇宙洪荒 日月盈昃 辰宿列张;天地玄黄 宇宙洪荒";
+    self.label.text = @"明月几时有？把酒问青天。不知天上宫阙，今夕是何年。我欲乘风归去，又恐琼楼玉宇，高处不胜寒。起舞弄清影，何似在人间？";
     
     CGSize size;
 
@@ -90,7 +90,7 @@ intrinsicContentSize：
         make.trailing.equalTo(self.view).offset(-10);
     }];
     
-    self.intrinsicContentSizeLabel.text = @"天地玄黄 宇宙洪荒 日月盈昃 辰宿列张;天地玄黄 宇宙洪荒，天地玄黄 宇宙洪荒 日月盈昃 辰宿列张;天地玄黄 宇宙洪荒";
+    self.intrinsicContentSizeLabel.text = @"明月几时有？把酒问青天。不知天上宫阙，今夕是何年。我欲乘风归去，又恐琼楼玉宇，高处不胜寒。起舞弄清影，何似在人间？";
     self.intrinsicContentSizeLabel.preferredMaxLayoutWidth = kScreenWidth-20;
     CGSize size = [self.intrinsicContentSizeLabel intrinsicContentSize];//{388, 50.5}
     BPLog(@"%@",NSStringFromCGSize(size));
@@ -116,7 +116,7 @@ intrinsicContentSize：
 
     [self.view addSubview:self.textView];
     
-    self.textView.text = @"天地玄黄 宇宙洪荒 日月盈昃 辰宿列张;天地玄黄 宇宙洪荒，天地玄黄 宇宙洪荒 日月盈昃 辰宿列张;天地玄黄 宇宙洪荒";
+    self.textView.text = @"明月几时有？把酒问青天。不知天上宫阙，今夕是何年。我欲乘风归去，又恐琼楼玉宇，高处不胜寒。起舞弄清影，何似在人间？";
 
     CGSize size = [self.textView sizeThatFits:CGSizeMake(kScreenWidth-20, MAXFLOAT)];
 

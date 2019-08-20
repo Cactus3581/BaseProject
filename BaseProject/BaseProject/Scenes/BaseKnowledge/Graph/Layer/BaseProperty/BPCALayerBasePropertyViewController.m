@@ -44,6 +44,12 @@
     }
 }
 
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    //    backView.layer.shadowPath = [UIBezierPath bezierPathWithRect:backView.layer.bounds].CGPath;
+}
+
 - (void)testBase {
     UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     backView.backgroundColor = kThemeColor;
@@ -61,10 +67,6 @@
 }
 
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-//    backView.layer.shadowPath = [UIBezierPath bezierPathWithRect:backView.layer.bounds].CGPath;
-}
 
 
 - (void)testMaskLayer {

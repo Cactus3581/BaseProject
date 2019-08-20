@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BPGetFrameView : UIView
-- (void)getFrame;
 
 @end

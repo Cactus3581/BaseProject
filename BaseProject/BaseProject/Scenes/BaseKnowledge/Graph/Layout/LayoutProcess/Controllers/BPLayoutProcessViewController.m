@@ -26,11 +26,9 @@ static CGFloat layoutProcessViewMetaValue = 20;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self initializeViews];
-    
-    
+    [self initializeViews];
     #pragma mark - 测试滑动对lauoutSubViews的回调效果
-    self.scrollView.backgroundColor = kGreenColor;
+//    self.scrollView.backgroundColor = kGreenColor;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
