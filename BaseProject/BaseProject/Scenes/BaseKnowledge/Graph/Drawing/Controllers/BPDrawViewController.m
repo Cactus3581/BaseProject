@@ -13,6 +13,8 @@
 @interface BPDrawViewController () <CALayerDelegate>
 
 @property (nonatomic,weak) CALayer *layer;
+@property (nonatomic,weak) UIImageView *colorImageView;
+@property (nonatomic,weak) UIView *colorView;
 
 @end
 
@@ -55,6 +57,11 @@
                 
             case 3:{
                 [self drawImage];// 以下是自定义创建图形上下文，然后在其上面绘制，输出并返回一张图片
+            }
+                break;
+                
+            case 4:{
+                [self takeColor];// 取色器
             }
                 break;
         }
@@ -271,6 +278,125 @@
     CGImageRelease(imageRef);
     CGContextRelease(ctx);
     return image;
+}
+
+// 使用CG自定义创建位图并返回位图
+- (CGContextRef)createBitmapContextWithPixelsWide:(NSInteger)pixelsWide pixelsHigh:(NSInteger)pixelsHigh {
+    CGContextRef    context = NULL;
+    CGColorSpaceRef colorSpace;
+    void *          bitmapData;
+    NSInteger             bitmapByteCount;
+    NSInteger             bitmapBytesPerRow;
+    bitmapBytesPerRow   = (pixelsWide * 4);
+    bitmapByteCount     = (bitmapBytesPerRow * pixelsHigh);
+    colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
+    
+    bitmapData = calloc(bitmapByteCount,sizeof(unsigned char *));
+
+    
+    if (!bitmapData) {
+        fprintf (stderr, "Memory not allocated!");
+        return NULL;
+    }
+    
+    context = CGBitmapContextCreate(bitmapData, pixelsWide, pixelsHigh, 8, bitmapBytesPerRow, colorSpace, kCGImageAlphaPremultipliedLast);
+    if (!context) {
+        free (bitmapData);
+        fprintf (stderr, "Context not created!");
+        return NULL;
+    }
+    CGColorSpaceRelease( colorSpace );
+    return context;
+}
+
+#pragma mark - 创建取色器
+- (void)takeColor {
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scroll_nyc"]];
+    _colorImageView = imageView;
+    imageView.userInteractionEnabled = YES;
+    [self.view addSubview:imageView];
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.width.height.mas_equalTo(100);
+    }];
+    
+    UIView *colorView = [[UIView alloc] init];
+    _colorView = colorView;
+    [self.view addSubview:colorView];
+    [colorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(imageView.mas_bottom);
+        make.centerX.equalTo(imageView);
+        make.width.height.mas_equalTo(100);
+    }];
+    
+}
+
+// 把要取色的图片转换成位图
+- (CGContextRef)createRGBABitmapContext:(CGImageRef) image {
+    size_t imageWidth = CGImageGetWidth(image);
+    size_t imageHeight = CGImageGetHeight(image);
+    //使用设备颜色空间，和mac OS不同，iOS只能使用设备相关颜色空间
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    //位图布局信息
+    CGImageAlphaInfo bitmapInfo = kCGImageAlphaPremultipliedFirst;
+    //创建位图上下文
+    CGContextRef context = CGBitmapContextCreate(NULL, imageWidth, imageHeight, 8, 0, colorSpace, bitmapInfo);
+    //绘制bitmap到上下文中
+    CGContextDrawImage(context, CGRectMake(0, 0, imageWidth, imageHeight), image);
+    if (context == NULL){
+        printf("Context not created!");
+    }
+    
+    CGColorSpaceRelease(colorSpace);
+    
+    return context;
+}
+
+// 获取触摸图片的位置
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (!_colorView) {
+        return;
+    }
+    
+    UITouch *touch = touches.anyObject;
+    CGPoint currentP = [touch locationInView:_colorImageView];
+
+    UIColor * color = [self pickerColorInPoint:currentP fromImage:_colorImageView.image size:_colorImageView.frame.size];
+    _colorView.backgroundColor = color;
+
+    const CGFloat * colorString = CGColorGetComponents(color.CGColor);
+    BPLog(@"%@",[NSString stringWithFormat:@"R:%.1f\n G:%.1f\n B:%.1f\n", colorString[0] * 255, colorString[1] * 255, colorString[2] * 255]);
+}
+
+// 从一个点取颜色
+- (UIColor *)pickerColorInPoint:(CGPoint) point fromImage:(UIImage *) image size:(CGSize) imageViewSize {
+    
+    static CGContextRef context;
+    CGImageRef cgImage = image.CGImage;
+
+    if (!context) {
+        context = [self createRGBABitmapContext:cgImage];
+    }
+
+    size_t w = CGImageGetWidth(cgImage);
+    size_t h = CGImageGetHeight(cgImage);
+    //传入imageView的size主要是为了得到当前坐标在位图上下文上的坐标
+    CGPoint finalPoint = CGPointMake(point.x / imageViewSize.width * w, point.y / imageViewSize.height * h);
+    
+    UIColor * color = nil;
+    unsigned char * data = CGBitmapContextGetData(context);
+    if (data != NULL) {
+        //我们选用的颜色空间为RGB，像素格式为32bpp，8bpc，别忘了每个像素占4个字节，由此可以计算出当前触摸点在data数组中的位置
+        int offset = 4 * ((w * round(finalPoint.y)) + round(finalPoint.x));
+        int alpha =  data[offset];
+        int red = data[offset + 1];
+        int green = data[offset + 2];
+        int blue = data[offset + 3];
+        NSLog(@"offset: %i colors: RGB A %i %i %i  %i", offset, red, green, blue, alpha);
+        color = [UIColor colorWithRed:(red / 255.0f) green:(green / 255.0f) blue:(blue / 255.0f) alpha:(alpha / 255.0f)];
+    }
+    
+    return color;
 }
 
 - (void)didReceiveMemoryWarning {

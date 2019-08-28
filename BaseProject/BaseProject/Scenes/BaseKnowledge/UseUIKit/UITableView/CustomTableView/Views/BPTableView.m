@@ -37,6 +37,7 @@
 //更新布局
 - (void)layoutSubviews {
     [super layoutSubviews];
+    // 注释掉 貌似也没问题
     [self refreshView];
 }
 
@@ -51,10 +52,9 @@
     }
     
     CGFloat cellHeight = [self p_rowHeightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    
     self.contentSize = CGSizeMake(self.bounds.size.width, cellCount * cellHeight);
     
-    // 根据偏移量和cell.y值判断，将划出屏幕的cell添加到重用池，并从父视图中移除
+    // 添加到重用池：根据偏移量和cell.y值判断，将划出屏幕的cell添加到重用池，并从父视图中移除
     for (BPCustomTableViewCell * cell in self.visibleCells) {
         
         //包括：滑出顶部的cell
@@ -68,12 +68,13 @@
         }
     }
     
+    // 获取 cell 并添加到当前屏幕上
+
     // 找出当前屏幕第一个和最后一个cell的index
     NSInteger firstVisibleIndex = MAX(0, floor(self.contentOffset.y / cellHeight));
     
     NSInteger lastVisibleIndex = MIN(cellCount, firstVisibleIndex + ceil(self.frame.size.height / cellHeight) + 1);
     
-    // 获取 cell
     for (NSInteger row = firstVisibleIndex; row < lastVisibleIndex; row++) {
         
         // 先从重用池里获取cell

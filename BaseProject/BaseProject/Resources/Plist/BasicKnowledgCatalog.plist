@@ -1688,6 +1688,14 @@
 								<key>briefIntro</key>
 								<string></string>
 							</dict>
+							<dict>
+								<key>title</key>
+								<string>取色器</string>
+								<key>fileName</key>
+								<string>BPDrawViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
 						</array>
 					</dict>
 					<dict>
