@@ -1708,9 +1708,9 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>图片解码（CoreImage）</string>
+						<string>图片解码/绘制（CoreImage）</string>
 						<key>fileName</key>
-						<string></string>
+						<string>BPCoreImageViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -1718,7 +1718,7 @@
 						<key>title</key>
 						<string>文本绘制（CoreText）</string>
 						<key>fileName</key>
-						<string></string>
+						<string>BPCoreTextViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -1726,7 +1726,7 @@
 			</dict>
 			<dict>
 				<key>title</key>
-				<string>Layer相关的数据结构</string>
+				<string>Core Animation</string>
 				<key>fileName</key>
 				<string>BPListViewController</string>
 				<key>briefIntro</key>
@@ -1735,7 +1735,7 @@
 				<array>
 					<dict>
 						<key>title</key>
-						<string>layer的属性</string>
+						<string>CALayer和UIView的属性</string>
 						<key>fileName</key>
 						<string>BPListViewController</string>
 						<key>briefIntro</key>
@@ -1744,23 +1744,58 @@
 						<array>
 							<dict>
 								<key>title</key>
-								<string>阴影</string>
+								<string>基础属性</string>
 								<key>fileName</key>
-								<string>BPLayerShadowPathViewController</string>
+								<string>BPListViewController</string>
 								<key>briefIntro</key>
 								<string></string>
+								<key>subVc_array</key>
+								<array>
+									<dict>
+										<key>title</key>
+										<string>基础属性</string>
+										<key>fileName</key>
+										<string>BPLayerPropertyViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>阴影</string>
+										<key>fileName</key>
+										<string>BPLayerTransformController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>圆角</string>
+										<key>fileName</key>
+										<string>BPViewTransformController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>锚点</string>
+										<key>fileName</key>
+										<string>BPBezierPathViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>mask遮罩</string>
+										<key>fileName</key>
+										<string>BPBezierPathViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+								</array>
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>Mask</string>
-								<key>fileName</key>
-								<string>BPLayerMaskViewController</string>
-								<key>briefIntro</key>
-								<string></string>
-							</dict>
-							<dict>
-								<key>title</key>
-								<string>layer的transform</string>
+								<string>CALayer：CATransform3D</string>
 								<key>fileName</key>
 								<string>BPLayerTransformController</string>
 								<key>briefIntro</key>
@@ -1768,7 +1803,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>view的transform</string>
+								<string>UIView：CGAffineTransform</string>
 								<key>fileName</key>
 								<string>BPViewTransformController</string>
 								<key>briefIntro</key>
@@ -1776,7 +1811,7 @@
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>path - 贝塞尔曲线</string>
+								<string>贝塞尔曲线</string>
 								<key>fileName</key>
 								<string>BPBezierPathViewController</string>
 								<key>briefIntro</key>
@@ -1821,11 +1856,78 @@
 				<array>
 					<dict>
 						<key>title</key>
-						<string>UIView Block动画</string>
+						<string>UIView的动画</string>
 						<key>fileName</key>
-						<string>BPBlockAnimatonVC</string>
+						<string>BPListViewController</string>
 						<key>briefIntro</key>
 						<string></string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>使用事务开启UIView的属性动画</string>
+								<key>fileName</key>
+								<string>BPBlockAnimatonViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>一般形式的UIView动画</string>
+								<key>fileName</key>
+								<string>BPBlockAnimatonViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>UIView 的弹簧动画</string>
+								<key>fileName</key>
+								<string>BPBlockAnimatonViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>UIView 的关键帧动画</string>
+								<key>fileName</key>
+								<string>BPBlockAnimatonViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>转场动画：transitionWithView</string>
+								<key>fileName</key>
+								<string>BPBlockAnimatonViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>转场动画：transitionFromView</string>
+								<key>fileName</key>
+								<string>BPBlockAnimatonViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>禁止动画：performWithoutAnimationperformWithoutAnimation</string>
+								<key>fileName</key>
+								<string>BPBlockAnimatonViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>移除子view的动画：performSystemAnimation</string>
+								<key>fileName</key>
+								<string>BPBlockAnimatonViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+						</array>
 					</dict>
 					<dict>
 						<key>title</key>
@@ -1838,45 +1940,324 @@
 						<array>
 							<dict>
 								<key>title</key>
-								<string>核心动画</string>
+								<string>属性基本动画</string>
 								<key>fileName</key>
-								<string>BPCoreAnimationVC</string>
+								<string>BPListViewController</string>
 								<key>briefIntro</key>
 								<string></string>
+								<key>subVc_array</key>
+								<array>
+									<dict>
+										<key>title</key>
+										<string>闹铃动画</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>CATransform3D</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>平移 - translation</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>缩放</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>旋转</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>旋转X</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>旋转Y</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>旋转Z</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>position</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>positionX</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>positionY</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>bounds</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>size</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>sizeW</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>sizeH</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>opacity</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>backgroundColor</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>cornerRadius</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>borderWidth</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>contents</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>shadowColor</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>shadowOffset</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>shadowOpacity</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>shadowRadius</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>addAnimationObj</string>
+										<key>fileName</key>
+										<string>BPBasicAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+								</array>
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>属性动画</string>
+								<string>属性关键帧动画</string>
 								<key>fileName</key>
-								<string>BPBasicAnimationViewController</string>
+								<string>BPListViewController</string>
 								<key>briefIntro</key>
 								<string></string>
+								<key>subVc_array</key>
+								<array>
+									<dict>
+										<key>title</key>
+										<string>飞机动画</string>
+										<key>fileName</key>
+										<string>BPCAKeyframeAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>自由落体</string>
+										<key>fileName</key>
+										<string>BPCAKeyframeAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>path</string>
+										<key>fileName</key>
+										<string>BPCAKeyframeAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>values + keyTimes</string>
+										<key>fileName</key>
+										<string>BPCAKeyframeAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+								</array>
 							</dict>
 							<dict>
 								<key>title</key>
-								<string>关键帧动画</string>
+								<string>弹簧动画</string>
 								<key>fileName</key>
-								<string>BPCAKeyframeAnimationViewController</string>
+								<string>BPListViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+								<key>subVc_array</key>
+								<array>
+									<dict>
+										<key>title</key>
+										<string>基础弹簧动画</string>
+										<key>fileName</key>
+										<string>BPCASpringAnimationViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>转场动画</string>
+								<key>fileName</key>
+								<string>BPListViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+								<key>subVc_array</key>
+								<array>
+									<dict>
+										<key>title</key>
+										<string>基础转场动画</string>
+										<key>fileName</key>
+										<string>BPCATransitionViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>动画组</string>
+								<key>fileName</key>
+								<string>BPListViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+								<key>subVc_array</key>
+								<array>
+									<dict>
+										<key>title</key>
+										<string>基础动画</string>
+										<key>fileName</key>
+										<string>BPCAAnimationGroupViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>自定义转场动画及手势</string>
+								<key>fileName</key>
+								<string>BPCustomTransitonViewController</string>
 								<key>briefIntro</key>
 								<string></string>
 							</dict>
 						</array>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>自定义转场动画及手势</string>
-						<key>fileName</key>
-						<string>BPListViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>弹簧动画</string>
-						<key>fileName</key>
-						<string></string>
-						<key>briefIntro</key>
-						<string></string>
 					</dict>
 				</array>
 			</dict>

@@ -78,7 +78,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    cell.imageView.image = [UIImage imageNamed:@"navi_scale"];
+    cell.imageView.image = [UIImage imageNamed:@"cactus_ round_steady"];
     return cell;
 }
 
@@ -89,7 +89,7 @@
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UITableViewHeaderFooterView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([UITableViewHeaderFooterView class])];
-    UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navi_scale"]];
+    UIImageView *imageview = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cactus_ round_steady"]];
     imageview.frame = header.bounds;
     [header addSubview:imageview];
     return header;
@@ -183,7 +183,7 @@
 - (void)setNavigationSubView{
     // 毛玻璃背景
     UIImageView *bgImgView = [[UIImageView alloc] initWithFrame:_navigationView.bounds];
-    //    bgImgView.image = [UIImage imageNamed:@"navi_scale"];
+    //    bgImgView.image = [UIImage imageNamed:@"cactus_ round_steady"];
     [_navigationView addSubview:bgImgView];
     
     /**  毛玻璃特效类型
@@ -244,7 +244,7 @@
         _scaleImageView = [[UIImageView alloc] init];
         _scaleImageView.contentMode = UIViewContentModeScaleAspectFill;
         _scaleImageView.clipsToBounds = YES;
-        _scaleImageView.image = [UIImage imageNamed:@"navi_scale"];
+        _scaleImageView.image = [UIImage imageNamed:@"cactus_ round_steady"];
     }
     return _scaleImageView;
 }

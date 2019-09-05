@@ -300,7 +300,7 @@ static CFDataRef Callback(CFMessagePortRef port,SInt32 messageID,CFDataRef data,
     imageView.backgroundColor = kThemeColor;
     [self.view addSubview:imageView];
     
-    [imageView performSelector:@selector(setImage:) withObject:[UIImage imageNamed:@"naviBarBackGroundImage"] afterDelay:2.0 inModes:@[NSDefaultRunLoopMode]];
+    [imageView performSelector:@selector(setImage:) withObject:[UIImage imageNamed:@"module_landscape3"] afterDelay:2.0 inModes:@[NSDefaultRunLoopMode]];
 }
 
 

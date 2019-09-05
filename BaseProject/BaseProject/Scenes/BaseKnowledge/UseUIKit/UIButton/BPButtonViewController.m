@@ -107,9 +107,9 @@
      setBackgroundImage:跟button一样大
      setImage:也会被拉伸
      */
-    //    [rightButton setBackgroundImage:[UIImage imageNamed:@"transitionWithType01"] forState:UIControlStateNormal];
-    //    [rightButton setImage:[UIImage imageNamed:@"transitionWithType01"] forState:UIControlStateNormal];
-    //    [rightButton setImage:[UIImage imageNamed:@"transitionWithType02"] forState:UIControlStateSelected];
+    //    [rightButton setBackgroundImage:[UIImage imageNamed:@"module_landscape3"] forState:UIControlStateNormal];
+    //    [rightButton setImage:[UIImage imageNamed:@"module_landscape3"] forState:UIControlStateNormal];
+    //    [rightButton setImage:[UIImage imageNamed:@"module_landscape2"] forState:UIControlStateSelected];
     //    [rightButton setImage:[UIImage imageNamed:@"transitionWithType03"] forState:UIControlStateHighlighted];
     
     //rightButton.imageView.layer.masksToBounds = YES;//无用
@@ -199,7 +199,7 @@
     //
     
     //    (6)设置背景图片
-    [button setBackgroundImage:[UIImage imageNamed:@"navi_scale"] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"cactus_ round_steady"] forState:UIControlStateNormal];
 //    [button setBackgroundImage:[UIImage imageNamed:@"02.png"] forState:UIControlStateHighlighted];
     //    设置前景图片
     //    [button setImage:[UIImage imageNamed:@"01.png"] forState:UIControlStateNormal];

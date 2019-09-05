@@ -1,5 +1,5 @@
 //
-//  BPBlockAnimatonVC.h
+//  BPBlockAnimatonViewController.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/1/23.
@@ -9,6 +9,5 @@
 #import "BPBaseViewController.h"
 
 @interface BPBlockAnimatonViewController : BPBaseViewController
-@property (nonatomic,strong) NSString *titleName;
-@property (nonatomic,assign) NSInteger row;
+
 @end

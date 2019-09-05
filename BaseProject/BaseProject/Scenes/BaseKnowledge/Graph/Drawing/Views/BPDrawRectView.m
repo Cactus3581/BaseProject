@@ -187,7 +187,7 @@ static CGFloat y = 30;
 
 #pragma mark - 画图片
 - (void)drawPictureWithCtx:(CGContextRef)ctx rect:(CGRect)rect {
-    UIImage *image = [UIImage imageNamed:@"jobs_youth"];
+    UIImage *image = [UIImage imageNamed:@"module_landscape2"];
     [image drawInRect:CGRectMake(x,y*5+kHeight*4, kWidth, kHeight)];//在坐标中画出图片
 }
 

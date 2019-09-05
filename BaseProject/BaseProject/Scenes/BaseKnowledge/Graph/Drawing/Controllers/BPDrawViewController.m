@@ -35,6 +35,24 @@
     [self handleDynamicJumpData];
 }
 
+- (void)drawCor {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 300, 100, 100)];
+    view.backgroundColor = kThemeColor;
+    [self.view addSubview:view];
+    
+    CAShapeLayer *layer = [[CAShapeLayer alloc] init];
+    layer.frame = view.bounds;
+    layer.fillColor = kWhiteColor.CGColor;
+    layer.path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 100, 100) cornerRadius:20].CGPath;
+    //    view.layer.mask = layer;
+    
+    //    layer.contentsCenter = CGRectMake(0.5, 0.5, 0, 0);
+    //    layer.contentsScale = [UIScreen mainScreen].scale;
+    //    layer.contents = (__bridge id)[UIImage imageNamed:@"cactus_ rect_steady"].CGImage;
+    
+    [view.layer addSublayer:layer];
+}
+
 - (void)handleDynamicJumpData {
     if (self.needDynamicJump) {
         NSInteger type = [self.dynamicJumpDict[@"type"] integerValue];
@@ -117,7 +135,7 @@
     // UIKit方法
     //使用UIKit进行绘制，因为UIKit只会对当前上下文栈顶的context操作，所以要把形参中的context设置为当前上下文
     UIGraphicsPushContext(ctx);
-    UIImage *image = [UIImage imageNamed:@"jobs_youth"];
+    UIImage *image = [UIImage imageNamed:@"module_landscape2"];
     //指定位置和大小绘制图片
     [image drawInRect:CGRectMake(140, 10,80 , 80)];
     UIGraphicsPopContext();

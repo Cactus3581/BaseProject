@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BPBasicAnimationViewController">
             <connections>
+                <outlet property="alarmView" destination="9ye-3e-pYr" id="itb-pg-Kd7"/>
+                <outlet property="animationView" destination="4Er-UM-Pnd" id="UQ1-mh-RUZ"/>
                 <outlet property="hourHand" destination="XJ7-R7-BFb" id="Og8-GR-H2z"/>
                 <outlet property="minuteHand" destination="bOY-Z6-Ejp" id="tVR-pQ-FrS"/>
                 <outlet property="secondHand" destination="Bd2-5z-PLd" id="GN8-vf-buv"/>
@@ -22,39 +24,61 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XJ7-R7-BFb">
-                    <rect key="frame" x="184.5" y="308.5" width="5" height="50"/>
-                    <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Er-UM-Pnd">
+                    <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="D25-Q3-8gD"/>
-                        <constraint firstAttribute="width" constant="5" id="bKV-wP-mnp"/>
+                        <constraint firstAttribute="width" constant="100" id="89h-IJ-XyI"/>
+                        <constraint firstAttribute="height" constant="100" id="UfZ-ot-BR0"/>
                     </constraints>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bOY-Z6-Ejp">
-                    <rect key="frame" x="185.5" y="298.5" width="3" height="70"/>
-                    <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ye-3e-pYr">
+                    <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XJ7-R7-BFb">
+                            <rect key="frame" x="97.5" y="75" width="5" height="50"/>
+                            <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="D25-Q3-8gD"/>
+                                <constraint firstAttribute="width" constant="5" id="bKV-wP-mnp"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bOY-Z6-Ejp">
+                            <rect key="frame" x="98.5" y="65" width="3" height="70"/>
+                            <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="3" id="4IA-C6-6bR"/>
+                                <constraint firstAttribute="height" constant="70" id="zjg-G8-HTr"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bd2-5z-PLd">
+                            <rect key="frame" x="99.5" y="50" width="1" height="100"/>
+                            <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="1" id="TiM-Id-Sxb"/>
+                                <constraint firstAttribute="height" constant="100" id="XFR-Ov-dt1"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="3" id="4IA-C6-6bR"/>
-                        <constraint firstAttribute="height" constant="70" id="zjg-G8-HTr"/>
+                        <constraint firstItem="XJ7-R7-BFb" firstAttribute="centerY" secondItem="9ye-3e-pYr" secondAttribute="centerY" id="JVy-WR-gfc"/>
+                        <constraint firstItem="XJ7-R7-BFb" firstAttribute="centerX" secondItem="9ye-3e-pYr" secondAttribute="centerX" id="N0e-zE-EC3"/>
+                        <constraint firstItem="bOY-Z6-Ejp" firstAttribute="centerX" secondItem="9ye-3e-pYr" secondAttribute="centerX" id="OwD-YJ-5rZ"/>
+                        <constraint firstAttribute="width" constant="200" id="avX-wS-6P9"/>
+                        <constraint firstItem="bOY-Z6-Ejp" firstAttribute="centerY" secondItem="9ye-3e-pYr" secondAttribute="centerY" id="dp7-Lp-pIr"/>
+                        <constraint firstAttribute="width" secondItem="9ye-3e-pYr" secondAttribute="height" id="fgk-4Z-Ngl"/>
+                        <constraint firstItem="Bd2-5z-PLd" firstAttribute="centerY" secondItem="9ye-3e-pYr" secondAttribute="centerY" id="fv9-uu-Jsj"/>
+                        <constraint firstItem="Bd2-5z-PLd" firstAttribute="centerX" secondItem="9ye-3e-pYr" secondAttribute="centerX" id="hQn-7T-I00"/>
                     </constraints>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bd2-5z-PLd">
-                    <rect key="frame" x="186.5" y="283.5" width="1" height="100"/>
-                    <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="1" id="TiM-Id-Sxb"/>
-                        <constraint firstAttribute="height" constant="100" id="XFR-Ov-dt1"/>
-                    </constraints>
-                </imageView>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Bd2-5z-PLd" firstAttribute="centerX" secondItem="XJ7-R7-BFb" secondAttribute="centerX" id="9X3-ko-Cx0"/>
-                <constraint firstItem="bOY-Z6-Ejp" firstAttribute="centerY" secondItem="XJ7-R7-BFb" secondAttribute="centerY" id="HMU-P0-u5Q"/>
-                <constraint firstItem="Bd2-5z-PLd" firstAttribute="centerY" secondItem="XJ7-R7-BFb" secondAttribute="centerY" id="HQ5-Di-FiV"/>
-                <constraint firstItem="bOY-Z6-Ejp" firstAttribute="centerX" secondItem="XJ7-R7-BFb" secondAttribute="centerX" id="TH4-Ch-AB9"/>
-                <constraint firstItem="XJ7-R7-BFb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="aPC-Jz-nu6"/>
-                <constraint firstItem="XJ7-R7-BFb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bJ2-C8-D8Q"/>
+                <constraint firstItem="9ye-3e-pYr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7Ua-K3-fSD"/>
+                <constraint firstItem="4Er-UM-Pnd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="aQW-WT-yFG"/>
+                <constraint firstItem="4Er-UM-Pnd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dpZ-Up-erW"/>
+                <constraint firstItem="9ye-3e-pYr" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="i6j-dQ-fdY"/>
             </constraints>
         </view>
     </objects>

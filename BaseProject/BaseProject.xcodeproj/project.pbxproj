@@ -168,7 +168,6 @@
 		011B7DD920693E5B0071CB5D /* UIBarButtonItem+BPCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD320693E5B0071CB5D /* UIBarButtonItem+BPCreate.m */; };
 		011B7DDA20693E5B0071CB5D /* UINavigation+BPFixSpace.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD420693E5B0071CB5D /* UINavigation+BPFixSpace.m */; };
 		011B7DDB20693E5B0071CB5D /* NSObject+BPAddRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 011B7DD520693E5B0071CB5D /* NSObject+BPAddRuntime.m */; };
-		011BE5602101793500842DDF /* BPLayerShadowPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011BE55F2101793500842DDF /* BPLayerShadowPathViewController.m */; };
 		011CD74F20CE190A00560EE6 /* BPMasksToBoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 011CD74D20CE190A00560EE6 /* BPMasksToBoundsViewController.m */; };
 		011CD75020CE190A00560EE6 /* BPMasksToBoundsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 011CD74E20CE190A00560EE6 /* BPMasksToBoundsViewController.xib */; };
 		011D8B0721E4EC240096C60A /* BPKVOModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 011D8B0621E4EC240096C60A /* BPKVOModel.m */; };
@@ -209,6 +208,14 @@
 		012E116A227F1BFF00398710 /* BPOutSideSuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E1169227F1BFF00398710 /* BPOutSideSuperView.m */; };
 		012E116D227F1C0B00398710 /* BPOutSideSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E116C227F1C0B00398710 /* BPOutSideSubView.m */; };
 		012E117422806F5900398710 /* BPTableViewContentSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012E117322806F5900398710 /* BPTableViewContentSizeViewController.m */; };
+		01316732231ECCE700667868 /* BPCASpringAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01316730231ECCE700667868 /* BPCASpringAnimationViewController.m */; };
+		01316733231ECCE700667868 /* BPCASpringAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01316731231ECCE700667868 /* BPCASpringAnimationViewController.xib */; };
+		01316737231ECCF300667868 /* BPCATransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01316735231ECCF300667868 /* BPCATransitionViewController.m */; };
+		01316738231ECCF300667868 /* BPCATransitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01316736231ECCF300667868 /* BPCATransitionViewController.xib */; };
+		0131673D231FD32A00667868 /* BPCustomTransitonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0131673B231FD32A00667868 /* BPCustomTransitonViewController.m */; };
+		0131673E231FD32A00667868 /* BPCustomTransitonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0131673C231FD32A00667868 /* BPCustomTransitonViewController.xib */; };
+		01316743231FD44B00667868 /* BPCAAnimationGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01316741231FD44B00667868 /* BPCAAnimationGroupViewController.m */; };
+		01316744231FD44C00667868 /* BPCAAnimationGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01316742231FD44B00667868 /* BPCAAnimationGroupViewController.xib */; };
 		01349C4020EC958A00E50A86 /* BPDownLoadGeneralView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01349C3F20EC958A00E50A86 /* BPDownLoadGeneralView.m */; };
 		01349C4220EC959200E50A86 /* BPDownLoadGeneralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01349C4120EC959200E50A86 /* BPDownLoadGeneralView.xib */; };
 		01349C5020ECA6FD00E50A86 /* BPDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 01349C4E20ECA6FD00E50A86 /* BPDownloader.m */; };
@@ -224,6 +231,8 @@
 		0137C743207B4A6000F6B6CE /* BPPresentCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C742207B4A6000F6B6CE /* BPPresentCViewController.m */; };
 		0137C760207C952700F6B6CE /* BPTextCompositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137C75E207C952700F6B6CE /* BPTextCompositionViewController.m */; };
 		0137C761207C952700F6B6CE /* BPTextCompositionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0137C75F207C952700F6B6CE /* BPTextCompositionViewController.xib */; };
+		0137E86723181E4700DA0CD5 /* BPLayerPropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0137E86523181E4700DA0CD5 /* BPLayerPropertyViewController.m */; };
+		0137E86823181E4700DA0CD5 /* BPLayerPropertyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0137E86623181E4700DA0CD5 /* BPLayerPropertyViewController.xib */; };
 		0138525E21F1D2B2008C5871 /* BPEqualHashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0138525D21F1D2B2008C5871 /* BPEqualHashViewController.m */; };
 		0138526121F1D2CB008C5871 /* EqualHashModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0138526021F1D2CB008C5871 /* EqualHashModel.m */; };
 		013B42492254B8B100BD441A /* BPAsyncDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013B42482254B8B000BD441A /* BPAsyncDrawViewController.m */; };
@@ -513,6 +522,10 @@
 		018DF00921F2D389001D334D /* BPSwizzlingChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 018DF00821F2D389001D334D /* BPSwizzlingChild.m */; };
 		018DF00C21F2D3A7001D334D /* BPSwizzlingChild+BPSwizzing.m in Sources */ = {isa = PBXBuildFile; fileRef = 018DF00B21F2D3A7001D334D /* BPSwizzlingChild+BPSwizzing.m */; };
 		018DF00F21F2D3B9001D334D /* BPSwizzlingParent+BPSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 018DF00E21F2D3B9001D334D /* BPSwizzlingParent+BPSwizzling.m */; };
+		01914F462320CD9800DD76CB /* BPCoreTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01914F442320CD9800DD76CB /* BPCoreTextViewController.m */; };
+		01914F472320CD9800DD76CB /* BPCoreTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01914F452320CD9800DD76CB /* BPCoreTextViewController.xib */; };
+		01914F4B2320CDA400DD76CB /* BPCoreImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01914F492320CDA400DD76CB /* BPCoreImageViewController.m */; };
+		01914F4C2320CDA400DD76CB /* BPCoreImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01914F4A2320CDA400DD76CB /* BPCoreImageViewController.xib */; };
 		019AA56821D1AD1B003EAB84 /* BPMemoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 019AA56721D1AD1B003EAB84 /* BPMemoryModel.m */; };
 		019AA91820205BE80090B038 /* CADisplayLink+BPAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 019AA91720205BE80090B038 /* CADisplayLink+BPAdd.m */; };
 		019B0EE020937B6700D105D1 /* BPTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 019B0EDF20937B6700D105D1 /* BPTagViewController.m */; };
@@ -574,13 +587,10 @@
 		01ADDA4E22DED0180058ECFE /* BPDesignPatternsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01ADDA4C22DED0180058ECFE /* BPDesignPatternsViewController.xib */; };
 		01AEF6C3230C1A6700F017F5 /* BPSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEF6C2230C1A6700F017F5 /* BPSizeViewController.m */; };
 		01AEF6C5230C1A9400F017F5 /* BPSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01AEF6C4230C1A9400F017F5 /* BPSizeViewController.xib */; };
-		01AEF6CC230C306200F017F5 /* BPLayerMaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEF6CA230C306200F017F5 /* BPLayerMaskViewController.m */; };
-		01AEF6CD230C306200F017F5 /* BPLayerMaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01AEF6CB230C306200F017F5 /* BPLayerMaskViewController.xib */; };
 		01AEF6D0230C365300F017F5 /* BPTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEF6CF230C365300F017F5 /* BPTableView.m */; };
 		01AEF6D6230C48ED00F017F5 /* BPCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEF6D5230C48ED00F017F5 /* BPCustomTableViewCell.m */; };
 		01B075A020E4FD0C004891F7 /* BPDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0752120E4FD0C004891F7 /* BPDrawViewController.m */; };
-		01B075A520E4FD0C004891F7 /* BPBlockAnimatonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0752F20E4FD0C004891F7 /* BPBlockAnimatonVC.m */; };
-		01B075A620E4FD0C004891F7 /* BPCoreAnimationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0753320E4FD0C004891F7 /* BPCoreAnimationVC.m */; };
+		01B075A520E4FD0C004891F7 /* BPBlockAnimatonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0752F20E4FD0C004891F7 /* BPBlockAnimatonViewController.m */; };
 		01B075AE20E4FD0C004891F7 /* BPLayoutProcessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0754B20E4FD0C004891F7 /* BPLayoutProcessViewController.m */; };
 		01B075B020E4FD0C004891F7 /* BPLayoutProcessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0754E20E4FD0C004891F7 /* BPLayoutProcessView.m */; };
 		01B075B120E4FD0C004891F7 /* BPGetFrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0755320E4FD0C004891F7 /* BPGetFrameViewController.m */; };
@@ -664,6 +674,7 @@
 		01C935BD1FC33A6B00D98FD6 /* BPListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C935BC1FC33A6B00D98FD6 /* BPListViewModel.m */; };
 		01CBFB442269E1B600E1CE66 /* BPHitTestViewBaseProcessSuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CBFB432269E1B600E1CE66 /* BPHitTestViewBaseProcessSuperView.m */; };
 		01CCA7261FEEC82700E8DC06 /* BPUtilConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CCA7251FEEC82600E8DC06 /* BPUtilConstant.m */; };
+		01CCF24823201EC8001E89FB /* BPBlockAnimatonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01CCF24723201EC8001E89FB /* BPBlockAnimatonViewController.xib */; };
 		01CE268521E490FE00A15D7F /* BPLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CE268421E490FE00A15D7F /* BPLockViewController.m */; };
 		01CFEA6F20DD522A00032ACD /* BPRotatingScreenPushiewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CFEA6E20DD522A00032ACD /* BPRotatingScreenPushiewController.m */; };
 		01CFEA7220DD523700032ACD /* BPRotatingScreenPresentiewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CFEA7120DD523700032ACD /* BPRotatingScreenPresentiewController.m */; };
@@ -1224,8 +1235,6 @@
 		011B7DD620693E5B0071CB5D /* UIBarButtonItem+BPCreate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BPCreate.h"; sourceTree = "<group>"; };
 		011B7DD720693E5B0071CB5D /* NSObject+BPAddRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPAddRuntime.h"; sourceTree = "<group>"; };
 		011B7DD820693E5B0071CB5D /* UINavigation+BPFixSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigation+BPFixSpace.h"; sourceTree = "<group>"; };
-		011BE55E2101793500842DDF /* BPLayerShadowPathViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPLayerShadowPathViewController.h; sourceTree = "<group>"; };
-		011BE55F2101793500842DDF /* BPLayerShadowPathViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPLayerShadowPathViewController.m; sourceTree = "<group>"; };
 		011CD74C20CE190A00560EE6 /* BPMasksToBoundsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMasksToBoundsViewController.h; sourceTree = "<group>"; };
 		011CD74D20CE190A00560EE6 /* BPMasksToBoundsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMasksToBoundsViewController.m; sourceTree = "<group>"; };
 		011CD74E20CE190A00560EE6 /* BPMasksToBoundsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPMasksToBoundsViewController.xib; sourceTree = "<group>"; };
@@ -1299,6 +1308,18 @@
 		012E116C227F1C0B00398710 /* BPOutSideSubView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPOutSideSubView.m; sourceTree = "<group>"; };
 		012E117222806F5900398710 /* BPTableViewContentSizeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTableViewContentSizeViewController.h; sourceTree = "<group>"; };
 		012E117322806F5900398710 /* BPTableViewContentSizeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTableViewContentSizeViewController.m; sourceTree = "<group>"; };
+		0131672F231ECCE700667868 /* BPCASpringAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCASpringAnimationViewController.h; sourceTree = "<group>"; };
+		01316730231ECCE700667868 /* BPCASpringAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCASpringAnimationViewController.m; sourceTree = "<group>"; };
+		01316731231ECCE700667868 /* BPCASpringAnimationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPCASpringAnimationViewController.xib; sourceTree = "<group>"; };
+		01316734231ECCF300667868 /* BPCATransitionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCATransitionViewController.h; sourceTree = "<group>"; };
+		01316735231ECCF300667868 /* BPCATransitionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCATransitionViewController.m; sourceTree = "<group>"; };
+		01316736231ECCF300667868 /* BPCATransitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPCATransitionViewController.xib; sourceTree = "<group>"; };
+		0131673A231FD32A00667868 /* BPCustomTransitonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCustomTransitonViewController.h; sourceTree = "<group>"; };
+		0131673B231FD32A00667868 /* BPCustomTransitonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCustomTransitonViewController.m; sourceTree = "<group>"; };
+		0131673C231FD32A00667868 /* BPCustomTransitonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPCustomTransitonViewController.xib; sourceTree = "<group>"; };
+		01316740231FD44B00667868 /* BPCAAnimationGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCAAnimationGroupViewController.h; sourceTree = "<group>"; };
+		01316741231FD44B00667868 /* BPCAAnimationGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCAAnimationGroupViewController.m; sourceTree = "<group>"; };
+		01316742231FD44B00667868 /* BPCAAnimationGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPCAAnimationGroupViewController.xib; sourceTree = "<group>"; };
 		01349C3E20EC958A00E50A86 /* BPDownLoadGeneralView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDownLoadGeneralView.h; sourceTree = "<group>"; };
 		01349C3F20EC958A00E50A86 /* BPDownLoadGeneralView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDownLoadGeneralView.m; sourceTree = "<group>"; };
 		01349C4120EC959200E50A86 /* BPDownLoadGeneralView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPDownLoadGeneralView.xib; sourceTree = "<group>"; };
@@ -1327,6 +1348,9 @@
 		0137C75D207C952700F6B6CE /* BPTextCompositionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTextCompositionViewController.h; sourceTree = "<group>"; };
 		0137C75E207C952700F6B6CE /* BPTextCompositionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTextCompositionViewController.m; sourceTree = "<group>"; };
 		0137C75F207C952700F6B6CE /* BPTextCompositionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPTextCompositionViewController.xib; sourceTree = "<group>"; };
+		0137E86423181E4700DA0CD5 /* BPLayerPropertyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPLayerPropertyViewController.h; sourceTree = "<group>"; };
+		0137E86523181E4700DA0CD5 /* BPLayerPropertyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPLayerPropertyViewController.m; sourceTree = "<group>"; };
+		0137E86623181E4700DA0CD5 /* BPLayerPropertyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPLayerPropertyViewController.xib; sourceTree = "<group>"; };
 		0138525C21F1D2B2008C5871 /* BPEqualHashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPEqualHashViewController.h; sourceTree = "<group>"; };
 		0138525D21F1D2B2008C5871 /* BPEqualHashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPEqualHashViewController.m; sourceTree = "<group>"; };
 		0138525F21F1D2CB008C5871 /* EqualHashModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EqualHashModel.h; sourceTree = "<group>"; };
@@ -1872,6 +1896,12 @@
 		018DF00B21F2D3A7001D334D /* BPSwizzlingChild+BPSwizzing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BPSwizzlingChild+BPSwizzing.m"; sourceTree = "<group>"; };
 		018DF00D21F2D3B9001D334D /* BPSwizzlingParent+BPSwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BPSwizzlingParent+BPSwizzling.h"; sourceTree = "<group>"; };
 		018DF00E21F2D3B9001D334D /* BPSwizzlingParent+BPSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BPSwizzlingParent+BPSwizzling.m"; sourceTree = "<group>"; };
+		01914F432320CD9800DD76CB /* BPCoreTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCoreTextViewController.h; sourceTree = "<group>"; };
+		01914F442320CD9800DD76CB /* BPCoreTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCoreTextViewController.m; sourceTree = "<group>"; };
+		01914F452320CD9800DD76CB /* BPCoreTextViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPCoreTextViewController.xib; sourceTree = "<group>"; };
+		01914F482320CDA400DD76CB /* BPCoreImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCoreImageViewController.h; sourceTree = "<group>"; };
+		01914F492320CDA400DD76CB /* BPCoreImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCoreImageViewController.m; sourceTree = "<group>"; };
+		01914F4A2320CDA400DD76CB /* BPCoreImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPCoreImageViewController.xib; sourceTree = "<group>"; };
 		019AA56621D1AD1B003EAB84 /* BPMemoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPMemoryModel.h; sourceTree = "<group>"; };
 		019AA56721D1AD1B003EAB84 /* BPMemoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPMemoryModel.m; sourceTree = "<group>"; };
 		019AA91620205BE80090B038 /* CADisplayLink+BPAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CADisplayLink+BPAdd.h"; sourceTree = "<group>"; };
@@ -1983,19 +2013,14 @@
 		01AEF6C1230C1A6700F017F5 /* BPSizeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPSizeViewController.h; sourceTree = "<group>"; };
 		01AEF6C2230C1A6700F017F5 /* BPSizeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPSizeViewController.m; sourceTree = "<group>"; };
 		01AEF6C4230C1A9400F017F5 /* BPSizeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPSizeViewController.xib; sourceTree = "<group>"; };
-		01AEF6C9230C306200F017F5 /* BPLayerMaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPLayerMaskViewController.h; sourceTree = "<group>"; };
-		01AEF6CA230C306200F017F5 /* BPLayerMaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPLayerMaskViewController.m; sourceTree = "<group>"; };
-		01AEF6CB230C306200F017F5 /* BPLayerMaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPLayerMaskViewController.xib; sourceTree = "<group>"; };
 		01AEF6CE230C365300F017F5 /* BPTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPTableView.h; sourceTree = "<group>"; };
 		01AEF6CF230C365300F017F5 /* BPTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTableView.m; sourceTree = "<group>"; };
 		01AEF6D4230C48ED00F017F5 /* BPCustomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCustomTableViewCell.h; sourceTree = "<group>"; };
 		01AEF6D5230C48ED00F017F5 /* BPCustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCustomTableViewCell.m; sourceTree = "<group>"; };
 		01B0752120E4FD0C004891F7 /* BPDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawViewController.m; sourceTree = "<group>"; };
 		01B0752220E4FD0C004891F7 /* BPDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawViewController.h; sourceTree = "<group>"; };
-		01B0752F20E4FD0C004891F7 /* BPBlockAnimatonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBlockAnimatonVC.m; sourceTree = "<group>"; };
-		01B0753020E4FD0C004891F7 /* BPBlockAnimatonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBlockAnimatonVC.h; sourceTree = "<group>"; };
-		01B0753320E4FD0C004891F7 /* BPCoreAnimationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCoreAnimationVC.m; sourceTree = "<group>"; };
-		01B0753420E4FD0C004891F7 /* BPCoreAnimationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCoreAnimationVC.h; sourceTree = "<group>"; };
+		01B0752F20E4FD0C004891F7 /* BPBlockAnimatonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBlockAnimatonViewController.m; sourceTree = "<group>"; };
+		01B0753020E4FD0C004891F7 /* BPBlockAnimatonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBlockAnimatonViewController.h; sourceTree = "<group>"; };
 		01B0754A20E4FD0C004891F7 /* BPLayoutProcessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPLayoutProcessViewController.h; sourceTree = "<group>"; };
 		01B0754B20E4FD0C004891F7 /* BPLayoutProcessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPLayoutProcessViewController.m; sourceTree = "<group>"; };
 		01B0754E20E4FD0C004891F7 /* BPLayoutProcessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPLayoutProcessView.m; sourceTree = "<group>"; };
@@ -2157,6 +2182,7 @@
 		01CBFB432269E1B600E1CE66 /* BPHitTestViewBaseProcessSuperView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPHitTestViewBaseProcessSuperView.m; sourceTree = "<group>"; };
 		01CCA7241FEEC82600E8DC06 /* BPUtilConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPUtilConstant.h; sourceTree = "<group>"; };
 		01CCA7251FEEC82600E8DC06 /* BPUtilConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPUtilConstant.m; sourceTree = "<group>"; };
+		01CCF24723201EC8001E89FB /* BPBlockAnimatonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPBlockAnimatonViewController.xib; sourceTree = "<group>"; };
 		01CE268321E490FE00A15D7F /* BPLockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPLockViewController.h; sourceTree = "<group>"; };
 		01CE268421E490FE00A15D7F /* BPLockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPLockViewController.m; sourceTree = "<group>"; };
 		01CFEA6D20DD522A00032ACD /* BPRotatingScreenPushiewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPRotatingScreenPushiewController.h; sourceTree = "<group>"; };
@@ -3854,10 +3880,9 @@
 		011BE5592101790000842DDF /* Property */ = {
 			isa = PBXGroup;
 			children = (
+				01914F4E2320CE8D00DD76CB /* BaseProperty */,
 				01B0755C20E4FD0C004891F7 /* BezierPath */,
-				01AEF6C8230C304400F017F5 /* Mask */,
 				01B0756220E4FD0C004891F7 /* Transform */,
-				01AEF6C7230C2FF000F017F5 /* ShadowPath */,
 			);
 			path = Property;
 			sourceTree = "<group>";
@@ -4197,6 +4222,46 @@
 				012E117322806F5900398710 /* BPTableViewContentSizeViewController.m */,
 			);
 			path = GetContentSize;
+			sourceTree = "<group>";
+		};
+		0131672D231ECCC400667868 /* CATransition */ = {
+			isa = PBXGroup;
+			children = (
+				01316734231ECCF300667868 /* BPCATransitionViewController.h */,
+				01316735231ECCF300667868 /* BPCATransitionViewController.m */,
+				01316736231ECCF300667868 /* BPCATransitionViewController.xib */,
+			);
+			path = CATransition;
+			sourceTree = "<group>";
+		};
+		0131672E231ECCCB00667868 /* CASpringAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				0131672F231ECCE700667868 /* BPCASpringAnimationViewController.h */,
+				01316730231ECCE700667868 /* BPCASpringAnimationViewController.m */,
+				01316731231ECCE700667868 /* BPCASpringAnimationViewController.xib */,
+			);
+			path = CASpringAnimation;
+			sourceTree = "<group>";
+		};
+		01316739231FD31C00667868 /* CustomTransiton */ = {
+			isa = PBXGroup;
+			children = (
+				0131673A231FD32A00667868 /* BPCustomTransitonViewController.h */,
+				0131673B231FD32A00667868 /* BPCustomTransitonViewController.m */,
+				0131673C231FD32A00667868 /* BPCustomTransitonViewController.xib */,
+			);
+			path = CustomTransiton;
+			sourceTree = "<group>";
+		};
+		0131673F231FD42500667868 /* CAAnimationGroup */ = {
+			isa = PBXGroup;
+			children = (
+				01316740231FD44B00667868 /* BPCAAnimationGroupViewController.h */,
+				01316741231FD44B00667868 /* BPCAAnimationGroupViewController.m */,
+				01316742231FD44B00667868 /* BPCAAnimationGroupViewController.xib */,
+			);
+			path = CAAnimationGroup;
 			sourceTree = "<group>";
 		};
 		01349C4920ECA55300E50A86 /* downLoadTool */ = {
@@ -7259,6 +7324,36 @@
 			path = Swizzling;
 			sourceTree = "<group>";
 		};
+		01914F412320CD3700DD76CB /* CoreText */ = {
+			isa = PBXGroup;
+			children = (
+				01914F432320CD9800DD76CB /* BPCoreTextViewController.h */,
+				01914F442320CD9800DD76CB /* BPCoreTextViewController.m */,
+				01914F452320CD9800DD76CB /* BPCoreTextViewController.xib */,
+			);
+			path = CoreText;
+			sourceTree = "<group>";
+		};
+		01914F422320CD4000DD76CB /* CoreImage */ = {
+			isa = PBXGroup;
+			children = (
+				01914F482320CDA400DD76CB /* BPCoreImageViewController.h */,
+				01914F492320CDA400DD76CB /* BPCoreImageViewController.m */,
+				01914F4A2320CDA400DD76CB /* BPCoreImageViewController.xib */,
+			);
+			path = CoreImage;
+			sourceTree = "<group>";
+		};
+		01914F4E2320CE8D00DD76CB /* BaseProperty */ = {
+			isa = PBXGroup;
+			children = (
+				0137E86423181E4700DA0CD5 /* BPLayerPropertyViewController.h */,
+				0137E86523181E4700DA0CD5 /* BPLayerPropertyViewController.m */,
+				0137E86623181E4700DA0CD5 /* BPLayerPropertyViewController.xib */,
+			);
+			path = BaseProperty;
+			sourceTree = "<group>";
+		};
 		019B0ED920937B3C00D105D1 /* Tag */ = {
 			isa = PBXGroup;
 			children = (
@@ -7980,29 +8075,10 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		01AEF6C7230C2FF000F017F5 /* ShadowPath */ = {
-			isa = PBXGroup;
-			children = (
-				011BE55E2101793500842DDF /* BPLayerShadowPathViewController.h */,
-				011BE55F2101793500842DDF /* BPLayerShadowPathViewController.m */,
-			);
-			path = ShadowPath;
-			sourceTree = "<group>";
-		};
-		01AEF6C8230C304400F017F5 /* Mask */ = {
-			isa = PBXGroup;
-			children = (
-				01AEF6C9230C306200F017F5 /* BPLayerMaskViewController.h */,
-				01AEF6CA230C306200F017F5 /* BPLayerMaskViewController.m */,
-				01AEF6CB230C306200F017F5 /* BPLayerMaskViewController.xib */,
-			);
-			path = Mask;
-			sourceTree = "<group>";
-		};
 		01B0751B20E4FD0C004891F7 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
-				01B0755820E4FD0C004891F7 /* Layer */,
+				01B0755820E4FD0C004891F7 /* Core Animation */,
 				01B0756B20E4FD0C004891F7 /* Layout */,
 				01B0751C20E4FD0C004891F7 /* Drawing */,
 				01B0752C20E4FD0C004891F7 /* Animation */,
@@ -8013,6 +8089,8 @@
 		01B0751C20E4FD0C004891F7 /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
+				01914F422320CD4000DD76CB /* CoreImage */,
+				01914F412320CD3700DD76CB /* CoreText */,
 				013B423F2254B85C00BD441A /* AsyncDraw */,
 				013B42402254B86300BD441A /* BaseDraw */,
 			);
@@ -8054,7 +8132,6 @@
 			children = (
 				01B0752D20E4FD0C004891F7 /* BlockAnimation */,
 				01B0753120E4FD0C004891F7 /* CoreAnimation */,
-				01B075CA20E4FFD1004891F7 /* Transition&Gesture */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -8070,8 +8147,9 @@
 		01B0752E20E4FD0C004891F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				01B0753020E4FD0C004891F7 /* BPBlockAnimatonVC.h */,
-				01B0752F20E4FD0C004891F7 /* BPBlockAnimatonVC.m */,
+				01B0753020E4FD0C004891F7 /* BPBlockAnimatonViewController.h */,
+				01B0752F20E4FD0C004891F7 /* BPBlockAnimatonViewController.m */,
+				01CCF24723201EC8001E89FB /* BPBlockAnimatonViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -8079,20 +8157,14 @@
 		01B0753120E4FD0C004891F7 /* CoreAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				0131673F231FD42500667868 /* CAAnimationGroup */,
+				01316739231FD31C00667868 /* CustomTransiton */,
+				0131672E231ECCCB00667868 /* CASpringAnimation */,
+				0131672D231ECCC400667868 /* CATransition */,
 				01D27439212D0E8700E3E862 /* CAKeyframeAnimation */,
 				01D2742F212D0A5300E3E862 /* CABasicAnimation */,
-				01B0753220E4FD0C004891F7 /* Controller */,
 			);
 			path = CoreAnimation;
-			sourceTree = "<group>";
-		};
-		01B0753220E4FD0C004891F7 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				01B0753420E4FD0C004891F7 /* BPCoreAnimationVC.h */,
-				01B0753320E4FD0C004891F7 /* BPCoreAnimationVC.m */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		01B0753520E4FD0C004891F7 /* LayoutProcess */ = {
@@ -8152,7 +8224,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		01B0755820E4FD0C004891F7 /* Layer */ = {
+		01B0755820E4FD0C004891F7 /* Core Animation */ = {
 			isa = PBXGroup;
 			children = (
 				011BE5592101790000842DDF /* Property */,
@@ -8160,7 +8232,7 @@
 				01B0755920E4FD0C004891F7 /* CAReplicatorLayer */,
 				01B0756820E4FD0C004891F7 /* CAShapeLayer */,
 			);
-			path = Layer;
+			path = "Core Animation";
 			sourceTree = "<group>";
 		};
 		01B0755920E4FD0C004891F7 /* CAReplicatorLayer */ = {
@@ -8327,37 +8399,6 @@
 				01B0759D20E4FD0C004891F7 /* BPIntrinsicContentSizeLabel.m */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		01B075CA20E4FFD1004891F7 /* Transition&Gesture */ = {
-			isa = PBXGroup;
-			children = (
-				01B075CB20E50016004891F7 /* GeneralTransitions */,
-			);
-			path = "Transition&Gesture";
-			sourceTree = "<group>";
-		};
-		01B075CB20E50016004891F7 /* GeneralTransitions */ = {
-			isa = PBXGroup;
-			children = (
-				01B075CD20E50030004891F7 /* Scenes */,
-				01B075CC20E50024004891F7 /* Transition */,
-			);
-			path = GeneralTransitions;
-			sourceTree = "<group>";
-		};
-		01B075CC20E50024004891F7 /* Transition */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Transition;
-			sourceTree = "<group>";
-		};
-		01B075CD20E50030004891F7 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Scenes;
 			sourceTree = "<group>";
 		};
 		01B075CE20E503DD004891F7 /* Views */ = {
@@ -8941,25 +8982,8 @@
 			isa = PBXGroup;
 			children = (
 				01D27432212D0A6000E3E862 /* Controllers */,
-				01D27431212D0A6000E3E862 /* Models */,
-				01D27430212D0A6000E3E862 /* ViewModels */,
-				01D27433212D0A6000E3E862 /* Views */,
 			);
 			path = CABasicAnimation;
-			sourceTree = "<group>";
-		};
-		01D27430212D0A6000E3E862 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		01D27431212D0A6000E3E862 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		01D27432212D0A6000E3E862 /* Controllers */ = {
@@ -8972,36 +8996,12 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		01D27433212D0A6000E3E862 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		01D27439212D0E8700E3E862 /* CAKeyframeAnimation */ = {
 			isa = PBXGroup;
 			children = (
 				01D2743C212D0E8D00E3E862 /* Controllers */,
-				01D2743B212D0E8D00E3E862 /* Models */,
-				01D2743A212D0E8D00E3E862 /* ViewModels */,
-				01D2743D212D0E8E00E3E862 /* Views */,
 			);
 			path = CAKeyframeAnimation;
-			sourceTree = "<group>";
-		};
-		01D2743A212D0E8D00E3E862 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		01D2743B212D0E8D00E3E862 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		01D2743C212D0E8D00E3E862 /* Controllers */ = {
@@ -9012,13 +9012,6 @@
 				01D27440212D0EAD00E3E862 /* BPCAKeyframeAnimationViewController.xib */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		01D2743D212D0E8E00E3E862 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		01D2F5F62088E61E00D21B20 /* NSAttributedString */ = {
@@ -10348,6 +10341,7 @@
 				01D6FBB720C80F7E00AD8A6E /* BPIncludeTableManualInsideHeaderView.xib in Resources */,
 				01D27438212D0A7E00E3E862 /* BPBasicAnimationViewController.xib in Resources */,
 				011E8D9920B2F7BA00B04378 /* BPPlanCalendarSectionFooterView.xib in Resources */,
+				01CCF24823201EC8001E89FB /* BPBlockAnimatonViewController.xib in Resources */,
 				0111FF8222776F1400B51C65 /* KSSentenceTextHeaderView.xib in Resources */,
 				013B42622254BD8D00BD441A /* t_comments@2x.png in Resources */,
 				013ED93120C7DE0400A83E7F /* BPIncludeTableSelfSizeHeaderView.xib in Resources */,
@@ -10355,6 +10349,7 @@
 				0156295B21D375CB002A6722 /* launchImage8@3x.png in Resources */,
 				013ED90E20C7DB3C00A83E7F /* BPIncludeTableSystemLayoutHeaderView.xib in Resources */,
 				011E8D9820B2F7BA00B04378 /* BPSectionPlacedFooterView.xib in Resources */,
+				0137E86823181E4700DA0CD5 /* BPLayerPropertyViewController.xib in Resources */,
 				01B075C320E4FD0D004891F7 /* BPAlignmentRectInsetsView.xib in Resources */,
 				01BA17BD20D5183900AC70A2 /* BPTableViewNestGestureDetailViewController.xib in Resources */,
 				017CF98D20D3AE0100D9AA30 /* BPCollectionViewNestGestureCategotyDetailTableViewCell.xib in Resources */,
@@ -10362,6 +10357,7 @@
 				0159A62320EC73A400312293 /* BPDownLoadMainPageViewController.xib in Resources */,
 				0156295A21D375CB002A6722 /* launchImage8@2x.png in Resources */,
 				0175DB7E22D42B6A00C44EF5 /* BPStackViewController.xib in Resources */,
+				01316744231FD44C00667868 /* BPCAAnimationGroupViewController.xib in Resources */,
 				0111FF652277491800B51C65 /* BPBDNestListViewController.xib in Resources */,
 				0159A62820EC762900312293 /* BPDownLoadMoreFilesViewController.xib in Resources */,
 				015805B420CAE5D000D0EF7C /* BPTopCategoryListView.xib in Resources */,
@@ -10384,11 +10380,11 @@
 				014ED04D1FEFF9EE00D2926C /* Localizable.strings in Resources */,
 				011E8D9D20B2F7BA00B04378 /* BPPlanGeneralTableViewCell.xib in Resources */,
 				0154D0B22202DA1C00819387 /* BPVideoView.xib in Resources */,
-				01AEF6CD230C306200F017F5 /* BPLayerMaskViewController.xib in Resources */,
 				017CF98320D3AE0100D9AA30 /* BPCollectionViewNestGestureViewController.xib in Resources */,
 				0167A35820E619F100F13905 /* BPTransformViewController.xib in Resources */,
 				0159A63620EC782600312293 /* BPDownLoadMoreFilesTableViewCell.xib in Resources */,
 				01A597A82085CA5C000C6237 /* BPCellAutoLayoutHeightHeaderView.xib in Resources */,
+				0131673E231FD32A00667868 /* BPCustomTransitonViewController.xib in Resources */,
 				01AEF6C5230C1A9400F017F5 /* BPSizeViewController.xib in Resources */,
 				013ED92F20C7DE0400A83E7F /* BPIncludeTableSelfSizeInsideHeaderView.xib in Resources */,
 				01D1288421ECB39100C129A6 /* BPPlanCalendarViewController.xib in Resources */,
@@ -10417,7 +10413,9 @@
 				013B42652254BD8D00BD441A /* corner_circle@2x.png in Resources */,
 				01733FDA1FA974FB006192F0 /* Assets.xcassets in Resources */,
 				0159A62D20EC765200312293 /* BPDownLoadOneFileViewController.xib in Resources */,
+				01316733231ECCE700667868 /* BPCASpringAnimationViewController.xib in Resources */,
 				015805BB20CAE5D000D0EF7C /* BPTopCategoryListTagView.xib in Resources */,
+				01914F4C2320CDA400DD76CB /* BPCoreImageViewController.xib in Resources */,
 				011F91C420E6662900124DC1 /* BPDebugViewController.xib in Resources */,
 				0111FF7F22776E0600B51C65 /* KSSentenceTexTableView.xib in Resources */,
 				01A597AA2085CA5C000C6237 /* BPCellAutoLayoutHeightTableViewCell.xib in Resources */,
@@ -10432,6 +10430,8 @@
 				0169C01E20D00438001E51C3 /* README.md in Resources */,
 				015805BC20CAE5D000D0EF7C /* BPTopCategoryListTagCollectionViewCell.xib in Resources */,
 				013B42642254BD8D00BD441A /* t_repost@2x.png in Resources */,
+				01316738231ECCF300667868 /* BPCATransitionViewController.xib in Resources */,
+				01914F472320CD9800DD76CB /* BPCoreTextViewController.xib in Resources */,
 				013D61712192C8C500D1B15B /* BPPlacedHolderView.xib in Resources */,
 				017CF98B20D3AE0100D9AA30 /* BPCollectionViewNestGestureCategotyDetailController.xib in Resources */,
 				013ED90D20C7DB3C00A83E7F /* BPIncludeTableSystemLayoutInsideHeaderView.xib in Resources */,
@@ -10521,6 +10521,7 @@
 				011E8DC120B2FB3300B04378 /* BPCalendarWeekCell.m in Sources */,
 				018C449D20093F8900CF43D7 /* BPSliderShowView.m in Sources */,
 				0161622E20EF77A50041E87E /* BPDataBaseVersionManager.m in Sources */,
+				0131673D231FD32A00667868 /* BPCustomTransitonViewController.m in Sources */,
 				010DB7451FDD4D450099E66F /* UIImage+BPAlpha.m in Sources */,
 				01DF31E51FDD3B0300B8A955 /* NSDecimalNumber+BPExtensions.m in Sources */,
 				010DB7211FDD4D450099E66F /* UIWebView+BPBlocks.m in Sources */,
@@ -10567,6 +10568,7 @@
 				01DF32171FDD3B3000B8A955 /* NSString+BPDictionaryValue.m in Sources */,
 				0154D0B12202DA1C00819387 /* BPVideoView.m in Sources */,
 				01F2CE8820AAC31100F1D701 /* BP_Four_TopSliderCategorySubViewController.m in Sources */,
+				01316732231ECCE700667868 /* BPCASpringAnimationViewController.m in Sources */,
 				010DB7AC1FDD4D6F0099E66F /* UIButton+BPBlock.m in Sources */,
 				010DB70C1FDD4D450099E66F /* UIImageView+BPFaceAwareFill.m in Sources */,
 				010DB7941FDD4D640099E66F /* UIView+BPToast.m in Sources */,
@@ -10586,7 +10588,6 @@
 				01DF31C71FDD3A9100B8A955 /* NSUserDefaults+BPiCloudSync.m in Sources */,
 				0154D0C02202DF6A00819387 /* BPAudioView.m in Sources */,
 				011E8D7D20B2F7AA00B04378 /* BPCalendarAppearance.m in Sources */,
-				011BE5602101793500842DDF /* BPLayerShadowPathViewController.m in Sources */,
 				01AEF6D0230C365300F017F5 /* BPTableView.m in Sources */,
 				018C451E200A5AD300CF43D7 /* YYFPSLabel.m in Sources */,
 				01DF32591FDD3B9D00B8A955 /* NSData+BPzlib.m in Sources */,
@@ -10612,6 +10613,7 @@
 				011AECBB21D3B77B001BC8DC /* BPNSUserDefaultsViewController.m in Sources */,
 				01F373062065469C007B1498 /* BPDesignPatternsTargetActionViewControllerA.m in Sources */,
 				01A192192004E61F005EE4CD /* BPTagFlowLayout.m in Sources */,
+				01316737231ECCF300667868 /* BPCATransitionViewController.m in Sources */,
 				010DB7421FDD4D450099E66F /* UIImage+BPColor.m in Sources */,
 				01F750A9209F216F00C1F24C /* BPTableViewCell.m in Sources */,
 				013D61872192CAB200D1B15B /* BPHomePageRefreshHeader.m in Sources */,
@@ -10645,11 +10647,11 @@
 				017A9A8D1FDD311D00CDA599 /* NSDate+BPExtension.m in Sources */,
 				01CBFB442269E1B600E1CE66 /* BPHitTestViewBaseProcessSuperView.m in Sources */,
 				0179BC3C20316EDB0061CD84 /* BPDesignPatternsKVOViewController.m in Sources */,
-				01B075A620E4FD0C004891F7 /* BPCoreAnimationVC.m in Sources */,
 				0158054320CADF3F00D0EF7C /* BPArchiverModel.m in Sources */,
 				010DB71A1FDD4D450099E66F /* UINavigationItem+BPLoading.m in Sources */,
 				01F37316206552DB007B1498 /* BPGestureRecognizerViewController.m in Sources */,
 				01161F4820308FF900FA3441 /* BPNSArrayViewController.m in Sources */,
+				01914F462320CD9800DD76CB /* BPCoreTextViewController.m in Sources */,
 				01E1DC23202ECD9F00529ADB /* BPShapeLayerPathWaverView.m in Sources */,
 				01D22BDC1FDD814000BCC4AD /* UIBezierPath+BPAdd.m in Sources */,
 				011B7DD920693E5B0071CB5D /* UIBarButtonItem+BPCreate.m in Sources */,
@@ -10696,7 +10698,7 @@
 				0161168822D04B3C003A3ABC /* UIResponder+BPMsgSend.m in Sources */,
 				01B0F5E021EC257600D1D9C6 /* BPAFNViewController.m in Sources */,
 				01DF323D1FDD3B3D00B8A955 /* NSObject+BPAddProperty.m in Sources */,
-				01B075A520E4FD0C004891F7 /* BPBlockAnimatonVC.m in Sources */,
+				01B075A520E4FD0C004891F7 /* BPBlockAnimatonViewController.m in Sources */,
 				01F0DDE120CA20D8005082C7 /* BPInheritViewController.m in Sources */,
 				01733FE01FA974FB006192F0 /* main.m in Sources */,
 				018C451D200A5AD300CF43D7 /* YYWeakProxy.m in Sources */,
@@ -10821,6 +10823,7 @@
 				017907A42001249500E5C360 /* BPWaterWaveView.m in Sources */,
 				0111FF7D22776DFD00B51C65 /* KSSentenceTexTableView.m in Sources */,
 				01F2CE8220AABF7000F1D701 /* DHCustomSlideView.m in Sources */,
+				01914F4B2320CDA400DD76CB /* BPCoreImageViewController.m in Sources */,
 				01B2EE1622DF61D400702C36 /* BPProduct.m in Sources */,
 				01F2CE6A20AABE6600F1D701 /* UICollectionViewFlowLayout+BPFullItem.m in Sources */,
 				016DADC820582FB100AA95EC /* NSDictionary+BPSafe.m in Sources */,
@@ -10941,6 +10944,7 @@
 				01DF32191FDD3B3000B8A955 /* NSString+BPPinyin.m in Sources */,
 				01EB476720CEB21400195E88 /* BPGestureRecognizerTableView.m in Sources */,
 				01A191C52004E1CB005EE4CD /* BPWebViewController.m in Sources */,
+				01316743231FD44B00667868 /* BPCAAnimationGroupViewController.m in Sources */,
 				017CF99120D3AE0100D9AA30 /* BPCollectionViewNestGestureBannerCollectionViewCell.m in Sources */,
 				0117F7B921EF6498003E461B /* BPMVPViewController.m in Sources */,
 				0145D20222F1C34C003A0680 /* BPKVODependModel.m in Sources */,
@@ -10978,6 +10982,7 @@
 				010DB78F1FDD4D640099E66F /* UIView+BPNib.m in Sources */,
 				018C44CF2009E03D00CF43D7 /* BPCardPageFlowViewCell.m in Sources */,
 				01E1DC2C202ECE6E00529ADB /* BPNormalVolumeWaverView.m in Sources */,
+				0137E86723181E4700DA0CD5 /* BPLayerPropertyViewController.m in Sources */,
 				01C0B6211FFC87AB005BB4A5 /* PaletteColorUtils.m in Sources */,
 				017907CE2001336100E5C360 /* BPAlertViewController.m in Sources */,
 				0128926620DFF47200B9370F /* BPAppearanceViewController.m in Sources */,
@@ -11182,7 +11187,6 @@
 				01F2CE6420AABE6600F1D701 /* BPFlowCategoryViewCellModel.m in Sources */,
 				01C0B6221FFC87AB005BB4A5 /* Palette.m in Sources */,
 				01D22BE31FDD814000BCC4AD /* UIActivityIndicatorView+BPAdd.m in Sources */,
-				01AEF6CC230C306200F017F5 /* BPLayerMaskViewController.m in Sources */,
 				011E8D9F20B2F7BA00B04378 /* BPPlanCalendarConfig.m in Sources */,
 				017A35C622ED52CF00F5BB1A /* BPBlockCenter.m in Sources */,
 				01B075B120E4FD0C004891F7 /* BPGetFrameViewController.m in Sources */,

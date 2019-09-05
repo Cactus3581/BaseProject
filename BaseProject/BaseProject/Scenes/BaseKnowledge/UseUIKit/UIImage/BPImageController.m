@@ -54,7 +54,7 @@
 
 - (void)test {
     self.rightBarButtonTitle = @"切换mode";
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"transitionWithType02"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"module_landscape2"]];
     [self.view addSubview:imageView];
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(100);
