@@ -75,8 +75,7 @@
 #pragma mark - stastuaBar
 - (void)configStatusBarStyle;
 - (void)recoverStatusStyle;
-/** 单独设置statusBar颜色*/
-- (void)setStatusBarBackgroundColor:(UIColor *)color;
+
 /** 动态调整statusBar隐藏 文字颜色 动画等属性*/
 - (void)updateStatusBarAppearance;
 

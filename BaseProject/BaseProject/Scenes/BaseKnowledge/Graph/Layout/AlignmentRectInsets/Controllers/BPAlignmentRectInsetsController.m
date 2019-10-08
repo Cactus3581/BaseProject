@@ -7,10 +7,8 @@
 //
 
 #import "BPAlignmentRectInsetsController.h"
-
 #import "BPAlignmentRectInsetsView.h"
 #import "BPAlignmentRectInsetsTemplateView.h"
-
 #import "BPAlignmentRectInsetsLabel.h"
 
 /*
@@ -21,11 +19,12 @@
  */
 
 @interface BPAlignmentRectInsetsController ()
+
 @property (nonatomic,weak) BPAlignmentRectInsetsView *alignmentRectInsetsView;
 @property (nonatomic,weak) BPAlignmentRectInsetsTemplateView *alignmentRectInsetsTemplateView;
 @property (nonatomic,weak) BPAlignmentRectInsetsLabel *alignmentRectInsetsLabel;
-
 @property (nonatomic,assign) NSInteger index;
+
 @end
 
 @implementation BPAlignmentRectInsetsController
@@ -48,7 +47,6 @@
     BPLog(@"%@",NSStringFromCGRect(self.alignmentRectInsetsView.frame));
     BPLog(@"%@",NSStringFromCGRect(self.alignmentRectInsetsTemplateView.frame));
     BPLog(@"%@",NSStringFromCGRect(self.alignmentRectInsetsLabel.frame));
-
 }
 
 #pragma mark - config rightBarButtonItem

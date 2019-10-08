@@ -17,6 +17,7 @@ static CGFloat y = 30;
 
 
 #pragma mark - CALayerDelegate
+
 /*
  当UIView显示时：
  view自动创建layer，并自动设置layer的代理为其自身；
@@ -31,19 +32,19 @@ static CGFloat y = 30;
 #pragma mark - 得到当前图形上下文是drawLayer:中传递的
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
+    
     //取得图形上下文对象
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
     // 设置上下文状态属性
     //设置笔触颜色：StrokeColor
-    
     CGContextSetStrokeColorWithColor(ctx, kThemeColor.CGColor);
     //CGContextSetRGBStrokeColor(ctx, 135.0/255.0, 232.0/255.0, 84.0/255.0, 1);
 
     //设置笔触宽度：LineWidth
     CGContextSetLineWidth(ctx, 1);
     
-    //设置填充色：FillColor
+    //设置填充色：FillColor，前提路径必须是闭合的
     CGContextSetFillColorWithColor(ctx, kExplicitColor.CGColor);
     //CGContextSetRGBFillColor(ctx, 135.0/255.0, 232.0/255.0, 84.0/255.0, 1);
     
@@ -66,7 +67,7 @@ static CGFloat y = 30;
      */
     CGContextSetLineCap(ctx, kCGLineCapSquare);
     
-    /*设置线段样式
+    /*设置虚线
      phase:虚线开始的位置
      lengths:虚线长度间隔（例如下面的定义说明第一条线段长度8，然后间隔3重新绘制8点的长度线段，当然这个数组可以定义更多元素）
      count:虚线数组元素个数
@@ -97,21 +98,30 @@ static CGFloat y = 30;
     
     //画文字
     [self drawTextWithCtx:ctx rect:rect];
+    
+    // 画曲线
+    [self drawCurveWithCtx:ctx rect:rect];
 }
 
+#pragma mark - 画弧
+- (void)drawArcWithCtx:(CGContextRef)ctx rect:(CGRect)rect {
+    //CGContextAddArc:从圆中来创建一个曲线段。需要指定圆心、半径、放射角(以弧度为单位)。放射角为2 PI时，创建的是一个圆
+    // CGContextAddArcToPoint:用于给矩形创建内切弧。需要提供圆的半径，每条半径分别与长边和宽边垂直。弧心是两条半径的交叉点
+}
+    
 #pragma mark - 画线
 - (void)drawLineWithCtx:(CGContextRef)ctx rect:(CGRect)rect {
 
     //画线方法1：使用CGContextAddLineToPoint添加点的方式
-    //设置起始点，左上角
+    //设置起始点，剩下的点是端点
     CGContextMoveToPoint(ctx, x, y);
-    //添加一个点，左下角
+    //添加一条直线
     CGContextAddLineToPoint(ctx, x,y+kHeight);
     //在添加一个点，变成折线，右下角
     CGContextAddLineToPoint(ctx, x+kWidth, y+kHeight);
     
-    //画线方法2:使用点数组
     CGPoint points[] = {CGPointMake(x, y),CGPointMake(x+kWidth, y),CGPointMake(x+kWidth, y+kHeight)};
+    // 添加一系列直线，使用点数组作为函数参数
     CGContextAddLines(ctx,points, 3);
 
     //画线方法3：使用路径（推荐使用路径的方式）
@@ -126,6 +136,7 @@ static CGFloat y = 30;
 
     //添加路径到图形上下文
     CGContextAddPath(ctx, path);
+    // 闭合路径。该函数用一条直接来连接当前点与起始点，以使路径闭合。也可以显式地加一条直线来闭合路径。
     //CGContextClosePath(ctx);
 
      //指定模式下绘制路径/图像到图形上下文
@@ -146,7 +157,7 @@ static CGFloat y = 30;
 }
 
 #pragma mark - 画矩形、椭圆形、多边形
-- (void)drawSharpWithCtx:(CGContextRef)ctx rect:(CGRect)rect{
+- (void)drawSharpWithCtx:(CGContextRef)ctx rect:(CGRect)rect {
     
     //画椭圆，如果长宽相等就是圆
     CGContextAddEllipseInRect(ctx, CGRectMake(x, y*2+kHeight, kWidth/2, kHeight));
@@ -159,14 +170,22 @@ static CGFloat y = 30;
     CGPathMoveToPoint(path, &CGAffineTransformIdentity, self.bounds.size.width/2.0, y*4+kHeight*3);
     CGPathAddLineToPoint(path, &CGAffineTransformIdentity, self.bounds.size.width/4.0, y*4+kHeight*4);
     CGPathAddLineToPoint(path, &CGAffineTransformIdentity, self.bounds.size.width*3.0/4, y*4+kHeight*4);
-//    CGPathCloseSubpath(path);//关闭路径
+    // CGPathCloseSubpath(path);//关闭路径
     CGContextAddPath(ctx, path);
     
     //填充
     CGContextFillPath(ctx);
 }
 
-#pragma mark - 使用贝塞尔曲线画圆
+#pragma mark - 画曲线
+- (void)drawCurveWithCtx:(CGContextRef)ctx rect:(CGRect)rect {
+    
+// 曲线：二次与三次Bezier曲线是代数曲线。指定起始点、终点、一个或多个控制点。只使用一个控制点，可以创建二次Bezier曲线，只使用两个控制点可以创建出三次Bezier曲线
+//    CGContextAddCurveToPoint
+//    CGContextAddQuadCurveToPoint
+}
+
+#pragma mark - 使用UIKit提供的方法绘制画圆
 
 - (void)drawBezierPathWithCtx:(CGContextRef)ctx rect:(CGRect)rect {
     //绘制圆

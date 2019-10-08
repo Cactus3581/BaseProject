@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BPTagCollectionCell : UICollectionViewCell
+
 @property (nonatomic,strong) UILabel *nameLabel;
 @property (nonatomic,strong) NSString *nameText;
 

@@ -73,7 +73,7 @@
     [button.titleLabel setFont:[UIFont systemFontOfSize:12]];
 //    button.titleLabel.textAlignment = NSTextAlignmentLeft;
     button.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-    //[button setImage:[UIImage imageNamed:@"cactus_ round_steady"] forState:UIControlStateNormal];
+    //[button setImage:[UIImage imageNamed:@"cactus_round_steady"] forState:UIControlStateNormal];
     [self.view addSubview:button];
     
 
@@ -199,7 +199,7 @@
     //
     
     //    (6)设置背景图片
-    [button setBackgroundImage:[UIImage imageNamed:@"cactus_ round_steady"] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"cactus_round_steady"] forState:UIControlStateNormal];
 //    [button setBackgroundImage:[UIImage imageNamed:@"02.png"] forState:UIControlStateHighlighted];
     //    设置前景图片
     //    [button setImage:[UIImage imageNamed:@"01.png"] forState:UIControlStateNormal];

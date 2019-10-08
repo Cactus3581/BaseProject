@@ -9,6 +9,8 @@
 #import "BPDrawViewController.h"
 #import "BPDrawRectView.h"
 #import "BPDrawLayer.h"
+#import "BPDrawRectImageView.h"
+#import "BPDrawRectLabel.h"
 
 @interface BPDrawViewController () <CALayerDelegate>
 
@@ -48,7 +50,7 @@
     
     //    layer.contentsCenter = CGRectMake(0.5, 0.5, 0, 0);
     //    layer.contentsScale = [UIScreen mainScreen].scale;
-    //    layer.contents = (__bridge id)[UIImage imageNamed:@"cactus_ rect_steady"].CGImage;
+    //    layer.contents = (__bridge id)[UIImage imageNamed:@"cactus_rect_steady"].CGImage;
     
     [view.layer addSublayer:layer];
 }
@@ -79,6 +81,16 @@
                 break;
                 
             case 4:{
+                [self drawRectImageView];//
+            }
+                break;
+                
+            case 5:{
+                [self drawRectLabel];//
+            }
+                break;
+                
+            case 6:{
                 [self takeColor];// 取色器
             }
                 break;
@@ -86,11 +98,40 @@
     }
 }
 
+#pragma mark - 自定义UIImageView
+- (void)drawRectImageView {
+    BPDrawRectImageView *imageView = [[BPDrawRectImageView alloc] init];
+    imageView.layer.contents = (__bridge id)[UIImage imageNamed:@"cactus_rect_steady"].CGImage;
+    imageView.image = [UIImage imageNamed:@"module_landscape3"];
+    [self.view addSubview:imageView];
+    
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset(100);
+        make.leading.trailing.bottom.equalTo(self.view);
+    }];
+}
+
+#pragma mark - 自定义UILabel
+- (void)drawRectLabel {
+    BPDrawRectLabel *label = [[BPDrawRectLabel alloc] init];
+    label.textColor = kDarkTextColor;
+    label.font = [UIFont systemFontOfSize:14.0f];
+    label.text = @"test";
+    [self.view addSubview:label];
+    
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset(100);
+        make.leading.trailing.bottom.equalTo(self.view);
+    }];
+}
+
 #pragma mark - 以下都是获取系统传递过来的上下文，然后在其上面绘制
 #pragma mark - 自定义view绘图
 // drawRect系列方法 使用CG函数/贝塞尔曲线绘图/绘制过程
 - (void)drawRect {
     BPDrawRectView *aView =  [[BPDrawRectView alloc] init];
+    aView.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"module_landscape3"].CGImage);
+
     aView.backgroundColor = kLightGrayColor;
     [self.view addSubview:aView];
     [aView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -107,6 +148,7 @@
     layer.backgroundColor = kLightGrayColor.CGColor;
     // 有这句话才能执行 -drawInContext 和 drawRect 方法
     [layer setNeedsDisplay];
+    layer.delegate = self;
     [self.view.layer addSublayer:layer];
 }
 
@@ -122,9 +164,21 @@
     [self.view.layer addSublayer:layer];
 }
 
-// CALayer的代理方法
+#pragma mark - Layer的代理方法
+// 触发时机：自定义的laye没有实现display方法，并且设置了delegate
+// 方法用途：设置寄宿图
+// 如果实现了该方法，不会进入后续的方法。比如不会再走layer的drawInContext方法
+//- (void)displayLayer:(CALayer *)layer {
+//    layer.contents = (__bridge id)[UIImage imageNamed:@"cactus_rect_steady"].CGImage;
+//    layer.contentsScale = [UIScreen mainScreen].scale;
+//}
+
+// 触发时机：如果自定义的layer没有重写drawInContext方法，接下来就会调用下面的代理方法
+// 方法用途：在方法内部获取ctx并在ctx上绘制。需要调用setNeedDisplay方法
+// 如果layer的delegate是view，那么会继续走drawRect:方法；否则绘制结束
 - (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx {
-    //CG
+    
+    // CG方法绘制
     // 1.画一个圆
     CGContextAddEllipseInRect(ctx, CGRectMake(10, 10, 50, 50));
     // 填充颜色
@@ -177,7 +231,9 @@
     CGFloat ctxHeight = ctxWidth;
 
     // 通过 UIKit 创建位图context，并把它push到上下文栈顶，坐标系也经处理和UIKit的坐标系相同
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(ctxWidth,ctxHeight), NO, kScreenScale);
+    
+    // 第二个参数用来指定所生成图片的背景是否为不透明，YES为不透明，图片背景将会是黑色，NO表示透明，图片背景色正常；缩放因子传入0则表示让图片的缩放因子自动根据屏幕的分辨率而变化
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(ctxWidth,ctxHeight), NO, 0);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
     // 用贝塞尔曲线进行图片绘制
@@ -193,7 +249,7 @@
     
     //把当前context的内容输出成一个UIImage图片
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    // context出栈
+    // 关闭图形上下文
     UIGraphicsEndImageContext();
     return image;
 }

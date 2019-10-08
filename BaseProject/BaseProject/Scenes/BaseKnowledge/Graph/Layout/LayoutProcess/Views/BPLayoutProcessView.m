@@ -74,26 +74,26 @@
     BPLog(@"UIView:drawRect");
 }
 
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
 //    [_subView mas_updateConstraints:^(MASConstraintMaker *make) {
 //        make.width.height.mas_equalTo(100);
 //    }];
+
+    // layout方法
+
+//    [self setNeedsLayout];
+//    [self layoutIfNeeded];
+    
+//    [_subView setNeedsLayout];
+//    [_subView layoutIfNeeded];
 //
-//    // layout方法
-//
-////    [self setNeedsLayout];
-////    [self layoutIfNeeded];
-//    
-////    [_subView setNeedsLayout];
-////    [_subView layoutIfNeeded];
-////
-////    // 约束方法
-////    [self setNeedsUpdateConstraints];
-////    [self updateConstraintsIfNeeded];
-////
-////    [_subView setNeedsUpdateConstraints];
-////    [_subView updateConstraintsIfNeeded];
-//}
+//    // 约束方法
+//    [self setNeedsUpdateConstraints];
+//    [self updateConstraintsIfNeeded];
+
+//    [_subView setNeedsUpdateConstraints];
+//    [_subView updateConstraintsIfNeeded];
+}
 
 @end

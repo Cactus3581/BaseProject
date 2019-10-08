@@ -12,12 +12,15 @@
 #import "YYFPSLabel.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
+static CGFloat titleInset = 20.0f;
+
 @interface BPBaseViewController ()<UINavigationControllerDelegate>
+
 @property(nonatomic,strong) UIButton *leftBarButton;
 @property(nonatomic,strong) UIButton *rightBarButton;
+
 @end
 
-static CGFloat titleInset = 20.0f;
 
 @implementation BPBaseViewController
 
@@ -309,7 +312,6 @@ static CGFloat titleInset = 20.0f;
 }
 
 - (void)recoverStatusStyle {
-    [self setStatusBarBackgroundColor:kClearColor];
     [self updateStatusBarAppearance];
 }
 
@@ -327,13 +329,6 @@ static CGFloat titleInset = 20.0f;
 
 - (void)updateStatusBarAppearance {
     [self setNeedsStatusBarAppearanceUpdate];
-}
-
-- (void)setStatusBarBackgroundColor:(UIColor *)color {
-    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-        statusBar.backgroundColor = color;
-    }
 }
 
 #pragma mark - dealloc

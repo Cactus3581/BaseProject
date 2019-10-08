@@ -9,18 +9,16 @@
 #import "BPTagCollectionCell.h"
 
 @implementation BPTagCollectionCell
-- (instancetype)initWithFrame:(CGRect)frame
-{
+
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        
         [self layoutUI];
-        
     }
     return self;
 }
-- (void)layoutUI
-{
+
+- (void)layoutUI {
     self.nameLabel  = [[UILabel alloc]init];
     self.nameLabel.textColor = kBlackColor;
     self.nameLabel.textAlignment = NSTextAlignmentCenter;
@@ -30,8 +28,7 @@
     [self.contentView addSubview:self.nameLabel];
 }
 
-- (void)layoutSubviews
-{
+- (void)layoutSubviews {
     [super layoutSubviews];
     CGFloat width =self.bounds.size.width;
     CGFloat height =self.bounds.size.height;
@@ -40,9 +37,8 @@
     [self.nameLabel.layer setMasksToBounds:YES];
 }
 
-- (void)setNameText:(NSString *)nameText
-{
-    if (_nameText!=nameText) {
+- (void)setNameText:(NSString *)nameText {
+    if (_nameText != nameText) {
         _nameText = nameText;
     }
     _nameLabel.text = nameText;

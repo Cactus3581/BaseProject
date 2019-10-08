@@ -277,6 +277,7 @@ static CGFloat cellHeight = 100;
     [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
+#pragma mark - 刷新方法
 - (IBAction)reloadAction:(id)sender {
     
     // 全局刷新

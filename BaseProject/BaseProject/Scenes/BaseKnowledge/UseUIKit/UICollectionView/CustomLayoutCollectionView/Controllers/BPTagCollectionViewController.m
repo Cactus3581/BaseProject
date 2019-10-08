@@ -11,24 +11,25 @@
 #import "BPTagCollectionCell.h"
 
 @interface BPTagCollectionViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+
 @property (nonatomic,strong) UICollectionView *collectionView;
 @property (nonatomic,strong) NSArray *array;
 
 @end
 
+
 @implementation BPTagCollectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"CollectionView";
-    self.view.backgroundColor = kRedColor;
     [self.view addSubview:self.collectionView];
-    self.array =@[@"熊出没",@"死神来了19",@"钢铁侠0",@"海上钢琴师",@"最后一只恐龙",@"苍井空",@"假如爱有天意",@"好好先生",@"特种部队",@"生化危机",@"生化危机"];
+    self.array = @[
+                   @"熊出没",@"死神来了19",@"钢铁侠0",@"海上钢琴师",@"最后一只恐龙",@"苍井空",@"假如爱有天意",@"好好先生",@"特种部队",@"生化危机",@"生化危机"
+                   ];
 }
 
 #pragma mark - 布局collectionview
-- (UICollectionView *)collectionView
-{
+- (UICollectionView *)collectionView {
     if (!_collectionView) {
         BPTagFlowLayout *flowLayout = [[BPTagFlowLayout alloc]init];
         _collectionView=[[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) collectionViewLayout:flowLayout];
@@ -63,9 +64,7 @@
 }
 
 //设定Cell尺寸，定义某个Cell的尺寸
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     NSString *str = self.array[indexPath.row];
     /* 根据每一项的字符串确定每一项的size */
     NSDictionary *dict = @{NSFontAttributeName:[UIFont systemFontOfSize:12]};
@@ -77,8 +76,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
-

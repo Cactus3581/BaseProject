@@ -129,7 +129,7 @@
     self.navigationController.navigationItem.title = @"title"; //无效：UINavigationController并没有navigationItem这样一个直接的属性
     
     UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"item1" style:UIBarButtonItemStylePlain target:nil action:nil];
-    UIImage *navi_item_image = [UIImage imageNamed:@"cactus_ round_steady"];
+    UIImage *navi_item_image = [UIImage imageNamed:@"cactus_round_steady"];
     UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithImage:navi_item_image style:UIBarButtonItemStyleDone target:nil action:nil];
     //landscapeImagePhone 横屏显示的图片?
     UIBarButtonItem* item3 = [[UIBarButtonItem alloc] initWithImage:navi_item_image landscapeImagePhone:navi_item_image style:UIBarButtonItemStylePlain target:nil action:nil];

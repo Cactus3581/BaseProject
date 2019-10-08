@@ -8,114 +8,125 @@
 
 #import "BPShapeLayerViewController.h"
 
-#define layer_width 100.0
-
+static NSInteger kLayerWidth = 100.0;
 static NSInteger lineWidth = 10;
 
+
 @interface BPShapeLayerViewController ()
+
+@property (nonatomic,weak) CAShapeLayer *shapeLayer;
+
 @end
 
+
 @implementation BPShapeLayerViewController
-/*
- 
- 1. 可动画属性:
- 2. 绘制不规则图形：1.直接绘制（drawRect） 2， mask：绘制不规则layer（异步的）；
- 3. 测试在mask情况下，贝塞尔曲线的frame，shapelayer的frame，如何受影响:mask父影响-》masklayer影响-》贝塞尔曲线 -进而决定了shapelayer的最终形状。
- 
- */
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    [self strokeColor];
-    return;
-
-    [self strokeEnd];
-    [self loading_one];  //与CAGradientLayer联合使用，绘制渐变加载条动画
-    [self loading_two];
-    [self arcLoading]; //扇形动画
+    [self handleDynamicJumpData];
 }
 
-#pragma mark - 创建shapeLayer - 测试frame的影响
-- (void)strokeColor {
-    CAShapeLayer *shapeLayer = [CAShapeLayer layer] ;
-    shapeLayer.bounds = CGRectMake(0, 0, layer_width, layer_width);
-    shapeLayer.position = CGPointMake(kScreenWidth/2, kScreenHeight-layer_width/2.0-10-200);
-    shapeLayer.backgroundColor = kGreenColor.CGColor;
-    
-    // path坐标系统是从layer的左上开始，也就是说path是根据layer的frame的坐标系统
-    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(lineWidth/2.0, lineWidth/2.0, layer_width-lineWidth, layer_width-lineWidth)];
-    shapeLayer.path = path.CGPath;
-    
-    //线宽：会影响位置及大小，各占一半
-    shapeLayer.lineWidth = lineWidth;
-    
-    //这里就不要用backgroundColor 这个属性了，而要使用 fillColor 和 strokeColor ，前者代表设置这个 Layer 的填充色，后者代表设置它的边框色
-    shapeLayer.fillColor = kBlueColor.CGColor;
-    shapeLayer.strokeColor = kRedColor.CGColor;
+- (void)handleDynamicJumpData {
+    if (self.needDynamicJump) {
+        NSInteger type = [self.dynamicJumpDict[@"type"] integerValue];
+        switch (type) {
+                
+            case 0: {
+                [self pathFrame];
+            }
+                break;
 
-    // 如果path的大小超出了shapeLayer的bounds，就管用了
-//    shapeLayer.masksToBounds = YES;
-//    [self.view.layer addSublayer:shapeLayer];
+            case 1: {
+                [self anmationProperty];
+            }
+                break;
 
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    imageView.image = [UIImage imageNamed:@"module_landscape3"];
-    [self.view addSubview:imageView];
-    
-    UIView *maskView = [[UIView alloc] initWithFrame:self.view.bounds];
-    maskView.backgroundColor = [kBlackColor colorWithAlphaComponent:0.5];
-    [kWindow addSubview:maskView];
-    
-     path = [UIBezierPath bezierPathWithRect:self.view.bounds];
-    //    [path appendPath:[UIBezierPath bezierPathWithArcCenter:CGPointMake(227, 188) radius:(46) startAngle:0 endAngle:2 * M_PI clockwise:NO]];
-    [path appendPath:[[UIBezierPath bezierPathWithRoundedRect:CGRectMake(5, 436, 90, 40) cornerRadius:5] bezierPathByReversingPath]];
-    
-    
-    // 绘制透明区域
-    shapeLayer.path = path.CGPath;
-    [maskView.layer setMask:shapeLayer];
-    
+            case 2: {
+                [self loading_one];//与CAGradientLayer联合使用，绘制渐变加载条动画
+            }
+                break;
+
+            case 3: {
+                [self loading_two];
+            }
+                break;
+
+            case 4: {
+                [self arcLoading];//扇形动画
+            }
+                break;
+        }
+    }
+}
+
+- (CAShapeLayer *)shapeLayer {
+    if(!_shapeLayer) {
+        CAShapeLayer *shapeLayer = [CAShapeLayer layer] ;
+        _shapeLayer = shapeLayer;
+        shapeLayer.bounds = CGRectMake(0, 0, kLayerWidth, kLayerWidth);
+        shapeLayer.position = CGPointMake(kScreenWidth/2, kScreenHeight/2);
+        // 线宽：影响大小和位置，各占一半
+        shapeLayer.lineWidth = lineWidth;
+        // 使用 fillColor 和 strokeColor 代替 backgroundColor
+        shapeLayer.fillColor = kExplicitColor.CGColor;//填充色
+        shapeLayer.strokeColor = kThemeColor.CGColor;//边框色
+        // shapeLayer.backgroundColor = kGreenColor.CGColor;
+        
+        // 边缘线的类型
+        shapeLayer.lineCap = kCALineCapSquare;
+        shapeLayer.strokeStart = 0.0f;
+        shapeLayer.strokeEnd = 1.f;
+        
+        UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(lineWidth/2.0+5, lineWidth/2.0+5, kLayerWidth-lineWidth-10, kLayerWidth-lineWidth-10)];
+        shapeLayer.path = path.CGPath;
+        [self.view.layer addSublayer:shapeLayer];
+    }
+    return _shapeLayer;
+}
+
+#pragma mark - CAShapeLayer/path Frame 的影响
+- (void)pathFrame {
+
+    // path的坐标系依赖layer的的坐标系，即layer的原点就是path的原点
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(lineWidth/2.0+5, lineWidth/2.0+5, kLayerWidth-lineWidth-10, kLayerWidth-lineWidth-10)];
+
+    // 如果path的大小超出了shapeLayer的bounds，默认不裁剪依然显示完整，可以使用masksToBounds裁剪
+    // path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, kLayerWidth*2, kLayerWidth*2)];
+    // self.shapeLayer.masksToBounds = YES;
+
+    // 圆形的坐标系
+    path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(lineWidth/2.0+5, lineWidth/2.0+5, kLayerWidth-lineWidth-10, kLayerWidth-lineWidth-10)];
+
+    self.shapeLayer.path = path.CGPath;
     
     //    [maskView.layer configMask:CGRectMake(100, 300, 100, 100)];
+}
+
+#pragma mark - shapeLayer 的可动画属性
+
+- (void)anmationProperty {
     
-    //fillcolor没有动画；strokeColor有动画,这样只能在strokeColor上考虑动画了
-    CABasicAnimation *anmation = [CABasicAnimation animationWithKeyPath:@"strokeColor"];
-    anmation.fromValue = (id)kRedColor.CGColor;
-    anmation.toValue = (id)kGreenColor.CGColor;
-    anmation.duration = 2.5;
-    anmation.repeatCount = MAXFLOAT;
-//    [shapeLayer addAnimation:anmation forKey:@""];
+    CABasicAnimation *strokeEndAnmation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    strokeEndAnmation.fromValue = @0.0;
+    strokeEndAnmation.toValue = @1;
+    strokeEndAnmation.duration = 2.5;
+    strokeEndAnmation.repeatCount = MAXFLOAT;
+    [self.shapeLayer addAnimation:strokeEndAnmation forKey:@"strokeEnd"];
+    
+    // 只能在strokeColor上动画，fillcolor没有动画
+    CABasicAnimation *strokeColorAnmation = [CABasicAnimation animationWithKeyPath:@"strokeColor"];
+    strokeColorAnmation.fromValue = (id)kRedColor.CGColor;
+    strokeColorAnmation.toValue = (id)kGreenColor.CGColor;
+    strokeColorAnmation.duration = 2.5;
+    strokeColorAnmation.repeatCount = MAXFLOAT;
+    [self.shapeLayer addAnimation:strokeColorAnmation forKey:@"strokeColor"];
 }
 
-- (void)strokeEnd {
-    CAShapeLayer *shapeLayer = [CAShapeLayer layer] ;
-    //设置layer的frame，会改变贝塞尔曲线的frame，它根据layer的frame而改变，也就是说它作为子layer存在（在坐标系统上是存在这种父子关系的，其他不是）
-    shapeLayer.bounds = CGRectMake(0, 0, layer_width, layer_width);
-    shapeLayer.position = CGPointMake(kScreenWidth/2, kScreenHeight-layer_width/2.0-10-layer_width-10);
-    shapeLayer.backgroundColor = kGreenColor.CGColor;
-    // path坐标系统是从layer的左上开始，也就是说path是根据layer的frame的坐标系统；100不是半径，是宽度跟高度。
-    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(10, 10, 80, 80)];
-    shapeLayer.path = path.CGPath;
-    shapeLayer.fillColor = kBlueColor.CGColor;
-    //重点在线宽
-    shapeLayer.lineWidth = 10.0f;
-    shapeLayer.strokeColor = kRedColor.CGColor;
-    //self.shapeLayer.masksToBounds = YES;
-    [self.view.layer addSublayer:shapeLayer];
-    shapeLayer.strokeStart = 0;
-    shapeLayer.strokeEnd = 0;
-    CABasicAnimation *anmation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    anmation.fromValue = @0.0;
-    anmation.toValue = @1;
-    anmation.duration = 2.5;
-    anmation.repeatCount = MAXFLOAT;
-    [shapeLayer addAnimation:anmation forKey:@"strokeEnd"];
-}
+#pragma mark - 加载条动画
 
-#pragma mark - 创建shapeLayer - 2 加载条动画、转圈动画(与CAGradientLayer一块使用)
 - (void)loading_one {
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.bounds = CGRectMake(0, 0, layer_width, layer_width);
+    gradientLayer.bounds = CGRectMake(0, 0, kLayerWidth, kLayerWidth);
     gradientLayer.position = CGPointMake(kScreenWidth/2, 50+84) ;
     gradientLayer.cornerRadius = gradientLayer.bounds.size.width/2.0;
     
@@ -152,8 +163,9 @@ static NSInteger lineWidth = 10;
 
 #pragma mark - 转圈动画(与CAGradientLayer一块使用)
 - (void)loading_two {
+    
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.bounds = CGRectMake(0, 0, layer_width, layer_width);
+    gradientLayer.bounds = CGRectMake(0, 0, kLayerWidth, kLayerWidth);
     gradientLayer.position = CGPointMake(kScreenWidth/2, 50+84) ;
     gradientLayer.cornerRadius = gradientLayer.bounds.size.width/2.0;
     
@@ -189,12 +201,12 @@ static NSInteger lineWidth = 10;
     [gradientLayer addAnimation:animation forKey:nil];
 }
 
-#pragma mark - 创建shapeLayer - 3 -扇形动画，利用lineWidth及strokeEnd
+#pragma mark - 扇形动画，利用lineWidth及strokeEnd
 - (void)arcLoading {
+    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 100.0f)];
-    view.center = CGPointMake(kScreenWidth/2.0, 50+84+layer_width+layer_width);
-    UIImage *image = [UIImage imageNamed:@"module_landscape2"];
-    view.layer.contents = (__bridge id _Nullable)(image.CGImage);
+    view.center = CGPointMake(kScreenWidth/2.0, 50+84+kLayerWidth+kLayerWidth);
+    view.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"module_landscape2"].CGImage);
     view.layer.contentsGravity = kCAGravityCenter;
     view.layer.contentsScale = [UIScreen mainScreen].scale;
     view.backgroundColor = kYellowColor;
@@ -202,20 +214,20 @@ static NSInteger lineWidth = 10;
     [self.view addSubview:view];
     
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-    /*
-     如果设置了mask，那么之前设置这个layer的frame得根据父layer重现设置了。
-     结论：跟mask有关系，layer作为mask的子layer，要重新设置贝塞尔曲线的frame,并且如果把作为mask层的子layer添加到self.view.layer上的时候，会移除这个，并作为mask重现布局。
-     self.shapeLayer.frame = CGRectMake(0, 0, 100, 100);
-     */
+    //如果设置了mask，那么之前设置这个layer的frame得根据父layer重现设置了。
+    //结论：跟mask有关系，layer作为mask的子layer，要重新设置贝塞尔曲线的frame
+    //并且如果把作为mask层的子layer添加到self.view.layer上的时候，会移除这个，并作为mask重现布局。
+    // self.shapeLayer.frame = CGRectMake(0, 0, 100, 100);
     shapeLayer.frame = view.bounds;
     shapeLayer.strokeStart = 0.0f;
     shapeLayer.strokeEnd = 1.0f;
-    
-    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:view.bounds];
-    shapeLayer.path = path.CGPath;
     shapeLayer.fillColor = kClearColor.CGColor;
     shapeLayer.strokeColor = kRedColor.CGColor;
     shapeLayer.lineWidth = 100.0f;//重点在线宽
+    
+    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:view.bounds];
+    shapeLayer.path = path.CGPath;
+
     view.layer.mask = shapeLayer;
 
     CABasicAnimation *anmation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];

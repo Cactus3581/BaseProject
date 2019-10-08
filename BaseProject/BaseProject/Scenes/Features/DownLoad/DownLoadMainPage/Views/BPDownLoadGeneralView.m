@@ -119,7 +119,7 @@
 
 - (void)setModel:(BPAudioModel *)model {
     _model = model;
-    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:model.smallpic] placeholderImage:[UIImage imageNamed:@"cactus_ rect_steady"]];
+    [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:model.smallpic] placeholderImage:[UIImage imageNamed:@"cactus_rect_steady"]];
     self.titleLabel.text = model.title;
 }
 

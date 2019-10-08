@@ -11,10 +11,6 @@
 @interface BPLayerPropertyViewController ()
 
 @property (nonatomic,weak) CALayer *layer;
-@property(nonatomic,weak) UIView *maskView;
-
-@property (nonatomic,strong) CALayer *testLayer;
-@property (nonatomic,strong) UIView *testView;
 
 @end
 
@@ -34,24 +30,48 @@
             case 0: {
                 [self base];
             }
+                break;
                 
             case 1: {
                 [self shadow];
             }
+                break;
 
             case 2: {
                 [self corner];
             }
-                
+                break;
+
             case 3: {
-                [self mask];
-            }
-                
-            case 4: {
                 [self anchorPoint];
             }
+                break;
+
+            case 4: {
+                [self mask];
+            }
+                break;
+                
+            case 5: {
+                [self alpha];
+            }
+                break;
+                
+                
         }
     }
+}
+
+- (CALayer *)layer {
+    if(!_layer) {
+        CAShapeLayer *layer = [CAShapeLayer layer] ;
+        _layer = layer;
+        _layer.bounds = (CGRect){0,0,100,100};
+        _layer.position = (CGPoint){kScreenWidth/2,kScreenHeight/2};
+        _layer.backgroundColor = kLightGrayColor.CGColor;
+        [self.view.layer addSublayer:_layer];
+    }
+    return _layer;
 }
 
 - (void)viewDidLayoutSubviews {
@@ -64,40 +84,111 @@
     
 #pragma mark - 边框
     
-    _layer.borderColor = [UIColor whiteColor].CGColor;
-    _layer.borderWidth = 2;
+    self.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.layer.borderWidth = 2;
     
 #pragma mark - contents
     
-    _layer.contents = (id)[UIImage imageNamed:@"image001"].CGImage;
+    self.layer.contents = (id)[UIImage imageNamed:@"image001"].CGImage;
 }
 
 #pragma mark - 阴影
 - (void)shadow {
     
-    _layer.shadowColor = kRedColor.CGColor;//阴影颜色
-    _layer.shadowOpacity = 0.5f; //颜色透明度
-    _layer.shadowRadius = 5; // 阴影宽度;设置虚化范围程度
-    _layer.shadowOffset = CGSizeMake(0, 5); //不露出上边的阴影，左右下露出
+    self.layer.shadowColor = kRedColor.CGColor;//阴影颜色
+    self.layer.shadowOpacity = 0.5f; //颜色透明度
+    self.layer.shadowRadius = 5; // 阴影宽度;设置虚化范围程度
+    self.layer.shadowOffset = CGSizeMake(0, 5); //不露出上边的阴影，左右下露出
     
     UIBezierPath *path = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 100, 80)];
-    _layer.shadowPath = [path CGPath];
-    _layer.shadowPath = [UIBezierPath bezierPathWithRect:_layer.bounds].CGPath;
-    _layer.masksToBounds = YES;
+    self.layer.shadowPath = [path CGPath];
+    self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.layer.bounds].CGPath;
+    self.layer.masksToBounds = YES;
 }
 
 #pragma mark - 圆角
 - (void)corner {
-    _layer.cornerRadius = 50;
+//    self.layer.cornerRadius = 50;
     
     //    因为UIImageView的Image并不是直接添加在层上面的，而是添加在layer中的contents里。UIImageView中是UIView的主layer上添加了一个次layer（用来绘制contents），我们设置边框的是主layer，但是次layer在上变，不会有任何的影响，所以当我们调用切割语句的时候，超出边框意外的都被切割了！！.
     // //    我们设置层的所有属性它只作用在层上面，对contents里面的东西并不起作用，所以如果我们不进行裁剪，我们是看不到图片的圆角效果的。想要让图片有圆角的效果，就必须把masksToBounds这个属性设为YES，当设为YES，把就会把超过根层以外的东西都给裁剪掉。
 
-    _layer.masksToBounds = YES;
+//    self.layer.masksToBounds = YES;
+    
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = kThemeColor;
+    view.layer.backgroundColor = kThemeColor.CGColor;
+    view.layer.contents = (id)[UIImage imageNamed:kRandomSmallImage].CGImage;
+    view.layer.cornerRadius = 10;
+    [self.view addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.view);
+        make.size.mas_equalTo(50);
+        make.leading.equalTo(self.view).offset(10);
+    }];
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.text = kRandomShortText;
+
+    // 给UILabel设置圆角的关键代码：将label的layer层设置成有颜色
+    label.layer.backgroundColor = kThemeColor.CGColor;
+    label.layer.cornerRadius = 10;
+    [self.view addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(view);
+        make.leading.equalTo(view.mas_trailing).offset(10);
+    }];
+    
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.backgroundColor = kThemeColor;
+    imageView.layer.cornerRadius = 10;
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.image = [UIImage imageNamed:kRandomSmallImage];
+    [self.view addSubview:imageView];
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(view);
+        make.leading.equalTo(label.mas_trailing).offset(10);
+    }];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [button setTitle:@"button" forState:UIControlStateNormal];
+    button.layer.cornerRadius = 10;
+    button.backgroundColor = kThemeColor;
+    [button setImage:[UIImage imageNamed:kRandomSmallImage] forState:UIControlStateNormal];
+    [self.view addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(view);
+        make.size.mas_equalTo(80);
+        make.leading.equalTo(imageView.mas_trailing).offset(10);
+    }];
+}
+
+#pragma mark - alpha
+- (void)alpha {
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = kThemeColor;
+    view.layer.allowsGroupOpacity = NO;
+    view.alpha = 0.5;
+    [self.view addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.size.mas_equalTo(200);
+    }];
+    
+    UIView *view1 = [[UIView alloc] init];
+    view1.backgroundColor = kExplicitColor;
+    view1.alpha = 1;
+    view1.opaque = YES;
+    [view addSubview:view1];
+    [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(view);
+        make.size.mas_equalTo(100);
+    }];
 }
 
 #pragma mark - anchorPoint
 - (void)anchorPoint {
+    
     CALayer *layer = [CALayer layer];
     //设置尺寸和位置
     layer.frame = CGRectMake(50, 50, 100, 100);
@@ -119,47 +210,59 @@
 //    //下面两行代码就是设置views的 右下角 坐标（200，200）
 //    _views.layer.position = CGPointMake(200, 200);
 //    _views.layer.anchorPoint = CGPointMake(1, 1);
-    
 }
 
 #pragma mark - mask
 - (void)mask {
-    
+
+    self.view.backgroundColor = kExplicitColor;
     UIImage *maskImage = [UIImage imageNamed:@"chatMessageBkg"];
     
     //mask的坐标系是根据对象view的
-    //第一种 maskLayer
+    
+    // 使用CALayer作为mask
     CALayer *maskLayer = [CALayer layer];
-    maskLayer.frame = self.testView.bounds;
+    maskLayer.frame = CGRectMake(0, 0, 100, 100);
+    maskLayer.position = CGPointMake(kScreenWidth/2, kScreenHeight/2);
     maskLayer.contents = (__bridge id)maskImage.CGImage;
-    //maskLayer.backgroundColor = kWhiteColor.CGColor;//如果mask的背景色为非clearcolor 会完全展现。
-    self.testView.layer.mask = maskLayer;
+    // maskLayer.backgroundColor = kWhiteColor.CGColor;//如果mask的背景色为非clearcolor 会完全展现。
+    //_imageView.layer.mask = maskLayer;
     
-    //第二种 maskView
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:self.testView.bounds];
-    imageView.frame = CGRectMake(20, 20, 50, 50);
-    imageView.image = maskImage;
-    self.testView.maskView = imageView;
+    // 使用UIView作为mask
+    UIImageView *maskView = [[UIImageView alloc] init];
+    maskView.frame = CGRectMake(0, 0, 100, 100);
+    maskView.center = CGPointMake(kScreenWidth/2, kScreenHeight/2);
+    maskView.image = maskImage;
+    // _imageView.maskView = maskView;
     
-    UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.view.bounds];
-    
-    /*
-     关键代码：
-     两条路径（UIBezierPath）叠加，内嵌的路径调用bezierPathByReversingPath方法达到反转镂空的效果。相应的，如果我们改变内嵌路径所绘制的形状和位置，我们就可以得到不同的镂空形状的效果，这为适配不同屏幕尺寸引导中的镂空效果提供了很大的方便。
-     */
-    [path appendPath:[[UIBezierPath bezierPathWithRoundedRect:CGRectMake(kScreenWidth/2-50, kScreenHeight/2, 100, 50) cornerRadius:5] bezierPathByReversingPath]];
-    
-    // 构造e了一个镂空的layer
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+    shapeLayer.position = CGPointMake(kScreenWidth/2, kScreenHeight/2);
     shapeLayer.fillColor = kGreenColor.CGColor;
     shapeLayer.strokeColor = kBlueColor.CGColor;
+//    shapeLayer.backgroundColor = kLightGrayColor.CGColor;
     shapeLayer.lineWidth = 1;
-    shapeLayer.path = path.CGPath;
     
-    // 当shapeLayer的部分有颜色时，才能看到maskView；关键点是：没有颜色（透明）时看不到maskView，但是能看到maskView.layer的前一个
-    [self.testView.layer setMask:shapeLayer];
+    // 构造了一个镂空的layer
+    UIBezierPath *outPath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    UIBezierPath *inPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(kScreenWidth/2, kScreenHeight/2, 100, 100) cornerRadius:5];
+    [outPath appendPath:[inPath bezierPathByReversingPath]];//内嵌路径反转绘制
+    shapeLayer.path = outPath.CGPath;
+
+
+    self.view.layer.contents = (__bridge id)[UIImage imageNamed:@"module_landscape3"].CGImage;
+
+    UIView *alphaView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    alphaView.backgroundColor = kBlackColor;
+    alphaView.alpha = 0.6;
+    [self.view addSubview:alphaView];
     
-    //[maskView.layer addSublayer:shapeLayer];
+    //mask：相当于将maskLayer添加到父layer上，然后将该父layer按照mask的有效内容区域（图片或者背景色）进行裁剪。
+    // 在有效内容区域范围内，看到的是父layer上的内容。
+    alphaView.layer.mask = shapeLayer;
+
+    // 可以通过下面这个查看shapeLayer的位置及大小
+//    [self.view.layer addSublayer:shapeLayer];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,9 +7,13 @@
 //
 
 #import "BPAlignmentRectInsetsView.h"
+
 @interface BPAlignmentRectInsetsView()
+
 @property (strong, nonatomic) NSArray *array;
+
 @end
+
 
 @implementation BPAlignmentRectInsetsView
 

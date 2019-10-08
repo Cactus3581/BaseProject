@@ -11,19 +11,43 @@
 #define widthBt [UIScreen mainScreen].bounds.size.width/5.0
 #define heightBt 30.0
 
+
 @interface BPGradientLayerViewController ()
+
 @property (nonatomic,strong) CAGradientLayer *gradientLayer;
 @property (nonatomic,strong) CALayer *test_layer;
+
 @end
+
 
 @implementation BPGradientLayerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // 渐变色
-    [self creatgradientLayer];//颜色渐变-滑动解锁
-    [self creatgradientLayer_two];//png渐变
-    [self creatgradientLayer_three];//png覆盖图层
+    [self handleDynamicJumpData];
+}
+
+- (void)handleDynamicJumpData {
+    if (self.needDynamicJump) {
+        NSInteger type = [self.dynamicJumpDict[@"type"] integerValue];
+        switch (type) {
+                
+            case 0: {
+                [self creatgradientLayer];//颜色渐变-滑动解锁
+            }
+                break;
+
+            case 1: {
+                [self creatgradientLayer_two];//png渐变
+            }
+                break;
+
+            case 2: {
+                [self creatgradientLayer_three];//png覆盖图层
+            }
+                break;
+        }
+    }
 }
 
 #pragma mark - 创建gradientLayer 颜色渐变-滑动解锁

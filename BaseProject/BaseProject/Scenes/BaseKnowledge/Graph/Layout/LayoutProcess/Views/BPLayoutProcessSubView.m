@@ -60,6 +60,11 @@
 // 动画
 - (IBAction)buttonAction:(id)sender {
     
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    
+    return;
+    
     self.buttonLeadingConstraint.constant = 100;
     
     // 通知需要更新约束，但是不立即执行

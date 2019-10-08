@@ -1690,6 +1690,22 @@
 							</dict>
 							<dict>
 								<key>title</key>
+								<string>imageView的自定义绘制</string>
+								<key>fileName</key>
+								<string>BPDrawViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>label的自定义绘制</string>
+								<key>fileName</key>
+								<string>BPDrawViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
 								<string>取色器</string>
 								<key>fileName</key>
 								<string>BPDrawViewController</string>
@@ -1700,15 +1716,7 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>异步绘制（包括图片和文字绘制）</string>
-						<key>fileName</key>
-						<string>BPAsyncDrawViewController</string>
-						<key>briefIntro</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>title</key>
-						<string>图片解码/绘制（CoreImage）</string>
+						<string>图片绘制（CoreImage）</string>
 						<key>fileName</key>
 						<string>BPCoreImageViewController</string>
 						<key>briefIntro</key>
@@ -1719,6 +1727,14 @@
 						<string>文本绘制（CoreText）</string>
 						<key>fileName</key>
 						<string>BPCoreTextViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>重绘（CADisplayLink）</string>
+						<key>fileName</key>
+						<string>BPReDrawWithCADisplayLinkViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -1763,7 +1779,7 @@
 										<key>title</key>
 										<string>阴影</string>
 										<key>fileName</key>
-										<string>BPLayerTransformController</string>
+										<string>BPLayerPropertyViewController</string>
 										<key>briefIntro</key>
 										<string></string>
 									</dict>
@@ -1771,7 +1787,7 @@
 										<key>title</key>
 										<string>圆角</string>
 										<key>fileName</key>
-										<string>BPViewTransformController</string>
+										<string>BPLayerPropertyViewController</string>
 										<key>briefIntro</key>
 										<string></string>
 									</dict>
@@ -1779,7 +1795,7 @@
 										<key>title</key>
 										<string>锚点</string>
 										<key>fileName</key>
-										<string>BPBezierPathViewController</string>
+										<string>BPLayerPropertyViewController</string>
 										<key>briefIntro</key>
 										<string></string>
 									</dict>
@@ -1787,7 +1803,15 @@
 										<key>title</key>
 										<string>mask遮罩</string>
 										<key>fileName</key>
-										<string>BPBezierPathViewController</string>
+										<string>BPLayerPropertyViewController</string>
+										<key>briefIntro</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>title</key>
+										<string>alpha</string>
+										<key>fileName</key>
+										<string>BPLayerPropertyViewController</string>
 										<key>briefIntro</key>
 										<string></string>
 									</dict>
@@ -1823,23 +1847,144 @@
 						<key>title</key>
 						<string>CAShapeLayer</string>
 						<key>fileName</key>
-						<string>BPShapeLayerViewController</string>
+						<string>BPListViewController</string>
 						<key>briefIntro</key>
 						<string></string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>CAShapeLayer自身frame 与path frame</string>
+								<key>fileName</key>
+								<string>BPShapeLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>CAShapeLayer独有的可动画属性</string>
+								<key>fileName</key>
+								<string>BPShapeLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>loading动画 一</string>
+								<key>fileName</key>
+								<string>BPShapeLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>loading动画 二</string>
+								<key>fileName</key>
+								<string>BPShapeLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>loading动画 三</string>
+								<key>fileName</key>
+								<string>BPShapeLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+						</array>
 					</dict>
 					<dict>
 						<key>title</key>
 						<string>CAReplicatorLayer</string>
 						<key>fileName</key>
-						<string>BPReplicatorLayerViewController</string>
+						<string>BPListViewController</string>
 						<key>briefIntro</key>
 						<string></string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>CAShapeLayer自身frame 与path frame</string>
+								<key>fileName</key>
+								<string>BPReplicatorLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>CAShapeLayer独有的可动画属性</string>
+								<key>fileName</key>
+								<string>BPReplicatorLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>loading动画 一</string>
+								<key>fileName</key>
+								<string>BPReplicatorLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>loading动画 一</string>
+								<key>fileName</key>
+								<string>BPReplicatorLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>loading动画 一</string>
+								<key>fileName</key>
+								<string>BPReplicatorLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+						</array>
 					</dict>
 					<dict>
 						<key>title</key>
 						<string>CAGradientLayer</string>
 						<key>fileName</key>
-						<string>BPGradientLayerViewController</string>
+						<string>BPListViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>subVc_array</key>
+						<array>
+							<dict>
+								<key>title</key>
+								<string>CAShapeLayer自身frame 与path frame</string>
+								<key>fileName</key>
+								<string>BPGradientLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>CAShapeLayer独有的可动画属性</string>
+								<key>fileName</key>
+								<string>BPGradientLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>title</key>
+								<string>loading动画 一</string>
+								<key>fileName</key>
+								<string>BPGradientLayerViewController</string>
+								<key>briefIntro</key>
+								<string></string>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>CATextLayer</string>
+						<key>fileName</key>
+						<string>BPTextLayerViewController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
@@ -2966,15 +3111,15 @@
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>CustomLayoutCollectionView</string>
+						<string>UICollectionViewLayout</string>
 						<key>fileName</key>
-						<string></string>
+						<string>BPCollectionViewLayoutController</string>
 						<key>briefIntro</key>
 						<string></string>
 					</dict>
 					<dict>
 						<key>title</key>
-						<string>Tag</string>
+						<string>UICollectionViewFlowLayout</string>
 						<key>fileName</key>
 						<string>BPTagCollectionViewController</string>
 						<key>briefIntro</key>
@@ -3003,14 +3148,6 @@
 				<string>UIButton</string>
 				<key>fileName</key>
 				<string>BPButtonViewController</string>
-				<key>briefIntro</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>title</key>
-				<string>UIImage</string>
-				<key>fileName</key>
-				<string>BPImageController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -3542,9 +3679,173 @@
 		<key>title</key>
 		<string>算法</string>
 		<key>fileName</key>
-		<string>BPAlgorithmController</string>
+		<string>BPListViewController</string>
 		<key>briefIntro</key>
 		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>排序算法</string>
+				<key>fileName</key>
+				<string>BPListViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>冒泡排序</string>
+						<key>fileName</key>
+						<string>BPAlgorithmSortController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>选择排序</string>
+						<key>fileName</key>
+						<string></string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>插入排序</string>
+						<key>fileName</key>
+						<string>BPAlgorithmSortController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>归并排序</string>
+						<key>fileName</key>
+						<string>BPAlgorithmSortController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>快速排序</string>
+						<key>fileName</key>
+						<string>BPAlgorithmSortController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>斐波那契</string>
+						<key>fileName</key>
+						<string>BPAlgorithmSortController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>查找算法</string>
+				<key>fileName</key>
+				<string>BPListViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>冒泡排序</string>
+						<key>fileName</key>
+						<string>BPAlgorithmSortController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>选择排序</string>
+						<key>fileName</key>
+						<string></string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>插入排序</string>
+						<key>fileName</key>
+						<string>BPAlgorithmSortController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>归并排序</string>
+						<key>fileName</key>
+						<string>BPAlgorithmSortController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>快速排序</string>
+						<key>fileName</key>
+						<string>BPAlgorithmSortController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>字符串算法</string>
+				<key>fileName</key>
+				<string>BPListViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>冒泡排序</string>
+						<key>fileName</key>
+						<string>BPAlgorithmSortController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>选择排序</string>
+						<key>fileName</key>
+						<string></string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>插入排序</string>
+						<key>fileName</key>
+						<string>BPAlgorithmSortController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>归并排序</string>
+						<key>fileName</key>
+						<string>BPAlgorithmSortController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>快速排序</string>
+						<key>fileName</key>
+						<string>BPAlgorithmSortController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
+			</dict>
+		</array>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -3697,6 +3998,25 @@
 				<string>FMDB数据库</string>
 				<key>fileName</key>
 				<string>BPDatabaseViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>C语言</string>
+		<key>fileName</key>
+		<string>BPListViewController</string>
+		<key>briefIntro</key>
+		<string></string>
+		<key>subVc_array</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>指针</string>
+				<key>fileName</key>
+				<string>KSCPointViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>

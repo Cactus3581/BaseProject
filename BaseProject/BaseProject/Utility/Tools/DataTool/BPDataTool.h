@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
 static NSInteger second = 3600;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -247,6 +248,58 @@ static inline NSString * BPUrlStringParamDecode(NSString *url) {
     //NSString *decodedString = (__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,(__bridge CFStringRef)url,CFSTR(""),CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
     NSString *decodedString = (NSString *)CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapes(kCFAllocatorDefault, (CFStringRef) url,NULL));
     return decodedString;
+}
+
+#pragma mark - 随机数据
+
+#ifndef kRandomShortText
+#define kRandomShortText XRandomText(NO)
+#endif
+
+#ifndef kRandomLengthText
+#define kRandomLengthText XRandomText(YES)
+#endif
+
+#ifndef kRandomSmallImage
+#define kRandomSmallImage XRandomImage(NO)
+#endif
+
+#ifndef kRandomLargeImage
+#define kRandomLargeImage XRandomImage(YES)
+#endif
+
+static inline NSString * XRandomText(BOOL length) {
+
+    NSArray *texts = nil;
+    
+    if (length) {
+        texts = @[@"白日依山尽",@"黄河入海流",@"欲穷千里目",@"更上一层楼"];
+    } else {
+        texts = @[
+                  @"ryan"
+                  ];
+    }
+    NSInteger random = kRandomNumber(0, texts.count-1);
+    return texts[random];
+}
+
+static inline NSString * XRandomImage(BOOL large) {
+    
+    NSArray *images = nil;
+    
+    if (large) {
+        images = @[
+                @"module_landscape1",@"module_landscape2",@"module_landscape3",@"module_landscape4",@"module_landscape5",@"module_landscape6"
+                ];
+    } else {
+        images = @[
+                   @"cactus_rect_steady",
+//                   @"cactus_round_steady"
+                   ];
+    }
+
+    NSInteger random = kRandomNumber(0, images.count-1);
+    return images[random];
 }
 
 NS_ASSUME_NONNULL_END

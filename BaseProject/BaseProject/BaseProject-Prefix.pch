@@ -10,12 +10,15 @@
 #define BaseProject_Prefix_pch
 
 #ifdef __OBJC__ //只被object－c文件所引用
+
 #import "BPUtilConstant.h"
 #import "BPAppMacro.h"
 #import "BPAppTool.h"
 #import "Masonry.h"
 #import "BPUtilityCategory.h"
+
 #endif
 
+#include "BPCUtility.h"
 
 #endif /* BaseProject_Prefix_pch */
