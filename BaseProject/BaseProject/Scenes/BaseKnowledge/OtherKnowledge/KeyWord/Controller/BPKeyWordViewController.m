@@ -37,12 +37,33 @@ static const NSString *static_const_str2 = @"static_const_str2";//一般不这�
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self handleDynamicJumpData];
+}
+
+- (void)handleDynamicJumpData {
+    if (self.needDynamicJump) {
+        NSInteger type = [self.dynamicJumpDict[@"type"] integerValue];
+        switch (type) {
+            case 0:{
+                [self testStatic];
+            }
+                break;
+                
+            case 1:{
+                [self testInstancetype];
+            }
+                break;
+        }
+    }
+}
+
+- (void)testStatic {
     BPLog(@"%@,%@,%@,%@,%@,%@",str,static_str1,const_Str1,const_Str2,static_const_str1,static_const_str2);
-    [self test1];
+    [self test];
     BPLog(@"%@,%@,%@,%@,%@,%@",str,static_str1,const_Str1,const_Str2,static_const_str1,static_const_str2);
 }
 
-- (void)test1 {
+- (void)test {
     str = @"1";
     static_str1 = @"2";
     const_Str1 = @"3";
@@ -52,11 +73,14 @@ static const NSString *static_const_str2 = @"static_const_str2";//一般不这�
     BPLog(@"%@,%@,%@,%@,%@,%@",str,static_str1,const_Str1,const_Str2,static_const_str1,static_const_str2);
 }
 
-- (void)test2 {
+- (void)testInstancetype {
     id model1 = [[BPKeyWordModel alloc] initModel1];
-     id model2 = [[BPKeyWordModel alloc] initModel2];
-    [model1 test1];
-    [model2 test1];
+    id model2 = [[BPKeyWordModel alloc] initModel2];
+    [model1 test];
+    [model2 test];
+    
+//    [model1 test1];
+//    [model2 test1];
 }
 
 @end

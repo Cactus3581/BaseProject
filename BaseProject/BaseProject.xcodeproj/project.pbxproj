@@ -4718,8 +4718,8 @@
 		01414E11235ADC8A0041743A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				01414E12235ADC8A0041743A /* BPKeyWordViewController.m */,
 				01414E13235ADC8A0041743A /* BPKeyWordViewController.h */,
+				01414E12235ADC8A0041743A /* BPKeyWordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
