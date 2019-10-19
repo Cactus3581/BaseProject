@@ -2,7 +2,7 @@
 //  UIView+BPSafeArea.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/12/6.
+//  Created by Ryan on 2017/12/6.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 

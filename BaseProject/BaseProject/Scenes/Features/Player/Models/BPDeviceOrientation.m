@@ -2,7 +2,7 @@
 //  BPDeviceOrientation.m
 //  WPSExcellentClass
 //
-//  Created by xiaruzhen on 2018/10/21.
+//  Created by Ryan on 2018/10/21.
 //  Copyright © 2018 Kingsoft. All rights reserved.
 //
 

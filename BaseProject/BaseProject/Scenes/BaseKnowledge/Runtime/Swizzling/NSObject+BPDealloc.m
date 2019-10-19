@@ -2,7 +2,7 @@
 //  NSObject+BPDealloc.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2019/7/2.
+//  Created by Ryan on 2019/7/2.
 //  Copyright © 2019 cactus. All rights reserved.
 //
 

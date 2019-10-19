@@ -2,7 +2,7 @@
 //  BPGradualAnimationButton.h
 //  WPSExcellentClass
 //
-//  Created by xiaruzhen on 2018/12/13.
+//  Created by Ryan on 2018/12/13.
 //  Copyright © 2018 Kingsoft. All rights reserved.
 //
 

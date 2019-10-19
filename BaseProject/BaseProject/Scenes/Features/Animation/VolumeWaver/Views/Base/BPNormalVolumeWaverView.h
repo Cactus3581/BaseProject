@@ -2,7 +2,7 @@
 //  BPNormalVolumeWaverView.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 2018/2/3.
+//  Created by Ryan on 2018/2/3.
 //  Copyright © 2018年 cactus. All rights reserved.
 //
 

@@ -2,8 +2,8 @@
 //  BPSliderShowView.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2018/1/10.
-//  Copyright © 2018年 xiaruzhen. All rights reserved.
+//  Created by Ryan on 2018/1/10.
+//  Copyright © 2018年 Ryan. All rights reserved.
 //
 
 #import "BPSliderShowView.h"

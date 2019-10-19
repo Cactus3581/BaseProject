@@ -2,8 +2,8 @@
 //  BPLayerTransformController.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/1/12.
-//  Copyright © 2017年 xiaruzhen. All rights reserved.
+//  Created by Ryan on 2017/1/12.
+//  Copyright © 2017年 Ryan. All rights reserved.
 //
 
 #import "BPLayerTransformController.h"

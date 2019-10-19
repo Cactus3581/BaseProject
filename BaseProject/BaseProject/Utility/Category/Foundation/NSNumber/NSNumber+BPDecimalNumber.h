@@ -2,7 +2,7 @@
 //  NSNumber+BPDecimalNumber.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/11/8.
+//  Created by Ryan on 2017/11/8.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 

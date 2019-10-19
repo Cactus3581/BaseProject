@@ -2,7 +2,7 @@
 //  BPCycleCollectionViewCell.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 2018/10/19.
+//  Created by Ryan on 2018/10/19.
 //  Copyright © 2018 cactus. All rights reserved.
 //
 

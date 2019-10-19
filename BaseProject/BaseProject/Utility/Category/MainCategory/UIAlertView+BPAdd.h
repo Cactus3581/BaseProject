@@ -2,7 +2,7 @@
 //  UIAlertView+BPAdd.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 16/3/21.
+//  Created by Ryan on 16/3/21.
 //  Copyright © 2016年 cactus. All rights reserved.
 //
 

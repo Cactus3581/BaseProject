@@ -2,7 +2,7 @@
 //  UIImage+BPAdd.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 15/12/29.
+//  Created by Ryan on 15/12/29.
 //  Copyright © 2016年 cactus. All rights reserved.
 //
 

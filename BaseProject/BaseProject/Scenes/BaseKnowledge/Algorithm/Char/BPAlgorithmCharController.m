@@ -2,7 +2,7 @@
 //  BPAlgorithmCharController.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2019/9/19.
+//  Created by Ryan on 2019/9/19.
 //  Copyright © 2019 cactus. All rights reserved.
 //
 
@@ -23,7 +23,7 @@
 - (void)reverseSentence {
     char originalStr[] = "the sky is blue";
     char p[] = "the sky is blue";
-    char q[] = "xiaruzhen";
+    char q[] = "Ryan";
     getStr(p,q);
     
     //    char *reversedStr = ReverseSentence(originalStr);

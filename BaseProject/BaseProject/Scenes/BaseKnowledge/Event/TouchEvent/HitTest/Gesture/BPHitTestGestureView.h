@@ -2,7 +2,7 @@
 //  BPHitTestGestureView.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 2019/7/6.
+//  Created by Ryan on 2019/7/6.
 //  Copyright © 2019 cactus. All rights reserved.
 //
 

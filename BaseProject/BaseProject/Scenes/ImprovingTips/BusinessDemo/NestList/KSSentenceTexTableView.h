@@ -2,7 +2,7 @@
 //  KSSentenceTexTableView.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 2019/4/30.
+//  Created by Ryan on 2019/4/30.
 //  Copyright © 2019 cactus. All rights reserved.
 //
 

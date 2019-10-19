@@ -2,7 +2,7 @@
 //  BPPaddingLabel.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/12/4.
+//  Created by Ryan on 2017/12/4.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 

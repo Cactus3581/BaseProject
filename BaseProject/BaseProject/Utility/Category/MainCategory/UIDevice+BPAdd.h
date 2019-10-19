@@ -2,7 +2,7 @@
 //  UIDevice+BPAdd.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 16/2/25.
+//  Created by Ryan on 16/2/25.
 //  Copyright © 2016年 cactus. All rights reserved.
 //
 

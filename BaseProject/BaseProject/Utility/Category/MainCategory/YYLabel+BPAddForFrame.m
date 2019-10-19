@@ -2,7 +2,7 @@
 //  YYLabel+BPAddForFrame.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 16/6/7.
+//  Created by Ryan on 16/6/7.
 //  Copyright © 2016年 cactus. All rights reserved.
 //
 #import "YYLabel+BPAddForFrame.h"

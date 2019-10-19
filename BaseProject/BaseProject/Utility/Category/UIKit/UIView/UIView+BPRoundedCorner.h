@@ -2,7 +2,7 @@
 //  UIView+BPRoundedCorner.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/12/12.
+//  Created by Ryan on 2017/12/12.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 

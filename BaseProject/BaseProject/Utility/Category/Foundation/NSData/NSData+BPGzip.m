@@ -2,7 +2,7 @@
 //  NSData+BPGzip.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/12/10.
+//  Created by Ryan on 2017/12/10.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 #import "NSData+BPGzip.h"

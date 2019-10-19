@@ -2,7 +2,7 @@
 //  BPMediaDataSourceManager.m
 //  PowerWord7
 //
-//  Created by xiaruzhen on 2017/9/6.
+//  Created by Ryan on 2017/9/6.
 //  Copyright © 2017年 Kingsoft. All rights reserved.
 //
 

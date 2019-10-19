@@ -2,7 +2,7 @@
 //  UIActivityIndicatorView+BPAdd.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 15/12/23.
+//  Created by Ryan on 15/12/23.
 //  Copyright © 2016年 cactus. All rights reserved.
 //
 

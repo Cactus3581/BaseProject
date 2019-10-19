@@ -2,7 +2,7 @@
 //  BPDrawRectLabel.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2019/9/9.
+//  Created by Ryan on 2019/9/9.
 //  Copyright © 2019 cactus. All rights reserved.
 //
 

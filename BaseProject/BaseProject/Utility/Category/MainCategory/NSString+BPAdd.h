@@ -2,7 +2,7 @@
 //  NSString+BPAdd.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 16/1/27.
+//  Created by Ryan on 16/1/27.
 //  Copyright © 2016年 cactus. All rights reserved.
 //
 

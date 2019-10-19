@@ -2,7 +2,7 @@
 //  BPReDrawWithCADisplayLinkViewController.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2019/9/16.
+//  Created by Ryan on 2019/9/16.
 //  Copyright © 2019 cactus. All rights reserved.
 //
 

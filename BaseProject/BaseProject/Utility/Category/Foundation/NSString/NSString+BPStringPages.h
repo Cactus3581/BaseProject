@@ -2,7 +2,7 @@
 //  NSString+BPStringPages.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/12/10.
+//  Created by Ryan on 2017/12/10.
 //  Copyright © 2017年 cactus. All rights reserved.
 //
 // BPStringPages是一款解决长字符串分页的功能。功能特性如下：1、分页比较准确 2、根据CGRect来计算页数 3、利用多线程加载和分页

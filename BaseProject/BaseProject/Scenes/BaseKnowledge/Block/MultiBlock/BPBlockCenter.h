@@ -2,7 +2,7 @@
 //  BPBlockCenter.h
 //  BaseProject
 //
-//  Created by xiaruzhen on 2019/7/28.
+//  Created by Ryan on 2019/7/28.
 //  Copyright © 2019 cactus. All rights reserved.
 //
 

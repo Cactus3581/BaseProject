@@ -2,7 +2,7 @@
 //  KSLaunchAdsHelper.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2019/4/27.
+//  Created by Ryan on 2019/4/27.
 //  Copyright © 2019 cactus. All rights reserved.
 //
 

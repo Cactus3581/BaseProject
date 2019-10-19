@@ -2,8 +2,8 @@
 //  CountryDBTools.m
 //  BaseProject
 //
-//  Created by xiaruzhen on 2017/5/17.
-//  Copyright © 2017年 xiaruzhen. All rights reserved.
+//  Created by Ryan on 2017/5/17.
+//  Copyright © 2017年 Ryan. All rights reserved.
 //
 
 #import "CountryDBTools.h"
