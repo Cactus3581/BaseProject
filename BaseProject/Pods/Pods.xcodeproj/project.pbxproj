@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -85,7 +85,7 @@
 		297F5BF7A2AB572780A18C939EE7DB73 /* UIViewController+MemoryLeak.m in Sources */ = {isa = PBXBuildFile; fileRef = 019D39474BE9F15A733E1B8F5C6AA25D /* UIViewController+MemoryLeak.m */; };
 		29CB6C57F22C1117304AB284C950F033 /* YYTextArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = A1903DB71EF9BED622ABED2173BCD219 /* YYTextArchiver.m */; };
 		2A49B031500CC5B0E4DA1D4D4FC1ED81 /* YYWebImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E40C8EEA2A9751DC9B35B867F1059342 /* YYWebImageManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2A61B1EA8DEEC8E2B23AF3E8F779A05B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30330AEFC2C6621B857E6B77360885AF /* AssetsLibrary.framework */; };
+		2A61B1EA8DEEC8E2B23AF3E8F779A05B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30330AEFC2C6621B857E6B77360885AF /* AssetsLibrary.framework */; platformFilter = ios; };
 		2A6EEFDF3EE2BBBF63F6063C3F6747A1 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 23E6F14B71E39B74FF9A67FA462925A4 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2A9C39E7429B919CEFB22D38FB23B981 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 489CDB2E82FE6A8DEC13D8FCD5694EE6 /* CoreFoundation.framework */; };
 		2AB199715E4AFC805E8C6C6E34912611 /* FMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B131B49C7453FB0AF42F0F401DA0F8B /* FMDB-dummy.m */; };
@@ -341,7 +341,7 @@
 		AF91D183E594F08C70E47820E0A5F0F3 /* UINavigationController+MemoryLeak.h in Headers */ = {isa = PBXBuildFile; fileRef = FE91EF6C2DE442958DD0EA85E0A0D1F5 /* UINavigationController+MemoryLeak.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B2E1FBF882362EBEFD70D3E56A845422 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E78B481796459D6762B4933778B1278 /* fishhook.c */; };
 		B30CA0A041BB4FBF8F4B29B54654E57F /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FDC74A9E70B88D06BA39F2C2B631D3 /* AFImageDownloader.m */; };
-		B38963E21BC4C0204AC993CDEF081ED1 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30330AEFC2C6621B857E6B77360885AF /* AssetsLibrary.framework */; };
+		B38963E21BC4C0204AC993CDEF081ED1 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30330AEFC2C6621B857E6B77360885AF /* AssetsLibrary.framework */; platformFilter = ios; };
 		B3A9C29093729437FDCE020801BB5337 /* FBStandardGraphEdgeFilters.h in Headers */ = {isa = PBXBuildFile; fileRef = AC520EEDB351D9FD0507446EF47A9016 /* FBStandardGraphEdgeFilters.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B3AD48F6C7D943D80C3D4F6046354296 /* NSParagraphStyle+YYText.h in Headers */ = {isa = PBXBuildFile; fileRef = 84A35661E48042C258B20751ED60F001 /* NSParagraphStyle+YYText.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B4BEBC36B586556BFDEDDB9F6D669239 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E46C0CEF4CE0169D7D1EA39B98163F /* Masonry.h */; settings = {ATTRIBUTES = (Project, ); }; };

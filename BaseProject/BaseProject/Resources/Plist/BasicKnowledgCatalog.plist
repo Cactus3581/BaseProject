@@ -2655,11 +2655,30 @@
 		<array>
 			<dict>
 				<key>title</key>
-				<string>Static &amp; Const</string>
+				<string>关键字</string>
 				<key>fileName</key>
-				<string>BPStaticConstViewController</string>
+				<string>BPListViewController</string>
 				<key>briefIntro</key>
 				<string></string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>Static &amp; Const</string>
+						<key>fileName</key>
+						<string>BPKeyWordViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>instancetype &amp; id </string>
+						<key>fileName</key>
+						<string>BPListViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 			<dict>
 				<key>title</key>

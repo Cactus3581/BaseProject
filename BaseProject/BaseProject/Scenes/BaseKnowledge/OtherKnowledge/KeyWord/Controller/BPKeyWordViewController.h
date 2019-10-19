@@ -1,5 +1,5 @@
 //
-//  BPStaticConstViewController.h
+//  BPKeyWordViewController.h
 //  BaseProject
 //
 //  Created by xiaruzhen on 2017/3/17.
@@ -8,6 +8,7 @@
 
 #import "BPBaseViewController.h"
 
-@interface BPStaticConstViewController : BPBaseViewController
+@interface BPKeyWordViewController : BPBaseViewController
+
 
 @end

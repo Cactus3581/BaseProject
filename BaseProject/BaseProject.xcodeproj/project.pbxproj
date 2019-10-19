@@ -273,6 +273,7 @@
 		013ED93320C7DE0400A83E7F /* BPIncludeTableSelfSizeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 013ED92020C7DE0300A83E7F /* BPIncludeTableSelfSizeHeaderView.m */; };
 		013ED93720C7DE0400A83E7F /* BPIncludeTableSelfSizeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 013ED92C20C7DE0400A83E7F /* BPIncludeTableSelfSizeController.m */; };
 		0140A13820DBDBA700EF35E4 /* BPImagetUrlHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0140A13720DBDBA700EF35E4 /* BPImagetUrlHelper.m */; };
+		01414E14235ADC8A0041743A /* BPKeyWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01414E12235ADC8A0041743A /* BPKeyWordViewController.m */; };
 		0143427121D21DCF00CEDCD1 /* BPNSValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143427021D21DCF00CEDCD1 /* BPNSValueViewController.m */; };
 		0143427521D21E7500CEDCD1 /* BPNSDecimalNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143427421D21E7500CEDCD1 /* BPNSDecimalNumberViewController.m */; };
 		0145D20222F1C34C003A0680 /* BPKVODependModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0145D20122F1C34C003A0680 /* BPKVODependModel.m */; };
@@ -444,7 +445,6 @@
 		01782ACD20D6950C0091939C /* BPScrollReusableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01782ACC20D6950C0091939C /* BPScrollReusableViewController.m */; };
 		017906B12000F63B00E5C360 /* BPPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017906B02000F63B00E5C360 /* BPPopViewController.m */; };
 		017906E120011C7E00E5C360 /* BPKVCModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 017906DF20011C7E00E5C360 /* BPKVCModel.m */; };
-		017906EF20011D1600E5C360 /* BPStaticConstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017906ED20011D1600E5C360 /* BPStaticConstViewController.m */; };
 		0179070420011D8100E5C360 /* BPNetRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0179070320011D8100E5C360 /* BPNetRequestViewController.m */; };
 		0179070D20011DC300E5C360 /* BPAboutCopyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0179070B20011DC200E5C360 /* BPAboutCopyViewController.m */; };
 		017907A42001249500E5C360 /* BPWaterWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 017907A22001249400E5C360 /* BPWaterWaveView.m */; };
@@ -580,6 +580,7 @@
 		01A597BB2085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A597BA2085E29D000C6237 /* BP3RDCellAutoLayoutHeightViewController.m */; };
 		01A6B65B22BBE49D00F316ED /* NSObject+BPDebugDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A6B65A22BBE49D00F316ED /* NSObject+BPDebugDescription.m */; };
 		01A6B65E22BBE4DC00F316ED /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A6B65D22BBE4DC00F316ED /* NSObject+DLIntrospection.m */; };
+		01AD09742357C4F100C13BE0 /* BPKeyWordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AD09732357C4F100C13BE0 /* BPKeyWordModel.m */; };
 		01ADDA4D22DED0180058ECFE /* BPDesignPatternsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01ADDA4B22DED0180058ECFE /* BPDesignPatternsViewController.m */; };
 		01ADDA4E22DED0180058ECFE /* BPDesignPatternsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01ADDA4C22DED0180058ECFE /* BPDesignPatternsViewController.xib */; };
 		01AEF6C3230C1A6700F017F5 /* BPSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEF6C2230C1A6700F017F5 /* BPSizeViewController.m */; };
@@ -930,6 +931,7 @@
 		01030DD4232E2DDD005686A0 /* BPCollectionViewLayoutController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPCollectionViewLayoutController.xib; sourceTree = "<group>"; };
 		01030DD8232E2E1C005686A0 /* BPCollectionViewLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCollectionViewLayout.h; sourceTree = "<group>"; };
 		01030DD9232E2E1C005686A0 /* BPCollectionViewLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCollectionViewLayout.m; sourceTree = "<group>"; };
+		0109C1D523568AA500EA1E6C /* BaseProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BaseProject.entitlements; sourceTree = "<group>"; };
 		010B06EE218DBF8E00F40294 /* BPFileManageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPFileManageViewController.h; sourceTree = "<group>"; };
 		010B06EF218DBF8E00F40294 /* BPFileManageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPFileManageViewController.m; sourceTree = "<group>"; };
 		010D0F6822126381003E8390 /* BPIsMemberOfClassModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPIsMemberOfClassModel.h; sourceTree = "<group>"; };
@@ -1420,6 +1422,8 @@
 		013ED92C20C7DE0400A83E7F /* BPIncludeTableSelfSizeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPIncludeTableSelfSizeController.m; sourceTree = "<group>"; };
 		0140A13620DBDBA700EF35E4 /* BPImagetUrlHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPImagetUrlHelper.h; sourceTree = "<group>"; };
 		0140A13720DBDBA700EF35E4 /* BPImagetUrlHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPImagetUrlHelper.m; sourceTree = "<group>"; };
+		01414E12235ADC8A0041743A /* BPKeyWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPKeyWordViewController.m; sourceTree = "<group>"; };
+		01414E13235ADC8A0041743A /* BPKeyWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPKeyWordViewController.h; sourceTree = "<group>"; };
 		0143426F21D21DCF00CEDCD1 /* BPNSValueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNSValueViewController.h; sourceTree = "<group>"; };
 		0143427021D21DCF00CEDCD1 /* BPNSValueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNSValueViewController.m; sourceTree = "<group>"; };
 		0143427321D21E7500CEDCD1 /* BPNSDecimalNumberViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPNSDecimalNumberViewController.h; sourceTree = "<group>"; };
@@ -1747,8 +1751,6 @@
 		017906B02000F63B00E5C360 /* BPPopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPPopViewController.m; sourceTree = "<group>"; };
 		017906DD20011C7E00E5C360 /* BPKVCModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPKVCModel.h; sourceTree = "<group>"; };
 		017906DF20011C7E00E5C360 /* BPKVCModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPKVCModel.m; sourceTree = "<group>"; };
-		017906ED20011D1600E5C360 /* BPStaticConstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPStaticConstViewController.m; sourceTree = "<group>"; };
-		017906EE20011D1600E5C360 /* BPStaticConstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPStaticConstViewController.h; sourceTree = "<group>"; };
 		0179070220011D8100E5C360 /* BPNetRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPNetRequestViewController.h; sourceTree = "<group>"; };
 		0179070320011D8100E5C360 /* BPNetRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPNetRequestViewController.m; sourceTree = "<group>"; };
 		0179070B20011DC200E5C360 /* BPAboutCopyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPAboutCopyViewController.m; sourceTree = "<group>"; };
@@ -2002,6 +2004,8 @@
 		01A6B65A22BBE49D00F316ED /* NSObject+BPDebugDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BPDebugDescription.m"; sourceTree = "<group>"; };
 		01A6B65C22BBE4DC00F316ED /* NSObject+DLIntrospection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DLIntrospection.h"; sourceTree = "<group>"; };
 		01A6B65D22BBE4DC00F316ED /* NSObject+DLIntrospection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DLIntrospection.m"; sourceTree = "<group>"; };
+		01AD09722357C4F000C13BE0 /* BPKeyWordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPKeyWordModel.h; sourceTree = "<group>"; };
+		01AD09732357C4F100C13BE0 /* BPKeyWordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPKeyWordModel.m; sourceTree = "<group>"; };
 		01ADDA4A22DED0180058ECFE /* BPDesignPatternsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDesignPatternsViewController.h; sourceTree = "<group>"; };
 		01ADDA4B22DED0180058ECFE /* BPDesignPatternsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPDesignPatternsViewController.m; sourceTree = "<group>"; };
 		01ADDA4C22DED0180058ECFE /* BPDesignPatternsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPDesignPatternsViewController.xib; sourceTree = "<group>"; };
@@ -4702,6 +4706,24 @@
 			path = Normal;
 			sourceTree = "<group>";
 		};
+		01414E0F235ADC670041743A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01AD09722357C4F000C13BE0 /* BPKeyWordModel.h */,
+				01AD09732357C4F100C13BE0 /* BPKeyWordModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		01414E11235ADC8A0041743A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				01414E12235ADC8A0041743A /* BPKeyWordViewController.m */,
+				01414E13235ADC8A0041743A /* BPKeyWordViewController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		0143427221D21E6400CEDCD1 /* NSDecimalNumber */ = {
 			isa = PBXGroup;
 			children = (
@@ -6168,6 +6190,7 @@
 		01733FCF1FA974FB006192F0 /* BaseProject */ = {
 			isa = PBXGroup;
 			children = (
+				0109C1D523568AA500EA1E6C /* BaseProject.entitlements */,
 				017340021FA9753F006192F0 /* Application */,
 				017340071FA9753F006192F0 /* BaseClass */,
 				01C935851FC3366A00D98FD6 /* General */,
@@ -6442,18 +6465,18 @@
 			isa = PBXGroup;
 			children = (
 				019DA7D821D1C18400E3AB16 /* GeneralProgramming */,
-				017906EC20011D1600E5C360 /* Modifier_Static&Const */,
+				017906EC20011D1600E5C360 /* KeyWord */,
 			);
 			path = OtherKnowledge;
 			sourceTree = "<group>";
 		};
-		017906EC20011D1600E5C360 /* Modifier_Static&Const */ = {
+		017906EC20011D1600E5C360 /* KeyWord */ = {
 			isa = PBXGroup;
 			children = (
-				017906EE20011D1600E5C360 /* BPStaticConstViewController.h */,
-				017906ED20011D1600E5C360 /* BPStaticConstViewController.m */,
+				01414E11235ADC8A0041743A /* Controller */,
+				01414E0F235ADC670041743A /* Model */,
 			);
-			path = "Modifier_Static&Const";
+			path = KeyWord;
 			sourceTree = "<group>";
 		};
 		017906F020011D4100E5C360 /* DataPersistence */ = {
@@ -10876,6 +10899,7 @@
 				0143427521D21E7500CEDCD1 /* BPNSDecimalNumberViewController.m in Sources */,
 				01D22BD31FDD814000BCC4AD /* UITableView+BPAdd.m in Sources */,
 				010DB7931FDD4D640099E66F /* UIView+BPConstraints.m in Sources */,
+				01414E14235ADC8A0041743A /* BPKeyWordViewController.m in Sources */,
 				010FBD2720601D9E00BC9EC4 /* BPPaletteViewController.m in Sources */,
 				010FBD1020601D6300BC9EC4 /* BPNSThreadViewController.m in Sources */,
 				012D948920344C7600691E40 /* BPPersonHealth.m in Sources */,
@@ -11167,6 +11191,7 @@
 				01DF31D21FDD3A9100B8A955 /* NSFileHandle+BPReadLine.m in Sources */,
 				018C44AF20093FD200CF43D7 /* BPSlideShowViewController.m in Sources */,
 				010DB70B1FDD4D450099E66F /* UILabel+BPAdjustableLabel.m in Sources */,
+				01AD09742357C4F100C13BE0 /* BPKeyWordModel.m in Sources */,
 				018DF00921F2D389001D334D /* BPSwizzlingChild.m in Sources */,
 				01DF31C21FDD3A9100B8A955 /* NSDictionary+BPBlock.m in Sources */,
 				01EC9C0821BA79D300477EB8 /* BPHeap.m in Sources */,
@@ -11311,7 +11336,6 @@
 				01E01327200CFEEB00374C53 /* BPPaletteTool.m in Sources */,
 				011E8D7B20B2F7AA00B04378 /* BPCalendarConst.m in Sources */,
 				011E8D9C20B2F7BA00B04378 /* BPPlanCalendarTableViewCell.m in Sources */,
-				017906EF20011D1600E5C360 /* BPStaticConstViewController.m in Sources */,
 				013ED93320C7DE0400A83E7F /* BPIncludeTableSelfSizeHeaderView.m in Sources */,
 				0154D0B82202DA2600819387 /* BPMediaDataSourceManager.m in Sources */,
 				010DB70F1FDD4D450099E66F /* UIImageView+BPReflect.m in Sources */,
@@ -11518,6 +11542,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_ENTITLEMENTS = BaseProject/BaseProject.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -11530,6 +11555,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cactus.BaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -11540,6 +11566,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_ENTITLEMENTS = BaseProject/BaseProject.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 599FJK8FBV;
@@ -11551,6 +11578,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cactus.BaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
