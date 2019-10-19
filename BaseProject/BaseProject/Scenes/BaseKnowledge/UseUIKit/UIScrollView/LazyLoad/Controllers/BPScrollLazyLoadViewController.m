@@ -10,6 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UIView+WebCache.h"
+#import <SDWebImage/SDWebImageDownloader.h>
 
 @interface GLImageCell : UITableViewCell
 @property (weak, nonatomic) UIImageView *photoView;
@@ -135,7 +136,7 @@
 
 - (void)setupCell:(GLImageCell *)cell withIndexPath:(NSIndexPath *)indexPath {
     static NSString *referer = @"http://image.baidu.com/i?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=index&fr=&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=cat&oq=cat&rsp=-1";
-    SDWebImageDownloader *downloader = [[SDWebImageManager sharedManager] imageDownloader];
+    SDWebImageDownloader *downloader = [SDWebImageDownloader sharedDownloader];
     [downloader setValue:referer forHTTPHeaderField:@"Referer"];
     
     NSDictionary *obj = [self objectForRow:indexPath.row];

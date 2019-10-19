@@ -1,25 +1,24 @@
-platform :ios, '8.0'
+platform :ios, '10.0'
 target 'BaseProject' do
 
     pod 'AFNetworking'
+    pod 'Reachability'
     pod 'SDWebImage'
     pod 'Masonry'
     pod 'FMDB'
     pod 'MJRefresh'
     pod 'MJExtension'
     pod 'SAMKeychain'
-    #pod 'ReactiveCocoa'
-
-    pod 'MLeaksFinder'
-    #pod 'FBRetainCycleDetector'
-    #pod 'FBMemoryProfiler'
-    pod 'Bugly'
-
-    pod 'Reachability'
 
     pod 'UITableView+FDTemplateLayoutCell'
     pod 'FDFullscreenPopGesture'
 
+    pod 'Bugly'
+    pod 'MLeaksFinder'
+    #pod 'FBRetainCycleDetector'
+    #pod 'FBMemoryProfiler'
+    
+    #pod 'YYKit'
     pod 'YYModel'
     pod 'YYCache'
     pod 'YYImage'
@@ -30,6 +29,7 @@ target 'BaseProject' do
     pod 'YYAsyncLayer'
     pod 'YYCategories'
 
+    #pod 'ReactiveCocoa'
 
     #pod 'YTKNetwork'
     #pod 'hpple'                #html解析工具 从web前端的html里获取数据
@@ -39,9 +39,7 @@ target 'BaseProject' do
     #pod 'SSZipArchive'
     #pod 'FLEX'
     #pod 'CocoaAsyncSocket'
-    #pod 'YYKit'
     #pod 'lottie-ios'
     #pod 'SkeletonView'
-
 	
 end
