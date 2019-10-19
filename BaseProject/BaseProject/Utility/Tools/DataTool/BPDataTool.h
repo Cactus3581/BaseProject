@@ -174,7 +174,7 @@ static inline NSString * BPTimeString(NSInteger seconds) {
 
 // 占位符
 #ifndef kPlacedString
-#define kPlacedString XRZPlacedString()
+#define kPlacedString BPPlacedString()
 #endif
 
 #ifndef kZero
@@ -184,7 +184,7 @@ static inline NSString * BPTimeString(NSInteger seconds) {
 /**
  占位空字符串
  */
-static inline NSString * XRZPlacedString () {
+static inline NSString * BPPlacedString () {
     static NSString *placedString;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

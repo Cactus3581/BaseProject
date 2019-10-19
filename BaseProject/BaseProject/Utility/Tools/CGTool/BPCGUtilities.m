@@ -13,7 +13,7 @@
 /**
  获取bounds
  */
-CGRect XRZScreenBounds(){
+CGRect BPScreenBounds(){
     static CGRect bounds;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -25,7 +25,7 @@ CGRect XRZScreenBounds(){
 /**
  获取宽度比例
  */
-CGFloat XRZScreenWidthRatio(){
+CGFloat BPScreenWidthRatio(){
     return [UIScreen mainScreen].bounds.size.width/(375.0f);
 }
 
@@ -41,7 +41,7 @@ CGFloat BPScreenWidthRatio(){
 /**
  获取宽度比例：在横屏下，获取的宽度比例，也是竖屏下的宽度比例
  */
-CGFloat XRZScreenWidthUniqueRatio(){
+CGFloat BPScreenWidthUniqueRatio(){
     static CGFloat ratio;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -68,14 +68,14 @@ CGFloat XRZScreenWidthUniqueRatio(){
 /**
  获取size
  */
-CGSize XRZScreenSize() {
+CGSize BPScreenSize() {
     return [UIScreen mainScreen].bounds.size;
 }
 
 /**
  在横屏下。获取的size，也是竖屏下的size，
  */
-CGSize XRZScreenUniqueSize() {
+CGSize BPScreenUniqueSize() {
     static CGSize size;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -102,7 +102,7 @@ CGSize XRZScreenUniqueSize() {
 /**
  缩放系数
  */
-CGFloat XRZScreenScale() {
+CGFloat BPScreenScale() {
     static CGFloat scale;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

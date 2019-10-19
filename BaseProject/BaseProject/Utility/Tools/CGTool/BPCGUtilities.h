@@ -13,23 +13,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 //方法声明
 CGFloat BPScreenWidthRatio();
-CGSize XRZScreenSize();
-CGSize XRZScreenUniqueSize();
+CGSize BPScreenSize();
+CGSize BPScreenUniqueSize();
 
-CGFloat XRZScreenWidthRatio();
-CGFloat XRZScreenWidthUniqueRatio();
+CGFloat BPScreenWidthRatio();
+CGFloat BPScreenWidthUniqueRatio();
 
-CGFloat XRZScreenScale();
-CGRect  XRZScreenBounds();
+CGFloat BPScreenScale();
+CGRect  BPScreenBounds();
 
 #pragma mark - 横竖屏-宽高不会切换
 static inline CGFloat widthUniqueRatio(CGFloat number) {
-    return number * XRZScreenWidthUniqueRatio();
+    return number * BPScreenWidthUniqueRatio();
 }
 
 #pragma mark - 横竖屏-宽高会切换
 static inline CGFloat widthRatio(CGFloat number) {
-    return number * XRZScreenWidthRatio();
+    return number * BPScreenWidthRatio();
 }
 
 static inline CGFloat DegreesToRadians(CGFloat degrees) {
@@ -59,47 +59,47 @@ static inline CGRect BPRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat hei
 
 //获取一像素
 #ifndef kOnePixel
-#define kOnePixel 1.0f / XRZScreenScale()
+#define kOnePixel 1.0f / BPScreenScale()
 #endif
 
 // main screen's scale 屏幕的像素倍数
 #ifndef kScreenScale
-#define kScreenScale XRZScreenScale()
+#define kScreenScale BPScreenScale()
 #endif
 
 // main screen's bounds
 #ifndef kScreenBounds
-#define kScreenBounds XRZScreenBounds()
+#define kScreenBounds BPScreenBounds()
 #endif
 
 // main screen's size (portrait||landscape)
 #ifndef kScreenSize
-#define kScreenSize XRZScreenSize()
+#define kScreenSize BPScreenSize()
 #endif
 
 // main screen's size (portrait)
 #ifndef kScreenUniqueSize
-#define kScreenUniqueSize XRZScreenUniqueSize()
+#define kScreenUniqueSize BPScreenUniqueSize()
 #endif
 
 // main screen's width ((portrait||landscape))
 #ifndef kScreenWidth
-#define kScreenWidth XRZScreenSize().width
+#define kScreenWidth BPScreenSize().width
 #endif
 
 // main screen's width (portrait)
 #ifndef kScreenUniqueWidth
-#define kScreenUniqueWidth XRZScreenUniqueSize().width
+#define kScreenUniqueWidth BPScreenUniqueSize().width
 #endif
 
 // main screen's height ((portrait||landscape))
 #ifndef kScreenHeight
-#define kScreenHeight XRZScreenSize().height
+#define kScreenHeight BPScreenSize().height
 #endif
 
 // main screen's height (portrait)
 #ifndef kScreenUniqueHeight
-#define kScreenUniqueHeight XRZScreenUniqueSize().height
+#define kScreenUniqueHeight BPScreenUniqueSize().height
 #endif
 
 #ifndef SCREEN_MIN
