@@ -119,7 +119,11 @@
                 [self gcd_set_target_moreQueue];//设置目标队列：队列添加到目标队列
             }
                 break;
-    
+                
+            case 17:{
+                [self gcd_signal_lock];
+            }
+                break;
         }
     }
 }
@@ -317,7 +321,7 @@
 - (void)gcd_signal {
     
     // 创建信号量：必须大于等于0
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(10);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     // 模仿网络请求
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -335,6 +339,21 @@
     NSInteger result = dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     BPLog(@"wait %d",result);
     BPLog(@"所在的函数出栈");
+}
+
+// 当作锁使用
+- (void)gcd_signal_lock {
+    
+    __block int number = 0;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
+
+    for (int i = 0; i < 10000; i++) {
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            number++;
+            dispatch_semaphore_signal(semaphore);
+        });
+    }
 }
 
 // 使用线程组和信号量完成批量请求，全部的响应返回之后，统一处理

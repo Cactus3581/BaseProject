@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (BPModel)
 
++ (instancetype)bp_modelWithDict:(NSDictionary *)dict;
+
 @end
 
 NS_ASSUME_NONNULL_END

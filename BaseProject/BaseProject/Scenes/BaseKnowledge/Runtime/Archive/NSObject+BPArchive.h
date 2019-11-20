@@ -1,8 +1,8 @@
 //
-//  BPSwizzlingParent.h
+//  NSObject+BPArchive.h
 //  BaseProject
 //
-//  Created by Ryan on 2019/1/19.
+//  Created by xiaruzhen on 2019/10/27.
 //  Copyright © 2019 cactus. All rights reserved.
 //
 
@@ -10,10 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BPSwizzlingParent : NSObject
-
-- (void)foo;
-+ (void)foo;
+@interface NSObject (BPArchive)
 
 @end
 

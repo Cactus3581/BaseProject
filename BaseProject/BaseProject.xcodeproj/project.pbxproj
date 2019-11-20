@@ -277,6 +277,7 @@
 		0143427121D21DCF00CEDCD1 /* BPNSValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143427021D21DCF00CEDCD1 /* BPNSValueViewController.m */; };
 		0143427521D21E7500CEDCD1 /* BPNSDecimalNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143427421D21E7500CEDCD1 /* BPNSDecimalNumberViewController.m */; };
 		0145D20222F1C34C003A0680 /* BPKVODependModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0145D20122F1C34C003A0680 /* BPKVODependModel.m */; };
+		01471BC02365532F009F7F52 /* NSObject+BPArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 01471BBF2365532F009F7F52 /* NSObject+BPArchive.m */; };
 		01481B7D226EAEBF007D7D29 /* BPHitTestInterceptParentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01481B7C226EAEBF007D7D29 /* BPHitTestInterceptParentView.m */; };
 		01481B80226EAED0007D7D29 /* BPHitTestInterceptSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01481B7F226EAED0007D7D29 /* BPHitTestInterceptSubView.m */; };
 		01481B86226EC00D007D7D29 /* BPConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01481B84226EC00C007D7D29 /* BPConvertViewController.m */; };
@@ -417,11 +418,11 @@
 		016D95EA20E3CB1300651EDE /* BPBaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95E920E3CB1300651EDE /* BPBaseWebViewController.m */; };
 		016D95ED20E3CEA700651EDE /* BPBlogArtcileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95EC20E3CEA700651EDE /* BPBlogArtcileViewController.m */; };
 		016D95F920E3E63D00651EDE /* UIView+BPShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 016D95F820E3E63D00651EDE /* UIView+BPShare.m */; };
-		016DADC720582FB100AA95EC /* NSArray+BPSafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC020582FAE00AA95EC /* NSArray+BPSafeAccess.m */; };
 		016DADC820582FB100AA95EC /* NSDictionary+BPSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC120582FAF00AA95EC /* NSDictionary+BPSafe.m */; };
 		016DADC920582FB100AA95EC /* NSObject+BPKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC220582FAF00AA95EC /* NSObject+BPKVO.m */; };
 		016DADCA20582FB100AA95EC /* NSNull+BPSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC520582FB000AA95EC /* NSNull+BPSafe.m */; };
 		016DADCB20582FB100AA95EC /* NSArray+BPSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DADC620582FB000AA95EC /* NSArray+BPSafe.m */; };
+		016DCCF62363C25000B12E5F /* UIScrollView+BPHookDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 016DCCF52363C25000B12E5F /* UIScrollView+BPHookDelegate.m */; };
 		016FCB6A20D61D380097F27E /* BPCardPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016FCB6920D61D380097F27E /* BPCardPageViewController.m */; };
 		016FCB6D20D61D4E0097F27E /* BPCardPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 016FCB6C20D61D4E0097F27E /* BPCardPageView.m */; };
 		016FCB7A20D642030097F27E /* BPScrollTargetContentOffsetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016FCB7920D642030097F27E /* BPScrollTargetContentOffsetViewController.m */; };
@@ -728,6 +729,7 @@
 		01D2F5B12088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D2F5B02088360F00D21B20 /* BPCellAutoLayoutHeightFooterView.xib */; };
 		01D2F5F92088E63F00D21B20 /* NSAttributedString+BPMarkColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5F82088E63F00D21B20 /* NSAttributedString+BPMarkColor.m */; };
 		01D2F5FC2088E72800D21B20 /* NSString+BPMarkColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D2F5FB2088E72800D21B20 /* NSString+BPMarkColor.m */; };
+		01D509362363189A007EE966 /* NSObject+BPSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D509352363189A007EE966 /* NSObject+BPSwizzling.m */; };
 		01D67EC220EDD980002BFE62 /* BPDownloadUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D67EC120EDD980002BFE62 /* BPDownloadUtils.m */; };
 		01D6FBA520C80ED900AD8A6E /* BPIncludeTableManualController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D6FBA420C80ED900AD8A6E /* BPIncludeTableManualController.m */; };
 		01D6FBB120C80F7E00AD8A6E /* BPIncludeTableManualHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D6FBA620C80F7A00AD8A6E /* BPIncludeTableManualHeaderView.xib */; };
@@ -848,6 +850,7 @@
 		01EB475320CE9A1E00195E88 /* BPTableViewNestGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EB475220CE9A1E00195E88 /* BPTableViewNestGestureViewController.m */; };
 		01EB475D20CE9BBD00195E88 /* BPTableViewNestGestureBottomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EB475B20CE9BBD00195E88 /* BPTableViewNestGestureBottomTableViewCell.m */; };
 		01EB476720CEB21400195E88 /* BPGestureRecognizerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EB476620CEB21400195E88 /* BPGestureRecognizerTableView.m */; };
+		01EB954B23625D0D00312AFE /* BPSwizzlingParent+BPSwizzlingB.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EB954A23625D0D00312AFE /* BPSwizzlingParent+BPSwizzlingB.m */; };
 		01EC9C0221BA78A400477EB8 /* BPStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EC9C0121BA78A400477EB8 /* BPStack.m */; };
 		01EC9C0521BA79B100477EB8 /* BPQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EC9C0421BA79B100477EB8 /* BPQueue.m */; };
 		01EC9C0821BA79D300477EB8 /* BPHeap.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EC9C0721BA79D300477EB8 /* BPHeap.m */; };
@@ -1430,6 +1433,8 @@
 		0143427421D21E7500CEDCD1 /* BPNSDecimalNumberViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNSDecimalNumberViewController.m; sourceTree = "<group>"; };
 		0145D20022F1C34C003A0680 /* BPKVODependModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPKVODependModel.h; sourceTree = "<group>"; };
 		0145D20122F1C34C003A0680 /* BPKVODependModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPKVODependModel.m; sourceTree = "<group>"; };
+		01471BBE2365532F009F7F52 /* NSObject+BPArchive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPArchive.h"; sourceTree = "<group>"; };
+		01471BBF2365532F009F7F52 /* NSObject+BPArchive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BPArchive.m"; sourceTree = "<group>"; };
 		01481B7B226EAEBF007D7D29 /* BPHitTestInterceptParentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPHitTestInterceptParentView.h; sourceTree = "<group>"; };
 		01481B7C226EAEBF007D7D29 /* BPHitTestInterceptParentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPHitTestInterceptParentView.m; sourceTree = "<group>"; };
 		01481B7E226EAED0007D7D29 /* BPHitTestInterceptSubView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPHitTestInterceptSubView.h; sourceTree = "<group>"; };
@@ -1698,13 +1703,13 @@
 		016DADBD20582FAD00AA95EC /* NSDictionary+BPSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BPSafe.h"; sourceTree = "<group>"; };
 		016DADBE20582FAD00AA95EC /* NSArray+BPSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BPSafe.h"; sourceTree = "<group>"; };
 		016DADBF20582FAE00AA95EC /* NSNull+BPSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+BPSafe.h"; sourceTree = "<group>"; };
-		016DADC020582FAE00AA95EC /* NSArray+BPSafeAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BPSafeAccess.m"; sourceTree = "<group>"; };
 		016DADC120582FAF00AA95EC /* NSDictionary+BPSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BPSafe.m"; sourceTree = "<group>"; };
 		016DADC220582FAF00AA95EC /* NSObject+BPKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BPKVO.m"; sourceTree = "<group>"; };
-		016DADC320582FB000AA95EC /* NSArray+BPSafeAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BPSafeAccess.h"; sourceTree = "<group>"; };
 		016DADC420582FB000AA95EC /* NSObject+BPKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPKVO.h"; sourceTree = "<group>"; };
 		016DADC520582FB000AA95EC /* NSNull+BPSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+BPSafe.m"; sourceTree = "<group>"; };
 		016DADC620582FB000AA95EC /* NSArray+BPSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BPSafe.m"; sourceTree = "<group>"; };
+		016DCCF42363C25000B12E5F /* UIScrollView+BPHookDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+BPHookDelegate.h"; sourceTree = "<group>"; };
+		016DCCF52363C25000B12E5F /* UIScrollView+BPHookDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+BPHookDelegate.m"; sourceTree = "<group>"; };
 		016FCB6820D61D380097F27E /* BPCardPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCardPageViewController.h; sourceTree = "<group>"; };
 		016FCB6920D61D380097F27E /* BPCardPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCardPageViewController.m; sourceTree = "<group>"; };
 		016FCB6B20D61D4E0097F27E /* BPCardPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCardPageView.h; sourceTree = "<group>"; };
@@ -2289,6 +2294,8 @@
 		01D2F5F82088E63F00D21B20 /* NSAttributedString+BPMarkColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+BPMarkColor.m"; sourceTree = "<group>"; };
 		01D2F5FA2088E72800D21B20 /* NSString+BPMarkColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BPMarkColor.h"; sourceTree = "<group>"; };
 		01D2F5FB2088E72800D21B20 /* NSString+BPMarkColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BPMarkColor.m"; sourceTree = "<group>"; };
+		01D509342363189A007EE966 /* NSObject+BPSwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+BPSwizzling.h"; sourceTree = "<group>"; };
+		01D509352363189A007EE966 /* NSObject+BPSwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BPSwizzling.m"; sourceTree = "<group>"; };
 		01D509E01FDD900400A8B1B4 /* BPAppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppMacro.h; sourceTree = "<group>"; };
 		01D509E21FDD909C00A8B1B4 /* BPAppTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAppTool.h; sourceTree = "<group>"; };
 		01D67EC020EDD980002BFE62 /* BPDownloadUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDownloadUtils.h; sourceTree = "<group>"; };
@@ -2531,6 +2538,8 @@
 		01EB475B20CE9BBD00195E88 /* BPTableViewNestGestureBottomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTableViewNestGestureBottomTableViewCell.m; sourceTree = "<group>"; };
 		01EB476520CEB21400195E88 /* BPGestureRecognizerTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPGestureRecognizerTableView.h; sourceTree = "<group>"; };
 		01EB476620CEB21400195E88 /* BPGestureRecognizerTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPGestureRecognizerTableView.m; sourceTree = "<group>"; };
+		01EB954923625D0D00312AFE /* BPSwizzlingParent+BPSwizzlingB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BPSwizzlingParent+BPSwizzlingB.h"; sourceTree = "<group>"; };
+		01EB954A23625D0D00312AFE /* BPSwizzlingParent+BPSwizzlingB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BPSwizzlingParent+BPSwizzlingB.m"; sourceTree = "<group>"; };
 		01EC5F201FA9A78200838BE2 /* BaseProject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BaseProject-Prefix.pch"; sourceTree = "<group>"; };
 		01EC9C0021BA78A400477EB8 /* BPStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPStack.h; sourceTree = "<group>"; };
 		01EC9C0121BA78A400477EB8 /* BPStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPStack.m; sourceTree = "<group>"; };
@@ -3445,7 +3454,6 @@
 		010FBABA1FF8A3C7000729FE /* Runloop */ = {
 			isa = PBXGroup;
 			children = (
-				01490C041FF548010035492D /* Memory */,
 				010FBABB1FF8A3D2000729FE /* BPRunloopViewController.h */,
 				010FBABC1FF8A3D2000729FE /* BPRunloopViewController.m */,
 				0176C4A122A2D9D000833934 /* BPRunloopHelper.h */,
@@ -3507,6 +3515,7 @@
 		010FBCFC20601CEB00BC9EC4 /* BaseKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				01490C041FF548010035492D /* Memory */,
 				011E3F562334A9D8007E1E09 /* CLanguage */,
 				01161F32203088D500FA3441 /* Class&Obj */,
 				01490C151FF54B940035492D /* Runtime */,
@@ -4742,6 +4751,15 @@
 			path = MultiLevelCatalogue;
 			sourceTree = "<group>";
 		};
+		01471BBD2365531B009F7F52 /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				01471BBE2365532F009F7F52 /* NSObject+BPArchive.h */,
+				01471BBF2365532F009F7F52 /* NSObject+BPArchive.m */,
+			);
+			path = Archive;
+			sourceTree = "<group>";
+		};
 		01481B79226EA8CF007D7D29 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -4788,8 +4806,7 @@
 				019DA7E021D1C22200E3AB16 /* Controllers */,
 				019DA7E121D1C22300E3AB16 /* Models */,
 			);
-			name = Memory;
-			path = ../Memory;
+			path = Memory;
 			sourceTree = "<group>";
 		};
 		01490C051FF548460035492D /* OptimizeTableView */ = {
@@ -4806,9 +4823,9 @@
 			children = (
 				0151F54A22EB7D1400F7600D /* BPRuntimeViewController.h */,
 				0151F54B22EB7D1400F7600D /* BPRuntimeViewController.m */,
+				01471BBD2365531B009F7F52 /* Archive */,
 				0151F52622EB74F500F7600D /* AddMethodForCategory */,
 				0151F53922EB7C7400F7600D /* Associated */,
-				01790751200120CF00E5C360 /* Controller */,
 				01B7EF4621D4A65600D5FD23 /* WatchDealloc */,
 				01790754200120CF00E5C360 /* Model */,
 				0126702121D5140B00FCA347 /* ModelToDict */,
@@ -6023,8 +6040,6 @@
 			children = (
 				016DADBE20582FAD00AA95EC /* NSArray+BPSafe.h */,
 				016DADC620582FB000AA95EC /* NSArray+BPSafe.m */,
-				016DADC320582FB000AA95EC /* NSArray+BPSafeAccess.h */,
-				016DADC020582FAE00AA95EC /* NSArray+BPSafeAccess.m */,
 				016DADBD20582FAD00AA95EC /* NSDictionary+BPSafe.h */,
 				016DADC120582FAF00AA95EC /* NSDictionary+BPSafe.m */,
 				016DADBF20582FAE00AA95EC /* NSNull+BPSafe.h */,
@@ -6521,13 +6536,6 @@
 			path = Copy;
 			sourceTree = "<group>";
 		};
-		01790751200120CF00E5C360 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		01790754200120CF00E5C360 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -6962,6 +6970,8 @@
 				01A6B65A22BBE49D00F316ED /* NSObject+BPDebugDescription.m */,
 				01A6B65C22BBE4DC00F316ED /* NSObject+DLIntrospection.h */,
 				01A6B65D22BBE4DC00F316ED /* NSObject+DLIntrospection.m */,
+				01D509342363189A007EE966 /* NSObject+BPSwizzling.h */,
+				01D509352363189A007EE966 /* NSObject+BPSwizzling.m */,
 			);
 			path = NSObject;
 			sourceTree = "<group>";
@@ -7363,16 +7373,15 @@
 		018DF00321F2D35D001D334D /* Swizzling */ = {
 			isa = PBXGroup;
 			children = (
+				01D5093723631ED0007EE966 /* HookDelegate */,
 				018DF00421F2D37D001D334D /* BPSwizzlingParent.h */,
 				018DF00521F2D37D001D334D /* BPSwizzlingParent.m */,
-				018DF00721F2D389001D334D /* BPSwizzlingChild.h */,
-				018DF00821F2D389001D334D /* BPSwizzlingChild.m */,
 				018DF00D21F2D3B9001D334D /* BPSwizzlingParent+BPSwizzling.h */,
 				018DF00E21F2D3B9001D334D /* BPSwizzlingParent+BPSwizzling.m */,
-				018DF00A21F2D3A7001D334D /* BPSwizzlingChild+BPSwizzing.h */,
-				018DF00B21F2D3A7001D334D /* BPSwizzlingChild+BPSwizzing.m */,
-				01B27F6422CB1777004CAAF5 /* NSObject+BPDealloc.h */,
-				01B27F6522CB1777004CAAF5 /* NSObject+BPDealloc.m */,
+				01EB954923625D0D00312AFE /* BPSwizzlingParent+BPSwizzlingB.h */,
+				01EB954A23625D0D00312AFE /* BPSwizzlingParent+BPSwizzlingB.m */,
+				01EB954823625C0000312AFE /* SubClassHook */,
+				01FEF107236114FB00422F4E /* Dealloc */,
 			);
 			path = Swizzling;
 			sourceTree = "<group>";
@@ -9105,6 +9114,15 @@
 			path = NSAttributedString;
 			sourceTree = "<group>";
 		};
+		01D5093723631ED0007EE966 /* HookDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				016DCCF42363C25000B12E5F /* UIScrollView+BPHookDelegate.h */,
+				016DCCF52363C25000B12E5F /* UIScrollView+BPHookDelegate.m */,
+			);
+			path = HookDelegate;
+			sourceTree = "<group>";
+		};
 		01D67EBF20EDD95A002BFE62 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -9764,6 +9782,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		01EB954823625C0000312AFE /* SubClassHook */ = {
+			isa = PBXGroup;
+			children = (
+				018DF00721F2D389001D334D /* BPSwizzlingChild.h */,
+				018DF00821F2D389001D334D /* BPSwizzlingChild.m */,
+				018DF00A21F2D3A7001D334D /* BPSwizzlingChild+BPSwizzing.h */,
+				018DF00B21F2D3A7001D334D /* BPSwizzlingChild+BPSwizzing.m */,
+			);
+			path = SubClassHook;
+			sourceTree = "<group>";
+		};
 		01EC5F211FA9AAB100838BE2 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -10268,6 +10297,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		01FEF107236114FB00422F4E /* Dealloc */ = {
+			isa = PBXGroup;
+			children = (
+				01B27F6422CB1777004CAAF5 /* NSObject+BPDealloc.h */,
+				01B27F6522CB1777004CAAF5 /* NSObject+BPDealloc.m */,
+			);
+			path = Dealloc;
+			sourceTree = "<group>";
+		};
 		4A3DA6562E1A89656B539CD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -10742,6 +10780,7 @@
 				010DB7491FDD4D450099E66F /* UIImage+BPFileName.m in Sources */,
 				010DB7411FDD4D450099E66F /* UIImage+BPMerge.m in Sources */,
 				01F2609721D9B496008973C1 /* BPBlockViewController.m in Sources */,
+				01D509362363189A007EE966 /* NSObject+BPSwizzling.m in Sources */,
 				01C0B6711FFCCE92005BB4A5 /* UIView+BPRoundedCorner.m in Sources */,
 				01161F362030890700FA3441 /* BPClassObjectViewController.m in Sources */,
 				01A191B32004E16F005EE4CD /* BPTextViewViewController.m in Sources */,
@@ -10768,6 +10807,7 @@
 				015120FF20CBF04100B33A76 /* BPDynamicJumpViewController.m in Sources */,
 				0161168822D04B3C003A3ABC /* UIResponder+BPMsgSend.m in Sources */,
 				01B0F5E021EC257600D1D9C6 /* BPAFNViewController.m in Sources */,
+				01471BC02365532F009F7F52 /* NSObject+BPArchive.m in Sources */,
 				01DF323D1FDD3B3D00B8A955 /* NSObject+BPAddProperty.m in Sources */,
 				01B075A520E4FD0C004891F7 /* BPBlockAnimatonViewController.m in Sources */,
 				01F0DDE120CA20D8005082C7 /* BPInheritViewController.m in Sources */,
@@ -10826,6 +10866,7 @@
 				01A191D72004E1ED005EE4CD /* BPPageControlController.m in Sources */,
 				010DB7071FDD4D450099E66F /* UINavigationBar+BPAwesome.m in Sources */,
 				010DB7591FDD4D450099E66F /* UITableView+BPiOS7Style.m in Sources */,
+				016DCCF62363C25000B12E5F /* UIScrollView+BPHookDelegate.m in Sources */,
 				01B2EE0A22DF564C00702C36 /* BPFordSUVProduct.m in Sources */,
 				01EC9C0E21BA7ADC00477EB8 /* BPTree.m in Sources */,
 				0179070D20011DC300E5C360 /* BPAboutCopyViewController.m in Sources */,
@@ -10913,7 +10954,6 @@
 				01FE862A211AB87D0060B141 /* BPTableViewMultipleSelectionController.m in Sources */,
 				01DF31CC1FDD3A9100B8A955 /* NSURLSession+BPSynchronousTask.m in Sources */,
 				016FCB6D20D61D4E0097F27E /* BPCardPageView.m in Sources */,
-				016DADC720582FB100AA95EC /* NSArray+BPSafeAccess.m in Sources */,
 				015804E520CACF6D00D0EF7C /* BPTestViewController.m in Sources */,
 				01DBF15B20E77775001C52C0 /* BPAutoLayoutUpdateConstraintsController.m in Sources */,
 				017A9A431FDD2B8C00CDA599 /* NSNumber+BPDecimalNumber.m in Sources */,
@@ -11168,6 +11208,7 @@
 				01D22BD91FDD814000BCC4AD /* UIScreen+BPAdd.m in Sources */,
 				01DF31721FDD3A0900B8A955 /* CAAnimation+BPEasingEquations.m in Sources */,
 				01B7B17E20D4E25800CF3FF9 /* UITableView+BPGestureRecognizer.m in Sources */,
+				01EB954B23625D0D00312AFE /* BPSwizzlingParent+BPSwizzlingB.m in Sources */,
 				010DB7551FDD4D450099E66F /* UITableViewCell+BPDelaysContentTouches.m in Sources */,
 				010DB7241FDD4D450099E66F /* UIColor+BPWeb.m in Sources */,
 				01A1921B2004E61F005EE4CD /* BPTagCollectionCell.m in Sources */,

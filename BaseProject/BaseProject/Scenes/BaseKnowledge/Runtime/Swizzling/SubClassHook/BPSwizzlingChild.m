@@ -10,17 +10,6 @@
 
 @implementation BPSwizzlingChild
 
-+ (void)load{
-    NSLog(@"%s",__func__);
-}
-
-+ (void)initialize {
-    NSLog(@"%s %@",__func__,[self class]);
-}
-
-//- (void)foo {
-//    [super foo];
-//    NSLog(@"child foo = %@",[self class]);
-//}
+// 在当前类即子类中并没有重写实现foo方法，如果直接将两个方法进行交换，当父类对象调用foo时会crash
 
 @end

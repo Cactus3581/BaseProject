@@ -327,6 +327,14 @@
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>HookDelegate</string>
+				<key>fileName</key>
+				<string>BPRuntimeViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -845,6 +853,16 @@
 					<dict>
 						<key>title</key>
 						<string>设置目标队列：队列添加到目标队列</string>
+						<key>fileName</key>
+						<string>BPGCDViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+						<key>dynamicJumpString</key>
+						<string>{&quot;type&quot;:&quot;17&quot;}</string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>信号量作为锁</string>
 						<key>fileName</key>
 						<string>BPGCDViewController</string>
 						<key>briefIntro</key>
@@ -2673,6 +2691,14 @@
 					<dict>
 						<key>title</key>
 						<string>instancetype &amp; id </string>
+						<key>fileName</key>
+						<string>BPListViewController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>nil、Nil、NULL、NSNull</string>
 						<key>fileName</key>
 						<string>BPListViewController</string>
 						<key>briefIntro</key>

@@ -1,8 +1,8 @@
 //
-//  BPSwizzlingParent+BPSwizzling.h
+//  BPSwizzlingParent+BPSwizzlingB.h
 //  BaseProject
 //
-//  Created by Ryan on 2019/1/19.
+//  Created by xiaruzhen on 2019/10/25.
 //  Copyright © 2019 cactus. All rights reserved.
 //
 
@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BPSwizzlingParent (BPSwizzling)
+@interface BPSwizzlingParent (BPSwizzlingB)
 
-- (void)p_foo;
+- (void)p1_foo;
 
 @end
 

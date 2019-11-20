@@ -8,53 +8,81 @@
 
 #import "NSArray+BPSafe.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
+#import "NSObject+BPSwizzling.h"
+
 
 @implementation NSArray (BPSafe)
 
 + (void)load {
-    Method originalMethod = class_getClassMethod(self, @selector(arrayWithObjects:count:));
-    Method swizzledMethod = class_getClassMethod(self, @selector(na_arrayWithObjects:count:));
-    method_exchangeImplementations(originalMethod, swizzledMethod);
+    
+    Class class = NSClassFromString(@"__NSArrayI");
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+    });
 }
 
-+ (instancetype)na_arrayWithObjects:(const id [])objects count:(NSUInteger)cnt {
+// 检查是否越界和NSNull如果是返回nil
+- (id)bp_objectAtIndexCheck:(NSUInteger)index {
+    
+    if (index >= [self count]) {
+        BPLog(@"%ld is outof rang",(long)index);
+        return nil;
+    }
+    
+    id value;
+    if ([self objectAtIndex:index]) {
+       value = [self objectAtIndex:index];
+    }
+    
+    if (value == [NSNull null]) {
+        BPLog(@"%ld is [NSNull null]",(long)index);
+        return nil;
+    }
+    
+    return value;
+}
+
+@end
+
+@implementation NSMutableArray (BPSafe)
+
++ (void)load {
+        
+    Class class = NSClassFromString(@"__NSArrayM");
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self bp_swizzleInstanceMethodWithClass:class originalSelector:@selector(insertObject:atIndex:) swizzledSelector:@selector(bp_insertObject:atIndex:)];
+        [self bp_swizzleInstanceMethodWithClass:class originalSelector:@selector(arrayWithObjects:count:) swizzledSelector:@selector(bp_arrayWithObjects:count:)];
+        [self bp_swizzleInstanceMethodWithClass:class originalSelector:@selector(setObject:atIndex:) swizzledSelector:@selector(bp_setObject:atIndex:)];
+    });
+    
+}
+
+- (void)bp_insertObject:(id)anObject atIndex:(NSUInteger)index {
+    if (!anObject) {
+        return;
+    }
+    [self bp_insertObject:anObject atIndex:index];
+}
+
+- (void)bp_setObject:(id)anObject atIndex:(NSUInteger)index {
+    if (!anObject) {
+        return;
+    }
+    [self bp_setObject:anObject atIndex:index];
+}
+
++ (instancetype)bp_arrayWithObjects:(const id [])objects count:(NSUInteger)cnt {
     id nObjects[cnt];
-    int i=0, j=0;
+    int i = 0, j = 0;
     for (; i<cnt && j<cnt; i++) {
         if (objects[i]) {
             nObjects[j] = objects[i];
             j++;
         }
     }
-    
-    return [self na_arrayWithObjects:nObjects count:j];
-}
-@end
-
-@implementation NSMutableArray (BPSafe)
-
-+ (void)load {
-    Class arrayCls = NSClassFromString(@"__NSArrayM");
-    
-    Method originalMethod1 = class_getInstanceMethod(arrayCls, @selector(insertObject:atIndex:));
-    Method swizzledMethod1 = class_getInstanceMethod(arrayCls, @selector(na_insertObject:atIndex:));
-    method_exchangeImplementations(originalMethod1, swizzledMethod1);
-    
-    Method originalMethod2 = class_getInstanceMethod(arrayCls, @selector(setObject:atIndex:));
-    Method swizzledMethod2 = class_getInstanceMethod(arrayCls, @selector(na_setObject:atIndex:));
-    method_exchangeImplementations(originalMethod2, swizzledMethod2);
-}
-
-- (void)na_insertObject:(id)anObject atIndex:(NSUInteger)index {
-    if (!anObject)
-        return;
-    [self na_insertObject:anObject atIndex:index];
-}
-
-- (void)na_setObject:(id)anObject atIndex:(NSUInteger)index {
-    if (!anObject)
-        return;
-    [self na_setObject:anObject atIndex:index];
+    return [self bp_arrayWithObjects:nObjects count:j];
 }
 
 @end

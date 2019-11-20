@@ -10,16 +10,12 @@
 
 @implementation BPSwizzlingParent
 
-+ (void)load {
-    NSLog(@"%s",__func__);
-}
-
-+ (void)initialize{
-    NSLog(@"%s %@",__func__,[self class]);
-}
-
 - (void)foo {
-    NSLog(@"Parent foo = %@",[self class]);
+    NSLog(@"%@ 父类 原始IMP",[self class]);
+}
+
++ (void)foo {
+    NSLog(@"%@ 父类 原始IMP",[self class]);
 }
 
 @end

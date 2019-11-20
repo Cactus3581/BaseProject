@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BPSwizzlingChild (BPSwizzing)
 
+- (void)s_foo;
+
 @end
 
 NS_ASSUME_NONNULL_END

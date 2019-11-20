@@ -365,25 +365,4 @@ static void * deallocHasSwizzledKey = "deallocHasSwizzledKey";
     return NSSelectorFromString([NSString stringWithFormat:@"set%@:",proertyName.firstCharUpperString]);
 }
 
-+ (void)p_swizzleMethods:(Class)class originalSelector:(SEL)origSel swizzledSelector:(SEL)swizSel {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Method origMethod = class_getInstanceMethod(class, origSel);
-        
-        Method swizMethod = class_getInstanceMethod(class, swizSel);
-        
-        /*
-         先尝试給源方法添加实现，这里是为了避免源方法没有实现的情况，返回为true，说明源方法之前没有实现，返回为false，说明源方法之前已经有实现
-         */
-        BOOL didAddMethod = class_addMethod(class, origSel, method_getImplementation(swizMethod), method_getTypeEncoding(swizMethod));
-        if (didAddMethod) {
-            //添加成功：说明源方法之前没有实现，将源方法的实现替换到交换方法的实现：在这就是把class类的swizSel方法的实现 改成 origMethod的方法实现
-            class_replaceMethod(class, swizSel, method_getImplementation(origMethod), method_getTypeEncoding(origMethod));
-        } else {
-            //添加失败：说明源方法已经有实现, 直接将两个方法的实现交换
-            method_exchangeImplementations(origMethod, swizMethod);
-        }
-    });
-}
-
 @end

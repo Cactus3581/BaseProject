@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="cHT-Yy-OEw" customClass="BPAlignmentRectInsetsTemplateView">
-            <rect key="frame" x="0.0" y="0.0" width="366" height="324"/>
+            <rect key="frame" x="0.0" y="0.0" width="262" height="84"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="AlignmentRectInsetsLabel1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTN-Vm-DbU" customClass="BPAlignmentRectInsetsLabel">
-                    <rect key="frame" x="20" y="0.0" width="326" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AlignmentRectInsetsLabel1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTN-Vm-DbU" customClass="BPAlignmentRectInsetsLabel">
+                    <rect key="frame" x="20" y="0.0" width="222" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="AlignmentRectInsetsLabel2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvo-c5-fxR" customClass="BPAlignmentRectInsetsLabel">
-                    <rect key="frame" x="20" y="108" width="326" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AlignmentRectInsetsLabel2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvo-c5-fxR" customClass="BPAlignmentRectInsetsLabel">
+                    <rect key="frame" x="20" y="21" width="222" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="AlignmentRectInsetsLabel4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qX8-w9-i88" customClass="BPAlignmentRectInsetsLabel">
-                    <rect key="frame" x="20" y="229" width="326" height="0.0"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AlignmentRectInsetsLabel3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQg-GC-pSC" customClass="BPAlignmentRectInsetsLabel">
+                    <rect key="frame" x="20" y="42" width="222" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="AlignmentRectInsetsLabel3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQg-GC-pSC" customClass="BPAlignmentRectInsetsLabel">
-                    <rect key="frame" x="20" y="181" width="326" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AlignmentRectInsetsLabel4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qX8-w9-i88" customClass="BPAlignmentRectInsetsLabel">
+                    <rect key="frame" x="20" y="63" width="222" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -50,9 +50,9 @@
                 <constraint firstAttribute="trailing" secondItem="Vvo-c5-fxR" secondAttribute="trailing" constant="20" id="S0a-7B-odu"/>
                 <constraint firstItem="pTN-Vm-DbU" firstAttribute="leading" secondItem="cHT-Yy-OEw" secondAttribute="leading" constant="20" id="Uhb-Jk-OZS"/>
                 <constraint firstItem="WQg-GC-pSC" firstAttribute="leading" secondItem="cHT-Yy-OEw" secondAttribute="leading" constant="20" id="Zoq-RX-qxo"/>
-                <constraint firstAttribute="bottom" secondItem="qX8-w9-i88" secondAttribute="bottom" id="bvm-gg-jdh"/>
                 <constraint firstItem="qX8-w9-i88" firstAttribute="leading" secondItem="cHT-Yy-OEw" secondAttribute="leading" constant="20" id="dGL-eJ-iwK"/>
                 <constraint firstItem="WQg-GC-pSC" firstAttribute="top" secondItem="Vvo-c5-fxR" secondAttribute="bottom" id="fRk-gd-oSJ"/>
+                <constraint firstAttribute="bottom" secondItem="qX8-w9-i88" secondAttribute="bottom" constant="0.5" id="h7M-CD-7HN"/>
                 <constraint firstItem="pTN-Vm-DbU" firstAttribute="top" secondItem="cHT-Yy-OEw" secondAttribute="top" id="sYv-gK-7Ak"/>
                 <constraint firstAttribute="trailing" secondItem="qX8-w9-i88" secondAttribute="trailing" constant="20" id="xki-BW-2tY"/>
             </constraints>
@@ -63,7 +63,7 @@
                 <outlet property="label3" destination="WQg-GC-pSC" id="5Re-2O-Pac"/>
                 <outlet property="label4" destination="qX8-w9-i88" id="zlX-Kz-mjp"/>
             </connections>
-            <point key="canvasLocation" x="59" y="-177"/>
+            <point key="canvasLocation" x="-25.600000000000001" y="-285.15742128935534"/>
         </view>
     </objects>
 </document>

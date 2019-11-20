@@ -11,8 +11,8 @@
 
 @implementation NSObject (BPModel)
 
-+ (instancetype)ModelWithDict:(NSDictionary *)dict {
-    NSObject * obj = [[self alloc]init];
++ (instancetype)bp_modelWithDict:(NSDictionary *)dict {
+    NSObject * obj = [[self alloc] init];
     [obj transformDict:dict];
     return obj;
 }
@@ -46,7 +46,7 @@
             if (![type hasPrefix:@"NS"]) {//字典
                 // 将对象名转换为对象的类型，将新的对象字典转模型（递归）,如Grade，并将其对象grade对应的字典转换成模型
                 Class class = NSClassFromString(type);
-                value = [class ModelWithDict:value];
+                value = [class bp_modelWithDict:value];
             }else if ([type isEqualToString:@"NSArray"]) {//数组中包含字典
                 // 如果是数组类型，将数组中的每个模型进行字典转模型，先创建一个临时数组存放模型
                 NSArray *array = (NSArray *)value;
@@ -60,7 +60,7 @@
                 }
                 // 将数组中的所有模型进行字典转模型
                 for (int i = 0; i < array.count; i++) {
-                    [mArray addObject:[class ModelWithDict:value[i]]];
+                    [mArray addObject:[class bp_modelWithDict:value[i]]];
                 }
                 value = mArray;
             }
