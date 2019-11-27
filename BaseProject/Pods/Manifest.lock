@@ -71,7 +71,7 @@ DEPENDENCIES:
   - YYWebImage
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AFNetworking
     - Bugly
     - FBRetainCycleDetector
@@ -121,4 +121,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 73efec46e96f46d102bbcd5dcde511c149b289bb
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
