@@ -7,7 +7,6 @@
 //  MVVM Without RAC 开发模式的商品首页控制器 -- C
 
 #import "BPViewController.h"
-#import "SUGoodsViewModel1.h"
 
 @interface SUGoodsController1 : BPViewController
 

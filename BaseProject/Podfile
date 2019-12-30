@@ -36,6 +36,11 @@ target 'BaseProject' do
     pod 'YYDispatchQueuePool'
     pod 'YYAsyncLayer'
     pod 'YYCategories'
+    
+    pod 'KVOController'
+#    pod 'ReactiveCocoa'
+    pod 'ReactiveObjC'
+
 
     #pod 'ReactiveCocoa'
 

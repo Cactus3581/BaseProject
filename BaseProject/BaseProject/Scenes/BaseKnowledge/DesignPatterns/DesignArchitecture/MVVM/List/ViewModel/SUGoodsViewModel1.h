@@ -11,19 +11,11 @@
 
 @interface SUGoodsViewModel1 : NSObject
 
-/// banners
-@property (nonatomic, readonly, copy) NSArray <NSString *> *banners;
-
-/// load banners data
-- (void)loadBannerData:(void (^)(id responseObject))success
-               failure:(void (^)(NSError *))failure;
+@property (nonatomic, readwrite, strong) NSMutableArray *dataSource;
 
 /// 点赞商品
 - (void)thumbGoodsWithGoodsItemViewModel:(SUGoodsItemViewModel *)viewModel
                                  success:(void (^)(id responseObject))success
                                  failure:(void (^)(NSError *))failure;
-
-/// 通过索引获取数据
-- (NSString *)bannerUrlWithIndex:(NSInteger)index;
 
 @end

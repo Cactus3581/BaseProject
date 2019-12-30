@@ -20,12 +20,14 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - KVOController (1.2.0)
   - Masonry (1.1.0)
   - MJExtension (3.2.1)
   - MJRefresh (3.2.0)
   - MLeaksFinder (1.0.0):
     - FBRetainCycleDetector
   - Reachability (3.2)
+  - ReactiveObjC (3.1.1)
   - SAMKeychain (1.5.3)
   - SDWebImage (5.2.3):
     - SDWebImage/Core (= 5.2.3)
@@ -52,11 +54,13 @@ DEPENDENCIES:
   - Bugly
   - FDFullscreenPopGesture
   - FMDB
+  - KVOController
   - Masonry
   - MJExtension
   - MJRefresh
   - MLeaksFinder
   - Reachability
+  - ReactiveObjC
   - SAMKeychain
   - SDWebImage
   - "UITableView+FDTemplateLayoutCell"
@@ -71,6 +75,9 @@ DEPENDENCIES:
   - YYWebImage
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - KVOController
+    - ReactiveObjC
   trunk:
     - AFNetworking
     - Bugly
@@ -101,11 +108,13 @@ SPEC CHECKSUMS:
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
@@ -119,6 +128,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 73cfe34e60e8be28a18f22948b69cc2932f8a9e6
+PODFILE CHECKSUM: 308eee459d7a71f22a5e5a88b26621af7eed624f
 
 COCOAPODS: 1.8.4
