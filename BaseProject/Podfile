@@ -1,6 +1,14 @@
-platform :ios, '10.0'
-target 'BaseProject' do
+# 下面一行是指明依赖库的来源地址
+source 'https://github.com/CocoaPods/Specs.git'
 
+# 说明平台是ios，版本是10.0
+platform :ios, '10.0'
+
+# 忽略引入库的所有警告
+inhibit_all_warnings!
+
+# 针对 BaseProject target 引入 AFNetworking
+target 'BaseProject' do
     pod 'AFNetworking'
     pod 'Reachability'
     pod 'SDWebImage'
@@ -41,5 +49,17 @@ target 'BaseProject' do
     #pod 'CocoaAsyncSocket'
     #pod 'lottie-ios'
     #pod 'SkeletonView'
+
+    # 针对 BaseProjectTests target 引入 AFNetworking
+    target 'BaseProjectTests' do
+        inherit! :search_paths 
+        pod 'MJExtension'
+    end
+
+    # 针对 BaseProjectUITests target 引入 AFNetworking
+    target 'BaseProjectUITests' do
+        inherit! :search_paths 
+        pod 'MJExtension'
+    end
 	
 end

@@ -1455,6 +1455,14 @@
 				<array>
 					<dict>
 						<key>title</key>
+						<string>MVVM</string>
+						<key>fileName</key>
+						<string>SULoginController1</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
 						<string>简单的MVVM（没有数据绑定）</string>
 						<key>fileName</key>
 						<string>BPMVVMViewController</string>
