@@ -4631,10 +4631,10 @@
 		013C89FD23B966CF00804143 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				013C8A0623B9670300804143 /* SUGoodsItemViewModel.h */,
-				013C8A0723B9670300804143 /* SUGoodsItemViewModel.m */,
 				013C8A0323B966F800804143 /* SUGoodsViewModel1.h */,
 				013C8A0423B966F800804143 /* SUGoodsViewModel1.m */,
+				013C8A0623B9670300804143 /* SUGoodsItemViewModel.h */,
+				013C8A0723B9670300804143 /* SUGoodsItemViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";

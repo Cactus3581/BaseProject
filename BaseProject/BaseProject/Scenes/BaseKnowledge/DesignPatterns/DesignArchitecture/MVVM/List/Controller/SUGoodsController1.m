@@ -24,12 +24,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self _setupSubViews];
-    [self _bindViewModel];
+    SUGoodsViewModel1 *viewModel = [SUGoodsViewModel1 new];
+    _viewModel = viewModel;
+    
+    [viewModel loadData:^(NSArray *array) {
+        [self.tableView reloadData];
+    } failure:^(NSError *error) {
+        
+    }];
+    
+    [self setupSubViews];
+    [self bindViewModel];
 }
 
 #pragma mark - BindModel
-- (void)_bindViewModel{
+- (void)bindViewModel{
     _KVOController = [FBKVOController controllerWithObserver:self];
 }
 
@@ -45,67 +54,77 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SUGoodsCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SUGoodsCell class])];
-    /// 处理事件
+    SUGoodsItemViewModel *itemViewModel = self.viewModel.dataSource[indexPath.row];
+
+    // 处理事件
     @weakify(self);
-    /// 头像
+    // 头像
     cell.avatarClickedHandler = ^(SUGoodsCell *goodsCell) {
         @strongify(self);
-        SUGoodsItemViewModel *viewModel = self.viewModel.dataSource[indexPath.row];
-        [self _pushToPublicViewControllerWithTitle:viewModel];
-    };
-    /// 位置
-    cell.locationClickedHandler = ^(SUGoodsCell *goodsCell) {
-        @strongify(self);
-        SUGoodsItemViewModel *viewModel = self.viewModel.dataSource[indexPath.row];
-        [self _pushToPublicViewControllerWithTitle:viewModel];
+        [self pushToPublicViewControllerWithTitle:itemViewModel];
     };
     
-    /// 回复
+    // 回复
     cell.replyClickedHandler = ^(SUGoodsCell *goodsCell) {
         @strongify(self);
-        SUGoodsItemViewModel *viewModel = self.viewModel.dataSource[indexPath.row];
-        [self _pushToPublicViewControllerWithTitle:viewModel];
+        [self pushToPublicViewControllerWithTitle:itemViewModel];
     };
     
-    /// 点赞
+    // 点赞
     cell.thumbClickedHandler = ^(SUGoodsCell *goodsCell) {
         @strongify(self);
-        SUGoodsItemViewModel *viewModel = self.viewModel.dataSource[indexPath.row];
-        /// 点赞
-        [self.viewModel thumbGoodsWithGoodsItemViewModel:viewModel success:^(NSNumber * responseObject) {
+        // 点赞
+        [self.viewModel thumbGoodsWithGoodsItemViewModel:itemViewModel success:^(NSNumber * responseObject) {
             NSString *tips = (responseObject.boolValue)?@"收藏商品成功":@"取消收藏商品";
-            /// reload data
+            // reload data
             [self.tableView reloadData];
         } failure:nil];
     };
     
-    /// config data (PS：由于MVVM主要是View与数据之间的绑定，但是跟 setViewModel: 差不多啦)
-//    [cell bindViewModel:object];
+    // config data ,PS：由于MVVM主要是View与数据之间的绑定，但是跟 setViewModel: 差不多
+    cell.itemViewModel = itemViewModel;
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    /// 由于使用系统的autoLayout来计算cell的高度，每次滚动时都要重新计算cell的布局以此来获得cell的高度 这样一来性能不好
-    /// 所以笔者采用实现计算好的cell的高度
     return [self.viewModel.dataSource[indexPath.row] cellHeight];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     // 跳转到商品详请
-    [self _pushToPublicViewControllerWithTitle:nil];
+    [self pushToPublicViewControllerWithTitle:nil];
 }
 
 #pragma mark - 辅助方法
-/// 跳转界面 这里只是一个跳转，实际情况，自行定夺
-- (void)_pushToPublicViewControllerWithTitle:(SUGoodsItemViewModel *)itemViewModel {
+// 跳转界面 这里只是一个跳转，实际情况，自行定夺
+- (void)pushToPublicViewControllerWithTitle:(SUGoodsItemViewModel *)itemViewModel {
 
 }
 
 #pragma mark - 初始化子控件
-- (void)_setupSubViews {
-    [self.tableView registerNib:[SUGoodsCell bp_loadNib] forCellReuseIdentifier:@""];
+- (void)setupSubViews {
+    
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    _tableView = tableView;
+    _tableView.delegate = self;
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
+    self.tableView.backgroundColor = kWhiteColor;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.tableHeaderView = [[UIView alloc]init];
+    self.tableView.tableFooterView = [[UIView alloc]init];
+    //self.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
+    //self.tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
+    
+    //warning: 注意不能是CGFLOAT_MIN
+    self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedSectionHeaderHeight = 0;
+    self.tableView.estimatedSectionFooterHeight = 0;
+    [_tableView registerNib:[SUGoodsCell bp_loadNib] forCellReuseIdentifier:NSStringFromClass([SUGoodsCell class])];
 }
 
 @end

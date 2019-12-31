@@ -11,11 +11,10 @@
 
 @interface SUGoodsViewModel1 : NSObject
 
-@property (nonatomic, readwrite, strong) NSMutableArray *dataSource;
+@property (nonatomic, readwrite, strong) NSMutableArray <SUGoodsItemViewModel *> *dataSource;
 
-/// 点赞商品
-- (void)thumbGoodsWithGoodsItemViewModel:(SUGoodsItemViewModel *)viewModel
-                                 success:(void (^)(id responseObject))success
-                                 failure:(void (^)(NSError *))failure;
+- (void)loadData:(void (^)(NSArray *array))success failure:(void (^)(NSError *error))failure;
+// 点赞商品
+- (void)thumbGoodsWithGoodsItemViewModel:(SUGoodsItemViewModel *)viewModel success:(void (^)(id responseObject))success failure:(void (^)(NSError *))failure;
 
 @end

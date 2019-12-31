@@ -11,7 +11,6 @@
 @interface SUGoodsItemViewModel ()
 
 @property (nonatomic, readwrite, strong) SUGoods *goods;
-@property (nonatomic, readwrite, copy) NSAttributedString *goodsTitleAttributedString;
 @property (nonatomic, readwrite, assign) CGFloat cellHeight;
 
 @end
@@ -23,7 +22,7 @@
     self = [super init];
     if (self) {
         self.goods = goods;
-        self.cellHeight =70;
+        self.cellHeight = 70;
     }
     return self;
 }

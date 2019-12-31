@@ -26,8 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self _setupSubViews];
-    [self _bindViewModel];
+    [self setupSubViews];
+    [self bindViewModel];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -38,7 +38,7 @@
 #pragma mark - 事件处理
 // 登录按钮的点击事件
 
-- (IBAction)_loginbtnDidClicked:(id)sender {
+- (IBAction)loginbtnDidClicked:(id)sender {
     // 数据验证的在Controller中处理 否则的话 viewModel 中就引用了 view了
     // 验证手机号码 正确的手机号码
     if (!self.inputView.phoneTextField.text.length){
@@ -58,14 +58,14 @@
 }
 
 // textField的数据改变
-- (void)_textFieldValueDidChanged:(UITextField *)sender {
+- (void)textFieldValueDidChanged:(UITextField *)sender {
     // bind data
     self.viewModel.mobilePhone = self.inputView.phoneTextField.text;
     self.viewModel.verifyCode = self.inputView.verifyTextField.text;
 }
 
 #pragma mark - BindModel
-- (void)_bindViewModel {
+- (void)bindViewModel {
     [self.viewModel addObserver:self forKeyPath:@"avatarUrlString" options:NSKeyValueObservingOptionNew context:nil];
 }
 
@@ -76,7 +76,7 @@
 }
 
 #pragma mark - 初始化UI
-- (void)_setupSubViews {
+- (void)setupSubViews {
 
     UIImageView *userAvatar = [[UIImageView alloc] init];
     _userAvatar = userAvatar;
@@ -112,7 +112,7 @@
 
     // 登录按钮
     // 验证登录按钮的有效性
-    [self _textFieldValueDidChanged:nil];
+    [self textFieldValueDidChanged:nil];
     
     // 添加事件
     [inputView.phoneTextField addTarget:self action:@selector(_textFieldValueDidChanged:) forControlEvents:UIControlEventEditingChanged];

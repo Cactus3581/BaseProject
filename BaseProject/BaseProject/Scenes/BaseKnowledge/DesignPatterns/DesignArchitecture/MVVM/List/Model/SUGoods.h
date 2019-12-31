@@ -11,12 +11,8 @@
 
 @interface SUGoods : NSObject
 
-@property (nonatomic, readwrite, copy) NSString * locationAreaName;
-@property (nonatomic, readwrite, copy) NSString *title;
-@property (nonatomic, readwrite, copy) NSString * likes;// 喜欢次数
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *likes;// 喜欢次数
 @property (nonatomic, assign) BOOL isLike;
-
-//// 以下 MVC使用的场景，如果使用MVVM的请自行ignore
-@property (nonatomic, readonly, copy) NSAttributedString *goodsTitleAttributedString;
 
 @end
