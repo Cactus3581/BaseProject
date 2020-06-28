@@ -279,6 +279,8 @@
 		0143427121D21DCF00CEDCD1 /* BPNSValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143427021D21DCF00CEDCD1 /* BPNSValueViewController.m */; };
 		0143427521D21E7500CEDCD1 /* BPNSDecimalNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0143427421D21E7500CEDCD1 /* BPNSDecimalNumberViewController.m */; };
 		0145D20222F1C34C003A0680 /* BPKVODependModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0145D20122F1C34C003A0680 /* BPKVODependModel.m */; };
+		0146FB452454521B00D5531D /* BPDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0146FB3E2454521B00D5531D /* BPDrawViewController.m */; };
+		0146FB462454521B00D5531D /* BPDrawRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0146FB442454521B00D5531D /* BPDrawRectView.m */; };
 		01481B7D226EAEBF007D7D29 /* BPHitTestInterceptParentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01481B7C226EAEBF007D7D29 /* BPHitTestInterceptParentView.m */; };
 		01481B80226EAED0007D7D29 /* BPHitTestInterceptSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01481B7F226EAED0007D7D29 /* BPHitTestInterceptSubView.m */; };
 		01481B86226EC00D007D7D29 /* BPConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01481B84226EC00C007D7D29 /* BPConvertViewController.m */; };
@@ -371,8 +373,6 @@
 		015805BC20CAE5D000D0EF7C /* BPTopCategoryListTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0158059920CAE5D000D0EF7C /* BPTopCategoryListTagCollectionViewCell.xib */; };
 		01583B01224DB3AE00172F7F /* BPAsyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01583AFF224DB3AE00172F7F /* BPAsyncViewController.m */; };
 		01583B02224DB3AE00172F7F /* BPAsyncViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01583B00224DB3AE00172F7F /* BPAsyncViewController.xib */; };
-		01583B05224E1D2E00172F7F /* BPDrawRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01583B04224E1D2E00172F7F /* BPDrawRectView.m */; };
-		01583B0B224E201400172F7F /* BPDrawLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01583B0A224E201400172F7F /* BPDrawLayer.m */; };
 		0158A0501FDFD3570011AFE9 /* UILabel+BPInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */; };
 		0159272622904B60002875E5 /* BPDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0159272522904B60002875E5 /* BPDownloadManager.m */; };
 		0159A62220EC73A400312293 /* BPDownLoadMainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0159A62020EC73A400312293 /* BPDownLoadMainPageViewController.m */; };
@@ -589,7 +589,6 @@
 		01AEF6C5230C1A9400F017F5 /* BPSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01AEF6C4230C1A9400F017F5 /* BPSizeViewController.xib */; };
 		01AEF6D0230C365300F017F5 /* BPTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEF6CF230C365300F017F5 /* BPTableView.m */; };
 		01AEF6D6230C48ED00F017F5 /* BPCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AEF6D5230C48ED00F017F5 /* BPCustomTableViewCell.m */; };
-		01B075A020E4FD0C004891F7 /* BPDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0752120E4FD0C004891F7 /* BPDrawViewController.m */; };
 		01B075A520E4FD0C004891F7 /* BPBlockAnimatonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0752F20E4FD0C004891F7 /* BPBlockAnimatonViewController.m */; };
 		01B075AE20E4FD0C004891F7 /* BPLayoutProcessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0754B20E4FD0C004891F7 /* BPLayoutProcessViewController.m */; };
 		01B075B020E4FD0C004891F7 /* BPLayoutProcessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B0754E20E4FD0C004891F7 /* BPLayoutProcessView.m */; };
@@ -1431,6 +1430,12 @@
 		0143427421D21E7500CEDCD1 /* BPNSDecimalNumberViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPNSDecimalNumberViewController.m; sourceTree = "<group>"; };
 		0145D20022F1C34C003A0680 /* BPKVODependModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPKVODependModel.h; sourceTree = "<group>"; };
 		0145D20122F1C34C003A0680 /* BPKVODependModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPKVODependModel.m; sourceTree = "<group>"; };
+		0146FB3E2454521B00D5531D /* BPDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawViewController.m; sourceTree = "<group>"; };
+		0146FB3F2454521B00D5531D /* BPDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawViewController.h; sourceTree = "<group>"; };
+		0146FB412454521B00D5531D /* BPDrawRectCGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawRectCGView.h; sourceTree = "<group>"; };
+		0146FB422454521B00D5531D /* BPDrawRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawRectView.h; sourceTree = "<group>"; };
+		0146FB432454521B00D5531D /* BPDrawRectPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawRectPathView.h; sourceTree = "<group>"; };
+		0146FB442454521B00D5531D /* BPDrawRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawRectView.m; sourceTree = "<group>"; };
 		01481B7B226EAEBF007D7D29 /* BPHitTestInterceptParentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPHitTestInterceptParentView.h; sourceTree = "<group>"; };
 		01481B7C226EAEBF007D7D29 /* BPHitTestInterceptParentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPHitTestInterceptParentView.m; sourceTree = "<group>"; };
 		01481B7E226EAED0007D7D29 /* BPHitTestInterceptSubView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPHitTestInterceptSubView.h; sourceTree = "<group>"; };
@@ -1609,10 +1614,6 @@
 		01583AFE224DB3AE00172F7F /* BPAsyncViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPAsyncViewController.h; sourceTree = "<group>"; };
 		01583AFF224DB3AE00172F7F /* BPAsyncViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPAsyncViewController.m; sourceTree = "<group>"; };
 		01583B00224DB3AE00172F7F /* BPAsyncViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BPAsyncViewController.xib; sourceTree = "<group>"; };
-		01583B03224E1D2D00172F7F /* BPDrawRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawRectView.h; sourceTree = "<group>"; };
-		01583B04224E1D2E00172F7F /* BPDrawRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawRectView.m; sourceTree = "<group>"; };
-		01583B09224E201400172F7F /* BPDrawLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawLayer.h; sourceTree = "<group>"; };
-		01583B0A224E201400172F7F /* BPDrawLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawLayer.m; sourceTree = "<group>"; };
 		0158A04E1FDFD3560011AFE9 /* UILabel+BPInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+BPInterval.h"; sourceTree = "<group>"; };
 		0158A04F1FDFD3570011AFE9 /* UILabel+BPInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BPInterval.m"; sourceTree = "<group>"; };
 		0159272422904B60002875E5 /* BPDownloadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPDownloadManager.h; sourceTree = "<group>"; };
@@ -2017,8 +2018,6 @@
 		01AEF6CF230C365300F017F5 /* BPTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPTableView.m; sourceTree = "<group>"; };
 		01AEF6D4230C48ED00F017F5 /* BPCustomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BPCustomTableViewCell.h; sourceTree = "<group>"; };
 		01AEF6D5230C48ED00F017F5 /* BPCustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BPCustomTableViewCell.m; sourceTree = "<group>"; };
-		01B0752120E4FD0C004891F7 /* BPDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPDrawViewController.m; sourceTree = "<group>"; };
-		01B0752220E4FD0C004891F7 /* BPDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPDrawViewController.h; sourceTree = "<group>"; };
 		01B0752F20E4FD0C004891F7 /* BPBlockAnimatonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPBlockAnimatonViewController.m; sourceTree = "<group>"; };
 		01B0753020E4FD0C004891F7 /* BPBlockAnimatonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPBlockAnimatonViewController.h; sourceTree = "<group>"; };
 		01B0754A20E4FD0C004891F7 /* BPLayoutProcessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPLayoutProcessViewController.h; sourceTree = "<group>"; };
@@ -4424,16 +4423,6 @@
 			path = AsyncDraw;
 			sourceTree = "<group>";
 		};
-		013B42402254B86300BD441A /* BaseDraw */ = {
-			isa = PBXGroup;
-			children = (
-				01B0752020E4FD0C004891F7 /* Controllers */,
-				01B0751D20E4FD0C004891F7 /* Layers */,
-				01B0752320E4FD0C004891F7 /* Views */,
-			);
-			path = BaseDraw;
-			sourceTree = "<group>";
-		};
 		013B42452254B89200BD441A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -4689,6 +4678,26 @@
 				013ED8E520C7D6A200A83E7F /* IncludeTableView */,
 			);
 			path = MultiLevelCatalogue;
+			sourceTree = "<group>";
+		};
+		0146FB3D2454521B00D5531D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0146FB3F2454521B00D5531D /* BPDrawViewController.h */,
+				0146FB3E2454521B00D5531D /* BPDrawViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0146FB402454521B00D5531D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0146FB412454521B00D5531D /* BPDrawRectCGView.h */,
+				0146FB432454521B00D5531D /* BPDrawRectPathView.h */,
+				0146FB422454521B00D5531D /* BPDrawRectView.h */,
+				0146FB442454521B00D5531D /* BPDrawRectView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		01481B79226EA8CF007D7D29 /* Base */ = {
@@ -8089,42 +8098,13 @@
 		01B0751C20E4FD0C004891F7 /* Drawing */ = {
 			isa = PBXGroup;
 			children = (
+				0146FB3D2454521B00D5531D /* Controllers */,
+				0146FB402454521B00D5531D /* Views */,
 				01914F422320CD4000DD76CB /* CoreImage */,
 				01914F412320CD3700DD76CB /* CoreText */,
 				013B423F2254B85C00BD441A /* AsyncDraw */,
-				013B42402254B86300BD441A /* BaseDraw */,
 			);
 			path = Drawing;
-			sourceTree = "<group>";
-		};
-		01B0751D20E4FD0C004891F7 /* Layers */ = {
-			isa = PBXGroup;
-			children = (
-				01583B09224E201400172F7F /* BPDrawLayer.h */,
-				01583B0A224E201400172F7F /* BPDrawLayer.m */,
-			);
-			name = Layers;
-			path = ../Layers;
-			sourceTree = "<group>";
-		};
-		01B0752020E4FD0C004891F7 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				01B0752220E4FD0C004891F7 /* BPDrawViewController.h */,
-				01B0752120E4FD0C004891F7 /* BPDrawViewController.m */,
-			);
-			name = Controllers;
-			path = ../Controllers;
-			sourceTree = "<group>";
-		};
-		01B0752320E4FD0C004891F7 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				01583B03224E1D2D00172F7F /* BPDrawRectView.h */,
-				01583B04224E1D2E00172F7F /* BPDrawRectView.m */,
-			);
-			name = Views;
-			path = ../Views;
 			sourceTree = "<group>";
 		};
 		01B0752C20E4FD0C004891F7 /* Animation */ = {
@@ -10676,7 +10656,6 @@
 				01A191B32004E16F005EE4CD /* BPTextViewViewController.m in Sources */,
 				01DF31C31FDD3A9100B8A955 /* NSIndexPath+BPOffset.m in Sources */,
 				0161168122CF80ED003A3ABC /* BPResponderViewController.m in Sources */,
-				01583B0B224E201400172F7F /* BPDrawLayer.m in Sources */,
 				014DDD5522C36BD2006ED9A2 /* BPWeakProxy.m in Sources */,
 				01161F4E2030900B00FA3441 /* BPNSStringViewController.m in Sources */,
 				010DB72F1FDD4D450099E66F /* UIPopoverController+iPhone.m in Sources */,
@@ -10731,7 +10710,6 @@
 				010DB76B1FDD4D560099E66F /* UIViewController+BPBackButtonTouched.m in Sources */,
 				018C44D22009E12400CF43D7 /* BPCardPageFlowViewController.m in Sources */,
 				01D22BD21FDD814000BCC4AD /* UIFont+BPAdd.m in Sources */,
-				01B075A020E4FD0C004891F7 /* BPDrawViewController.m in Sources */,
 				01161F512030901300FA3441 /* BPNSSetViewController.m in Sources */,
 				01D22BD81FDD814000BCC4AD /* NSMutableArray+BPAdd.m in Sources */,
 				01D75DE322FC078A002E2503 /* BPNotification.m in Sources */,
@@ -11048,6 +11026,7 @@
 				01D22BC51FDD814000BCC4AD /* UINavigationController+BPAdd.m in Sources */,
 				01D22BDB1FDD814000BCC4AD /* NSString+BPAdd.m in Sources */,
 				011F91C320E6662900124DC1 /* BPDebugViewController.m in Sources */,
+				0146FB462454521B00D5531D /* BPDrawRectView.m in Sources */,
 				010DB71B1FDD4D450099E66F /* UIWebView+BPLoadInfo.m in Sources */,
 				01DF32431FDD3B3D00B8A955 /* NSObject+BPAssociatedObject.m in Sources */,
 				010DB7081FDD4D450099E66F /* UILabel+BPSuggestSize.m in Sources */,
@@ -11123,6 +11102,7 @@
 				018DF00921F2D389001D334D /* BPSwizzlingChild.m in Sources */,
 				01DF31C21FDD3A9100B8A955 /* NSDictionary+BPBlock.m in Sources */,
 				01EC9C0821BA79D300477EB8 /* BPHeap.m in Sources */,
+				0146FB452454521B00D5531D /* BPDrawViewController.m in Sources */,
 				010DB7AA1FDD4D6F0099E66F /* UIButton+BPMiddleAligning.m in Sources */,
 				010DB7701FDD4D560099E66F /* UIViewController+BPVisible.m in Sources */,
 				01DF31E41FDD3B0300B8A955 /* NSNumber+BPCGFloat.m in Sources */,
@@ -11168,7 +11148,6 @@
 				010DB74D1FDD4D450099E66F /* UIApplication+BPKeyboardFrame.m in Sources */,
 				0126702721D51C0800FCA347 /* BPAutoModel.m in Sources */,
 				010DB7341FDD4D450099E66F /* UIResponder+BPChain.m in Sources */,
-				01583B05224E1D2E00172F7F /* BPDrawRectView.m in Sources */,
 				01DF31C11FDD3A9100B8A955 /* NSDictionary+BPJSONString.m in Sources */,
 				0111FF6F227749F000B51C65 /* KSSentenceTextTableViewCell.m in Sources */,
 				01B2EDFB22DF558C00702C36 /* BPFactory.m in Sources */,

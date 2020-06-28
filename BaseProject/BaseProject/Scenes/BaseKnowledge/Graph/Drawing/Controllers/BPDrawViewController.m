@@ -8,7 +8,7 @@
 
 #import "BPDrawViewController.h"
 #import "BPDrawRectView.h"
-#import "BPDrawLayer.h"
+//#import "BPDrawLayer.h"
 
 @interface BPDrawViewController () <CALayerDelegate>
 
@@ -102,12 +102,12 @@
 #pragma mark -  自定义Layer绘图
 // 自定义Layer 并重写drawInContext。需要使用setNeedsDisplay，且只能用CG方法
 - (void)drawLayer {
-    BPDrawLayer *layer = [BPDrawLayer layer];
-    layer.frame = CGRectMake(kScreenWidth/2, kScreenHeight/2.0, 100, 100);
-    layer.backgroundColor = kLightGrayColor.CGColor;
-    // 有这句话才能执行 -drawInContext 和 drawRect 方法
-    [layer setNeedsDisplay];
-    [self.view.layer addSublayer:layer];
+//    BPDrawLayer *layer = [BPDrawLayer layer];
+//    layer.frame = CGRectMake(kScreenWidth/2, kScreenHeight/2.0, 100, 100);
+//    layer.backgroundColor = kLightGrayColor.CGColor;
+//    // 有这句话才能执行 -drawInContext 和 drawRect 方法
+//    [layer setNeedsDisplay];
+//    [self.view.layer addSublayer:layer];
 }
 
 #pragma mark - 实现Layer的代理方法，自定义绘图
