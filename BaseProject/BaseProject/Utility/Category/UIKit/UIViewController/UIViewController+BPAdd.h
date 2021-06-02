@@ -18,5 +18,7 @@
 
 - (UINavigationController*)bp_navigationController;
 
++ (UIViewController* )bp_currentViewController;
+
 @end
 

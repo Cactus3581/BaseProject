@@ -20,6 +20,7 @@ PODS:
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
+  - JLRoutes (2.1)
   - Masonry (1.1.0)
   - MJExtension (3.2.1)
   - MJRefresh (3.2.0)
@@ -52,6 +53,7 @@ DEPENDENCIES:
   - Bugly
   - FDFullscreenPopGesture
   - FMDB
+  - JLRoutes
   - Masonry
   - MJExtension
   - MJRefresh
@@ -71,6 +73,8 @@ DEPENDENCIES:
   - YYWebImage
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - JLRoutes
   trunk:
     - AFNetworking
     - Bugly
@@ -101,6 +105,7 @@ SPEC CHECKSUMS:
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  JLRoutes: d755245322b94227662ea3e43492fdca94e05c5b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
@@ -119,6 +124,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 73cfe34e60e8be28a18f22948b69cc2932f8a9e6
+PODFILE CHECKSUM: bf8a64eec03ab4702268565280c5e0b5d4bc297f
 
 COCOAPODS: 1.8.4

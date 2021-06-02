@@ -577,8 +577,6 @@ static CGFloat cellHeight = 100;
     
     // 设置允许多选
     _tableView.allowsMultipleSelection = YES;
-    
-
 }
 
 - (void)didReceiveMemoryWarning {

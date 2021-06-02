@@ -24,4 +24,6 @@
 
 - (void)methond_Z;
 
+@property(nonatomic, assign) CGFloat offset;
+
 @end

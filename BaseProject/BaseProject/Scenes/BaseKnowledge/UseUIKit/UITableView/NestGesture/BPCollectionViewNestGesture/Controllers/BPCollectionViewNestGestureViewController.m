@@ -35,7 +35,7 @@ static NSString *notificationNameFromOutsideScrollNotEnable = @"notificationName
     [self initializeViews];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeScrollEnabled) name:notificationNameFromInsideScrollEnable object:nil];
     self.isScrollEnabled = YES;
-    //[self popDisabled]; //全局pop手势
+    [self popDisabled:NO]; //全局pop手势
 }
 
 //现在外部可以滑动了

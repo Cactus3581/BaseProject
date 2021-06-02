@@ -1202,6 +1202,22 @@
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>手势处理过程</string>
+				<key>fileName</key>
+				<string>BPGestureProcessViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>手势转场动画</string>
+				<key>fileName</key>
+				<string>BPGesSlidePopupViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -2617,6 +2633,14 @@
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>title</key>
+				<string>JLRoute</string>
+				<key>fileName</key>
+				<string>BPRouteViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -3559,6 +3583,41 @@
 				<string>BPStackViewController</string>
 				<key>briefIntro</key>
 				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>UIMenuController</string>
+				<key>fileName</key>
+				<string>BPListViewController</string>
+				<key>briefIntro</key>
+				<string>文字操作菜单</string>
+				<key>subVc_array</key>
+				<array>
+					<dict>
+						<key>title</key>
+						<string>LabelMenu</string>
+						<key>fileName</key>
+						<string>BPLabelMenuController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>TextfieldMenu</string>
+						<key>fileName</key>
+						<string>BPTextfieldMenuController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+					<dict>
+						<key>title</key>
+						<string>TextViewMenu</string>
+						<key>fileName</key>
+						<string>BPTextViewMenuController</string>
+						<key>briefIntro</key>
+						<string></string>
+					</dict>
+				</array>
 			</dict>
 		</array>
 	</dict>

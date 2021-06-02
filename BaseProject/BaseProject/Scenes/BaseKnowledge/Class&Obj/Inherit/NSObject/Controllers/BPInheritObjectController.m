@@ -26,6 +26,7 @@
     [_obj methond_C]; // C，c
     [_obj methond_D]; // d
     [_obj methond_X]; // X，Y，z
+    _obj.offset += 1;
 }
 
 #pragma mark - 系统主动调用:创建的时候使用

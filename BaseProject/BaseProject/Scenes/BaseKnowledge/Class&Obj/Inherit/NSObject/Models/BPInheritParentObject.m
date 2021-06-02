@@ -9,6 +9,7 @@
 #import "BPInheritParentObject.h"
 
 @implementation BPInheritParentObject
+@synthesize offset = _offset;
 
 + (void)initialize {
     if (self == [BPInheritParentObject class]) {
@@ -67,6 +68,14 @@
 #pragma mark - 子类重写，但是没有调用super，父类也会调用，奇怪
 - (void)dealloc {
     BPLog(@"i'm parent dealloc");
+}
+
+- (void)setOffset:(CGFloat)offset {
+    _offset = offset;
+}
+
+- (CGFloat)offset {
+    return _offset;
 }
 
 @end

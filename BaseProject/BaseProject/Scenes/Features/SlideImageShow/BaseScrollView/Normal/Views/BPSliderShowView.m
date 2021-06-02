@@ -12,6 +12,7 @@
 #import "UIImageView+WebCache.h"
 #import "UIImageView+YYWebImage.h"
 #import "UIImage+YYWebImage.h"
+#import "UIViewController+BPAdd.h"
 
 static CGFloat inset = 0;
 
@@ -147,7 +148,7 @@ static CGFloat inset = 0;
     
     /*
      //方法2：这个方法虽然可以避免代码耦合，但是开销稍微有些大
-     if ([self bp_currentViewController] != self.viewControllerInSide) {
+     if ([UIViewController bp_currentViewController] != self.viewControllerInSide) {
      BPLog(@"判断此view不在当前控制器");
      return;
      }

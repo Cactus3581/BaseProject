@@ -16,16 +16,23 @@ target 'BaseProject' do
     pod 'FMDB'
     pod 'MJRefresh'
     pod 'MJExtension'
-    pod 'SAMKeychain'
-
     pod 'UITableView+FDTemplateLayoutCell'
     pod 'FDFullscreenPopGesture'
+    pod 'JLRoutes'
+    #pod 'Aspects'
+    #pod 'KVOController'
+    #pod 'FLEX' # 界面调试工具
+    #pod 'Specta'# 单元测试
+    #pod 'CocoaLumberjack' # 日志
+    #pod 'MBProgressHUD'
 
     pod 'Bugly'
     pod 'MLeaksFinder'
     #pod 'FBRetainCycleDetector'
     #pod 'FBMemoryProfiler'
     
+	  pod 'SAMKeychain'
+
     #pod 'YYKit'
     pod 'YYModel'
     pod 'YYCache'
@@ -49,6 +56,7 @@ target 'BaseProject' do
     #pod 'CocoaAsyncSocket'
     #pod 'lottie-ios'
     #pod 'SkeletonView'
+    #pod 'TTTAttributedLabel'
 
     # 针对 BaseProjectTests target 引入 AFNetworking
     target 'BaseProjectTests' do

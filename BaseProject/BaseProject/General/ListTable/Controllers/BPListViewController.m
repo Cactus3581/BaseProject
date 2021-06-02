@@ -89,7 +89,6 @@
     self.tableView.estimatedRowHeight = 0;
     self.tableView.estimatedSectionHeaderHeight = 0;
     self.tableView.estimatedSectionFooterHeight = 0;
-    
     self.tableView.dataSource = self.viewModel;
 }
 
@@ -124,8 +123,8 @@
     }
     //点击后取消选中颜色。同[self.tableView deselectRowAtIndexPath:indexPath animated:NO];效果
     BPListTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    // 取消选中状态
     cell.selected = NO;
-    
     [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 

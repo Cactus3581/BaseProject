@@ -56,4 +56,11 @@
     BPLog(@"i'm sub dealloc");
 }
 
+// 继承操作offset，是否会死循环
+- (void)setOffset:(CGFloat)offset {
+    NSLog(@"%.2f, %.2f, %.2f, %.2f", super.offset, self.offset, [super offset], [self offset]);
+//    super.offset = offset;
+//    [super setOffset:offset];
+}
+
 @end

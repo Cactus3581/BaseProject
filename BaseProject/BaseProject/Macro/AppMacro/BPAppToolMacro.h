@@ -57,6 +57,10 @@
 #define kWindow             [[[UIApplication sharedApplication] delegate] window]
 #endif
 
+#ifndef kRootViewController
+#define kRootViewController             [[[UIApplication sharedApplication] delegate] window].rootViewController
+#endif
+
 // 最好不要用kKeyWindow，因为可能是alert所在的window
 #ifndef kKeyWindow
 #define kKeyWindow          [UIApplication sharedApplication].keyWindow

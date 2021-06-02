@@ -79,20 +79,18 @@
         make.leading.equalTo(centerView.mas_trailing);
         make.height.width.equalTo(leftView);
     }];
-
-
 }
 
 #pragma mark - scrollView delegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    BPLog(@"1 - 将开始拖拽");
+    [self log:@"1 - 将开始拖拽将开始拖拽"];
     //全局变量记录滑动前的contentOffset
     self.lastContentOffset = scrollView.contentOffset.y;//判断上下滑动时
     //self.lastContentOffset = scrollView.contentOffset.x;//判断左右滑动时
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    BPLog(@"2 - 在滚动着");
+    [self log:@"2 - 在滚动着"];
     if (scrollView.contentOffset.y < self.lastContentOffset ){
         //向上
         BPLog(@"上滑");
@@ -112,7 +110,7 @@
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-    BPLog(@"3 - 将要结束拖拽");
+    [self log:@"3 - 将要结束拖拽"];
     BPLog(@"%s velocity: %@, targetContentOffset: %@", __PRETTY_FUNCTION__,
           [NSValue valueWithCGPoint:velocity],
           [NSValue valueWithCGPoint:*targetContentOffset]);
@@ -121,22 +119,27 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     BPLog(@"4 - 已经结束拖拽");
     if (decelerate == NO) {
-        BPLog(@"scrollView停止滚动，完全静止"); //不走这个log？
+        [self log:@"scrollView停止滚动，完全静止"];//不走这个log？
     } else {
-        BPLog(@"4(end) - 用户停止拖拽，但是scrollView由于惯性，会继续滚动，并且减速");
+        [self log:@"4(end) - 用户停止拖拽，但是scrollView由于惯性，会继续滚动，并且减速"];
     }
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    BPLog(@"6 - 开始减速");
+    BPLog(@"5 - 开始减速");
+    [self log:@"开始减速"];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    BPLog(@"6 - 彻底停止滚动");
+    [self log:@"6 - 彻底停止滚动"];
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-    BPLog(@"非触摸拖拽 - 偏移动画完成时调用：彻底停止滚动");
+    [self log:@"非触摸拖拽 - 偏移动画完成时调用：彻底停止滚动"];
+}
+
+- (void)log:(NSString *)text {
+    BPLog(@"text: %@, isDragging: %d, isTracking: %d, isDecelerating: %d, y: %.2f", text, self.scrollView.isDragging, self.scrollView.isTracking, self.scrollView.isDecelerating, self.scrollView.contentOffset.x);
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {

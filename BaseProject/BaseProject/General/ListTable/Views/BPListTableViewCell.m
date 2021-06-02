@@ -13,13 +13,11 @@
 static NSString *cellIdentifier = @"BPListTableViewCell";
 
 @interface BPListTableViewCell ()
-
+@property (nonatomic,weak) UILabel *titleLabel;
+@property (nonatomic,weak) UILabel *detailLabel;
 @end
 
-@implementation BPListTableViewCell {
-    UILabel *_titleLabel;
-    UILabel *_detailLabel;
-}
+@implementation BPListTableViewCell 
 
 + (instancetype)cellWithTableView:(UITableView *)tableView {
     BPListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -38,12 +36,13 @@ static NSString *cellIdentifier = @"BPListTableViewCell";
 
 #pragma mark - initialize methods
 - (void)initializeUI {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.backgroundColor = kWhiteColor;
-    UILabel *songNameLabel = [UILabel new];
-    _titleLabel = songNameLabel;
-    songNameLabel.numberOfLines = 0;
-    [self.contentView addSubview:songNameLabel];
-    [songNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    UILabel *titleLabel = [UILabel new];
+    _titleLabel = titleLabel;
+    titleLabel.numberOfLines = 0;
+    [self.contentView addSubview:titleLabel];
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self).offset(widthRatio(10));
         make.top.equalTo(self).offset(widthRatio(2.5));
     }];
@@ -52,8 +51,8 @@ static NSString *cellIdentifier = @"BPListTableViewCell";
     _detailLabel = artistLabel;
     [self.contentView addSubview:artistLabel];
     [artistLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(songNameLabel);
-        make.top.equalTo(songNameLabel.mas_bottom).offset(widthRatio(2.5));
+        make.leading.equalTo(titleLabel);
+        make.top.equalTo(titleLabel.mas_bottom).offset(widthRatio(2.5));
     }];
     
     _titleLabel.backgroundColor = kRedColor;
@@ -139,8 +138,27 @@ static NSString *cellIdentifier = @"BPListTableViewCell";
     [super awakeFromNib];
 }
 
+// 高亮状态
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:highlighted animated:animated];
+    [self setHighlightedColor: highlighted];
+}
+
+// 选中状态
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+    [self setHighlightedColor: selected];
+}
+
+- (void)setHighlightedColor:(BOOL)highlighted {
+    if (highlighted) {
+        self.backgroundColor = kLightGrayColor;
+    } else {
+        // 增加延迟消失动画效果，提升用户体验
+        [UIView animateWithDuration:0.1 delay:0.1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                self.backgroundColor = kWhiteColor;
+        } completion:nil];
+    }
 }
 
 @end

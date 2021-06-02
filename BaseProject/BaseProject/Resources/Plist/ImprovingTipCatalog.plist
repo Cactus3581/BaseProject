@@ -41,11 +41,9 @@
 		<key>title</key>
 		<string>其他项目测试用</string>
 		<key>fileName</key>
-		<string>BPListViewController</string>
+		<string></string>
 		<key>briefIntro</key>
 		<string></string>
-		<key>subVc_array</key>
-		<array/>
 	</dict>
 	<dict>
 		<key>title</key>
@@ -61,6 +59,14 @@
 				<string>关于bounces和contentInset的矛盾</string>
 				<key>fileName</key>
 				<string>BPContentInsetTableViewController</string>
+				<key>briefIntro</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>TextViewHeight</string>
+				<key>fileName</key>
+				<string>BPTextViewHeightViewController</string>
 				<key>briefIntro</key>
 				<string></string>
 			</dict>
@@ -153,7 +159,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>商业业务Demo</string>
+		<string>Demo</string>
 		<key>fileName</key>
 		<string>BPListViewController</string>
 		<key>briefIntro</key>

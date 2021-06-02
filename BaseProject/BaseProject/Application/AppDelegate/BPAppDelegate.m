@@ -31,7 +31,7 @@ NSString *const kChangedNotification = @"kChangedNotification";
     //[self configStyleByAppearance]; //统一设置style
     
     [self initializeSDKS];
-    
+
     return YES;
 }
 
@@ -177,10 +177,17 @@ NSString *const kChangedNotification = @"kChangedNotification";
     BPLog(@"程序将要退出");
 }
 
+// ios 10.0以上
+- (void)openURL:(NSURL*)url options:(NSDictionary<UIApplicationOpenExternalURLOptionsKey, id> *)options completionHandler:(void (^ __nullable)(BOOL success))completion {
+
+}
+
+// ios 9以上
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     return [self openUrl:url];
 }
 
+// ios 9以下
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     return [self openUrl:url];
 }

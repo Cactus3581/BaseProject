@@ -23,7 +23,7 @@ static NSString *kImprovingTipCatalog = @"ImprovingTipCatalog";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kWhiteColor;
-    [self addChildViewController];
+    [self _addChildViewController];
     [self setTabbarTitleTheme];
 }
 
@@ -34,12 +34,12 @@ static NSString *kImprovingTipCatalog = @"ImprovingTipCatalog";
 /**
  *  添加所有子控制器方法
  */
-- (void)addChildViewController{
+- (void)_addChildViewController{
 
     BPListViewController *featureVC = [[BPListViewController alloc]init];
     featureVC.url = kFeatureCatalog;
     [self setUpChildViewController:featureVC image:[UIImage imageNamed:@"tabbar_hotScenes"] title:@"场景"];
-    
+
     BPListViewController *baseKnowledgeVC = [[BPListViewController alloc]init];
     baseKnowledgeVC.url = kBasicKnowledgCatalog;
     [self setUpChildViewController:baseKnowledgeVC image:[UIImage imageNamed:@"tabbar_knowledge"] title:@"知识点"];
