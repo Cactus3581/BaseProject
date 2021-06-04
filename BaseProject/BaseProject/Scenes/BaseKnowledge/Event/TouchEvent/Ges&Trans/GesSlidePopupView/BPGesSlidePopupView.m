@@ -2,7 +2,7 @@
 //  BPGesSlidePopupView.h
 //  BaseProject
 //
-//  Created by 夏汝震 on 2021/5/31.
+//  Created by Ryan on 2021/5/31.
 //  Copyright © 2021 cactus. All rights reserved.
 //
 
@@ -74,7 +74,7 @@
 - (void)dismiss {
     [UIView animateWithDuration:0.25f animations:^{
         [self updateContentViewY:self.frame.size.height];
-        self.backgroundColor = kClearColor;
+        self.backgroundColor = [kGrayColor colorWithAlphaComponent:0.0];
     }completion:^(BOOL finished) {
         [self removeFromSuperview];
     }];
@@ -129,10 +129,7 @@
 - (void)handlePanGesture:(UIPanGestureRecognizer *)panGesture {
     CGPoint translation = [panGesture translationInView:self.contentView];
     CGPoint point = [panGesture locationInView:self.scrollView];
-    BOOL isOperScrollView = false;
-    if ([self.scrollView.layer containsPoint:point]) {
-        isOperScrollView = true;
-    }
+    BOOL isOperScrollView = [self.scrollView.layer containsPoint:point];
     if (isOperScrollView) {
         // 当手指在scrollView滑动时
         if (self.scrollView.contentOffset.y <= 0) {

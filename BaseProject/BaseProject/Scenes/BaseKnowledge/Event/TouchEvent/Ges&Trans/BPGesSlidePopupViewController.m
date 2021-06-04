@@ -2,7 +2,7 @@
 //  BPGesSlidePopupViewController.m
 //  BaseProject
 //
-//  Created by 夏汝震 on 2021/5/31.
+//  Created by Ryan on 2021/5/31.
 //  Copyright © 2021 cactus. All rights reserved.
 //
 
@@ -58,7 +58,7 @@
     if (self.dataSource.count == 0) {
         return 150;
     }
-    NSInteger perLineCount = (width - 10 - 10 + 10) / +(100+10);
+    NSInteger perLineCount = (width - 10 - 10 + 10) / (100+10);
     NSInteger line = self.dataSource.count / perLineCount;
     NSInteger isAddline = self.dataSource.count % perLineCount;
     if (isAddline != 0) {
